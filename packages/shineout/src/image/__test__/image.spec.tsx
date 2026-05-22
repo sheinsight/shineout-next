@@ -386,9 +386,11 @@ describe('Image[Pile]', () => {
     await waitFor(() => {
       const pre = container.querySelector(imageClassName)!;
       fireEvent.click(pre);
-      expect(document.getElementsByClassName(imageGalleryClassName).length).toBe(2);
-      expect(clickFn.mock.calls.length).toBe(1);
     });
+    await waitFor(() => {
+      expect(document.getElementsByClassName(imageGalleryClassName).length).toBe(2);
+    });
+    expect(clickFn.mock.calls.length).toBe(1);
   });
   test('should render when set showCount', async () => {
     const { container } = renderImage(imageGroup());
