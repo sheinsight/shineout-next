@@ -1,6 +1,6 @@
 ## 3.9.15-beta.2
 2026-05-21
-### 💎 Enhancement
+### 🚀 Performance
 - 优化 `Image` 组件点击预览弹窗的渲染性能，避免同步阻塞主线程 ([#1716](https://github.com/sheinsight/shineout-next/pull/1716))
 
 ## 3.9.7-beta.4
