@@ -1,3 +1,11 @@
+## 3.9.15-beta.3
+2026-05-22
+
+### 🐞 BugFix
+
+- 修复外部 reset 样式将 svg 设为 block 时，`Empty` 图标无法水平居中的问题 ([#1717](https://github.com/sheinsight/shineout-next/pull/1717))
+
+
 ## 3.8.3-beta.2
 2025-09-15
 

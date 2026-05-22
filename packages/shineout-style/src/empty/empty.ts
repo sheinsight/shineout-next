@@ -16,6 +16,9 @@ const emptyStyle: JsStyles<keyof EmptyClasses> = {
   image: {
     marginBottom: 8,
     lineHeight: 1,
+    '& > svg': {
+      display: 'inline-block',
+    },
     '& img': {
       width: 100,
       height: 75,
