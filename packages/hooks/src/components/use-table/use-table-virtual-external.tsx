@@ -17,6 +17,7 @@ const useTableVirtualExternal = (props: UseTableVirtualExternalProps) => {
   const [headerOffset, setHeaderOffset] = useState(0);
   const externalStickyRef = useRef<HTMLDivElement>(null);
   const tableOffsetRef = useRef<number>(0);
+  const stickyCompensationTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleExternalScroll = usePersistFn(() => {
     if (props.disabled) return;
@@ -63,6 +64,25 @@ const useTableVirtualExternal = (props: UseTableVirtualExternalProps) => {
     }
     if (max > 0 && scrollTop > max) {
       scrollTop = max;
+    }
+
+    // 补偿 sticky 失效：滚动停止后设置补偿值，避免滚动中抖动
+    if (externalStickyRef.current && props.externalStickyHeader) {
+      const stickyDivFullHeight = externalStickyRef.current.offsetHeight;
+      const stickyBreakPoint = sumHeight - stickyDivFullHeight;
+
+      if (stickyCompensationTimer.current) {
+        clearTimeout(stickyCompensationTimer.current);
+      }
+      externalStickyRef.current.style.setProperty('--sticky-compensation', '0px');
+
+      if (rawScrollTop > stickyBreakPoint && stickyBreakPoint > 0) {
+        const el = externalStickyRef.current;
+        stickyCompensationTimer.current = setTimeout(() => {
+          const compensation = rawScrollTop - stickyBreakPoint;
+          el.style.setProperty('--sticky-compensation', `${compensation}px`);
+        }, 150);
+      }
     }
 
     props.updateIndexAndTopFromTop(scrollTop);
