@@ -101,6 +101,34 @@ const useTableVirtualExternal = (props: UseTableVirtualExternalProps) => {
     };
   }, [props.disabled, props.dataLength]);
 
+  // 动态控制 overflowX：当 table 仅因亚像素舍入比容器宽 1px 时隐藏滚动条，
+  // 容器真正变小（如 resize）需要横滚时恢复 auto
+  useEffect(() => {
+    const stickyEl = externalStickyRef.current;
+    if (!stickyEl) return;
+
+    const checkOverflowX = () => {
+      const overflow = stickyEl.scrollWidth - stickyEl.clientWidth;
+      const next = overflow <= 1 ? 'hidden' : 'auto';
+      if (stickyEl.style.overflowX !== next) {
+        stickyEl.style.overflowX = next;
+      }
+    };
+
+    checkOverflowX();
+
+    const ro = new ResizeObserver(checkOverflowX);
+    ro.observe(stickyEl);
+
+    const mo = new MutationObserver(checkOverflowX);
+    mo.observe(stickyEl, { childList: true, subtree: true, attributes: true, attributeFilter: ['style'] });
+
+    return () => {
+      ro.disconnect();
+      mo.disconnect();
+    };
+  }, [props.disabled]);
+
   return {
     externalStickyRef,
     headerOffset,
