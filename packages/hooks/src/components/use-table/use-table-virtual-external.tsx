@@ -11,6 +11,8 @@ interface UseTableVirtualExternalProps {
   tableRef?: React.RefObject<HTMLDivElement>;
   getContentHeight: (index: number) => number;
   updateIndexAndTopFromTop: (scrollTop: number) => void;
+  scrollHeight: number;
+  setScrollHeight: (height: number) => void;
 }
 
 const useTableVirtualExternal = (props: UseTableVirtualExternalProps) => {
@@ -18,6 +20,7 @@ const useTableVirtualExternal = (props: UseTableVirtualExternalProps) => {
   const externalStickyRef = useRef<HTMLDivElement>(null);
   const tableOffsetRef = useRef<number>(0);
   const stickyCompensationTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const heightSyncTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleExternalScroll = usePersistFn(() => {
     if (props.disabled) return;
@@ -48,19 +51,42 @@ const useTableVirtualExternal = (props: UseTableVirtualExternalProps) => {
     const sumHeight = props.getContentHeight(props.dataLength - 1);
     const viewportHeight = externalStickyRef.current?.clientHeight || container.clientHeight;
 
+    // 物理可滚动范围：基于当前外层 div 高度（滚动中不变）
+    const physicalMax = props.scrollHeight - viewportHeight;
+
+    // 滚动停止后才同步外层 div 高度，防止滚动中 div 变高导致滑块倒退
+    if (sumHeight !== props.scrollHeight) {
+      if (heightSyncTimer.current) clearTimeout(heightSyncTimer.current);
+      heightSyncTimer.current = setTimeout(() => {
+        props.setScrollHeight(sumHeight);
+      }, 200);
+    }
+
     let scrollTop: number;
     let max: number;
     if (props.externalStickyHeader) {
       max = sumHeight - props.tfootHeight - viewportHeight;
-      scrollTop = rawScrollTop;
+      if (physicalMax > 0 && max > 0) {
+        const rate = Math.min(rawScrollTop / physicalMax, 1);
+        scrollTop = rate * max;
+      } else {
+        scrollTop = rawScrollTop;
+      }
     } else {
       const newHeaderOffset = Math.min(rawScrollTop, props.theadHeight);
       if (newHeaderOffset !== headerOffset) {
         setHeaderOffset(newHeaderOffset);
       }
       max = sumHeight - props.theadHeight - props.tfootHeight - viewportHeight;
-      scrollTop = rawScrollTop - props.theadHeight;
-      if (scrollTop < 0) scrollTop = 0;
+      const adjustedRaw = rawScrollTop - props.theadHeight;
+      const physicalMaxBody = physicalMax - props.theadHeight;
+      if (physicalMaxBody > 0 && max > 0) {
+        const rate = Math.min(Math.max(adjustedRaw, 0) / physicalMaxBody, 1);
+        scrollTop = rate * max;
+      } else {
+        scrollTop = adjustedRaw;
+        if (scrollTop < 0) scrollTop = 0;
+      }
     }
     if (max > 0 && scrollTop > max) {
       scrollTop = max;
@@ -98,6 +124,7 @@ const useTableVirtualExternal = (props: UseTableVirtualExternalProps) => {
     handleExternalScroll();
     return () => {
       scrollTarget.removeEventListener('scroll', handleExternalScroll);
+      if (heightSyncTimer.current) clearTimeout(heightSyncTimer.current);
     };
   }, [props.disabled, props.dataLength]);
 
