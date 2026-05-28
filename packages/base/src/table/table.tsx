@@ -603,14 +603,14 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
               style={{ position: 'sticky', top: stickyTopOffset, height: stickyDivHeight, overflowX: 'auto', overflowY: 'hidden' }}
             >
               {!props.hideHeader && (
-                <div style={{ position: 'relative', zIndex: 1, marginTop: props.sticky ? 0 : -virtualInfo.headerOffset, transform: 'translateY(var(--sticky-compensation, 0px))', willChange: 'transform' }}>
+                <div style={{ position: 'relative', zIndex: 1, marginTop: props.sticky ? 0 : -virtualInfo.headerOffset, transform: 'translateY(var(--sticky-compensation, 0px))' }}>
                   {$headTable}
                 </div>
               )}
 
               {!!props.data?.length && (
                 <table
-                  style={{ ...tableStyle, transform: virtualInfo.translateStyle, willChange: 'transform' }}
+                  style={{ ...tableStyle, transform: virtualInfo.translateStyle }}
                   ref={tbodyRef}
                 >
                   {Group}

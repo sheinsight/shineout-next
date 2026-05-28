@@ -137,7 +137,8 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
 
     context.cachedHeight[index] = height;
 
-    if (context.shouldUpdateHeight) {
+    // 外部滚动模式下不由 setRowHeight 更新高度，由 handleExternalScroll debounce 同步
+    if (context.shouldUpdateHeight && !props.virtualScrollContainer) {
       setHeight(getContentHeight(props.data.length - 1));
     }
     const { preIndex } = context;
@@ -420,6 +421,8 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     tableRef: props.tableRef,
     getContentHeight,
     updateIndexAndTopFromTop,
+    scrollHeight,
+    setScrollHeight: setHeight,
   });
 
   return {
