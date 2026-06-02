@@ -1330,7 +1330,7 @@ exports[`Collapse[Base] should render correctly about simple panel 1`] = `
     style="max-width: 1180px;"
   >
     <div
-      class="soui-collapseItem-wrapper soui-collapseItem-active soui-collapseItem-expand-left soui-collapseItem-border-less"
+      class="soui-collapseItem-wrapper soui-collapseItem-active soui-collapseItem-expand-left soui-collapseItem-border-less soui-collapseItem-simple"
     >
       <div
         class="soui-collapseItem-header soui-collapseItem-region"
@@ -1375,7 +1375,7 @@ exports[`Collapse[Base] should render correctly about simple panel 1`] = `
       </div>
     </div>
     <div
-      class="soui-collapseItem-wrapper soui-collapseItem-expand-left soui-collapseItem-border-less"
+      class="soui-collapseItem-wrapper soui-collapseItem-expand-left soui-collapseItem-border-less soui-collapseItem-simple"
     >
       <div
         class="soui-collapseItem-header soui-collapseItem-region"
@@ -1420,7 +1420,7 @@ exports[`Collapse[Base] should render correctly about simple panel 1`] = `
       </div>
     </div>
     <div
-      class="soui-collapseItem-wrapper soui-collapseItem-expand-left soui-collapseItem-border-less"
+      class="soui-collapseItem-wrapper soui-collapseItem-expand-left soui-collapseItem-border-less soui-collapseItem-simple"
     >
       <div
         class="soui-collapseItem-header soui-collapseItem-region"
