@@ -29,6 +29,7 @@ const CollapseItem = (props: CollapseItemProps) => {
     title,
     extra,
     contentStyle,
+    simple,
   } = props;
 
   const [animation, setAnimation] = useState(false);
@@ -80,6 +81,7 @@ const CollapseItem = (props: CollapseItemProps) => {
     resolvedExpandIcon && expandIconPosition === 'right' && jssStyle?.collapseItem.expandRight,
     (disabled || triggerRegion === 'disabled') && jssStyle?.collapseItem.disabled,
     !border && jssStyle?.collapseItem.borderLess,
+    simple && jssStyle?.collapseItem.simple,
   );
   const collapseItemHeaderClassName = classNames(
     jssStyle?.collapseItem.header,

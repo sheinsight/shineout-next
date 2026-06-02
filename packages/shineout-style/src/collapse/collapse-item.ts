@@ -144,6 +144,13 @@ const collapseItemStyle: JsStyles<CollapseItemClassType> = {
   expandRight: {
     [getTokenName('collapseContentPaddingRight')]: `calc(${Token.collapseWrapperPaddingX} + ${Token.collapseHeaderIconWidth} + ${Token.collapseHeaderGap})`,
   },
+  simple: {
+    '& $contentMain': {
+      paddingTop: 0,
+      paddingBottom: 0,
+      backgroundColor: 'transparent',
+    },
+  },
   region: {
     cursor: 'pointer',
     '& $icon': {
