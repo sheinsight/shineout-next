@@ -644,6 +644,7 @@ exports[`Input[Base] should render correctly about innerTitle 1`] = `
         >
           <input
             class="soui-input-input"
+            placeholder="input something"
             value=""
           />
         </div>
@@ -679,6 +680,7 @@ exports[`Input[Base] should render correctly about innerTitle 1`] = `
         >
           <input
             class="soui-input-input"
+            placeholder="input something"
             value=""
           />
         </div>
@@ -714,6 +716,7 @@ exports[`Input[Base] should render correctly about innerTitle 1`] = `
         >
           <input
             class="soui-input-input"
+            placeholder="input something"
             value=""
           />
         </div>
