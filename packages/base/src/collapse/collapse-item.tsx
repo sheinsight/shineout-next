@@ -74,6 +74,8 @@ const CollapseItem = (props: CollapseItemProps) => {
     className,
     jssStyle?.collapseItem.wrapper,
     judgeExpanded && jssStyle?.collapseItem.active,
+    expandIconPosition === 'left' && jssStyle?.collapseItem.expandLeft,
+    expandIconPosition === 'right' && jssStyle?.collapseItem.expandRight,
     (disabled || triggerRegion === 'disabled') && jssStyle?.collapseItem.disabled,
     !border && jssStyle?.collapseItem.borderLess,
   );
