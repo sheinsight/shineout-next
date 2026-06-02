@@ -50,4 +50,11 @@ export interface CollapseProps
    * @version 3.6.0
    */
   animation?: boolean;
+  /**
+   * @en Simple mode for all items, remove content top/bottom padding and background color
+   * @cn 所有子面板开启简洁模式，移除内容区域的上下内边距和背景色
+   * @default false
+   * @version 3.9.16
+   */
+  simple?: boolean;
 }

@@ -1420,7 +1420,7 @@ exports[`Collapse[Base] should render correctly about simple panel 1`] = `
       </div>
     </div>
     <div
-      class="soui-collapseItem-wrapper soui-collapseItem-expand-left soui-collapseItem-border-less soui-collapseItem-simple"
+      class="soui-collapseItem-wrapper soui-collapseItem-expand-left soui-collapseItem-border-less"
     >
       <div
         class="soui-collapseItem-header soui-collapseItem-region"
@@ -1448,7 +1448,7 @@ exports[`Collapse[Base] should render correctly about simple panel 1`] = `
         <div
           class="soui-collapseItem-title"
         >
-          This is panel header 3
+          This is panel header 3 (simple=false)
         </div>
       </div>
       <div
