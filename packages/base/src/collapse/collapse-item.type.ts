@@ -25,6 +25,7 @@ export interface CollapseItemClasses {
   activeTransformRight: string;
   region: string;
   borderLess: string;
+  simple: string;
 }
 
 export interface CollapseItemProps
@@ -59,6 +60,13 @@ export interface CollapseItemProps
    * @cn 折叠面板内容区域样式
    */
   contentStyle?: CSSProperties;
+  /**
+   * @en Simple mode, remove content top/bottom padding and background color
+   * @cn 简洁模式，移除内容区域的上下内边距和背景色
+   * @default false
+   * @version 3.9.16
+   */
+  simple?: boolean;
   /**
    * @en The content inside the collapse panel
    * @cn 折叠面板内的内容

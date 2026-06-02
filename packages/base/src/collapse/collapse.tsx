@@ -21,6 +21,7 @@ const Collapse = (props: CollapseProps) => {
     expandIcon,
     border = true,
     animation = true,
+    simple: simpleProp = false,
   } = props;
 
   const { active, onChange } = useCollapse({
@@ -44,6 +45,7 @@ const Collapse = (props: CollapseProps) => {
     extraPosition,
     border,
     animation,
+    simple: simpleProp,
     expandIcon:
       expandIcon !== undefined
         ? expandIcon
