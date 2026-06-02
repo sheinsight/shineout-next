@@ -1,12 +1,14 @@
 import { JsStyles } from '../jss-style';
 import Token from '@sheinx/theme';
 import { CollapseItemClasses } from '@sheinx/base';
+import { getTokenName } from '@sheinx/theme';
 
 export type CollapseItemClassType = keyof CollapseItemClasses;
 
 const collapseItemStyle: JsStyles<CollapseItemClassType> = {
   rootClass: {},
   wrapper: {
+    [getTokenName('collapseContentPaddingLeft')]: Token.collapseWrapperPaddingX,
     boxSizing: 'border-box',
     borderBottom: `${Token.collapseWrapperBorderSize} solid ${Token.collapseHeaderBorderColor}`,
     '&:last-child': {
@@ -136,6 +138,12 @@ const collapseItemStyle: JsStyles<CollapseItemClassType> = {
     },
   },
   expanded: {},
+  expandLeft: {
+    [getTokenName('collapseContentPaddingLeft')]: `calc(${Token.collapseWrapperPaddingX} + ${Token.collapseHeaderIconWidth} + ${Token.collapseHeaderGap})`,
+  },
+  expandRight: {
+    [getTokenName('collapseContentPaddingRight')]: `calc(${Token.collapseWrapperPaddingX} + ${Token.collapseHeaderIconWidth} + ${Token.collapseHeaderGap})`,
+  },
   region: {
     cursor: 'pointer',
     '& $icon': {

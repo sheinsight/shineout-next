@@ -16,6 +16,8 @@ export interface CollapseItemClasses {
   extra: string;
   content: string;
   expanded: string;
+  expandLeft: string;
+  expandRight: string;
   contentMain: string;
   noIcon: string;
   disabled: string;
