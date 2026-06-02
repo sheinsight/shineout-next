@@ -43,6 +43,13 @@ const CollapseItem = (props: CollapseItemProps) => {
       disabled,
       onChange,
     });
+
+  const resolvedExpandIcon = showExpandIcon
+    ? expandIcon !== undefined
+      ? expandIcon
+      : parentExpandIcon
+    : null;
+
   const headerIconItem = (direction: 'left' | 'right') => {
     const collapseItemIconClassName = classNames(
       jssStyle?.collapseItem.icon,
@@ -52,14 +59,9 @@ const CollapseItem = (props: CollapseItemProps) => {
       //   ? jssStyle?.collapseItem.activeTransformRight
       //   : jssStyle?.collapseItem.activeTransform,
     );
-    const headerIcon = showExpandIcon
-      ? expandIcon !== undefined
-        ? expandIcon
-        : parentExpandIcon
-      : null;
     return (
-      headerIcon && (
-        <div dir={config.direction} {...getHeaderIconProps({ className: collapseItemIconClassName })} role="button">{headerIcon}</div>
+      resolvedExpandIcon && (
+        <div dir={config.direction} {...getHeaderIconProps({ className: collapseItemIconClassName })} role="button">{resolvedExpandIcon}</div>
       )
     );
   };
@@ -74,8 +76,8 @@ const CollapseItem = (props: CollapseItemProps) => {
     className,
     jssStyle?.collapseItem.wrapper,
     judgeExpanded && jssStyle?.collapseItem.active,
-    expandIconPosition === 'left' && jssStyle?.collapseItem.expandLeft,
-    expandIconPosition === 'right' && jssStyle?.collapseItem.expandRight,
+    resolvedExpandIcon && expandIconPosition === 'left' && jssStyle?.collapseItem.expandLeft,
+    resolvedExpandIcon && expandIconPosition === 'right' && jssStyle?.collapseItem.expandRight,
     (disabled || triggerRegion === 'disabled') && jssStyle?.collapseItem.disabled,
     !border && jssStyle?.collapseItem.borderLess,
   );
