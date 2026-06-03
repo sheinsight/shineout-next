@@ -84,7 +84,9 @@ const replaceCssVarValue = (innerHTML: string, cssvar: string, targetValue?: str
   const regex = new RegExp(`(${cssvar}:.*?;)`);
   // 如果没有 token ，则向后插入新的 token
   if (innerHTML.indexOf(cssvar) === -1) {
-    return innerHTML.slice(0, -1) + `;${cssvar}: ${targetValue};` + innerHTML.slice(-1);
+    const before = innerHTML.slice(0, -1);
+    const separator = before.endsWith('{') ? '' : ';';
+    return before + `${separator}${cssvar}: ${targetValue};` + innerHTML.slice(-1);
   }
   return innerHTML.replace(regex, `${cssvar}: ${targetValue};`);
 };
