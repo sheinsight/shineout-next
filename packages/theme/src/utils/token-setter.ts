@@ -84,7 +84,9 @@ const replaceCssVarValue = (innerHTML: string, cssvar: string, targetValue?: str
   const regex = new RegExp(`(${cssvar}:.*?;)`);
   // 如果没有 token ，则向后插入新的 token
   if (innerHTML.indexOf(cssvar) === -1) {
-    return innerHTML.slice(0, -1) + `;${cssvar}: ${targetValue};` + innerHTML.slice(-1);
+    const before = innerHTML.slice(0, -1);
+    const separator = before.endsWith('{') ? '' : ';';
+    return before + `${separator}${cssvar}: ${targetValue};` + innerHTML.slice(-1);
   }
   return innerHTML.replace(regex, `${cssvar}: ${targetValue};`);
 };
@@ -120,6 +122,25 @@ const setToken = (options?: Options) => {
   const extraToken = getExtraToken(prefix);
 
   if (update && token) {
+    // 如果标签不存在，先初始化选择器结构并插入 DOM
+    if (!cacheTag) {
+      tag.setAttribute('data-token', tokenName || '');
+      tag.setAttribute('data-token-id', id);
+      tag.setAttribute('data-token-selector', selector);
+      tag.innerHTML = `${selector} {}`;
+
+      if (!target) {
+        document.head.appendChild(tag);
+      } else if (target instanceof HTMLElement) {
+        target.appendChild(tag);
+      } else if (typeof target === 'string') {
+        const el = document.getElementById(target);
+        if (el instanceof HTMLElement) {
+          el.appendChild(tag);
+        }
+      }
+    }
+
     Object.keys(token).forEach((key: string) => {
       const cssvar = isCustomToken(key) ? key : `--${prefix}-${camelCaseToDash(key)}`;
       const targetValue = token[key as keyof Tokens];
