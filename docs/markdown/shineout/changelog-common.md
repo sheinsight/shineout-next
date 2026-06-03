@@ -1,3 +1,8 @@
+## 3.9.16-beta.3
+2026-06-03
+### 🐞 BugFix
+- 修复 `setToken` 使用增量更新模式（`update: true`）配合自定义选择器时，样式变量无法生效的问题 ([#1726](https://github.com/sheinsight/shineout-next/pull/1726))
+
 ## 3.9.14-beta.4
 2026-04-24
 ### 💅 Style
