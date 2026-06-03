@@ -1,3 +1,8 @@
+## 3.9.16-beta.4
+2026-06-03
+### 🐞 BugFix
+- 修复所有含弹出层的组件（`Select`、`TreeSelect`、`Cascader`、`DatePicker`、`Dropdown` 等）在页面根容器使用 `position: fixed` 布局时，弹出层不可见的问题 ([#1727](https://github.com/sheinsight/shineout-next/pull/1727))
+
 ## 3.9.16-beta.3
 2026-06-03
 ### 🐞 BugFix
