@@ -342,7 +342,15 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     const { scrollTop, scrollLeft } = getScrollPosition(scrollElRef?.current);
 
     if (needCheck && scrollElRef?.current && scrollElRef.current?.contains(parentElRef.current)) {
-      const visibleRect = scrollElRef.current?.getBoundingClientRect() || {};
+      const rawVisibleRect = scrollElRef.current?.getBoundingClientRect() || {};
+      // 当 scrollElRef 是 html/body 时，若内容全为 fixed 定位，其 getBoundingClientRect 高度会变为 0
+      // 此时应使用 window.innerHeight/innerWidth 作为可视区域判断依据
+      const isDocumentRoot =
+        scrollElRef.current === document.documentElement || scrollElRef.current === document.body;
+      const visibleRect =
+        isDocumentRoot && rawVisibleRect.height === 0
+          ? { top: 0, left: 0, bottom: window.innerHeight, right: window.innerWidth }
+          : rawVisibleRect;
       if (
         rect.bottom < visibleRect.top ||
         rect.top > (visibleRect.bottom + scrollTop) ||

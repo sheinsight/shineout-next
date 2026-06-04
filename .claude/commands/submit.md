@@ -1,12 +1,12 @@
 将当前分支的所有变更提交并创建 GitHub PR。
 
 步骤：
-
-1. **检查状态**：运行 `git status` 和 `git diff main..HEAD --stat` 了解当前变更情况
-2. **确认分支**：如果当前已在非 main 的功能分支上，直接使用该分支；否则根据变更内容自动创建一个语义化的新分支（格式如 `fix/xxx`、`feat/xxx`）
-3. **暂存并提交**：`git add .` 暂存所有文件，然后用规范的 commit message 提交（遵循项目已有的 commit 风格）
-4. **推送远程**：`git push -u origin <branch-name>`
-5. **创建 PR**：使用 `gh pr create --base main`，PR 标题和描述应从用户视角概括变更内容
+1. **创建功能分支**：当前分支如果不是功能分支，先根据变更内容创建一个新的功能分支（如 `fix/xxx`、`feat/xxx`）
+2. **检查状态**：运行 `git status` 和 `git diff main..HEAD --stat` 了解当前变更情况
+3. **确认分支**：如果当前已在非 main 的功能分支上，直接使用该分支；否则根据变更内容自动创建一个语义化的新分支（格式如 `fix/xxx`、`feat/xxx`）
+4. **暂存并提交**：`git add .` 暂存所有文件，然后用规范的 commit message 提交（遵循项目已有的 commit 风格）
+5. **推送远程**：`git push -u origin <branch-name>`
+6. **创建 PR**：使用 `gh pr create --base main`，PR 标题和描述应从用户视角概括变更内容，并包含必要的细节（如相关 issue、变更类型等）
 
 注意事项：
 - 每一步执行前先确认上一步成功
