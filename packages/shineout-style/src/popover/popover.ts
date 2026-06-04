@@ -6,6 +6,7 @@ import { tooltipAnimation, arrowClipPath } from '../tooltip/tooltip';
 export type PopoverClassType = keyof PopoverClasses;
 
 const arrowHeight = 8;
+const arrowWidth = arrowHeight * 2;
 
 const cssvar = '--popover-arrow-gap';
 const hideArrowGap = `var(${cssvar}, 10px)`;
@@ -29,7 +30,7 @@ const popoverStyle: JsStyles<PopoverClassType> = {
       zIndex: 1,
       position: 'absolute',
       overflow: 'visible',
-      width: arrowHeight * 2,
+      width: arrowWidth,
       height: arrowHeight,
       pointerEvents: 'none',
       transformOrigin: 'center center',
@@ -265,6 +266,9 @@ const popoverStyle: JsStyles<PopoverClassType> = {
     display: 'inline-block',
     maxWidth: '320px',
     padding: `${token.popoverPaddingY} ${token.popoverPaddingX}`,
+    '$arrow + &': {
+      minWidth: `calc(${token.popoverPaddingX} * 2 + ${arrowWidth}px)`,
+    }
   },
 
   confirm: {

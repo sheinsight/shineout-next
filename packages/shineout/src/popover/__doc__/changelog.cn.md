@@ -1,3 +1,9 @@
+## 3.9.16-beta.5
+2026-06-04
+### 💅 Style
+- 优化 `Popover` 内容区域最小宽度，防止文本内容过短时箭头与文本区域在视觉上错位的问题 ([#1728](https://github.com/sheinsight/shineout-next/pull/1728))
+
+
 ## 3.9.11-beta.9
 2026-03-13
 ### 🐞 BugFix
