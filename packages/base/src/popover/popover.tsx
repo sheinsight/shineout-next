@@ -1,9 +1,9 @@
 import { getClosestScrollContainer, usePersistFn, usePopup, useRender, util } from '@sheinx/hooks';
 import AbsoluteList from '../absolute-list';
 import React, { useEffect } from 'react';
-import { PopoverProps, PopoverPosition } from './popover.type';
+import { PopoverProps, PopoverPosition, PopoverSemanticKey } from './popover.type';
 import { useConfig } from '../config';
-import classNames from 'classnames';
+import { useSemantic } from '../common/use-semantic';
 
 const emptyEvent = <U extends { stopPropagation: () => void }>(e: U) => e.stopPropagation();
 
@@ -30,6 +30,10 @@ const Popover = (props: PopoverProps) => {
   const animation = props.animation ?? config.popover?.animation ?? true;
 
   const popoverStyle = jssStyle?.popover?.();
+
+  // Semantic DOM 访问器：合并用户 classNames / styles 与内部 JSS class
+  // 见 /docs/rfc/0001-semantic-dom.md
+  const sem = useSemantic<PopoverSemanticKey>(props.classNames, props.styles);
 
   const render = useRender();
 
@@ -179,15 +183,15 @@ const Popover = (props: PopoverProps) => {
       setSizingStyle={props.boundary ? setContentStyle : undefined}
     >
       <div
-        className={classNames(
+        className={sem('root', [
           className,
           popoverStyle?.rootClass,
           popoverStyle?.wrapper,
           open && popoverStyle?.wrapperOpen,
           !showArrow && popoverStyle?.hideArrow,
           animation === false && popoverStyle?.wrapperNoAnimation,
-        )}
-        style={containerStyle}
+        ]).className}
+        style={{ ...containerStyle, ...sem('root').style }}
         {...util.getDataAttribute({ position: props.adjust ? positionState : position, type })}
         {...props.attributes}
         ref={popupRef}
@@ -197,17 +201,18 @@ const Popover = (props: PopoverProps) => {
       >
         {showArrow && (
           <div
-            className={classNames(popoverStyle?.arrow, props.arrowClass)}
+            className={sem('arrow', [popoverStyle?.arrow, props.arrowClass]).className}
+            style={sem('arrow').style}
             dir={config.direction}
           />
         )}
         <div
-          style={{ ...contentStyle, ...style }}
+          style={{ ...contentStyle, ...style, ...sem('content').style }}
           onClick={emptyEvent}
-          className={classNames(
+          className={sem('content', [
             popoverStyle?.content,
             (typeof childrened === 'string' || props.useTextStyle) && popoverStyle?.text,
-          )}
+          ]).className}
         >
           <Provider value={providerValue}>{childrened}</Provider>
         </div>
