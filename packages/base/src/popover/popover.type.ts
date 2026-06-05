@@ -3,6 +3,17 @@ import { CommonType } from '../common/type';
 import { BasePopupProps } from '@sheinx/hooks';
 import { AlertClasses } from '../alert/alert.type';
 import { ButtonClasses } from '../button/button.type';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
+
+/**
+ * Popover Semantic DOM key 列表
+ * - root:    最外层弹层容器（与 className 等价）
+ * - arrow:   箭头
+ * - content: 弹层内容区
+ *
+ * @see /docs/rfc/0001-semantic-dom.md
+ */
+export type PopoverSemanticKey = 'root' | 'arrow' | 'content';
 
 export interface PopoverClasses {
   rootClass: string;
@@ -164,8 +175,21 @@ export interface PopoverProps extends Pick<CommonType, 'className' | 'style'> {
   /**
    * @en The class name of the arrow
    * @cn 箭头的 class 名称
+   * @deprecated 推荐使用 `classNames.arrow`
    */
   arrowClass?: string;
+  /**
+   * @en Semantic DOM classNames. Allows custom class on internal DOM nodes (root / arrow / content).
+   * @cn Semantic DOM 类名定制。允许对组件内部 DOM 节点（root / arrow / content）追加自定义 class。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<PopoverSemanticKey>;
+  /**
+   * @en Semantic DOM styles. Allows inline style on internal DOM nodes (root / arrow / content).
+   * @cn Semantic DOM 样式定制。允许对组件内部 DOM 节点（root / arrow / content）追加内联 style。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<PopoverSemanticKey>;
   /**
    * @private 属性
    */
