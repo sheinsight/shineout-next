@@ -1,3 +1,11 @@
+## 3.9.16-beta.5
+2026-06-08
+
+### 🐞 BugFix
+
+- 修复 `Upload` 自定义 `request` 上传方法时，回调参数中 `onSuccess` 缺失导致无法手动通知上传成功的问题 ([#1729](https://github.com/sheinsight/shineout-next/pull/1729))
+
+
 ## 3.9.12-beta.3
 2026-03-23
 
