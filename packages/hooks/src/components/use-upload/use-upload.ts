@@ -118,6 +118,7 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
       headers: props.headers,
       responseType: props.responseType,
       onStart: props.onStart,
+      onSuccess: props.onSuccess,
       onProgress: (e: ProgressEvent & { percent?: number }, msg?: string) => {
         const percent = typeof e.percent === 'number' ? e.percent : (e.loaded / e.total) * 100;
         if (throttle && percent !== 100) return;

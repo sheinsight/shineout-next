@@ -259,7 +259,7 @@ export interface UploadOptions<T> {
    * @en onSuccess
    * @cn 上传成功事件
    */
-  onSuccess?: (res?: string, file?: File, data?: any, xhr?: XhrResult) => T | Error;
+  onSuccess?: (res: any, file: File, data?: any, xhr?: XhrResult) => T | Error;
   /**
    * @en params
    * @cn 上传参数
