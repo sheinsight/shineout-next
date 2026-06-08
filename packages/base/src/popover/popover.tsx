@@ -33,9 +33,14 @@ const Popover = (props: PopoverProps) => {
 
   const popoverStyle = jssStyle?.popover?.();
 
-  // Semantic DOM 访问器：合并用户 classNames / styles 与内部 JSS class
-  // 见 /docs/rfc/0001-semantic-dom.md
-  const sem = useSemantic<PopoverSemanticKey>(props.classNames, props.styles);
+  // Semantic DOM 访问器：合并用户 classNames / styles、setConfig 全局兜底与内部 JSS class
+  // 优先级（高→低）：props > setConfig({ popover: { ... } }) > 内部默认
+  // 见 /docs/rfc/0001-semantic-dom.md §4.4
+  const sem = useSemantic<PopoverSemanticKey>(
+    props.classNames,
+    props.styles,
+    config.popover,
+  );
 
   const render = useRender();
 
