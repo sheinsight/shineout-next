@@ -4,4 +4,5 @@ export type {
   SemanticClassNames,
   SemanticStyles,
   SemanticAccessor,
+  SemanticGlobalConfig,
 } from './use-semantic';

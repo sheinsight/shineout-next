@@ -2,6 +2,8 @@ import { util } from '@sheinx/hooks';
 import { create, snapshot } from '@shined/reactive';
 import { LanType, Direction } from './locale/Props';
 import { SpinNameType } from '../spin/spin.type';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
+import type { PopoverSemanticKey } from '../popover/popover.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -41,6 +43,22 @@ export type PopoverConfig = {
    * @cn Popover组件的全局默认动画设置
    */
   animation?: boolean;
+  /**
+   * @en Global Semantic DOM classNames for Popover (applies to all Popover instances).
+   *     Lower priority than component-level `classNames` prop.
+   * @cn Popover 全局 Semantic DOM 类名（作用于所有 Popover 实例）。
+   *     优先级低于组件 prop 上的 `classNames`。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<PopoverSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Popover (applies to all Popover instances).
+   *     Lower priority than component-level `styles` prop.
+   * @cn Popover 全局 Semantic DOM 样式（作用于所有 Popover 实例）。
+   *     优先级低于组件 prop 上的 `styles`。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<PopoverSemanticKey>;
 }
 
 /**
