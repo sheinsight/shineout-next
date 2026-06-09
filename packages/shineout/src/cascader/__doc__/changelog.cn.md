@@ -1,3 +1,9 @@
+## 3.9.16-beta.7
+2026-06-09
+
+### 💅 Style
+- 修复 `Cascader` 节点子项异步加载中时被误判为末级节点，导致该级面板宽度短暂抖动的问题 ([#1732](https://github.com/sheinsight/shineout-next/pull/1732))
+
 ## 3.9.16-beta.6
 2026-06-09
 
