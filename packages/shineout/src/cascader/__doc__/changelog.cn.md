@@ -1,3 +1,9 @@
+## 3.9.16-beta.6
+2026-06-09
+
+### 🐞 BugFix
+- 修复 `Cascader` 多选模式（`mode=3`）下，先勾选父节点再通过 `loader` 异步加载子节点时，新加载出的子节点未自动呈现勾选状态的问题 ([#1731](https://github.com/sheinsight/shineout-next/pull/1731))
+
 ## 3.9.12-beta.13
 2026-03-30
 

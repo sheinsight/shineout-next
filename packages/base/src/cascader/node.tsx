@@ -1,6 +1,6 @@
-import { useState, useRef, useContext } from 'react';
+import { useState, useRef, useContext, useEffect } from 'react';
 import classNames from 'classnames';
-import { KeygenResult, util, FilterContext } from '@sheinx/hooks';
+import { KeygenResult, util, FilterContext, useRender } from '@sheinx/hooks';
 import { CascaderClasses } from './cascader.type';
 import { CascaderNodeProps } from './node.type';
 import Checkbox from '../checkbox';
@@ -36,6 +36,22 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
   const checkboxRef = useRef<HTMLElement>();
   const hasHandleSelectRef = useRef(false);
   const isDisabled = datum.isDisabled(id);
+
+  // 仅在使用 loader 的场景下，订阅本节点 valueMap 状态变化。
+  // 解决场景：勾选父节点 → loader 异步带入新子节点 → 子节点先以未勾选状态完成 render，
+  // 之后 useTree.setData → initValue 才把子节点 valueMap 同步为父节点的勾选态；
+  // 若不订阅，Checkbox 会停在未勾选状态，直到下次整体重渲才纠正。
+  // 不带 loader 的同步数据场景不存在该时序窗口，因此用 hasLoader 守卫避免无谓订阅。
+  const hasLoader = !!loader;
+  const forceUpdate = useRender();
+  useEffect(() => {
+    if (!hasLoader) return;
+    datum.bindUpdate(id, forceUpdate);
+    return () => {
+      datum.unBindUpdate(id);
+    };
+  }, [id, hasLoader]);
+
   const children = data[childrenKey] as DataItem[];
   const hasChildren = children && children.length > 0;
   const uncertainChildren = loader && !loading && children === undefined;
