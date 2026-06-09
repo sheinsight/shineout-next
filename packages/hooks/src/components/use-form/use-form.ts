@@ -26,11 +26,13 @@ import {
   getAllKeyPaths,
   getParentKeys,
   getCompleteFieldKeys,
+  collectFormRulePaths,
   devUseWarning,
   getFieldId,
   getClosestScrollContainer,
   type FormError,
 } from '../../utils';
+import { validate as validateRuleFn } from '../../utils/validate';
 
 const emptyObj = {};
 
@@ -134,6 +136,34 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
             validate(key, deepGet(context.value, key), context.value, config),
           );
         });
+
+        // ============ 新增：从 props.rules 推导未挂载字段并独立校验 ============
+        // 用于虚拟列表 / 大数据场景：业务方在 <Form rules={{...}}> 里声明的字段，
+        // 即便对应的 Form.Item 当前未挂载（虚拟滚动滚出视口），submit 也应校验。
+        // 仅在"全量校验"（fields 为空，或 ignoreBind 走 submit 路径）时启用。
+        const isFullValidate = !fields || config.ignoreBind;
+        if (isFullValidate && isObject(rules)) {
+          const declared = collectFormRulePaths(rules as ObjectType);
+          for (const item of declared) {
+            // 注意：validateMap[name] 是 Set，unbind 后 Set 可能为空但 key 仍在
+            // 必须判断 Set 真有 validate 函数才算"已挂载并已校验"，否则要补独立校验
+            const mountedSet = context.validateMap[item.name];
+            if (mountedSet && mountedSet.size > 0) continue;
+            if (context.ignoreValidateFields.includes(item.name)) continue;
+            const itemValue = deepGet(context.value, item.name);
+            // 关键：validate 工具函数 *校验失败时是 reject(FormError)*，不是 resolve(error)。
+            // 必须用 .catch 把 reject 转成 resolve(err)，否则会变成 unhandled rejection
+            // 串到外层 Promise.all 把整条提交链炸断（".then() never fires" 问题）
+            const p = validateRuleFn(itemValue, context.value, item.rules, {})
+              .then(() => true as const)
+              .catch((err: Error) => {
+                const fe = wrapFormError(err);
+                context.errors[item.name] = fe;
+                return fe;
+              });
+            validates.push([p]);
+          }
+        }
 
         if (config.type === 'withValue') {
           let validatorValue = context.value;
