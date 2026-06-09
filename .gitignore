@@ -16,3 +16,6 @@ cypress-coverage
 jest-coverage
 packages/shineout/.fatherrc.ts
 .mcp.json
+
+# theme-migration 工具的生成产物（特定输入跑出来的，不入库）
+docs/theme-migration/output/
