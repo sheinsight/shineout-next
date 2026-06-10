@@ -336,3 +336,50 @@ export const clearValue = (obj: ObjectType): any => {
   }
   return undefined;
 };
+
+/**
+ * 遍历 `<Form rules={...}>` 的嵌套 / 路径式声明，收集所有叶子路径（即每个字段对应的 rule 数组）。
+ *
+ * 用于让 submit 时把"在 props.rules 中声明、但 Form.Item 当前未挂载"的字段也纳入校验，
+ * 解决虚拟列表 / 大数据场景未渲染行被漏校验的问题。
+ *
+ * 叶子判定：value 是数组（即 FormItemRule 数组）。
+ * 路径生成规则：
+ *   - 字符串 key 直接拼接：`{ user: { name: [...] } }` → `user.name`
+ *   - 数字 key 转成 bracket：`{ rows: { 0: { name: [...] } } }` → `rows[0].name`
+ *   - 顶层用字符串路径声明：`{ 'rows[0].name': [...] }` → 原样保留为 `rows[0].name`
+ *
+ * @example
+ *   collectFormRulePaths({ rows: { 0: { name: [requiredRule] }, 1: { name: [requiredRule] } } })
+ *   // → [
+ *   //   { name: 'rows[0].name', rules: [requiredRule] },
+ *   //   { name: 'rows[1].name', rules: [requiredRule] },
+ *   // ]
+ */
+export const collectFormRulePaths = (
+  rulesObj: ObjectType,
+  parentKey = '',
+): Array<{ name: string; rules: any }> => {
+  if (!isObject(rulesObj)) return [];
+  const out: Array<{ name: string; rules: any }> = [];
+  for (const key of Object.keys(rulesObj)) {
+    const val = rulesObj[key];
+    let currentKey: string;
+    if (!parentKey) {
+      currentKey = key;
+    } else if (/^\d+$/.test(key)) {
+      // 数字 key 视为数组索引
+      currentKey = `${parentKey}[${key}]`;
+    } else {
+      currentKey = `${parentKey}.${key}`;
+    }
+    if (Array.isArray(val)) {
+      // 叶子：FormItemRule 数组
+      out.push({ name: currentKey, rules: val });
+    } else if (isObject(val)) {
+      // 继续往下钻
+      out.push(...collectFormRulePaths(val, currentKey));
+    }
+  }
+  return out;
+};
