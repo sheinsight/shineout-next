@@ -3,7 +3,7 @@
 - **状态**: Draft
 - **作者**: Tom Zhai
 - **创建日期**: 2026-06-05
-- **关联 PR**: `fix/popover-arrow-min-width` 之上的 PoC 分支
+- **工作分支**: `feat/semantic-dom-rfc`（独立分支，与 popover bug fix 已无关联）
 
 ---
 
@@ -164,7 +164,7 @@ const sem = useSemantic<PopoverSemanticKey>(
 
 ### 4.5 不做的事
 
-- ❌ 不注入 `data-semantic="header"` 这类 `data-*` 属性（与 antd 对齐，保持 DOM 干净；测试钩子继续走 `data-testid` 透传）
+- ❌ 不注入 `data-semantic="header"` 这类 `data-*` 属性（与竞品对齐，保持 DOM 干净；测试钩子继续走 `data-testid` 透传；文档站 hover 高亮通过 §6.1 的"文档站包装层注入 mark class"方案解决）
 - ❌ 一期不支持函数式 `classNames: (info) => Record<K, string>`（待出现明确诉求再做）
 - ❌ 不改 JSS 命名前缀 `soui-` 与现有 hash 机制
 - ❌ 不废弃任何现有 prop
