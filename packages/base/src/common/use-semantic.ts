@@ -1,8 +1,35 @@
 import classnames from 'classnames';
-import type { CSSProperties } from 'react';
+import type { CSSProperties, FC } from 'react';
 
 export type SemanticClassNames<K extends string> = Partial<Record<K, string>>;
 export type SemanticStyles<K extends string> = Partial<Record<K, CSSProperties>>;
+
+/**
+ * Semantic DOM 一个 key 的元数据。供文档站 Semantic tab 等场景展示。
+ */
+export interface SemanticKeyMeta<K extends string = string> {
+  /** 语义 key 名称，如 'root' / 'arrow' / 'content' */
+  key: K;
+  /** 中文说明 */
+  cn: string;
+  /** 英文说明 */
+  en: string;
+}
+
+/**
+ * 组件 Semantic DOM 元数据。
+ * 由 `packages/<chunkModule>/src/<comp>/<comp>.semantic.tsx` 导出，
+ * 文档站构建脚本自动检测并接入 chunk。
+ */
+export interface SemanticSchema<K extends string = string> {
+  /** key 列表（中英说明） */
+  keys: SemanticKeyMeta<K>[];
+  /**
+   * 渲染该组件并把所有 semantic 节点都激活的演示组件。
+   * 文档站 Semantic tab 左侧渲染它，右侧按 keys 列表交互。
+   */
+  demo: FC;
+}
 
 /**
  * 全局兜底配置形态（来自 setConfig({ <component>: { classNames, styles } })）。
