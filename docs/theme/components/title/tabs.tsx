@@ -7,7 +7,7 @@ import { Tabs } from 'shineout';
 import useStyles from '../style';
 import Locale from '../../locales';
 
-const DocTabs = (props: { showGuide: boolean, showPlayground: boolean }) => {
+const DocTabs = (props: { showGuide: boolean, showPlayground: boolean, showSemantic: boolean }) => {
   const state = useSnapshot(store);
   const navigate = useNavigate();
   const location = useLocation();
@@ -23,6 +23,7 @@ const DocTabs = (props: { showGuide: boolean, showPlayground: boolean }) => {
     { name: tabsLocale['api'], path: 'api' },
     { name: tabsLocale['playground'], path: 'playground' },
     { name: tabsLocale['guide'], path: 'guide' },
+    { name: tabsLocale['semantic'], path: 'semantic' },
     { name: tabsLocale['updateRecord'], path: 'changelog' },
   ];
 
@@ -51,6 +52,7 @@ const DocTabs = (props: { showGuide: boolean, showPlayground: boolean }) => {
         {tabs.map((tab, index) => {
           if (tab.path === 'guide' && !props.showGuide) return null;
           if (tab.path === 'playground' && !props.showPlayground) return null;
+          if (tab.path === 'semantic' && !props.showSemantic) return null;
 
           return <Tabs.Panel key={index} tab={renderTab(tab.name)} id={tab.path}></Tabs.Panel>;
         })}

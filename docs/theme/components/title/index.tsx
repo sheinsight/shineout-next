@@ -58,7 +58,11 @@ const Header = (props: HeaderProps) => {
           {describe[state.locales]}
           <DesignDocLink componentName={componentName} />
         </p>
-        <Tabs showGuide={showGuide} showPlayground={showPlayground}></Tabs>
+        <Tabs
+          showGuide={showGuide}
+          showPlayground={showPlayground}
+          showSemantic={!!props.hasSemantic}
+        ></Tabs>
       </div>
     </>
   );
