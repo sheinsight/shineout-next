@@ -6,4 +6,6 @@ export type {
   SemanticGlobalConfig,
   SemanticClassFn,
   SemanticStyleFn,
+  SemanticKeyMeta,
+  SemanticSchema,
 } from './use-semantic';
