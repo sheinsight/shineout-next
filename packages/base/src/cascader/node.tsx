@@ -109,7 +109,7 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
 
   const isHoverAble = expandTrigger === 'hover' || expandTrigger === 'hover-only';
 
-  const isRealLeafNode = !hasChildren && !uncertainChildren
+  const isRealLeafNode = !hasChildren && !uncertainChildren && !loading;
 
   const getEvents = () => {
     const events: any = {};
