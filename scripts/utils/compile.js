@@ -55,6 +55,11 @@ function compile(dirPath = shineoutDir) {
       guides.en = guideLoader(guide, dir);
     }
 
+    // Semantic DOM 元数据：约定文件路径 packages/<chunkModule>/src/<dir>/<dir>.semantic.tsx
+    // 存在则模板自动 import；不存在 → chunk 不引用，文档站不显示 Semantic tab
+    const semanticPath = path.join(dirPath, dir, `${dir}.semantic.tsx`);
+    const hasSemantic = fs.existsSync(semanticPath);
+
     writeTemplate({
       templatePath,
       targetPath: `${chunkDir}/${chunkModuleName}`,
@@ -67,6 +72,7 @@ function compile(dirPath = shineoutDir) {
         componentDir: dir,
         source: mdPath,
         chunkModuleName,
+        hasSemantic,
       },
     });
   });
