@@ -1,3 +1,8 @@
+## 3.9.16-beta.8
+2026-06-10
+### 🐞 BugFix
+- 修复 `Form` 在虚拟列表或大表格场景下，未挂载的表单项即使在 `Form.rules` 中声明了校验规则，提交时也会跳过校验的问题 ([#1733](https://github.com/sheinsight/shineout-next/pull/1733))
+
 ## 3.9.14-beta.2
 2026-04-21
 ### 🐞 BugFix
