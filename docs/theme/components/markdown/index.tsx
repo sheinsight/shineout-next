@@ -9,9 +9,10 @@ import Api from './api';
 import Playground from './playground';
 import Guide from './guide';
 import Changelog from './changelog';
+import Semantic from './semantic';
 
 const Markdown = (props: MarkdownProps) => {
-  const { title, describe, examples, guides, api, changelog, header } = props;
+  const { title, describe, examples, guides, api, changelog, header, semantic } = props;
   const classes = useStyles();
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
@@ -20,13 +21,19 @@ const Markdown = (props: MarkdownProps) => {
 
   return (
     <div className={classes.pages}>
-      <Title title={title} describe={describe} guides={guides}></Title>
+      <Title
+        title={title}
+        describe={describe}
+        guides={guides}
+        hasSemantic={!!semantic}
+      ></Title>
       <React.Fragment key={header.name}>
         {activeTab === 'examples' && <Doc examples={examples} name={header.name}></Doc>}
         {activeTab === 'api' && <Api api={api}></Api>}
         {activeTab === 'guide' && <Guide guides={guides}></Guide>}
         {activeTab === 'changelog' && <Changelog changelog={changelog}></Changelog>}
         {activeTab === 'playground' && <Playground examples={examples[0]} api={api} name={header.name} />}
+        {activeTab === 'semantic' && semantic && <Semantic schema={semantic} name={header.name} />}
       </React.Fragment>
     </div>
   );
