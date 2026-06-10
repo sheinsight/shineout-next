@@ -32,6 +32,7 @@ export default {
     guide: 'Guide',
     updateRecord: 'Update Record',
     playground: 'Playground',
+    semantic: 'Semantic',
   },
   'shineout.playground': {
     configuration: 'Configuration',

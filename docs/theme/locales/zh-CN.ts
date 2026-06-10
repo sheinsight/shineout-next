@@ -32,6 +32,7 @@ export default {
     guide: '指南',
     updateRecord: '更新记录',
     playground: '沙盒',
+    semantic: 'Semantic',
   },
   'shineout.playground': {
     configuration: '配置',
