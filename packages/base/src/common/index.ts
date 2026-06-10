@@ -3,6 +3,7 @@ export { useSemantic } from './use-semantic';
 export type {
   SemanticClassNames,
   SemanticStyles,
-  SemanticAccessor,
   SemanticGlobalConfig,
+  SemanticClassFn,
+  SemanticStyleFn,
 } from './use-semantic';

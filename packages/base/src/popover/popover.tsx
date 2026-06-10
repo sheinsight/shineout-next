@@ -34,7 +34,7 @@ const Popover = (props: PopoverProps) => {
   // Semantic DOM 访问器：合并用户 classNames / styles、setConfig 全局兜底与内部 JSS class
   // 优先级（高→低）：props > setConfig({ popover: { ... } }) > 内部默认
   // 见 /docs/rfc/0001-semantic-dom.md §4.4
-  const sem = useSemantic<PopoverSemanticKey>(
+  const [semClass, semStyle] = useSemantic<PopoverSemanticKey>(
     props.classNames,
     props.styles,
     config.popover,
@@ -188,15 +188,15 @@ const Popover = (props: PopoverProps) => {
       setSizingStyle={props.boundary ? setContentStyle : undefined}
     >
       <div
-        className={sem('root', [
+        className={semClass('root', [
           className,
           popoverStyle?.rootClass,
           popoverStyle?.wrapper,
           open && popoverStyle?.wrapperOpen,
           !showArrow && popoverStyle?.hideArrow,
           animation === false && popoverStyle?.wrapperNoAnimation,
-        ]).className}
-        style={{ ...containerStyle, ...sem('root').style }}
+        ])}
+        style={{ ...containerStyle, ...semStyle('root') }}
         {...util.getDataAttribute({ position: props.adjust ? positionState : position, type })}
         {...props.attributes}
         ref={popupRef}
@@ -206,18 +206,18 @@ const Popover = (props: PopoverProps) => {
       >
         {showArrow && (
           <div
-            className={sem('arrow', [popoverStyle?.arrow, props.arrowClass]).className}
-            style={sem('arrow').style}
+            className={semClass('arrow', [popoverStyle?.arrow, props.arrowClass])}
+            style={semStyle('arrow')}
             dir={config.direction}
           />
         )}
         <div
-          style={{ ...contentStyle, ...style, ...sem('content').style }}
-          onClick={emptyEvent}
-          className={sem('content', [
+          className={semClass('content', [
             popoverStyle?.content,
             (typeof childrened === 'string' || props.useTextStyle) && popoverStyle?.text,
-          ]).className}
+          ])}
+          style={{ ...contentStyle, ...style, ...semStyle('content') }}
+          onClick={emptyEvent}
         >
           <Provider value={providerValue}>{childrened}</Provider>
         </div>
