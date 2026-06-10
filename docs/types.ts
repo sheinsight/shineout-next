@@ -1,4 +1,6 @@
-import type React from 'react';
+// Semantic DOM 类型在 @sheinx/base 单一来源，docs 这里 re-export 保持向后引用便利
+import type { SemanticSchema } from '@sheinx/base';
+export type { SemanticKeyMeta, SemanticSchema } from '@sheinx/base';
 
 export interface Local {
   cn: string;
@@ -80,32 +82,6 @@ export type Api = Array<{
     };
   }>;
 }>
-
-/**
- * Semantic DOM 一个 key 的元数据
- */
-export interface SemanticKeyMeta {
-  /** 语义 key 名称，如 'root' / 'arrow' / 'content' */
-  key: string;
-  /** 中文说明 */
-  cn: string;
-  /** 英文说明 */
-  en: string;
-}
-
-/**
- * 组件 Semantic DOM 元数据。
- * 由 `packages/base/src/<comp>/<comp>.semantic.ts` 导出，文档站构建时被 chunk 模板引入。
- */
-export interface SemanticSchema {
-  /** key 列表（中英说明）*/
-  keys: SemanticKeyMeta[];
-  /**
-   * 渲染该组件并把所有 semantic 节点都激活的演示组件。
-   * 文档站 Semantic tab 左侧渲染它，右侧根据 keys 列表对应高亮。
-   */
-  demo: React.FC;
-}
 
 export interface MarkdownProps {
   header: {
