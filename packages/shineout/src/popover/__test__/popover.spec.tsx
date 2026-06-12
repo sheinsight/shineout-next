@@ -554,3 +554,123 @@ describe('Popover[ScrollDismiss]', () => {
     });
   });
 });
+
+describe('Popover[Semantic classNames - functional]', () => {
+  test('static string classNames still work (regression)', async () => {
+    const { container } = render(
+      <Button>
+        Hover
+        <Popover classNames={{ arrow: 'my-static-arrow', content: 'my-static-content' }}>
+          content
+        </Popover>
+      </Button>,
+    );
+    fireEvent.mouseEnter(container.querySelector('button')!);
+    await waitFor(async () => {
+      await delay(200);
+      const popover = getPopoverRoot();
+      expect(popover.querySelector('.my-static-arrow')).toBeInTheDocument();
+      expect(popover.querySelector('.my-static-content')).toBeInTheDocument();
+    });
+  });
+
+  test('functional root classNames receives open=true after popup opens', async () => {
+    const rootFn = jest.fn(({ open }: { open: boolean; position: any; type?: string }) =>
+      open ? 'fn-root-open' : 'fn-root-closed',
+    );
+    const { container } = render(
+      <Button>
+        Hover
+        <Popover classNames={{ root: rootFn }}>content</Popover>
+      </Button>,
+    );
+    fireEvent.mouseEnter(container.querySelector('button')!);
+    await waitFor(async () => {
+      await delay(200);
+      const popover = getPopoverRoot();
+      expect(popover.classList.contains('fn-root-open')).toBe(true);
+      expect(popover.classList.contains('fn-root-closed')).toBe(false);
+      // 函数被调用，且 open 参数为 true
+      const lastCall = rootFn.mock.calls[rootFn.mock.calls.length - 1][0];
+      expect(lastCall.open).toBe(true);
+    });
+  });
+
+  test('functional root classNames receives open=false after popup closes', async () => {
+    const rootFn = jest.fn(({ open }: { open: boolean; position: any; type?: string }) =>
+      open ? 'fn-root-open' : 'fn-root-closed',
+    );
+    // 先打开（让 DOM 渲染），再关闭，验证关闭态的 class
+    const { container, rerender } = render(
+      <Button>
+        Hover
+        <Popover visible={true} classNames={{ root: rootFn }}>
+          content
+        </Popover>
+      </Button>,
+    );
+    await waitFor(async () => {
+      await delay(200);
+      expect(getPopoverRoot().classList.contains('fn-root-open')).toBe(true);
+    });
+    rerender(
+      <Button>
+        Hover
+        <Popover visible={false} classNames={{ root: rootFn }}>
+          content
+        </Popover>
+      </Button>,
+    );
+    await waitFor(async () => {
+      await delay(200);
+      const popover = getPopoverRoot();
+      expect(popover.classList.contains('fn-root-closed')).toBe(true);
+      expect(popover.classList.contains('fn-root-open')).toBe(false);
+      const lastCall = rootFn.mock.calls[rootFn.mock.calls.length - 1][0];
+      expect(lastCall.open).toBe(false);
+    });
+  });
+
+  test('functional classNames receives correct type field', async () => {
+    const contentFn = jest.fn(({ type }: { open: boolean; position: any; type?: string }) =>
+      type ? `fn-content-${type}` : 'fn-content',
+    );
+    const { container } = render(
+      <Button>
+        Hover
+        <Popover type='danger' classNames={{ content: contentFn }}>
+          content
+        </Popover>
+      </Button>,
+    );
+    fireEvent.mouseEnter(container.querySelector('button')!);
+    await waitFor(async () => {
+      await delay(200);
+      const popover = getPopoverRoot();
+      expect(popover.querySelector('.fn-content-danger')).toBeInTheDocument();
+      const lastCall = contentFn.mock.calls[contentFn.mock.calls.length - 1][0];
+      expect(lastCall.type).toBe('danger');
+    });
+  });
+
+  test('mixed static + functional classNames work together', async () => {
+    const rootFn = jest.fn(({ open }: { open: boolean; position: any; type?: string }) =>
+      open ? 'fn-open' : 'fn-closed',
+    );
+    const { container } = render(
+      <Button>
+        Hover
+        <Popover classNames={{ root: rootFn, arrow: 'static-arrow' }}>content</Popover>
+      </Button>,
+    );
+    fireEvent.mouseEnter(container.querySelector('button')!);
+    await waitFor(async () => {
+      await delay(200);
+      const popover = getPopoverRoot();
+      // 函数式 root class
+      expect(popover.classList.contains('fn-open')).toBe(true);
+      // 静态 arrow class
+      expect(popover.querySelector('.static-arrow')).toBeInTheDocument();
+    });
+  });
+});

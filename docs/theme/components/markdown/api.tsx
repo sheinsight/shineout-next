@@ -153,7 +153,7 @@ const Api = (props: { api: MarkdownProps['api'] }) => {
   }, [activeApi])
 
   return (
-    <div className={classes.api} style={{ padding: 24, display: 'flex' }}>
+    <div className={classes.api} style={{ padding: '24px 40px', display: 'flex' }}>
       <div style={{ flex: 1, minWidth: 0 }}>
         {api.map((item, index) => {
           return (
