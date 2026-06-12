@@ -1,7 +1,7 @@
 import { getClosestScrollContainer, usePersistFn, usePopup, useRender, util } from '@sheinx/hooks';
 import AbsoluteList from '../absolute-list';
 import React, { useEffect } from 'react';
-import { PopoverProps, PopoverPosition, PopoverSemanticKey } from './popover.type';
+import { PopoverProps, PopoverPosition, PopoverSemanticKey, PopoverClassNamesInfo } from './popover.type';
 import { useConfig } from '../config';
 import { useSemantic } from '../common/use-semantic';
 
@@ -31,15 +31,6 @@ const Popover = (props: PopoverProps) => {
 
   const popoverStyle = jssStyle?.popover?.();
 
-  // Semantic DOM 访问器：合并用户 classNames / styles、setConfig 全局兜底与内部 JSS class
-  // 优先级（高→低）：props > setConfig({ popover: { ... } }) > 内部默认
-  // 见 /docs/rfc/0001-semantic-dom.md §4.4
-  const [semClass, semStyle] = useSemantic<PopoverSemanticKey>(
-    props.classNames,
-    props.styles,
-    config.popover,
-  );
-
   const render = useRender();
 
   const onVisibleChange = usePersistFn((v: boolean) => {
@@ -64,6 +55,24 @@ const Popover = (props: PopoverProps) => {
     });
   const [positionState, setPositionState] = React.useState<PopoverPosition>(position);
   const [contentStyle, setContentStyle] = React.useState<React.CSSProperties>();
+
+  // Semantic DOM 访问器：合并用户 classNames / styles、setConfig 全局兜底与内部 JSS class
+  // 优先级（高→低）：props > setConfig({ popover: { ... } }) > 内部默认
+  // 见 /docs/rfc/0001-semantic-dom.md §4.4
+  //
+  // 第 4 个参数 info 是当前渲染帧的状态快照，函数式 classNames 会自动接收它。
+  // 例：classNames={{ root: ({ open }) => open ? 'is-open' : '' }}
+  const semInfo: PopoverClassNamesInfo = {
+    open,
+    position: props.adjust ? positionState : position,
+    type,
+  };
+  const [semClass, semStyle] = useSemantic<PopoverSemanticKey, PopoverClassNamesInfo>(
+    props.classNames,
+    props.styles,
+    config.popover,
+    semInfo,
+  );
 
   const events = getTargetProps();
 

@@ -1,7 +1,36 @@
 import classnames from 'classnames';
 import type { CSSProperties, FC } from 'react';
 
-export type SemanticClassNames<K extends string> = Partial<Record<K, string>>;
+/**
+ * 函数式 className 的返回值类型（字符串或 undefined）。
+ * 返回 undefined 等同于不追加任何 class（classnames 会忽略 falsy 值）。
+ */
+export type SemanticClassValue = string | undefined;
+
+/**
+ * Semantic DOM className 映射类型。
+ *
+ * - `Info = void`（默认）：value 为纯字符串，向后兼容现有用法。
+ * - `Info = <状态接口>`：value 可以是字符串，也可以是接收状态快照 `info` 并返回字符串的函数。
+ *   函数在每次渲染时由 `useSemantic` 内部自动调用。
+ *
+ * 示例（Popover 函数式用法）：
+ * ```tsx
+ * <Popover
+ *   classNames={{
+ *     root: ({ open }) => open ? 'my-pop my-pop--open' : 'my-pop',
+ *     arrow: 'my-arrow',          // 纯字符串仍然有效
+ *   }}
+ * />
+ * ```
+ */
+export type SemanticClassNames<K extends string, Info = void> = Partial<
+  Record<
+    K,
+    Info extends void ? string : string | ((info: Info) => SemanticClassValue)
+  >
+>;
+
 export type SemanticStyles<K extends string> = Partial<Record<K, CSSProperties>>;
 
 /**
@@ -14,6 +43,8 @@ export interface SemanticKeyMeta<K extends string = string> {
   cn: string;
   /** 英文说明 */
   en: string;
+  /** 引入版本号，可选，显示为 chip 例 "3.10.0" */
+  version?: string;
 }
 
 /**
@@ -83,29 +114,45 @@ export type SemanticStyleFn<K extends string> = (key: K) => CSSProperties | unde
  *
  * @see /docs/rfc/0001-semantic-dom.md
  *
- * 用法：
+ * 静态 classNames 用法：
  * ```tsx
  * const [semClass, semStyle] = useSemantic<PopoverSemanticKey>(
  *   props.classNames,
  *   props.styles,
  *   config.popover,
  * );
+ * ```
  *
- * <div
- *   className={semClass('root', [popoverStyle?.rootClass, popoverStyle?.wrapper])}
- *   style={{ ...containerStyle, ...semStyle('root') }}
- * >
- *   <div className={semClass('arrow', popoverStyle?.arrow)} style={semStyle('arrow')} />
- * </div>
+ * 函数式 classNames 用法（传入第 4 个参数 `info`）：
+ * ```tsx
+ * const [semClass, semStyle] = useSemantic<PopoverSemanticKey, PopoverClassNamesInfo>(
+ *   props.classNames,
+ *   props.styles,
+ *   config.popover,
+ *   { open, position, type },   // 每次渲染时注入的状态快照
+ * );
+ *
+ * // classNames 中传函数时，info 会自动传给函数：
+ * <Popover classNames={{ root: ({ open }) => open ? 'is-open' : '' }} />
  * ```
  */
-export function useSemantic<K extends string>(
-  userClassNames?: SemanticClassNames<K>,
+export function useSemantic<K extends string, Info = void>(
+  userClassNames?: SemanticClassNames<K, Info>,
   userStyles?: SemanticStyles<K>,
   globalConfig?: SemanticGlobalConfig<K>,
+  info?: Info,
 ): [SemanticClassFn<K>, SemanticStyleFn<K>] {
-  const semClass: SemanticClassFn<K> = (key, internalClass) =>
-    classnames(internalClass, globalConfig?.classNames?.[key], userClassNames?.[key]);
+  const semClass: SemanticClassFn<K> = (key, internalClass) => {
+    const globalClass = globalConfig?.classNames?.[key];
+    // userClassNames 的 value 可能是字符串，也可能是 (info) => string 的函数
+    const rawUser = userClassNames?.[key];
+    // 显式注解为 SemanticClassValue，确保传给 classnames 的值不含函数类型
+    const resolvedUser: SemanticClassValue =
+      typeof rawUser === 'function'
+        ? (rawUser as (info: Info) => SemanticClassValue)(info as Info)
+        : (rawUser as string | undefined);
+    return classnames(internalClass, globalClass, resolvedUser);
+  };
 
   const semStyle: SemanticStyleFn<K> = (key) => {
     const g = globalConfig?.styles?.[key];
