@@ -15,6 +15,40 @@ import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic'
  */
 export type PopoverSemanticKey = 'root' | 'arrow' | 'content';
 
+/**
+ * 传入函数式 `classNames` 时的状态快照。
+ * 每次渲染时由组件内部自动注入，用户无需手动传。
+ *
+ * @version 3.10.0
+ *
+ * 用法示例：
+ * ```tsx
+ * <Popover
+ *   classNames={{
+ *     root: ({ open }) => open ? 'my-pop my-pop--open' : 'my-pop',
+ *     content: ({ type }) => type === 'danger' ? 'my-content--danger' : undefined,
+ *   }}
+ * />
+ * ```
+ */
+export interface PopoverClassNamesInfo {
+  /**
+   * @cn 当前弹层是否可见
+   * @en Whether the popup is currently visible
+   */
+  open: boolean;
+  /**
+   * @cn 当前实际弹出位置（启用 adjust 时为调整后的位置）
+   * @en Actual popup position (adjusted position when `adjust` is enabled)
+   */
+  position: PopoverPosition;
+  /**
+   * @cn 弹层语义类型
+   * @en Semantic type of the popup
+   */
+  type?: 'info' | 'success' | 'warning' | 'danger' | 'error';
+}
+
 export interface PopoverClasses {
   rootClass: string;
   /**
@@ -180,13 +214,23 @@ export interface PopoverProps extends Pick<CommonType, 'className' | 'style'> {
   arrowClass?: string;
   /**
    * @en Semantic DOM classNames. Allows custom class on internal DOM nodes (root / arrow / content).
+   *     Value can be a static string, or a function that receives the current state snapshot
+   *     (`open`, `position`, `type`) and returns a string dynamically.
    * @cn Semantic DOM 类名定制。允许对组件内部 DOM 节点（root / arrow / content）追加自定义 class。
+   *     值可以是静态字符串，也可以是接收当前状态快照（`open`/`position`/`type`）并动态返回字符串的函数。
    * @version 3.10.0
    */
-  classNames?: SemanticClassNames<PopoverSemanticKey>;
+  classNames?: SemanticClassNames<PopoverSemanticKey, PopoverClassNamesInfo>;
   /**
    * @en Semantic DOM styles. Allows inline style on internal DOM nodes (root / arrow / content).
+   *     **Note for `arrow`**: The triangle shape is drawn by the `::before` pseudo-element using
+   *     `clip-path`. Setting `styles.arrow.backgroundColor` on the wrapper div will cover the
+   *     transparent cutout and break the shape. To change the arrow color, use the `background`
+   *     prop instead — it writes `--popover-background-color` which is consumed by `::before`.
    * @cn Semantic DOM 样式定制。允许对组件内部 DOM 节点（root / arrow / content）追加内联 style。
+   *     **`arrow` 注意事项**：三角形由 `::before` 伪元素通过 `clip-path` 绘制。
+   *     若对 `styles.arrow` 设置 `backgroundColor`，会在伪元素下方铺实心矩形并遮住透明区域，导致箭头形状失效。
+   *     修改箭头颜色请使用 `background` prop，它会写入 `--popover-background-color` CSS 变量并被 `::before` 读取。
    * @version 3.10.0
    */
   styles?: SemanticStyles<PopoverSemanticKey>;
