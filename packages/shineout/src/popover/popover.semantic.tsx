@@ -15,7 +15,7 @@ import Button from '../button';
 const PopoverSemanticDemo: React.FC = () => (
   <Button mode="outline">
     Hover me
-    <Popover defaultVisible>This is the popover content area.</Popover>
+    <Popover visible={true}>This is the popover content area.</Popover>
   </Button>
 );
 
@@ -25,16 +25,19 @@ const popoverSemantic: SemanticSchema<PopoverSemanticKey> = {
       key: 'root',
       cn: '最外层弹层容器（与 className 等价）',
       en: 'Outer wrapper of the popup (equivalent to className)',
+      version: '3.10.0',
     },
     {
       key: 'arrow',
       cn: '指向触发元素的小箭头',
       en: 'The small arrow pointing at the trigger element',
+      version: '3.10.0',
     },
     {
       key: 'content',
       cn: '弹层内容承载区',
       en: 'The inner content area',
+      version: '3.10.0',
     },
   ],
   demo: PopoverSemanticDemo,
