@@ -20,6 +20,7 @@ const dark = {
   'Neutral-fill-3': '#2D364C',
   'Neutral-fill-2': '#21283D',
   'Neutral-fill-1': '#11192E',
+  backgroundPopup: '#11192E',
   buttonPrimaryDisabledFontColor: 'var(--soui-neutral-text-2)',
   buttonSecondaryFontColor: 'var(--soui-neutral-text-1)',
   buttonWarningDisabledFontColor: 'var(--soui-neutral-text-2)',
