@@ -36,88 +36,44 @@ const FloatButton = () => {
     }
   };
 
+  const buildToken = (isDark: boolean, isCompact: boolean) => ({
+    ...CommonTokenMap,
+    ...(isDark ? dark : {}),
+    ...(isCompact ? compact : {}),
+  });
+
+  const applyTheme = (isDark: boolean, isCompact: boolean) => {
+    setToken({ selector: 'html', token: buildToken(isDark, isCompact) });
+    if (isDark) {
+      document.documentElement.style.setProperty('color-scheme', 'dark');
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.style.removeProperty('color-scheme');
+      document.documentElement.classList.remove('dark');
+    }
+  };
+
   const setDark = () => {
-    const compactThemeCache = localStorage.getItem('shineout-theme-compact');
-    const darkThemeCache = localStorage.getItem('shineout-theme-dark');
-
-    if (!darkThemeCache) {
-      if (compactThemeCache) {
-        setToken({
-          selector: 'html',
-          token: { ...CommonTokenMap, ...dark, ...compact },
-        });
-        localStorage.setItem('shineout-theme-dark', 'true');
-        setDarkActive('true');
-        document.documentElement.style.setProperty('color-scheme', 'dark');
-        return;
-      }
-
-      setToken({
-        selector: 'html',
-        update: true,
-        token: dark,
-      });
+    const isDark = !localStorage.getItem('shineout-theme-dark');
+    const isCompact = !!localStorage.getItem('shineout-theme-compact');
+    applyTheme(isDark, isCompact);
+    if (isDark) {
       localStorage.setItem('shineout-theme-dark', 'true');
       setDarkActive('true');
-      document.documentElement.style.setProperty('color-scheme', 'dark');
     } else {
-      if (compactThemeCache) {
-        setToken({
-          selector: 'html',
-          token: { ...CommonTokenMap, ...compact },
-        });
-        localStorage.removeItem('shineout-theme-dark');
-        setDarkActive('');
-        document.documentElement.style.removeProperty('color-scheme');
-        return;
-      }
-      setToken({
-        selector: 'html',
-        token: CommonTokenMap as any,
-      });
       localStorage.removeItem('shineout-theme-dark');
       setDarkActive('');
-      // 设置 html 的 style color-scheme 属性
-      document.documentElement.style.removeProperty('color-scheme');
     }
   };
 
   const setCompact = () => {
-    const compactThemeCache = localStorage.getItem('shineout-theme-compact');
-    const darkThemeCache = localStorage.getItem('shineout-theme-dark');
-
-    if (!compactThemeCache) {
-      if (darkThemeCache) {
-        setToken({
-          selector: 'html',
-          token: { ...CommonTokenMap, ...dark, ...compact },
-        });
-        localStorage.setItem('shineout-theme-compact', 'true');
-        setCompactActive('true');
-        return;
-      }
-
-      setToken({
-        selector: 'html',
-        update: true,
-        token: compact,
-      });
+    const isDark = !!localStorage.getItem('shineout-theme-dark');
+    const isCompact = !localStorage.getItem('shineout-theme-compact');
+    applyTheme(isDark, isCompact);
+    if (isCompact) {
       localStorage.setItem('shineout-theme-compact', 'true');
       setCompactActive('true');
     } else {
-      if (darkThemeCache) {
-        setToken({
-          selector: 'html',
-          token: { ...CommonTokenMap, ...dark },
-        });
-        localStorage.removeItem('shineout-theme-compact');
-        setCompactActive('');
-        return;
-      }
-      setToken({
-        selector: 'html',
-        token: CommonTokenMap as any,
-      });
       localStorage.removeItem('shineout-theme-compact');
       setCompactActive('');
     }
@@ -213,23 +169,9 @@ const FloatButton = () => {
   }, [open]);
 
   useEffect(() => {
-    const compactThemeCache = localStorage.getItem('shineout-theme-compact');
-    const darkThemeCache = localStorage.getItem('shineout-theme-dark');
-    let token = { ...CommonTokenMap };
-
-    if (compactThemeCache === 'true') {
-      token = { ...token, ...compact };
-    }
-
-    if (darkThemeCache === 'true') {
-      token = { ...token, ...dark };
-      // 设置 html 的 color-scheme 属性
-      document.documentElement.style.setProperty('color-scheme', 'dark');
-    }
-    setToken({
-      selector: 'html',
-      token,
-    });
+    const isDark = localStorage.getItem('shineout-theme-dark') === 'true';
+    const isCompact = localStorage.getItem('shineout-theme-compact') === 'true';
+    applyTheme(isDark, isCompact);
   }, []);
 
   return (

@@ -46,7 +46,7 @@ export interface Options {
    * @en Custom token parameters
    * @default undefined
    */
-  token?: Partial<Tokens> & { [customTokenKey: string]: string };
+  token?: Partial<Tokens> | (Partial<Tokens> & { [customTokenKey: string]: string });
   /**
    * @cn 是否只生效关键 token，默认为 false
    * @en Whether only the key token is effective, default is false

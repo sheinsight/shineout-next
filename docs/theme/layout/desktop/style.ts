@@ -359,6 +359,10 @@ export default createUseStyles(
       '&:hover': {
         boxShadow: 'var(--soui-shadow-3)',
       },
+      'html.dark &' :{
+        fill: 'white',
+        boxShadow: '0 0 4px 0 rgba(255, 255, 255, 0.5)',
+      }
     },
     floatButtonMenu: {
       opacity: 0,
@@ -380,6 +384,10 @@ export default createUseStyles(
       boxShadow: 'var(--soui-shadow-2)',
       backgroundColor: 'var(--soui-neutral-fill-1)',
       cursor: 'pointer',
+      'html.dark &' :{
+        fill: 'white',
+        boxShadow: '0 0 4px 0 rgba(255, 255, 255, 0.5)',
+      }
     },
     floatButtonMenuItemActive: {
       backgroundColor: 'var(--soui-brand-6)',
