@@ -56,6 +56,7 @@ export { default as Upload } from './upload';
 export { setConfig, config, setLocale, setIcons, icons } from '@sheinx/base';
 export type { ConfigOption } from '@sheinx/base';
 export { setToken, useToken } from '@sheinx/theme';
+export { default as Tokens } from '@sheinx/theme';
 export {
   JssProvider,
   SheetsRegistry,

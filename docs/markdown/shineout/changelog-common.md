@@ -1,3 +1,8 @@
+## 3.9.17-beta.1
+2026-06-16
+### 🆕 Feature
+- 新增 `Tokens` 导出，支持将完整的默认浅色主题 token 传入 `setToken`，一行代码即可将局部区域恢复为浅色主题，无需手动逐条填写 token ([#1735](https://github.com/sheinsight/shineout-next/pull/1735))
+
 ## 3.9.16-beta.4
 2026-06-03
 ### 🐞 BugFix
