@@ -1,3 +1,8 @@
+## 3.9.17-beta.2
+2026-06-17
+### 🐞 BugFix
+- 降级内部依赖 `immer` 至 `v9`，修复在兼容 Chrome 80 以下浏览器的项目中可能导致白屏的问题 ([#1736](https://github.com/sheinsight/shineout-next/pull/1736))
+
 ## 3.9.17-beta.1
 2026-06-16
 ### 🆕 Feature

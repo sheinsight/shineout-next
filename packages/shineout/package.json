@@ -29,7 +29,7 @@
     "@sheinx/theme": "workspace:*",
     "classnames": "^2.0.0",
     "deep-eql": "^4.0.0",
-    "immer": "^10.0.0"
+    "immer": "^9.0.0"
   },
   "devDependencies": {
     "@sheinx/mock": "workspace:*",
