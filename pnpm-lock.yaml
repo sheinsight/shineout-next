@@ -28,8 +28,8 @@ importers:
         specifier: ^0.8.2
         version: 0.8.2
       immer:
-        specifier: 10.0.2
-        version: 10.0.2
+        specifier: ^9.0.0
+        version: 9.0.21
       react:
         specifier: 18.3.1
         version: 18.3.1
@@ -277,8 +277,8 @@ importers:
         specifier: ^1.11.9
         version: 1.11.9
       immer:
-        specifier: 10.0.2
-        version: 10.0.2
+        specifier: ^9.0.0
+        version: 9.0.21
       react:
         specifier: 18.3.1
         version: 18.3.1
@@ -344,8 +344,8 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0
       immer:
-        specifier: ^10.0.0
-        version: 10.0.2
+        specifier: ^9.0.0
+        version: 9.0.21
       react:
         specifier: 18.3.1
         version: 18.3.1
@@ -5024,6 +5024,9 @@ packages:
 
   immer@10.0.2:
     resolution: {integrity: sha512-Rx3CqeqQ19sxUtYV9CU911Vhy8/721wRFnJv3REVGWUmoAcIwzifTsdmJte/MV+0/XpM35LZdQMBGkRIoLPwQA==}
+
+  immer@9.0.21:
+    resolution: {integrity: sha512-bc4NBHqOqSfRW7POMkHd51LvClaeMXpm8dx0e8oE2GORbq5aRK7Bxl4FyzVLdGtLmvLKL7BTDBG5ACQm4HWjTA==}
 
   import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
@@ -10934,7 +10937,7 @@ snapshots:
     dependencies:
       '@sinonjs/commons': 3.0.0
 
-  '@stylelint/postcss-css-in-js@0.38.0(postcss-syntax@0.36.2(postcss@8.5.3))(postcss@8.5.3)':
+  '@stylelint/postcss-css-in-js@0.38.0(postcss-syntax@0.36.2(postcss@8.4.24))(postcss@8.5.3)':
     dependencies:
       '@babel/core': 7.23.2
       postcss: 8.5.3
@@ -11513,7 +11516,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.23.2
       '@babel/eslint-parser': 7.22.15(@babel/core@7.23.2)(eslint@8.52.0)
-      '@stylelint/postcss-css-in-js': 0.38.0(postcss-syntax@0.36.2(postcss@8.5.3))(postcss@8.5.3)
+      '@stylelint/postcss-css-in-js': 0.38.0(postcss-syntax@0.36.2(postcss@8.4.24))(postcss@8.5.3)
       '@typescript-eslint/eslint-plugin': 5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.52.0)(typescript@5.7.2))(eslint@8.52.0)(typescript@5.7.2)
       '@typescript-eslint/parser': 5.62.0(eslint@8.52.0)(typescript@5.7.2)
       '@umijs/babel-preset-umi': 4.0.87(styled-components@6.0.0(babel-plugin-styled-components@2.1.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
@@ -14404,6 +14407,8 @@ snapshots:
   immediate@3.0.6: {}
 
   immer@10.0.2: {}
+
+  immer@9.0.21: {}
 
   import-fresh@3.3.0:
     dependencies:

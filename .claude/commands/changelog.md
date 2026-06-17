@@ -34,3 +34,4 @@ pr-number的获取方式： 通过 `gh api "repos/sheinsight/shineout-next/pulls
 - 不要提及内部实现细节（如变量名、函数名、文件路径）
 - 如果涉及多个组件，分别写入各自的 changelog 文件
 - 描述语言简洁，参考已有 changelog 条目的风格
+- 全局性的changelog写在docs/markdown/shineout/changelog-common.md文件里
