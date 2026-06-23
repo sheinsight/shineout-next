@@ -2,17 +2,142 @@
 
 > 这里会有详细的发版记录,版本号严格遵循 Semver 规范
 
-## 3.9.9
-<span class="time">2026-02-02</span>
+## 3.9.17
+<span class="time">2026-06-17</span>
 ### 🆕 Feature
-- `Popover` 新增全局配置项 `animation`，用于配置是否启用弹出动画效果 ([#1607](https://github.com/sheinsight/shineout-next/pull/1607))
+- 新增 `Tokens` 导出，支持将完整的默认浅色主题 token 传入 `setToken`，一行代码即可将局部区域恢复为浅色主题，无需手动逐条填写 token ([#1735](https://github.com/sheinsight/shineout-next/pull/1735))
 ### 🐞 BugFix
-- 修复 `Select` 同时使用 `compressed='no-repeat'` 和 `renderCompressed` 时，`renderCompressed` 的 `data` 参数没有遵循 `no-repeat` 逻辑的问题 ([#1610](https://github.com/sheinsight/shineout-next/pull/1610))
+- 降级内部依赖 `immer` 至 `v9`，修复在兼容 Chrome 80 以下浏览器的项目中可能导致白屏的问题 ([#1736](https://github.com/sheinsight/shineout-next/pull/1736))
+
+## 3.9.16
+<span class="time">2026-06-10</span>
+### 🆕 Feature
+- `Collapse.Item` 新增 `simple` 属性，开启后移除内容区域的上下内边距和背景色 ([#1724](https://github.com/sheinsight/shineout-next/pull/1724))
+### 🐞 BugFix
+- 修复 `Cascader` 多选模式（`mode=3`）下，先勾选父节点再通过 `loader` 异步加载子节点时，新加载出的子节点未自动呈现勾选状态的问题 ([#1731](https://github.com/sheinsight/shineout-next/pull/1731))
+- 修复 `Collapse` 设置 `expandIconPosition` 为 `left` 或 `right` 时，内容区域左右内边距未随图标位置正确调整的问题 ([#1723](https://github.com/sheinsight/shineout-next/pull/1723))
+- 修复所有含弹出层的组件（`Select`、`TreeSelect`、`Cascader`、`DatePicker`、`Dropdown` 等）在页面根容器使用 `position: fixed` 布局时，弹出层不可见的问题 ([#1727](https://github.com/sheinsight/shineout-next/pull/1727))
+- 修复 `setToken` 使用增量更新模式（`update: true`）配合自定义选择器时，样式变量无法生效的问题 ([#1726](https://github.com/sheinsight/shineout-next/pull/1726))
+- 修复 `Form` 在虚拟列表或大表格场景下，未挂载的表单项即使在 `Form.rules` 中声明了校验规则，提交时也会跳过校验的问题 ([#1733](https://github.com/sheinsight/shineout-next/pull/1733))
+- 修复 `Upload` 自定义 `request` 上传方法时，回调参数中 `onSuccess` 缺失导致无法手动通知上传成功的问题 ([#1729](https://github.com/sheinsight/shineout-next/pull/1729))
+### 💅 Style
+- 修复 `Cascader` 节点子项异步加载中时被误判为末级节点，导致该级面板宽度短暂抖动的问题 ([#1732](https://github.com/sheinsight/shineout-next/pull/1732))
+- 优化 `Popover` 内容区域最小宽度，防止文本内容过短时箭头与文本区域在视觉上错位的问题 ([#1728](https://github.com/sheinsight/shineout-next/pull/1728))
+
+## 3.9.15
+<span class="time">2026-05-22</span>
+### 🆕 Feature
+- `Table` 虚拟列表新增 `virtualScrollContainer` 属性，支持由外部滚动容器驱动虚拟滚动 ([#1715](https://github.com/sheinsight/shineout-next/pull/1715))
+### 🚀 Performance
+- 优化 `Image` 组件点击预览弹窗的渲染性能，避免同步阻塞主线程 ([#1716](https://github.com/sheinsight/shineout-next/pull/1716))
+### 🐞 BugFix
+- 修复 `Table` 空数据状态下，外部 reset 样式将 svg 设为 block 时图标无法水平居中的问题 ([#1717](https://github.com/sheinsight/shineout-next/pull/1717))
+
+## 3.9.14
+<span class="time">2026-05-19</span>
+### 🚀 Performance
+- 优化 `Table` 布局计算逻辑，跳过未变化的 colgroup 更新并减少不必要的重排（reflow） ([#1655](https://github.com/sheinsight/shineout-next/pull/1655))
+### 🐞 BugFix
+- 修复 `Form` 中带有延迟的表单元素（如 `Textarea`）输入内容后立即点击 `Form.Reset`，内容会短暂消失后又重新出现的问题 ([#1704](https://github.com/sheinsight/shineout-next/pull/1704))
+- 修复 `Input.Number` 在@shined/reactive 状态管理中使用时，第一次输入后被清空的问题 ([#1711](https://github.com/sheinsight/shineout-next/pull/1711))
+- 修复 `Input.Number` 在设置 `clearable` 时，点击清除按钮未能正确清空值的问题 ([#1712](https://github.com/sheinsight/shineout-next/pull/1712))
+- 修复 `Input.Group` 中子组件设置 `width` 不生效的问题，以及在 `Table` 中使用时 `<b>` 标签内文本出现异常换行的问题 ([#1710](https://github.com/sheinsight/shineout-next/pull/1710))
+- 修复 `Select` 开启 `onFilter` 后，在下拉列表中滚动再输入关键字时首项不可见的问题（Regression: since v3.9.9） ([#1713](https://github.com/sheinsight/shineout-next/pull/1713))
+- 修复 `Select` 等含下拉组件在 Shadow DOM 内使用时，点击选项无法触发 onChange 的问题 ([#1708](https://github.com/sheinsight/shineout-next/pull/1708))
+- 修复 `Select` 使用 `prediction` 配合远程搜索时，已选中项在搜索后显示丢失的问题 ([#1704](https://github.com/sheinsight/shineout-next/pull/1704))
+- 修复 `Table` 在表头附着（sticky）模式下，从隐藏容器（如弹窗、标签页、折叠面板）中显示时，未设置宽度的列表头与表体内容错位的问题 ([#1707](https://github.com/sheinsight/shineout-next/pull/1707)) ([#1709](https://github.com/sheinsight/shineout-next/pull/1709))
+### 💅 Style
+- 优化 `closeFill` 图标路径，修复 `Button.Group` RTL 模式下的边框样式，调整 `Menu` 搜索框禁用态背景色 token ([#1705](https://github.com/sheinsight/shineout-next/pull/1705))
+- 修复 `Badge`、`Button.Group`、`Select`、`DatePicker` 部分样式属性未正确使用设计 token 的问题 ([#1704](https://github.com/sheinsight/shineout-next/pull/1704))
+
+## 3.9.13
+<span class="time">2026-04-17</span>
+### 🐞 BugFix
+- 修复 `Badge` 在没有子元素时独立使用的样式定位问题 ([#1679](https://github.com/sheinsight/shineout-next/pull/1679))
+- 修复 `Input.Number` 点击步进按钮（step）时仅首次生效，后续点击不再递增/递减的问题（Regression since v3.9.11） ([#1694](https://github.com/sheinsight/shineout-next/pull/1694))
+- 修复 `Select` 同时开启 `onFilter` 和 `onCreate` 时，搜索并选中项后关键词被意外清空的问题 ([#1689](https://github.com/sheinsight/shineout-next/pull/1689))
+- 修复 `Switch` 小尺寸下自定义文案未垂直居中的问题 ([#1695](https://github.com/sheinsight/shineout-next/pull/1695))
+### 💅 Style
+- 优化 `Button.Group` 按钮之间分割线的样式，适配设计 token 配置 ([#1697](https://github.com/sheinsight/shineout-next/pull/1697))
+- 新增全局弹出层背景色 token，统一 `Select`、`Cascader`、`DatePicker`、`Dropdown`、`TreeSelect`、`Breadcrumb` 等组件的弹出面板背景色配置 ([#1698](https://github.com/sheinsight/shineout-next/pull/1698))
+- 修复多个组件（Alert、Cascader、Checkbox、DatePicker、Input、Menu、Radio、Textarea、Tree）图标大小未跟随字号联动的问题 ([#1682](https://github.com/sheinsight/shineout-next/pull/1682))
+- 优化多个组件（Tag、Tabs、Input、Modal、Progress）的 Design Token，支持主题编辑器配置更多样式细节 ([#1676](https://github.com/sheinsight/shineout-next/pull/1676))
+- 修复 `Dropdown` 分列模式列表和分割线的内边距 token 引用错误的问题 ([#1685](https://github.com/sheinsight/shineout-next/pull/1685))
+- 修复 `Form` error 类型提示信息未正确应用上边距 token 的问题 ([#1685](https://github.com/sheinsight/shineout-next/pull/1685))
+- 优化 `Tabs` 样式 token 结构，统一边框颜色和下划线指示器相关 token 命名 ([#1685](https://github.com/sheinsight/shineout-next/pull/1685))
+
+## 3.9.12
+<span class="time">2026-03-30</span>
+### 🆕 Feature
+- `Tree`/`TreeSelect`/`Cascader` 新增 `sortBySelect` 属性，开启后多选模式下的值数组将按照用户勾选的先后顺序排列 ([#1666](https://github.com/sheinsight/shineout-next/pull/1666))
+### 💎 Enhancement
+- 优化 `Tree`/`TreeSelect`/`Cascader` 多选模式下获取选中值时的性能，使用浅拷贝替代深拷贝以减少不必要的开销 ([#1667](https://github.com/sheinsight/shineout-next/pull/1667))
+### 🐞 BugFix
+- 修复 `Cascader` 多选模式下，展开多级面板后勾选非末级节点的 checkbox 时，已展开的深层面板意外收起的问题 ([#1669](https://github.com/sheinsight/shineout-next/pull/1669))
+- 修复 `Cascader` 开启 `multiple` 但未设置 `mode` 时，勾选节点后选中状态立即回弹的问题 ([#1666](https://github.com/sheinsight/shineout-next/pull/1666))
+- 修复 `Drawer` 的面板样式穿透到嵌套子级 `Modal` 上导致样式异常的问题 ([#1675](https://github.com/sheinsight/shineout-next/pull/1675))
+- 修复 `Drawer` 使用 `cascade` 属性时，`transform` 样式导致内部 `position: fixed` 元素定位异常的问题 ([#1672](https://github.com/sheinsight/shineout-next/pull/1672))
+- 修复 `Form.Item` 嵌套使用时，中层设置 `required={false}` 会导致内层 `required` 的必填星号样式丢失的问题 ([#1665](https://github.com/sheinsight/shineout-next/pull/1665))
+- 修复 `Progress` 环形进度条在主题编辑器中修改字体大小相关主题变量后，图标不居中的问题 ([#1663](https://github.com/sheinsight/shineout-next/pull/1663))
+- 修复 `Slider` 使用函数形式的 `disabled` 时，快速拖拽滑块无法精确停在允许范围边界值的问题([#1664](https://github.com/sheinsight/shineout-next/pull/1664))
+- 修复 `Tabs` 在 line/dash 模式下，当 `active` 值对应的 tab 不存在时，下划线仍然残留显示在第一个 tab 位置的问题 ([#1659](https://github.com/sheinsight/shineout-next/pull/1659))
+- 修复 `Tooltip` 在 `tip` 为空且设置了 `disabledChild` 时，子元素被错误禁用导致不可点击的问题 ([#1660](https://github.com/sheinsight/shineout-next/pull/1660))
+### 💅 Style
+- 修复 `Select`/`TreeSelect`/`Cascader` 鼠标移入移出时清除图标与箭头图标宽度不一致导致内容区域闪跳的问题 ([#1673](https://github.com/sheinsight/shineout-next/pull/1673))
+- 修正多个色系的 Design Token 颜色值，对齐 Ai 组件库设计规范 ([#1662](https://github.com/sheinsight/shineout-next/pull/1662))
+- 修复 `Select` 多列模式（columns）在不同尺寸（small/large）下列表头部、选项内边距和对齐样式异常的问题 ([#1671](https://github.com/sheinsight/shineout-next/pull/1671))
+- 优化 `Upload` 删除图标样式，从镂空改为实心，提升视觉辨识度 ([#1661](https://github.com/sheinsight/shineout-next/pull/1661))
+
+## 3.9.11
+<span class="time">2026-03-20</span>
+### 🚀 Performance
+- 优化 `Button.Group` 样式拆分为独立样式表，减少不必要的样式加载 ([#1642](https://github.com/sheinsight/shineout-next/pull/1642))
+- 优化 `Table` bordered 模式下竖线的渲染方式，减少选择器匹配开销 ([#1642](https://github.com/sheinsight/shineout-next/pull/1642))
+### 🐞 BugFix
+- 修复 `Drawer` 在嵌套使用 `Modal` 时面板样式选择器匹配异常的问题 ([#1649](https://github.com/sheinsight/shineout-next/pull/1649))
+- 修复 `Form` 表单项的 `bind` 属性不支持传入字符串类型的问题 (Regression: since v3.9.3) ([#1644](https://github.com/sheinsight/shineout-next/pull/1644))
+- 修复 `Input.Number` 设置 `defaultValue` 后，聚焦清空时值被立即回填导致无法删除的问题 ([#1646](https://github.com/sheinsight/shineout-next/pull/1646))
+- 修复竖向 `Menu` 子菜单弹出层的箭头方向显示异常的问题 ([#1650](https://github.com/sheinsight/shineout-next/pull/1650))
+- 修复 `Pagination` 在 `Form` 内使用时，页码选择器受表单上下文影响导致行为异常的问题 ([#1652](https://github.com/sheinsight/shineout-next/pull/1652))
+- 修复 `Popover` 设置 `background` 属性后，箭头背景色未跟随变化的问题 ([#1653](https://github.com/sheinsight/shineout-next/pull/1653))
+- 修复 `Popover` 设置 `disabled` 属性时在 React 17 下报错的问题 ([#1647](https://github.com/sheinsight/shineout-next/pull/1647))
+- 修复 `TreeSelect` 虚拟列表模式下设置 `defaultExpandAll` 后，折叠某个父节点会导致其他父节点异常折叠的问题 ([#1657](https://github.com/sheinsight/shineout-next/pull/1657))
+- 修复 `TreeSelect` 虚拟列表模式下 `actionOnClick` 不生效的问题 ([#1656](https://github.com/sheinsight/shineout-next/pull/1656))
+- 修复 `TreeSelect` 虚拟列表模式下展开节点时滚动条闪烁的问题 ([#1656](https://github.com/sheinsight/shineout-next/pull/1656))
+- 修复 `Tree` 设置 `defaultExpandAll` 后，异步更新数据时节点未能默认全部展开的问题（改进 [#1304](https://github.com/sheinsight/shineout-next/pull/1304) 的方案，同时修复其引入的 `TreeSelect` 虚拟列表折叠异常） ([#1657](https://github.com/sheinsight/shineout-next/pull/1657))
+
+## 3.9.10
+<span class="time">2026-03-04</span>
+### 🆕 Feature
+- `Modal` 新增 `mask` 属性支持设置为 `{ blur: true }` 来启用模糊遮罩效果 ([#1631](https://github.com/sheinsight/shineout-next/pull/1631))
+- `Textarea` 新增 `showClear` 属性，支持显示清除按钮 ([#1634](https://github.com/sheinsight/shineout-next/pull/1634))
+### 💎 Enhancement
+- `Menu` 使用 `active` 且非受控时，自动展开激活项的父级菜单 ([#1635](https://github.com/sheinsight/shineout-next/pull/1635))
+- `Table` 虚拟列表模式下 `rowEvents` 事件回调签名扩展为 `(event, rowData, rowIndex)`，支持直接获取行数据和真实索引 ([#1632](https://github.com/sheinsight/shineout-next/pull/1632))
+- `Table` 虚拟列表模式下 `tableRef` 新增 `getScrollContainer` 方法，用于获取滚动容器元素 ([#1632](https://github.com/sheinsight/shineout-next/pull/1632))
+### 🚀 Performance
+- 优化 `Menu` inline 模式下子菜单的渲染性能，未展开的子菜单不渲染 DOM，展开后保留 ([#1635](https://github.com/sheinsight/shineout-next/pull/1635))
+- 优化 `Table` 在祖先元素 `display:none` 后恢复显示时不再触发多余的重新渲染 ([#1641](https://github.com/sheinsight/shineout-next/pull/1641))
+
+## 3.9.9
+<span class="time">2026-02-24</span>
+### 🆕 Feature
+- `Checkbox` 新增 `verticalAlign` 属性：支持指示器和文字的顶对齐 ([#1628](https://github.com/sheinsight/shineout-next/pull/1628))
+- `Form` 新增 `keepErrorAbove` 属性，错误信息独占一行，不再覆盖提示信息 ([#1624](https://github.com/sheinsight/shineout-next/pull/1624))
+- `Popover` 新增全局配置项 `animation`，用于配置是否启用弹出动画效果 ([#1607](https://github.com/sheinsight/shineout-next/pull/1607))
+- `Radio` 新增 `verticalAlign` 属性：支持指示器和文字的顶对齐 ([#1628](https://github.com/sheinsight/shineout-next/pull/1628))
+### 🚀 Performance
+- 优化 `Table` 的 ResizeObserver 性能，减少元素在显示/隐藏切换时的不必要回调触发 ([#1616](https://github.com/sheinsight/shineout-next/pull/1616))
+### 🐞 BugFix
+- 修复 `Select` 开启 `onFilter` 后输入关键字进行滚动加载时列表重置到第一条的问题 ([#1619](https://github.com/sheinsight/shineout-next/pull/1619))
+- 修复 `Select` 输入框内容过长时出现滚动条的问题 ([#1618](https://github.com/sheinsight/shineout-next/pull/1618))
+- 修复 `Select` 的 `renderCompressed` 在 `compressed='no-repeat'` 模式下 `data` 参数未去重的问题 ([#1610](https://github.com/sheinsight/shineout-next/pull/1610))
 - 修复 `Table` 树形数据在 `treeCheckAll=true` 时，父节点 disabled 后无法通过 thead 全选勾选其未 disabled 的子节点的问题 ([#1613](https://github.com/sheinsight/shineout-next/pull/1613))
 - 修复 `Table` 的 `pagination.onChange` 第三个参数 `sizeChange` 为 `undefined` 的问题 ([#1608](https://github.com/sheinsight/shineout-next/pull/1608))
 - 修复 `Tabs` 的 line 模式在 RTL 布局的微前端环境下初始化时可能出现下划线位置与 active 标题不对齐的问题 ([#1613](https://github.com/sheinsight/shineout-next/pull/1613))
 - 修复 `Tabs` 动态添加 `Tabs.Panel` 时滚动位置重置而导致 active tab 不在视口内的问题 ([#1611](https://github.com/sheinsight/shineout-next/pull/1611))
 - 修复 `Tooltip` 在 `tip` 属性动态从空值变为有值时，第一次鼠标移入无法显示的问题 ([#1614](https://github.com/sheinsight/shineout-next/pull/1614))
+- 修复 `TreeSelect` 通过粘贴文本搜索时可能出现搜索结果不更新的问题 ([#1621](https://github.com/sheinsight/shineout-next/pull/1621))
 ### 💅 Style
 - 优化多个组件的样式细节和交互体验，修复 `ButtonGroup`、`Cascader` 等组件的若干问题 ([#1611](https://github.com/sheinsight/shineout-next/pull/1611))
 
@@ -354,7 +479,7 @@
 - 修复 `Cascader` 的 `renderCompressed` 在某些特殊交互后，自定义的 Popover 无法正常打开的问题 ([#1297](https://github.com/sheinsight/shineout-next/pull/1297))
 - 优化 `Select` 开启 `columns` 后，列表上方的全选字样支持多语言配置 ([#1294](https://github.com/sheinsight/shineout-next/pull/1294))
 - 修复 `TreeSelect` 开启 `virtual` 后，预设值在面板首次打开时节点未高亮的问题 ([#1309](https://github.com/sheinsight/shineout-next/pull/1309))
-- 修复 `Tree` 在设置了 `defaultExpandAll` 后，组件初始化完再更改数据导致默认展开不生效的问题 ([#1261](https://github.com/sheinsight/shineout-next/pull/1261))
+- 修复 `Tree` 在设置了 `defaultExpandAll` 后，组件初始化完再更改数据导致默认展开不生效的问题（该方案在 [#1657](https://github.com/sheinsight/shineout-next/pull/1657) 中改进） ([#1304](https://github.com/sheinsight/shineout-next/pull/1304))
 
 ## 3.7.9
 <span class="time">2025-08-06</span>
