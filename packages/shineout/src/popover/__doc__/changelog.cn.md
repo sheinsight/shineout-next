@@ -1,3 +1,8 @@
+## 3.9.17-beta.3
+2026-06-23
+### 🆕 Feature
+- `Popover` 新增 `pointAtCenter` 属性，开启后箭头将始终指向触发元素的中心位置 ([#1738](https://github.com/sheinsight/shineout-next/pull/1738))
+
 ## 3.9.16-beta.5
 2026-06-04
 ### 💅 Style
