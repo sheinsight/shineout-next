@@ -1,8 +1,8 @@
 /**
- * cn - 箭头指向目标中心
- *    -- 使用 `pointAtCenter` 让箭头始终指向触发元素的中心（对非居中位置如 bottom-left、top-right 等有效）
+ * cn - 箭头居中
+ *    -- 使用 `pointAtCenter` 让箭头指向触发元素的中心
  * en - Point at center
- *    -- Use `pointAtCenter` to make the arrow always point to the center of the trigger element (effective for non-center positions like bottom-left, top-right, etc.)
+ *    -- Use `pointAtCenter` to make the arrow point to the center of the trigger element
  */
 
 import React, { useState } from 'react';
