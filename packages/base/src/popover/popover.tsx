@@ -1,8 +1,9 @@
 import { getClosestScrollContainer, usePersistFn, usePopup, useRender, util } from '@sheinx/hooks';
 import AbsoluteList from '../absolute-list';
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { PopoverProps, PopoverPosition } from './popover.type';
 import { useConfig } from '../config';
+import { arrowHCenterOffset, arrowVCenterOffset } from '../common/arrow';
 import classNames from 'classnames';
 
 const emptyEvent = <U extends { stopPropagation: () => void }>(e: U) => e.stopPropagation();
@@ -21,6 +22,7 @@ const Popover = (props: PopoverProps) => {
     popupGap = 0,
     showArrow = true,
     zIndex = 1060,
+    pointAtCenter = false,
   } = props;
   const { current: context } = React.useRef({ rendered: false, hasOpened: false });
 
@@ -57,6 +59,27 @@ const Popover = (props: PopoverProps) => {
   const [contentStyle, setContentStyle] = React.useState<React.CSSProperties>();
 
   const events = getTargetProps();
+
+  // 计算 pointAtCenter 的偏移量，使箭头指向触发元素的中心，并与用户传入的 offset 合并
+  const mergedOffset = useMemo((): [number, number] | undefined => {
+    const userOffset = props.offset;
+    if (!pointAtCenter) return userOffset;
+    const rect = targetRef.current?.getBoundingClientRect();
+    if (!rect) return userOffset;
+    let centerOffsetX = 0;
+    let centerOffsetY = 0;
+    // 垂直方向的非居中位置：bottom-left, bottom-right, top-left, top-right
+    if (/^(top|bottom)-(left|right)$/.test(position)) {
+      centerOffsetX = arrowHCenterOffset - rect.width / 2;
+    // 水平方向的非居中位置：left-top, left-bottom, right-top, right-bottom
+    } else if (/^(left|right)-(top|bottom)$/.test(position)) {
+      centerOffsetY = arrowVCenterOffset - rect.height / 2;
+    }
+    return [
+      centerOffsetX + (userOffset?.[0] ?? 0),
+      centerOffsetY + (userOffset?.[1] ?? 0),
+    ];
+  }, [pointAtCenter, position, targetRef.current, props.offset]);
 
   const [updateKey, setUpdateKey] = React.useState(0);
   const handleUpdateKey = usePersistFn(() => {
@@ -174,7 +197,7 @@ const Popover = (props: PopoverProps) => {
       adjust={props.adjust}
       onAdjust={props.adjust ? setPositionState : undefined}
       lazy={props.lazy}
-      offset={props.offset}
+      offset={mergedOffset}
       updateKey={updateKey}
       setSizingStyle={props.boundary ? setContentStyle : undefined}
     >
