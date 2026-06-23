@@ -211,4 +211,12 @@ export interface PopoverProps extends Pick<CommonType, 'className' | 'style'> {
    * @private 边界元素，内部使用
    */
   boundary?: () => HTMLElement | null;
+
+  /**
+   * @en Whether the arrow points to the center of the target element (effective for non-center positions like bottom-left, top-right, etc.)
+   * @cn 箭头是否指向目标元素的中心（对非居中位置如 bottom-left、top-right 等有效）
+   * @default false
+   * @version 3.9.17
+   */
+  pointAtCenter?: boolean;
 }

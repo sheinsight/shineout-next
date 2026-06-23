@@ -4,6 +4,7 @@ import React, { cloneElement, isValidElement, useEffect, useMemo } from 'react';
 import { TooltipProps } from './tooltip.type';
 import AbsoluteList from '../absolute-list';
 import { useConfig } from '../config';
+import { arrowHCenterOffset, arrowVCenterOffset } from '../common/arrow';
 
 const { devUseWarning } = util;
 
@@ -25,6 +26,7 @@ const Tooltip = (props: TooltipProps) => {
     type = 'default',
     position: popsitionProps = 'auto',
     popupGap = 0,
+    pointAtCenter = false,
   } = props;
 
   // Early validation checks BEFORE any hooks
@@ -55,6 +57,24 @@ const Tooltip = (props: TooltipProps) => {
   });
 
   const events = getTargetProps();
+
+  // 计算 pointAtCenter 的偏移量，使箭头指向触发元素的中心
+  const pointAtCenterOffset = useMemo((): [number, number] | undefined => {
+    if (!pointAtCenter) return undefined;
+    const rect = targetRef.current?.getBoundingClientRect();
+    if (!rect) return undefined;
+    // 垂直方向的非居中位置：bottom-left, bottom-right, top-left, top-right
+    // 箭头水平中心 = 内边距(8) + 半宽(8) = 16px
+    if (/^(top|bottom)-(left|right)$/.test(position)) {
+      return [arrowHCenterOffset - rect.width / 2, 0];
+    }
+    // 水平方向的非居中位置：left-top, left-bottom, right-top, right-bottom
+    // 箭头旋转 90° 后，垂直中心 = 内边距(8) + 半高(4) = 12px
+    if (/^(left|right)-(top|bottom)$/.test(position)) {
+      return [0, arrowVCenterOffset - rect.height / 2];
+    }
+    return undefined;
+  }, [pointAtCenter, position, targetRef.current]);
 
   const [updateKey, setUpdateKey] = React.useState(0);
   const handleUpdateKey = usePersistFn(() => {
@@ -141,6 +161,7 @@ const Tooltip = (props: TooltipProps) => {
           adjust={popsitionProps === 'auto'}
           checkPosition
           updateKey={updateKey}
+          offset={pointAtCenterOffset}
         >
           <div
             className={classNames(
