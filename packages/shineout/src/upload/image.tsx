@@ -28,5 +28,9 @@ BaseUploadImage.displayName = 'ShineoutUploadImage';
 export default <T,>(props: UploadImageProps<T>) => {
   const customProps = useUploadCommon({ rules: props.rules });
 
-  return useFieldCommon({ ...props, ...customProps }, BaseUploadImage<T>);
+  // 同 upload.tsx：useFieldCommon 会把 name 从子组件 props 中移除，
+  // 提前将其作为 htmlName 的 fallback 保存，以兼容 v2 中 name 作为 FormData 键名的行为。
+  const htmlName = props.htmlName ?? (typeof props.name === 'string' ? props.name : undefined);
+
+  return useFieldCommon({ ...props, htmlName, ...customProps }, BaseUploadImage<T>);
 };

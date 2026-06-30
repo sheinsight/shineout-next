@@ -1,3 +1,11 @@
+## 3.9.17-beta.4
+2026-06-30
+
+### 🐞 BugFix
+
+- 修复 `Upload` / `Upload.Image` 的 `name` 属性在 v1/v2 升级 v3 后不再作为上传文件字段名的问题 ([#1741](https://github.com/sheinsight/shineout-next/pull/1741))
+
+
 ## 3.9.16-beta.5
 2026-06-08
 
