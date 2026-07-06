@@ -69,7 +69,6 @@ const Scroll = (props: ScrollProps) => {
     display: 'flex',
     position: 'sticky',
     flexDirection: 'column',
-    overflow: props.isScrollX ? 'initial' : 'hidden',
     top: 0,
   } as React.CSSProperties;
 
