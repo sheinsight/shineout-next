@@ -1,3 +1,11 @@
+## 3.9.17-beta.5
+2026-07-06
+
+### 🐞 BugFix
+
+- 修复 `Table` 通过条件渲染切换视图后重新挂载时，横向滚动失效的问题（Mac 非常驻滚动条环境下） ([#1742](https://github.com/sheinsight/shineout-next/pull/1742))
+
+
 ## 3.9.15-beta.3
 2026-05-22
 
