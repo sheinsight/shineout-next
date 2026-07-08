@@ -66,6 +66,8 @@ interface SemanticProps<K extends string> {
 }
 ```
 
+> **Popover 的历史兼容例外**：在绝大多数组件中 `style` prop 等价于 `styles.root`，但 **Popover 的 `style` 历来作用于 content 节点**（弹层内容区）而非 root（外层浮层容器）。为避免破坏存量用户行为，这一映射保持不变。新用户推荐统一使用 `styles.content` 以获得更清晰的语义。
+
 **使用示例**（Popover）：
 
 ```tsx
@@ -165,7 +167,15 @@ const sem = useSemantic<PopoverSemanticKey>(
 ### 4.5 不做的事
 
 - ❌ 不注入 `data-semantic="header"` 这类 `data-*` 属性（与竞品对齐，保持 DOM 干净；测试钩子继续走 `data-testid` 透传；文档站 hover 高亮通过 §6.1 的"文档站包装层注入 mark class"方案解决）
-- ❌ 一期不支持函数式 `classNames: (info) => Record<K, string>`（待出现明确诉求再做）
+- ✅ ~~一期不支持函数式 `classNames`~~ **已实现**（Popover PoC 阶段即落地，见 commit `9442300eb`）。实际粒度比最初设想更细：不是"整体一个函数返回 `Record<K, string>`"，而是 **每个 key 的 value 可以单独是静态字符串或 `(info: Info) => string` 函数**。`Info` 是组件级状态快照接口（由各组件自行定义），`useSemantic` 泛型签名为 `useSemantic<K, Info>`，第 4 个参数传入当前渲染帧的 `info` 对象，hook 内部自动 dispatch 函数/字符串二态。Popover 的 `Info` 为 `PopoverClassNamesInfo { open, position, type }`，用法示例：
+  ```tsx
+  <Popover
+    classNames={{
+      root: ({ open }) => open ? 'my-pop--open' : 'my-pop',
+      arrow: 'static-class',   // 纯字符串仍有效
+    }}
+  />
+  ```
 - ❌ 不改 JSS 命名前缀 `soui-` 与现有 hash 机制
 - ❌ 不废弃任何现有 prop
 
@@ -225,13 +235,23 @@ const sem = useSemantic<PopoverSemanticKey>(props.classNames, props.styles);
 >
 > 但作为 IDE 工具协议，2026 年 `llms.txt` 已是事实标准：上述五大 agentic IDE 全部原生支持。同期 Svelte 5 公开数据显示，喂 `llms-full.txt` 后模型在新语法上的 pass rate 从 < 50% 提升到 90%+。**shineout 与 Svelte 5 同属"模型训练语料里覆盖少"的库**，预期收益甚至比对 antd 更显著。
 
-### 6.1 组件文档新增「Semantic DOM」章节
+### 6.1 组件文档新增「Semantic DOM」交互式 Tab
 
-每个组件文档页新增独立章节，**三段式**：
+~~原方案：静态三段式 markdown（Parts 列表 / Usage Example / Abstract DOM）。~~ 实际落地采用了体验更优的 **交互式独立 Tab**（见 commit `f8984dd3b`）：
 
-1. **Parts 列表**：key 名称 + 中英文说明
-2. **Usage Example**：把所有 key 标 class 的代码模板
-3. **Abstract DOM**：实际渲染后的 HTML 片段，每个语义节点标注对应 key
+**实现方式**：
+
+1. 文档站 Tabs 新增 `Semantic` tab（仅当组件导出了 `<comp>.semantic.tsx` 时显示）
+2. 每个组件提供 `SemanticSchema<K>`（key 列表含中英说明 + demo 组件），放在 `packages/shineout/src/<comp>/<comp>.semantic.tsx`
+3. Tab 内左右双栏布局：
+   - **左侧渲染舞台**：渲染 `schema.demo` 组件的真实 DOM；切到该 tab 时通过 `setConfig` 注入 mark class 到目标组件
+   - **右侧 key 列表**：列出所有 semantic key 名 + 中英文说明；hover 任意 key 时，左侧对应节点实时高亮（覆盖半透明矩形，支持 portal 渲染的节点）
+4. 离开 Semantic tab 时恢复原 config，不影响其他 tab
+
+**优势对比原方案**：
+- 开发者无需脑补"key 对应哪个 DOM"，直接看高亮
+- 无需手写 Abstract DOM HTML 片段（维护成本高且容易过期）
+- 交互体验与 antd v6 文档站对齐
 
 ### 6.2 LLM 索引产物
 
