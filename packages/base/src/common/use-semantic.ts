@@ -45,6 +45,8 @@ export interface SemanticKeyMeta<K extends string = string> {
   en: string;
   /** 引入版本号，可选，显示为 chip 例 "3.10.0" */
   version?: string;
+  /** 示例代码字符串，文档站 Semantic tab info 图标弹出展示 */
+  example?: string;
 }
 
 /**

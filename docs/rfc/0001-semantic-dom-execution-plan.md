@@ -1,9 +1,8 @@
 # Semantic DOM 执行计划
 
-> 配套 `0001-semantic-dom.md`。本文档是「下周一开始干、每天打开就知道今天要做什么」的可执行版。
+> 配套 `0001-semantic-dom.md`。本文档是「每天打开就知道今天要做什么」的可执行版。
 >
-> - **起点**：2026-06-08（周一）
-> - **预计完结**：2026-07-17（周五），约 6 个工作周
+> - **预估总工期**：约 30 个工作日（穿插进行）
 > - **负责人**：Tom Zhai
 > - **协作分支**：`feat/semantic-dom-rfc`（基础设施 + Popover PoC 已就绪）
 
@@ -11,22 +10,22 @@
 
 ## 0. 总体节奏
 
-| 周次 | 日期 | 阶段 | 关键产出 |
-|---|---|---|---|
-| W1 | 06-08 ~ 06-12 | **P0 基础设施收尾 + RFC 评审** | RFC 合并 / `useSemantic` 单测 / `setConfig` 全局兜底接入点 / Popover PoC PR 合并 |
-| W2 | 06-15 ~ 06-19 | **P1 高优先组件 (一)** | Modal / Drawer / Tooltip 改造 |
-| W3 | 06-22 ~ 06-26 | **P1 高优先组件 (二)** | Form.Item / Select / Cascader |
-| W4 | 06-29 ~ 07-03 | **P2 复杂组件** | Table（点号嵌套 key 验证）/ DatePicker |
-| W5 | 07-06 ~ 07-10 | **P3 剩余组件 + P5 AI 物料 (启动)** | Button/Input/Card/Alert 等 + `llms-full.txt` 脚手架 |
-| W6 | 07-13 ~ 07-17 | **P6 Codemod + 收尾** | `@sheinx/codemod` 发布 / 文档 / Cursor 接入指南 |
+| 阶段 | 预估工时 | 关键产出 |
+|---|---|---|
+| **P0 基础设施收尾 + RFC 评审** | 5 天 | RFC 合并 / `useSemantic` 单测 / `setConfig` 全局兜底接入点 / Popover PoC PR 合并 |
+| **P1 高优先组件 (一)** | 5 天 | Modal / Drawer / Tooltip 改造 |
+| **P1 高优先组件 (二)** | 5 天 | Form.Item / Select / Cascader |
+| **P2 复杂组件** | 5 天 | Table（点号嵌套 key 验证）/ DatePicker |
+| **P3 剩余组件 + P5 AI 物料** | 5 天 | Button/Input/Card/Alert 等 + `llms-full.txt` 脚手架 |
+| **P6 Codemod + 收尾** | 5 天 | `@sheinx/codemod` 发布 / 文档 / Cursor 接入指南 |
 
-> ⚠️ 节奏假设：每周净投入 ≈ 3 个工作日（剩余两天处理本职 bug fix / review）。如实际节奏更慢，整体顺延，**P5/P6 不要砍**——它们是与竞品拉开差距的关键。
+> ⚠️ 节奏假设：穿插进行，每周净投入 ≈ 3 个工作日（剩余两天处理本职 bug fix / review）。如实际节奏更慢，整体顺延，**P5/P6 不要砍**——它们是与竞品拉开差距的关键。
 
 ---
 
 ## 1. 完成定义（DoD）
 
-每个组件改造必须满足 **6 条**才算 done：
+每个组件改造必须满足 **7 条**才算 done：
 
 1. ✅ `XxxSemanticKey` 类型已定义，key 列表写进 `.type.ts`，附 JSDoc 中英双语说明
 2. ✅ `XxxProps` 新增 `classNames?: SemanticClassNames<K>` 和 `styles?: SemanticStyles<K>`，挂 `@version next`
@@ -34,12 +33,13 @@
 4. ✅ 现有 `headerStyle` / `bodyStyle` / `arrowClass` / `dropdownClassName` 等老 prop **保留不删**，标 `@deprecated 推荐使用 classNames.xxx / styles.xxx`
 5. ✅ 新增 `__example__/NN-semantic.tsx` demo，文件头注释格式标准（cn/en 双语，构建脚本会自动收录到文档）
 6. ✅ snapshot 测试：传入 `classNames={{ x: 'test-x' }}` 时，对应节点 DOM 上有 `test-x` 这个 class（防 antd v6 早期"slot 串味"那种 bug）
+7. ✅ `<comp>.semantic.tsx` 中每个 key 的 `SemanticKeyMeta` 必须填写 `example` 字段（示例代码字符串），文档站 Semantic tab 右侧 ⓘ info 图标会通过 Popover 弹出该代码（含 Prism 语法高亮），帮助用户快速了解用法
 
 ---
 
 ## 2. 通用 Semantic Key 词表（一锤定音版）
 
-> 这是本 RFC **最重要**的一个表。一旦发布即承诺向后兼容。下周一第一件事是把这张表团队过一遍。
+> 这是本 RFC **最重要**的一个表。一旦发布即承诺向后兼容。开工第一件事是把这张表团队过一遍。
 
 ### 2.1 顶级通用 key（所有组件优先使用这些命名）
 
@@ -86,29 +86,29 @@ pagination.root   pagination.item
 
 ## 3. 周历明细
 
-### W1（06-08 ~ 06-12）P0 基础设施 + RFC 评审
+### P0（约 5 天）基础设施 + RFC 评审
 
-| 日期 | 事项 | 验收 |
+| 天次 | 事项 | 验收 |
 |---|---|---|
-| 06-08 周一 | 上午：把 §2 词表 + RFC 主体发到组里发起评审；下午：补 `useSemantic` 单测 | 评审会议邀请发出 / `use-semantic.test.ts` 合并 |
-| 06-09 周二 | 评审会（30min），收意见改 RFC；准备给 `ConfigOption` 各 sub-config 扩 `classNames`/`styles` 字段的类型设计（沿用现有 `setConfig`，不新增组件） | 会议纪要 / `ConfigOption` 改造方案 1 页 |
-| 06-10 周三 | 改 `useSemantic` 接受第三个"全局兜底"参数；改 Popover 让它消费 `useConfig().popover` | Popover demo 加一个 `setConfig` 全局覆盖示例 |
-| 06-11 周四 | 把 `feat/semantic-dom-rfc` 整理成 2 个 commit 推 PR：`feat(rfc): introduce Semantic DOM` + `feat(popover): support Semantic DOM API` | PR 链接 / CI 通过 |
-| 06-12 周五 | PR review 修改 / 合入 main / 写 W2 启动文档 | PR merged |
+| D1 | 上午：把 §2 词表 + RFC 主体发到组里发起评审；下午：补 `useSemantic` 单测 | 评审会议邀请发出 / `use-semantic.test.ts` 合并 |
+| D2 | 评审会（30min），收意见改 RFC；准备给 `ConfigOption` 各 sub-config 扩 `classNames`/`styles` 字段的类型设计（沿用现有 `setConfig`，不新增组件） | 会议纪要 / `ConfigOption` 改造方案 1 页 |
+| D3 | 改 `useSemantic` 接受第三个"全局兜底"参数；改 Popover 让它消费 `useConfig().popover` | Popover demo 加一个 `setConfig` 全局覆盖示例 |
+| D4 | 把 `feat/semantic-dom-rfc` 整理成 2 个 commit 推 PR：`feat(rfc): introduce Semantic DOM` + `feat(popover): support Semantic DOM API` | PR 链接 / CI 通过 |
+| D5 | PR review 修改 / 合入 main / 写 P1 启动文档 | PR merged |
 
-**W1 风险预案**：如果 RFC 评审有大改（>2 处词表变动），W1 顺延到 06-15，W2 ~ W6 全部右移一周。
+**风险预案**：如果 RFC 评审有大改（>2 处词表变动），P0 顺延，后续阶段全部右移。
 
 ---
 
-### W2（06-15 ~ 06-19）P1 高优先组件 (一)：Modal / Drawer / Tooltip
+### P1-a（约 5 天）高优先组件 (一)：Modal / Drawer / Tooltip
 
-| 日期 | 事项 |
+| 天次 | 事项 |
 |---|---|
-| 06-15 周一 | **Modal** 改造 + demo + snapshot 测试（PR-1） |
-| 06-16 周二 | Modal PR review；**Drawer** 改造（PR-2） |
-| 06-17 周三 | Drawer 合入；**Tooltip** 改造（PR-3，因为是 Popover 的弱化版，可以直接复制 PoC 模式） |
-| 06-18 周四 | Tooltip 合入；review 三个 PR 的 key 设计是否一致 |
-| 06-19 周五 | 周回顾：是否有需要回写到 RFC §2 词表的发现？必要时小版本号 RFC v1.1 |
+| D1 | **Modal** 改造 + demo + snapshot 测试（PR-1） |
+| D2 | Modal PR review；**Drawer** 改造（PR-2） |
+| D3 | Drawer 合入；**Tooltip** 改造（PR-3，因为是 Popover 的弱化版，可以直接复制 PoC 模式） |
+| D4 | Tooltip 合入；review 三个 PR 的 key 设计是否一致 |
+| D5 | 周回顾：是否有需要回写到 RFC §2 词表的发现？必要时小版本号 RFC v1.1 |
 
 **Modal 预计 key**：`root` / `mask` / `panel` / `header` / `title` / `body` / `footer` / `close` / `resizeX`
 **Drawer 预计 key**：`root` / `mask` / `panel` / `header` / `body` / `footer` / `close`
@@ -116,35 +116,35 @@ pagination.root   pagination.item
 
 ---
 
-### W3（06-22 ~ 06-26）P1 高优先组件 (二)：Form.Item / Select / Cascader
+### P1-b（约 5 天）高优先组件 (二)：Form.Item / Select / Cascader
 
-| 日期 | 事项 |
+| 天次 | 事项 |
 |---|---|
-| 06-22 周一 | **Form.Item** 改造（PR-4）—— 预计 key：`root` / `label` / `control` / `help` / `extra` / `required` |
-| 06-23 周二 | Form.Item review；启动 **Select** 改造（Select 是 P1 最复杂的） |
-| 06-24 周三 | **Select** 继续（PR-5）—— 预计 key：`root` / `wrapper` / `selector` / `prefix` / `suffix` / `popup` / `option` / `optionGroup` / `empty` |
-| 06-25 周四 | Select 合入；**Cascader** 改造（结构与 Select 类似，直接借鉴）（PR-6） |
-| 06-26 周五 | Cascader 合入；周回顾 |
+| D1 | **Form.Item** 改造（PR-4）—— 预计 key：`root` / `label` / `control` / `help` / `extra` / `required` |
+| D2 | Form.Item review；启动 **Select** 改造（Select 是 P1 最复杂的） |
+| D3 | **Select** 继续（PR-5）—— 预计 key：`root` / `wrapper` / `selector` / `prefix` / `suffix` / `popup` / `option` / `optionGroup` / `empty` |
+| D4 | Select 合入；**Cascader** 改造（结构与 Select 类似，直接借鉴）（PR-6） |
+| D5 | Cascader 合入；阶段回顾 |
 
 **Select 的特别注意点**：`popup` 是渲染在 body 下的 portal，必须保证 portal 后的 DOM 上 `classNames.popup` 仍然生效（PoC 已验证 Popover 的 portal 行为是正确的，但 Select 走另一套路径，需单独 snapshot）。
 
 ---
 
-### W4（06-29 ~ 07-03）P2 复杂组件：Table / DatePicker
+### P2（约 5 天）复杂组件：Table / DatePicker
 
-| 日期 | 事项 |
+| 天次 | 事项 |
 |---|---|
-| 06-29 周一 | **Table** 设计：把 §2.3 嵌套 key 落到 Table 上，写 key 表草案找团队确认（不直接动代码） |
-| 06-30 周二 | Table 改造（PR-7） —— key：`root` / `header.wrapper/row/cell` / `body.wrapper/row/cell` / `footer` / `pagination.root/item` |
-| 07-01 周三 | Table 继续 + snapshot |
-| 07-02 周四 | **DatePicker** 改造（PR-8） —— key：`root` / `popup` / `header` / `body` / `footer` / `cell` / `cellInner` |
-| 07-03 周五 | DatePicker 合入；周回顾 |
+| D1 | **Table** 设计：把 §2.3 嵌套 key 落到 Table 上，写 key 表草案找团队确认（不直接动代码） |
+| D2 | Table 改造（PR-7） —— key：`root` / `header.wrapper/row/cell` / `body.wrapper/row/cell` / `footer` / `pagination.root/item` |
+| D3 | Table 继续 + snapshot |
+| D4 | **DatePicker** 改造（PR-8） —— key：`root` / `popup` / `header` / `body` / `footer` / `cell` / `cellInner` |
+| D5 | DatePicker 合入；阶段回顾 |
 
 **Table 风险**：现有 Table 有大量内部 hook 和 ref 传递，重构 `useSemantic` 接入需要小心**不破坏现有 virtual scroll 与 expand row 逻辑**。这条单独留一天 buffer。
 
 ---
 
-### W5（07-06 ~ 07-10）P3 剩余组件 + P5 AI 物料启动
+### P3 + P5（约 5 天）剩余组件 + AI 物料
 
 #### P3 组件清单（按价值排序，时间不够可截断）
 
@@ -183,26 +183,26 @@ pagination.root   pagination.item
 | Sticky | ⏭ skip | 无 inner DOM |
 | Divider / Gap / Grid / Link / Icon / Editable-Area / Message | ⏭ skip 或最简版 | 仅暴露 root |
 
-**节奏**：W5 头三天集中清扫 ✅ 组件（每天 4~6 个组件，借助统一改造模板）；后两天启动 AI 物料。
+**节奏**：前 3 天集中清扫 ✅ 组件（每天 4~6 个组件，借助统一改造模板）；后 2 天启动 AI 物料。
 
-#### P5 AI 物料（W5 后半周启动，W6 收尾）
+#### P5 AI 物料（本阶段后半段启动，P6 收尾）
 
-| 日期 | 事项 |
+| 天次 | 事项 |
 |---|---|
-| 07-09 周四 | 写 `scripts/build-llms-txt.js`：扫描 `packages/shineout/src/**/__doc__/index.md` 与 semantic 章节，生成单文件 `llms-full.txt` |
-| 07-10 周五 | 生成 `llms-semantic.md` / `llms.txt`（索引） |
+| D4 | 写 `scripts/build-llms-txt.js`：扫描 `packages/shineout/src/**/__doc__/index.md` 与 semantic 章节，生成单文件 `llms-full.txt` |
+| D5 | 生成 `llms-semantic.md` / `llms.txt`（索引） |
 
 ---
 
-### W6（07-13 ~ 07-17）P6 Codemod + 全面收尾
+### P6（约 5 天）Codemod + 全面收尾
 
-| 日期 | 事项 |
+| 天次 | 事项 |
 |---|---|
-| 07-13 周一 | 启动 `@sheinx/codemod`：jscodeshift 脚手架 + 第一条规则 `bodyStyle → styles.body` |
-| 07-14 周二 | 扩展规则：`headerStyle/footerStyle/arrowClass/dropdownClassName/popupClassName` 全转换 |
-| 07-15 周三 | 添加扫描规则：检测全局 CSS 里 `.soui-xxx-{hash}` 选择器并打 warning 引导迁移 |
-| 07-16 周四 | 写 README + 接入指南：Cursor `.cursor/rules/shineout.mdc` 模板 / Claude Code / Continue.dev 配置示例 |
-| 07-17 周五 | 整体发布：版本号 / changelog / 公司内部宣讲（30min） |
+| D1 | 启动 `@sheinx/codemod`：jscodeshift 脚手架 + 第一条规则 `bodyStyle → styles.body` |
+| D2 | 扩展规则：`headerStyle/footerStyle/arrowClass/dropdownClassName/popupClassName` 全转换 |
+| D3 | 添加扫描规则：检测全局 CSS 里 `.soui-xxx-{hash}` 选择器并打 warning 引导迁移 |
+| D4 | 写 README + 接入指南：Cursor `.cursor/rules/shineout.mdc` 模板 / Claude Code / Continue.dev 配置示例 |
+| D5 | 整体发布：版本号 / changelog / 公司内部宣讲（30min） |
 
 ---
 
@@ -220,6 +220,7 @@ pagination.root   pagination.item
 - [ ] 每个对应节点改为 `<div {...sem('key', [...原有 class]).className} style={{ ...原有 style, ...sem('key').style }}>`
 - [ ] 新增 `__example__/NN-semantic.tsx` demo（cn/en 头注释格式标准）
 - [ ] 新增 snapshot 测试：传 `classNames={{ x: 'gen-x' }}` 后 DOM 上必须有 `gen-x`
+- [ ] 在 `xxx.semantic.tsx` 中每个 key 的 `SemanticKeyMeta` 填写 `example` 字段（示例代码），文档站 Semantic tab ⓘ info 图标 Popover 展示
 - [ ] 运行 `pnpm test -- xxx` 全绿
 - [ ] PR description 列出本组件的全部 key 列表（review 重点）
 ```
@@ -228,7 +229,7 @@ pagination.root   pagination.item
 
 ## 5. 横向治理（贯穿全程，不属于任何单周）
 
-- **每周五写一份 W{n} 周报**贴在 RFC 文档下方：本周改了哪些组件、收到哪些反馈、key 词表是否调整
+- **每完成一个阶段写一份阶段周报**贴在 RFC 文档下方：本周改了哪些组件、收到哪些反馈、key 词表是否调整
 - **每完成一个 P1/P2 组件就回写到 RFC §2 词表**：如果出现新的通用 key（如发现多个组件都用 `clear` 这个 key），提升到通用表
 - **保护现有 PR `fix/popover-arrow-min-width`**：那条独立合入，不与本计划混淆
 - **保留所有老 prop**：本计划全程**不删任何现有 prop**。废弃在 v5 大版本统一处理
@@ -244,7 +245,7 @@ pagination.root   pagination.item
 | RFC 主文档 | ✅ 已起草，待评审 |
 | 执行计划文档 | ✅ 本文档 |
 | `useSemantic` hook | ✅ 已实现，待单测 |
-| `setConfig` 全局兜底接入点 | ⏳ W1 周三 |
+| `setConfig` 全局兜底接入点 | ⏳ P0-D3 |
 | Popover PoC | ✅ 已实现，待 PR |
 | `feat/semantic-dom-rfc` 分支 | ✅ 已建 |
 | **当前阻塞** | 无 |
@@ -262,7 +263,7 @@ pagination.root   pagination.item
 
 ---
 
-## 8. 成功标准（W6 结束时回头看）
+## 8. 成功标准（P6 结束时回头看）
 
 - ✅ shineout 全量组件支持 `classNames` / `styles` Semantic DOM API
 - ✅ `llms-full.txt` 发布到文档站，Cursor 一键可接入
@@ -272,4 +273,4 @@ pagination.root   pagination.item
 
 ---
 
-**起飞 ✈️ —— 2026-06-08 周一上午把 RFC 评审邀请发出去。**
+**起飞 ✈️ —— 把 RFC 评审邀请发出去。**
