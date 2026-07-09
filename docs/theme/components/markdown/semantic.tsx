@@ -1,8 +1,10 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useSnapshot } from 'valtio';
+import Prism from 'prismjs';
+import 'prismjs/components/prism-jsx';
 import store from '../../store';
 import { SemanticSchema } from 'docs/types';
-import { setConfig, config as shineoutConfig } from 'shineout';
+import { setConfig, config as shineoutConfig, Popover } from 'shineout';
 
 interface SemanticTabProps {
   schema: SemanticSchema;
@@ -11,12 +13,54 @@ interface SemanticTabProps {
 
 const MARK_PREFIX = 'sd-mark-';
 
+// ────────────── 内联 SVG 图标 ──────────────
+
+const PinIcon: React.FC<{ active?: boolean }> = ({ active }) => (
+  <svg viewBox="0 0 24 24" width="14" height="14" fill={active ? '#1677ff' : '#999'}>
+    <path d="M16 12V4h1V2H7v2h1v8l-2 2v2h5.2v6h1.6v-6H18v-2l-2-2z" />
+  </svg>
+);
+
+const InfoIcon: React.FC = () => (
+  <svg viewBox="0 0 24 24" width="14" height="14" fill="#999">
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+  </svg>
+);
+
+// ────────────── 代码高亮组件 ──────────────
+
+const CodeBlock: React.FC<{ code: string }> = ({ code }) => {
+  const codeRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (codeRef.current) {
+      Prism.highlightElement(codeRef.current);
+    }
+  }, [code]);
+
+  return (
+    <pre
+      style={{
+        margin: 0,
+        fontSize: 13,
+        lineHeight: 1.6,
+        fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
+        overflow: 'auto',
+        background: 'none',
+      }}
+    >
+      <code ref={codeRef as any} className="language-jsx">
+        {code}
+      </code>
+    </pre>
+  );
+};
+
+// ────────────── 主组件 ──────────────
 /**
  * 文档站 Semantic tab：参考业界主流组件库的 "Semantic DOM" 区块。
  * 左 = 渲染舞台；右 = key 列表，hover 联动高亮。
- *
- * 实现策略（PoC）：切到本 tab 时通过 setConfig 给目标组件全局注入 mark class，
- * 离开时恢复原 config。
+ * 每个 key 项右上角有 📌 pin（锁定高亮）和 ⓘ info（弹出示例代码）。
  */
 const Semantic: React.FC<SemanticTabProps> = ({ schema, name }) => {
   const state = useSnapshot(store);
@@ -25,9 +69,13 @@ const Semantic: React.FC<SemanticTabProps> = ({ schema, name }) => {
 
   const stageRef = useRef<HTMLDivElement>(null);
   const [hoveredKey, setHoveredKey] = useState<string | null>(null);
+  const [pinnedKey, setPinnedKey] = useState<string | null>(null);
   const [overlay, setOverlay] = useState<{ x: number; y: number; w: number; h: number } | null>(
     null,
   );
+
+  // 当前激活的 key：pinned 优先，否则 hovered
+  const activeKey = pinnedKey || hoveredKey;
 
   // key → mark className 表
   const markClassNames = useMemo(() => {
@@ -52,13 +100,13 @@ const Semantic: React.FC<SemanticTabProps> = ({ schema, name }) => {
     };
   }, [configKey, markClassNames]);
 
-  // hover key 变化 → 重新定位 overlay
+  // active key 变化 → 重新定位 overlay
   useEffect(() => {
-    if (!hoveredKey || !stageRef.current) {
+    if (!activeKey || !stageRef.current) {
       setOverlay(null);
       return;
     }
-    const target = document.querySelector<HTMLElement>(`.${MARK_PREFIX}${hoveredKey}`);
+    const target = document.querySelector<HTMLElement>(`.${MARK_PREFIX}${activeKey}`);
     if (!target) {
       setOverlay(null);
       return;
@@ -71,8 +119,7 @@ const Semantic: React.FC<SemanticTabProps> = ({ schema, name }) => {
       w: rect.width,
       h: rect.height,
     });
-  }, [hoveredKey]);
-
+  }, [activeKey]);
   // ────────────── 样式 ──────────────
 
   const containerStyle: React.CSSProperties = {
@@ -106,8 +153,22 @@ const Semantic: React.FC<SemanticTabProps> = ({ schema, name }) => {
     borderBottom: '1px solid #f0f0f0',
     cursor: 'pointer',
     transition: 'background 0.15s ease',
+    position: 'relative',
   };
 
+  const iconBtnStyle: React.CSSProperties = {
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 24,
+    height: 24,
+    borderRadius: 4,
+    border: 'none',
+    background: 'transparent',
+    cursor: 'pointer',
+    padding: 0,
+    transition: 'background 0.15s',
+  };
   return (
     <div style={{ padding: 40, marginTop: 208 }}>
       <div style={containerStyle}>
@@ -136,7 +197,8 @@ const Semantic: React.FC<SemanticTabProps> = ({ schema, name }) => {
         {/* 右：key 列表 */}
         <div style={listStyle}>
           {schema.keys.map((k) => {
-            const isActive = hoveredKey === k.key;
+            const isActive = activeKey === k.key;
+            const isPinned = pinnedKey === k.key;
             const desc = isCN ? k.cn : k.en;
             return (
               <div
@@ -165,6 +227,37 @@ const Semantic: React.FC<SemanticTabProps> = ({ schema, name }) => {
                       {k.version}
                     </span>
                   )}
+                  {/* 右上角操作图标 */}
+                  <span style={{ marginLeft: 'auto', display: 'flex', gap: 4 }}>
+                    <button
+                      type="button"
+                      title={isPinned ? 'Unpin' : 'Pin highlight'}
+                      style={{
+                        ...iconBtnStyle,
+                        transition: '.2s ease-in-out',
+                        transform: isPinned ? 'rotate(30deg)' : 'none',
+                      }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setPinnedKey(isPinned ? null : k.key);
+                      }}
+                    >
+                      <PinIcon active={isPinned} />
+                    </button>
+                    {k.example && (
+                      <button
+                        type="button"
+                        title="Show usage example"
+                        style={iconBtnStyle}
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <InfoIcon />
+                        <Popover trigger="click" position="left-top">
+                          <CodeBlock code={k.example} />
+                        </Popover>
+                      </button>
+                    )}
+                  </span>
                 </div>
                 <div style={{ color: '#666', fontSize: 13, lineHeight: 1.6 }}>{desc}</div>
               </div>
@@ -172,6 +265,7 @@ const Semantic: React.FC<SemanticTabProps> = ({ schema, name }) => {
           })}
         </div>
       </div>
+
     </div>
   );
 };
