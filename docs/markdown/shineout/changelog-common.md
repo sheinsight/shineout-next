@@ -1,3 +1,8 @@
+## 3.9.18-beta.1
+2026-07-10
+### 💅 Style
+- 框类选择组件（`Select`、`TreeSelect`、`Cascader` 等）结果项处于禁用状态时，不再显示删除图标 ([#1744](https://github.com/sheinsight/shineout-next/pull/1744))
+
 ## 3.9.17-beta.2
 2026-06-17
 ### 🐞 BugFix

@@ -65,10 +65,7 @@ const brightTag = (name: tagType, type: TagType) => ({
     border: `1px solid ${Token[`tag${type}DisabledBackgroundColor`]}`,
 
     '& $closeIconWrapper': {
-      fill: Token[`tag${type}IconDisabledFontColor`],
-      '&:hover': {
-        backgroundColor: 'transparent',
-      },
+      display: 'none',
     },
   },
 });
