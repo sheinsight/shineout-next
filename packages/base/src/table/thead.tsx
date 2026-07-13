@@ -346,7 +346,7 @@ export default (props: TheadProps) => {
       createTh(trs, col, 0, isLast, index);
     });
     return trs.map((tr, i) => (
-      <tr key={i} ref={(el) => (trRefs.current[i] = el)}>
+      <tr key={`${i}-${tr.map(item => item.props.colSpan).toString()}`} ref={(el) => (trRefs.current[i] = el)}>
         {tr}
       </tr>
     ));

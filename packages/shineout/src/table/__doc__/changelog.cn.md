@@ -1,3 +1,11 @@
+## 3.9.18-beta.1
+2026-07-13
+
+### 🐞 BugFix
+
+- 修复 `Table` 动态切换列的分组属性后，表头分组行渲染异常出现空白单元格的问题 ([#1745](https://github.com/sheinsight/shineout-next/pull/1745))
+
+
 ## 3.9.17-beta.5
 2026-07-06
 
