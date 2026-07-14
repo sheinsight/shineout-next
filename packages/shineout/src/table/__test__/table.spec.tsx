@@ -452,8 +452,9 @@ describe('Table[Base]', () => {
     expect(theadTh[0].textContent).toBe(columns[0].title);
     expect(theadTh[1].textContent).toBe(columns[1].title);
     fireEvent.click(container.querySelector('button')!);
-    expect(theadTr.querySelectorAll('th').length).toBe(newColumn.length);
-    expect(theadTr.querySelectorAll('th')[0].textContent).toBe(newColumn[0].title);
+    const updatedTheadTr = container.querySelector('thead')!.querySelector('tr')!;
+    expect(updatedTheadTr.querySelectorAll('th').length).toBe(newColumn.length);
+    expect(updatedTheadTr.querySelectorAll('th')[0].textContent).toBe(newColumn[0].title);
   });
   test('should render when set empty', () => {
     const emptyText = 'empty';
