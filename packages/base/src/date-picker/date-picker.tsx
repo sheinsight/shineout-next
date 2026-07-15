@@ -172,11 +172,13 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
   });
 
   const handleFocus = usePersistFn((e: React.FocusEvent<HTMLInputElement>) => {
+    if (disabledStatus === 'all') return;
     setFocused(true);
     props.onFocus?.(e);
   });
 
   const handleBlur = usePersistFn((e: React.FocusEvent<HTMLInputElement>, index?: number) => {
+    if (disabledStatus === 'all') return;
     setFocused(false);
     props.onBlur?.(e, index);
 

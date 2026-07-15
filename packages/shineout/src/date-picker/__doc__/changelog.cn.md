@@ -1,3 +1,8 @@
+## 3.9.18-beta.2
+2026-07-14
+### 🐞 BugFix
+- 修复 `DatePicker` 设置 `disabled` 后，仍然会触发 `onBlur` 和 `onFocus` 事件的问题 ([#1746](https://github.com/sheinsight/shineout-next/pull/1746))
+
 ## 3.9.8-beta.13
 2026-01-22
 ### 🐞 BugFix
