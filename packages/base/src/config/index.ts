@@ -5,6 +5,7 @@ import { SpinNameType } from '../spin/spin.type';
 import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
 import type { PopoverSemanticKey } from '../popover/popover.type';
 import type { TooltipSemanticKey } from '../tooltip/tooltip.type';
+import type { SpinSemanticKey } from '../spin/spin.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -14,6 +15,18 @@ export type SpinConfig =
       tip?: React.ReactNode;
       mode?: 'vertical' | 'horizontal';
       size?: number;
+      /**
+       * @en Global Semantic DOM classNames for Spin (applies to all Spin instances).
+       * @cn Spin 全局 Semantic DOM 类名（作用于所有 Spin 实例）。
+       * @version 3.10.0
+       */
+      classNames?: SemanticClassNames<SpinSemanticKey>;
+      /**
+       * @en Global Semantic DOM styles for Spin (applies to all Spin instances).
+       * @cn Spin 全局 Semantic DOM 样式（作用于所有 Spin 实例）。
+       * @version 3.10.0
+       */
+      styles?: SemanticStyles<SpinSemanticKey>;
     };
 
 type TooltipConfig = {
