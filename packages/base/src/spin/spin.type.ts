@@ -1,4 +1,5 @@
 import { CommonType } from '../common/type';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
 
 export type SpinModeType = 'vertical' | 'horizontal';
 
@@ -16,6 +17,30 @@ export type SpinNameType =
   | 'three-bounce'
   | 'wave'
   | 'chasing-ring';
+
+/**
+ * Spin Semantic DOM key 列表
+ * - root:        最外层容器
+ * - section:     加载区域（容器模式下的遮罩层）
+ * - indicator:   动画指示器
+ * - description: 提示文案
+ *
+ * @see /docs/rfc/0001-semantic-dom.md
+ */
+export type SpinSemanticKey = 'root' | 'section' | 'indicator' | 'description';
+
+/**
+ * 传入函数式 `classNames` 时的状态快照。
+ *
+ * @version 3.10.0
+ */
+export interface SpinClassNamesInfo {
+  /**
+   * @cn 当前是否在加载中
+   * @en Whether currently in loading state
+   */
+  loading: boolean;
+}
 
 export interface SpinStyle {
   spin?: () => SpinClasses;
@@ -128,4 +153,20 @@ export interface SpinProps extends Pick<CommonType, 'className' | 'style'> {
    * @default false
    */
   ignoreConfig?: boolean;
+
+  /**
+   * @en Semantic DOM classNames for internal nodes (root / section / indicator / description).
+   *     Accepts a static string or a function receiving a state snapshot.
+   * @cn 语义化 DOM 类名，可精准定制内部节点（root / section / indicator / description）。
+   *     值可为静态字符串或接收状态快照的函数。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<SpinSemanticKey, SpinClassNamesInfo>;
+
+  /**
+   * @en Semantic DOM inline styles for internal nodes (root / section / indicator / description).
+   * @cn 语义化 DOM 内联样式，可精准定制内部节点（root / section / indicator / description）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<SpinSemanticKey>;
 }

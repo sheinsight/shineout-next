@@ -1,7 +1,8 @@
 import classNames from 'classnames';
-import { SpinClasses, SpinProps } from './spin.type';
+import { SpinClassNamesInfo, SpinClasses, SpinProps, SpinSemanticKey } from './spin.type';
 import Spins from './spins';
 import { useConfig } from '../config';
+import { useSemantic } from '../common';
 
 const Spin = (props: SpinProps = {}) => {
   const {
@@ -71,16 +72,38 @@ const Spin = (props: SpinProps = {}) => {
 
   const spinStyle = jssStyle?.spin?.() || ({} as SpinClasses);
 
+  // Semantic DOM
+  const globalSemanticConfig = (!ignoreConfig && config.spin && typeof config.spin === 'object')
+    ? { classNames: config.spin.classNames, styles: config.spin.styles }
+    : undefined;
+
+  const semInfo: SpinClassNamesInfo = {
+    loading: children ? !!loading : true,
+  };
+
+  const [semClass, semStyle] = useSemantic<SpinSemanticKey, SpinClassNamesInfo>(
+    props.classNames,
+    props.styles,
+    globalSemanticConfig,
+    semInfo,
+  );
+
   const renderSpin = (isRoot: boolean) => {
     const n = name as keyof typeof Spins;
     if (Spins[n]) {
       const Comp = Spins[n];
+      const indicatorClass = semClass('indicator', []);
+      const indicatorStyleObj = semStyle('indicator');
+      const mergedStyle = indicatorStyleObj ? { ...style, ...indicatorStyleObj } : style;
+      const mergedClassName = isRoot
+        ? classNames(className, indicatorClass)
+        : indicatorClass || undefined;
       return (
         <Comp
           {...props}
           color={color}
-          style={style}
-          className={isRoot ? className : undefined}
+          style={mergedStyle}
+          className={mergedClassName}
         />
       );
     }
@@ -90,7 +113,7 @@ const Spin = (props: SpinProps = {}) => {
 
   const renderTip = () => {
     return (
-      <div className={classNames(tipClassName, spinStyle.tip)} style={{ color }}>
+      <div className={classNames(tipClassName, spinStyle.tip, semClass('description', []))} style={{ color, ...semStyle('description') }}>
         {typeof tip === 'string' ? <span>{tip}</span> : tip}
       </div>
     );
@@ -105,11 +128,12 @@ const Spin = (props: SpinProps = {}) => {
         [spinStyle.horizontal]: mode === 'horizontal',
       },
       spinStyle.content,
+      isRoot && semClass('root', []),
     );
 
     if (tip) {
       return (
-        <div className={contentClass}>
+        <div className={contentClass} style={isRoot ? semStyle('root') : undefined}>
           {renderSpin(false)}
           {tip && renderTip()}
         </div>
@@ -120,9 +144,13 @@ const Spin = (props: SpinProps = {}) => {
   };
   const renderContainer = () => {
     return (
-      <div className={classNames(className, spinStyle.rootClass, spinStyle.container)}>
+      <div className={classNames(className, spinStyle.rootClass, spinStyle.container, semClass('root', []))} style={semStyle('root')}>
         {children}
-        {loading && <div className={spinStyle.loading}>{renderContent(false)}</div>}
+        {loading && (
+          <div className={classNames(spinStyle.loading, semClass('section', []))} style={semStyle('section')}>
+            {renderContent(false)}
+          </div>
+        )}
       </div>
     );
   };

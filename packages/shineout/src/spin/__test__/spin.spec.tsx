@@ -2,7 +2,7 @@ import { useState } from 'react';
 import '@testing-library/jest-dom';
 import { render, cleanup, fireEvent } from '@testing-library/react';
 import Spin from '..';
-import { Button } from 'shineout';
+import { Button, setConfig } from 'shineout';
 import {
   snapshotTest,
   styleTest,
@@ -244,5 +244,139 @@ describe('Spin[Loading]', () => {
     expect(
       container.querySelector(spinRingOtherClassName) || container.querySelector(spinRingClassName),
     ).toBeTruthy();
+  });
+});
+
+describe('Spin[Semantic styles]', () => {
+  test('styles prop applies to root in standalone mode with tip', () => {
+    const { container } = render(
+      <Spin name='ring' tip='Loading' styles={{ root: { border: '1px solid red' } }} />,
+    );
+    const root = container.querySelector(spinContentClassName)! as HTMLElement;
+    expect(root.style.border).toBe('1px solid red');
+  });
+
+  test('styles prop applies to indicator', () => {
+    const { container } = render(
+      <Spin name='ring' styles={{ indicator: { transform: 'scale(1.5)' } }} />,
+    );
+    const indicator = container.querySelector(spinClassName)! as HTMLElement;
+    expect(indicator.style.transform).toBe('scale(1.5)');
+  });
+
+  test('styles prop applies to description', () => {
+    const { container } = render(
+      <Spin name='ring' tip='Loading' styles={{ description: { fontSize: '14px' } }} />,
+    );
+    const desc = container.querySelector(spinTipClassName)! as HTMLElement;
+    expect(desc.style.fontSize).toBe('14px');
+  });
+
+  test('styles prop applies to root and section in container mode', () => {
+    const { container } = render(
+      <Spin
+        name='ring'
+        loading
+        styles={{ root: { border: '2px solid blue' }, section: { backdropFilter: 'blur(2px)' } }}
+      >
+        <div>Content</div>
+      </Spin>,
+    );
+    const root = container.querySelector(spinContainerClassName)! as HTMLElement;
+    expect(root.style.border).toBe('2px solid blue');
+    const section = root.querySelector(spinLoadingClassName)! as HTMLElement;
+    expect(section.style.backdropFilter).toBe('blur(2px)');
+  });
+});
+
+describe('Spin[Semantic classNames]', () => {
+  test('static classNames applies to all keys', () => {
+    const { container } = render(
+      <Spin
+        name='ring'
+        tip='Loading'
+        loading
+        classNames={{
+          root: 'my-root',
+          section: 'my-section',
+          indicator: 'my-indicator',
+          description: 'my-desc',
+        }}
+      >
+        <div>Content</div>
+      </Spin>,
+    );
+    expect(container.querySelector('.my-root')).toBeInTheDocument();
+    expect(container.querySelector('.my-section')).toBeInTheDocument();
+    expect(container.querySelector('.my-indicator')).toBeInTheDocument();
+    expect(container.querySelector('.my-desc')).toBeInTheDocument();
+  });
+
+  test('functional classNames receives loading=true in container mode', () => {
+    const rootFn = jest.fn(({ loading }: { loading: boolean }) =>
+      loading ? 'fn-loading' : 'fn-idle',
+    );
+    const { container } = render(
+      <Spin name='ring' loading classNames={{ root: rootFn }}>
+        <div>Content</div>
+      </Spin>,
+    );
+    expect(container.querySelector('.fn-loading')).toBeInTheDocument();
+    const lastCall = rootFn.mock.calls[rootFn.mock.calls.length - 1][0];
+    expect(lastCall.loading).toBe(true);
+  });
+
+  test('functional classNames receives loading=true in standalone mode', () => {
+    const rootFn = jest.fn(({ loading }: { loading: boolean }) =>
+      loading ? 'fn-loading' : 'fn-idle',
+    );
+    const { container } = render(
+      <Spin name='ring' tip='hi' classNames={{ root: rootFn }} />,
+    );
+    expect(container.querySelector('.fn-loading')).toBeInTheDocument();
+  });
+});
+
+describe('Spin[Semantic setConfig]', () => {
+  afterEach(() => {
+    setConfig({ spin: 'ring' });
+  });
+
+  test('setConfig classNames applies globally', () => {
+    setConfig({
+      spin: {
+        name: 'ring',
+        classNames: { indicator: 'global-indicator', description: 'global-desc' },
+      },
+    });
+    const { container } = render(<Spin tip='hi' />);
+    expect(container.querySelector('.global-indicator')).toBeInTheDocument();
+    expect(container.querySelector('.global-desc')).toBeInTheDocument();
+  });
+
+  test('setConfig styles applies globally', () => {
+    setConfig({
+      spin: {
+        name: 'ring',
+        styles: { description: { padding: '8px' } },
+      },
+    });
+    const { container } = render(<Spin tip='hi' />);
+    const desc = container.querySelector(spinTipClassName)! as HTMLElement;
+    expect(desc.style.padding).toBe('8px');
+  });
+
+  test('component-level classNames takes priority over setConfig', () => {
+    setConfig({
+      spin: {
+        name: 'ring',
+        classNames: { indicator: 'global-indicator' },
+      },
+    });
+    const { container } = render(
+      <Spin classNames={{ indicator: 'local-indicator' }} />,
+    );
+    expect(container.querySelector('.local-indicator')).toBeInTheDocument();
+    expect(container.querySelector('.global-indicator')).toBeInTheDocument();
   });
 });
