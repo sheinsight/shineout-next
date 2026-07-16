@@ -1,2 +1,2 @@
 export { default, default as Spin } from './spin';
-export type { SpinProps, SpinClasses } from './spin.type';
+export type { SpinProps, SpinClasses, SpinSemanticKey, SpinClassNamesInfo } from './spin.type';
