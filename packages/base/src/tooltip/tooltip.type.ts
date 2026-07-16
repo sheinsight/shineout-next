@@ -1,6 +1,57 @@
 import React from 'react';
 import { CommonType } from '../common/type';
 import { BasePopupProps } from '@sheinx/hooks';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
+
+/**
+ * Tooltip 弹出位置类型
+ */
+export type TooltipPosition = BasePopupProps['position'];
+
+/**
+ * Tooltip Semantic DOM key 列表
+ * - root:    最外层弹层容器（与 className 等价）
+ * - arrow:   箭头
+ * - content: 弹层内容区
+ *
+ * @see /docs/rfc/0001-semantic-dom.md
+ */
+export type TooltipSemanticKey = 'root' | 'arrow' | 'content';
+
+/**
+ * 传入函数式 `classNames` 时的状态快照。
+ * 每次渲染时由组件内部自动注入，用户无需手动传。
+ *
+ * @version 3.10.0
+ *
+ * 用法示例：
+ * ```tsx
+ * <Tooltip
+ *   tip="hello"
+ *   classNames={{
+ *     root: ({ open }) => open ? 'my-tip my-tip--open' : 'my-tip',
+ *     content: ({ type }) => type === 'danger' ? 'my-content--danger' : undefined,
+ *   }}
+ * />
+ * ```
+ */
+export interface TooltipClassNamesInfo {
+  /**
+   * @cn 当前弹层是否可见
+   * @en Whether the tooltip is currently visible
+   */
+  open: boolean;
+  /**
+   * @cn 当前实际弹出位置
+   * @en Actual popup position
+   */
+  position: TooltipPosition;
+  /**
+   * @cn Tooltip 样式类型
+   * @en Tooltip style type
+   */
+  type?: 'default' | 'light' | 'primary' | 'success' | 'warning' | 'danger';
+}
 
 export interface TooltipClasses {
   rootClass: string;
@@ -117,4 +168,20 @@ export interface TooltipProps
    * @version 3.9.17
    */
   pointAtCenter?: boolean;
+
+  /**
+   * @en Semantic DOM classNames for internal nodes (root / arrow / content).
+   *     Accepts a static string or a function receiving a state snapshot.
+   * @cn 语义化 DOM 类名，可精准定制内部节点（root / arrow / content）。
+   *     值可为静态字符串或接收状态快照的函数。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<TooltipSemanticKey, TooltipClassNamesInfo>;
+
+  /**
+   * @en Semantic DOM inline styles for internal nodes (root / arrow / content).
+   * @cn 语义化 DOM 内联样式，可精准定制内部节点（root / arrow / content）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<TooltipSemanticKey>;
 }

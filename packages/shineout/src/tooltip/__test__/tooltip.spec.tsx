@@ -2,7 +2,7 @@ import React from 'react';
 import { render, cleanup, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Tooltip from '..';
-import { Button } from 'shineout'
+import { Button, setConfig } from 'shineout'
 import mountTest from '../../tests/mountTest';
 import { classLengthTest } from '../../tests/structureTest';
 import {
@@ -28,7 +28,8 @@ const {
   content: tooltipContentClassName,
   wrapperOpen: tooltipWrapperOpenClassName,
   target: tooltipTargetClassName,
-} = createClassName(SO_PREFIX, ['wrapper', 'content', 'target'], ['wrapperOpen'])
+  arrow: tooltipArrowClassName,
+} = createClassName(SO_PREFIX, ['wrapper', 'content', 'target', 'arrow'], ['wrapperOpen'])
 
 const TooltipDemo = ({
   className,
@@ -423,5 +424,210 @@ describe('Tooltip[Base]', () => {
     const wrapper = document.querySelector(tooltipClassName)!;
     classContentTest(wrapper, tooltipWrapperOpenClassName);
     textContentTest(wrapper.querySelector(tooltipContentClassName)!, 'dynamic tip');
+  });
+});
+
+describe('Tooltip[Semantic styles]', () => {
+  test('styles prop applies inline styles to root/arrow/content', async () => {
+    render(
+      <Tooltip
+        tip='hello'
+        styles={{
+          root: { border: '2px solid red' },
+          arrow: { opacity: '0.5' },
+          content: { padding: '16px', borderRadius: '8px' },
+        }}
+      >
+        <span>demo</span>
+      </Tooltip>,
+    );
+    fireEvent.mouseEnter(screen.getByText('demo'));
+    await waitFor(async () => {
+      await delay(200);
+    });
+    const wrapper = document.querySelector(tooltipClassName)! as HTMLElement;
+    expect(wrapper.style.border).toBe('2px solid red');
+    const arrow = wrapper.querySelector(tooltipArrowClassName) as HTMLElement;
+    expect(arrow.style.opacity).toBe('0.5');
+    const content = wrapper.querySelector(tooltipContentClassName) as HTMLElement;
+    expect(content.style.padding).toBe('16px');
+    expect(content.style.borderRadius).toBe('8px');
+  });
+
+  test('styles prop merges with existing component style prop', async () => {
+    render(
+      <Tooltip tip='hello' style={{ color: 'blue' }} styles={{ content: { fontSize: '14px' } }}>
+        <span>demo</span>
+      </Tooltip>,
+    );
+    fireEvent.mouseEnter(screen.getByText('demo'));
+    await waitFor(async () => {
+      await delay(200);
+    });
+    const wrapper = document.querySelector(tooltipClassName)! as HTMLElement;
+    const content = wrapper.querySelector(tooltipContentClassName) as HTMLElement;
+    expect(content.style.fontSize).toBe('14px');
+    expect(content.style.color).toBe('blue');
+  });
+});
+
+describe('Tooltip[Semantic setConfig global fallback]', () => {
+  afterEach(() => {
+    setConfig({ tooltip: {} });
+  });
+
+  test('setConfig classNames applies globally to all Tooltip instances', async () => {
+    setConfig({
+      tooltip: {
+        classNames: { arrow: 'global-arrow', content: 'global-content' },
+      },
+    });
+    render(
+      <Tooltip tip='hello'>
+        <span>demo</span>
+      </Tooltip>,
+    );
+    fireEvent.mouseEnter(screen.getByText('demo'));
+    await waitFor(async () => {
+      await delay(200);
+    });
+    const wrapper = document.querySelector(tooltipClassName)!;
+    expect(wrapper.querySelector('.global-arrow')).toBeInTheDocument();
+    expect(wrapper.querySelector('.global-content')).toBeInTheDocument();
+  });
+
+  test('setConfig styles applies globally to all Tooltip instances', async () => {
+    setConfig({
+      tooltip: {
+        styles: { content: { padding: '24px' }, arrow: { opacity: '0.5' } },
+      },
+    });
+    render(
+      <Tooltip tip='hello'>
+        <span>demo</span>
+      </Tooltip>,
+    );
+    fireEvent.mouseEnter(screen.getByText('demo'));
+    await waitFor(async () => {
+      await delay(200);
+    });
+    const wrapper = document.querySelector(tooltipClassName)! as HTMLElement;
+    const content = wrapper.querySelector(tooltipContentClassName) as HTMLElement;
+    expect(content.style.padding).toBe('24px');
+    const arrow = wrapper.querySelector(tooltipArrowClassName) as HTMLElement;
+    expect(arrow.style.opacity).toBe('0.5');
+  });
+
+  test('component-level classNames takes priority over setConfig', async () => {
+    setConfig({
+      tooltip: {
+        classNames: { arrow: 'global-arrow' },
+      },
+    });
+    render(
+      <Tooltip tip='hello' classNames={{ arrow: 'local-arrow' }}>
+        <span>demo</span>
+      </Tooltip>,
+    );
+    fireEvent.mouseEnter(screen.getByText('demo'));
+    await waitFor(async () => {
+      await delay(200);
+    });
+    const wrapper = document.querySelector(tooltipClassName)!;
+    expect(wrapper.querySelector('.local-arrow')).toBeInTheDocument();
+    expect(wrapper.querySelector('.global-arrow')).toBeInTheDocument();
+  });
+});
+
+describe('Tooltip[Semantic classNames - functional]', () => {
+  test('static string classNames still work (regression)', async () => {
+    render(
+      <Tooltip tip='hello' classNames={{ arrow: 'my-static-arrow', content: 'my-static-content' }}>
+        <span>demo</span>
+      </Tooltip>,
+    );
+    fireEvent.mouseEnter(screen.getByText('demo'));
+    await waitFor(async () => {
+      await delay(200);
+    });
+    const wrapper = document.querySelector(tooltipClassName)!;
+    expect(wrapper.querySelector('.my-static-arrow')).toBeInTheDocument();
+    expect(wrapper.querySelector('.my-static-content')).toBeInTheDocument();
+  });
+
+  test('functional root classNames receives open=true after popup opens', async () => {
+    const rootFn = jest.fn(({ open }: { open: boolean; position: any; type?: string }) =>
+      open ? 'fn-root-open' : 'fn-root-closed',
+    );
+    render(
+      <Tooltip tip='hello' classNames={{ root: rootFn }}>
+        <span>demo</span>
+      </Tooltip>,
+    );
+    fireEvent.mouseEnter(screen.getByText('demo'));
+    await waitFor(async () => {
+      await delay(200);
+      const wrapper = document.querySelector(tooltipClassName)! as HTMLElement;
+      expect(wrapper.classList.contains('fn-root-open')).toBe(true);
+      expect(wrapper.classList.contains('fn-root-closed')).toBe(false);
+      const lastCall = rootFn.mock.calls[rootFn.mock.calls.length - 1][0];
+      expect(lastCall.open).toBe(true);
+    });
+  });
+
+  test('functional classNames receives correct type field', async () => {
+    const contentFn = jest.fn(({ type }: { open: boolean; position: any; type?: string }) =>
+      type ? `fn-content-${type}` : 'fn-content',
+    );
+    render(
+      <Tooltip tip='hello' type='danger' classNames={{ content: contentFn }}>
+        <span>demo</span>
+      </Tooltip>,
+    );
+    fireEvent.mouseEnter(screen.getByText('demo'));
+    await waitFor(async () => {
+      await delay(200);
+      const wrapper = document.querySelector(tooltipClassName)!;
+      expect(wrapper.querySelector('.fn-content-danger')).toBeInTheDocument();
+      const lastCall = contentFn.mock.calls[contentFn.mock.calls.length - 1][0];
+      expect(lastCall.type).toBe('danger');
+    });
+  });
+
+  test('functional classNames receives correct position field', async () => {
+    const rootFn = jest.fn(({ position }: { open: boolean; position: any; type?: string }) =>
+      `fn-pos-${position}`,
+    );
+    render(
+      <Tooltip tip='hello' position='bottom' classNames={{ root: rootFn }}>
+        <span>demo</span>
+      </Tooltip>,
+    );
+    fireEvent.mouseEnter(screen.getByText('demo'));
+    await waitFor(async () => {
+      await delay(200);
+      const wrapper = document.querySelector(tooltipClassName)! as HTMLElement;
+      expect(wrapper.classList.contains('fn-pos-bottom')).toBe(true);
+      const lastCall = rootFn.mock.calls[rootFn.mock.calls.length - 1][0];
+      expect(lastCall.position).toBe('bottom');
+    });
+  });
+
+  test('mixed static + functional classNames work together', async () => {
+    const rootFn = jest.fn(({ open }: { open: boolean; position: any; type?: string }) =>
+      open ? 'fn-open' : 'fn-closed',
+    );
+    render(
+      <Tooltip tip='hello' classNames={{ root: rootFn, arrow: 'static-arrow' }}>
+        <span>demo</span>
+      </Tooltip>,
+    );
+    fireEvent.mouseEnter(screen.getByText('demo'));
+    await waitFor(async () => {
+      await delay(200);
+      const wrapper = document.querySelector(tooltipClassName)! as HTMLElement;
+      expect(wrapper.classList.contains('fn-open')).toBe(true);
+      expect(wrapper.querySelector('.static-arrow')).toBeInTheDocument();
+    });
   });
 });

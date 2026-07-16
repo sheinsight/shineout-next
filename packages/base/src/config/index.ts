@@ -4,6 +4,7 @@ import { LanType, Direction } from './locale/Props';
 import { SpinNameType } from '../spin/spin.type';
 import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
 import type { PopoverSemanticKey } from '../popover/popover.type';
+import type { TooltipSemanticKey } from '../tooltip/tooltip.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -17,6 +18,22 @@ export type SpinConfig =
 
 type TooltipConfig = {
   persistent?: boolean;
+  /**
+   * @en Global Semantic DOM classNames for Tooltip (applies to all Tooltip instances).
+   *     Lower priority than component-level `classNames` prop.
+   * @cn Tooltip 全局 Semantic DOM 类名（作用于所有 Tooltip 实例）。
+   *     优先级低于组件 prop 上的 `classNames`。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<TooltipSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Tooltip (applies to all Tooltip instances).
+   *     Lower priority than component-level `styles` prop.
+   * @cn Tooltip 全局 Semantic DOM 样式（作用于所有 Tooltip 实例）。
+   *     优先级低于组件 prop 上的 `styles`。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<TooltipSemanticKey>;
 }
 
 /**
@@ -111,7 +128,7 @@ export const defaultConfig: ConfigOption = {
   delay: 400,
   trim: undefined,
   spin: 'ring',
-  tooltip: undefined,
+  tooltip: {},
   popover: {},
   modal: {},
   empty: {},
