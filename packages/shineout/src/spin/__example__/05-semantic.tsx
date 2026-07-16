@@ -23,7 +23,7 @@ export default () => {
           description: 'my-description',
         }}
         styles={{
-          root: { padding: 16 },
+          root: { padding: 16, flex: 1, },
           description: { fontSize: 14, marginTop: 8 },
         }}
       />
@@ -38,10 +38,11 @@ export default () => {
           section: 'my-loading-mask',
         }}
         styles={{
+          root: { padding: 16, flex: 1, },
           section: { backdropFilter: 'blur(2px)' },
         }}
       >
-        <div style={{ padding: 24, background: '#f5f5f5', borderRadius: 8, width: 200 }}>
+        <div style={{ padding: 24, background: '#f5f5f5', borderRadius: 8, width: '100%' }}>
           <p>Some content here</p>
           <p>More content below</p>
         </div>

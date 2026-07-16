@@ -11,12 +11,59 @@ import type { SpinSemanticKey } from '@sheinx/base';
 import Spin from './index';
 
 const SpinSemanticDemo: React.FC = () => (
-  <div style={{ display: 'flex', gap: 32, alignItems: 'center' }}>
-    <Spin name="ring" size={24} />
-    <Spin name="ring" tip="Loading" />
-    <div style={{ position: 'relative', width: 120, height: 80 }}>
-      <Spin name="ring" loading>
-        <div style={{ padding: 16, background: '#f5f5f5', height: '100%' }}>Content</div>
+  <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'stretch', gap: 24 }}>
+    <div
+      style={{
+        flex: 1,
+        borderRight: '1px solid rgb(240, 240, 240)',
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
+      <Spin name='ring' size={24} />
+    </div>
+    <div
+      style={{
+        flex: 1,
+        borderRight: '1px solid rgb(240, 240, 240)',
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
+      <Spin name='ring' tip='Loading' />
+    </div>
+    <div
+      style={{
+        position: 'relative',
+        flex: 1,
+        height: '100%',
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
+      <Spin
+        name='ring'
+        loading
+        styles={{
+          root: {
+            width: '100%',
+            height: '100%',
+            '--soui-spin-background-color': '#333',
+          } as React.CSSProperties,
+          section: { backdropFilter: 'blur(2px)' },
+        }}
+      >
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%',
+            height: '100%',
+          }}
+        >
+          Content
+        </div>
       </Spin>
     </div>
   </div>
