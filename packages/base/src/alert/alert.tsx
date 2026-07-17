@@ -5,6 +5,7 @@ import Icons from '../icons';
 import AlertIcon from './alert-icon';
 import { util } from '@sheinx/hooks';
 import { useSemantic } from '../common';
+import { useConfig } from '../config';
 
 const { devUseWarning } = util;
 
@@ -49,11 +50,12 @@ const Alert = (props: AlertProps) => {
   const alertStyle = jssStyle?.alert?.() || ({} as AlertClasses);
 
   // Semantic DOM
+  const config = useConfig();
   const semInfo: AlertClassNamesInfo = { type: type as AlertClassNamesInfo['type'] };
   const [semClass, semStyle] = useSemantic<AlertSemanticKey, AlertClassNamesInfo>(
     classNamesProp,
     stylesProp,
-    undefined,
+    config.alert,
     semInfo,
   );
 
