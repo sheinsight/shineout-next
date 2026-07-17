@@ -1,3 +1,8 @@
+## 3.10.0-beta.1
+2026-07-17
+### 🆕 Feature
+- 新增 `Watermark` 水印组件，支持文本/图片水印、多行文本、自定义样式，并自动覆盖 `Modal`/`Drawer` 等弹出层 ([#1749](https://github.com/sheinsight/shineout-next/pull/1749))
+
 ## 3.9.18-beta.1
 2026-07-10
 ### 💅 Style
