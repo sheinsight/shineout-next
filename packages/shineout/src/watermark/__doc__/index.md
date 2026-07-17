@@ -1,6 +1,7 @@
 ---
 name: Watermark
 group: Feedback
+version: 3.10.0
 ---
 
 # Title
