@@ -51,6 +51,7 @@ export * from './tree';
 export * from './tree-select';
 export * from './upload';
 export * from './version';
+export * from './watermark';
 
 export * from './jss-style';
 

@@ -1,5 +1,5 @@
 import { useRef, useState } from "react"
-import { Button, Divider, Gap, Grid, Sticky, Alert, Card, Carousel, Collapse, Descriptions, Empty, Image, List, Popover, Spin, Table, Tabs, Tag, TYPE, Tooltip, Tree, Cascader, Checkbox, DatePicker, Input, Radio, Rate, Select, Slider, Switch, Textarea, Transfer, TreeSelect, Upload, Badge, Drawer, Message, Modal, Progress, Breadcrumb, Dropdown, Link, Menu, Pagination, Steps, Form, Rule } from "shineout"
+import { Button, Divider, Gap, Grid, Sticky, Alert, Card, Carousel, Collapse, Descriptions, Empty, Image, List, Popover, Spin, Table, Tabs, Tag, TYPE, Tooltip, Tree, Cascader, Checkbox, DatePicker, Input, Radio, Rate, Select, Slider, Switch, Textarea, Transfer, TreeSelect, Upload, Badge, Drawer, Message, Modal, Progress, Breadcrumb, Dropdown, Link, Menu, Pagination, Steps, Form, Rule, Watermark } from "shineout"
 // @ts-ignore
 import { user } from "@sheinx/mock"
 
@@ -33,6 +33,62 @@ const tableData = [
     children: []
   }
 ]
+
+const WatermarkPreset = (watermarkProps: any) => {
+  const [modalVisible, setModalVisible] = useState(false)
+  const [drawerVisible, setDrawerVisible] = useState(false)
+  const [container, setContainer] = useState<HTMLDivElement | null>(null)
+  const { style, ...rest } = watermarkProps
+
+  return (
+    <div
+      ref={setContainer}
+      style={{
+        position: 'relative',
+        width: '100%',
+        height: 320,
+        overflow: 'hidden',
+        transform: 'translateZ(0)'
+      }}
+    >
+      <Watermark {...rest} style={{ width: '100%', height: '100%', ...style }}>
+        <div
+          style={{
+            boxSizing: 'border-box',
+            width: '100%',
+            height: '100%',
+            padding: 24,
+            background: '#fafafa'
+          }}
+        >
+          <div style={{ display: 'flex', gap: 12, marginBottom: 24 }}>
+            <Button mode='outline' onClick={() => setModalVisible(true)}>Open Modal</Button>
+            <Button mode='outline' onClick={() => setDrawerVisible(true)}>Open Drawer</Button>
+          </div>
+          Watermark content
+          <Modal
+            visible={modalVisible}
+            title='Modal'
+            width={440}
+            container={container}
+            onClose={() => setModalVisible(false)}
+          >
+            Modal content
+          </Modal>
+          <Drawer
+            visible={drawerVisible}
+            title='Drawer'
+            width={420}
+            container={container}
+            onClose={() => setDrawerVisible(false)}
+          >
+            Drawer content
+          </Drawer>
+        </div>
+      </Watermark>
+    </div>
+  )
+}
 
 export const collocatorPreset: Record<string, any> = {
   Button: {
@@ -3178,6 +3234,54 @@ const StarRate = Rate(star, star)
           type: 'select',
           value: ['line', 'circle', 'line-pop', 'line-inner'],
           defaultValue: 'line'
+        }
+      ]
+    }
+  },
+  Watermark: {
+    Watermark: {
+      element: (props: any) => <WatermarkPreset {...props} />,
+      code: `<div ref={setContainer} style={{ width: '100%', height: 320, overflow: 'hidden', transform: 'translateZ(0)' }}>
+  <Watermark#placeholder>
+    <div style={{ width: '100%', height: '100%', padding: 24, background: '#fafafa' }}>
+      <Button mode='outline' onClick={() => setModalVisible(true)}>Open Modal</Button>
+      <Button mode='outline' onClick={() => setDrawerVisible(true)}>Open Drawer</Button>
+      Watermark content
+      <Modal container={container} visible={modalVisible} onClose={() => setModalVisible(false)}>
+        Modal content
+      </Modal>
+      <Drawer container={container} visible={drawerVisible} onClose={() => setDrawerVisible(false)}>
+        Drawer content
+      </Drawer>
+    </div>
+  </Watermark>
+</div>`,
+      properties: [
+        {
+          name: 'content',
+          type: 'input',
+          defaultValue: 'Shineout',
+          notHideDefaultValue: true
+        },
+        {
+          name: 'gap',
+          type: 'other',
+          initValue: [100, 100]
+        },
+        {
+          name: 'offset',
+          type: 'other',
+          initValue: [50, 50]
+        },
+        {
+          name: 'font',
+          type: 'other',
+          initValue: { color: 'rgba(0, 0, 0, 0.15)', fontSize: 16 }
+        },
+        {
+          name: 'onRemove',
+          type: 'other',
+          initValue: () => console.log('watermark removed')
         }
       ]
     }

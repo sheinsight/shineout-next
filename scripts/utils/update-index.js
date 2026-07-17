@@ -62,6 +62,7 @@ const whiteList = {
     'tree',
     'tree-select',
     'upload',
+    'watermark',
   ],
   theme: ['index.ts', 'config.ts', 'utils', 'token', '.DS_Store', 'hooks', 'provider'],
 };

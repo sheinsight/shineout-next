@@ -52,6 +52,7 @@ export { default as Transfer } from './transfer';
 export { default as Tree } from './tree';
 export { default as TreeSelect } from './tree-select';
 export { default as Upload } from './upload';
+export { default as Watermark } from './watermark';
 
 export { setConfig, config, setLocale, setIcons, icons } from '@sheinx/base';
 export type { ConfigOption } from '@sheinx/base';
