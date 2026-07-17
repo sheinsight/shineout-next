@@ -50,9 +50,8 @@ const Collocator = (props: CollocatorProps) => {
     <div className={styles.functions}>
       <Codesandbox code={examples.code} className={classNames(styles.icon, styles.codesandBox)} tip='更多组合用法, 可前往Playground...' />
       {functions.map((item, index) => (
-        <Tooltip tip={item.tip} trigger='hover' position='top'>
+        <Tooltip key={index} tip={item.tip} trigger='hover' position='top'>
           <div
-            key={index}
             className={classNames(styles.icon, [item.type === attachedType && styles.active])}
             onClick={item.onClick}
           >{item.name}</div>
