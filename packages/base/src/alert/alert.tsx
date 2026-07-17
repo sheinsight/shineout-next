@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import { AlertClasses, AlertProps } from './alert.type';
+import { AlertClasses, AlertClassNamesInfo, AlertProps, AlertSemanticKey } from './alert.type';
 import Icons from '../icons';
 import AlertIcon from './alert-icon';
 import { util } from '@sheinx/hooks';
+import { useSemantic } from '../common';
 
 const { devUseWarning } = util;
 
@@ -27,6 +28,8 @@ const Alert = (props: AlertProps) => {
     bordered,
     closeItem,
     onClose,
+    classNames: classNamesProp,
+    styles: stylesProp,
     ...rest
   } = props;
   if (props.hideClose) {
@@ -44,13 +47,23 @@ const Alert = (props: AlertProps) => {
   const type = getType();
 
   const alertStyle = jssStyle?.alert?.() || ({} as AlertClasses);
+
+  // Semantic DOM
+  const semInfo: AlertClassNamesInfo = { type: type as AlertClassNamesInfo['type'] };
+  const [semClass, semStyle] = useSemantic<AlertSemanticKey, AlertClassNamesInfo>(
+    classNamesProp,
+    stylesProp,
+    undefined,
+    semInfo,
+  );
+
   const rootClass = classNames(className, alertStyle.rootClass, alertStyle.alert, {
     [alertStyle[type]]: true,
     [alertStyle.withTitle]: title,
     [alertStyle.pending]: dismiss === PENDING,
     [alertStyle.noBordered]: bordered === false,
     [alertStyle.noChildren]: !children,
-  });
+  }, semClass('root', []));
 
   const getRootProps = () => {
     return rest;
@@ -78,23 +91,23 @@ const Alert = (props: AlertProps) => {
   };
 
   const renderIcon = () => {
-    const style: React.CSSProperties = titleStyle || {}
+    const style: React.CSSProperties = { ...titleStyle, ...semStyle('icon') };
     if (iconSize) {
       style.width = iconSize;
     }
     if (icon === true) {
-      return <AlertIcon jssStyle={props.jssStyle} style={style} type={props.type} className={iconClassName} />;
+      return <AlertIcon jssStyle={props.jssStyle} style={style} type={props.type} className={classNames(iconClassName, semClass('icon', []))} />;
     }
 
     return (
-      <div className={alertStyle.icon} style={style}>
+      <div className={classNames(alertStyle.icon, semClass('icon', []))} style={style}>
         {icon}
       </div>
     );
   };
 
   const renderTitle = () => {
-    return <div className={classNames(alertStyle.title, props.titleClassName)} style={titleStyle}>{title}</div>;
+    return <div className={classNames(alertStyle.title, props.titleClassName, semClass('title', []))} style={{ ...titleStyle, ...semStyle('title') }}>{title}</div>;
   };
 
   const renderClose = () => {
@@ -102,7 +115,7 @@ const Alert = (props: AlertProps) => {
       return React.cloneElement(closeItem, { onClick: handleClose } as React.Attributes);
     return (
       <div className={alertStyle.closeWrapper}>
-        <div className={alertStyle.close} onClick={handleClose}>
+        <div className={classNames(alertStyle.close, semClass('close', []))} style={semStyle('close')} onClick={handleClose}>
           {closeItem || Icons.alert.Close}
         </div>
       </div>
@@ -114,11 +127,11 @@ const Alert = (props: AlertProps) => {
   }
   if (title) {
     return (
-      <div className={rootClass} {...getRootProps()}>
+      <div className={rootClass} style={semStyle('root')} {...getRootProps()}>
         {icon && renderIcon()}
         <div className={alertStyle.content}>
           {renderTitle()}
-          <div className={alertStyle.text}>{children}</div>
+          <div className={classNames(alertStyle.text, semClass('content', []))} style={semStyle('content')}>{children}</div>
         </div>
 
         {getCloseable() && renderClose()}
@@ -127,10 +140,10 @@ const Alert = (props: AlertProps) => {
   }
 
   return (
-    <div className={rootClass} {...getRootProps()}>
+    <div className={rootClass} style={semStyle('root')} {...getRootProps()}>
       {icon && renderIcon()}
       <div className={alertStyle.content}>
-        <div className={alertStyle.text}>{children}</div>
+        <div className={classNames(alertStyle.text, semClass('content', []))} style={semStyle('content')}>{children}</div>
       </div>
       {getCloseable() && renderClose()}
     </div>
