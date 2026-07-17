@@ -1,4 +1,30 @@
 import { CommonType } from '../common/type';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
+
+/**
+ * Alert Semantic DOM key 列表
+ * - root:    最外层容器
+ * - icon:    图标区域
+ * - title:   标题
+ * - content: 内容文本区
+ * - close:   关闭按钮
+ *
+ * @see /docs/rfc/0001-semantic-dom.md
+ */
+export type AlertSemanticKey = 'root' | 'icon' | 'title' | 'content' | 'close';
+
+/**
+ * 传入函数式 `classNames` 时的状态快照。
+ *
+ * @version 3.10.0
+ */
+export interface AlertClassNamesInfo {
+  /**
+   * @cn Alert 当前的类型
+   * @en Alert type
+   */
+  type: 'success' | 'info' | 'warning' | 'danger';
+}
 
 export interface AlertClasses {
   rootClass: string;
@@ -109,4 +135,20 @@ export interface AlertProps extends Pick<CommonType, 'className' | 'style'> {
    * @cn 内容，文字或 react 组件
    */
   children?: React.ReactNode;
+
+  /**
+   * @en Semantic DOM classNames for internal nodes (root / icon / title / content / close).
+   *     Accepts a static string or a function receiving a state snapshot.
+   * @cn 语义化 DOM 类名，可精准定制内部节点（root / icon / title / content / close）。
+   *     值可为静态字符串或接收状态快照的函数。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<AlertSemanticKey, AlertClassNamesInfo>;
+
+  /**
+   * @en Semantic DOM inline styles for internal nodes (root / icon / title / content / close).
+   * @cn 语义化 DOM 内联样式，可精准定制内部节点（root / icon / title / content / close）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<AlertSemanticKey>;
 }
