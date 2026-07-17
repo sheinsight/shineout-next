@@ -49,3 +49,4 @@ export * as Transfer from './transfer/interface';
 export * as Tree from './tree/interface';
 export * as TreeSelect from './tree-select/interface';
 export * as Upload from './upload/interface';
+export * as Watermark from './watermark/interface';

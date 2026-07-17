@@ -1,12 +1,19 @@
 import ReactDom from 'react-dom';
-import { useEffect, useState, useRef } from 'react';
+import { useCallback, useEffect, useState, useRef } from 'react';
 import ModalContent from './modal-content';
 import { ModalProps } from './modal.type';
 import useContainer from '../absolute-list/use-container';
 import { util } from '@sheinx/hooks';
 import { useConfig } from '../config';
+import { useWatermarkTarget } from '../watermark/context';
 
 const { devUseWarning } = util;
+
+const WatermarkPortalTarget = ({ root }: { root: HTMLElement }) => {
+  const getTarget = useCallback(() => root.firstElementChild as HTMLElement | null, [root]);
+  useWatermarkTarget(getTarget);
+  return null;
+};
 
 const Modal = (props: ModalProps) => {
   // inject jssStyle
@@ -17,7 +24,7 @@ const Modal = (props: ModalProps) => {
   }
   const { getRoot, unMount } = useContainer({
     container: props.container,
-    containerClassName: props.containerClassName
+    containerClassName: props.containerClassName,
   });
   const [canDestroy, seCanDestroy] = useState(true);
   const { current: context } = useRef({ rendered: false });
@@ -48,10 +55,18 @@ const Modal = (props: ModalProps) => {
     }
   }
 
-  const Content = <ModalContent {...props} shouldDestroy={seCanDestroy} autoShow={false} position={position} />;
+  const Content = (
+    <ModalContent {...props} shouldDestroy={seCanDestroy} autoShow={false} position={position} />
+  );
   const root = getRoot();
   if (!root) return null;
-  return ReactDom.createPortal(Content, root);
+  return ReactDom.createPortal(
+    <>
+      {Content}
+      <WatermarkPortalTarget root={root} />
+    </>,
+    root,
+  );
 };
 
 export default Modal;

@@ -50,6 +50,7 @@ export * from './transfer';
 export * from './tree';
 export * from './tree-select';
 export * from './upload';
+export * from './watermark';
 
 export type { ObjectType } from '@sheinx/hooks';
 export type { ConfigOption } from './config';
