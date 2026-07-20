@@ -354,14 +354,24 @@ describe('Upload[Multiple]', () => {
     });
     expect(beforeUploadFn.mock.calls.length).toBe(1);
   });
-  test('should call promise beforeUpload once for each file', async () => {
-    const beforeUploadProFn = jest.fn(() => Promise.resolve({ status: 200 }));
-    const { container } = render(<UploadTest name='file' beforeUpload={beforeUploadProFn} />);
-    uploadFile(container, { name: fileTextName });
+  test('should call promise beforeUpload and request once for each file', async () => {
+    const beforeUploadProFn = jest.fn((_file: File) => Promise.resolve({ status: 200 }));
+    const request = jest.fn((_options: any) => undefined);
+    const files = [
+      new File(['content'], 'file1.txt'),
+      new File(['content'], 'file2.txt'),
+    ];
+    const { container } = render(
+      <UploadTest name='file' multiple beforeUpload={beforeUploadProFn} request={request} />,
+    );
+    uploadFile(container, { files });
     await waitFor(async () => {
       await delay(200);
     });
-    expect(beforeUploadProFn).toHaveBeenCalledTimes(1);
+    expect(beforeUploadProFn).toHaveBeenCalledTimes(2);
+    expect(beforeUploadProFn.mock.calls.map(([file]) => file)).toStrictEqual(files);
+    expect(request).toHaveBeenCalledTimes(2);
+    expect(request.mock.calls.map(([options]) => options.file)).toStrictEqual(files);
   });
   test('should render when set customResult', async () => {
     const CustomResult = ({ value }: any) => <div className='demo'>{value}</div>;
