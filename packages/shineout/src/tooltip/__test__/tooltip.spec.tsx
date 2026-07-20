@@ -361,6 +361,35 @@ describe('Tooltip[Base]', () => {
     classLengthTest(document, tooltipClassName, 0);
     spyError.mockRestore();
   });
+  test('should clean up persistent events after children becomes invalid', () => {
+    const spyError = jest.spyOn(console, 'error').mockImplementation(() => {});
+    const addEventListenerSpy = jest.spyOn(window, 'addEventListener');
+    const removeEventListenerSpy = jest.spyOn(window, 'removeEventListener');
+
+    try {
+      const { rerender, unmount } = render(
+        <Tooltip tip='hello' persistent>
+          <span>demo</span>
+        </Tooltip>,
+      );
+      const resizeListener = addEventListenerSpy.mock.calls.find(
+        ([eventName]) => eventName === 'resize',
+      )?.[1];
+      expect(resizeListener).toEqual(expect.any(Function));
+
+      rerender(
+        // @ts-ignore
+        <Tooltip tip='hello' persistent></Tooltip>,
+      );
+      removeEventListenerSpy.mockClear();
+      unmount();
+      expect(removeEventListenerSpy).toHaveBeenCalledWith('resize', resizeListener);
+    } finally {
+      removeEventListenerSpy.mockRestore();
+      addEventListenerSpy.mockRestore();
+      spyError.mockRestore();
+    }
+  });
   test('should render when set persistent', async () => {
     render(<TooltipDemo persistent />);
     fireEvent.mouseEnter(screen.getByText('demo'));

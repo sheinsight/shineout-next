@@ -29,12 +29,6 @@ const Tooltip = (props: TooltipProps) => {
     pointAtCenter = false,
   } = props;
 
-  // Early validation checks BEFORE any hooks
-  if (!isValidElement(children)) {
-    devUseWarning.error('Tooltip children expect a single ReactElement.');
-    return null;
-  }
-
   const tooltipClasses = jssStyle?.tooltip?.();
   const config = useConfig();
 
@@ -124,6 +118,11 @@ const Tooltip = (props: TooltipProps) => {
     }
     return events;
   }, [persistent, events, trigger]);
+
+  if (!isValidElement(children)) {
+    devUseWarning.error('Tooltip children expect a single ReactElement.');
+    return null;
+  }
 
   const inner = disabledChild && tip ? (
     <span className={tooltipClasses?.target} style={{ cursor: 'not-allowed' }}>
