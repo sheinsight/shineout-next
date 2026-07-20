@@ -278,10 +278,8 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
       }
       if (props.beforeUpload) {
         const beforeUploadResult = props.beforeUpload(blob);
-        // @ts-ignoreq
         if (beforeUploadResult && beforeUploadResult.then) {
-          props
-            .beforeUpload(blob)
+          beforeUploadResult
             .then((args) => {
               if (args.status !== 'error') {
                 newFiles[id].xhr = uploadFile(id, blob, fileRecord.src);
