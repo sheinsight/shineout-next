@@ -10,7 +10,11 @@ const { devUseWarning } = util;
 
 const defaultDelay = 0;
 
-const Tooltip = (props: TooltipProps) => {
+type ValidTooltipProps = Omit<TooltipProps, 'children'> & {
+  children: React.ReactElement;
+};
+
+const TooltipInner = (props: ValidTooltipProps) => {
   const {
     trigger = 'hover',
     priorityDirection,
@@ -34,9 +38,7 @@ const Tooltip = (props: TooltipProps) => {
 
   const persistent = persistentProp ?? config.tooltip?.persistent;
 
-  const childrenProps = isValidElement(children)
-    ? (children?.props as { [name: string]: any })
-    : {};
+  const childrenProps = children.props as { [name: string]: any };
 
   const delay = props.delay || props.mouseEnterDelay || defaultDelay;
   const mouseLeaveDelay = props.mouseLeaveDelay || defaultDelay;
@@ -119,11 +121,6 @@ const Tooltip = (props: TooltipProps) => {
     return events;
   }, [persistent, events, trigger]);
 
-  if (!isValidElement(children)) {
-    devUseWarning.error('Tooltip children expect a single ReactElement.');
-    return null;
-  }
-
   const inner = disabledChild && tip ? (
     <span className={tooltipClasses?.target} style={{ cursor: 'not-allowed' }}>
       {cloneElement(children as React.ReactElement, {
@@ -189,6 +186,17 @@ const Tooltip = (props: TooltipProps) => {
       )}
     </>
   );
+};
+
+const Tooltip = (props: TooltipProps) => {
+  const { children, ...innerProps } = props;
+
+  if (!isValidElement(children)) {
+    devUseWarning.error('Tooltip children expect a single ReactElement.');
+    return null;
+  }
+
+  return <TooltipInner {...innerProps}>{children}</TooltipInner>;
 };
 
 export default Tooltip;
