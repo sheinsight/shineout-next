@@ -9,7 +9,9 @@ import { FormFooterProvider } from '../form/form-footer-context';
 import { popupContext } from '@sheinx/hooks';
 
 import type { ModalContentProps } from './modal-content.type';
+import type { ModalClassNamesInfo, ModalSemanticKey } from './modal.type';
 import { useConfig } from '../config';
+import { useSemantic } from '../common';
 
 let hasMask = false;
 
@@ -104,6 +106,16 @@ const Modal = (props: ModalContentProps) => {
   const { events = {}, maskCloseAble = true, esc = true, top = '10vh', style = {} } = props;
 
   const globalConfig = useConfig()
+
+  // Semantic DOM
+  const semInfo: ModalClassNamesInfo = { visible: !!props.visible };
+  const [semClass, semStyle] = useSemantic<ModalSemanticKey, ModalClassNamesInfo>(
+    props.classNames,
+    props.styles,
+    globalConfig.modal,
+    semInfo,
+  );
+
   const width = style.width || props.width || defaultWidth;
   const height = style.height || props.height;
   const [origin, setOrigin] = useState('');
@@ -348,13 +360,13 @@ const Modal = (props: ModalContentProps) => {
     const isEmptyTitle = !props.title && props.title !== 0;
 
     if (isEmptyTitle) {
-      const closeRoot = classNames(modalClasses?.headerClose, modalClasses?.emptyClose);
+      const closeRoot = classNames(modalClasses?.headerClose, modalClasses?.emptyClose, semClass('close', []));
 
       return (
         <>
           {renderIcon(isEmptyTitle)}
           {showCloseIcon && (
-            <div className={closeRoot} onClick={handleClose}>
+            <div className={closeRoot} style={semStyle('close')} onClick={handleClose}>
               {Icons.modal.Close}
             </div>
           )}
@@ -364,14 +376,14 @@ const Modal = (props: ModalContentProps) => {
 
     return (
       <div
-        className={modalClasses?.header}
+        className={classNames(modalClasses?.header, semClass('header', []))}
         onMouseDown={props.moveable && !props.fullScreen ? moveInfo.handleMouseDown : undefined}
-        style={props.headerStyle}
+        style={{ ...props.headerStyle, ...semStyle('header') }}
       >
         {renderIcon()}
         <div className={modalClasses?.headerTitle}>{props.title}</div>
         {showCloseIcon && (
-          <div className={modalClasses?.headerClose} onClick={handleClose}>
+          <div className={classNames(modalClasses?.headerClose, semClass('close', []))} style={semStyle('close')} onClick={handleClose}>
             {Icons.modal.Close}
           </div>
         )}
@@ -383,12 +395,14 @@ const Modal = (props: ModalContentProps) => {
     const bodyStyle = {
       padding: props.padding,
       ...props.bodyStyle,
+      ...semStyle('body'),
     };
     return (
       <div
         className={classNames(
           modalClasses?.body,
           props.type && !!AlertIconMap[props.type] && modalClasses?.bodyWithIcon,
+          semClass('body', []),
         )}
         style={bodyStyle}
       >
@@ -399,7 +413,7 @@ const Modal = (props: ModalContentProps) => {
 
   const renderFooter = () => {
     if (!props.footer) return null;
-    return <div className={modalClasses?.footer} style={props.footerStyle}>{props.footer}</div>;
+    return <div className={classNames(modalClasses?.footer, semClass('footer', []))} style={{ ...props.footerStyle, ...semStyle('footer') }}>{props.footer}</div>;
   };
 
   const renderResize = () => {
@@ -515,18 +529,20 @@ const Modal = (props: ModalContentProps) => {
           props.position === 'right' && modalClasses?.wrapperDrawerRight,
           props.position === 'top' && modalClasses?.wrapperDrawerTop,
           props.position === 'bottom' && modalClasses?.wrapperDrawerBottom,
+          semClass('root', []),
         )}
         onAnimationEnd={handleAnimationEnd}
-        style={{ background: props.maskBackground, zIndex: props.zIndex, display: !visible && !animation ? 'none' : undefined }}
+        style={{ background: props.maskBackground, zIndex: props.zIndex, display: !visible && !animation ? 'none' : undefined, ...semStyle('root') }}
         dir={globalConfig.direction}
       >
         <div
-          className={modalClasses?.mask}
+          className={classNames(modalClasses?.mask, semClass('mask', []))}
           {...events}
           onMouseDown={handleMaskMouseDown}
           onMouseUp={handleMaskMouseUp}
           onClick={handleMaskClick}
           onAnimationStart={updateOrigin}
+          style={semStyle('mask')}
         >
           <div
             ref={panelRef}
