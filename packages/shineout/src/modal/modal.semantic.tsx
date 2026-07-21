@@ -48,6 +48,16 @@ const modalSemantic: SemanticSchema<ModalSemanticKey> = {
 />`,
     },
     {
+      key: 'container',
+      cn: '内容面板（控制宽高和位置）',
+      en: 'Content panel (controls width, height and position)',
+      version: '3.10.0',
+      example: `<Modal
+  classNames={{ container: 'my-panel' }}
+  styles={{ container: { borderRadius: 12 } }}
+/>`,
+    },
+    {
       key: 'header',
       cn: '标题栏（包含标题文字和关闭按钮）',
       en: 'Header area (contains title and close button)',

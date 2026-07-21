@@ -546,8 +546,8 @@ const Modal = (props: ModalContentProps) => {
         >
           <div
             ref={panelRef}
-            className={classNames(modalClasses?.panel, props.className)}
-            style={panelStyle}
+            className={classNames(modalClasses?.panel, props.className, semClass('container', []))}
+            style={{ ...panelStyle, ...semStyle('container') }}
           >
             {content}
           </div>
