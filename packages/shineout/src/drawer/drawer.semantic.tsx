@@ -12,19 +12,19 @@ import Drawer from './index';
 import Button from '../button';
 
 const DrawerSemanticDemo: React.FC = () => {
-  const [visible, setVisible] = useState(false);
+  const containerRef = React.useRef<HTMLDivElement | null>(null)
   return (
-    <>
-      <Button onClick={() => setVisible(true)}>Open Drawer</Button>
+    <div style={{ width: '100%', height: '100%', transform: 'translateZ(0)' }} ref={containerRef}>
       <Drawer
-        visible={visible}
+        visible
         title="Drawer Title"
-        onClose={() => setVisible(false)}
-        footer={<Button onClick={() => setVisible(false)}>OK</Button>}
+        footer={<Button>OK</Button>}
+        style={{ maxHeight: '100%' }}
+        container={() => containerRef.current}
       >
         This is the drawer body content.
       </Drawer>
-    </>
+    </div>
   );
 };
 
