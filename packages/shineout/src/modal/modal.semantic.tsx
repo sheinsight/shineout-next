@@ -10,19 +10,18 @@ import Modal from './index';
 import Button from '../button';
 
 const ModalSemanticDemo: React.FC = () => {
-  const [visible, setVisible] = useState(false);
+  const containerRef = React.useRef<HTMLDivElement | null>(null)
   return (
-    <>
-      <Button onClick={() => setVisible(true)}>Open Modal</Button>
+    <div style={{ width: '100%', height: '100%', transform: 'translateZ(0)' }} ref={containerRef}>
       <Modal
-        visible={visible}
+        visible
         title="Modal Title"
-        onClose={() => setVisible(false)}
-        footer={<Button onClick={() => setVisible(false)}>OK</Button>}
+        footer={<Button>OK</Button>}
+        container={() => containerRef.current}
       >
         This is the modal body content.
       </Modal>
-    </>
+    </div>
   );
 };
 
