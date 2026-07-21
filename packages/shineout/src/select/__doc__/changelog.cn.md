@@ -1,3 +1,8 @@
+## 3.10.0-beta.2
+2026-07-21
+### 🐞 BugFix
+- 修复 `Select` 开启 `renderOptionList` 后，当数据为空时 `emptyText` 内容被传入 `renderOptionList` 导致自定义筛选输入框双重渲染及焦点丢失的问题 ([#1755](https://github.com/sheinsight/shineout-next/pull/1755))
+
 ## 3.9.14-beta.11
 2026-05-19
 ### 🐞 BugFix

@@ -167,11 +167,11 @@ export default () => {
     }
   }, [displayData.length]);
 
-  const renderOptionList = (list: React.ReactNode) => {
+  const renderOptionList = (list: React.ReactNode, info: { empty?: boolean }) => {
     return (
-      <div style={{ height: 173, overflow: 'au' }}>
+      <div style={{ height: 173, overflow: 'auto' }}>
         <FilterInput value={filterText} onChange={setFilterText} ref={inputRef} />
-        {list}
+        {info.empty ? <Empty style={{ margin: '24px auto 12px' }} /> : list}
       </div>
     );
   };
@@ -186,17 +186,7 @@ export default () => {
         width={300}
         renderItem={renderItem}
         className={classes.select}
-        emptyText={
-          <div>
-            <FilterInput
-              value={filterText}
-              onChange={setFilterText}
-              style={{ margin: '-6px 0 0 -12px', width: 'calc(100% + 24px)' }}
-              ref={inputRef}
-            />
-            <Empty style={{ margin: '24px auto 12px' }} />
-          </div>
-        }
+        emptyText={false}
         data={displayData}
         placeholder='Please Select'
         clearable

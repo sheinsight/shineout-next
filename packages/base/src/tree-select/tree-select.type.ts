@@ -514,5 +514,5 @@ export interface TreeSelectProps<DataItem, Value>
    * @when For complete control over dropdown content (e.g., custom wrapper, animations, additional UI elements around the option list)
    * @version 3.9.4
    */
-  renderOptionList?: (list: React.ReactNode) => React.ReactNode;
+  renderOptionList?: (list: React.ReactNode, info: { empty?: boolean }) => React.ReactNode;
 }
