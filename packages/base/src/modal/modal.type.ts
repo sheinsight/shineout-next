@@ -9,16 +9,17 @@ export type Methods = 'success' | 'info' | 'warning' | 'error' | 'confirm' | 'no
 
 /**
  * Modal Semantic DOM key 列表
- * - root:   最外层容器（wrapper）
- * - mask:   遮罩层
- * - header: 标题栏
- * - body:   内容区
- * - footer: 底部操作区
- * - close:  关闭按钮
+ * - root:      最外层容器（wrapper）
+ * - mask:      遮罩层
+ * - container: 内容面板（控制宽高、位置）
+ * - header:    标题栏
+ * - body:      内容区
+ * - footer:    底部操作区
+ * - close:     关闭按钮
  *
  * @see /docs/rfc/0001-semantic-dom.md
  */
-export type ModalSemanticKey = 'root' | 'mask' | 'header' | 'body' | 'footer' | 'close';
+export type ModalSemanticKey = 'root' | 'mask' | 'container' | 'header' | 'body' | 'footer' | 'close';
 
 /**
  * 传入函数式 `classNames` 时的状态快照。
@@ -294,15 +295,15 @@ export interface ModalProps extends Pick<CommonType, 'className' | 'style'> {
   cascade?: boolean | { width?: number };
 
   /**
-   * @en Semantic DOM classNames for internal nodes (root / mask / header / body / footer / close).
-   * @cn 语义化 DOM 类名，可精准定制内部节点（root / mask / header / body / footer / close）。
+   * @en Semantic DOM classNames for internal nodes (root / mask / container / header / body / footer / close).
+   * @cn 语义化 DOM 类名，可精准定制内部节点（root / mask / container / header / body / footer / close）。
    * @version 3.10.0
    */
   classNames?: SemanticClassNames<ModalSemanticKey, ModalClassNamesInfo>;
 
   /**
-   * @en Semantic DOM inline styles for internal nodes (root / mask / header / body / footer / close).
-   * @cn 语义化 DOM 内联样式，可精准定制内部节点（root / mask / header / body / footer / close）。
+   * @en Semantic DOM inline styles for internal nodes (root / mask / container / header / body / footer / close).
+   * @cn 语义化 DOM 内联样式，可精准定制内部节点（root / mask / container / header / body / footer / close）。
    * @version 3.10.0
    */
   styles?: SemanticStyles<ModalSemanticKey>;
