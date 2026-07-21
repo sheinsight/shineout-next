@@ -260,7 +260,7 @@ export interface SelectPropsBase<DataItem, Value>
    */
   renderOptionList?: (
     list: React.ReactNode,
-    info: { loading?: boolean | React.ReactNode },
+    info: { loading?: boolean | React.ReactNode; empty?: boolean },
   ) => React.ReactNode;
 
   /**

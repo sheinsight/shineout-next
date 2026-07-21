@@ -1,11 +1,12 @@
 /**
  * cn - 自定义列表布局
  *    -- 通过设置`renderOptionList`可以自定义列表内容，并将列表实例抛出
- *    -- 注意：与`emptyText`属性搭配使用时，`emptyText`渲染优先级高于`renderOptionList`
- *    -- 可将`emptyText`设置为 false 忽略空内容渲染，如需渲染空内容，请在`renderOptionList`中自行处理
+ *    -- 当数据为空时，`list` 参数为 `null`，可通过第二个参数 `info.empty` 判断是否为空状态
+ *    -- 可将`emptyText`设置为 false 禁用内置空态渲染，在`renderOptionList`中自行处理空内容
  * en - Custom render option list
  *    -- Set `renderOptionList` to customize the list content
- *    -- When used with the `emptyText` property, the rendering priority of `emptyText` is higher than that of `renderOptionList`. You can set `emptyText` to false to ignore the empty content rendering. If you need to render the empty content, please handle it in `renderOptionList`
+ *    -- When data is empty, `list` is `null`. You can use `info.empty` from the second parameter to determine the empty state
+ *    -- Set `emptyText` to false to disable the built-in empty rendering, and handle empty content in `renderOptionList`
  */
 import { useState } from 'react';
 import { TreeSelect, Checkbox } from 'shineout';

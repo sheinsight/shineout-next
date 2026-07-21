@@ -718,7 +718,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     );
 
     if (renderOptionList) {
-      return renderOptionList(isEmpty ? renderEmpty() : tree);
+      return renderOptionList(isEmpty ? null : tree, { empty: isEmpty });
     }
 
     if (isEmpty) return renderEmpty();
