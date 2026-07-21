@@ -52,8 +52,8 @@ const drawerSemantic: SemanticSchema<ModalSemanticKey> = {
     },
     {
       key: 'container',
-      cn: '内容面板（控制宽高和位置）',
-      en: 'Content panel (controls width, height and position)',
+      cn: '内容面板',
+      en: 'Content panel',
       version: '3.10.0',
       example: `<Drawer
   classNames={{ container: 'my-panel' }}
