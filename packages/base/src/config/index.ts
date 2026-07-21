@@ -138,6 +138,21 @@ type AlertConfig = {
   styles?: SemanticStyles<AlertSemanticKey>;
 }
 
+type DrawerConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Drawer.
+   * @cn Drawer 全局 Semantic DOM 类名。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<ModalSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Drawer.
+   * @cn Drawer 全局 Semantic DOM 样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<ModalSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -164,6 +179,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   alert?: AlertConfig;
+  /**
+   * @en Global configuration for Drawer component
+   * @cn Drawer组件的全局配置
+   * @version 3.10.0
+   */
+  drawer?: DrawerConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -181,6 +202,7 @@ export const defaultConfig: ConfigOption = {
   modal: {},
   empty: {},
   alert: {},
+  drawer: {},
   direction: 'ltr',
   popupContainer: null,
 };
