@@ -1,0 +1,97 @@
+/**
+ * Modal Semantic DOM 元数据。
+ *
+ * @see /docs/rfc/0001-semantic-dom.md
+ */
+import React, { useState } from 'react';
+import type { SemanticSchema } from '@sheinx/base';
+import type { ModalSemanticKey } from '@sheinx/base';
+import Modal from './index';
+import Button from '../button';
+
+const ModalSemanticDemo: React.FC = () => {
+  const [visible, setVisible] = useState(false);
+  return (
+    <>
+      <Button onClick={() => setVisible(true)}>Open Modal</Button>
+      <Modal
+        visible={visible}
+        title="Modal Title"
+        onClose={() => setVisible(false)}
+        footer={<Button onClick={() => setVisible(false)}>OK</Button>}
+      >
+        This is the modal body content.
+      </Modal>
+    </>
+  );
+};
+
+const modalSemantic: SemanticSchema<ModalSemanticKey> = {
+  keys: [
+    {
+      key: 'root',
+      cn: '最外层容器（wrapper，控制动画和显示）',
+      en: 'Outermost wrapper (controls animation and visibility)',
+      version: '3.10.0',
+      example: `<Modal
+  classNames={{ root: 'my-modal-wrapper' }}
+  styles={{ root: { zIndex: 2000 } }}
+/>`,
+    },
+    {
+      key: 'mask',
+      cn: '遮罩层',
+      en: 'Mask overlay layer',
+      version: '3.10.0',
+      example: `<Modal
+  classNames={{ mask: 'my-mask' }}
+  styles={{ mask: { backdropFilter: 'blur(4px)' } }}
+/>`,
+    },
+    {
+      key: 'header',
+      cn: '标题栏（包含标题文字和关闭按钮）',
+      en: 'Header area (contains title and close button)',
+      version: '3.10.0',
+      example: `<Modal
+  title="Title"
+  classNames={{ header: 'my-header' }}
+  styles={{ header: { borderBottom: '1px solid #eee' } }}
+/>`,
+    },
+    {
+      key: 'body',
+      cn: '内容区',
+      en: 'Body content area',
+      version: '3.10.0',
+      example: `<Modal
+  classNames={{ body: 'my-body' }}
+  styles={{ body: { padding: 24 } }}
+/>`,
+    },
+    {
+      key: 'footer',
+      cn: '底部操作区',
+      en: 'Footer action area',
+      version: '3.10.0',
+      example: `<Modal
+  footer={<Button>OK</Button>}
+  classNames={{ footer: 'my-footer' }}
+  styles={{ footer: { borderTop: '1px solid #eee' } }}
+/>`,
+    },
+    {
+      key: 'close',
+      cn: '关闭按钮',
+      en: 'Close button',
+      version: '3.10.0',
+      example: `<Modal
+  classNames={{ close: 'my-close' }}
+  styles={{ close: { color: 'red' } }}
+/>`,
+    },
+  ],
+  demo: ModalSemanticDemo,
+};
+
+export default modalSemantic;

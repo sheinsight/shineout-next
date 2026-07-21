@@ -7,6 +7,7 @@ import type { PopoverSemanticKey } from '../popover/popover.type';
 import type { TooltipSemanticKey } from '../tooltip/tooltip.type';
 import type { SpinSemanticKey } from '../spin/spin.type';
 import type { AlertSemanticKey } from '../alert/alert.type';
+import type { ModalSemanticKey } from '../modal/modal.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -61,6 +62,18 @@ export type ModalConfig = {
    * @cn Modal组件的全局默认遮罩设置。false 隐藏遮罩，{ blur: true } 显示模糊遮罩
    */
   mask?: boolean | { blur?: boolean };
+  /**
+   * @en Global Semantic DOM classNames for Modal.
+   * @cn Modal 全局 Semantic DOM 类名。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<ModalSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Modal.
+   * @cn Modal 全局 Semantic DOM 样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<ModalSemanticKey>;
 }
 
 /**
