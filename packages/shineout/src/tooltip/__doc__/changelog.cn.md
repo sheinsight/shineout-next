@@ -1,3 +1,8 @@
+## 3.10.0-beta.5
+2026-07-22
+### 🐞 BugFix
+- 修复 `Tooltip` 当 `children` 动态变为无效元素时，可能导致 React Hooks 调用顺序错误及事件监听未清理的问题 ([#1754](https://github.com/sheinsight/shineout-next/pull/1754))
+
 ## 3.9.17-beta.3
 2026-06-23
 ### 🆕 Feature
