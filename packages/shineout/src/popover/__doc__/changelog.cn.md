@@ -1,3 +1,8 @@
+## 3.10.0-beta.3
+2026-07-22
+### 🐞 BugFix
+- 修复 `Popover` 设置 `border` 属性后，箭头边框颜色未跟随变化的问题 ([#1756](https://github.com/sheinsight/shineout-next/pull/1756))
+
 ## 3.9.17-beta.3
 2026-06-23
 ### 🆕 Feature
