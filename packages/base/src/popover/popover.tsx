@@ -173,6 +173,7 @@ const Popover = (props: PopoverProps) => {
     display: open ? undefined : 'none',
     borderColor: props.border,
     backgroundColor: props.background,
+    '--popover-border-color': props.border,
     '--popover-background-color': props.background,
   };
 

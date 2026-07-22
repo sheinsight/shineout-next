@@ -11,7 +11,7 @@ const arrowWidth = arrowHeight * 2;
 const cssvar = '--popover-arrow-gap';
 const hideArrowGap = `var(${cssvar}, 10px)`;
 const extraArrowGap = 'var(--popover-arrow-gap-extra, 0px)';
-
+const arrowBorderColor = `var(--popover-border-color, ${token.popoverBorderColor})`
 const poyfillPos = `calc((${hideArrowGap} + ${extraArrowGap}) * -1)`;
 const poyfillHeight = `calc((${hideArrowGap} + ${extraArrowGap}))`;
 
@@ -34,7 +34,7 @@ const popoverStyle: JsStyles<PopoverClassType> = {
       height: arrowHeight,
       pointerEvents: 'none',
       transformOrigin: 'center center',
-      filter: `drop-shadow(0 1px 0 ${token.popoverBorderColor}) drop-shadow(0 -1px 0 ${token.popoverBorderColor}) drop-shadow(1px 0 0 ${token.popoverBorderColor}) drop-shadow(-1px 0 0 ${token.popoverBorderColor})`,
+      filter: `drop-shadow(0 1px 0 ${arrowBorderColor}) drop-shadow(0 -1px 0 ${arrowBorderColor}) drop-shadow(1px 0 0 ${arrowBorderColor}) drop-shadow(-1px 0 0 ${arrowBorderColor})`,
       '&::before': {
         display: 'block',
         content: '""',
