@@ -1,3 +1,8 @@
+## 3.10.0-beta.4
+2026-07-22
+### 🐞 BugFix
+- 修复 `Upload` 当 `beforeUpload` 返回 Promise 时，同一个文件会重复触发两次回调的问题 ([#1753](https://github.com/sheinsight/shineout-next/pull/1753))
+
 ## 3.9.17-beta.4
 2026-06-30
 
