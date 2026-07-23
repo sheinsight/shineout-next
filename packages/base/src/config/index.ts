@@ -12,6 +12,7 @@ import type { ProgressSemanticKey } from '../progress/progress.type';
 import type { MessageSemanticKey } from '../message/message.type';
 import type { ButtonSemanticKey } from '../button/button.type';
 import type { LinkSemanticKey } from '../link/link.type';
+import type { DividerSemanticKey } from '../divider/divider.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -217,6 +218,21 @@ type LinkConfig = {
   styles?: SemanticStyles<LinkSemanticKey>;
 }
 
+type DividerConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Divider.
+   * @cn Divider 全局 Semantic DOM 类名。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<DividerSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Divider.
+   * @cn Divider 全局 Semantic DOM 样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<DividerSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -273,6 +289,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   link?: LinkConfig;
+  /**
+   * @en Global configuration for Divider component
+   * @cn Divider组件的全局配置
+   * @version 3.10.0
+   */
+  divider?: DividerConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -295,6 +317,7 @@ export const defaultConfig: ConfigOption = {
   message: {},
   button: {},
   link: {},
+  divider: {},
   direction: 'ltr',
   popupContainer: null,
 };
