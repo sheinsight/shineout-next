@@ -1,9 +1,11 @@
 import React from 'react';
-import { ProgressProps } from './progress.type';
+import { ProgressProps, ProgressClassNamesInfo, ProgressSemanticKey } from './progress.type';
 import classNames from 'classnames';
 import Icons from '../icons';
 import analyzeColor from './analyzeColor';
 import { util } from '@sheinx/hooks';
+import { useSemantic } from '../common';
+import { useConfig } from '../config';
 
 const Circle = (props: ProgressProps) => {
   const {
@@ -16,22 +18,35 @@ const Circle = (props: ProgressProps) => {
     iconSize,
     success,
     animation = true,
+    shape = 'circle',
   } = props;
-  const { semClass, semStyle } = props;
+  const config = useConfig();
 
   const progressClasses = props.jssStyle?.progress();
-  const iconStyle: React.CSSProperties = { width: iconSize, height: iconSize, ...semStyle?.('icon') };
+
+  // Semantic DOM
+  const globalSemanticConfig = config.progress
+    ? { classNames: config.progress.classNames, styles: config.progress.styles }
+    : undefined;
+
+  const semInfo: ProgressClassNamesInfo = { value, type, shape };
+
+  const [semClass, semStyle] = useSemantic<ProgressSemanticKey, ProgressClassNamesInfo>(
+    props.classNames,
+    props.styles,
+    globalSemanticConfig,
+    semInfo,
+  );
+
+  const iconStyle: React.CSSProperties = { width: iconSize, height: iconSize, ...semStyle('icon') };
 
   const cx = size / 2;
   const cy = size / 2;
-
   const r = size / 2 - strokeWidth / 2;
-
   const showIcon = !!props.icon;
-
   const p = Math.PI * 2 * r;
   const dasharray = [p * (value! / 100), p * (1 - value! / 100)];
-  const style = Object.assign({ width: size, height: size }, props.style, semStyle?.('root'));
+  const style = Object.assign({ width: size, height: size }, props.style, semStyle('root'));
   const width = value === 0 && strokeLinecap === 'round' ? 0 : strokeWidth;
   const objColor = color && typeof color === 'object';
 
@@ -50,12 +65,12 @@ const Circle = (props: ProgressProps) => {
     type === 'warning' && progressClasses?.wrapperWarning,
     type === 'danger' && progressClasses?.wrapperDanger,
     animation === false && progressClasses?.noAnimation,
-    semClass?.('root', []),
+    semClass('root', []),
   );
 
   // Semantic styles for track and indicator SVG circles
-  const trackSemStyle = semStyle?.('track');
-  const indicatorSemStyle = semStyle?.('indicator');
+  const trackSemStyle = semStyle('track');
+  const indicatorSemStyle = semStyle('indicator');
 
   return (
     <div {...util.extractProps(props, 'mouse')} className={mc} style={style} >
@@ -79,7 +94,7 @@ const Circle = (props: ProgressProps) => {
           </defs>
         ) : null}
         <circle
-          className={classNames(progressClasses?.circleBg, semClass?.('track', []))}
+          className={classNames(progressClasses?.circleBg, semClass('track', []))}
           cx={cx}
           cy={cy}
           r={r}
@@ -88,7 +103,7 @@ const Circle = (props: ProgressProps) => {
           style={{ stroke: props.background, ...trackSemStyle }}
         />
         <circle
-          className={classNames(progressClasses?.circleFront, semClass?.('indicator', []))}
+          className={classNames(progressClasses?.circleFront, semClass('indicator', []))}
           cx={cx}
           cy={cy}
           r={r}
@@ -113,10 +128,10 @@ const Circle = (props: ProgressProps) => {
         )}
       </svg>
       {!showIcon && props.children && (
-        <div className={classNames(progressClasses?.content, semClass?.('content', []))} style={semStyle?.('content')}>{props.children}</div>
+        <div className={classNames(progressClasses?.content, semClass('content', []))} style={semStyle('content')}>{props.children}</div>
       )}
       {showIcon && (
-        <div className={classNames(progressClasses?.icon, semClass?.('icon', []))} style={iconStyle}>
+        <div className={classNames(progressClasses?.icon, semClass('icon', []))} style={iconStyle}>
           {type === 'info' && Icons.progress.InfoCircle}
           {type === 'warning' && Icons.progress.WarningCircle}
           {type === 'success' && Icons.progress.SuccessCircle}
