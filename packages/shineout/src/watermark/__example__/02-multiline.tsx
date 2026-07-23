@@ -10,15 +10,23 @@ import { Watermark } from 'shineout';
 export default () => {
   return (
     <Watermark
+      font={{ color: 'rgba(153, 157, 168, 0.55)' }}
       content={[
-        { text: 'Shineout', font: { color: 'rgba(0, 0, 0, 0.18)', fontSize: 18 } },
+        { text: 'Shineout', font: { fontSize: 18 } },
         {
           text: 'Watermark',
-          font: { color: 'rgba(206, 32, 41, 0.22)', fontSize: 12, fontWeight: 600 },
+          font: { color: 'rgba(206, 32, 41, 0.55)', fontSize: 12, fontWeight: 600 },
         },
       ]}
     >
-      <div style={{ height: 240, padding: 24, background: '#fafafa' }}>
+      <div
+        style={{
+          height: 240,
+          padding: 24,
+          background: 'var(--soui-neutral-fill-2)',
+          color: 'var(--soui-neutral-text-5)',
+        }}
+      >
         Multi-line watermark
       </div>
     </Watermark>

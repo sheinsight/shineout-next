@@ -17,9 +17,16 @@ export default () => {
       offset={[16, 20]}
       rotate={-16}
       zIndex={20}
-      font={{ color: 'rgba(20, 86, 122, 0.2)', fontSize: 14, fontWeight: 600 }}
+      font={{ color: 'rgba(153, 157, 168, 0.55)', fontSize: 14, fontWeight: 600 }}
     >
-      <div style={{ height: 240, padding: 24, background: '#fafafa' }}>
+      <div
+        style={{
+          height: 240,
+          padding: 24,
+          background: 'var(--soui-neutral-fill-2)',
+          color: 'var(--soui-neutral-text-5)',
+        }}
+      >
         Custom watermark
       </div>
     </Watermark>
