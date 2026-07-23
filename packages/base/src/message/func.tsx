@@ -6,7 +6,7 @@ let defaultOptions: MessageOptions & {
   top?: string;
 } = {};
 
-const create =
+  const create =
   (type: MessageType) =>
   (
     content: MessageFuncArg['content'],
@@ -24,8 +24,10 @@ const create =
       hideClose,
       container,
       jssStyle,
+      classNames,
+      styles,
     } = mo;
-    return getComponent({ position, container, jssStyle }).then((messager) =>
+    return getComponent({ position, container, jssStyle, classNames, styles }).then((messager) =>
       messager.addMessage({
         content,
         duration: duration1,

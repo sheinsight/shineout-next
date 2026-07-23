@@ -251,7 +251,7 @@ exports[`Message[Base] should render default 1`] = `
   data-soui-position="top"
 >
   <div
-    class="soui-message-item soui-message-item-show "
+    class="soui-message-item soui-message-item-show"
   >
     <div
       class="soui-message-message soui-alert soui-alert-alert soui-alert-warning"
@@ -288,7 +288,7 @@ exports[`Message[Base] should render default 1`] = `
     </div>
   </div>
   <div
-    class="soui-message-item soui-message-item-show "
+    class="soui-message-item soui-message-item-show"
   >
     <div
       class="soui-message-message soui-alert soui-alert-alert soui-alert-warning"
@@ -333,7 +333,7 @@ exports[`Message[Base] should render default 2`] = `
   data-soui-position="top"
 >
   <div
-    class="soui-message-item soui-message-item-show "
+    class="soui-message-item soui-message-item-show"
   >
     <div
       class="soui-message-message soui-alert soui-alert-alert soui-alert-warning"
@@ -370,7 +370,7 @@ exports[`Message[Base] should render default 2`] = `
     </div>
   </div>
   <div
-    class="soui-message-item soui-message-item-show "
+    class="soui-message-item soui-message-item-show"
   >
     <div
       class="soui-message-message soui-alert soui-alert-alert soui-alert-warning"
