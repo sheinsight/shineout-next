@@ -70,8 +70,8 @@ const Semantic: React.FC<SemanticTabProps> = ({ schema, name }) => {
   const stageRef = useRef<HTMLDivElement>(null);
   const [hoveredKey, setHoveredKey] = useState<string | null>(null);
   const [pinnedKey, setPinnedKey] = useState<string | null>(null);
-  const [overlay, setOverlay] = useState<{ x: number; y: number; w: number; h: number } | null>(
-    null,
+  const [overlays, setOverlays] = useState<{ x: number; y: number; w: number; h: number }[]>(
+    [],
   );
 
   // 当前激活的 key：pinned 优先，否则 hovered
@@ -100,25 +100,29 @@ const Semantic: React.FC<SemanticTabProps> = ({ schema, name }) => {
     };
   }, [configKey, markClassNames]);
 
-  // active key 变化 → 重新定位 overlay
+  // active key 变化 → 重新定位 overlay（支持多个匹配元素）
   useEffect(() => {
     if (!activeKey || !stageRef.current) {
-      setOverlay(null);
+      setOverlays([]);
       return;
     }
-    const target = document.querySelector<HTMLElement>(`.${MARK_PREFIX}${activeKey}`);
-    if (!target) {
-      setOverlay(null);
+    const targets = stageRef.current.querySelectorAll<HTMLElement>(`.${MARK_PREFIX}${activeKey}`);
+    if (!targets.length) {
+      setOverlays([]);
       return;
     }
     const stageRect = stageRef.current.getBoundingClientRect();
-    const rect = target.getBoundingClientRect();
-    setOverlay({
-      x: rect.left - stageRect.left,
-      y: rect.top - stageRect.top,
-      w: rect.width,
-      h: rect.height,
+    const rects: { x: number; y: number; w: number; h: number }[] = [];
+    targets.forEach((target) => {
+      const rect = target.getBoundingClientRect();
+      rects.push({
+        x: rect.left - stageRect.left,
+        y: rect.top - stageRect.top,
+        w: rect.width,
+        h: rect.height,
+      });
     });
+    setOverlays(rects);
   }, [activeKey]);
   // ────────────── 样式 ──────────────
 
@@ -175,14 +179,15 @@ const Semantic: React.FC<SemanticTabProps> = ({ schema, name }) => {
         {/* 左：渲染舞台 */}
         <div ref={stageRef} style={stageStyle}>
           <Demo />
-          {overlay && (
+          {overlays.map((ov, idx) => (
             <div
+              key={idx}
               style={{
                 position: 'absolute',
-                left: overlay.x,
-                top: overlay.y,
-                width: overlay.w,
-                height: overlay.h,
+                left: ov.x,
+                top: ov.y,
+                width: ov.w,
+                height: ov.h,
                 outline: '2px solid orange',
                 background: 'rgba(22, 119, 255, 0.12)',
                 borderRadius: 0,
@@ -191,7 +196,7 @@ const Semantic: React.FC<SemanticTabProps> = ({ schema, name }) => {
                 zIndex: 10000,
               }}
             />
-          )}
+          ))}
         </div>
 
         {/* 右：key 列表 */}
