@@ -1,6 +1,6 @@
 import React from 'react';
 import { CommonType } from '../common/type';
-import type { SemanticClassNames, SemanticStyles, SemanticClassFn, SemanticStyleFn } from '../common/use-semantic';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
 
 /**
  * Progress Semantic DOM key 列表
@@ -193,13 +193,4 @@ export interface ProgressProps extends Pick<CommonType, 'className' | 'style'> {
    * @version 3.9.8
    */
   animation?: boolean;
-
-  /**
-   * @internal 由 progress.tsx 注入的 Semantic class 函数
-   */
-  semClass?: SemanticClassFn<ProgressSemanticKey>;
-  /**
-   * @internal 由 progress.tsx 注入的 Semantic style 函数
-   */
-  semStyle?: SemanticStyleFn<ProgressSemanticKey>;
 }
