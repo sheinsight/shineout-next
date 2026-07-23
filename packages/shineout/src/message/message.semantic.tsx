@@ -15,7 +15,11 @@ const MessageSemanticDemo: React.FC = () => {
 
   useEffect(() => {
     if (!containerRef.current) return;
-    Message.info('This is an info message', 0, { container: containerRef.current });
+    Message.info('This is an info message', 0, {
+      position: 'middle',
+      container: containerRef.current,
+      styles: { message: { marginBottom: 0 } },
+    });
   }, []);
 
   return (
