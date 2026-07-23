@@ -1,14 +1,28 @@
 import support from './support';
 import React from 'react';
 import classNames from 'classnames';
-import { GapProps } from './gap.type';
+import { GapProps, GapSemanticKey } from './gap.type';
+import { useSemantic } from '../common';
+import { useConfig } from '../config';
 
 let supportFlexGap: boolean | undefined = undefined;
 const Gap = (props: GapProps) => {
   if (supportFlexGap === undefined) supportFlexGap = support();
-  const { column = 8, row = 8, style, className, children, itemStyle: itemStyleProps, jssStyle } = props;
+  const { column = 8, row = 8, style, className, children, itemStyle: itemStyleProps, jssStyle, classNames: classNamesProp, styles: stylesProp } = props;
 
+  const config = useConfig();
   const styles = jssStyle?.gap?.();
+
+  // Semantic DOM
+  const globalSemanticConfig = config.gap
+    ? { classNames: config.gap.classNames, styles: config.gap.styles }
+    : undefined;
+
+  const [semClass, semStyle] = useSemantic<GapSemanticKey>(
+    classNamesProp,
+    stylesProp,
+    globalSemanticConfig,
+  );
 
   const extendStyle = (
     supportFlexGap
@@ -33,9 +47,12 @@ const Gap = (props: GapProps) => {
         marginRight: column,
       };
 
+  const itemSemStyle = semStyle('item');
+  const mergedItemStyle = itemSemStyle ? { ...itemStyle, ...itemSemStyle } : itemStyle;
+
   return (
-    <div className={classNames(className, styles?.rootClass, styles?.wrapper)} style={{ ...extendStyle, ...style }}>
-      {React.Children.map(children, (child) => child && <div className={styles?.item} style={itemStyle}>{child}</div>)}
+    <div className={classNames(className, styles?.rootClass, styles?.wrapper, semClass('root', []))} style={{ ...extendStyle, ...style, ...semStyle('root') }}>
+      {React.Children.map(children, (child) => child && <div className={classNames(styles?.item, semClass('item', []))} style={mergedItemStyle}>{child}</div>)}
     </div>
   );
 };
