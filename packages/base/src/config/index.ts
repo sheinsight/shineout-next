@@ -11,6 +11,7 @@ import type { ModalSemanticKey } from '../modal/modal.type';
 import type { ProgressSemanticKey } from '../progress/progress.type';
 import type { MessageSemanticKey } from '../message/message.type';
 import type { ButtonSemanticKey } from '../button/button.type';
+import type { LinkSemanticKey } from '../link/link.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -201,6 +202,21 @@ type ButtonConfig = {
   styles?: SemanticStyles<ButtonSemanticKey>;
 }
 
+type LinkConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Link.
+   * @cn Link 全局 Semantic DOM 类名。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<LinkSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Link.
+   * @cn Link 全局 Semantic DOM 样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<LinkSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -251,6 +267,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   button?: ButtonConfig;
+  /**
+   * @en Global configuration for Link component
+   * @cn Link组件的全局配置
+   * @version 3.10.0
+   */
+  link?: LinkConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -272,6 +294,7 @@ export const defaultConfig: ConfigOption = {
   progress: {},
   message: {},
   button: {},
+  link: {},
   direction: 'ltr',
   popupContainer: null,
 };
