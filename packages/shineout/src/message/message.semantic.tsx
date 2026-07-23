@@ -5,37 +5,38 @@
  *
  * @see /docs/rfc/0001-semantic-dom.md
  */
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import type { SemanticSchema } from '@sheinx/base';
 import type { MessageSemanticKey } from '@sheinx/base';
 import Message from './index';
-import Button from '../button';
 
-const MessageSemanticDemo: React.FC = () => (
-  <div style={{ width: '100%', display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-    <Button
-      onClick={() => {
-        Message.info('This is an info message', 5);
+const MessageSemanticDemo: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const container = containerRef.current;
+
+    // 自动弹出几条不同类型的消息，duration=0 表示不自动关闭
+    Message.info('This is an info message', 0, { container });
+    Message.success('Operation succeeded', 0, { container });
+    Message.warning('Warning notification', 0, { container });
+  }, []);
+
+  return (
+    <div
+      ref={containerRef}
+      style={{
+        position: 'relative',
+        width: '100%',
+        height: '100%',
+        minHeight: 200,
+        transform: 'translateZ(0)',
+        overflow: 'hidden',
       }}
-    >
-      Info Message
-    </Button>
-    <Button
-      onClick={() => {
-        Message.success('Operation succeeded', 5);
-      }}
-    >
-      Success Message
-    </Button>
-    <Button
-      onClick={() => {
-        Message.warning('Warning notification', 5);
-      }}
-    >
-      Warning Message
-    </Button>
-  </div>
-);
+    />
+  );
+};
 
 const messageSemantic: SemanticSchema<MessageSemanticKey> = {
   keys: [
