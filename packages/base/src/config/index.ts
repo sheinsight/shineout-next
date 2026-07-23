@@ -13,6 +13,7 @@ import type { MessageSemanticKey } from '../message/message.type';
 import type { ButtonSemanticKey } from '../button/button.type';
 import type { LinkSemanticKey } from '../link/link.type';
 import type { DividerSemanticKey } from '../divider/divider.type';
+import type { GapSemanticKey } from '../gap/gap.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -233,6 +234,21 @@ type DividerConfig = {
   styles?: SemanticStyles<DividerSemanticKey>;
 }
 
+type GapConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Gap.
+   * @cn Gap 全局 Semantic DOM 类名。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<GapSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Gap.
+   * @cn Gap 全局 Semantic DOM 样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<GapSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -295,6 +311,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   divider?: DividerConfig;
+  /**
+   * @en Global configuration for Gap component
+   * @cn Gap组件的全局配置
+   * @version 3.10.0
+   */
+  gap?: GapConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -318,6 +340,7 @@ export const defaultConfig: ConfigOption = {
   button: {},
   link: {},
   divider: {},
+  gap: {},
   direction: 'ltr',
   popupContainer: null,
 };
