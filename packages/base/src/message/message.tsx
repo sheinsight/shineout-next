@@ -1,10 +1,12 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Alert from '../alert';
-import { MessageItemType, MessageProps } from './message.type';
+import { MessageItemType, MessageProps, MessageClassNamesInfo, MessageSemanticKey } from './message.type';
 import classNames from 'classnames';
 import { util } from '@sheinx/hooks';
 import { MessageOptions } from './func.type';
+import { useSemantic } from '../common';
+import { useConfig } from '../config';
 
 const { getUidStr, getDataAttribute, produce } = util;
 
@@ -20,8 +22,11 @@ const MessagePure = (props: {
   cachedHeight: { [key: string]: number };
   position: string;
   timeoutMap: { [key: string]: NodeJS.Timeout };
+  classNames?: MessageProps['classNames'];
+  styles?: MessageProps['styles'];
 }) => {
   const { messages, jssStyle, position, timeoutMap } = props;
+  const config = useConfig();
 
   const [timeoutByIdMap, setTimeoutByIdMap] = useState<{ [key: string]: NodeJS.Timeout }>(
     timeoutMap,
@@ -32,6 +37,23 @@ const MessagePure = (props: {
 
   // hooks
   const styles = jssStyle?.message?.();
+
+  // Semantic DOM
+  const globalSemanticConfig = config.message
+    ? { classNames: config.message.classNames, styles: config.message.styles }
+    : undefined;
+
+  const semInfo: MessageClassNamesInfo = {
+    position: position as MessageClassNamesInfo['position'],
+  };
+
+  const [semClass, semStyle] = useSemantic<MessageSemanticKey, MessageClassNamesInfo>(
+    props.classNames,
+    props.styles,
+    globalSemanticConfig,
+    semInfo,
+  );
+
   const handleClassName = (position: string | undefined, closeMsg: boolean) => {
     return classNames(styles?.item, closeMsg ? styles?.itemDismissed : styles?.itemShow);
   };
@@ -59,7 +81,7 @@ const MessagePure = (props: {
   };
 
   return (
-    <div className={classNames(styles?.rootClass, styles?.wrapper)} {...getDataAttribute({ position })}>
+    <div className={classNames(styles?.rootClass, styles?.wrapper, semClass('root', []))} style={semStyle('root')} {...getDataAttribute({ position })}>
       {[
         messages.map(
           ({
@@ -77,8 +99,8 @@ const MessagePure = (props: {
           }) => (
             <div
               key={id}
-              className={`${handleClassName(position, !!dismiss)} ${className}`}
-              style={handleStyle(!!dismiss, h || 0, position)!}
+              className={classNames(handleClassName(position, !!dismiss), className, semClass('item', []))}
+              style={{ ...handleStyle(!!dismiss, h || 0, position)!, ...semStyle('item') }}
               onMouseEnter={() => {
                 if (timeoutByIdMap[id]) {
                   clearTimeout(timeoutByIdMap[id]);
@@ -102,14 +124,14 @@ const MessagePure = (props: {
               }}
             >
               <Alert
-                className={styles?.message}
+                className={classNames(styles?.message, semClass('message', []))}
                 jssStyle={jssStyle}
                 closable={!hideClose && 'only'}
                 onClose={() => {
                   props.onClose(id, dismissDuration, props.cachedHeight[id]);
                 }}
                 icon={type !== 'default'}
-                style={{ top }}
+                style={{ top, ...semStyle('message') }}
                 title={title}
                 type={type === 'default' ? undefined : type}
                 {...util.getDataAttribute({ type: 'message' })}
@@ -199,7 +221,7 @@ class Message extends React.PureComponent<MessageProps, MessageState> {
 
   render() {
     const { messages } = this.state;
-    const { jssStyle } = this.props;
+    const { jssStyle, classNames, styles } = this.props;
     return (
       <MessagePure
         messages={messages}
@@ -208,6 +230,8 @@ class Message extends React.PureComponent<MessageProps, MessageState> {
         timeoutMap={this.timeoutMap}
         position={this.props.position || 'top'}
         onClose={this.closeMessageForAnimation}
+        classNames={classNames}
+        styles={styles}
       />
     );
   }

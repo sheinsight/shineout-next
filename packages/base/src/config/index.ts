@@ -9,6 +9,7 @@ import type { SpinSemanticKey } from '../spin/spin.type';
 import type { AlertSemanticKey } from '../alert/alert.type';
 import type { ModalSemanticKey } from '../modal/modal.type';
 import type { ProgressSemanticKey } from '../progress/progress.type';
+import type { MessageSemanticKey } from '../message/message.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -169,6 +170,21 @@ type ProgressConfig = {
   styles?: SemanticStyles<ProgressSemanticKey>;
 }
 
+type MessageConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Message.
+   * @cn Message 全局 Semantic DOM 类名。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<MessageSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Message.
+   * @cn Message 全局 Semantic DOM 样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<MessageSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -207,6 +223,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   progress?: ProgressConfig;
+  /**
+   * @en Global configuration for Message component
+   * @cn Message组件的全局配置
+   * @version 3.10.0
+   */
+  message?: MessageConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -226,6 +248,7 @@ export const defaultConfig: ConfigOption = {
   alert: {},
   drawer: {},
   progress: {},
+  message: {},
   direction: 'ltr',
   popupContainer: null,
 };

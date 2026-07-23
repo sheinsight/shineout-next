@@ -1,9 +1,9 @@
-// import classNames from 'classnames';
 import React from 'react';
 import Message from './message';
 import { getDefaultContainer } from '../config';
 import { util } from '@sheinx/hooks';
 import { MessageProps } from './message.type';
+import type { MessageOptions } from './func.type';
 
 let lastContainer: HTMLElement | null = null;
 const elements = {} as { [type: string]: HTMLElement };
@@ -35,9 +35,11 @@ interface Params {
   container?: (() => HTMLElement) | HTMLElement;
   rootClassName?: string;
   jssStyle: MessageProps['jssStyle'];
+  classNames?: MessageOptions['classNames'];
+  styles?: MessageOptions['styles'];
 }
 export function getComponent(params: Params) {
-  const { position, container, rootClassName, jssStyle } = params;
+  const { position, container, rootClassName, jssStyle, classNames, styles } = params;
   return new Promise<Message>((resolve) => {
     const target = getContainer(container);
     if (lastContainer && lastContainer !== target) {
@@ -64,6 +66,8 @@ export function getComponent(params: Params) {
           position={position}
           onDestroy={destroy.bind(null, position)}
           jssStyle={jssStyle}
+          classNames={classNames}
+          styles={styles}
         />,
         div,
       );
