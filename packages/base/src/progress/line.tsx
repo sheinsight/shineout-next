@@ -8,6 +8,7 @@ import { util } from '@sheinx/hooks';
 
 const Line = (props: ProgressProps) => {
   const { shape = 'line', value = 0, type = 'info', iconSize, popup, success, animation = true } = props;
+  const { semClass, semStyle } = props;
 
   const progressClasses = props.jssStyle?.progress();
 
@@ -16,7 +17,7 @@ const Line = (props: ProgressProps) => {
   const isDefault = shape === 'line' || shape === 'line-pop';
   const isDefaultPop = shape === 'line-pop' || popup;
 
-  const iconStyle = { width: iconSize, height: iconSize };
+  const iconStyle: React.CSSProperties = { width: iconSize, height: iconSize, ...semStyle?.('icon') };
 
   const mc = classNames(
     props.className,
@@ -32,12 +33,14 @@ const Line = (props: ProgressProps) => {
     isInner && progressClasses?.lineInner,
     isInnerRight && progressClasses?.lineInnerRight,
     animation === false && progressClasses?.noAnimation,
+    semClass?.('root', []),
   );
 
   const bgStyle: React.CSSProperties = {
     height: props.strokeWidth,
     background: props.background,
     borderRadius: props.strokeWidth && props.strokeWidth / 2,
+    ...semStyle?.('track'),
   };
 
   const frontStyle: React.CSSProperties = {
@@ -57,6 +60,9 @@ const Line = (props: ProgressProps) => {
       '',
     )})`;
   }
+
+  // Merge semantic indicator style
+  const mergedFrontStyle: React.CSSProperties = { ...frontStyle, ...semStyle?.('indicator') };
 
   // Success progress bar style
   const successStyle: React.CSSProperties | undefined = success ? {
@@ -80,16 +86,16 @@ const Line = (props: ProgressProps) => {
   }
 
   const children = props.children ? (
-    <div className={classNames(progressClasses?.content)}>{props.children}</div>
+    <div className={classNames(progressClasses?.content, semClass?.('content', []))} style={semStyle?.('content')}>{props.children}</div>
   ) : null;
 
   return (
-    <div {...util.extractProps(props, 'mouse')}  className={mc} style={props.style}>
-      <div className={progressClasses?.lineBg} style={bgStyle}>
+    <div {...util.extractProps(props, 'mouse')} className={mc} style={{ ...props.style, ...semStyle?.('root') }}>
+      <div className={classNames(progressClasses?.lineBg, semClass?.('track', []))} style={bgStyle}>
         {success && successStyle && (
           <div className={progressClasses?.lineSuccess} style={successStyle} />
         )}
-        <div className={progressClasses?.lineFront} style={frontStyle}>
+        <div className={classNames(progressClasses?.lineFront, semClass?.('indicator', []))} style={mergedFrontStyle}>
           {isInner && children}
         </div>
       </div>
@@ -100,7 +106,7 @@ const Line = (props: ProgressProps) => {
       ) : null}
       {shape === 'line' && children}
       {!!props.icon && (
-        <div className={progressClasses?.icon} style={iconStyle}>
+        <div className={classNames(progressClasses?.icon, semClass?.('icon', []))} style={iconStyle}>
           {type === 'info' && Icons.progress.InfoLine}
           {type === 'warning' && Icons.progress.WarningLine}
           {type === 'success' && Icons.progress.SuccessLine}

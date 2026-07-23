@@ -17,9 +17,10 @@ const Circle = (props: ProgressProps) => {
     success,
     animation = true,
   } = props;
+  const { semClass, semStyle } = props;
 
   const progressClasses = props.jssStyle?.progress();
-  const iconStyle = { width: iconSize, height: iconSize };
+  const iconStyle: React.CSSProperties = { width: iconSize, height: iconSize, ...semStyle?.('icon') };
 
   const cx = size / 2;
   const cy = size / 2;
@@ -30,7 +31,7 @@ const Circle = (props: ProgressProps) => {
 
   const p = Math.PI * 2 * r;
   const dasharray = [p * (value! / 100), p * (1 - value! / 100)];
-  const style = Object.assign({ width: size, height: size }, props.style);
+  const style = Object.assign({ width: size, height: size }, props.style, semStyle?.('root'));
   const width = value === 0 && strokeLinecap === 'round' ? 0 : strokeWidth;
   const objColor = color && typeof color === 'object';
 
@@ -49,7 +50,12 @@ const Circle = (props: ProgressProps) => {
     type === 'warning' && progressClasses?.wrapperWarning,
     type === 'danger' && progressClasses?.wrapperDanger,
     animation === false && progressClasses?.noAnimation,
+    semClass?.('root', []),
   );
+
+  // Semantic styles for track and indicator SVG circles
+  const trackSemStyle = semStyle?.('track');
+  const indicatorSemStyle = semStyle?.('indicator');
 
   return (
     <div {...util.extractProps(props, 'mouse')} className={mc} style={style} >
@@ -73,21 +79,21 @@ const Circle = (props: ProgressProps) => {
           </defs>
         ) : null}
         <circle
-          className={progressClasses?.circleBg}
+          className={classNames(progressClasses?.circleBg, semClass?.('track', []))}
           cx={cx}
           cy={cy}
           r={r}
           strokeWidth={strokeWidth}
           fill='transparent'
-          style={{ stroke: props.background }}
+          style={{ stroke: props.background, ...trackSemStyle }}
         />
         <circle
-          className={progressClasses?.circleFront}
+          className={classNames(progressClasses?.circleFront, semClass?.('indicator', []))}
           cx={cx}
           cy={cy}
           r={r}
           fill='transparent'
-          style={{ stroke: objColor ? "url('#progress-linear')" : color }}
+          style={{ stroke: objColor ? "url('#progress-linear')" : color, ...indicatorSemStyle }}
           strokeDasharray={dasharray as any}
           strokeLinecap={strokeLinecap}
           strokeWidth={width}
@@ -107,10 +113,10 @@ const Circle = (props: ProgressProps) => {
         )}
       </svg>
       {!showIcon && props.children && (
-        <div className={progressClasses?.content}>{props.children}</div>
+        <div className={classNames(progressClasses?.content, semClass?.('content', []))} style={semStyle?.('content')}>{props.children}</div>
       )}
       {showIcon && (
-        <div className={progressClasses?.icon} style={iconStyle}>
+        <div className={classNames(progressClasses?.icon, semClass?.('icon', []))} style={iconStyle}>
           {type === 'info' && Icons.progress.InfoCircle}
           {type === 'warning' && Icons.progress.WarningCircle}
           {type === 'success' && Icons.progress.SuccessCircle}

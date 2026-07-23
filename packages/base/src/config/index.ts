@@ -8,6 +8,7 @@ import type { TooltipSemanticKey } from '../tooltip/tooltip.type';
 import type { SpinSemanticKey } from '../spin/spin.type';
 import type { AlertSemanticKey } from '../alert/alert.type';
 import type { ModalSemanticKey } from '../modal/modal.type';
+import type { ProgressSemanticKey } from '../progress/progress.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -153,6 +154,21 @@ type DrawerConfig = {
   styles?: SemanticStyles<ModalSemanticKey>;
 }
 
+type ProgressConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Progress.
+   * @cn Progress 全局 Semantic DOM 类名。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<ProgressSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Progress.
+   * @cn Progress 全局 Semantic DOM 样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<ProgressSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -185,6 +201,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   drawer?: DrawerConfig;
+  /**
+   * @en Global configuration for Progress component
+   * @cn Progress组件的全局配置
+   * @version 3.10.0
+   */
+  progress?: ProgressConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -203,6 +225,7 @@ export const defaultConfig: ConfigOption = {
   empty: {},
   alert: {},
   drawer: {},
+  progress: {},
   direction: 'ltr',
   popupContainer: null,
 };
