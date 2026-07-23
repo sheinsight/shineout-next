@@ -58,7 +58,8 @@ const WatermarkPreset = (watermarkProps: any) => {
             width: '100%',
             height: '100%',
             padding: 24,
-            background: '#fafafa'
+            background: 'var(--soui-neutral-fill-2)',
+            color: 'var(--soui-neutral-text-5)'
           }}
         >
           <div style={{ display: 'flex', gap: 12, marginBottom: 24 }}>
@@ -3243,7 +3244,7 @@ const StarRate = Rate(star, star)
       element: (props: any) => <WatermarkPreset {...props} />,
       code: `<div ref={setContainer} style={{ width: '100%', height: 320, overflow: 'hidden', transform: 'translateZ(0)' }}>
   <Watermark#placeholder>
-    <div style={{ width: '100%', height: '100%', padding: 24, background: '#fafafa' }}>
+    <div style={{ width: '100%', height: '100%', padding: 24, background: 'var(--soui-neutral-fill-2)', color: 'var(--soui-neutral-text-5)' }}>
       <Button mode='outline' onClick={() => setModalVisible(true)}>Open Modal</Button>
       <Button mode='outline' onClick={() => setDrawerVisible(true)}>Open Drawer</Button>
       Watermark content
@@ -3276,7 +3277,9 @@ const StarRate = Rate(star, star)
         {
           name: 'font',
           type: 'other',
-          initValue: { color: 'rgba(0, 0, 0, 0.15)', fontSize: 16 }
+          defaultValue: { color: 'rgba(153, 157, 168, 0.55)', fontSize: 16 },
+          initValue: { color: 'rgba(153, 157, 168, 0.55)', fontSize: 16 },
+          notHideDefaultValue: true
         },
         {
           name: 'onRemove',

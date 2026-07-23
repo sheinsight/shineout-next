@@ -12,8 +12,23 @@ const image =
 
 export default () => {
   return (
-    <Watermark image={image} content='Shineout' width={72} height={48}>
-      <div style={{ height: 240, padding: 24, background: '#fafafa' }}>Image watermark</div>
+    <Watermark
+      image={image}
+      content='Shineout'
+      width={72}
+      height={48}
+      font={{ color: 'rgba(153, 157, 168, 0.55)' }}
+    >
+      <div
+        style={{
+          height: 240,
+          padding: 24,
+          background: 'var(--soui-neutral-fill-2)',
+          color: 'var(--soui-neutral-text-5)',
+        }}
+      >
+        Image watermark
+      </div>
     </Watermark>
   );
 };

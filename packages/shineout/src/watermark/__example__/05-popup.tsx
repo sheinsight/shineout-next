@@ -17,8 +17,19 @@ export default () => {
       ref={setContainer}
       style={{ position: 'relative', height: 320, overflow: 'hidden', transform: 'translateZ(0)' }}
     >
-      <Watermark content='Shineout' style={{ height: '100%' }}>
-        <div style={{ height: '100%', padding: 24, background: '#fafafa' }}>
+      <Watermark
+        content='Shineout'
+        font={{ color: 'rgba(153, 157, 168, 0.55)' }}
+        style={{ height: '100%' }}
+      >
+        <div
+          style={{
+            height: '100%',
+            padding: 24,
+            background: 'var(--soui-neutral-fill-2)',
+            color: 'var(--soui-neutral-text-5)',
+          }}
+        >
           <div style={{ display: 'flex', gap: 12 }}>
             <Button mode='outline' onClick={() => setModalVisible(true)}>
               Open Modal

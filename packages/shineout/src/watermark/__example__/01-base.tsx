@@ -9,13 +9,13 @@ import { Watermark } from 'shineout';
 
 export default () => {
   return (
-    <Watermark content='Shineout'>
+    <Watermark content='Shineout' font={{ color: 'rgba(153, 157, 168, 0.55)' }}>
       <div
         style={{
           height: 240,
           padding: 24,
-          background: '#fafafa',
-          color: '#141414',
+          background: 'var(--soui-neutral-fill-2)',
+          color: 'var(--soui-neutral-text-5)',
         }}
       >
         Basic watermark
