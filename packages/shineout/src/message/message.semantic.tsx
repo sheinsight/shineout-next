@@ -17,10 +17,10 @@ const MessageSemanticDemo: React.FC = () => {
     if (!containerRef.current) return;
     const container = containerRef.current;
 
-    // 自动弹出几条不同类型的消息，duration=0 表示不自动关闭
-    Message.info('This is an info message', 0, { container });
-    Message.success('Operation succeeded', 0, { container });
-    Message.warning('Warning notification', 0, { container });
+    // 分散到不同位置，避免重叠
+    Message.info('This is an info message', 0, { container, position: 'top-left' });
+    Message.success('Operation succeeded', 0, { container, position: 'top-right' });
+    Message.warning('Warning notification', 0, { container, position: 'bottom-left' });
   }, []);
 
   return (
@@ -30,7 +30,7 @@ const MessageSemanticDemo: React.FC = () => {
         position: 'relative',
         width: '100%',
         height: '100%',
-        minHeight: 200,
+        minHeight: 240,
         transform: 'translateZ(0)',
         overflow: 'hidden',
       }}
