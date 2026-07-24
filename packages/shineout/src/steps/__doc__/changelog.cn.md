@@ -1,3 +1,9 @@
+## 3.10.0-beta.6
+2026-07-24
+### 💅 Style
+- 修复 `Steps` 箭头类型在多步骤场景下箭头分隔符错位的问题 ([#1760](https://github.com/sheinsight/shineout-next/pull/1760))
+
+
 ## 3.9.5-beta.9
 2025-12-29
 ### 🐞 BugFix
