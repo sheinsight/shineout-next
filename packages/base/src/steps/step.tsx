@@ -63,7 +63,7 @@ const Step = (props: StepPropsWidthContext) => {
     [styles.finish]: current > index,
     [styles.horizontalLabel]: labelPlacement === 'horizontal',
     [styles.verticalLabel]: labelPlacement === 'vertical',
-    [styles.widthDescription]: !!description,
+    [styles.withDescription]: !!description,
   });
 
   const handleChange = (e: React.MouseEvent<HTMLElement>) => {

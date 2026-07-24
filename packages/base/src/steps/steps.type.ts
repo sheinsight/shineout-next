@@ -27,7 +27,8 @@ export type StepsClasses = {
   iconWrapper: string;
   dot: string;
   arrow: string;
-  widthDescription: string;
+  arrowIcon: string;
+  withDescription: string;
   default: string;
   click: string;
 };
