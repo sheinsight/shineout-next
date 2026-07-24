@@ -14,6 +14,7 @@ import type { ButtonSemanticKey } from '../button/button.type';
 import type { LinkSemanticKey } from '../link/link.type';
 import type { DividerSemanticKey } from '../divider/divider.type';
 import type { GapSemanticKey } from '../gap/gap.type';
+import type { GridSemanticKey } from '../grid/grid.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -249,6 +250,21 @@ type GapConfig = {
   styles?: SemanticStyles<GapSemanticKey>;
 }
 
+type GridConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Grid.
+   * @cn Grid 全局 Semantic DOM 类名。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<GridSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Grid.
+   * @cn Grid 全局 Semantic DOM 样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<GridSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -317,6 +333,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   gap?: GapConfig;
+  /**
+   * @en Global configuration for Grid component
+   * @cn Grid组件的全局配置
+   * @version 3.10.0
+   */
+  grid?: GridConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -341,6 +363,7 @@ export const defaultConfig: ConfigOption = {
   link: {},
   divider: {},
   gap: {},
+  grid: {},
   direction: 'ltr',
   popupContainer: null,
 };

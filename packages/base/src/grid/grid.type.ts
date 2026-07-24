@@ -1,7 +1,16 @@
 import { ReactNode } from 'react';
 import { CommonType } from '../common/type';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
 
 export type ResponsiveType = 'sm' | 'md' | 'lg' | 'xl';
+
+/**
+ * Grid Semantic DOM key 列表
+ * - root: 栅格容器
+ *
+ * @see /docs/rfc/0001-semantic-dom.md
+ */
+export type GridSemanticKey = 'root';
 
 export interface GridClasses {
   rootClass: string;
@@ -13,6 +22,20 @@ export interface GridProps extends Pick<CommonType, 'className' | 'style'> {
     jssStyle?: {
       grid?: () => GridClasses;
     };
+
+  /**
+   * @en Semantic DOM classNames for internal nodes (root).
+   * @cn Semantic DOM 类名，可按 key 定制内部各节点（root）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<GridSemanticKey>;
+
+  /**
+   * @en Semantic DOM inline styles for internal nodes (root).
+   * @cn Semantic DOM 内联样式，按 key 定制内部各节点。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<GridSemanticKey>;
   /**
    * @en Spacing between grids
    * @cn 栅格之间间距
