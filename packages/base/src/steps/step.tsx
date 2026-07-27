@@ -1,13 +1,14 @@
 import classNames from 'classnames';
-import { StepsClasses } from './steps.type';
+import { StepsClasses, StepsSemanticKey } from './steps.type';
 import { util } from '@sheinx/hooks';
-import { StepPropsWidthContext, BaseStepProps } from './step.type';
+import { StepPropsWidthContext, BaseStepProps, StepClassNamesInfo } from './step.type';
 import { StepsStatusType } from './steps.type';
 import StepsContext from './steps-context';
 import DefaultStep from './step.default';
 import DotStep from './step.dot';
 import ArrowStep from './step.arrow';
 import { useConfig } from '../config';
+import { useSemantic } from '../common';
 
 const Step = (props: StepPropsWidthContext) => {
   const {
@@ -28,6 +29,9 @@ const Step = (props: StepPropsWidthContext) => {
     direction,
     onClick,
     onChange,
+    classNames: classNamesProp,
+    styles: stylesProp,
+    globalSemanticConfig,
   } = props;
 
   const config = useConfig();
@@ -57,6 +61,15 @@ const Step = (props: StepPropsWidthContext) => {
   const status = getStatus();
   const labelPlacement = getLabelPlacement();
 
+  // Semantic DOM: Step uses StepsSemanticKey, with 'step' key for its root
+  const semInfo: StepClassNamesInfo = { status, index };
+  const [semClass, semStyle] = useSemantic<StepsSemanticKey, StepClassNamesInfo>(
+    classNamesProp,
+    stylesProp,
+    globalSemanticConfig,
+    semInfo,
+  );
+
   const rootClass = classNames(styles.step, className, styles[status], {
     [styles.disabled]: isDisabled,
     // 即便是指定 status 也需要考虑是否为 finish 状态
@@ -64,7 +77,7 @@ const Step = (props: StepPropsWidthContext) => {
     [styles.horizontalLabel]: labelPlacement === 'horizontal',
     [styles.verticalLabel]: labelPlacement === 'vertical',
     [styles.withDescription]: !!description,
-  });
+  }, semClass('step', []));
 
   const handleChange = (e: React.MouseEvent<HTMLElement>) => {
     if (isDisabled) return;
@@ -102,12 +115,14 @@ const Step = (props: StepPropsWidthContext) => {
         labelPlacement={labelPlacement}
         description={description}
         onChange={handleChange}
+        semClass={semClass}
+        semStyle={semStyle}
       ></Component>
     );
   };
 
   return (
-    <div className={rootClass} dir={config.direction}>
+    <div className={rootClass} style={semStyle('step')} dir={config.direction}>
       {renderStep()}
     </div>
   );

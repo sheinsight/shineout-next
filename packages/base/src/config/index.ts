@@ -15,6 +15,7 @@ import type { LinkSemanticKey } from '../link/link.type';
 import type { DividerSemanticKey } from '../divider/divider.type';
 import type { GapSemanticKey } from '../gap/gap.type';
 import type { GridSemanticKey } from '../grid/grid.type';
+import type { StepsSemanticKey } from '../steps/steps.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -265,6 +266,21 @@ type GridConfig = {
   styles?: SemanticStyles<GridSemanticKey>;
 }
 
+type StepsConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Steps (root / step / tail / icon / title / description / content).
+   * @cn Steps 全局 Semantic DOM 类名（root / step / tail / icon / title / description / content）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<StepsSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Steps (root / step / tail / icon / title / description / content).
+   * @cn Steps 全局 Semantic DOM 样式（root / step / tail / icon / title / description / content）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<StepsSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -339,6 +355,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   grid?: GridConfig;
+  /**
+   * @en Global configuration for Steps component
+   * @cn Steps组件的全局配置
+   * @version 3.10.0
+   */
+  steps?: StepsConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -364,6 +386,7 @@ export const defaultConfig: ConfigOption = {
   divider: {},
   gap: {},
   grid: {},
+  steps: {},
   direction: 'ltr',
   popupContainer: null,
 };

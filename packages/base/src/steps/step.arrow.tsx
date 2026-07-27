@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { util } from '@sheinx/hooks';
 import { useConfig } from '../config';
 import { StepsClasses } from './steps.type';
@@ -10,25 +11,25 @@ const Arrow = (
 );
 
 const ArrowStep = (props: StepStyleProps) => {
-  const { jssStyle, title, description, onChange, index, status } = props;
+  const { jssStyle, title, description, onChange, index, status, semClass, semStyle } = props;
   const styles = jssStyle?.steps?.() || ({} as StepsClasses);
   const config = useConfig();
 
   const renderTitle = () => {
     return (
-      <div className={styles.title} dir={config.direction}>
+      <div className={classNames(styles.title, semClass('title', []))} style={semStyle('title')} dir={config.direction}>
         {util.isFunc(title) ? title(index, status!) : title}
       </div>
     );
   };
 
   const renderDescription = () => {
-    return <div className={styles.description}>{description}</div>;
+    return <div className={classNames(styles.description, semClass('description', []))} style={semStyle('description')}>{description}</div>;
   };
 
   const renderContent = () => {
     return (
-      <div className={styles.content}>
+      <div className={classNames(styles.content, semClass('content', []))} style={semStyle('content')}>
         {renderTitle()}
         {description && renderDescription()}
       </div>

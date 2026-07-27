@@ -1,10 +1,12 @@
 import { Children, cloneElement } from 'react';
 import classNames from 'classnames';
-import { StepsClasses } from './steps.type';
+import { StepsClasses, StepsClassNamesInfo, StepsSemanticKey } from './steps.type';
 import { StepsProps } from './steps.type';
 import { StepProps } from './step.type';
 import StepsContext from './steps-context';
 import Step from './step';
+import { useSemantic } from '../common';
+import { useConfig } from '../config';
 
 const Steps = (props: StepsProps) => {
   const {
@@ -21,6 +23,8 @@ const Steps = (props: StepsProps) => {
     current = 0,
     renderIcon,
     onChange,
+    classNames: classNamesProp,
+    styles: stylesProp,
   } = props;
 
   const getDirection = () => {
@@ -39,6 +43,16 @@ const Steps = (props: StepsProps) => {
 
   const labelPlacement = getLabelPlacement();
 
+  // Semantic DOM
+  const config = useConfig();
+  const semInfo: StepsClassNamesInfo = { type, direction };
+  const [semClass, semStyle] = useSemantic<StepsSemanticKey, StepsClassNamesInfo>(
+    classNamesProp,
+    stylesProp,
+    config.steps,
+    semInfo,
+  );
+
   const styles = jssStyle?.steps?.() || ({} as StepsClasses);
   const rootClass = classNames(styles.rootClass, styles.steps, className, {
     [styles[type]]: type,
@@ -47,7 +61,7 @@ const Steps = (props: StepsProps) => {
     [styles.vertical]: direction === 'vertical',
     [styles.horizontal]: direction === 'horizontal',
     [styles.click]: onChange !== undefined,
-  });
+  }, semClass('root', []));
 
   const renderStep = () => {
     return Children.map(children, (child, index) => {
@@ -62,7 +76,7 @@ const Steps = (props: StepsProps) => {
   };
 
   return (
-    <div className={rootClass} style={style}>
+    <div className={rootClass} style={{ ...style, ...semStyle('root') }}>
       <StepsContext.Provider
         value={{
           jssStyle,
@@ -74,6 +88,7 @@ const Steps = (props: StepsProps) => {
           type,
           disabled,
           onChange,
+          globalSemanticConfig: config.steps,
         }}
       >
         {renderStep()}
