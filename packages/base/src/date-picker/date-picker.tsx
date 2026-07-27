@@ -265,18 +265,15 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
         onKeyDown={(e) => {
           if (e.key === 'Enter') {
             if (open) {
-              // needConfirm + inputable 时，回车视为确认操作
+              // needConfirm + inputable 时，先用宽松模式解析输入框的值，回车视为确认操作
               if (props.needConfirm && props.inputable) {
-                // 先用宽松模式解析当前输入框的值（模拟 blur 行为）
                 inputRef.current.inputRefs.forEach((el, index) => {
                   if (el && el.value) {
                     func.handleInputBlur(el.value, index);
                   }
                 });
-                handleClose(true);
-              } else {
-                handleClose();
               }
+              handleClose(props.needConfirm && props.inputable);
             } else {
               openPop();
             }
