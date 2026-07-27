@@ -132,7 +132,7 @@ exports[`Steps[Base] should render correctly about description 1`] = `
     class="soui-steps soui-steps-steps soui-steps-default soui-steps-horizontal"
   >
     <div
-      class="soui-steps-step soui-steps-finish soui-steps-finish soui-steps-vertical-label soui-steps-width-description"
+      class="soui-steps-step soui-steps-finish soui-steps-finish soui-steps-vertical-label soui-steps-with-description"
       dir="ltr"
     >
       <div
@@ -182,7 +182,7 @@ exports[`Steps[Base] should render correctly about description 1`] = `
       </div>
     </div>
     <div
-      class="soui-steps-step soui-steps-process soui-steps-vertical-label soui-steps-width-description"
+      class="soui-steps-step soui-steps-process soui-steps-vertical-label soui-steps-with-description"
       dir="ltr"
     >
       <div
@@ -221,7 +221,7 @@ exports[`Steps[Base] should render correctly about description 1`] = `
       </div>
     </div>
     <div
-      class="soui-steps-step soui-steps-wait soui-steps-vertical-label soui-steps-width-description"
+      class="soui-steps-step soui-steps-wait soui-steps-vertical-label soui-steps-with-description"
       dir="ltr"
     >
       <div
@@ -391,7 +391,7 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
       class="soui-steps soui-steps-steps soui-steps-default soui-steps-vertical"
     >
       <div
-        class="soui-steps-step soui-steps-finish soui-steps-finish soui-steps-horizontal-label soui-steps-width-description"
+        class="soui-steps-step soui-steps-finish soui-steps-finish soui-steps-horizontal-label soui-steps-with-description"
         dir="ltr"
       >
         <div
@@ -441,7 +441,7 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
         </div>
       </div>
       <div
-        class="soui-steps-step soui-steps-process soui-steps-horizontal-label soui-steps-width-description"
+        class="soui-steps-step soui-steps-process soui-steps-horizontal-label soui-steps-with-description"
         dir="ltr"
       >
         <div
@@ -480,7 +480,7 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
         </div>
       </div>
       <div
-        class="soui-steps-step soui-steps-wait soui-steps-horizontal-label soui-steps-width-description"
+        class="soui-steps-step soui-steps-wait soui-steps-horizontal-label soui-steps-with-description"
         dir="ltr"
       >
         <div
@@ -630,7 +630,7 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
       class="soui-steps soui-steps-steps soui-steps-dot soui-steps-vertical"
     >
       <div
-        class="soui-steps-step soui-steps-finish soui-steps-finish soui-steps-horizontal-label soui-steps-width-description"
+        class="soui-steps-step soui-steps-finish soui-steps-finish soui-steps-horizontal-label soui-steps-with-description"
         dir="ltr"
       >
         <div
@@ -668,7 +668,7 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
         </div>
       </div>
       <div
-        class="soui-steps-step soui-steps-process soui-steps-horizontal-label soui-steps-width-description"
+        class="soui-steps-step soui-steps-process soui-steps-horizontal-label soui-steps-with-description"
         dir="ltr"
       >
         <div
@@ -706,7 +706,7 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
         </div>
       </div>
       <div
-        class="soui-steps-step soui-steps-wait soui-steps-horizontal-label soui-steps-width-description"
+        class="soui-steps-step soui-steps-wait soui-steps-horizontal-label soui-steps-with-description"
         dir="ltr"
       >
         <div
@@ -951,7 +951,7 @@ exports[`Steps[Base] should render correctly about labelPlacement 1`] = `
     class="soui-steps soui-steps-steps soui-steps-default soui-steps-horizontal"
   >
     <div
-      class="soui-steps-step soui-steps-finish soui-steps-finish soui-steps-horizontal-label soui-steps-width-description"
+      class="soui-steps-step soui-steps-finish soui-steps-finish soui-steps-horizontal-label soui-steps-with-description"
       dir="ltr"
     >
       <div
@@ -995,7 +995,7 @@ exports[`Steps[Base] should render correctly about labelPlacement 1`] = `
       </div>
     </div>
     <div
-      class="soui-steps-step soui-steps-process soui-steps-horizontal-label soui-steps-width-description"
+      class="soui-steps-step soui-steps-process soui-steps-horizontal-label soui-steps-with-description"
       dir="ltr"
     >
       <div
@@ -1028,7 +1028,7 @@ exports[`Steps[Base] should render correctly about labelPlacement 1`] = `
       </div>
     </div>
     <div
-      class="soui-steps-step soui-steps-wait soui-steps-horizontal-label soui-steps-width-description"
+      class="soui-steps-step soui-steps-wait soui-steps-horizontal-label soui-steps-with-description"
       dir="ltr"
     >
       <div
@@ -1674,7 +1674,7 @@ exports[`Steps[Base] should render correctly about type 1`] = `
       style="margin-bottom: 32px;"
     >
       <div
-        class="soui-steps-step soui-steps-finish soui-steps-finish soui-steps-vertical-label soui-steps-width-description"
+        class="soui-steps-step soui-steps-finish soui-steps-finish soui-steps-vertical-label soui-steps-with-description"
         dir="ltr"
       >
         <div
@@ -1712,7 +1712,7 @@ exports[`Steps[Base] should render correctly about type 1`] = `
         </div>
       </div>
       <div
-        class="soui-steps-step soui-steps-process soui-steps-vertical-label soui-steps-width-description"
+        class="soui-steps-step soui-steps-process soui-steps-vertical-label soui-steps-with-description"
         dir="ltr"
       >
         <div
@@ -1750,7 +1750,7 @@ exports[`Steps[Base] should render correctly about type 1`] = `
         </div>
       </div>
       <div
-        class="soui-steps-step soui-steps-wait soui-steps-vertical-label soui-steps-width-description"
+        class="soui-steps-step soui-steps-wait soui-steps-vertical-label soui-steps-with-description"
         dir="ltr"
       >
         <div
@@ -1814,6 +1814,30 @@ exports[`Steps[Base] should render correctly about type 1`] = `
               Succeeded
             </div>
           </div>
+          <div
+            class="soui-steps-arrow-icon"
+          >
+            <svg
+              preserveAspectRatio="none"
+              viewBox="0 0 40 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M 0 0 L 40 50 L 0 100"
+                fill="currentColor"
+              />
+            </svg>
+            <svg
+              preserveAspectRatio="none"
+              viewBox="0 0 40 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M 0 0 L 40 50 L 0 100"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
         </div>
       </div>
       <div
@@ -1833,6 +1857,30 @@ exports[`Steps[Base] should render correctly about type 1`] = `
             >
               Complete information
             </div>
+          </div>
+          <div
+            class="soui-steps-arrow-icon"
+          >
+            <svg
+              preserveAspectRatio="none"
+              viewBox="0 0 40 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M 0 0 L 40 50 L 0 100"
+                fill="currentColor"
+              />
+            </svg>
+            <svg
+              preserveAspectRatio="none"
+              viewBox="0 0 40 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M 0 0 L 40 50 L 0 100"
+                fill="currentColor"
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -1854,6 +1902,30 @@ exports[`Steps[Base] should render correctly about type 1`] = `
               Pending
             </div>
           </div>
+          <div
+            class="soui-steps-arrow-icon"
+          >
+            <svg
+              preserveAspectRatio="none"
+              viewBox="0 0 40 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M 0 0 L 40 50 L 0 100"
+                fill="currentColor"
+              />
+            </svg>
+            <svg
+              preserveAspectRatio="none"
+              viewBox="0 0 40 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M 0 0 L 40 50 L 0 100"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </div>
@@ -1861,7 +1933,7 @@ exports[`Steps[Base] should render correctly about type 1`] = `
       class="soui-steps soui-steps-steps soui-steps-arrow soui-steps-horizontal"
     >
       <div
-        class="soui-steps-step soui-steps-finish soui-steps-finish soui-steps-vertical-label soui-steps-width-description"
+        class="soui-steps-step soui-steps-finish soui-steps-finish soui-steps-vertical-label soui-steps-with-description"
         dir="ltr"
       >
         <div
@@ -1883,10 +1955,34 @@ exports[`Steps[Base] should render correctly about type 1`] = `
               This is a description
             </div>
           </div>
+          <div
+            class="soui-steps-arrow-icon"
+          >
+            <svg
+              preserveAspectRatio="none"
+              viewBox="0 0 40 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M 0 0 L 40 50 L 0 100"
+                fill="currentColor"
+              />
+            </svg>
+            <svg
+              preserveAspectRatio="none"
+              viewBox="0 0 40 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M 0 0 L 40 50 L 0 100"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
         </div>
       </div>
       <div
-        class="soui-steps-step soui-steps-process soui-steps-vertical-label soui-steps-width-description"
+        class="soui-steps-step soui-steps-process soui-steps-vertical-label soui-steps-with-description"
         dir="ltr"
       >
         <div
@@ -1908,10 +2004,34 @@ exports[`Steps[Base] should render correctly about type 1`] = `
               Please fill in your home address and phone number
             </div>
           </div>
+          <div
+            class="soui-steps-arrow-icon"
+          >
+            <svg
+              preserveAspectRatio="none"
+              viewBox="0 0 40 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M 0 0 L 40 50 L 0 100"
+                fill="currentColor"
+              />
+            </svg>
+            <svg
+              preserveAspectRatio="none"
+              viewBox="0 0 40 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M 0 0 L 40 50 L 0 100"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
         </div>
       </div>
       <div
-        class="soui-steps-step soui-steps-wait soui-steps-vertical-label soui-steps-width-description"
+        class="soui-steps-step soui-steps-wait soui-steps-vertical-label soui-steps-with-description"
         dir="ltr"
       >
         <div
@@ -1932,6 +2052,30 @@ exports[`Steps[Base] should render correctly about type 1`] = `
             >
               This is a description
             </div>
+          </div>
+          <div
+            class="soui-steps-arrow-icon"
+          >
+            <svg
+              preserveAspectRatio="none"
+              viewBox="0 0 40 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M 0 0 L 40 50 L 0 100"
+                fill="currentColor"
+              />
+            </svg>
+            <svg
+              preserveAspectRatio="none"
+              viewBox="0 0 40 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M 0 0 L 40 50 L 0 100"
+                fill="currentColor"
+              />
+            </svg>
           </div>
         </div>
       </div>

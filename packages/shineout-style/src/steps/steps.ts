@@ -49,7 +49,7 @@ const stepsStyle: JsStyles<StepsClassType> = {
         left: -12,
       },
       '& $step:not(:last-child)': {
-        '&$widthDescription': {
+        '&$withDescription': {
           '&:after': {
             borderLeftWidth: 22,
             borderTopWidth: 28,
@@ -90,7 +90,7 @@ const stepsStyle: JsStyles<StepsClassType> = {
         },
       },
       '& $step:last-child': {
-        '&$widthDescription': {
+        '&$withDescription': {
           '&:before': {
             borderLeftWidth: 22,
             borderTopWidth: 28,
@@ -186,7 +186,7 @@ const stepsStyle: JsStyles<StepsClassType> = {
   large: {
     '&$arrow': {
       '& $step:not(:last-child)': {
-        '&$widthDescription': {
+        '&$withDescription': {
           '&:after': {
             top: 0,
             width: 30,
@@ -230,7 +230,7 @@ const stepsStyle: JsStyles<StepsClassType> = {
         },
       },
       '& $step:last-child': {
-        '&$widthDescription': {
+        '&$withDescription': {
           '&:before': {
             borderLeftWidth: 30,
             borderTopWidth: 36,
@@ -594,52 +594,63 @@ const stepsStyle: JsStyles<StepsClassType> = {
       '& $title': {},
     },
   },
+  arrowIcon: {
+    position: 'absolute',
+    top: 0,
+    right: 0.25,
+    bottom: 0,
+    transform: 'translateX(100%)',
+    zIndex: 1,
+    '@media (min-resolution: 2dppx)': {
+      right: 0,
+    },
+    '$withDescription &': {
+      transform: 'translateX(calc(100% - 0.5px))',
+      '@media (min-resolution: 2dppx)': {
+        transform: 'translateX(100%)',
+      },
+    },
+    '& > svg':{
+      display: 'block',
+      height: '100%',
+      color: Token.stepsFinishBackgroundColor,
+      '$process &': {
+        color: Token.stepsProcessBackgroundColor,
+      },
+      '$wait &': {
+        color: Token.stepsWaitBackgroundColor,
+      },
+      '&:last-child': {
+        position: 'relative',
+      },
+      '&:first-child': {
+        position: 'absolute',
+        top: 0,
+        left: 4,
+        color: 'white',
+        '$arrow[dir=rtl] &': {
+          right: 4,
+          left: 'auto'
+        }
+      }
+    },
+    '$step:last-child &': {
+      display: 'none',
+    },
+    '$arrow[dir=rtl] &': {
+      left: '0.25px',
+      right: 'auto',
+      transform: 'translateX(-100%)',
+      '& > svg': {
+        transform: "rotate(180deg)",
+      }
+    },
+  },
   arrow: {
     position: 'relative',
-    zIndex: 0,
-    '&$steps': {
-      overflow: 'hidden',
-    },
     '& $step': {
       marginRight: 4,
       paddingLeft: Token.stepsArrowPaddingX,
-      // before
-      '&:before': {
-        content: '""',
-        position: 'absolute',
-        width: 0,
-        height: 0,
-        top: 0,
-        borderLeftWidth: 16,
-        borderTopWidth: 20,
-        borderBottomWidth: 20,
-        borderLeftColor: '#ffffff',
-      },
-      '&[dir=ltr]:before': {
-        left: 0,
-      },
-      '&[dir=rtl]:before': {
-        right: 0,
-      },
-      // after
-      '&:after': {
-        content: '""',
-        position: 'absolute',
-        width: 0,
-        height: 0,
-
-        top: 0,
-        zIndex: 1,
-        borderLeftWidth: 16,
-        borderTopWidth: 20,
-        borderBottomWidth: 20,
-      },
-      '&[dir=ltr]:after': {
-        right: -16,
-      },
-      '&[dir=rtl]:after': {
-        left: -16,
-      },
     },
     '&$horizontal': {
       '& $horizontalLabel $title:after': {
@@ -648,31 +659,9 @@ const stepsStyle: JsStyles<StepsClassType> = {
     },
     '& $step:first-child': {
       padding: 0,
-      '&:before': {
-        display: 'none',
-      },
-      '&$widthDescription': {
-        '&:after': {
-          borderLeftWidth: 26,
-          borderTopWidth: 32,
-          borderBottomWidth: 32,
-        },
-        '&[dir=ltr]:after': { right: -26 },
-        '&[dir=rtl]:after': { left: -26 },
-      },
     },
     '& $step:last-child': {
       paddingRight: 0,
-      '&:after': {
-        display: 'none',
-      },
-      '&$widthDescription': {
-        '&:before': {
-          borderLeftWidth: 26,
-          borderTopWidth: 32,
-          borderBottomWidth: 32,
-        },
-      },
     },
 
     '& $description': {
@@ -689,16 +678,6 @@ const stepsStyle: JsStyles<StepsClassType> = {
     },
     '& $finish': {
       backgroundColor: Token.stepsFinishBackgroundColor,
-      '&:after': {
-        borderLeft: `16px solid ${Token.stepsFinishBackgroundColor}`,
-        borderTop: `20px solid transparent`,
-        borderBottom: `20px solid transparent`,
-      },
-      '&:before': {
-        // borderLeft: `16px solid #ffffff`,
-        // borderTop: `20px solid transparent`,
-        // borderBottom: `20px solid transparent`,
-      },
     },
     '& $process': {
       color: Token.stepsProcessFontColor,
@@ -706,39 +685,13 @@ const stepsStyle: JsStyles<StepsClassType> = {
       '& $description': {
         color: Token.stepsProcessFontColor,
       },
-      '&:after': {
-        borderLeft: `16px solid ${Token.stepsProcessBackgroundColor}`,
-        borderTop: `20px solid transparent`,
-        borderBottom: `20px solid transparent`,
-      },
-      '&[dir=ltr]:after': {
-        right: -16,
-      },
-      '&[dir=rtl]:after': {
-        left: -16,
-      },
-      '&:before': {
-        borderLeft: `16px solid #ffffff`,
-        borderTop: `20px solid transparent`,
-        borderBottom: `20px solid transparent`,
-      },
     },
     '& $wait': {
       color: Token.stepsWaitFontColor,
       // backgroundColor: Token.stepsWaitBackgroundColor,
       backgroundColor: Token.stepsWaitBackgroundColor,
-      '&:after': {
-        borderLeft: `16px solid ${Token.stepsWaitBackgroundColor}`,
-        borderTop: `20px solid transparent`,
-        borderBottom: `20px solid transparent`,
-      },
-      '&:before': {
-        borderLeft: `16px solid #ffffff`,
-        borderTop: `20px solid transparent`,
-        borderBottom: `20px solid transparent`,
-      },
     },
-    '& $widthDescription': {
+    '& $withDescription': {
       '& $content,$description': {
         textAlign: 'left',
       },
@@ -746,23 +699,9 @@ const stepsStyle: JsStyles<StepsClassType> = {
       '& $title': {
         marginBottom: Token.stepsDescriptionTitleMarginX,
       },
-      '&$process,$finish,$wait': {
-        '&:after': {
-          borderLeftWidth: 26,
-          borderTopWidth: 32,
-          borderBottomWidth: 32,
-        },
-        '&[dir=ltr]:after': { right: -26 },
-        '&[dir=rtl]:after': { left: -26 },
-        '&:before': {
-          borderLeftWidth: 26,
-          borderTopWidth: 32,
-          borderBottomWidth: 32,
-        },
-      },
     },
   },
-  widthDescription: {},
+  withDescription: {},
   default: {
     lineHeight: 0,
     '&$vertical': {

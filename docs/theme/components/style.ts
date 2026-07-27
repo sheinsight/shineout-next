@@ -90,6 +90,7 @@ export default createUseStyles(
     },
     stickyHeader: {
       position: 'sticky',
+      zIndex: 10,
       top: 0,
       marginTop: -65,
       // marginBottom: 32,
