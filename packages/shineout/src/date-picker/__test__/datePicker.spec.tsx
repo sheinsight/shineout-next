@@ -1811,3 +1811,40 @@ describe('DatePicker[Error/Warn]', () => {
   });
 });
 // defaultRangeMonth/timeZone/placeTitle
+describe('DatePicker[NeedConfirm + Inputable]', () => {
+  test('should apply input value when press Enter with needConfirm and inputable', async () => {
+    const onChange = jest.fn();
+    const { container } = render(
+      <DatePicker inputable needConfirm onChange={onChange} />,
+    );
+    const datePickerWrapper = container.querySelector(wrapper)!;
+    const datePickerResultWrapper = datePickerWrapper.querySelector(resultWrapper)!;
+
+    // 打开面板
+    fireEvent.click(datePickerResultWrapper);
+    await waitFor(async () => {
+      await delay(300);
+    });
+
+    const resultInput = datePickerResultWrapper.querySelector('input')!;
+    const tempTime = '2025-06-15';
+
+    // 输入日期
+    fireEvent.change(resultInput, { target: { value: tempTime } });
+    await waitFor(async () => {
+      await delay(100);
+    });
+
+    // 按 Enter 确认
+    fireEvent.keyDown(datePickerResultWrapper, { key: 'Enter' });
+    await waitFor(async () => {
+      await delay(300);
+    });
+
+    // 应该触发 onChange 且值不为空
+    expect(onChange).toHaveBeenCalled();
+    const calledValue = onChange.mock.calls[0][0];
+    expect(calledValue).toBeTruthy();
+    expect(calledValue).toContain('2025-06-15');
+  });
+});
