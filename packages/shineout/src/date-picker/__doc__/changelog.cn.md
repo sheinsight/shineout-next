@@ -1,3 +1,8 @@
+## 3.10.0-beta.7
+2026-07-27
+### 🐞 BugFix
+- 修复 `DatePicker` 同时开启 `needConfirm` 和 `inputable` 时，手动输入日期后按回车键值被清空而非提交的问题 ([#1761](https://github.com/sheinsight/shineout-next/pull/1761))
+
 ## 3.9.18-beta.2
 2026-07-14
 ### 🐞 BugFix

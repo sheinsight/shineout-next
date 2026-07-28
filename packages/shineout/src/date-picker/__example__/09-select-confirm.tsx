@@ -39,6 +39,7 @@ const App: React.FC = () => {
         }}
         clearable
         needConfirm={isConfirm}
+        inputable
       />
     </div>
   );
