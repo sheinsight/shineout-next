@@ -1,3 +1,8 @@
+## 3.10.0-beta.8
+2026-07-29
+### 🆕 Feature
+- 新增 `BorderBeam` 边框流光组件 ([#1762](https://github.com/sheinsight/shineout-next/pull/1762))
+
 ## 3.10.0-beta.1
 2026-07-17
 ### 🆕 Feature
