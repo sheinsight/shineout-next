@@ -1,6 +1,6 @@
 ---
 name: BorderBeam
-group: Other
+group: Feedback
 version: 3.10.0
 ---
 
