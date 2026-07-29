@@ -1,5 +1,5 @@
-import { useRef, useState } from "react"
-import { Button, Divider, Gap, Grid, Sticky, Alert, Card, Carousel, Collapse, Descriptions, Empty, Image, List, Popover, Spin, Table, Tabs, Tag, TYPE, Tooltip, Tree, Cascader, Checkbox, DatePicker, Input, Radio, Rate, Select, Slider, Switch, Textarea, Transfer, TreeSelect, Upload, Badge, Drawer, Message, Modal, Progress, Breadcrumb, Dropdown, Link, Menu, Pagination, Steps, Form, Rule, Watermark } from "shineout"
+import { useRef, useState, type CSSProperties } from "react"
+import { Button, Divider, Gap, Grid, Sticky, Alert, Card, Carousel, Collapse, Descriptions, Empty, Image, List, Popover, Spin, Table, Tabs, Tag, TYPE, Tooltip, Tree, Cascader, Checkbox, DatePicker, Input, Radio, Rate, Select, Slider, Switch, Textarea, Transfer, TreeSelect, Upload, Badge, BorderBeam, Drawer, Message, Modal, Progress, Breadcrumb, Dropdown, Link, Menu, Pagination, Steps, Form, Rule, Watermark } from "shineout"
 // @ts-ignore
 import { user } from "@sheinx/mock"
 
@@ -91,7 +91,68 @@ const WatermarkPreset = (watermarkProps: any) => {
   )
 }
 
+const borderBeamCardStyle: CSSProperties = {
+  boxSizing: 'border-box',
+  position: 'relative',
+  width: 'min(360px, 100%)',
+  minHeight: 172,
+  padding: 24,
+  border: '1px solid var(--soui-neutral-border-1)',
+  borderRadius: 8,
+  background: 'var(--soui-neutral-fill-1)',
+  color: 'var(--soui-neutral-text-5)',
+}
+
+const borderBeamSecondaryStyle: CSSProperties = {
+  margin: '10px 0 0',
+  color: 'var(--soui-neutral-text-4)',
+  lineHeight: 1.6,
+}
+
+const BorderBeamPreset = (borderBeamProps: TYPE.BorderBeam.Props) => (
+  <BorderBeam {...borderBeamProps}>
+    <div style={borderBeamCardStyle}>
+      <strong>Example panel</strong>
+      <p style={borderBeamSecondaryStyle}>
+        Supporting content for the BorderBeam playground.
+      </p>
+    </div>
+  </BorderBeam>
+)
+
 export const collocatorPreset: Record<string, any> = {
+  BorderBeam: {
+    BorderBeam: {
+      element: (props: TYPE.BorderBeam.Props) => <BorderBeamPreset {...props} />,
+      code: `<BorderBeam#placeholder>
+  <div
+    style={{
+      boxSizing: 'border-box',
+      position: 'relative',
+      width: 'min(360px, 100%)',
+      minHeight: 172,
+      padding: 24,
+      border: '1px solid var(--soui-neutral-border-1)',
+      borderRadius: 8,
+      background: 'var(--soui-neutral-fill-1)',
+      color: 'var(--soui-neutral-text-5)'
+    }}
+  >
+    <strong>Example panel</strong>
+    <p style={{ margin: '10px 0 0', color: 'var(--soui-neutral-text-4)', lineHeight: 1.6 }}>
+      Supporting content for the BorderBeam playground.
+    </p>
+  </div>
+</BorderBeam>`,
+      exclude: ['style'],
+      properties: [
+        {
+          name: 'color',
+          type: 'input',
+        },
+      ],
+    },
+  },
   Button: {
     Button: {
       element: (props: any) => <Button {...props}>{'确定'}</Button>,

@@ -16,6 +16,7 @@ const whiteList = {
     'alert',
     'avatar',
     'badge',
+    'border-beam',
     'breadcrumb',
     'button',
     'card',
