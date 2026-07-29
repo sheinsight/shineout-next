@@ -1,3 +1,11 @@
+## 3.10.0-beta.9
+2026-07-29
+
+### 🐞 BugFix
+
+- 修复 `Table` 筛选列单选模式下，点击 Radio 选项无法选中的问题 ([#1764](https://github.com/sheinsight/shineout-next/pull/1764))
+
+
 ## 3.9.18-beta.1
 2026-07-13
 

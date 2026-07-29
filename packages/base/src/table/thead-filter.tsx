@@ -80,7 +80,7 @@ export const FilterSelect = (props: TheadCommonProps) => {
             : (d: TableFilterData) => d.label;
           return (
             <div className={tableClasses.filterRadio}>
-              <Radio checked={active} jssStyle={props.jssStyle} />
+              <Radio checked={active} jssStyle={props.jssStyle} style={{ pointerEvents: 'none' }} />
               {renderProp(d)}
             </div>
           );
