@@ -2,6 +2,7 @@ import React from 'react';
 import { CommonType } from '../common/type';
 import { ButtonClasses, ButtonProps } from '../button/button.type';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
 
 export interface DropdownClasses {
   rootClass: string;
@@ -22,6 +23,37 @@ export interface DropdownClasses {
   optionGroup: string;
   optionDivider: string;
   itemWrapper: string;
+}
+
+/**
+ * Dropdown Semantic DOM key 列表
+ * - root:    最外层容器
+ * - button:  触发按钮
+ * - caret:   箭头图标
+ * - list:    下拉菜单面板
+ * - item:    菜单项
+ * - group:   分组标题
+ *
+ * @see /docs/rfc/0001-semantic-dom.md
+ */
+export type DropdownSemanticKey = 'root' | 'button' | 'caret' | 'list' | 'item' | 'group';
+
+/**
+ * 传入函数式 `classNames` 时的状态快照。
+ *
+ * @version 3.10.0
+ */
+export interface DropdownClassNamesInfo {
+  /**
+   * @cn 下拉菜单是否展开
+   * @en Whether the dropdown is open
+   */
+  open: boolean;
+  /**
+   * @cn 是否禁用
+   * @en Whether disabled
+   */
+  disabled: boolean;
 }
 
 export type MenuPosition =
@@ -97,6 +129,7 @@ export interface DropdownNode {
 export interface ItemProps {
   data: DropdownItem;
   itemClassName: string;
+  itemStyle?: React.CSSProperties;
   width: DropdownProps['width'];
   onClick: DropdownProps['onClick'];
   columns: DropdownProps['columns'];
@@ -117,6 +150,22 @@ export interface SimpleDropdownProps
    * @private 内部属性
    */
   isSub?: boolean;
+
+  /**
+   * @en Semantic DOM classNames for internal nodes (root / button / caret / list / item / group).
+   *     Accepts a static string or a function receiving a state snapshot.
+   * @cn 语义化 DOM 类名，可精准定制内部节点（root / button / caret / list / item / group）。
+   *     值可为静态字符串或接收状态快照的函数。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<DropdownSemanticKey, DropdownClassNamesInfo>;
+
+  /**
+   * @en Semantic DOM inline styles for internal nodes (root / button / caret / list / item / group).
+   * @cn 语义化 DOM 内联样式，可精准定制内部节点（root / button / caret / list / item / group）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<DropdownSemanticKey>;
   /**
    * @en Whether to adjust the position of the panel automatically. When the panel is blocked by the window, the position is adjusted automatically
    * @cn 是否开启自动调整面板位置功能。当面板被窗口遮挡时，自动调整位置

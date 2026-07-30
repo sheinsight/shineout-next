@@ -46,13 +46,14 @@ class Item extends React.PureComponent<ItemProps> {
   }
 
   render() {
-    const { itemClassName, renderItem, direction } = this.props;
+    const { itemClassName, itemStyle, renderItem, direction } = this.props;
     const data = (this.props.data || {}) as DropdownNode;
 
     const props: ItemLinkProps = {
       disabled: data.disabled,
       onClick: this.handleClick,
       className: itemClassName,
+      style: itemStyle,
       target: data.target,
       dir: direction,
     };
