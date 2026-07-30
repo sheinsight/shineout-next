@@ -66,12 +66,13 @@ const Dropdown = (props: SimpleDropdownProps) => {
     mouseLeaveDelay: 200,
   });
 
-  // Semantic DOM（仅根 Dropdown 应用，子级 isSub 不应用用户传入的 semantic）
+  // Semantic DOM
+  // 根级 Dropdown 应用全部 semantic；子级 isSub 也需要接收 semantic 以便对 button(item) 应用 item key
   const semInfo: DropdownClassNamesInfo = { open: !!open, disabled: !!disabled };
   const [semClass, semStyle] = useSemantic<DropdownSemanticKey, DropdownClassNamesInfo>(
-    isSub ? undefined : classNamesProp,
-    isSub ? undefined : stylesProp,
-    isSub ? undefined : config.dropdown,
+    classNamesProp,
+    stylesProp,
+    config.dropdown,
     semInfo,
   );
 
@@ -89,8 +90,8 @@ const Dropdown = (props: SimpleDropdownProps) => {
       <span
         data-role='caret'
         key={'caret'}
-        className={classNames(dropdownClasses?.caret, semClass('caret', []))}
-        style={semStyle('caret')}
+        className={classNames(dropdownClasses?.caret, !isSub && semClass('caret', []))}
+        style={!isSub ? semStyle('caret') : undefined}
         dir={config.direction}
       >
         {Icons.dropdown.DropdownArrow}
@@ -125,9 +126,9 @@ const Dropdown = (props: SimpleDropdownProps) => {
             dropdownClasses?.item,
             !!disabled && dropdownClasses?.itemDisabled,
             !!open && dropdownClasses?.itemActive,
-            semClass('button', []),
+            semClass('item', []),
           )}
-          style={semStyle('button')}
+          style={semStyle('item')}
           data-role='item'
         >
           {child}
@@ -185,6 +186,8 @@ const Dropdown = (props: SimpleDropdownProps) => {
           trigger={trigger}
           isSub
           closePop={closePop}
+          classNames={classNamesProp}
+          styles={stylesProp}
         />
       ) : (
         <Item
@@ -220,9 +223,9 @@ const Dropdown = (props: SimpleDropdownProps) => {
         dropdownClasses?.rootClass,
         dropdownClasses?.wrapper,
         !isSub && open && dropdownClasses?.open,
-        semClass('root', []),
+        !isSub && semClass('root', []),
       )}
-      style={{ ...style, ...semStyle('root') }}
+      style={!isSub ? { ...style, ...semStyle('root') } : style}
       data-position={position}
       data-role='dropdown'
       ref={targetRef}
@@ -251,13 +254,13 @@ const Dropdown = (props: SimpleDropdownProps) => {
             columns !== undefined && columns > 1 && dropdownClasses?.boxList,
             size === 'small' && dropdownClasses?.listSmall,
             size === 'large' && dropdownClasses?.listLarge,
-            semClass('list', []),
+            !isSub && semClass('list', []),
           )}
           style={{
             width: width,
             minWidth: 90,
             gridTemplateColumns: columns ? `repeat(${columns}, 1fr)` : undefined,
-            ...semStyle('list'),
+            ...(!isSub ? semStyle('list') : undefined),
           }}
           type={'fade'}
           duration={'fast'}
