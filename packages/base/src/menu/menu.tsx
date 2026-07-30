@@ -4,8 +4,10 @@ import Item from './item';
 import classNames from 'classnames';
 // import Scroll from './scroll';
 
-import type { MenuProps } from './menu.type';
+import type { MenuProps, MenuClassNamesInfo, MenuSemanticKey } from './menu.type';
 import type { KeygenResult } from '@sheinx/hooks';
+import { useSemantic } from '../common';
+import { useConfig } from '../config';
 
 const emptyArray: any[] = [];
 const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key>) => {
@@ -28,6 +30,26 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
   const isVertical = mode === 'vertical' || mode === 'vertical-auto';
   // const isHorizontal = mode === 'horizontal';
   const [hasOpen, setHasOpen] = useState(false);
+
+  // Semantic DOM
+  const config = useConfig();
+  const semInfo: MenuClassNamesInfo = {
+    mode,
+    theme,
+    collapse: !!collapse,
+    active: false,
+    disabled: false,
+    open: false,
+    inPath: false,
+    hasChildren: false,
+    level: -1,
+  };
+  const [semClass, semStyle] = useSemantic<MenuSemanticKey, MenuClassNamesInfo>(
+    props.classNames,
+    props.styles,
+    config.menu,
+    semInfo,
+  );
 
   // 当使用 active 函数且 openKeys 非受控时，自动展开激活项的父级菜单
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -70,7 +92,7 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
   const renderHeader = () => {
     if (modeProps === 'horizontal') return;
     if (props.header) {
-      return <div className={classes?.header}>{props.header}</div>;
+      return <div className={classNames(classes?.header, semClass('header', []))} style={semStyle('header')}>{props.header}</div>;
     }
     return null;
   };
@@ -99,6 +121,7 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
         collapse && classes?.wrapperCollapse,
         context.inTransition && classes?.wrapperInTransition,
         props.inlineAnimate && classes?.wrapperInlineAnimate,
+        semClass('root', []),
       )}
       {...util.getDataAttribute({
         theme,
@@ -107,6 +130,7 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
       style={{
         height: props.height,
         ...props.style,
+        ...semStyle('root'),
       }}
       onTransitionEnd={(e) => {
         if (e.target === e.currentTarget) {
@@ -119,7 +143,7 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
     >
       {renderHeader()}
       <div className={classes?.scrollbox} ref={scrollRef}>
-        <ul className={classNames(classes?.root, hasExpand && classes?.childrenHasExpand)}>
+        <ul className={classNames(classes?.root, hasExpand && classes?.childrenHasExpand, semClass('list', []))} style={semStyle('list')}>
           {data.map((item, index) => {
             const key = util.getKey(props.keygen, item, index);
             return (
@@ -156,6 +180,11 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
                 collapse={collapse}
                 isEdgeItem={false}
                 getItemProps={props.getItemProps}
+                semClass={semClass}
+                semStyle={semStyle}
+                globalSemanticConfig={config.menu}
+                userClassNames={props.classNames}
+                userStyles={props.styles}
               />
             );
           })}

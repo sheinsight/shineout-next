@@ -2,8 +2,77 @@ import type { UseMenuItemProps } from '@sheinx/hooks';
 import { KeygenResult, KeygenType, ObjectKey } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
 import { PopoverJssStyle } from '../popover/popover.type';
+import type { SemanticClassNames, SemanticStyles, SemanticGlobalConfig, SemanticClassFn, SemanticStyleFn } from '../common/use-semantic';
 
 export type MenuMode = 'inline' | 'vertical' | 'horizontal' | 'vertical-auto';
+
+/**
+ * Menu Semantic DOM key 列表
+ * - root:        菜单最外层容器
+ * - header:      菜单头部区域（仅 inline 模式）
+ * - list:        菜单列表（ul 元素）
+ * - item:        菜单项（li 元素）
+ * - itemContent: 菜单项内容区
+ * - title:       菜单项标题/链接
+ * - icon:        菜单项图标
+ * - expand:      展开/折叠箭头
+ *
+ * @see /docs/rfc/0001-semantic-dom.md
+ */
+export type MenuSemanticKey = 'root' | 'header' | 'list' | 'item' | 'itemContent' | 'title' | 'icon' | 'expand';
+
+/**
+ * 传入函数式 `classNames` 时的状态快照。
+ *
+ * @version 3.10.0
+ */
+export interface MenuClassNamesInfo {
+  /**
+   * @cn 菜单展示模式
+   * @en Menu display mode
+   */
+  mode: MenuMode;
+  /**
+   * @cn 菜单主题
+   * @en Menu theme
+   */
+  theme: 'dark' | 'light';
+  /**
+   * @cn 是否折叠
+   * @en Whether collapsed
+   */
+  collapse: boolean;
+  /**
+   * @cn 是否激活（仅 item 级别 key 有效）
+   * @en Whether active (only for item-level keys)
+   */
+  active: boolean;
+  /**
+   * @cn 是否禁用（仅 item 级别 key 有效）
+   * @en Whether disabled (only for item-level keys)
+   */
+  disabled: boolean;
+  /**
+   * @cn 是否展开（仅 item 级别 key 有效）
+   * @en Whether expanded (only for item-level keys)
+   */
+  open: boolean;
+  /**
+   * @cn 是否在激活路径上（仅 item 级别 key 有效）
+   * @en Whether in active path (only for item-level keys)
+   */
+  inPath: boolean;
+  /**
+   * @cn 是否有子菜单（仅 item 级别 key 有效）
+   * @en Whether has children (only for item-level keys)
+   */
+  hasChildren: boolean;
+  /**
+   * @cn 菜单项层级，0 为根节点（仅 item 级别 key 有效）
+   * @en Menu item level, 0 for root (only for item-level keys)
+   */
+  level: number;
+}
 
 export interface MenuClasses {
   rootClass: string;
@@ -63,6 +132,22 @@ export interface MenuJssStyle extends PopoverJssStyle {
 export interface MenuProps<DataItem, Key extends KeygenResult = KeygenResult>
   extends Pick<CommonType, 'className' | 'style'> {
   jssStyle?: MenuJssStyle;
+
+  /**
+   * @en Semantic DOM classNames for internal nodes (root / header / list / item / itemContent / title / icon / expand).
+   *     Accepts a static string or a function receiving a state snapshot.
+   * @cn 语义化 DOM 类名，可精准定制内部节点（root / header / list / item / itemContent / title / icon / expand）。
+   *     值可为静态字符串或接收状态快照的函数。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<MenuSemanticKey, MenuClassNamesInfo>;
+
+  /**
+   * @en Semantic DOM inline styles for internal nodes (root / header / list / item / itemContent / title / icon / expand).
+   * @cn 语义化 DOM 内联样式，可精准定制内部节点（root / header / list / item / itemContent / title / icon / expand）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<MenuSemanticKey>;
 
   /**
    * @en style of menu
@@ -249,4 +334,24 @@ export interface MenuItemProps
   scrollRef: React.MutableRefObject<HTMLDivElement | null>;
   collapse?: boolean;
   isEdgeItem?: boolean;
+  /**
+   * @internal Semantic class function passed from parent Menu.
+   */
+  semClass: SemanticClassFn<MenuSemanticKey>;
+  /**
+   * @internal Semantic style function passed from parent Menu.
+   */
+  semStyle: SemanticStyleFn<MenuSemanticKey>;
+  /**
+   * @internal Global semantic config from setConfig, passed down for nested items.
+   */
+  globalSemanticConfig?: SemanticGlobalConfig<MenuSemanticKey>;
+  /**
+   * @internal User-level classNames prop, passed down for nested items.
+   */
+  userClassNames?: SemanticClassNames<MenuSemanticKey, MenuClassNamesInfo>;
+  /**
+   * @internal User-level styles prop, passed down for nested items.
+   */
+  userStyles?: SemanticStyles<MenuSemanticKey>;
 }
