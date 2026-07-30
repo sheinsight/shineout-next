@@ -2,7 +2,7 @@ import type { BorderBeamClasses } from '@sheinx/base';
 import { CommonToken } from '@sheinx/theme';
 import type { JsStyles } from '../jss-style';
 
-const MASK_SUPPORT = '@supports ((mask-composite: exclude) or (-webkit-mask-composite: xor))';
+const MASK_SUPPORT = '@supports (mask-composite: exclude)';
 const PATH_SUPPORT = '@supports (offset-path: rect(0 auto auto 0 round 1px))';
 const gradient =
   'linear-gradient(to left, ' +
@@ -24,10 +24,8 @@ const borderBeamStyle: JsStyles<keyof BorderBeamClasses> = {
     pointerEvents: 'none',
     padding: 'var(--soui-border-beam-line-width, 1px)',
     [MASK_SUPPORT]: {
-      '--soui-border-beam-mask': 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-      WebkitMask: 'var(--soui-border-beam-mask)',
-      mask: 'var(--soui-border-beam-mask)',
-      WebkitMaskComposite: 'xor',
+      maskImage: 'linear-gradient(#fff 0 0), linear-gradient(#fff 0 0)',
+      maskClip: 'content-box, border-box',
       maskComposite: 'exclude',
       [PATH_SUPPORT]: {
         display: 'block',
