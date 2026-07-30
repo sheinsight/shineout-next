@@ -16,6 +16,7 @@ import type { DividerSemanticKey } from '../divider/divider.type';
 import type { GapSemanticKey } from '../gap/gap.type';
 import type { GridSemanticKey } from '../grid/grid.type';
 import type { StepsSemanticKey } from '../steps/steps.type';
+import type { MenuSemanticKey } from '../menu/menu.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -281,6 +282,21 @@ type StepsConfig = {
   styles?: SemanticStyles<StepsSemanticKey>;
 }
 
+type MenuConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Menu (root / header / list / item / itemContent / title / icon / expand).
+   * @cn Menu 全局 Semantic DOM 类名（root / header / list / item / itemContent / title / icon / expand）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<MenuSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Menu (root / header / list / item / itemContent / title / icon / expand).
+   * @cn Menu 全局 Semantic DOM 样式（root / header / list / item / itemContent / title / icon / expand）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<MenuSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -361,6 +377,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   steps?: StepsConfig;
+  /**
+   * @en Global configuration for Menu component
+   * @cn Menu组件的全局配置
+   * @version 3.10.0
+   */
+  menu?: MenuConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -387,6 +409,7 @@ export const defaultConfig: ConfigOption = {
   gap: {},
   grid: {},
   steps: {},
+  menu: {},
   direction: 'ltr',
   popupContainer: null,
 };
