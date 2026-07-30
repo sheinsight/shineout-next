@@ -159,8 +159,6 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
               renderIcon={isTitle ? undefined : props.renderIcon}
               // 顶部或底部的menuItem的popover边缘与menu的边缘对齐
               isEdgeItem={index === 0 || index === arr.length - 1}
-              semClass={semClass}
-              semStyle={semStyle}
               globalSemanticConfig={props.globalSemanticConfig}
               userClassNames={props.userClassNames}
               userStyles={props.userStyles}

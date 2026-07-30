@@ -2,7 +2,7 @@ import type { UseMenuItemProps } from '@sheinx/hooks';
 import { KeygenResult, KeygenType, ObjectKey } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
 import { PopoverJssStyle } from '../popover/popover.type';
-import type { SemanticClassNames, SemanticStyles, SemanticGlobalConfig, SemanticClassFn, SemanticStyleFn } from '../common/use-semantic';
+import type { SemanticClassNames, SemanticStyles, SemanticGlobalConfig } from '../common/use-semantic';
 
 export type MenuMode = 'inline' | 'vertical' | 'horizontal' | 'vertical-auto';
 
@@ -334,14 +334,6 @@ export interface MenuItemProps
   scrollRef: React.MutableRefObject<HTMLDivElement | null>;
   collapse?: boolean;
   isEdgeItem?: boolean;
-  /**
-   * @internal Semantic class function passed from parent Menu.
-   */
-  semClass: SemanticClassFn<MenuSemanticKey>;
-  /**
-   * @internal Semantic style function passed from parent Menu.
-   */
-  semStyle: SemanticStyleFn<MenuSemanticKey>;
   /**
    * @internal Global semantic config from setConfig, passed down for nested items.
    */
