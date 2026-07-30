@@ -13,7 +13,7 @@ import { Dropdown } from 'shineout';
 const dropdownData = [
   { content: 'Option 1' },
   { content: 'Option 2' },
-  { group: 'More Actions', content: 'Option 3' },
+  { group: 'More', content: 'Option 3', children: [{ content: 'Sub Option 1' }, { content: 'Sub Option 2' }] },
   { content: 'Option 4' },
 ];
 
