@@ -24,9 +24,10 @@ const borderBeamStyle: JsStyles<keyof BorderBeamClasses> = {
     pointerEvents: 'none',
     padding: 'var(--soui-border-beam-line-width, 1px)',
     [MASK_SUPPORT]: {
-      WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+      '--soui-border-beam-mask': 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+      WebkitMask: 'var(--soui-border-beam-mask)',
+      mask: 'var(--soui-border-beam-mask)',
       WebkitMaskComposite: 'xor',
-      mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
       maskComposite: 'exclude',
       [PATH_SUPPORT]: {
         display: 'block',
