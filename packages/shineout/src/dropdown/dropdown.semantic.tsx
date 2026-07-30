@@ -13,7 +13,8 @@ import { Dropdown } from 'shineout';
 const dropdownData = [
   { content: 'Option 1' },
   { content: 'Option 2' },
-  { content: 'Option 3', children: [{ content: 'Sub Option 1' }, { content: 'Sub Option 2' }] },
+  { group: 'More Actions', content: 'Option 3' },
+  { content: 'Option 4' },
 ];
 
 const DropdownSemanticDemo: React.FC = () => (
@@ -21,6 +22,7 @@ const DropdownSemanticDemo: React.FC = () => (
     data={dropdownData}
     placeholder='Dropdown'
     position='bottom-left'
+    open
   />
 );
 
