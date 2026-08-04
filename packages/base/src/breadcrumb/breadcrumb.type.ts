@@ -2,9 +2,23 @@ import React from 'react';
 import type { CommonType } from '../common/type';
 import type { ReactNode } from 'react';
 import type { KeygenType } from '@sheinx/hooks';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
 
 import type { PopoverJssStyle } from '../popover/popover.type';
 import type { TooltipClasses } from '../tooltip/tooltip.type';
+
+/**
+ * Breadcrumb Semantic DOM key 列表
+ * - root:         最外层容器
+ * - item:         每个面包屑项的容器
+ * - separator:    分隔符节点
+ * - content:      文本/链接内容节点
+ * - dropdown:     溢出下拉面板
+ * - dropdownItem: 下拉面板内每一项
+ *
+ * @see /docs/rfc/0001-semantic-dom.md
+ */
+export type BreadcrumbSemanticKey = 'root' | 'item' | 'separator' | 'content' | 'dropdown' | 'dropdownItem';
 
 export type StructureArray<T> = Array<T | T[]>;
 
@@ -33,6 +47,20 @@ export interface BreadcrumbJssStyle extends PopoverJssStyle {
 export interface BreadcrumbProps<Item = BreadcrumbDataType>
   extends Pick<CommonType, 'className' | 'style'> {
   jssStyle?: BreadcrumbJssStyle;
+
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<BreadcrumbSemanticKey>;
+
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<BreadcrumbSemanticKey>;
 
   /**
    * @en The array of breadcrumb objects, see data
@@ -71,7 +99,7 @@ export interface BreadcrumbProps<Item = BreadcrumbDataType>
    * @cn 下拉框最大高度，超出可以内滚
    * @default 50vh
    */
-  maxHeight?: string | number
+  maxHeight?: string | number;
 }
 
 /**
