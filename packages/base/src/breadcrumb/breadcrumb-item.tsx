@@ -1,16 +1,19 @@
 import React, { ReactNode, useLayoutEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
-import { BreadcrumbClasses, BreadcrumbDataType, BreadcrumbJssStyle } from './breadcrumb.type';
+import { BreadcrumbClasses, BreadcrumbDataType, BreadcrumbJssStyle, BreadcrumbSemanticKey } from './breadcrumb.type';
 import Tooltip from '../tooltip';
+import type { SemanticClassFn, SemanticStyleFn } from '../common/use-semantic';
 
 interface BreadcrumbItemProps<Item = BreadcrumbDataType> {
   dataItem: Item;
   renderItem?: (dataItem: Item) => ReactNode;
   jssStyle?: BreadcrumbJssStyle;
   max?: number;
+  semClass: SemanticClassFn<BreadcrumbSemanticKey>;
+  semStyle: SemanticStyleFn<BreadcrumbSemanticKey>;
 }
 
-const BreadcrumbItem = <Item = BreadcrumbDataType,>({dataItem, renderItem, jssStyle, max}: BreadcrumbItemProps<Item>): ReactNode => {
+const BreadcrumbItem = <Item = BreadcrumbDataType,>({dataItem, renderItem, jssStyle, max, semClass, semStyle}: BreadcrumbItemProps<Item>): ReactNode => {
   const contentRef = useRef<HTMLElement>(null);
   const [isOverflow, setIsOverflow] = useState(false);
 
@@ -21,7 +24,8 @@ const BreadcrumbItem = <Item = BreadcrumbDataType,>({dataItem, renderItem, jssSt
   }, [max, dataItem])
 
   const breadcrumbClasses = jssStyle?.breadcrumb?.() as BreadcrumbClasses;
-  const contentClass = classNames(breadcrumbClasses.content, isOverflow && breadcrumbClasses?.contentMaxWidth);
+  const contentClass = classNames(breadcrumbClasses.content, isOverflow && breadcrumbClasses?.contentMaxWidth, semClass('content', []));
+  const contentStyle = semStyle('content');
 
   const d = dataItem as BreadcrumbDataType;
   let item = d.title;
@@ -33,7 +37,7 @@ const BreadcrumbItem = <Item = BreadcrumbDataType,>({dataItem, renderItem, jssSt
       };
       if (d.url) props.href = d.url;
       item = (
-        <a {...props} className={contentClass} role="button" ref={contentRef as any}>
+        <a {...props} className={contentClass} style={contentStyle} role="button" ref={contentRef as any}>
           {d.icon}
           {d.icon && d.title && <>&nbsp;</>}
           {d.title}
@@ -41,7 +45,7 @@ const BreadcrumbItem = <Item = BreadcrumbDataType,>({dataItem, renderItem, jssSt
       );
     } else {
       item = (
-        <span className={contentClass} ref={contentRef}>
+        <span className={contentClass} style={contentStyle} ref={contentRef}>
           {d.icon}
           {d.icon && d.title && <>&nbsp;</>}
           {d.title}
@@ -51,7 +55,7 @@ const BreadcrumbItem = <Item = BreadcrumbDataType,>({dataItem, renderItem, jssSt
   }
   if(renderItem) {
     if (max !== undefined) {
-      item = <span className={contentClass} ref={contentRef}>
+      item = <span className={contentClass} style={contentStyle} ref={contentRef}>
         {renderItem(dataItem)}
       </span>
     } else {
