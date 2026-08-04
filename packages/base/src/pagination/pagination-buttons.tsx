@@ -19,6 +19,8 @@ const PaginationButtons = (props: PaginationButtonsProps) => {
     text,
     mode,
     onChange,
+    semClass,
+    semStyle,
   } = props;
 
   const [showPrevMore, setShowPrevMore] = useState(false);
@@ -82,6 +84,8 @@ const PaginationButtons = (props: PaginationButtonsProps) => {
       size,
       jssStyle,
       disabled,
+      className: semClass('item', []),
+      style: semStyle('item'),
     };
   };
 
@@ -105,6 +109,8 @@ const PaginationButtons = (props: PaginationButtonsProps) => {
         text={text}
         size={size}
         onChange={onChange}
+        semClass={semClass}
+        semStyle={semStyle}
       ></Prev>
     );
   };
@@ -121,6 +127,8 @@ const PaginationButtons = (props: PaginationButtonsProps) => {
         text={text}
         size={size}
         onChange={onChange}
+        semClass={semClass}
+        semStyle={semStyle}
       ></Next>
     );
   };

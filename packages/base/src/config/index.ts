@@ -19,6 +19,7 @@ import type { StepsSemanticKey } from '../steps/steps.type';
 import type { MenuSemanticKey } from '../menu/menu.type';
 import type { DropdownSemanticKey } from '../dropdown/dropdown.type';
 import type { BreadcrumbSemanticKey } from '../breadcrumb/breadcrumb.type';
+import type { PaginationSemanticKey } from '../pagination/pagination.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -329,6 +330,21 @@ type BreadcrumbConfig = {
   styles?: SemanticStyles<BreadcrumbSemanticKey>;
 }
 
+type PaginationConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Pagination (root / item / prev / next / jumper / sizeList).
+   * @cn Pagination 全局 Semantic DOM 类名（root / item / prev / next / jumper / sizeList）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<PaginationSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Pagination (root / item / prev / next / jumper / sizeList).
+   * @cn Pagination 全局 Semantic DOM 样式（root / item / prev / next / jumper / sizeList）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<PaginationSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -427,6 +443,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   breadcrumb?: BreadcrumbConfig;
+  /**
+   * @en Global configuration for Pagination component
+   * @cn Pagination组件的全局配置
+   * @version 3.10.0
+   */
+  pagination?: PaginationConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -456,6 +478,7 @@ export const defaultConfig: ConfigOption = {
   menu: {},
   dropdown: {},
   breadcrumb: {},
+  pagination: {},
   direction: 'ltr',
   popupContainer: null,
 };
