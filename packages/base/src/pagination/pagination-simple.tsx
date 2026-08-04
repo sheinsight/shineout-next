@@ -4,7 +4,7 @@ import Next from './pagination-next';
 import Prev from './pagination-prev';
 
 const PaginationSimple = (props: PaginationSimpleProps) => {
-  const { jssStyle, pageSize, current, disabled, total, mode, size, text, onChange } = props;
+  const { jssStyle, pageSize, current, disabled, total, mode, size, text, onChange, semClass, semStyle } = props;
 
   const renderPrev = () => {
     return (
@@ -17,6 +17,8 @@ const PaginationSimple = (props: PaginationSimpleProps) => {
         mode={mode}
         size={size}
         onChange={onChange}
+        semClass={semClass}
+        semStyle={semStyle}
       ></Prev>
     );
   };
@@ -32,6 +34,8 @@ const PaginationSimple = (props: PaginationSimpleProps) => {
         mode={mode}
         size={size}
         onChange={onChange}
+        semClass={semClass}
+        semStyle={semStyle}
       ></Next>
     );
   };
@@ -47,6 +51,8 @@ const PaginationSimple = (props: PaginationSimpleProps) => {
         current={current}
         pageSize={pageSize}
         onChange={onChange}
+        semClass={semClass}
+        semStyle={semStyle}
       ></Jumper>
     );
   };

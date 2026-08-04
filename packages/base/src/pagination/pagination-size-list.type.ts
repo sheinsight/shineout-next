@@ -1,4 +1,5 @@
-import { PaginationJssStyle, PaginationProps, TextParams } from './pagination.type';
+import { PaginationJssStyle, PaginationProps, PaginationSemanticKey, TextParams } from './pagination.type';
+import type { SemanticClassFn, SemanticStyleFn } from '../common/use-semantic';
 
 export interface PaginationSizeListProps
   extends Pick<PaginationProps, 'pageSizeList' | 'size' | 'disabled' | 'select' | 'sizeListProps'> {
@@ -8,4 +9,6 @@ export interface PaginationSizeListProps
   text: TextParams;
   pageSize: number;
   onChange: (current: number, pageSize?: number) => void;
+  semClass: SemanticClassFn<PaginationSemanticKey>;
+  semStyle: SemanticStyleFn<PaginationSemanticKey>;
 }

@@ -4,8 +4,22 @@ import { InputClasses } from '../input/input.type';
 import { CommonType } from '../common/type';
 // import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 import { SelectProps as FullSelectProps } from '../select/select.type';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
 
 export type AlignType = 'left' | 'center' | 'right';
+
+/**
+ * Pagination Semantic DOM key 列表
+ * - root:     最外层容器
+ * - item:     页码按钮（含 "..." more 按钮）
+ * - prev:     上一页按钮
+ * - next:     下一页按钮
+ * - jumper:   跳转输入区域
+ * - sizeList: 每页条数选择区域
+ *
+ * @see /docs/rfc/0001-semantic-dom.md
+ */
+export type PaginationSemanticKey = 'root' | 'item' | 'prev' | 'next' | 'jumper' | 'sizeList';
 
 export type LayoutType = (
   | 'links'
@@ -60,6 +74,19 @@ export interface TextParams {
 }
 
 export interface PaginationProps extends Pick<CommonType, 'style' | 'className' | 'size'> {
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<PaginationSemanticKey>;
+
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<PaginationSemanticKey>;
   /**
    * @en Align of pagination
    * @cn 排布方式
