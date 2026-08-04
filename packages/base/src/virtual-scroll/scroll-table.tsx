@@ -52,6 +52,8 @@ const Scroll = (props: ScrollProps) => {
   const { scrollHeight = 0, scrollWidth = 0, defaultHeight = 0 } = props;
   const { width, height: h } = useResize({ targetRef: containerRef, timer: 100 });
   const height = h || defaultHeight;
+  // 高度尚未测量时不设置 paddingTop，避免首帧出现巨大占位导致布局抖动
+  const heightReady = h > 0;
 
   const config = useConfig();
   const isRtl = config.direction === 'rtl';
@@ -72,7 +74,7 @@ const Scroll = (props: ScrollProps) => {
     top: 0,
   } as React.CSSProperties;
 
-  let paddingTop = Math.max(0, Math.floor(scrollHeight - height));
+  let paddingTop = heightReady ? Math.max(0, Math.floor(scrollHeight - height)) : 0;
   if (props.isEmpty) {
     paddingTop = 0;
     Object.assign(scrollerStyle, { display: 'flex', flexDirection: 'column' })
@@ -174,16 +176,32 @@ const Scroll = (props: ScrollProps) => {
   useLayoutEffect(() => {
     if (!props.tableRef.current || !props.setFakeVirtual) return;
 
-    if (props.tableRef.current.style.height || props.tableRef.current.style.flex) return;
+    // 明确的像素高度或 flex 约束时，Table 有确定的高度，可以正常虚拟滚动
+    if (props.tableRef.current.style.flex) return;
+    const inlineHeight = props.tableRef.current.style.height;
+    if (inlineHeight && !inlineHeight.endsWith('%')) return;
 
     const container = containerRef.current
     const isContainerVisible = container?.offsetParent !== null;
     if(!isContainerVisible) return;
 
     const rootTableHeight = props.tableRef.current.clientHeight;
-    // 判断内容滚动高度是否真的超过了容器高度
-    const isRealScroll = container?.scrollHeight !== undefined && container.scrollHeight > rootTableHeight
+
+    // 核心检测：如果 scrollRef 的 scrollHeight 等于 scrollRef 的 clientHeight，
+    // 说明 scrollRef 没有被约束——它被内容撑开了（高度 = 内容高度），没有产生滚动。
+    // 在这种情况下虚拟滚动无意义，退回全量渲染。
+    const scrollEl = scrollRef.current;
+    if (scrollEl && paddingTop > 0) {
+      const noScrollConstraint = scrollEl.scrollHeight <= scrollEl.clientHeight + 1;
+      if (noScrollConstraint) {
+        props.setFakeVirtual(true);
+        context.lastTableHeight = 0;
+        return;
+      }
+    }
+
     // 判断Table的根节点dom高度是否发生变化，如果变化了，则是因为不定高，被内部元素撑高了导致的
+    const isRealScroll = container?.scrollHeight !== undefined && container.scrollHeight > rootTableHeight
     if (paddingTop > 0 && context.lastTableHeight > 0 && context.lastTableHeight !== rootTableHeight && !isRealScroll) {
       props.setFakeVirtual(true);
       context.lastTableHeight = 0;

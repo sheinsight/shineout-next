@@ -1,3 +1,10 @@
+## 3.10.0-beta.12
+2026-08-04
+
+### 🐞 BugFix
+
+- 修复 `Table` 开启虚拟滚动但无固定高度时滚动条抖动的问题 ([#1766](https://github.com/sheinsight/shineout-next/pull/1766))
+
 ## 3.10.0-beta.9
 2026-07-29
 
