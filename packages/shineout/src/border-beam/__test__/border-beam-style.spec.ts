@@ -1,6 +1,6 @@
 import { borderBeamStyle } from '@sheinx/shineout-style';
 
-const MASK_SUPPORT = '@supports ((mask-composite: exclude) or (-webkit-mask-composite: xor))';
+const MASK_SUPPORT = '@supports (mask-composite: exclude)';
 const PATH_SUPPORT = '@supports (offset-path: rect(0 auto auto 0 round 1px))';
 
 test('defines progressive enhancement and reduced-motion styles', () => {
@@ -16,7 +16,6 @@ test('defines progressive enhancement and reduced-motion styles', () => {
     pointerEvents: 'none',
   });
   expect(maskSupport).toMatchObject({
-    WebkitMaskComposite: 'xor',
     maskComposite: 'exclude',
   });
   expect(pathSupport.display).toBe('block');
