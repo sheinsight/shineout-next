@@ -171,7 +171,7 @@ export default createUseStyles(
       bottom: 0,
       left: 0,
       background: 'var(--soui-neutral-fill-1)',
-      zIndex: 1,
+      zIndex: 10,
       '& .toolbar': {
         padding: 5,
         display: 'flex',
