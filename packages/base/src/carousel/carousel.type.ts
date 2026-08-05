@@ -1,5 +1,32 @@
 import React from 'react';
 import { CommonType } from '../common/type';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
+
+/**
+ * Carousel Semantic DOM key 列表
+ * - root:          最外层容器
+ * - slider:        滑动区域
+ * - item:          每个轮播项
+ * - indicator:     指示器容器
+ * - indicatorItem: 每个指示器元素（圆点/线/条）
+ * - arrow:         箭头按钮
+ *
+ * @see /docs/rfc/0001-semantic-dom.md
+ */
+export type CarouselSemanticKey = 'root' | 'slider' | 'item' | 'indicator' | 'indicatorItem' | 'arrow';
+
+/**
+ * 传入函数式 `classNames` 时的状态快照。
+ *
+ * @version 3.10.0
+ */
+export interface CarouselClassNamesInfo {
+  /**
+   * @cn 当前指示器是否为激活状态
+   * @en Whether the current indicator is active
+   */
+  active: boolean;
+}
 
 export interface CarouselClasses {
   rootClass: string;
@@ -41,6 +68,20 @@ export interface CarouselProps extends Pick<CommonType, 'className' | 'style'> {
   jssStyle?: {
     carousel: () => CarouselClasses;
   };
+
+  /**
+   * @en Semantic DOM classNames for internal nodes. `indicatorItem` supports functional form receiving `{ active }` state.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。`indicatorItem` 支持函数形式接收 `{ active }` 状态。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<CarouselSemanticKey, CarouselClassNamesInfo>;
+
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<CarouselSemanticKey>;
 
   /**
    * @en animation effects, options: \nslide - horizontal sliding\nslide-y - vertical sliding\nfade - fading

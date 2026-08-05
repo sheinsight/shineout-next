@@ -1,15 +1,35 @@
 import { getDataset, useCarousel } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React from 'react';
-import { CarouselProps } from './carousel.type';
+import { CarouselProps, CarouselSemanticKey, CarouselClassNamesInfo } from './carousel.type';
 import Icons from '../icons';
 import { useConfig } from '../config';
+import { useSemantic } from '../common';
+import type { SemanticClassValue } from '../common/use-semantic';
 
 const Carousel = (props: CarouselProps) => {
-  const { animation = 'slide', indicatorPosition = 'center', indicatorType = 'circle', itemClassName, showIndicator = true } = props;
+  const { animation = 'slide', indicatorPosition = 'center', indicatorType = 'circle', itemClassName, showIndicator = true, classNames: classNamesProp, styles: stylesProp } = props;
   const total = React.Children.toArray(props.children).length;
   const carouselClasses = props.jssStyle?.carousel?.();
   const config = useConfig();
+
+  // Semantic DOM
+  const [semClass, semStyle] = useSemantic<CarouselSemanticKey>(
+    classNamesProp,
+    stylesProp,
+    config.carousel,
+  );
+
+  // indicatorItem 支持函数式 classNames，需要逐个 resolve
+  const getIndicatorItemClass = (active: boolean) => {
+    const raw = classNamesProp?.indicatorItem;
+    const resolved: SemanticClassValue =
+      typeof raw === 'function'
+        ? (raw as (info: CarouselClassNamesInfo) => SemanticClassValue)({ active })
+        : (raw as string | undefined);
+    const globalRaw = config.carousel?.classNames?.indicatorItem;
+    return classNames(globalRaw, resolved);
+  };
 
   const { current, pre, direction, func } = useCarousel({
     total,
@@ -30,19 +50,21 @@ const Carousel = (props: CarouselProps) => {
     direction === 'forward' && carouselClasses?.directionForward,
     direction === 'backward' && carouselClasses?.directionBackward,
     direction === 'stop' && carouselClasses?.directionStop,
+    semClass('root', []),
   );
 
   const renderItems = () => {
     return (
-      <div className={carouselClasses?.slider} style={{ height: props.style?.height }}>
+      <div className={classNames(carouselClasses?.slider, semClass('slider', []))} style={{ height: props.style?.height, ...semStyle('slider') }}>
         {React.Children.map(props.children, (child, index) => {
           const itemClasses = classNames(
             carouselClasses?.item,
             index === current && carouselClasses?.itemCurrent,
             index === pre && pre !== current && carouselClasses?.itemPre,
             itemClassName,
+            semClass('item', []),
           );
-          return <div className={itemClasses}>{child}</div>;
+          return <div className={itemClasses} style={semStyle('item')}>{child}</div>;
         })}
       </div>
     );
@@ -74,16 +96,18 @@ const Carousel = (props: CarouselProps) => {
         )}
       >
         <div
-          className={classNames(carouselClasses?.arrowLeft, carouselClasses?.arrowItem)}
+          className={classNames(carouselClasses?.arrowLeft, carouselClasses?.arrowItem, semClass('arrow', []))}
           key={'left'}
           onClick={handlePrev}
+          style={semStyle('arrow')}
         >
           {Icons.carousel.Backward}
         </div>
         <div
-          className={classNames(carouselClasses?.arrowRight, carouselClasses?.arrowItem)}
+          className={classNames(carouselClasses?.arrowRight, carouselClasses?.arrowItem, semClass('arrow', []))}
           key={'right'}
           onClick={handleNext}
+          style={semStyle('arrow')}
         >
           {Icons.carousel.Forward}
         </div>
@@ -126,12 +150,14 @@ const Carousel = (props: CarouselProps) => {
       content = (
         <>
           {Array.from({ length: total }).map((_, index) => {
+            const isActive = index === current;
             const indicatorClasses = classNames(
               carouselClasses?.indicator,
-              index === current && carouselClasses?.indicatorActive,
+              isActive && carouselClasses?.indicatorActive,
+              getIndicatorItemClass(isActive),
             );
             return (
-              <div key={index} className={indicatorClasses} onClick={() => func.moveTo(index)} />
+              <div key={index} className={indicatorClasses} style={semStyle('indicatorItem')} onClick={() => func.moveTo(index)} />
             );
           })}
         </>
@@ -150,7 +176,9 @@ const Carousel = (props: CarouselProps) => {
           indicatorType === 'number' && carouselClasses?.indicatorTypeNumber,
           indicatorType === 'line' && carouselClasses?.indicatorTypeLine,
           indicatorType === 'bar' && carouselClasses?.indicatorTypeBar,
+          semClass('indicator', []),
         )}
+        style={semStyle('indicator')}
       >
         {content}
       </div>
@@ -159,7 +187,7 @@ const Carousel = (props: CarouselProps) => {
   return (
     <div
       className={wrapperClasses}
-      style={{ ...props.style, height: 'auto' }}
+      style={{ ...props.style, height: 'auto', ...semStyle('root') }}
       onMouseEnter={func.stop}
       onMouseLeave={func.start}
       {...getDataset(props)}
