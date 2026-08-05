@@ -22,6 +22,7 @@ import type { BreadcrumbSemanticKey } from '../breadcrumb/breadcrumb.type';
 import type { PaginationSemanticKey } from '../pagination/pagination.type';
 import type { BadgeSemanticKey } from '../badge/badge.type';
 import type { CardSemanticKey } from '../card/card.type';
+import type { CarouselSemanticKey } from '../carousel/carousel.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -377,6 +378,21 @@ type CardConfig = {
   styles?: SemanticStyles<CardSemanticKey>;
 }
 
+type CarouselConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Carousel (root / slider / item / indicator / indicatorItem / arrow).
+   * @cn Carousel 全局 Semantic DOM 类名（root / slider / item / indicator / indicatorItem / arrow）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<CarouselSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Carousel (root / slider / item / indicator / indicatorItem / arrow).
+   * @cn Carousel 全局 Semantic DOM 样式（root / slider / item / indicator / indicatorItem / arrow）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<CarouselSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -493,6 +509,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   card?: CardConfig;
+  /**
+   * @en Global configuration for Carousel component
+   * @cn Carousel组件的全局配置
+   * @version 3.10.0
+   */
+  carousel?: CarouselConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -525,6 +547,7 @@ export const defaultConfig: ConfigOption = {
   pagination: {},
   badge: {},
   card: {},
+  carousel: {},
   direction: 'ltr',
   popupContainer: null,
 };
