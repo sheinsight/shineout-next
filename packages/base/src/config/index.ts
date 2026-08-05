@@ -20,6 +20,7 @@ import type { MenuSemanticKey } from '../menu/menu.type';
 import type { DropdownSemanticKey } from '../dropdown/dropdown.type';
 import type { BreadcrumbSemanticKey } from '../breadcrumb/breadcrumb.type';
 import type { PaginationSemanticKey } from '../pagination/pagination.type';
+import type { BadgeSemanticKey } from '../badge/badge.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -345,6 +346,21 @@ type PaginationConfig = {
   styles?: SemanticStyles<PaginationSemanticKey>;
 }
 
+type BadgeConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Badge (root / badge).
+   * @cn Badge 全局 Semantic DOM 类名（root / badge）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<BadgeSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Badge (root / badge).
+   * @cn Badge 全局 Semantic DOM 样式（root / badge）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<BadgeSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -449,6 +465,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   pagination?: PaginationConfig;
+  /**
+   * @en Global configuration for Badge component
+   * @cn Badge组件的全局配置
+   * @version 3.10.0
+   */
+  badge?: BadgeConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -479,6 +501,7 @@ export const defaultConfig: ConfigOption = {
   dropdown: {},
   breadcrumb: {},
   pagination: {},
+  badge: {},
   direction: 'ltr',
   popupContainer: null,
 };
