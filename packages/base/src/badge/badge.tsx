@@ -1,7 +1,9 @@
 import { util } from '@sheinx/hooks';
 import React from 'react';
 import classNames from 'classnames';
-import { BadgeProps, BadgeClasses } from './badge.type';
+import { BadgeProps, BadgeClasses, BadgeSemanticKey } from './badge.type';
+import { useConfig } from '../config';
+import { useSemantic } from '../common';
 
 const Badge = (props: BadgeProps) => {
   const {
@@ -17,11 +19,22 @@ const Badge = (props: BadgeProps) => {
     showZero,
     color,
     text,
+    classNames: classNamesProp,
+    styles: stylesProp,
   } = props;
   const badgeStyle = jssStyle?.badge?.() || ({} as BadgeClasses);
+
+  // Semantic DOM
+  const config = useConfig();
+  const [semClass, semStyle] = useSemantic<BadgeSemanticKey>(
+    classNamesProp,
+    stylesProp,
+    config.badge,
+  );
+
   const isTextBadge = text !== undefined || (dot && children === undefined);
   const isStandalone = !children && !isTextBadge;
-  const rootClass = classNames(className, badgeStyle.rootClass, badgeStyle.badge, isTextBadge && badgeStyle.textBadge, isStandalone && badgeStyle.standalone);
+  const rootClass = classNames(className, badgeStyle.rootClass, badgeStyle.badge, isTextBadge && badgeStyle.textBadge, isStandalone && badgeStyle.standalone, semClass('root', []));
   const isOverflowCount = overflowCount !== undefined && Number(count) > overflowCount;
 
   const renderCount = () => {
@@ -60,7 +73,7 @@ const Badge = (props: BadgeProps) => {
       countNode = renderCustomCount();
 
       return (
-        <sup style={{ ...style, background: color }} className={badgeStyle.custom}>
+        <sup style={{ ...style, background: color, ...semStyle('badge') }} className={classNames(badgeStyle.custom, semClass('badge', []))}>
           {countNode}
         </sup>
       );
@@ -68,7 +81,7 @@ const Badge = (props: BadgeProps) => {
 
     return (
       <sup
-        style={{ ...style, background: color }}
+        style={{ ...style, background: color, ...semStyle('badge') }}
         className={classNames(
           size === 'small' && badgeStyle.small,
           dot ? badgeStyle.dot : badgeStyle.count,
@@ -77,6 +90,7 @@ const Badge = (props: BadgeProps) => {
             dot && {
               [badgeStyle[status]]: true,
             },
+          semClass('badge', []),
         )}
       >
         {dot !== true && countNode}
@@ -102,7 +116,7 @@ const Badge = (props: BadgeProps) => {
   };
 
   return (
-    <span className={rootClass}>
+    <span className={rootClass} style={semStyle('root')}>
       {!isTextBadge && children}
       {!isTextBadge && renderSup()}
       {isTextBadge && renderText()}
