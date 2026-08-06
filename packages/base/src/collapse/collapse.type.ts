@@ -2,6 +2,20 @@ import { ReactNode } from 'react';
 import { CommonType } from '../common/type';
 import type { BaseCollapseProps, BaseCollapseItemContext } from '@sheinx/hooks';
 import { CollapseItemProps } from './collapse-item.type';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
+
+/**
+ * Collapse Semantic DOM key 列表
+ * - root:    最外层容器
+ * - header:  面板头部区域
+ * - title:   标题内容
+ * - extra:   额外内容区
+ * - content: 面板展开内容区
+ * - icon:    展开/折叠图标
+ *
+ * @see /docs/rfc/0001-semantic-dom.md
+ */
+export type CollapseSemanticKey = 'root' | 'header' | 'title' | 'extra' | 'content' | 'icon';
 
 export interface CollapseClasses {
   rootClass: string;
@@ -20,6 +34,20 @@ export interface CollapseProps
   jssStyle?: {
     collapse: CollapseClasses;
   };
+
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<CollapseSemanticKey>;
+
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<CollapseSemanticKey>;
   /**
    * @en Whether to show the border
    * @cn 是否显示边框
