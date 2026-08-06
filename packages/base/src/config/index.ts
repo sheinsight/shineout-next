@@ -24,6 +24,7 @@ import type { BadgeSemanticKey } from '../badge/badge.type';
 import type { CardSemanticKey } from '../card/card.type';
 import type { CarouselSemanticKey } from '../carousel/carousel.type';
 import type { CollapseSemanticKey } from '../collapse/collapse.type';
+import type { DescriptionsSemanticKey } from '../descriptions/descriptions.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -409,6 +410,21 @@ type CollapseConfig = {
   styles?: SemanticStyles<CollapseSemanticKey>;
 }
 
+type DescriptionsConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Descriptions (root / header / title / extra / table / label / value).
+   * @cn Descriptions 全局 Semantic DOM 类名（root / header / title / extra / table / label / value）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<DescriptionsSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Descriptions (root / header / title / extra / table / label / value).
+   * @cn Descriptions 全局 Semantic DOM 样式（root / header / title / extra / table / label / value）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<DescriptionsSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -537,6 +553,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   collapse?: CollapseConfig;
+  /**
+   * @en Global configuration for Descriptions component
+   * @cn Descriptions组件的全局配置
+   * @version 3.10.0
+   */
+  descriptions?: DescriptionsConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -571,6 +593,7 @@ export const defaultConfig: ConfigOption = {
   card: {},
   carousel: {},
   collapse: {},
+  descriptions: {},
   direction: 'ltr',
   popupContainer: null,
 };
