@@ -1,6 +1,21 @@
 import React from 'react';
 import type { CommonType } from '../common/type';
 import type { BaseDescriptionsProps, DescriptionsItemProps } from '@sheinx/hooks';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
+
+/**
+ * Descriptions Semantic DOM key 列表
+ * - root:   最外层容器
+ * - header: 标题区域
+ * - title:  标题
+ * - extra:  额外内容
+ * - table:  表格元素
+ * - label:  描述项标签
+ * - value:  描述项值
+ *
+ * @see /docs/rfc/0001-semantic-dom.md
+ */
+export type DescriptionsSemanticKey = 'root' | 'header' | 'title' | 'extra' | 'table' | 'label' | 'value';
 
 export interface DescriptionsClasses {
   rootClass: string;
@@ -35,6 +50,20 @@ export interface DescriptionsProps
   jssStyle?: {
     descriptions: () => DescriptionsClasses;
   };
+
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<DescriptionsSemanticKey>;
+
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<DescriptionsSemanticKey>;
   /**
    * @en Whether to show the border
    * @cn 是否显示边框
