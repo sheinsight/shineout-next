@@ -279,6 +279,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
   const handleResize = usePersistFn((_, dir: { x: boolean; y: boolean; sX: boolean }) => {
     checkScroll();
     syncScrollWidth();
+    checkFloat();
     if (dir.x) {
       //table 宽度发生变化的时候, 需要同步 colgroup 宽度 给拖拽列或者固定列使用
       resetColGroup();
