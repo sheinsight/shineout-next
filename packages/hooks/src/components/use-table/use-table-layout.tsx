@@ -92,7 +92,9 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     context.clientWidth = scrollEl.clientWidth;
     if (scrollEl.clientHeight === 0) return;
     const overHeight = scrollEl.scrollHeight > scrollEl.clientHeight;
-    const overWidth = scrollEl.scrollWidth > context.clientWidth;
+    // 使用 > 1 容差，与 checkFloat 中 floatRight 的判断保持一致
+    // 避免缩放比例下亚像素误差导致 isScrollX=true 但 floatRight=false 的不一致状态
+    const overWidth = scrollEl.scrollWidth - context.clientWidth > 1;
     const newScrollBarWidth = overHeight ? scrollEl.offsetWidth - scrollEl.clientWidth : 0;
     if (newScrollBarWidth !== scrollBarWidth) setScrollBarWidth(newScrollBarWidth);
 
@@ -279,7 +281,6 @@ const useTableLayout = (props: UseTableLayoutProps) => {
   const handleResize = usePersistFn((_, dir: { x: boolean; y: boolean; sX: boolean }) => {
     checkScroll();
     syncScrollWidth();
-    checkFloat();
     if (dir.x) {
       //table 宽度发生变化的时候, 需要同步 colgroup 宽度 给拖拽列或者固定列使用
       resetColGroup();
