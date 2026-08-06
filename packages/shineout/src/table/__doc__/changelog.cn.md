@@ -1,3 +1,10 @@
+## 3.10.0-beta.13
+2026-08-06
+
+### 🐞 BugFix
+
+- 修复 `Table` 在浏览器窗口 resize 时，右固定列的阴影效果状态未正确更新，导致固定列边框和阴影异常消失的问题 ([#1767](https://github.com/sheinsight/shineout-next/pull/1767))
+
 ## 3.10.0-beta.12
 2026-08-04
 
