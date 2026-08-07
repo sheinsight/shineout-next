@@ -28,6 +28,7 @@ const MenuSemanticDemo: React.FC = () => (
     keygen='id'
     data={menuData}
     renderItem={(d: any) => d.title}
+    renderIcon={() => <span style={{ fontSize: 14 }}>📁</span>}
     style={{ width: 256, height: 'auto' }}
     defaultOpenKeys={['1']}
     header='Menu Title'
