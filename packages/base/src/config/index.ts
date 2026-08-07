@@ -25,6 +25,7 @@ import type { CardSemanticKey } from '../card/card.type';
 import type { CarouselSemanticKey } from '../carousel/carousel.type';
 import type { CollapseSemanticKey } from '../collapse/collapse.type';
 import type { DescriptionsSemanticKey } from '../descriptions/descriptions.type';
+import type { EmptySemanticKey } from '../empty/empty.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -138,6 +139,18 @@ type EmptyConfig = {
    * @cn Empty组件的全局默认描述
    */
   description?: React.ReactNode | boolean;
+  /**
+   * @en Global Semantic DOM classNames for Empty (root / icon / description).
+   * @cn Empty 全局 Semantic DOM 类名（root / icon / description）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<EmptySemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Empty (root / icon / description).
+   * @cn Empty 全局 Semantic DOM 样式（root / icon / description）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<EmptySemanticKey>;
 }
 
 type AlertConfig = {
