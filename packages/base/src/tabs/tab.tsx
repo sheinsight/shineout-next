@@ -94,12 +94,14 @@ const Tab = (props: TabProps, ref: any) => {
   };
 
   if (shape === 'button') {
+    const { ref: buttonRef, ...restContainerProps } = containerProps;
     return (
       <Button
         jssStyle={{ button: buttonStyle }}
         disabled={disabled}
         type={isActive ? 'primary' : 'secondary'}
-        {...containerProps}
+        {...restContainerProps}
+        {...({ onRef: buttonRef } as any)}
       >
         {tab}
       </Button>

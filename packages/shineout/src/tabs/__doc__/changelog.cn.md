@@ -1,3 +1,8 @@
+## 3.10.0-beta.15
+2026-08-07
+### 🐞 BugFix
+- 修复 `Tabs` button 模式下点击标签滚动条回弹到起始位置的问题 ([#1769](https://github.com/sheinsight/shineout-next/pull/1769))
+
 ## 3.9.13-beta.5
 2026-04-03
 ### 💅 Style
