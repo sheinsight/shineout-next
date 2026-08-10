@@ -2,8 +2,20 @@ import React from 'react';
 import { BaseImageProps } from '@sheinx/hooks';
 import { SpinClasses } from '../spin/spin.type';
 import { CommonType } from '../common/type';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
 
 export type MagnifyPositionType = 'left' | 'right' | 'center';
+
+/**
+ * Image Semantic DOM key 列表
+ * - root:        最外层容器
+ * - img:         图片内容（img 元素或 backgroundImage div）
+ * - placeholder: 加载中占位
+ * - error:       加载失败
+ *
+ * @see /docs/rfc/0001-semantic-dom.md
+ */
+export type ImageSemanticKey = 'root' | 'img' | 'placeholder' | 'error';
 
 export interface ImageClasses {
   rootClass: string;
@@ -83,6 +95,20 @@ export interface ImageBaseProps
     Pick<CommonType, 'style' | 'className'>,
     Omit<React.HTMLAttributes<HTMLDivElement>, 'onClick' | 'onError' | 'placeholder'> {
   jssStyle?: ImageJssStyleType;
+
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<ImageSemanticKey>;
+
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<ImageSemanticKey>;
   renderImage?: (imageEl: React.ReactNode) => React.ReactElement;
   renderError?: (errorEl: React.ReactNode) => React.ReactElement;
   renderWrapper?: (wrapperEl: React.ReactNode) => React.ReactElement;

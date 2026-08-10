@@ -26,6 +26,7 @@ import type { CarouselSemanticKey } from '../carousel/carousel.type';
 import type { CollapseSemanticKey } from '../collapse/collapse.type';
 import type { DescriptionsSemanticKey } from '../descriptions/descriptions.type';
 import type { EmptySemanticKey } from '../empty/empty.type';
+import type { ImageSemanticKey } from '../image/image.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -438,6 +439,21 @@ type DescriptionsConfig = {
   styles?: SemanticStyles<DescriptionsSemanticKey>;
 }
 
+type ImageConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Image (root / img / placeholder / error).
+   * @cn Image 全局 Semantic DOM 类名（root / img / placeholder / error）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<ImageSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Image (root / img / placeholder / error).
+   * @cn Image 全局 Semantic DOM 样式（root / img / placeholder / error）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<ImageSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -572,6 +588,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   descriptions?: DescriptionsConfig;
+  /**
+   * @en Global configuration for Image component
+   * @cn Image组件的全局配置
+   * @version 3.10.0
+   */
+  image?: ImageConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -607,6 +629,7 @@ export const defaultConfig: ConfigOption = {
   carousel: {},
   collapse: {},
   descriptions: {},
+  image: {},
   direction: 'ltr',
   popupContainer: null,
 };
