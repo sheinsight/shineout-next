@@ -28,6 +28,7 @@ import type { DescriptionsSemanticKey } from '../descriptions/descriptions.type'
 import type { EmptySemanticKey } from '../empty/empty.type';
 import type { ImageSemanticKey } from '../image/image.type';
 import type { ListSemanticKey } from '../list/list.type';
+import type { SkeletonSemanticKey } from '../skeleton/skeleton.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -470,6 +471,21 @@ type ListConfig = {
   styles?: SemanticStyles<ListSemanticKey>;
 }
 
+type SkeletonConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Skeleton (root / image / text / button).
+   * @cn Skeleton 全局 Semantic DOM 类名（root / image / text / button）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<SkeletonSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Skeleton (root / image / text / button).
+   * @cn Skeleton 全局 Semantic DOM 样式（root / image / text / button）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<SkeletonSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -616,6 +632,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   list?: ListConfig;
+  /**
+   * @en Global configuration for Skeleton component
+   * @cn Skeleton组件的全局配置
+   * @version 3.10.0
+   */
+  skeleton?: SkeletonConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -653,6 +675,7 @@ export const defaultConfig: ConfigOption = {
   descriptions: {},
   image: {},
   list: {},
+  skeleton: {},
   direction: 'ltr',
   popupContainer: null,
 };
