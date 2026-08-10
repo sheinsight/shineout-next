@@ -27,6 +27,7 @@ import type { CollapseSemanticKey } from '../collapse/collapse.type';
 import type { DescriptionsSemanticKey } from '../descriptions/descriptions.type';
 import type { EmptySemanticKey } from '../empty/empty.type';
 import type { ImageSemanticKey } from '../image/image.type';
+import type { ListSemanticKey } from '../list/list.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -454,6 +455,21 @@ type ImageConfig = {
   styles?: SemanticStyles<ImageSemanticKey>;
 }
 
+type ListConfig = {
+  /**
+   * @en Global Semantic DOM classNames for List (root / item / footer).
+   * @cn List 全局 Semantic DOM 类名（root / item / footer）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<ListSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for List (root / item / footer).
+   * @cn List 全局 Semantic DOM 样式（root / item / footer）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<ListSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -594,6 +610,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   image?: ImageConfig;
+  /**
+   * @en Global configuration for List component
+   * @cn List组件的全局配置
+   * @version 3.10.0
+   */
+  list?: ListConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -630,6 +652,7 @@ export const defaultConfig: ConfigOption = {
   collapse: {},
   descriptions: {},
   image: {},
+  list: {},
   direction: 'ltr',
   popupContainer: null,
 };
