@@ -1,6 +1,7 @@
 import { InputClasses } from '../input/input.type';
 import { CommonType } from '../common/type';
 import React from 'react';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
 
 export type TagColorType =
   | 'default'
@@ -23,6 +24,16 @@ export type TagType = 'default' | 'info' | 'success' | 'warning' | 'danger';
 export type TagShape = 'rounded';
 
 export type TagModeType = 'bright' | 'outline' | 'fill' | 'brightOutline';
+
+/**
+ * Tag Semantic DOM key 列表
+ * - root:      最外层容器
+ * - wrapper:   内容包装区域
+ * - closeIcon: 关闭按钮
+ *
+ * @see /docs/rfc/0001-semantic-dom.md
+ */
+export type TagSemanticKey = 'root' | 'wrapper' | 'closeIcon';
 
 export interface TagClasses {
   rootClass: string;
@@ -68,6 +79,20 @@ export interface BaseTagProps
     tag: () => TagClasses;
     input: () => InputClasses;
   };
+
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<TagSemanticKey>;
+
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<TagSemanticKey>;
   /**
    * @en Tag style
    * @cn 标签样式
@@ -185,4 +210,5 @@ export interface BaseTagInputProps extends Pick<CommonType, 'style' | 'className
 }
 
 export type TagProps = BaseTagProps;
+
 export type TagInputProps = BaseTagInputProps;

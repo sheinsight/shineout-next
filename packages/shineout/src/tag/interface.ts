@@ -1,1 +1,1 @@
-export type { TagInputProps as InputProps, TagProps as Props } from './tag.type';
+export type { TagInputProps as InputProps, TagProps as Props, TagSemanticKey } from './tag.type';

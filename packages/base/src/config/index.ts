@@ -30,6 +30,7 @@ import type { ImageSemanticKey } from '../image/image.type';
 import type { ListSemanticKey } from '../list/list.type';
 import type { SkeletonSemanticKey } from '../skeleton/skeleton.type';
 import type { TabsSemanticKey } from '../tabs/tabs.type';
+import type { TagSemanticKey } from '../tag/tag.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -502,6 +503,21 @@ type TabsConfig = {
   styles?: SemanticStyles<TabsSemanticKey>;
 }
 
+type TagConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Tag (root / wrapper / closeIcon).
+   * @cn Tag 全局 Semantic DOM 类名（root / wrapper / closeIcon）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<TagSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Tag (root / wrapper / closeIcon).
+   * @cn Tag 全局 Semantic DOM 样式（root / wrapper / closeIcon）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<TagSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -660,6 +676,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   tabs?: TabsConfig;
+  /**
+   * @en Global configuration for Tag component
+   * @cn Tag组件的全局配置
+   * @version 3.10.0
+   */
+  tag?: TagConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -699,6 +721,7 @@ export const defaultConfig: ConfigOption = {
   list: {},
   skeleton: {},
   tabs: {},
+  tag: {},
   direction: 'ltr',
   popupContainer: null,
 };
