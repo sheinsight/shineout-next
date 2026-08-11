@@ -53,7 +53,7 @@ export interface UseUploadProps<ValueItem = any> {
   headers?: ObjectType;
   /**
    * @en The filename received by the server. If it is not filled in, use the name.
-   * @cn 服务端接收的 filename，不填使用 name
+   * @cn 服务端接收的 filename，取值规则是: htmlName ?? name ?? "file"
    */
   htmlName?: string;
   /**
