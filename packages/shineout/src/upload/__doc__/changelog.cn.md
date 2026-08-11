@@ -8,7 +8,7 @@
 
 ### 🐞 BugFix
 
-- 修复 `Upload` / `Upload.Image` 的 `name` 属性在 v1/v2 升级 v3 后不再作为上传文件字段名的问题 ([#1741](https://github.com/sheinsight/shineout-next/pull/1741))
+- 修复 `Upload` / `Upload.Image` 的 `name` 属性现在会作为上传请求 FormData 的字段名（取值规则: `htmlName` ?? `name` ?? `"file"`）；如果你之前依赖默认字段名 `"file"` 且同时传了 `name`，请显式设置 `htmlName="file"` 以保持原有行为 ([#1741](https://github.com/sheinsight/shineout-next/pull/1741))
 
 
 ## 3.9.16-beta.5
