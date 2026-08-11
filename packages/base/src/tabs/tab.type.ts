@@ -15,4 +15,8 @@ export interface TabData {
 
 export interface TabProps extends TabData {
   children?: React.ReactNode;
+  tabSemClass?: string;
+  tabSemStyle?: React.CSSProperties;
+  innerSemClass?: string;
+  innerSemStyle?: React.CSSProperties;
 }

@@ -29,6 +29,7 @@ import type { EmptySemanticKey } from '../empty/empty.type';
 import type { ImageSemanticKey } from '../image/image.type';
 import type { ListSemanticKey } from '../list/list.type';
 import type { SkeletonSemanticKey } from '../skeleton/skeleton.type';
+import type { TabsSemanticKey } from '../tabs/tabs.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -486,6 +487,21 @@ type SkeletonConfig = {
   styles?: SemanticStyles<SkeletonSemanticKey>;
 }
 
+type TabsConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Tabs (root / header / tab / panel / extra / ink / prev / next / collapsible / inner).
+   * @cn Tabs 全局 Semantic DOM 类名（root / header / tab / panel / extra / ink / prev / next / collapsible / inner）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<TabsSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Tabs (root / header / tab / panel / extra / ink / prev / next / collapsible / inner).
+   * @cn Tabs 全局 Semantic DOM 样式（root / header / tab / panel / extra / ink / prev / next / collapsible / inner）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<TabsSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -638,6 +654,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   skeleton?: SkeletonConfig;
+  /**
+   * @en Global configuration for Tabs component
+   * @cn Tabs组件的全局配置
+   * @version 3.10.0
+   */
+  tabs?: TabsConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -676,6 +698,7 @@ export const defaultConfig: ConfigOption = {
   image: {},
   list: {},
   skeleton: {},
+  tabs: {},
   direction: 'ltr',
   popupContainer: null,
 };
