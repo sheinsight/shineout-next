@@ -1,4 +1,5 @@
 import { Upload } from '@sheinx/base';
+import { util } from '@sheinx/hooks';
 import {
   useAlertStyle,
   useButtonStyle,
@@ -33,6 +34,12 @@ export default <T,>(props: UploadProps<T>) => {
   // 但 Upload 的 name 在 v2 中同时作为 FormData 的键名，为了兼容 v2 行为，
   // 在 name 被移除之前将其作为 htmlName 的 fallback 保存下来。
   const htmlName = props.htmlName ?? (typeof props.name === 'string' ? props.name : undefined);
+
+  if (!props.htmlName && typeof props.name === 'string' && props.name !== 'file') {
+    util.devUseWarning.warn(
+      `Upload 的 name="${props.name}" 会作为上传请求 FormData 的字段名。如需保持默认字段名 "file"，请显式设置 htmlName="file"。`
+    );
+  }
 
   return useFieldCommon({ ...props, htmlName, ...customProps }, BaseUpload<T>, 'array');
 };
