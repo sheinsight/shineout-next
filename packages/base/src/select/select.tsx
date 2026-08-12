@@ -534,7 +534,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   });
 
   const renderClearable = () => {
-    if (!multiple !== undefined && !showArrow) return null;
     const defaultIcon = multiple ? Icons.select.More : Icons.select.DropdownArrow;
     const arrow = (
       <span
@@ -553,7 +552,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     return (
       <>
         {close}
-        {!open && arrow}
+        {(multiple || showArrow) && !open && arrow}
       </>
     );
   };
