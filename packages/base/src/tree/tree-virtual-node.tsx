@@ -42,6 +42,7 @@ const VirtualNode = <DataItem, Value extends KeygenResult[]>(
 
   const config = useConfig();
   const datum = useTreeContext();
+  const { semClass: treeSemClass, semStyle: treeSemStyle } = datum;
 
   const element = useRef<HTMLDivElement>(null);
   const content = useRef<HTMLDivElement>(null);
@@ -71,6 +72,7 @@ const VirtualNode = <DataItem, Value extends KeygenResult[]>(
     {
       [contentStyle.leaf]: !hasChildren,
     },
+    treeSemClass?.('node', []),
   );
 
   if (placeElement) {
@@ -124,7 +126,7 @@ const VirtualNode = <DataItem, Value extends KeygenResult[]>(
       ref={element}
       className={rootClass}
       dir={config.direction}
-      style={{ paddingLeft: level * indent, height: props.lineHeight }}
+      style={{ paddingLeft: level * indent, height: props.lineHeight, ...treeSemStyle?.('node') }}
     >
       {$indents}
       <TreeVirtualContent

@@ -1,12 +1,14 @@
 import { useContext, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import { KeygenResult, useTree, util, ObjectKey } from '@sheinx/hooks';
-import { TreeClasses } from './tree.type';
+import { TreeClasses, TreeSemanticKey } from './tree.type';
 import { TreeProps } from './tree.type';
 import RootTree from './tree-root';
 import VirtualTree from './tree-virtual';
 import { Provider } from './tree-context';
 import { FormFieldContext } from '../form/form-field-context';
+import { useConfig } from '../config';
+import { useSemantic } from '../common';
 
 const { produce } = util;
 
@@ -66,6 +68,8 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     height,
     leafIcon,
     sortBySelect,
+    classNames: classNamesProp,
+    styles: stylesProp,
     ...rest
   } = props;
 
@@ -105,13 +109,22 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
   });
 
   const treeStyle = jssStyle?.tree() || ({} as TreeClasses);
+
+  // Semantic DOM
+  const config = useConfig();
+  const [semClass, semStyle] = useSemantic<TreeSemanticKey>(
+    classNamesProp,
+    stylesProp,
+    config.tree,
+  );
+
   const rootClass = classNames(treeStyle.rootClass, treeStyle.tree, className, {
     [treeStyle.line]: line,
     [treeStyle.noline]: !line,
     [treeStyle.virtual]: virtual,
     [treeStyle.sizeSmall]: props.size === 'small',
     [treeStyle.sizeLarge]: props.size === 'large',
-  });
+  }, semClass('root', []));
 
   const getDragImageSelector = (data?: DataItem) => {
     if (util.isFunc(dragImageSelector)) return dragImageSelector(data);
@@ -315,8 +328,8 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
   const { fieldId } = useContext(FormFieldContext);
 
   return (
-    <div ref={treeRef} className={rootClass} id={fieldId} {...rest}>
-      <Provider value={{ ...datum, size: props.size, leafIcon }}>{renderList()}</Provider>
+    <div ref={treeRef} className={rootClass} id={fieldId} {...rest} style={{ ...rest.style, ...semStyle('root') }}>
+      <Provider value={{ ...datum, size: props.size, leafIcon, semClass, semStyle }}>{renderList()}</Provider>
     </div>
   );
 };

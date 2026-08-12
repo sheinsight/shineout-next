@@ -44,7 +44,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
     actionOnClick,
   } = props;
   const forceUpdate = useRender();
-  const { isDisabled, bindUpdate, size, leafIcon } = useTreeContext();
+  const { isDisabled, bindUpdate, size, leafIcon, semClass: treeSemClass, semStyle: treeSemStyle } = useTreeContext();
   const config = useConfig();
   const disabled = isDisabled(id);
 
@@ -61,6 +61,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
     contentStyle.content,
     util.isString(contentClassProp) && contentClassProp,
     util.isFunc(contentClassProp) && contentClassProp(data),
+    treeSemClass?.('content', []),
   );
 
   const hasExpandIcons = expandIcons !== undefined;
@@ -161,9 +162,10 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
           dir={config.direction}
         >
           <span
-            className={classNames(contentStyle.icon, iconClass)}
+            className={classNames(contentStyle.icon, iconClass, treeSemClass?.('icon', []))}
             onClick={handleNodeExpand}
             dir={config.direction}
+            style={treeSemStyle?.('icon')}
           >
             {util.isFunc(icon) ? icon(data) : icon}
           </span>
@@ -179,9 +181,10 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
           dir={config.direction}
         >
           <span
-            className={classNames(contentStyle.icon, iconClass)}
+            className={classNames(contentStyle.icon, iconClass, treeSemClass?.('icon', []))}
             onClick={handleNodeExpand}
             dir={config.direction}
+            style={treeSemStyle?.('icon')}
           >
             {util.isFunc(icon) ? icon(data) : hasExpandIcons ? icon : Icons.tree.Expand}
           </span>
@@ -210,8 +213,9 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
           dir={config.direction}
         >
           <span
-            className={classNames(contentStyle.icon, iconClass)}
+            className={classNames(contentStyle.icon, iconClass, treeSemClass?.('icon', []))}
             dir={config.direction}
+            style={treeSemStyle?.('icon')}
           >
             {$iconContent}
           </span>
@@ -257,6 +261,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
         data-expanded={expanded}
         ref={bindContent}
         className={contentClass}
+        style={treeSemStyle?.('content')}
         {...contentDataProps()}
       >
         {onChange && renderCheckbox()}

@@ -1,4 +1,6 @@
-import { TreeProps as UnStyledTreeProps } from '@sheinx/base';
+import { TreeProps as UnStyledTreeProps, TreeSemanticKey as _TreeSemanticKey } from '@sheinx/base';
+
+export type TreeSemanticKey = _TreeSemanticKey;
 
 /**
  * @title Tree

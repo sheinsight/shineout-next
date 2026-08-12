@@ -31,6 +31,7 @@ import type { ListSemanticKey } from '../list/list.type';
 import type { SkeletonSemanticKey } from '../skeleton/skeleton.type';
 import type { TabsSemanticKey } from '../tabs/tabs.type';
 import type { TagSemanticKey } from '../tag/tag.type';
+import type { TreeSemanticKey } from '../tree/tree.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -518,6 +519,21 @@ type TagConfig = {
   styles?: SemanticStyles<TagSemanticKey>;
 }
 
+type TreeConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Tree (root / node / content / icon).
+   * @cn Tree 全局 Semantic DOM 类名（root / node / content / icon）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<TreeSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Tree (root / node / content / icon).
+   * @cn Tree 全局 Semantic DOM 样式（root / node / content / icon）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<TreeSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -682,6 +698,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   tag?: TagConfig;
+  /**
+   * @en Global configuration for Tree component
+   * @cn Tree组件的全局配置
+   * @version 3.10.0
+   */
+  tree?: TreeConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -722,6 +744,7 @@ export const defaultConfig: ConfigOption = {
   skeleton: {},
   tabs: {},
   tag: {},
+  tree: {},
   direction: 'ltr',
   popupContainer: null,
 };
