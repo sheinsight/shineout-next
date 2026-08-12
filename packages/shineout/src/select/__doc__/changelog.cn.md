@@ -1,3 +1,8 @@
+## 3.10.0-beta.17
+2026-08-12
+### 🐞 BugFix
+- 修复 `Select` 设置 `showArrow={false}` 后，`clearable` 清除按钮也无法显示的问题 ([#1771](https://github.com/sheinsight/shineout-next/pull/1771))
+
 ## 3.10.0-beta.2
 2026-07-21
 ### 🐞 BugFix
