@@ -48,4 +48,8 @@ export interface TbodyProps
   scrollRef?: React.RefObject<HTMLDivElement>;
   originData?: any[];
   rowSpanIndexArray?: number[];
+  bodyRowSemClass?: string;
+  bodyRowSemStyle?: React.CSSProperties;
+  bodyCellSemClass?: string;
+  bodyCellSemStyle?: React.CSSProperties;
 }

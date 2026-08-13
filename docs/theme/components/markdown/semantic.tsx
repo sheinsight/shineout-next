@@ -133,6 +133,7 @@ const Semantic: React.FC<SemanticTabProps> = ({ schema, name }) => {
     overflow: 'hidden',
     background: '#fff',
     minHeight: 360,
+    maxHeight: 600,
   };
 
   const stageStyle: React.CSSProperties = {

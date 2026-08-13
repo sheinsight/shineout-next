@@ -19,6 +19,23 @@ import { PopoverClasses } from '../popover/popover.type';
 import { TreeClasses } from '../tree/tree.type';
 import { KeygenResult } from '@sheinx/hooks';
 import { StickyProps } from '../sticky';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
+
+/**
+ * Table Semantic DOM key 列表
+ * - root:        最外层容器
+ * - header:      表头容器（仅 sticky/virtual 模式）
+ * - headerRow:   表头行 tr
+ * - headerCell:  表头单元格 th
+ * - bodyRow:     表体行 tr
+ * - bodyCell:    表体单元格 td
+ * - footer:      表脚容器（仅 sticky/virtual 模式）
+ * - footerCell:  表脚单元格 td
+ * - pagination:  分页组件容器
+ *
+ * @see /docs/rfc/0001-semantic-dom.md
+ */
+export type TableSemanticKey = 'root' | 'header' | 'headerRow' | 'headerCell' | 'bodyRow' | 'bodyCell' | 'footer' | 'footerCell' | 'pagination';
 
 export type ListDatum = ReturnType<typeof useListSelect<any, any>>;
 export type UseTreeResult = ReturnType<typeof useTableTree>;
@@ -162,6 +179,20 @@ export interface TableProps<DataItem, Value>
     popover?: () => PopoverClasses
     tree?: () => TreeClasses;
   };
+
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<TableSemanticKey>;
+
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<TableSemanticKey>;
   /**
    * @en Cell click event handler. Parameters: data (row data), info.rowIndex (row index), info.columnIndex (column index), info.columnKey (column key)
    * @cn 单元格点击事件的回调函数。参数：data（行数据），info.rowIndex（行索引），info.columnIndex（列索引），info.columnKey（列的唯一标识）

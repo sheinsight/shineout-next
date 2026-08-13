@@ -1,4 +1,4 @@
-export type { TableProps as Props, ColumnItem } from './table.type';
+export type { TableProps as Props, ColumnItem, TableSemanticKey } from './table.type';
 
 export type {
   TableColumnOrder as ColumnOrder,

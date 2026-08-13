@@ -32,6 +32,7 @@ import type { SkeletonSemanticKey } from '../skeleton/skeleton.type';
 import type { TabsSemanticKey } from '../tabs/tabs.type';
 import type { TagSemanticKey } from '../tag/tag.type';
 import type { TreeSemanticKey } from '../tree/tree.type';
+import type { TableSemanticKey } from '../table/table.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -534,6 +535,21 @@ type TreeConfig = {
   styles?: SemanticStyles<TreeSemanticKey>;
 }
 
+type TableConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Table (root / header / headerRow / headerCell / bodyRow / bodyCell / footer / footerCell / pagination).
+   * @cn Table 全局 Semantic DOM 类名（root / header / headerRow / headerCell / bodyRow / bodyCell / footer / footerCell / pagination）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<TableSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Table (root / header / headerRow / headerCell / bodyRow / bodyCell / footer / footerCell / pagination).
+   * @cn Table 全局 Semantic DOM 样式（root / header / headerRow / headerCell / bodyRow / bodyCell / footer / footerCell / pagination）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<TableSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -704,6 +720,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   tree?: TreeConfig;
+  /**
+   * @en Global configuration for Table component
+   * @cn Table组件的全局配置
+   * @version 3.10.0
+   */
+  table?: TableConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -745,6 +767,7 @@ export const defaultConfig: ConfigOption = {
   tabs: {},
   tag: {},
   tree: {},
+  table: {},
   direction: 'ltr',
   popupContainer: null,
 };

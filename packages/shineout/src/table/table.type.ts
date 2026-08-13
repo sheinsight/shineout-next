@@ -1,4 +1,6 @@
-import { TableProps as UnStyledTableProps, TableColumnItem } from '@sheinx/base';
+import { TableProps as UnStyledTableProps, TableColumnItem, TableSemanticKey as _TableSemanticKey } from '@sheinx/base';
+
+export type TableSemanticKey = _TableSemanticKey;
 
 /**
  * @title Table
