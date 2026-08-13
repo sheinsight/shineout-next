@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef, useContext, useEffect } from 'react';
+import { useState, useRef, useContext, useEffect } from 'react';
 import { usePersistFn, useDragMove, useDragResize, useRender } from '@sheinx/hooks';
 import classNames from 'classnames';
 import { CardContext } from './card.context';
@@ -66,16 +66,14 @@ const Card = (props: CardProps) => {
   });
 
   const realCollapsed = getCollapsed();
-  const contextValue: CardContextValue = useMemo(() => {
-    return {
-      collapsed: realCollapsed,
-      collapsible: collapsible,
-      onCollapse: handleCollapsed,
-      handleDragMouseDown: props.moveable ? moveInfo.handleMouseDown : undefined,
-      semClass,
-      semStyle,
-    };
-  }, [realCollapsed, collapsible]);
+  const contextValue: CardContextValue = {
+    collapsed: realCollapsed,
+    collapsible: collapsible,
+    onCollapse: handleCollapsed,
+    handleDragMouseDown: props.moveable ? moveInfo.handleMouseDown : undefined,
+    semClass,
+    semStyle,
+  };
 
   const alwaysShowShadow = props.shadow && props.shadow !== 'hover';
 
