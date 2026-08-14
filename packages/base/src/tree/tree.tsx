@@ -70,6 +70,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     sortBySelect,
     classNames: classNamesProp,
     styles: stylesProp,
+    filteredData,
     ...rest
   } = props;
 
@@ -104,7 +105,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     virtual,
     onExpand: onExpandProp,
     datum: propsDatum,
-    tiledData: props.filteredData,
+    tiledData: filteredData,
     sortBySelect,
   });
 
@@ -269,7 +270,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
         rootStyle={rootStyle}
         isControlled={'expanded' in props}
         jssStyle={jssStyle}
-        data={props.filteredData || data}
+        data={filteredData || data}
         mode={mode}
         line={line}
         keygen={keygen}
