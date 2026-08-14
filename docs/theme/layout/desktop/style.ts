@@ -128,6 +128,13 @@ export default createUseStyles(
           borderRadius: 4,
           marginTop: 4,
           marginBottom: 4,
+          position: 'relative',
+          '& > .version': {
+            position: 'absolute',
+            right: 8,
+            top: '50%',
+            transform: 'translateY(-50%)',
+          },
           '&.active': {
             color: 'var(--soui-brand-6)',
             fontWeight: 500,
