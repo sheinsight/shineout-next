@@ -14,6 +14,8 @@ export default () => {
       <Badge dot>
         <Avatar></Avatar>
       </Badge>
+
+      <Badge dot color="black" text="自定义文案"></Badge>
     </div>
   );
 };
