@@ -1,3 +1,11 @@
+## 3.10.0-beta.18
+2026-08-14
+
+### 💅 Style
+
+- 优化 `Upload` 删除图标样式，从镂空改为实心，提升视觉辨识度 ([#1772](https://github.com/sheinsight/shineout-next/pull/1772))
+
+
 ## 3.10.0-beta.4
 2026-07-22
 ### 🐞 BugFix
@@ -17,14 +25,6 @@
 ### 🐞 BugFix
 
 - 修复 `Upload` 自定义 `request` 上传方法时，回调参数中 `onSuccess` 缺失导致无法手动通知上传成功的问题 ([#1729](https://github.com/sheinsight/shineout-next/pull/1729))
-
-
-## 3.9.12-beta.3
-2026-03-23
-
-### 💅 Style
-
-- 优化 `Upload` 删除图标样式，从镂空改为实心，提升视觉辨识度 ([#1661](https://github.com/sheinsight/shineout-next/pull/1661))
 
 
 ## 3.8.4-beta.9
