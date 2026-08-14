@@ -88,6 +88,7 @@ const Badge = (props: BadgeProps) => {
     return (
       <>
         <span
+          style={{ background: color }}
           className={classNames(
             badgeStyle.textDot,
             status && {
