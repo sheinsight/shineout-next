@@ -170,7 +170,7 @@ const MenuComponent = () => {
                       >
                         {component.title[state.locales]}
 
-                        {component.version && <Tag color='success'>{component.version}</Tag>}
+                        {component.version && <Tag color='success' className="version">{component.version}</Tag>}
                       </MenuItem>
                     )
                   );
