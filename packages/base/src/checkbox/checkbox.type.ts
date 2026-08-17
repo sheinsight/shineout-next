@@ -2,6 +2,9 @@ import { CommonType, CommonChangeType } from '../common/type';
 import { BaseCheckProps } from '@sheinx/hooks';
 import { InputClasses } from '../input/input.type';
 import React from 'react';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
+
+export type CheckboxSemanticKey = 'root' | 'indicator' | 'label' | 'group';
 
 export interface CheckboxClasses {
   rootClass: string;
@@ -39,6 +42,18 @@ export interface SimpleCheckboxProps
   extends Omit<BaseCheckProps, 'checked' | 'defaultChecked'>,
     Pick<CommonType, 'style' | 'className' | 'size'> {
   jssStyle?: CheckboxStyle;
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<CheckboxSemanticKey>;
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<CheckboxSemanticKey>;
   /**
    * @en Content
    * @cn 内容

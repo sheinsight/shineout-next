@@ -34,6 +34,7 @@ import type { TagSemanticKey } from '../tag/tag.type';
 import type { TreeSemanticKey } from '../tree/tree.type';
 import type { TableSemanticKey } from '../table/table.type';
 import type { CascaderSemanticKey } from '../cascader/cascader.type';
+import type { CheckboxSemanticKey } from '../checkbox/checkbox.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -566,6 +567,21 @@ type CascaderConfig = {
   styles?: SemanticStyles<CascaderSemanticKey>;
 }
 
+type CheckboxConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Checkbox (root / indicator / label / group).
+   * @cn Checkbox 全局 Semantic DOM 类名（root / indicator / label / group）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<CheckboxSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Checkbox (root / indicator / label / group).
+   * @cn Checkbox 全局 Semantic DOM 样式（root / indicator / label / group）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<CheckboxSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -748,6 +764,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   cascader?: CascaderConfig;
+  /**
+   * @en Global configuration for Checkbox component
+   * @cn Checkbox组件的全局配置
+   * @version 3.10.0
+   */
+  checkbox?: CheckboxConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -791,6 +813,7 @@ export const defaultConfig: ConfigOption = {
   tree: {},
   table: {},
   cascader: {},
+  checkbox: {},
   direction: 'ltr',
   popupContainer: null,
 };

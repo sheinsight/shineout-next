@@ -6,6 +6,9 @@ import React, { useContext } from 'react';
 import classNames from 'classnames';
 import useWithFormConfig from '../common/use-with-form-config';
 import { FormFieldContext } from '../form/form-field-context';
+import { useSemantic } from '../common/use-semantic';
+import { useConfig } from '../config';
+import type { CheckboxSemanticKey } from './checkbox.type';
 
 const defaultFormat = (d: any) => d;
 const defaultRenderItem = (d: any) => d;
@@ -15,8 +18,15 @@ const Group = <DataItem, Value extends any[]>(props0: CheckboxGroupProps<DataIte
   const {format = defaultFormat, renderItem = defaultRenderItem} = props0
   const props = useWithFormConfig(props0);
   const { fieldId } = useContext(FormFieldContext);
-  const { children, className, block, keygen, jssStyle, size, style, disabled } = props;
+  const { children, className, block, keygen, jssStyle, size, style, disabled, classNames: classNamesProp, styles: stylesProp } = props;
+  const config = useConfig();
   const checkboxStyle = jssStyle?.checkbox?.();
+
+  const [semClass, semStyle] = useSemantic<CheckboxSemanticKey>(
+    classNamesProp,
+    stylesProp,
+    config.checkbox,
+  );
 
   const inputAbleProps = useInputAble({
     value: props.value,
@@ -88,16 +98,17 @@ const Group = <DataItem, Value extends any[]>(props0: CheckboxGroupProps<DataIte
     className,
     checkboxStyle?.group,
     !!block && checkboxStyle?.groupBlock,
+    semClass('group', []),
   );
   if (props.data === undefined) {
     return (
-      <div className={groupClass} style={style} id={fieldId}>
+      <div className={groupClass} style={style ? { ...style, ...semStyle('group') } : semStyle('group')} id={fieldId}>
         <GroupContext.Provider value={providerValue}>{children}</GroupContext.Provider>
       </div>
     );
   } else {
     return (
-      <div className={groupClass} style={style} id={fieldId}>
+      <div className={groupClass} style={style ? { ...style, ...semStyle('group') } : semStyle('group')} id={fieldId}>
         {props.data.map((d, i) => (
           <Checkbox
             jssStyle={jssStyle}
