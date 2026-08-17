@@ -20,6 +20,8 @@ const FilterNode = <DataItem, Value extends KeygenResult[]>(
     setFilterText,
     onChange,
     onPathChange,
+    semClass,
+    semStyle,
   } = props;
 
   const styles = jssStyle?.cascader?.() as CascaderClasses;
@@ -53,7 +55,7 @@ const FilterNode = <DataItem, Value extends KeygenResult[]>(
 
   const { filterText, highlight } = useContext(FilterContext);
   return (
-    <div className={classNames(styles.option, styles.filterOption)} onClick={handleSelect}>
+    <div className={classNames(styles.option, styles.filterOption, semClass?.('option', []))} style={semStyle?.('option')} onClick={handleSelect}>
       <div className={classNames(styles.optionInner)}>
         {data.map((item, index) => {
           const handleClick = (e: any) => {

@@ -27,6 +27,8 @@ import useTip from '../common/use-tip';
 import { FormFieldContext } from '../form/form-field-context';
 
 import { useConfig, getLocale } from '../config';
+import { useSemantic } from '../common/use-semantic';
+import type { CascaderSemanticKey } from './cascader.type';
 
 const { devUseWarning, isOptionalDisabled } = util;
 
@@ -36,7 +38,8 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   const props = useWithFormConfig(props0);
   const { fieldId } = useContext(FormFieldContext);
   const defaultHeight = 250;
-  const { locale, direction } = useConfig();
+  const config = useConfig();
+  const { locale, direction } = config;
   const {
     jssStyle,
     style,
@@ -93,6 +96,8 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     beforeChange,
     checkOnFiltered,
     sortBySelect,
+    classNames: classNamesProp,
+    styles: stylesProp,
   } = props;
 
   const showInput = util.isFunc(onFilterProp);
@@ -106,6 +111,12 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
 
   const styles = jssStyle?.cascader?.() as CascaderClasses;
   const rootStyle: React.CSSProperties = Object.assign({ width }, style);
+
+  const [semClass, semStyle] = useSemantic<CascaderSemanticKey>(
+    classNamesProp,
+    stylesProp,
+    config.cascader,
+  );
 
 
   const [focused, setFocused] = useState(false);
@@ -237,6 +248,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     {
       [styles?.multiple]: multiple,
     },
+    semClass('root', []),
   );
 
   const getRenderItem = (data: DataItem, active?: boolean, id?: Value[0]) => {
@@ -561,7 +573,9 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
             styles?.wrapperPaddingBox,
             styles?.wrapperInnerTitleTop,
             styles?.wrapperInnerTitleBottom,
+            semClass('header', []),
           )}
+          style={semStyle('header')}
           onClick={handleResultClick}
         >
           {renderInnerTitle(result)}
@@ -594,6 +608,8 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
         path={[] as unknown as Value}
         mode={resolvedMode}
         size={size}
+        semClass={semClass}
+        semStyle={semStyle}
       />,
     ];
     const childs = path.map((p, i) => {
@@ -627,6 +643,8 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
             virtual={virtual}
             parentId={path[i]}
             path={path.slice(0, i + 1) as Value}
+            semClass={semClass}
+            semStyle={semStyle}
           />
         );
       }
@@ -692,6 +710,8 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           setInputText={setInputText}
           setFilterText={setFilterText}
           onPathChange={handlePathChange}
+          semClass={semClass}
+          semStyle={semStyle}
         ></CascaderFilterList>
       </div>
     );
@@ -797,7 +817,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
         {...util.getDataAttribute({ ['input-border']: 'true' })}
         {...getDataset(props)}
         className={rootClass}
-        style={rootStyle}
+        style={{ ...rootStyle, ...semStyle('root') }}
         onBlur={handleBlur}
         onFocus={handleFocus}
         onKeyDown={handleKeyDown}
@@ -821,11 +841,11 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           <AnimationList
             onRef={popupRef}
             show={open}
-            className={classNames(styles?.pickerWrapper, open && styles?.pickerWrapperShow, props.popupClassName)}
+            className={classNames(styles?.pickerWrapper, open && styles?.pickerWrapperShow, props.popupClassName, semClass('popup', []))}
             display={'block'}
             type='scale-y'
             duration={'fast'}
-            style={pickerWrapperStyle}
+            style={{ ...pickerWrapperStyle, ...semStyle('popup') }}
             dir={direction}
           >
             {renderPanel()}

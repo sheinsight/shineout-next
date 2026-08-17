@@ -1,6 +1,7 @@
 import { KeygenResult } from '@sheinx/hooks';
 import { DatumType } from '../tree/tree.type';
-import { JssStyleType, CascaderProps } from './cascader.type';
+import { JssStyleType, CascaderProps, CascaderSemanticKey } from './cascader.type';
+import type { SemanticClassFn, SemanticStyleFn } from '../common/use-semantic';
 
 export interface FilterListProps<DataItem, Value extends KeygenResult[]>
   extends Pick<
@@ -32,4 +33,6 @@ export interface FilterListProps<DataItem, Value extends KeygenResult[]>
   isRealtime?: boolean;
   setInputText: (text: string) => void;
   setFilterText: (text: string) => void;
+  semClass?: SemanticClassFn<CascaderSemanticKey>;
+  semStyle?: SemanticStyleFn<CascaderSemanticKey>;
 }

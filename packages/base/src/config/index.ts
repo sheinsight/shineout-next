@@ -33,6 +33,7 @@ import type { TabsSemanticKey } from '../tabs/tabs.type';
 import type { TagSemanticKey } from '../tag/tag.type';
 import type { TreeSemanticKey } from '../tree/tree.type';
 import type { TableSemanticKey } from '../table/table.type';
+import type { CascaderSemanticKey } from '../cascader/cascader.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -550,6 +551,21 @@ type TableConfig = {
   styles?: SemanticStyles<TableSemanticKey>;
 }
 
+type CascaderConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Cascader (root / header / popup / list / option).
+   * @cn Cascader 全局 Semantic DOM 类名（root / header / popup / list / option）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<CascaderSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Cascader (root / header / popup / list / option).
+   * @cn Cascader 全局 Semantic DOM 样式（root / header / popup / list / option）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<CascaderSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -726,6 +742,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   table?: TableConfig;
+  /**
+   * @en Global configuration for Cascader component
+   * @cn Cascader组件的全局配置
+   * @version 3.10.0
+   */
+  cascader?: CascaderConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -768,6 +790,7 @@ export const defaultConfig: ConfigOption = {
   tag: {},
   tree: {},
   table: {},
+  cascader: {},
   direction: 'ltr',
   popupContainer: null,
 };

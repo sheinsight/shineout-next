@@ -1,6 +1,7 @@
 import { KeygenResult } from '@sheinx/hooks';
 import { DatumType } from '../tree/tree.type';
-import { JssStyleType, CascaderProps } from './cascader.type';
+import { JssStyleType, CascaderProps, CascaderSemanticKey } from './cascader.type';
+import type { SemanticClassFn, SemanticStyleFn } from '../common/use-semantic';
 
 export interface FilterNodeProps<DataItem, Value extends KeygenResult[]>
   extends Pick<CascaderProps<DataItem, Value>, 'mode'> {
@@ -19,4 +20,6 @@ export interface FilterNodeProps<DataItem, Value extends KeygenResult[]>
     nextPath: Value,
     fromClick?: boolean,
   ) => void;
+  semClass?: SemanticClassFn<CascaderSemanticKey>;
+  semStyle?: SemanticStyleFn<CascaderSemanticKey>;
 }

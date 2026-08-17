@@ -30,6 +30,8 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
     onPathChange,
     mode,
     size,
+    semClass,
+    semStyle,
   } = props;
 
   const [loading, setLoading] = useState(false);
@@ -62,6 +64,7 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
     styles.option,
     active && styles.activeOption,
     isDisabled && mode !== 4 && styles.optionDisabled,
+    semClass?.('option', []),
   );
 
   const handlePathChange = () => {
@@ -167,7 +170,7 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
   const events = getEvents();
 
   return (
-    <div className={rootClass} {...events}>
+    <div className={rootClass} style={semStyle?.('option')} {...events}>
       <div className={classNames(styles.optionInner, isRealLeafNode && styles.optionLeaf)} role="button">
         {multiple && !(shouldFinal && hasChildren) && (
           <Checkbox
