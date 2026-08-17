@@ -1,0 +1,408 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge[Base] should render correctly  1`] = `
+<div
+  style="display: flex; align-items: center; gap: 32px;"
+>
+  <span
+    class="soui-badge soui-badge-badge"
+  >
+    <div
+      style="height: 32px; width: 32px; border-radius: 4px; background: rgb(232, 235, 240); display: flex; align-items: center; justify-content: center;"
+    >
+      <svg
+        fill="rgba(179, 183, 193, 1)"
+        height="16px"
+        viewBox="0 0 24 24"
+        width="16px"
+      >
+        <path
+          d="M12 13C15.3137 13 18 10.3137 18 7C18 3.68629 15.3137 1 12 1C8.68629 1 6 3.68629 6 7C6 10.3137 8.68629 13 12 13Z"
+        />
+        <path
+          d="M8.16949 15C4.76218 15 2 17.7622 2 21.1695C2 21.6282 2.37183 22 2.83051 22H21.1695C21.6282 22 22 21.6282 22 21.1695C22 17.7622 19.2378 15 15.8305 15H8.16949Z"
+        />
+      </svg>
+    </div>
+    <sup
+      class="soui-badge-count soui-badge-number soui-badge-single-word"
+    >
+      1
+    </sup>
+  </span>
+  <span
+    class="soui-badge soui-badge-badge"
+  >
+    <button
+      class="soui-switch soui-switch-wrapper"
+      role="switch"
+      type="button"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="checkbox"
+      />
+      <div
+        class="soui-switch-indicator"
+        dir="ltr"
+      />
+      <div
+        class="soui-switch-content"
+      >
+        <div
+          class="soui-switch-text-padding"
+        />
+      </div>
+    </button>
+  </span>
+</div>
+`;
+
+exports[`Badge[Base] should render correctly about dot 1`] = `
+<div
+  style="display: flex; align-items: center; gap: 32px;"
+>
+  <span
+    class="soui-badge soui-badge-badge"
+  >
+    <div
+      style="height: 32px; width: 32px; border-radius: 4px; background: rgb(232, 235, 240); display: flex; align-items: center; justify-content: center;"
+    >
+      <svg
+        fill="rgba(179, 183, 193, 1)"
+        height="16px"
+        viewBox="0 0 24 24"
+        width="16px"
+      >
+        <path
+          d="M12 13C15.3137 13 18 10.3137 18 7C18 3.68629 15.3137 1 12 1C8.68629 1 6 3.68629 6 7C6 10.3137 8.68629 13 12 13Z"
+        />
+        <path
+          d="M8.16949 15C4.76218 15 2 17.7622 2 21.1695C2 21.6282 2.37183 22 2.83051 22H21.1695C21.6282 22 22 21.6282 22 21.1695C22 17.7622 19.2378 15 15.8305 15H8.16949Z"
+        />
+      </svg>
+    </div>
+    <sup
+      class="soui-badge-dot"
+    />
+  </span>
+  <span
+    class="soui-badge soui-badge-badge soui-badge-text-badge"
+  >
+    <span
+      class="soui-badge-text-dot"
+      style="background: black;"
+    />
+    <span
+      class="soui-badge-text"
+    >
+      自定义文案
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Badge[Base] should render correctly about no children 1`] = `
+<div
+  style="display: flex; align-items: center; gap: 42px;"
+>
+  <span
+    class="soui-badge soui-badge-badge soui-badge-standalone"
+  >
+    <sup
+      class="soui-badge-count soui-badge-number soui-badge-single-word"
+    >
+      1
+    </sup>
+  </span>
+  <span
+    class="soui-badge soui-badge-badge soui-badge-standalone"
+  >
+    <sup
+      class="soui-badge-count soui-badge-number soui-badge-multiple-words"
+      style="background: rgb(250, 173, 20);"
+    >
+      99+
+    </sup>
+  </span>
+</div>
+`;
+
+exports[`Badge[Base] should render correctly about overflow count 1`] = `
+<div
+  style="display: flex; align-items: center; gap: 32px;"
+>
+  <span
+    class="soui-badge soui-badge-badge"
+  >
+    <div
+      style="height: 32px; width: 32px; border-radius: 4px; background: rgb(232, 235, 240); display: flex; align-items: center; justify-content: center;"
+    >
+      <svg
+        fill="rgba(179, 183, 193, 1)"
+        height="16px"
+        viewBox="0 0 24 24"
+        width="16px"
+      >
+        <path
+          d="M12 13C15.3137 13 18 10.3137 18 7C18 3.68629 15.3137 1 12 1C8.68629 1 6 3.68629 6 7C6 10.3137 8.68629 13 12 13Z"
+        />
+        <path
+          d="M8.16949 15C4.76218 15 2 17.7622 2 21.1695C2 21.6282 2.37183 22 2.83051 22H21.1695C21.6282 22 22 21.6282 22 21.1695C22 17.7622 19.2378 15 15.8305 15H8.16949Z"
+        />
+      </svg>
+    </div>
+    <sup
+      class="soui-badge-count soui-badge-number soui-badge-multiple-words"
+    >
+      99
+    </sup>
+  </span>
+  <span
+    class="soui-badge soui-badge-badge"
+  >
+    <div
+      style="height: 32px; width: 32px; border-radius: 4px; background: rgb(232, 235, 240); display: flex; align-items: center; justify-content: center;"
+    >
+      <svg
+        fill="rgba(179, 183, 193, 1)"
+        height="16px"
+        viewBox="0 0 24 24"
+        width="16px"
+      >
+        <path
+          d="M12 13C15.3137 13 18 10.3137 18 7C18 3.68629 15.3137 1 12 1C8.68629 1 6 3.68629 6 7C6 10.3137 8.68629 13 12 13Z"
+        />
+        <path
+          d="M8.16949 15C4.76218 15 2 17.7622 2 21.1695C2 21.6282 2.37183 22 2.83051 22H21.1695C21.6282 22 22 21.6282 22 21.1695C22 17.7622 19.2378 15 15.8305 15H8.16949Z"
+        />
+      </svg>
+    </div>
+    <sup
+      class="soui-badge-count soui-badge-number soui-badge-multiple-words"
+    >
+      9+
+    </sup>
+  </span>
+  <span
+    class="soui-badge soui-badge-badge"
+  >
+    <div
+      style="height: 32px; width: 32px; border-radius: 4px; background: rgb(232, 235, 240); display: flex; align-items: center; justify-content: center;"
+    >
+      <svg
+        fill="rgba(179, 183, 193, 1)"
+        height="16px"
+        viewBox="0 0 24 24"
+        width="16px"
+      >
+        <path
+          d="M12 13C15.3137 13 18 10.3137 18 7C18 3.68629 15.3137 1 12 1C8.68629 1 6 3.68629 6 7C6 10.3137 8.68629 13 12 13Z"
+        />
+        <path
+          d="M8.16949 15C4.76218 15 2 17.7622 2 21.1695C2 21.6282 2.37183 22 2.83051 22H21.1695C21.6282 22 22 21.6282 22 21.1695C22 17.7622 19.2378 15 15.8305 15H8.16949Z"
+        />
+      </svg>
+    </div>
+    <sup
+      class="soui-badge-count soui-badge-number soui-badge-multiple-words"
+    >
+      99+
+    </sup>
+  </span>
+  <span
+    class="soui-badge soui-badge-badge"
+  >
+    <div
+      style="height: 32px; width: 32px; border-radius: 4px; background: rgb(232, 235, 240); display: flex; align-items: center; justify-content: center;"
+    >
+      <svg
+        fill="rgba(179, 183, 193, 1)"
+        height="16px"
+        viewBox="0 0 24 24"
+        width="16px"
+      >
+        <path
+          d="M12 13C15.3137 13 18 10.3137 18 7C18 3.68629 15.3137 1 12 1C8.68629 1 6 3.68629 6 7C6 10.3137 8.68629 13 12 13Z"
+        />
+        <path
+          d="M8.16949 15C4.76218 15 2 17.7622 2 21.1695C2 21.6282 2.37183 22 2.83051 22H21.1695C21.6282 22 22 21.6282 22 21.1695C22 17.7622 19.2378 15 15.8305 15H8.16949Z"
+        />
+      </svg>
+    </div>
+    <sup
+      class="soui-badge-count soui-badge-number soui-badge-multiple-words"
+    >
+      999+
+    </sup>
+  </span>
+</div>
+`;
+
+exports[`Badge[Base] should render correctly about small size 1`] = `
+<div
+  style="display: flex; align-items: center; gap: 24px;"
+>
+  <span
+    class="soui-badge soui-badge-badge"
+  >
+    <div
+      style="height: 32px; width: 32px; border-radius: 4px; background: rgb(232, 235, 240); display: flex; align-items: center; justify-content: center;"
+    >
+      <svg
+        fill="rgba(179, 183, 193, 1)"
+        height="16px"
+        viewBox="0 0 24 24"
+        width="16px"
+      >
+        <path
+          d="M12 13C15.3137 13 18 10.3137 18 7C18 3.68629 15.3137 1 12 1C8.68629 1 6 3.68629 6 7C6 10.3137 8.68629 13 12 13Z"
+        />
+        <path
+          d="M8.16949 15C4.76218 15 2 17.7622 2 21.1695C2 21.6282 2.37183 22 2.83051 22H21.1695C21.6282 22 22 21.6282 22 21.1695C22 17.7622 19.2378 15 15.8305 15H8.16949Z"
+        />
+      </svg>
+    </div>
+    <sup
+      class="soui-badge-small soui-badge-count soui-badge-number soui-badge-multiple-words"
+    >
+      99
+    </sup>
+  </span>
+  <span
+    class="soui-badge soui-badge-badge"
+  >
+    <div
+      style="height: 32px; width: 32px; border-radius: 4px; background: rgb(232, 235, 240); display: flex; align-items: center; justify-content: center;"
+    >
+      <svg
+        fill="rgba(179, 183, 193, 1)"
+        height="16px"
+        viewBox="0 0 24 24"
+        width="16px"
+      >
+        <path
+          d="M12 13C15.3137 13 18 10.3137 18 7C18 3.68629 15.3137 1 12 1C8.68629 1 6 3.68629 6 7C6 10.3137 8.68629 13 12 13Z"
+        />
+        <path
+          d="M8.16949 15C4.76218 15 2 17.7622 2 21.1695C2 21.6282 2.37183 22 2.83051 22H21.1695C21.6282 22 22 21.6282 22 21.1695C22 17.7622 19.2378 15 15.8305 15H8.16949Z"
+        />
+      </svg>
+    </div>
+    <sup
+      class="soui-badge-count soui-badge-number soui-badge-multiple-words"
+    >
+      99
+    </sup>
+  </span>
+</div>
+`;
+
+exports[`Badge[Base] should render correctly about status 1`] = `
+<div>
+  <div
+    style="display: flex; align-items: center; gap: 24px; margin-bottom: 32px;"
+  >
+    <span
+      class="soui-badge soui-badge-badge soui-badge-text-badge"
+    >
+      <span
+        class="soui-badge-text-dot soui-badge-default"
+      />
+    </span>
+    <span
+      class="soui-badge soui-badge-badge soui-badge-text-badge"
+    >
+      <span
+        class="soui-badge-text-dot soui-badge-processing"
+      />
+    </span>
+    <span
+      class="soui-badge soui-badge-badge soui-badge-text-badge"
+    >
+      <span
+        class="soui-badge-text-dot soui-badge-error"
+      />
+    </span>
+    <span
+      class="soui-badge soui-badge-badge soui-badge-text-badge"
+    >
+      <span
+        class="soui-badge-text-dot soui-badge-warning"
+      />
+    </span>
+    <span
+      class="soui-badge soui-badge-badge soui-badge-text-badge"
+    >
+      <span
+        class="soui-badge-text-dot soui-badge-success"
+      />
+    </span>
+  </div>
+  <div
+    style="display: flex; align-items: center; gap: 24px;"
+  >
+    <span
+      class="soui-badge soui-badge-badge soui-badge-text-badge"
+    >
+      <span
+        class="soui-badge-text-dot soui-badge-default"
+      />
+      <span
+        class="soui-badge-text"
+      >
+        Default
+      </span>
+    </span>
+    <span
+      class="soui-badge soui-badge-badge soui-badge-text-badge"
+    >
+      <span
+        class="soui-badge-text-dot soui-badge-processing"
+      />
+      <span
+        class="soui-badge-text"
+      >
+        Processing
+      </span>
+    </span>
+    <span
+      class="soui-badge soui-badge-badge soui-badge-text-badge"
+    >
+      <span
+        class="soui-badge-text-dot soui-badge-error"
+      />
+      <span
+        class="soui-badge-text"
+      >
+        Error
+      </span>
+    </span>
+    <span
+      class="soui-badge soui-badge-badge soui-badge-text-badge"
+    >
+      <span
+        class="soui-badge-text-dot soui-badge-warning"
+      />
+      <span
+        class="soui-badge-text"
+      >
+        Warning
+      </span>
+    </span>
+    <span
+      class="soui-badge soui-badge-badge soui-badge-text-badge"
+    >
+      <span
+        class="soui-badge-text-dot soui-badge-success"
+      />
+      <span
+        class="soui-badge-text"
+      >
+        Success
+      </span>
+    </span>
+  </div>
+</div>
+`;
