@@ -36,6 +36,7 @@ import type { TableSemanticKey } from '../table/table.type';
 import type { CascaderSemanticKey } from '../cascader/cascader.type';
 import type { CheckboxSemanticKey } from '../checkbox/checkbox.type';
 import type { RadioSemanticKey } from '../radio/radio.type';
+import type { RateSemanticKey } from '../rate/rate.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -598,6 +599,21 @@ type RadioConfig = {
   styles?: SemanticStyles<RadioSemanticKey>;
 }
 
+type RateConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Rate (root / star / text).
+   * @cn Rate 全局 Semantic DOM 类名（root / star / text）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<RateSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Rate (root / star / text).
+   * @cn Rate 全局 Semantic DOM 样式（root / star / text）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<RateSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -792,6 +808,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   radio?: RadioConfig;
+  /**
+   * @en Global configuration for Rate component
+   * @cn Rate组件的全局配置
+   * @version 3.10.0
+   */
+  rate?: RateConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -837,6 +859,7 @@ export const defaultConfig: ConfigOption = {
   cascader: {},
   checkbox: {},
   radio: {},
+  rate: {},
   direction: 'ltr',
   popupContainer: null,
 };

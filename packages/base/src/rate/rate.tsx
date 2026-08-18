@@ -1,21 +1,28 @@
 import classNames from 'classnames';
 import React, { useContext, useState } from 'react';
-import { RateProps } from './rate.type';
+import { RateProps, RateSemanticKey } from './rate.type';
 import Icons from '../icons';
 import { getDataset, useInputAble } from '@sheinx/hooks';
 import useWithFormConfig from '../common/use-with-form-config';
 import { useConfig } from '../config';
 import { FormFieldContext } from '../form/form-field-context';
+import { useSemantic } from '../common/use-semantic';
 
 const Rate = (props0: RateProps) => {
   const props = useWithFormConfig(props0);
   const config = useConfig();
   const { fieldId } = useContext(FormFieldContext);
   const { size } = props0;
-  const { max = 5, repeat = true, clearable = false } = props;
+  const { max = 5, repeat = true, clearable = false, classNames: classNamesProp, styles: stylesProp } = props;
   const [hoverValue, setHoverValue] = useState<null | number>(null);
   const [animationIndex, setAnimationIndex] = useState<null | number>(null);
   const rateClasses = props.jssStyle?.rate?.();
+
+  const [semClass, semStyle] = useSemantic<RateSemanticKey>(
+    classNamesProp,
+    stylesProp,
+    config.rate,
+  );
 
   const { value = 0, onChange } = useInputAble({
     value: props.value,
@@ -65,11 +72,13 @@ const Rate = (props0: RateProps) => {
           isChecked && rateClasses?.itemChecked,
           props.disabled && rateClasses?.itemDisabled,
           showAnimation && rateClasses?.itemAnimation,
+          semClass('star', []),
         )}
         style={{
           fontSize: size,
           width: size,
           animationDelay: showAnimation ? `${50 * index}ms` : undefined,
+          ...semStyle('star'),
         }}
         onAnimationEnd={() => {
           setAnimationIndex(null);
@@ -125,9 +134,9 @@ const Rate = (props0: RateProps) => {
   const text = Array.isArray(props.text) && props.text[Math.ceil(value - 1)];
   return (
     <div
-      className={classNames(props.className, rateClasses?.rootClass, rateClasses?.wrapper)}
+      className={classNames(props.className, rateClasses?.rootClass, rateClasses?.wrapper, semClass('root', []))}
       id={fieldId}
-      style={props.style}
+      style={props.style ? { ...props.style, ...semStyle('root') } : semStyle('root')}
       onMouseLeave={() => {
         setHoverValue(null);
       }}
@@ -137,7 +146,7 @@ const Rate = (props0: RateProps) => {
         {Array.from({ length: max }).map((_, index) => {
           return renderIcon(index);
         })}
-        {text && <div className={rateClasses?.text}>{text}</div>}
+        {text && <div className={classNames(rateClasses?.text, semClass('text', []))} style={semStyle('text')}>{text}</div>}
       </div>
     </div>
   );
