@@ -37,6 +37,7 @@ import type { CascaderSemanticKey } from '../cascader/cascader.type';
 import type { CheckboxSemanticKey } from '../checkbox/checkbox.type';
 import type { RadioSemanticKey } from '../radio/radio.type';
 import type { RateSemanticKey } from '../rate/rate.type';
+import type { SliderSemanticKey } from '../slider/slider.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -614,6 +615,21 @@ type RateConfig = {
   styles?: SemanticStyles<RateSemanticKey>;
 }
 
+type SliderConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Slider (root / track / indicator / scale).
+   * @cn Slider 全局 Semantic DOM 类名（root / track / indicator / scale）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<SliderSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Slider (root / track / indicator / scale).
+   * @cn Slider 全局 Semantic DOM 样式（root / track / indicator / scale）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<SliderSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -814,6 +830,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   rate?: RateConfig;
+  /**
+   * @en Global configuration for Slider component
+   * @cn Slider组件的全局配置
+   * @version 3.10.0
+   */
+  slider?: SliderConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -860,6 +882,7 @@ export const defaultConfig: ConfigOption = {
   checkbox: {},
   radio: {},
   rate: {},
+  slider: {},
   direction: 'ltr',
   popupContainer: null,
 };

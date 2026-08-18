@@ -2,9 +2,10 @@ import { useSlider, useInputAble } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React, { useContext } from 'react';
 import { useConfig } from '../config';
-import { SliderProps } from './slider.type';
+import { SliderProps, SliderSemanticKey } from './slider.type';
 import useWithFormConfig from '../common/use-with-form-config';
 import { FormFieldContext } from '../form/form-field-context';
+import { useSemantic } from '../common/use-semantic';
 
 const defaultScale = [0, 100];
 const Slider = <Value extends number | number[]>(props0: SliderProps<Value>) => {
@@ -13,7 +14,13 @@ const Slider = <Value extends number | number[]>(props0: SliderProps<Value>) => 
   const config = useConfig()
   const { fieldId } = useContext(FormFieldContext);
 
-  const { scale = defaultScale, step = 1, height = 200, valueTipType: tipType = 'always' } = props;
+  const { scale = defaultScale, step = 1, height = 200, valueTipType: tipType = 'always', classNames: classNamesProp, styles: stylesProp } = props;
+
+  const [semClass, semStyle] = useSemantic<SliderSemanticKey>(
+    classNamesProp,
+    stylesProp,
+    config.slider,
+  );
 
   const inputAbleInfo = useInputAble({
     value: props.value,
@@ -79,7 +86,9 @@ const Slider = <Value extends number | number[]>(props0: SliderProps<Value>) => 
             position === 0 ? sliderClasses?.indicatorStart : sliderClasses?.indicatorEnd,
             dragIndex === position && sliderClasses?.indicatorActive,
             tipType === 'hover' && sliderClasses?.indicatorHover,
+            semClass('indicator', []),
           )}
+          style={semStyle('indicator')}
           dir={config.direction}
         />
         {renderIndicatorValue(position)}
@@ -124,14 +133,17 @@ const Slider = <Value extends number | number[]>(props0: SliderProps<Value>) => 
         isWholeDisabled() && sliderClasses?.disabled,
         props.vertical && sliderClasses?.vertical,
         props.className,
+        semClass('root', []),
       )}
       style={{
         ...verticalStyle,
         ...props.style,
+        ...semStyle('root'),
       }}
     >
       <div
-        className={sliderClasses?.track}
+        className={classNames(sliderClasses?.track, semClass('track', []))}
+        style={semStyle('track')}
         ref={trackRef}
         onClick={shouldDisableTrackClick() ? undefined : func.handleTrackClick}
       >
@@ -142,7 +154,7 @@ const Slider = <Value extends number | number[]>(props0: SliderProps<Value>) => 
         </div>
       </div>
       {props.formatScale === false ? null : (
-        <div className={sliderClasses?.scaleWrapper}>
+        <div className={classNames(sliderClasses?.scaleWrapper, semClass('scale', []))} style={semStyle('scale')}>
           {scale?.map((item, index) => (
             <div key={index} className={classNames(sliderClasses?.scale)}>
               <div key={index} className={classNames(sliderClasses?.label)} dir={config.direction}>
