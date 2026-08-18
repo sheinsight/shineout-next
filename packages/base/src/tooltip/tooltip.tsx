@@ -1,4 +1,5 @@
 import { usePersistFn, usePopup, util } from '@sheinx/hooks';
+import classNames from 'classnames';
 import React, { cloneElement, isValidElement, useEffect, useMemo } from 'react';
 import { TooltipClassNamesInfo, TooltipProps, TooltipSemanticKey } from './tooltip.type';
 import AbsoluteList from '../absolute-list';
@@ -175,12 +176,13 @@ const TooltipInner = (props: ValidTooltipProps) => {
           offset={pointAtCenterOffset}
         >
           <div
-            className={semClass('root', [
+            className={classNames(
               className,
               tooltipClasses?.rootClass,
               tooltipClasses?.wrapper,
               open && tooltipClasses?.wrapperOpen,
-            ])}
+              semClass('root'),
+            )}
             style={{ pointerEvents: persistent ? 'initial' : undefined, display: open ? 'block' : 'none', ...semStyle('root') }}
             {...util.getDataAttribute({ type, position })}
             ref={popupRef}
@@ -189,12 +191,12 @@ const TooltipInner = (props: ValidTooltipProps) => {
           >
             {showArrow && (
               <span
-                className={semClass('arrow', [tooltipClasses?.arrow])}
+                className={classNames(tooltipClasses?.arrow, semClass('arrow'))}
                 style={semStyle('arrow')}
                 {...util.getDataAttribute({ role: 'arrow' })}
               />
             )}
-            <div style={{ ...style, ...semStyle('content') }} className={semClass('content', [tooltipClasses?.content])}>
+            <div style={{ ...style, ...semStyle('content') }} className={classNames(tooltipClasses?.content, semClass('content'))}>
               {tip}
             </div>
           </div>

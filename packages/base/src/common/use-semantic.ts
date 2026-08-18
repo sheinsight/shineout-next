@@ -74,20 +74,16 @@ export interface SemanticGlobalConfig<K extends string> {
 }
 
 /**
- * 按 semantic key 取 className：合并内部 JSS class + 全局兜底 class + 用户传入 class。
+ * 按 semantic key 取 className：合并全局兜底 class + 用户传入 class。
  *
- * - 拼接顺序：内部 → 全局 → 用户（CSS 后出胜出 + 用户期望"我传的最大"）
- * - 第二个参数 `internalClass` 是组件自己的 JSS class（可以是字符串、数组、含 false/undefined）
+ * - 拼接顺序：全局 → 用户（CSS 后出胜出 + 用户期望"我传的最大"）
  *
  * 示例：
  * ```tsx
- * <div className={semClass('arrow', [popoverStyle?.arrow, props.arrowClass])} />
+ * <div className={classNames(popoverStyle?.arrow, semClass('arrow'))} />
  * ```
  */
-export type SemanticClassFn<K extends string> = (
-  key: K,
-  internalClass?: string | (string | false | undefined)[],
-) => string;
+export type SemanticClassFn<K extends string> = (key: K) => string;
 
 /**
  * 按 semantic key 取 style：浅合并全局兜底 style + 用户传入 style。
@@ -144,7 +140,7 @@ export function useSemantic<K extends string, Info = void>(
   globalConfig?: SemanticGlobalConfig<K>,
   info?: Info,
 ): [SemanticClassFn<K>, SemanticStyleFn<K>] {
-  const semClass: SemanticClassFn<K> = (key, internalClass) => {
+  const semClass: SemanticClassFn<K> = (key) => {
     const globalClass = globalConfig?.classNames?.[key];
     // userClassNames 的 value 可能是字符串，也可能是 (info) => string 的函数
     const rawUser = userClassNames?.[key];
@@ -153,7 +149,7 @@ export function useSemantic<K extends string, Info = void>(
       typeof rawUser === 'function'
         ? (rawUser as (info: Info) => SemanticClassValue)(info as Info)
         : (rawUser as string | undefined);
-    return classnames(internalClass, globalClass, resolvedUser);
+    return classnames(globalClass, resolvedUser);
   };
 
   const semStyle: SemanticStyleFn<K> = (key) => {

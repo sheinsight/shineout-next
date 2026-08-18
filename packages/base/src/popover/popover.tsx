@@ -1,4 +1,5 @@
 import { getClosestScrollContainer, usePersistFn, usePopup, useRender, util } from '@sheinx/hooks';
+import classNames from 'classnames';
 import AbsoluteList from '../absolute-list';
 import React, { useEffect, useMemo } from 'react';
 import { PopoverProps, PopoverPosition, PopoverSemanticKey, PopoverClassNamesInfo } from './popover.type';
@@ -221,14 +222,15 @@ const Popover = (props: PopoverProps) => {
       setSizingStyle={props.boundary ? setContentStyle : undefined}
     >
       <div
-        className={semClass('root', [
+        className={classNames(
           className,
           popoverStyle?.rootClass,
           popoverStyle?.wrapper,
           open && popoverStyle?.wrapperOpen,
           !showArrow && popoverStyle?.hideArrow,
           animation === false && popoverStyle?.wrapperNoAnimation,
-        ])}
+          semClass('root'),
+        )}
         style={{ ...containerStyle, ...semStyle('root') }}
         {...util.getDataAttribute({ position: props.adjust ? positionState : position, type })}
         {...props.attributes}
@@ -239,16 +241,17 @@ const Popover = (props: PopoverProps) => {
       >
         {showArrow && (
           <div
-            className={semClass('arrow', [popoverStyle?.arrow, props.arrowClass])}
+            className={classNames(popoverStyle?.arrow, props.arrowClass, semClass('arrow'))}
             style={semStyle('arrow')}
             dir={config.direction}
           />
         )}
         <div
-          className={semClass('content', [
+          className={classNames(
             popoverStyle?.content,
             (typeof childrened === 'string' || props.useTextStyle) && popoverStyle?.text,
-          ])}
+            semClass('content'),
+          )}
           style={{ ...contentStyle, ...style, ...semStyle('content') }}
           onClick={emptyEvent}
         >
