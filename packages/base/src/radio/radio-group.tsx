@@ -7,6 +7,9 @@ import classNames from 'classnames';
 import useWithFormConfig from '../common/use-with-form-config';
 import Button from '../button/button';
 import { FormFieldContext } from '../form/form-field-context';
+import { useSemantic } from '../common/use-semantic';
+import { useConfig } from '../config';
+import type { RadioSemanticKey } from './radio.type';
 
 const defaultFormat = (d: any) => d;
 const defaultRenderItem = (d: any) => d;
@@ -16,8 +19,15 @@ const Group = <DataItem, Value>(props0: RadioGroupProps<DataItem, Value>) => {
   const props = useWithFormConfig(props0);
   const { fieldId } = useContext(FormFieldContext);
 
-  const { children, className, button, block, keygen, jssStyle, style, size, disabled, renderWrapper: externalRenderWrapper  } = props;
+  const { children, className, button, block, keygen, jssStyle, style, size, disabled, renderWrapper: externalRenderWrapper, classNames: classNamesProp, styles: stylesProp  } = props;
+  const config = useConfig();
   const radioClasses = jssStyle?.radio?.();
+
+  const [semClass, semStyle] = useSemantic<RadioSemanticKey>(
+    classNamesProp,
+    stylesProp,
+    config.radio,
+  );
 
   const inputAbleProps = useInputAble({
     value: props.value,
@@ -107,6 +117,7 @@ const Group = <DataItem, Value>(props0: RadioGroupProps<DataItem, Value>) => {
     radioClasses?.group,
     !!block && radioClasses?.groupBlock,
     !!button && radioClasses?.groupButton,
+    semClass('group', []),
   );
 
   const Radios =
@@ -134,13 +145,13 @@ const Group = <DataItem, Value>(props0: RadioGroupProps<DataItem, Value>) => {
     );
   if (button)
     return (
-      <Button.Group jssStyle={jssStyle} className={groupClass} style={style} id={fieldId}>
+      <Button.Group jssStyle={jssStyle} className={groupClass} style={style ? { ...style, ...semStyle('group') } : semStyle('group')} id={fieldId}>
         {Radios}
       </Button.Group>
     );
 
   return (
-    <div className={groupClass} style={style} id={fieldId}>
+    <div className={groupClass} style={style ? { ...style, ...semStyle('group') } : semStyle('group')} id={fieldId}>
       {Radios}
     </div>
   );

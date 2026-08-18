@@ -35,6 +35,7 @@ import type { TreeSemanticKey } from '../tree/tree.type';
 import type { TableSemanticKey } from '../table/table.type';
 import type { CascaderSemanticKey } from '../cascader/cascader.type';
 import type { CheckboxSemanticKey } from '../checkbox/checkbox.type';
+import type { RadioSemanticKey } from '../radio/radio.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -582,6 +583,21 @@ type CheckboxConfig = {
   styles?: SemanticStyles<CheckboxSemanticKey>;
 }
 
+type RadioConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Radio (root / indicator / label / group).
+   * @cn Radio 全局 Semantic DOM 类名（root / indicator / label / group）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<RadioSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Radio (root / indicator / label / group).
+   * @cn Radio 全局 Semantic DOM 样式（root / indicator / label / group）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<RadioSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -770,6 +786,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   checkbox?: CheckboxConfig;
+  /**
+   * @en Global configuration for Radio component
+   * @cn Radio组件的全局配置
+   * @version 3.10.0
+   */
+  radio?: RadioConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -814,6 +836,7 @@ export const defaultConfig: ConfigOption = {
   table: {},
   cascader: {},
   checkbox: {},
+  radio: {},
   direction: 'ltr',
   popupContainer: null,
 };

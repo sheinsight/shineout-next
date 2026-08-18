@@ -1,6 +1,9 @@
 import { CommonType } from '../common/type';
 import { BaseCheckProps } from '@sheinx/hooks';
 import React from 'react';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
+
+export type RadioSemanticKey = 'root' | 'indicator' | 'label' | 'group';
 
 export interface RadioClasses {
   rootClass: string;
@@ -38,6 +41,18 @@ export interface SimpleRadioProps
   jssStyle?: {
     radio?: () => RadioClasses;
   };
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<RadioSemanticKey>;
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<RadioSemanticKey>;
   /**
    * @en Content
    * @cn 内容
