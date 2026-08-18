@@ -94,7 +94,7 @@ const Button = (props: ButtonProps) => {
     shape === 'square' && buttonStyle.square,
     size === 'small' && buttonStyle.small,
     size === 'large' && buttonStyle.large,
-    semClass('root', []),
+    semClass('root'),
   );
   const rootStyle = semStyle('root') ? { ...style, ...semStyle('root') } : style;
   const rootProps = getButtonProps();
@@ -114,7 +114,7 @@ const Button = (props: ButtonProps) => {
   // }
 
   let loadingEl: React.ReactNode = (
-    <div className={classNames(buttonStyle.spin, semClass('loading', []))} style={semStyle('loading')}>
+    <div className={classNames(buttonStyle.spin, semClass('loading'))} style={semStyle('loading')}>
       <Spin size={'1em'} jssStyle={jssStyle} name='ring' ignoreConfig></Spin>
     </div>
   );

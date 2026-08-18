@@ -19,7 +19,7 @@ const Empty = (props: EmptyProps) => {
     { classNames: empty?.classNames, styles: empty?.styles },
   );
 
-  const rootClass = classNames(emptyStyles?.rootClass, emptyStyles?.empty, className, semClass('root', []));
+  const rootClass = classNames(emptyStyles?.rootClass, emptyStyles?.empty, className, semClass('root'));
   const wrapperClass = classNames(emptyStyles?.wrapper);
   const alt = typeof description === 'string' ? description : 'empty';
 
@@ -34,13 +34,13 @@ const Empty = (props: EmptyProps) => {
     if(icon === null) return null;
     if (imgSrc) {
       return (
-        <div className={classNames(emptyStyles?.image, semClass('icon', []))} style={semStyle('icon')}>
+        <div className={classNames(emptyStyles?.image, semClass('icon'))} style={semStyle('icon')}>
           <img src={imgSrc} alt={alt} />
         </div>
       );
     }
 
-    return <div className={classNames(emptyStyles?.image, semClass('icon', []))} style={semStyle('icon')}>{icon || empty?.icon?.() || Icons.empty.NoData}</div>;
+    return <div className={classNames(emptyStyles?.image, semClass('icon'))} style={semStyle('icon')}>{icon || empty?.icon?.() || Icons.empty.NoData}</div>;
   };
 
   const renderDescription = () => {
@@ -52,7 +52,7 @@ const Empty = (props: EmptyProps) => {
       return null;
     }
 
-    return <div className={classNames(emptyStyles?.description, semClass('description', []))} style={semStyle('description')}>{finalDescription}</div>;
+    return <div className={classNames(emptyStyles?.description, semClass('description'))} style={semStyle('description')}>{finalDescription}</div>;
   };
 
   return (

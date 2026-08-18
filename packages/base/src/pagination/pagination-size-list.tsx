@@ -21,7 +21,7 @@ const PaginationSizeList = (props: PaginationSizeListProps) => {
     semStyle,
   } = props;
   const paginationStyle = jssStyle?.pagination?.();
-  const rootClasses = classNames(paginationStyle?.section, paginationStyle?.sizeList, semClass('sizeList', []));
+  const rootClasses = classNames(paginationStyle?.section, paginationStyle?.sizeList, semClass('sizeList'));
 
   const handleChange = (pageSize: number) => {
     const start = (current - 1) * props.pageSize + 1;

@@ -31,13 +31,13 @@ const Radio = (props: SimpleRadioProps) => {
     size === 'small' && radioClasses?.wrapperSmall,
     size === 'large' && radioClasses?.wrapperLarge,
     verticalAlign === 'top' && radioClasses?.wrapperTop,
-    semClass('root', []),
+    semClass('root'),
   ]);
 
   const indicatorClass = classNames(
     radioClasses?.indicatorWrapper,
     theme === 'dark' && radioClasses?.darkIndicatorWrapper,
-    semClass('indicator', []),
+    semClass('indicator'),
   );
 
   const inputProps = getInputProps();
@@ -63,7 +63,7 @@ const Radio = (props: SimpleRadioProps) => {
   const simpleRadio = (
     <div id={fieldId} {...rootProps}>
       {indicator}
-      <span className={classNames(radioClasses?.desc, semClass('label', []))} style={semStyle('label')}>{children}</span>
+      <span className={classNames(radioClasses?.desc, semClass('label'))} style={semStyle('label')}>{children}</span>
     </div>
   );
 

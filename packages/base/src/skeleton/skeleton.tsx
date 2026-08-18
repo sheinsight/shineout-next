@@ -26,7 +26,7 @@ const Skeleton = (props: SkeletonProps) => {
 
   const rootClass = classNames(classes.rootClass, classes.wrapper, props.className, {
     [classes.animation]: animation,
-  }, semClass('root', []));
+  }, semClass('root'));
 
   const imageProps = getComponentProps(image);
   const textProps = getComponentProps(text);
@@ -35,14 +35,14 @@ const Skeleton = (props: SkeletonProps) => {
   if (loading) {
     return (
       <div className={rootClass} style={{ ...props.style, ...semStyle('root') }}>
-        {image && imageProps.position !== 'right' && <Image classes={classes} {...imageProps} className={classNames(imageProps.className, semClass('image', []))} style={{ ...imageProps.style, ...semStyle('image') }} />}
+        {image && imageProps.position !== 'right' && <Image classes={classes} {...imageProps} className={classNames(imageProps.className, semClass('image'))} style={{ ...imageProps.style, ...semStyle('image') }} />}
 
         <div className={classes.content}>
-          {text && <Text classes={classes} {...textProps} className={classNames(textProps.className, semClass('text', []))} style={{ ...textProps.style, ...semStyle('text') }} />}
-          {button && <Button classes={classes} {...buttonProps} className={classNames(buttonProps.className, semClass('button', []))} style={{ ...buttonProps.style, ...semStyle('button') }} />}
+          {text && <Text classes={classes} {...textProps} className={classNames(textProps.className, semClass('text'))} style={{ ...textProps.style, ...semStyle('text') }} />}
+          {button && <Button classes={classes} {...buttonProps} className={classNames(buttonProps.className, semClass('button'))} style={{ ...buttonProps.style, ...semStyle('button') }} />}
         </div>
 
-        {image && imageProps.position === 'right' && <Image classes={classes} {...imageProps} className={classNames(imageProps.className, semClass('image', []))} style={{ ...imageProps.style, ...semStyle('image') }} />}
+        {image && imageProps.position === 'right' && <Image classes={classes} {...imageProps} className={classNames(imageProps.className, semClass('image'))} style={{ ...imageProps.style, ...semStyle('image') }} />}
       </div>
     );
   }

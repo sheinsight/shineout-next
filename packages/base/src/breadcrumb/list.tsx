@@ -32,7 +32,7 @@ const List = (props: ListProps) => {
     return arr.map((item, index) => {
       return (
         <div key={index} className={classes?.itemWrapper}>
-          <div className={classNames(classes?.dropdownItem, semClass('dropdownItem', []))} style={semStyle('dropdownItem')} onClick={closePop}>
+          <div className={classNames(classes?.dropdownItem, semClass('dropdownItem'))} style={semStyle('dropdownItem')} onClick={closePop}>
             {props.renderItem(item)}
           </div>
         </div>
@@ -55,7 +55,7 @@ const List = (props: ListProps) => {
         adjust={true}
       >
         <AnimationList
-          className={classNames(classes?.dropdown, semClass('dropdown', []))}
+          className={classNames(classes?.dropdown, semClass('dropdown'))}
           type={'fade'}
           duration={'fast'}
           show={open}

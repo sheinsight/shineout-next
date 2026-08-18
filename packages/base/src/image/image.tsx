@@ -88,14 +88,14 @@ const Image = (props: ImageProps) => {
     [imageStyle.thumbnail]: shape === 'thumbnail',
     [imageStyle.preview]: shouldPreview,
     [imageStyle.download]: shouldDownload,
-  }, semClass('root', []));
+  }, semClass('root'));
 
-  const imgClass = classNames(imageStyle.img, semClass('img', []));
+  const imgClass = classNames(imageStyle.img, semClass('img'));
   const imgInnerClass = classNames(imageStyle.inner);
-  const placeholderClass = classNames(imageStyle.placeholder, semClass('placeholder', []));
-  const defaultPlaceholderClass = classNames(imageStyle.defaultPlaceholder, semClass('placeholder', []));
-  const errorClass = classNames(imageStyle.error, semClass('error', []));
-  const defaultErrorClass = classNames(imageStyle.defaultError, semClass('error', []));
+  const placeholderClass = classNames(imageStyle.placeholder, semClass('placeholder'));
+  const defaultPlaceholderClass = classNames(imageStyle.defaultPlaceholder, semClass('placeholder'));
+  const errorClass = classNames(imageStyle.error, semClass('error'));
+  const defaultErrorClass = classNames(imageStyle.defaultError, semClass('error'));
   const maskClass = classNames(imageStyle.previewMask);
 
   const handleOpenGallery = (e: React.MouseEvent<HTMLDivElement | HTMLAnchorElement>) => {
@@ -131,7 +131,7 @@ const Image = (props: ImageProps) => {
 
   const renderDivInnerEl = (src?: string) => {
     const imageDivProps = getImageDivProps({ style: { backgroundImage: `url("${src}")` } });
-    return <div className={classNames(imgInnerClass, semClass('img', []))} {...imageDivProps} style={{ ...imageDivProps.style, ...semStyle('img') }}></div>;
+    return <div className={classNames(imgInnerClass, semClass('img'))} {...imageDivProps} style={{ ...imageDivProps.style, ...semStyle('img') }}></div>;
   };
 
   // 渲染 img / div 类型的内部标签

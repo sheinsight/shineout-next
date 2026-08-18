@@ -72,7 +72,7 @@ const VirtualNode = <DataItem, Value extends KeygenResult[]>(
     {
       [contentStyle.leaf]: !hasChildren,
     },
-    treeSemClass?.('node', []),
+    treeSemClass?.('node'),
   );
 
   if (placeElement) {

@@ -81,7 +81,7 @@ const MessagePure = (props: {
   };
 
   return (
-    <div className={classNames(styles?.rootClass, styles?.wrapper, semClass('root', []))} style={semStyle('root')} {...getDataAttribute({ position })}>
+    <div className={classNames(styles?.rootClass, styles?.wrapper, semClass('root'))} style={semStyle('root')} {...getDataAttribute({ position })}>
       {[
         messages.map(
           ({
@@ -99,7 +99,7 @@ const MessagePure = (props: {
           }) => (
             <div
               key={id}
-              className={classNames(handleClassName(position, !!dismiss), className, semClass('item', []))}
+              className={classNames(handleClassName(position, !!dismiss), className, semClass('item'))}
               style={{ ...handleStyle(!!dismiss, h || 0, position)!, ...semStyle('item') }}
               onMouseEnter={() => {
                 if (timeoutByIdMap[id]) {
@@ -124,7 +124,7 @@ const MessagePure = (props: {
               }}
             >
               <Alert
-                className={classNames(styles?.message, semClass('message', []))}
+                className={classNames(styles?.message, semClass('message'))}
                 jssStyle={jssStyle}
                 closable={!hideClose && 'only'}
                 onClose={() => {

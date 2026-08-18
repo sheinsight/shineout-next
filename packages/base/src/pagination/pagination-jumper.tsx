@@ -6,7 +6,7 @@ import { PaginationJumperProps } from './pagination-jumper.type';
 const PaginationJumper = (props: PaginationJumperProps) => {
   const { jssStyle, simple, size, total, pageSize, disabled, text, current, onChange, semClass, semStyle } = props;
   const paginationStyle = jssStyle?.pagination?.();
-  const rootClasses = classNames(paginationStyle?.section, paginationStyle?.jumper, semClass('jumper', []));
+  const rootClasses = classNames(paginationStyle?.section, paginationStyle?.jumper, semClass('jumper'));
 
   let txt: string[] | React.ReactNode[] = text.jumper ? text.jumper.split('{input}') : [];
   const [value, setValue] = useState(String(current));

@@ -27,13 +27,13 @@ const DefaultStep = (props: StepStyleProps) => {
     [styles.error]: status === 'error',
     [styles.process]: status === 'process',
     [styles.wait]: status === 'wait',
-  }, semClass('icon', []));
+  }, semClass('icon'));
 
   const showTail = labelPlacement === 'vertical' || direction === 'vertical';
 
   const renderTail = () => {
     return (
-      <div className={classNames(styles.tail, semClass('tail', []))} style={semStyle('tail')} dir={config.direction}>
+      <div className={classNames(styles.tail, semClass('tail'))} style={semStyle('tail')} dir={config.direction}>
         {' '}
       </div>
     );
@@ -41,14 +41,14 @@ const DefaultStep = (props: StepStyleProps) => {
 
   const renderTitle = () => {
     return (
-      <div className={classNames(styles.title, semClass('title', []))} style={semStyle('title')} dir={config.direction}>
+      <div className={classNames(styles.title, semClass('title'))} style={semStyle('title')} dir={config.direction}>
         {util.isFunc(title) ? title(index, status!) : title}
       </div>
     );
   };
 
   const renderDescription = () => {
-    return <div className={classNames(styles.description, semClass('description', []))} style={semStyle('description')}>{description}</div>;
+    return <div className={classNames(styles.description, semClass('description'))} style={semStyle('description')}>{description}</div>;
   };
 
   const renderIcon = () => {
@@ -76,7 +76,7 @@ const DefaultStep = (props: StepStyleProps) => {
 
   const renderContent = () => {
     return (
-      <div className={classNames(styles.content, semClass('content', []))} style={semStyle('content')}>
+      <div className={classNames(styles.content, semClass('content'))} style={semStyle('content')}>
         {renderTitle()}
         {description && renderDescription()}
       </div>

@@ -35,7 +35,7 @@ const Breadcrumb = <Item = BreadcrumbDataType,>(props: BreadcrumbProps<Item>) =>
   const renderArray = (data: StructureArray<Item>) => {
     return <List data={data} renderItem={renderItem} jssStyle={props.jssStyle} maxHeight={maxHeight} semClass={semClass} semStyle={semStyle} />;
   };
-  const className = classNames(breadcrumbClasses?.rootClass, breadcrumbClasses?.wrapper, props.className, semClass('root', []));
+  const className = classNames(breadcrumbClasses?.rootClass, breadcrumbClasses?.wrapper, props.className, semClass('root'));
 
   const getRenderData = () => {
     if (!maxCount) return data;
@@ -51,7 +51,7 @@ const Breadcrumb = <Item = BreadcrumbDataType,>(props: BreadcrumbProps<Item>) =>
     const { root: _rootSty, ...innerStyles } = stylesProp || {};
     const more = {
       title: (
-        <span className={classNames(breadcrumbClasses?.content, breadcrumbClasses?.ellipsis, semClass('content', []))} style={semStyle('content')}>
+        <span className={classNames(breadcrumbClasses?.content, breadcrumbClasses?.ellipsis, semClass('content'))} style={semStyle('content')}>
           ...
           <Popover jssStyle={props.jssStyle} useTextStyle offset={[8, 0]} popupGap={-4}>
             <Breadcrumb {...props} className={moreClassName} data={moreData} max={undefined} classNames={innerClassNames} styles={innerStyles} />
@@ -71,12 +71,12 @@ const Breadcrumb = <Item = BreadcrumbDataType,>(props: BreadcrumbProps<Item>) =>
           const isLastItem = index === lastIndex;
           return (
             <div
-              className={classNames(breadcrumbClasses?.item, semClass('item', []))}
+              className={classNames(breadcrumbClasses?.item, semClass('item'))}
               style={semStyle('item')}
               key={props.keygen ? getKey(props.keygen, itemFirst as Item, index) : index}
             >
               {Array.isArray(d) ? renderArray(d) : <BreadcrumbItem dataItem={d as Item} renderItem={props.renderItem} jssStyle={props.jssStyle} max={maxCount} semClass={semClass} semStyle={semStyle} />}
-              {!isLastItem && <div className={classNames(breadcrumbClasses?.separator, semClass('separator', []))} style={semStyle('separator')}>{separator}</div>}
+              {!isLastItem && <div className={classNames(breadcrumbClasses?.separator, semClass('separator'))} style={semStyle('separator')}>{separator}</div>}
             </div>
           );
         })}

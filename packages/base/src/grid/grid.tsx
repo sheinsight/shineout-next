@@ -39,7 +39,7 @@ const Grid = (props: GridProps) => {
     gridClasses?.wrapper,
     gridClasses?.full,
     getGrid({ width, offset, responsive }),
-    semClass('root', []),
+    semClass('root'),
   );
   const style = Object.assign({}, props.style, semStyle('root'));
   if (gutter && gutter > 0) {

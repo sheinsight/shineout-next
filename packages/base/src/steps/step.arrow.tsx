@@ -17,19 +17,19 @@ const ArrowStep = (props: StepStyleProps) => {
 
   const renderTitle = () => {
     return (
-      <div className={classNames(styles.title, semClass('title', []))} style={semStyle('title')} dir={config.direction}>
+      <div className={classNames(styles.title, semClass('title'))} style={semStyle('title')} dir={config.direction}>
         {util.isFunc(title) ? title(index, status!) : title}
       </div>
     );
   };
 
   const renderDescription = () => {
-    return <div className={classNames(styles.description, semClass('description', []))} style={semStyle('description')}>{description}</div>;
+    return <div className={classNames(styles.description, semClass('description'))} style={semStyle('description')}>{description}</div>;
   };
 
   const renderContent = () => {
     return (
-      <div className={classNames(styles.content, semClass('content', []))} style={semStyle('content')}>
+      <div className={classNames(styles.content, semClass('content'))} style={semStyle('content')}>
         {renderTitle()}
         {description && renderDescription()}
       </div>

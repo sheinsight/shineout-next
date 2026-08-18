@@ -115,7 +115,7 @@ const Card = (props: CardProps) => {
         props.moveable && cardClasses?.wrapperMoveable,
         props.split && cardClasses?.wrapperSplit,
         inAccordion && cardClasses?.wrapperInAccordion,
-        semClass('root', []),
+        semClass('root'),
       )}
       ref={panelRef}
       style={{ ...wrapStyle, ...semStyle('root') }}

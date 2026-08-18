@@ -54,7 +54,7 @@ const Link = (props: LinkProps) => {
       [linkClasses.danger]: type === 'danger',
       [linkClasses.warning]: type === 'warning',
       [linkClasses.success]: type === 'success',
-    }, semClass('root', []));
+    }, semClass('root'));
 
     const rootStyle = semStyle('root') ? { ...style, ...semStyle('root') } : style;
 
@@ -88,8 +88,8 @@ const Link = (props: LinkProps) => {
         onClick={handleClick}
         onKeyDown={handleKeyDown}
       >
-        {typeof icon === 'boolean' && icon && <span className={classNames(linkClasses.icon, semClass('icon', []))} style={semStyle('icon')}>{Icons.link.prefixIcon}</span>}
-        {React.isValidElement(icon) && <span className={classNames(linkClasses.icon, semClass('icon', []))} style={semStyle('icon')}>{icon}</span>}
+        {typeof icon === 'boolean' && icon && <span className={classNames(linkClasses.icon, semClass('icon'))} style={semStyle('icon')}>{Icons.link.prefixIcon}</span>}
+        {React.isValidElement(icon) && <span className={classNames(linkClasses.icon, semClass('icon'))} style={semStyle('icon')}>{icon}</span>}
         {children}
       </a>
     );

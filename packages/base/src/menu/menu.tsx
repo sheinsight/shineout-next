@@ -92,7 +92,7 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
   const renderHeader = () => {
     if (modeProps === 'horizontal') return;
     if (props.header) {
-      return <div className={classNames(classes?.header, semClass('header', []))} style={semStyle('header')}>{props.header}</div>;
+      return <div className={classNames(classes?.header, semClass('header'))} style={semStyle('header')}>{props.header}</div>;
     }
     return null;
   };
@@ -121,7 +121,7 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
         collapse && classes?.wrapperCollapse,
         context.inTransition && classes?.wrapperInTransition,
         props.inlineAnimate && classes?.wrapperInlineAnimate,
-        semClass('root', []),
+        semClass('root'),
       )}
       {...util.getDataAttribute({
         theme,
@@ -143,7 +143,7 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
     >
       {renderHeader()}
       <div className={classes?.scrollbox} ref={scrollRef}>
-        <ul className={classNames(classes?.root, hasExpand && classes?.childrenHasExpand, semClass('list', []))} style={semStyle('list')}>
+        <ul className={classNames(classes?.root, hasExpand && classes?.childrenHasExpand, semClass('list'))} style={semStyle('list')}>
           {data.map((item, index) => {
             const key = util.getKey(props.keygen, item, index);
             return (

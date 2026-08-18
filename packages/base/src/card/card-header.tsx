@@ -31,7 +31,7 @@ const CardHeader = (props: CardHeaderProps) => {
   const headerContentClassName = classNames(
     cardClasses?.headerContent,
     alignClass,
-    semClass?.('headerContent', []),
+    semClass?.('headerContent'),
   );
 
   const commonHeaderProps = {
@@ -46,7 +46,7 @@ const CardHeader = (props: CardHeaderProps) => {
       cardClasses?.simpleHeader,
       alignClass,
       props.className,
-      semClass?.('header', []),
+      semClass?.('header'),
     );
 
     return (
@@ -61,12 +61,12 @@ const CardHeader = (props: CardHeaderProps) => {
 
   return (
     <div
-      className={classNames(props.className, cardClasses?.header, semClass?.('header', []))}
+      className={classNames(props.className, cardClasses?.header, semClass?.('header'))}
       {...commonHeaderProps}
     >
       {renderIndicator()}
       <div className={headerContentClassName} style={semStyle?.('headerContent')}>{props.children}</div>
-      {props.extra && <div className={classNames(cardClasses?.headerExtra, semClass?.('headerExtra', []))} style={semStyle?.('headerExtra')}>{props.extra}</div>}
+      {props.extra && <div className={classNames(cardClasses?.headerExtra, semClass?.('headerExtra'))} style={semStyle?.('headerExtra')}>{props.extra}</div>}
     </div>
   );
 };

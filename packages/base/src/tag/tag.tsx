@@ -73,7 +73,7 @@ const Tag = (props: TagProps) => {
     [tagStyle[colorSet]]: true,
     [tagStyle[modeSet]]: true,
     [tagStyle.disabled]: !!disabled,
-  }, semClass('root', []));
+  }, semClass('root'));
 
   const getTagRootProps = () => {
     const propsSet: Omit<TagProps, 'jssStyle'> = rest;
@@ -92,14 +92,14 @@ const Tag = (props: TagProps) => {
   const renderChildren = () => {
     if (onClose) {
       return (
-        <div className={classNames(tagStyle.wrapper, inlineStyle && tagStyle.inline, semClass('wrapper', []))} style={semStyle('wrapper')}>
+        <div className={classNames(tagStyle.wrapper, inlineStyle && tagStyle.inline, semClass('wrapper'))} style={semStyle('wrapper')}>
           {util.wrapSpan(children)}
         </div>
       );
     }
 
     return (
-      <div className={classNames(tagStyle.wrapper, inlineStyle && tagStyle.inline, semClass('wrapper', []))} style={semStyle('wrapper')}>
+      <div className={classNames(tagStyle.wrapper, inlineStyle && tagStyle.inline, semClass('wrapper'))} style={semStyle('wrapper')}>
         {util.wrapSpan(children)}
       </div>
     );
@@ -126,7 +126,7 @@ const Tag = (props: TagProps) => {
     }
     return (
       <div
-        className={classNames(tagStyle.closeIcon, dismiss === Pending && tagStyle.closeIconPending, semClass('closeIcon', []))}
+        className={classNames(tagStyle.closeIcon, dismiss === Pending && tagStyle.closeIconPending, semClass('closeIcon'))}
         onClick={handleClose}
         onMouseDown={onMouseDown}
         style={dismiss === Pending ? { opacity: 0.6, pointerEvents: 'none', ...semStyle('closeIcon') } : semStyle('closeIcon')}

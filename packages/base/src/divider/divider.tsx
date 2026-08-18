@@ -42,13 +42,13 @@ const Divider = (props: DividerProps) => {
     showText && orientation === 'left' && styles?.withTextLeft,
     showText && orientation === 'right' && styles?.withTextRight,
     type === 'dashed' && styles?.wrapperDashed,
-    semClass('root', []),
+    semClass('root'),
   );
   const rootStyle = semStyle('root') ? { ...style, ...semStyle('root') } : style;
 
   return (
     <div className={mc} style={rootStyle}>
-      {showText ? <span className={classNames(styles?.innerText, semClass('content', []))} style={semStyle('content')}>{children}</span> : null}
+      {showText ? <span className={classNames(styles?.innerText, semClass('content'))} style={semStyle('content')}>{children}</span> : null}
     </div>
   );
 };

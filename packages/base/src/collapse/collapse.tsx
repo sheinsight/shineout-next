@@ -48,7 +48,7 @@ const Collapse = (props: CollapseProps) => {
     jssStyle?.collapse?.rootClass,
     jssStyle?.collapse?.wrapper,
     !border && jssStyle?.collapse?.borderLess,
-    semClass('root', []),
+    semClass('root'),
   );
 
   const providerValue = {

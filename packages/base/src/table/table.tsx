@@ -441,9 +441,9 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       onCellClick: props.onCellClick,
       strictRowHeight: props.strictRowHeight,
       scrollRef: scrollRef,
-      bodyRowSemClass: semClass('bodyRow', []),
+      bodyRowSemClass: semClass('bodyRow'),
       bodyRowSemStyle: semStyle('bodyRow'),
-      bodyCellSemClass: semClass('bodyCell', []),
+      bodyCellSemClass: semClass('bodyCell'),
       bodyCellSemStyle: semStyle('bodyCell'),
     };
 
@@ -470,9 +470,9 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       treeColumnsName,
       treeCheckAll: props.treeCheckAll,
       virtualColumn: props.virtualColumn,
-      headerRowSemClass: semClass('headerRow', []),
+      headerRowSemClass: semClass('headerRow'),
       headerRowSemStyle: semStyle('headerRow'),
-      headerCellSemClass: semClass('headerCell', []),
+      headerCellSemClass: semClass('headerCell'),
       headerCellSemStyle: semStyle('headerCell'),
     };
 
@@ -484,7 +484,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       jssStyle: props.jssStyle,
       colgroup: colgroup,
       data: props.data,
-      footerCellSemClass: semClass('footerCell', []),
+      footerCellSemClass: semClass('footerCell'),
       footerCellSemStyle: semStyle('footerCell'),
     };
 
@@ -511,10 +511,10 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       props.sticky && isScrollY && tableClasses.scrollY,
       props.sticky && isScrollY && browserScrollbarWidth === 0 && tableClasses.overlayScrollbar,
       props.sticky && !isScrollY && !virtualInfo.isExternalScroll && tableClasses.scrollX,
-      semClass('header', []),
+      semClass('header'),
     );
 
-    const footWrapperClass = classNames(tableClasses?.footWrapper, semClass('footer', []));
+    const footWrapperClass = classNames(tableClasses?.footWrapper, semClass('footer'));
 
     const renderHeadMirrorScroller = () => {
       if (!props.showTopScrollbar) return null;
@@ -750,7 +750,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     if (!props.pagination) return null;
     return (
       <Pagination
-        className={classNames(tableClasses?.pagination, semClass('pagination', []))}
+        className={classNames(tableClasses?.pagination, semClass('pagination'))}
         style={semStyle('pagination')}
         jssStyle={props.jssStyle}
         align='right'
@@ -853,7 +853,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     size === 'small' && tableClasses?.small,
     size === 'large' && tableClasses?.large,
     size === 'default' && tableClasses?.default,
-    semClass('root', []),
+    semClass('root'),
   );
 
   if (!props.columns || columns.length === 0)

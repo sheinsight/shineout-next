@@ -64,7 +64,7 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
     styles.option,
     active && styles.activeOption,
     isDisabled && mode !== 4 && styles.optionDisabled,
-    semClass?.('option', []),
+    semClass?.('option'),
   );
 
   const handlePathChange = () => {

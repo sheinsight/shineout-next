@@ -24,7 +24,7 @@ const BreadcrumbItem = <Item = BreadcrumbDataType,>({dataItem, renderItem, jssSt
   }, [max, dataItem])
 
   const breadcrumbClasses = jssStyle?.breadcrumb?.() as BreadcrumbClasses;
-  const contentClass = classNames(breadcrumbClasses.content, isOverflow && breadcrumbClasses?.contentMaxWidth, semClass('content', []));
+  const contentClass = classNames(breadcrumbClasses.content, isOverflow && breadcrumbClasses?.contentMaxWidth, semClass('content'));
   const contentStyle = semStyle('content');
 
   const d = dataItem as BreadcrumbDataType;

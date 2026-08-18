@@ -125,7 +125,7 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     [treeStyle.virtual]: virtual,
     [treeStyle.sizeSmall]: props.size === 'small',
     [treeStyle.sizeLarge]: props.size === 'large',
-  }, semClass('root', []));
+  }, semClass('root'));
 
   const getDragImageSelector = (data?: DataItem) => {
     if (util.isFunc(dragImageSelector)) return dragImageSelector(data);

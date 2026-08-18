@@ -72,7 +72,7 @@ const Rate = (props0: RateProps) => {
           isChecked && rateClasses?.itemChecked,
           props.disabled && rateClasses?.itemDisabled,
           showAnimation && rateClasses?.itemAnimation,
-          semClass('star', []),
+          semClass('star'),
         )}
         style={{
           fontSize: size,
@@ -134,7 +134,7 @@ const Rate = (props0: RateProps) => {
   const text = Array.isArray(props.text) && props.text[Math.ceil(value - 1)];
   return (
     <div
-      className={classNames(props.className, rateClasses?.rootClass, rateClasses?.wrapper, semClass('root', []))}
+      className={classNames(props.className, rateClasses?.rootClass, rateClasses?.wrapper, semClass('root'))}
       id={fieldId}
       style={props.style ? { ...props.style, ...semStyle('root') } : semStyle('root')}
       onMouseLeave={() => {
@@ -146,7 +146,7 @@ const Rate = (props0: RateProps) => {
         {Array.from({ length: max }).map((_, index) => {
           return renderIcon(index);
         })}
-        {text && <div className={classNames(rateClasses?.text, semClass('text', []))} style={semStyle('text')}>{text}</div>}
+        {text && <div className={classNames(rateClasses?.text, semClass('text'))} style={semStyle('text')}>{text}</div>}
       </div>
     </div>
   );

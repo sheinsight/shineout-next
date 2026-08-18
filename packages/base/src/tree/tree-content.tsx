@@ -61,7 +61,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
     contentStyle.content,
     util.isString(contentClassProp) && contentClassProp,
     util.isFunc(contentClassProp) && contentClassProp(data),
-    treeSemClass?.('content', []),
+    treeSemClass?.('content'),
   );
 
   const hasExpandIcons = expandIcons !== undefined;
@@ -162,7 +162,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
           dir={config.direction}
         >
           <span
-            className={classNames(contentStyle.icon, iconClass, treeSemClass?.('icon', []))}
+            className={classNames(contentStyle.icon, iconClass, treeSemClass?.('icon'))}
             onClick={handleNodeExpand}
             dir={config.direction}
             style={treeSemStyle?.('icon')}
@@ -181,7 +181,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
           dir={config.direction}
         >
           <span
-            className={classNames(contentStyle.icon, iconClass, treeSemClass?.('icon', []))}
+            className={classNames(contentStyle.icon, iconClass, treeSemClass?.('icon'))}
             onClick={handleNodeExpand}
             dir={config.direction}
             style={treeSemStyle?.('icon')}
@@ -213,7 +213,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
           dir={config.direction}
         >
           <span
-            className={classNames(contentStyle.icon, iconClass, treeSemClass?.('icon', []))}
+            className={classNames(contentStyle.icon, iconClass, treeSemClass?.('icon'))}
             dir={config.direction}
             style={treeSemStyle?.('icon')}
           >

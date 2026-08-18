@@ -59,7 +59,7 @@ const CollapseItem = (props: CollapseItemProps) => {
       jssStyle?.collapseItem.icon,
       jssStyle?.collapseItem.activeTransform,
       direction === 'right' && jssStyle?.collapseItem.iconRight,
-      semClass?.('icon', []),
+      semClass?.('icon'),
     );
     return (
       resolvedExpandIcon && (
@@ -70,7 +70,7 @@ const CollapseItem = (props: CollapseItemProps) => {
 
   const extraItem = () => {
     return (
-      extra && <div {...getExtraProps({ className: classNames(jssStyle?.collapseItem.extra, semClass?.('extra', [])) })} style={semStyle?.('extra')}>{extra}</div>
+      extra && <div {...getExtraProps({ className: classNames(jssStyle?.collapseItem.extra, semClass?.('extra')) })} style={semStyle?.('extra')}>{extra}</div>
     );
   };
 
@@ -88,7 +88,7 @@ const CollapseItem = (props: CollapseItemProps) => {
     jssStyle?.collapseItem.header,
     !showExpandIcon && jssStyle?.collapseItem.noIcon,
     triggerRegion !== 'icon' && jssStyle?.collapseItem.region,
-    semClass?.('header', []),
+    semClass?.('header'),
   );
 
   const collapseItemContentClassName = classNames(
@@ -105,7 +105,7 @@ const CollapseItem = (props: CollapseItemProps) => {
         duration='fast'
         className={collapseItemContentClassName}
       >
-        <div className={classNames(jssStyle?.collapseItem.contentMain, semClass?.('content', []))} style={{ ...contentStyle, ...semStyle?.('content') }}>
+        <div className={classNames(jssStyle?.collapseItem.contentMain, semClass?.('content'))} style={{ ...contentStyle, ...semStyle?.('content') }}>
           {children}
         </div>
       </AnimationList>
@@ -128,7 +128,7 @@ const CollapseItem = (props: CollapseItemProps) => {
             className: classNames(
               jssStyle?.collapseItem.title,
               triggerRegion === 'header' && jssStyle?.collapseItem.region,
-              semClass?.('title', []),
+              semClass?.('title'),
             ),
           })}
           style={semStyle?.('title')}

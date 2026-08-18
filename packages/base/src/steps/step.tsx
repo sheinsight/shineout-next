@@ -77,7 +77,7 @@ const Step = (props: StepPropsWidthContext) => {
     [styles.horizontalLabel]: labelPlacement === 'horizontal',
     [styles.verticalLabel]: labelPlacement === 'vertical',
     [styles.withDescription]: !!description,
-  }, semClass('step', []));
+  }, semClass('step'));
 
   const handleChange = (e: React.MouseEvent<HTMLElement>) => {
     if (isDisabled) return;

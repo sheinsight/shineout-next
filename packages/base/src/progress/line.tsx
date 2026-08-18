@@ -49,7 +49,7 @@ const Line = (props: ProgressProps) => {
     isInner && progressClasses?.lineInner,
     isInnerRight && progressClasses?.lineInnerRight,
     animation === false && progressClasses?.noAnimation,
-    semClass('root', []),
+    semClass('root'),
   );
 
   const bgStyle: React.CSSProperties = {
@@ -102,16 +102,16 @@ const Line = (props: ProgressProps) => {
   }
 
   const children = props.children ? (
-    <div className={classNames(progressClasses?.content, semClass('content', []))} style={semStyle('content')}>{props.children}</div>
+    <div className={classNames(progressClasses?.content, semClass('content'))} style={semStyle('content')}>{props.children}</div>
   ) : null;
 
   return (
     <div {...util.extractProps(props, 'mouse')} className={mc} style={{ ...props.style, ...semStyle('root') }}>
-      <div className={classNames(progressClasses?.lineBg, semClass('track', []))} style={bgStyle}>
+      <div className={classNames(progressClasses?.lineBg, semClass('track'))} style={bgStyle}>
         {success && successStyle && (
           <div className={progressClasses?.lineSuccess} style={successStyle} />
         )}
-        <div className={classNames(progressClasses?.lineFront, semClass('indicator', []))} style={mergedFrontStyle}>
+        <div className={classNames(progressClasses?.lineFront, semClass('indicator'))} style={mergedFrontStyle}>
           {isInner && children}
         </div>
       </div>
@@ -122,7 +122,7 @@ const Line = (props: ProgressProps) => {
       ) : null}
       {shape === 'line' && children}
       {!!props.icon && (
-        <div className={classNames(progressClasses?.icon, semClass('icon', []))} style={iconStyle}>
+        <div className={classNames(progressClasses?.icon, semClass('icon'))} style={iconStyle}>
           {type === 'info' && Icons.progress.InfoLine}
           {type === 'warning' && Icons.progress.WarningLine}
           {type === 'success' && Icons.progress.SuccessLine}

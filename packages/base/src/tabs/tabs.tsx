@@ -95,7 +95,7 @@ const Tabs = (props: TabsProps) => {
   const rootClass = classNames(tabsStyle.rootClass, tabsStyle.tabs, tabsClassName, {
     [tabsStyle.autoFill]: isVertical || autoFill,
     [tabsStyle.collapsed]: collapse,
-  }, semClass('root', []));
+  }, semClass('root'));
 
   const getRootProps = () => {
     return rest;
@@ -172,7 +172,7 @@ const Tabs = (props: TabsProps) => {
 
   const renderContent = () => {
     return (
-      <div ref={panelRef} className={classNames(tabsStyle.panelWrapper, semClass('panel', []))} style={{ ...panelStyle, ...semStyle('panel') }}>
+      <div ref={panelRef} className={classNames(tabsStyle.panelWrapper, semClass('panel'))} style={{ ...panelStyle, ...semStyle('panel') }}>
         {Children.toArray(children).map((child, index) => {
           const Child = child as React.ReactElement<TabsPanelProps>;
 

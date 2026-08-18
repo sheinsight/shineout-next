@@ -61,7 +61,7 @@ const Steps = (props: StepsProps) => {
     [styles.vertical]: direction === 'vertical',
     [styles.horizontal]: direction === 'horizontal',
     [styles.click]: onChange !== undefined,
-  }, semClass('root', []));
+  }, semClass('root'));
 
   const renderStep = () => {
     return Children.map(children, (child, index) => {

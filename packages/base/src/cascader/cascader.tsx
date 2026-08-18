@@ -248,7 +248,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     {
       [styles?.multiple]: multiple,
     },
-    semClass('root', []),
+    semClass('root'),
   );
 
   const getRenderItem = (data: DataItem, active?: boolean, id?: Value[0]) => {
@@ -573,7 +573,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
             styles?.wrapperPaddingBox,
             styles?.wrapperInnerTitleTop,
             styles?.wrapperInnerTitleBottom,
-            semClass('header', []),
+            semClass('header'),
           )}
           style={semStyle('header')}
           onClick={handleResultClick}
@@ -841,7 +841,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           <AnimationList
             onRef={popupRef}
             show={open}
-            className={classNames(styles?.pickerWrapper, open && styles?.pickerWrapperShow, props.popupClassName, semClass('popup', []))}
+            className={classNames(styles?.pickerWrapper, open && styles?.pickerWrapperShow, props.popupClassName, semClass('popup'))}
             display={'block'}
             type='scale-y'
             duration={'fast'}

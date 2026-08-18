@@ -360,7 +360,7 @@ const Modal = (props: ModalContentProps) => {
     const isEmptyTitle = !props.title && props.title !== 0;
 
     if (isEmptyTitle) {
-      const closeRoot = classNames(modalClasses?.headerClose, modalClasses?.emptyClose, semClass('close', []));
+      const closeRoot = classNames(modalClasses?.headerClose, modalClasses?.emptyClose, semClass('close'));
 
       return (
         <>
@@ -376,14 +376,14 @@ const Modal = (props: ModalContentProps) => {
 
     return (
       <div
-        className={classNames(modalClasses?.header, semClass('header', []))}
+        className={classNames(modalClasses?.header, semClass('header'))}
         onMouseDown={props.moveable && !props.fullScreen ? moveInfo.handleMouseDown : undefined}
         style={{ ...props.headerStyle, ...semStyle('header') }}
       >
         {renderIcon()}
         <div className={modalClasses?.headerTitle}>{props.title}</div>
         {showCloseIcon && (
-          <div className={classNames(modalClasses?.headerClose, semClass('close', []))} style={semStyle('close')} onClick={handleClose}>
+          <div className={classNames(modalClasses?.headerClose, semClass('close'))} style={semStyle('close')} onClick={handleClose}>
             {Icons.modal.Close}
           </div>
         )}
@@ -402,7 +402,7 @@ const Modal = (props: ModalContentProps) => {
         className={classNames(
           modalClasses?.body,
           props.type && !!AlertIconMap[props.type] && modalClasses?.bodyWithIcon,
-          semClass('body', []),
+          semClass('body'),
         )}
         style={bodyStyle}
       >
@@ -413,7 +413,7 @@ const Modal = (props: ModalContentProps) => {
 
   const renderFooter = () => {
     if (!props.footer) return null;
-    return <div className={classNames(modalClasses?.footer, semClass('footer', []))} style={{ ...props.footerStyle, ...semStyle('footer') }}>{props.footer}</div>;
+    return <div className={classNames(modalClasses?.footer, semClass('footer'))} style={{ ...props.footerStyle, ...semStyle('footer') }}>{props.footer}</div>;
   };
 
   const renderResize = () => {
@@ -529,14 +529,14 @@ const Modal = (props: ModalContentProps) => {
           props.position === 'right' && modalClasses?.wrapperDrawerRight,
           props.position === 'top' && modalClasses?.wrapperDrawerTop,
           props.position === 'bottom' && modalClasses?.wrapperDrawerBottom,
-          semClass('root', []),
+          semClass('root'),
         )}
         onAnimationEnd={handleAnimationEnd}
         style={{ background: props.maskBackground, zIndex: props.zIndex, display: !visible && !animation ? 'none' : undefined, ...semStyle('root') }}
         dir={globalConfig.direction}
       >
         <div
-          className={classNames(modalClasses?.mask, semClass('mask', []))}
+          className={classNames(modalClasses?.mask, semClass('mask'))}
           {...events}
           onMouseDown={handleMaskMouseDown}
           onMouseUp={handleMaskMouseUp}
@@ -546,7 +546,7 @@ const Modal = (props: ModalContentProps) => {
         >
           <div
             ref={panelRef}
-            className={classNames(modalClasses?.panel, props.className, semClass('container', []))}
+            className={classNames(modalClasses?.panel, props.className, semClass('container'))}
             style={{ ...panelStyle, ...semStyle('container') }}
           >
             {content}

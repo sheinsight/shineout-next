@@ -70,7 +70,7 @@ const Pagination = (props: PaginationProps) => {
     align === 'right' && paginationStyle?.right,
     size === 'small' && paginationStyle?.small,
     size === 'large' && paginationStyle?.large,
-    semClass('root', []),
+    semClass('root'),
   );
 
   const getRootProps = () => {

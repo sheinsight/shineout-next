@@ -34,7 +34,7 @@ const Badge = (props: BadgeProps) => {
 
   const isTextBadge = text !== undefined || (dot && children === undefined);
   const isStandalone = !children && !isTextBadge;
-  const rootClass = classNames(className, badgeStyle.rootClass, badgeStyle.badge, isTextBadge && badgeStyle.textBadge, isStandalone && badgeStyle.standalone, semClass('root', []));
+  const rootClass = classNames(className, badgeStyle.rootClass, badgeStyle.badge, isTextBadge && badgeStyle.textBadge, isStandalone && badgeStyle.standalone, semClass('root'));
   const isOverflowCount = overflowCount !== undefined && Number(count) > overflowCount;
 
   const renderCount = () => {
@@ -73,7 +73,7 @@ const Badge = (props: BadgeProps) => {
       countNode = renderCustomCount();
 
       return (
-        <sup style={{ ...style, background: color, ...semStyle('badge') }} className={classNames(badgeStyle.custom, semClass('badge', []))}>
+        <sup style={{ ...style, background: color, ...semStyle('badge') }} className={classNames(badgeStyle.custom, semClass('badge'))}>
           {countNode}
         </sup>
       );
@@ -90,7 +90,7 @@ const Badge = (props: BadgeProps) => {
             dot && {
               [badgeStyle[status]]: true,
             },
-          semClass('badge', []),
+          semClass('badge'),
         )}
       >
         {dot !== true && countNode}

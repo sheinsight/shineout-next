@@ -91,7 +91,7 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
     };
 
     return (
-      <div key={key} className={classNames(listClasses?.item, rowClass, semClass('item', []))} style={{ ...listStyle, ...semStyle('item') }}>
+      <div key={key} className={classNames(listClasses?.item, rowClass, semClass('item'))} style={{ ...listStyle, ...semStyle('item') }}>
         {shouldRenderCheckbox ? (
           <>
             <Checkbox
@@ -199,7 +199,7 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
   const renderFooter = () => {
     if (!props.footer) return null;
     return (
-      <div className={classNames(listClasses?.footer, semClass('footer', []))} style={semStyle('footer')}>
+      <div className={classNames(listClasses?.footer, semClass('footer'))} style={semStyle('footer')}>
         {typeof props.footer === 'function' ? props.footer() : props.footer}
       </div>
     );
@@ -267,7 +267,7 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
     props.size === 'small' && listClasses?.wrapperSmall,
     props.size === 'large' && listClasses?.wrapperLarge,
     props.striped && listClasses?.wrapperStriped,
-    semClass('root', []),
+    semClass('root'),
   );
   const wrapperStyle = { ...props.style, height: props.height, ...semStyle('root') };
 

@@ -117,7 +117,7 @@ const Group = <DataItem, Value>(props0: RadioGroupProps<DataItem, Value>) => {
     radioClasses?.group,
     !!block && radioClasses?.groupBlock,
     !!button && radioClasses?.groupButton,
-    semClass('group', []),
+    semClass('group'),
   );
 
   const Radios =

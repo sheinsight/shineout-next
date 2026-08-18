@@ -90,7 +90,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
       <span
         data-role='caret'
         key={'caret'}
-        className={classNames(dropdownClasses?.caret, !isSub && semClass('caret', []))}
+        className={classNames(dropdownClasses?.caret, !isSub && semClass('caret'))}
         style={!isSub ? semStyle('caret') : undefined}
         dir={config.direction}
       >
@@ -126,7 +126,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
             dropdownClasses?.item,
             !!disabled && dropdownClasses?.itemDisabled,
             !!open && dropdownClasses?.itemActive,
-            semClass('item', []),
+            semClass('item'),
           )}
           style={semStyle('item')}
           data-role='item'
@@ -143,7 +143,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
         className={classNames(
           dropdownClasses?.button,
           !placeholder && dropdownClasses?.splitButton,
-          semClass('button', []),
+          semClass('button'),
         )}
         style={semStyle('button')}
         mode={mode}
@@ -166,7 +166,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
       const renderPlaceholder = util.render(renderItem || 'content', d);
       const { children } = d;
       const group = d.group ? (
-        <div key={'group'} className={classNames(dropdownClasses?.optionGroup, semClass('group', []))} style={semStyle('group')}>
+        <div key={'group'} className={classNames(dropdownClasses?.optionGroup, semClass('group'))} style={semStyle('group')}>
           {d.group}
         </div>
       ) : null;
@@ -194,7 +194,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
           data={d}
           key={index}
           onClick={d.onClick || onClick}
-          itemClassName={classNames(dropdownClasses?.item, semClass('item', []))}
+          itemClassName={classNames(dropdownClasses?.item, semClass('item'))}
           itemStyle={semStyle('item')}
           renderItem={renderItem}
           direction={config.direction}
@@ -223,7 +223,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
         dropdownClasses?.rootClass,
         dropdownClasses?.wrapper,
         !isSub && open && dropdownClasses?.open,
-        !isSub && semClass('root', []),
+        !isSub && semClass('root'),
       )}
       style={!isSub ? { ...style, ...semStyle('root') } : style}
       data-position={position}
@@ -254,7 +254,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
             columns !== undefined && columns > 1 && dropdownClasses?.boxList,
             size === 'small' && dropdownClasses?.listSmall,
             size === 'large' && dropdownClasses?.listLarge,
-            !isSub && semClass('list', []),
+            !isSub && semClass('list'),
           )}
           style={{
             width: width,

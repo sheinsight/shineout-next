@@ -98,7 +98,7 @@ const Group = <DataItem, Value extends any[]>(props0: CheckboxGroupProps<DataIte
     className,
     checkboxStyle?.group,
     !!block && checkboxStyle?.groupBlock,
-    semClass('group', []),
+    semClass('group'),
   );
   if (props.data === undefined) {
     return (

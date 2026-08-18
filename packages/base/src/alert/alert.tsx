@@ -65,7 +65,7 @@ const Alert = (props: AlertProps) => {
     [alertStyle.pending]: dismiss === PENDING,
     [alertStyle.noBordered]: bordered === false,
     [alertStyle.noChildren]: !children,
-  }, semClass('root', []));
+  }, semClass('root'));
 
   const getRootProps = () => {
     return rest;
@@ -98,18 +98,18 @@ const Alert = (props: AlertProps) => {
       style.width = iconSize;
     }
     if (icon === true) {
-      return <AlertIcon jssStyle={props.jssStyle} style={style} type={props.type} className={classNames(iconClassName, semClass('icon', []))} />;
+      return <AlertIcon jssStyle={props.jssStyle} style={style} type={props.type} className={classNames(iconClassName, semClass('icon'))} />;
     }
 
     return (
-      <div className={classNames(alertStyle.icon, semClass('icon', []))} style={style}>
+      <div className={classNames(alertStyle.icon, semClass('icon'))} style={style}>
         {icon}
       </div>
     );
   };
 
   const renderTitle = () => {
-    return <div className={classNames(alertStyle.title, props.titleClassName, semClass('title', []))} style={{ ...titleStyle, ...semStyle('title') }}>{title}</div>;
+    return <div className={classNames(alertStyle.title, props.titleClassName, semClass('title'))} style={{ ...titleStyle, ...semStyle('title') }}>{title}</div>;
   };
 
   const renderClose = () => {
@@ -117,7 +117,7 @@ const Alert = (props: AlertProps) => {
       return React.cloneElement(closeItem, { onClick: handleClose } as React.Attributes);
     return (
       <div className={alertStyle.closeWrapper}>
-        <div className={classNames(alertStyle.close, semClass('close', []))} style={semStyle('close')} onClick={handleClose}>
+        <div className={classNames(alertStyle.close, semClass('close'))} style={semStyle('close')} onClick={handleClose}>
           {closeItem || Icons.alert.Close}
         </div>
       </div>
@@ -133,7 +133,7 @@ const Alert = (props: AlertProps) => {
         {icon && renderIcon()}
         <div className={alertStyle.content}>
           {renderTitle()}
-          <div className={classNames(alertStyle.text, semClass('content', []))} style={semStyle('content')}>{children}</div>
+          <div className={classNames(alertStyle.text, semClass('content'))} style={semStyle('content')}>{children}</div>
         </div>
 
         {getCloseable() && renderClose()}
@@ -145,7 +145,7 @@ const Alert = (props: AlertProps) => {
     <div className={rootClass} style={semStyle('root')} {...getRootProps()}>
       {icon && renderIcon()}
       <div className={alertStyle.content}>
-        <div className={classNames(alertStyle.text, semClass('content', []))} style={semStyle('content')}>{children}</div>
+        <div className={classNames(alertStyle.text, semClass('content'))} style={semStyle('content')}>{children}</div>
       </div>
       {getCloseable() && renderClose()}
     </div>

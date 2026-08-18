@@ -37,13 +37,13 @@ const Checkbox = (props: SimpleCheckboxProps) => {
     !!checked && checkboxStyle?.wrapperChecked,
     props.checked === 'indeterminate' && checkboxStyle?.wrapperIndeterminate,
     verticalAlign === 'top' && checkboxStyle?.wrapperTop,
-    semClass('root', []),
+    semClass('root'),
   );
 
   const indicatorClass = classNames(
     checkboxStyle?.indicatorWrapper,
     theme === 'dark' && checkboxStyle?.darkIndicatorWrapper,
-    semClass('indicator', []),
+    semClass('indicator'),
   );
 
   const inputProps = getInputProps();
@@ -79,7 +79,7 @@ const Checkbox = (props: SimpleCheckboxProps) => {
         </i>
       </span>
       {children !== undefined && children !== null && (
-        <span data-soui-role='desc' className={classNames(checkboxStyle?.desc, semClass('label', []))} style={semStyle('label')}>{children}</span>
+        <span data-soui-role='desc' className={classNames(checkboxStyle?.desc, semClass('label'))} style={semStyle('label')}>{children}</span>
       )}
       {typeof renderFooter === 'function' ? renderFooter(checked) : null}
     </div>

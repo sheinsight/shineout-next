@@ -128,7 +128,7 @@ const FilterList = <DataItem, Value extends KeygenResult[]>(
     if (loading) return renderLoading();
 
     return (
-      <div className={classNames(styles.list, semClass?.('list', []))} style={semStyle?.('list')}>
+      <div className={classNames(styles.list, semClass?.('list'))} style={semStyle?.('list')}>
         {virtual ? renderVirtualList() : renderSimpleList()}
       </div>
     );

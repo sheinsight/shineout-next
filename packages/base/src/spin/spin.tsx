@@ -92,7 +92,7 @@ const Spin = (props: SpinProps = {}) => {
     const n = name as keyof typeof Spins;
     if (Spins[n]) {
       const Comp = Spins[n];
-      const indicatorClass = semClass('indicator', []);
+      const indicatorClass = semClass('indicator');
       const indicatorStyleObj = semStyle('indicator');
       const mergedStyle = indicatorStyleObj ? { ...style, ...indicatorStyleObj } : style;
       const mergedClassName = isRoot
@@ -113,7 +113,7 @@ const Spin = (props: SpinProps = {}) => {
 
   const renderTip = () => {
     return (
-      <div className={classNames(tipClassName, spinStyle.tip, semClass('description', []))} style={{ color, ...semStyle('description') }}>
+      <div className={classNames(tipClassName, spinStyle.tip, semClass('description'))} style={{ color, ...semStyle('description') }}>
         {typeof tip === 'string' ? <span>{tip}</span> : tip}
       </div>
     );
@@ -128,7 +128,7 @@ const Spin = (props: SpinProps = {}) => {
         [spinStyle.horizontal]: mode === 'horizontal',
       },
       spinStyle.content,
-      isRoot && semClass('root', []),
+      isRoot && semClass('root'),
     );
 
     if (tip) {
@@ -144,10 +144,10 @@ const Spin = (props: SpinProps = {}) => {
   };
   const renderContainer = () => {
     return (
-      <div className={classNames(className, spinStyle.rootClass, spinStyle.container, semClass('root', []))} style={semStyle('root')}>
+      <div className={classNames(className, spinStyle.rootClass, spinStyle.container, semClass('root'))} style={semStyle('root')}>
         {children}
         {loading && (
-          <div className={classNames(spinStyle.loading, semClass('section', []))} style={semStyle('section')}>
+          <div className={classNames(spinStyle.loading, semClass('section'))} style={semStyle('section')}>
             {renderContent(false)}
           </div>
         )}

@@ -211,7 +211,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
 
   const renderItem = () => {
     const icon = util.isFunc(props.renderIcon) ? props.renderIcon(props.dataItem) : null;
-    const iconEl = icon ? <div className={classNames(classes?.titleIcon, semClass('icon', []))} style={semStyle('icon')}>{icon}</div> : null;
+    const iconEl = icon ? <div className={classNames(classes?.titleIcon, semClass('icon'))} style={semStyle('icon')}>{icon}</div> : null;
     const indent =
       props.mode === 'inline' && props.level ? (
         <div style={{ width: props.level * inlineIndent + (props.frontCaret ? 8 : 0), flexShrink: 0 }} />
@@ -226,7 +226,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
             classes?.expandFront,
             (isVertical || isSubHorizontal) && classes?.expandVertical,
             props.parentSelectable && classes?.expandHover,
-            semClass('expand', []),
+            semClass('expand'),
           )}
           onClick={handleExpandClick}
           dir={config.direction}
@@ -247,7 +247,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
       : undefined;
     let title: React.ReactNode = null;
     if (util.isLink(item)) {
-      const mergeClass = classNames(classes?.title, semClass('title', []), item.props && item.props.className);
+      const mergeClass = classNames(classes?.title, semClass('title'), item.props && item.props.className);
       title = cloneElement(item, {
         className: mergeClass,
         style: { ...item.props?.style, ...semStyle('title') },
@@ -262,7 +262,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
       });
     } else {
       const linkProps = {
-        className: classNames(classes?.title, semClass('title', [])),
+        className: classNames(classes?.title, semClass('title')),
         style: semStyle('title'),
         href: link,
       };
@@ -280,7 +280,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
       return (
         <div
           {...(expandAble ? customAttributes : undefined)}
-          className={classNames(classes?.itemContent, classes?.itemContentFront, semClass('itemContent', []))}
+          className={classNames(classes?.itemContent, classes?.itemContentFront, semClass('itemContent'))}
           style={semStyle('itemContent')}
           onClick={handleItemClick}
         >
@@ -291,7 +291,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
       return (
         <div
           {...(expandAble ? customAttributes : undefined)}
-          className={classNames(classes?.itemContent, classes?.itemContentBack, semClass('itemContent', []))}
+          className={classNames(classes?.itemContent, classes?.itemContentBack, semClass('itemContent'))}
           style={semStyle('itemContent')}
           onClick={handleItemClick}
         >
@@ -305,7 +305,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
                 classes?.expandBack,
                 (isVertical || isSubHorizontal) && classes?.expandVertical,
                 props.parentSelectable && classes?.expandHover,
-                semClass('expand', []),
+                semClass('expand'),
               )}
               dir={config.direction}
             >
@@ -327,7 +327,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
         shouldKeepOpen && classes?.itemClosing,
         isChecked && classes?.itemActive,
         expandAble && classes?.itemHasChildren,
-        semClass('item', []),
+        semClass('item'),
       )}
       style={semStyle('item')}
       onMouseEnter={handleMouseEnter}

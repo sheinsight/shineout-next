@@ -49,9 +49,9 @@ const Descriptions = (props: DescriptionsProps) => {
   const Header = () => {
     if (!title && !extra) return null;
     return (
-      <div className={classNames(jssStyle?.header, semClass('header', []))} style={semStyle('header')}>
-        {title && <div className={classNames(jssStyle?.title, semClass('title', []))} style={semStyle('title')}>{title}</div>}
-        {extra && <div className={classNames(jssStyle?.extra, semClass('extra', []))} style={semStyle('extra')}>{extra}</div>}
+      <div className={classNames(jssStyle?.header, semClass('header'))} style={semStyle('header')}>
+        {title && <div className={classNames(jssStyle?.title, semClass('title'))} style={semStyle('title')}>{title}</div>}
+        {extra && <div className={classNames(jssStyle?.extra, semClass('extra'))} style={semStyle('extra')}>{extra}</div>}
       </div>
     );
   };
@@ -75,7 +75,7 @@ const Descriptions = (props: DescriptionsProps) => {
     return (
       <td
         key={`${d.key || i}_${type}`}
-        className={classNames(tdClassName, semClass(semKey, []))}
+        className={classNames(tdClassName, semClass(semKey))}
         style={{ ...tdStyle, ...semStyle(semKey) }}
         {...colSpanProps}
       >
@@ -109,11 +109,11 @@ const Descriptions = (props: DescriptionsProps) => {
         return (
           <td key={_d.key || _i} {...getColSpan(_d)} className={jssStyle?.cell}>
             <div className={jssStyle?.item}>
-              <div className={classNames(jssStyle?.labelInline, semClass('label', []))} style={{ ..._d.itemLabelStyle, ...semStyle('label') }}>
+              <div className={classNames(jssStyle?.labelInline, semClass('label'))} style={{ ..._d.itemLabelStyle, ...semStyle('label') }}>
                 {_d?.label}
                 {colon}
               </div>
-              <div className={classNames(jssStyle?.valueInline, semClass('value', []))} style={{ ..._d.itemValueStyle, ...semStyle('value') }}>
+              <div className={classNames(jssStyle?.valueInline, semClass('value'))} style={{ ..._d.itemValueStyle, ...semStyle('value') }}>
                 {_d?.value}
               </div>
             </div>
@@ -134,7 +134,7 @@ const Descriptions = (props: DescriptionsProps) => {
     jssStyle?.wrapper,
     size === 'small' && jssStyle?.small,
     size === 'large' && jssStyle?.large,
-    semClass('root', []),
+    semClass('root'),
   );
   const bodyClassName = classNames(
     jssStyle?.body,
@@ -149,7 +149,7 @@ const Descriptions = (props: DescriptionsProps) => {
     <div className={rootClassName} style={{ ...style, ...semStyle('root') }}>
       <Header />
       <div className={bodyClassName}>
-        <table className={classNames(jssStyle?.table, semClass('table', []))} style={semStyle('table')} cellPadding={0} cellSpacing={0}>
+        <table className={classNames(jssStyle?.table, semClass('table'))} style={semStyle('table')} cellPadding={0} cellSpacing={0}>
           {layout === 'inlineHorizontal' && typeof column === 'number' && column > 1 && (
             <colgroup>
               {longestItem?.map((_, index, arr) => (

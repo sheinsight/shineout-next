@@ -65,7 +65,7 @@ const Circle = (props: ProgressProps) => {
     type === 'warning' && progressClasses?.wrapperWarning,
     type === 'danger' && progressClasses?.wrapperDanger,
     animation === false && progressClasses?.noAnimation,
-    semClass('root', []),
+    semClass('root'),
   );
 
   // Semantic styles for track and indicator SVG circles
@@ -94,7 +94,7 @@ const Circle = (props: ProgressProps) => {
           </defs>
         ) : null}
         <circle
-          className={classNames(progressClasses?.circleBg, semClass('track', []))}
+          className={classNames(progressClasses?.circleBg, semClass('track'))}
           cx={cx}
           cy={cy}
           r={r}
@@ -103,7 +103,7 @@ const Circle = (props: ProgressProps) => {
           style={{ stroke: props.background, ...trackSemStyle }}
         />
         <circle
-          className={classNames(progressClasses?.circleFront, semClass('indicator', []))}
+          className={classNames(progressClasses?.circleFront, semClass('indicator'))}
           cx={cx}
           cy={cy}
           r={r}
@@ -128,10 +128,10 @@ const Circle = (props: ProgressProps) => {
         )}
       </svg>
       {!showIcon && props.children && (
-        <div className={classNames(progressClasses?.content, semClass('content', []))} style={semStyle('content')}>{props.children}</div>
+        <div className={classNames(progressClasses?.content, semClass('content'))} style={semStyle('content')}>{props.children}</div>
       )}
       {showIcon && (
-        <div className={classNames(progressClasses?.icon, semClass('icon', []))} style={iconStyle}>
+        <div className={classNames(progressClasses?.icon, semClass('icon'))} style={iconStyle}>
           {type === 'info' && Icons.progress.InfoCircle}
           {type === 'warning' && Icons.progress.WarningCircle}
           {type === 'success' && Icons.progress.SuccessCircle}

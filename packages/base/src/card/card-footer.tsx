@@ -14,7 +14,7 @@ const CardFooter = (props: CardHeaderProps) => {
     align === 'center' && cardClasses?.center,
     align === 'right' && cardClasses?.right,
     cardClasses?.footer,
-    semClass?.('footer', []),
+    semClass?.('footer'),
   );
 
   return (

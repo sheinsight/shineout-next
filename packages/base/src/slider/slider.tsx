@@ -86,7 +86,7 @@ const Slider = <Value extends number | number[]>(props0: SliderProps<Value>) => 
             position === 0 ? sliderClasses?.indicatorStart : sliderClasses?.indicatorEnd,
             dragIndex === position && sliderClasses?.indicatorActive,
             tipType === 'hover' && sliderClasses?.indicatorHover,
-            semClass('indicator', []),
+            semClass('indicator'),
           )}
           style={semStyle('indicator')}
           dir={config.direction}
@@ -133,7 +133,7 @@ const Slider = <Value extends number | number[]>(props0: SliderProps<Value>) => 
         isWholeDisabled() && sliderClasses?.disabled,
         props.vertical && sliderClasses?.vertical,
         props.className,
-        semClass('root', []),
+        semClass('root'),
       )}
       style={{
         ...verticalStyle,
@@ -142,7 +142,7 @@ const Slider = <Value extends number | number[]>(props0: SliderProps<Value>) => 
       }}
     >
       <div
-        className={classNames(sliderClasses?.track, semClass('track', []))}
+        className={classNames(sliderClasses?.track, semClass('track'))}
         style={semStyle('track')}
         ref={trackRef}
         onClick={shouldDisableTrackClick() ? undefined : func.handleTrackClick}
@@ -154,7 +154,7 @@ const Slider = <Value extends number | number[]>(props0: SliderProps<Value>) => 
         </div>
       </div>
       {props.formatScale === false ? null : (
-        <div className={classNames(sliderClasses?.scaleWrapper, semClass('scale', []))} style={semStyle('scale')}>
+        <div className={classNames(sliderClasses?.scaleWrapper, semClass('scale'))} style={semStyle('scale')}>
           {scale?.map((item, index) => (
             <div key={index} className={classNames(sliderClasses?.scale)}>
               <div key={index} className={classNames(sliderClasses?.label)} dir={config.direction}>

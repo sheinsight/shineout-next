@@ -84,7 +84,7 @@ const PaginationButtons = (props: PaginationButtonsProps) => {
       size,
       jssStyle,
       disabled,
-      className: semClass('item', []),
+      className: semClass('item'),
       style: semStyle('item'),
     };
   };

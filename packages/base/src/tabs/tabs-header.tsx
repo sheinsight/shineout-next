@@ -55,7 +55,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
 
   const headerStyle = jssStyle?.tabs?.() || ({} as TabsClasses);
 
-  const headerWrapperClass = classNames(headerStyle.headerWrapper, {}, semClass('header', []));
+  const headerWrapperClass = classNames(headerStyle.headerWrapper, {}, semClass('header'));
 
   const buttonStyle = jssStyle?.button || ({} as ButtonClasses);
   const buttonGroupStyle = jssStyle?.buttonGroup;
@@ -215,14 +215,14 @@ const TabsHeader = (props: TabsHeaderProps) => {
           transform: 'translateX(-50%)',
         };
 
-    return <div className={classNames(headerStyle.headerScrollBar, semClass('ink', []))} style={{ ...scrollBarStyle, ...semStyle('ink') }}></div>;
+    return <div className={classNames(headerStyle.headerScrollBar, semClass('ink'))} style={{ ...scrollBarStyle, ...semStyle('ink') }}></div>;
   };
 
   const renderTab = () => {
     const headerClass = classNames(headerStyle.header);
-    const tabSemClass = semClass('tab', []);
+    const tabSemClass = semClass('tab');
     const tabSemStyle = semStyle('tab');
-    const innerSemClass = semClass('inner', []);
+    const innerSemClass = semClass('inner');
     const innerSemStyle = semStyle('inner');
     return (
       <div ref={headerRef} className={headerClass}>
@@ -276,13 +276,13 @@ const TabsHeader = (props: TabsHeaderProps) => {
   };
 
   const renderExtra = () => {
-    return <div className={classNames(headerStyle.extra, semClass('extra', []))} style={semStyle('extra')}>{extra}</div>;
+    return <div className={classNames(headerStyle.extra, semClass('extra'))} style={semStyle('extra')}>{extra}</div>;
   };
 
   const renderPrevButton = () => {
     return (
       <div
-        className={classNames(headerStyle.prev, semClass('prev', []))}
+        className={classNames(headerStyle.prev, semClass('prev'))}
         {...getDataProps({ state: atStart ? 'disabled' : '' })}
         onClick={handlePrev}
         dir={config.direction}
@@ -300,7 +300,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
   const renderNextButton = () => {
     return (
       <div
-        className={classNames(headerStyle.next, semClass('next', []))}
+        className={classNames(headerStyle.next, semClass('next'))}
         {...getDataProps({ state: atEnd ? 'disabled' : '' })}
         onClick={handleNext}
         dir={config.direction}
@@ -317,7 +317,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
 
   const renderCollapsibleButton = () => {
     return (
-      <div className={classNames(headerStyle.collapsible, semClass('collapsible', []))} style={semStyle('collapsible')} onClick={onCollapsible}>
+      <div className={classNames(headerStyle.collapsible, semClass('collapsible'))} style={semStyle('collapsible')} onClick={onCollapsible}>
         {Icon.tabs.CollapseArrow}
       </div>
     );

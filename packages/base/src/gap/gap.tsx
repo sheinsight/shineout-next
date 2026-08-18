@@ -51,8 +51,8 @@ const Gap = (props: GapProps) => {
   const mergedItemStyle = itemSemStyle ? { ...itemStyle, ...itemSemStyle } : itemStyle;
 
   return (
-    <div className={classNames(className, styles?.rootClass, styles?.wrapper, semClass('root', []))} style={{ ...extendStyle, ...style, ...semStyle('root') }}>
-      {React.Children.map(children, (child) => child && <div className={classNames(styles?.item, semClass('item', []))} style={mergedItemStyle}>{child}</div>)}
+    <div className={classNames(className, styles?.rootClass, styles?.wrapper, semClass('root'))} style={{ ...extendStyle, ...style, ...semStyle('root') }}>
+      {React.Children.map(children, (child) => child && <div className={classNames(styles?.item, semClass('item'))} style={mergedItemStyle}>{child}</div>)}
     </div>
   );
 };

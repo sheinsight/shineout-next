@@ -50,19 +50,19 @@ const Carousel = (props: CarouselProps) => {
     direction === 'forward' && carouselClasses?.directionForward,
     direction === 'backward' && carouselClasses?.directionBackward,
     direction === 'stop' && carouselClasses?.directionStop,
-    semClass('root', []),
+    semClass('root'),
   );
 
   const renderItems = () => {
     return (
-      <div className={classNames(carouselClasses?.slider, semClass('slider', []))} style={{ height: props.style?.height, ...semStyle('slider') }}>
+      <div className={classNames(carouselClasses?.slider, semClass('slider'))} style={{ height: props.style?.height, ...semStyle('slider') }}>
         {React.Children.map(props.children, (child, index) => {
           const itemClasses = classNames(
             carouselClasses?.item,
             index === current && carouselClasses?.itemCurrent,
             index === pre && pre !== current && carouselClasses?.itemPre,
             itemClassName,
-            semClass('item', []),
+            semClass('item'),
           );
           return <div className={itemClasses} style={semStyle('item')}>{child}</div>;
         })}
@@ -96,7 +96,7 @@ const Carousel = (props: CarouselProps) => {
         )}
       >
         <div
-          className={classNames(carouselClasses?.arrowLeft, carouselClasses?.arrowItem, semClass('arrow', []))}
+          className={classNames(carouselClasses?.arrowLeft, carouselClasses?.arrowItem, semClass('arrow'))}
           key={'left'}
           onClick={handlePrev}
           style={semStyle('arrow')}
@@ -104,7 +104,7 @@ const Carousel = (props: CarouselProps) => {
           {Icons.carousel.Backward}
         </div>
         <div
-          className={classNames(carouselClasses?.arrowRight, carouselClasses?.arrowItem, semClass('arrow', []))}
+          className={classNames(carouselClasses?.arrowRight, carouselClasses?.arrowItem, semClass('arrow'))}
           key={'right'}
           onClick={handleNext}
           style={semStyle('arrow')}
@@ -176,7 +176,7 @@ const Carousel = (props: CarouselProps) => {
           indicatorType === 'number' && carouselClasses?.indicatorTypeNumber,
           indicatorType === 'line' && carouselClasses?.indicatorTypeLine,
           indicatorType === 'bar' && carouselClasses?.indicatorTypeBar,
-          semClass('indicator', []),
+          semClass('indicator'),
         )}
         style={semStyle('indicator')}
       >
