@@ -38,6 +38,7 @@ import type { CheckboxSemanticKey } from '../checkbox/checkbox.type';
 import type { RadioSemanticKey } from '../radio/radio.type';
 import type { RateSemanticKey } from '../rate/rate.type';
 import type { SliderSemanticKey } from '../slider/slider.type';
+import type { SwitchSemanticKey } from '../switch/switch.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -630,6 +631,21 @@ type SliderConfig = {
   styles?: SemanticStyles<SliderSemanticKey>;
 }
 
+type SwitchConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Switch (root / indicator / content).
+   * @cn Switch 全局 Semantic DOM 类名（root / indicator / content）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<SwitchSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Switch (root / indicator / content).
+   * @cn Switch 全局 Semantic DOM 样式（root / indicator / content）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<SwitchSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -836,6 +852,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   slider?: SliderConfig;
+  /**
+   * @en Global configuration for Switch component
+   * @cn Switch组件的全局配置
+   * @version 3.10.0
+   */
+  switch?: SwitchConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -883,6 +905,7 @@ export const defaultConfig: ConfigOption = {
   radio: {},
   rate: {},
   slider: {},
+  switch: {},
   direction: 'ltr',
   popupContainer: null,
 };

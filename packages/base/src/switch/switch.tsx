@@ -1,20 +1,27 @@
 import { useCheck, useInputAble, util } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React, { useContext } from 'react';
-import { SwitchProps } from './switch.type';
+import { SwitchProps, SwitchSemanticKey } from './switch.type';
 import { useConfig } from '../config';
 import Icons from '../icons';
 import useWithFormConfig from '../common/use-with-form-config';
 import { FormFieldContext } from '../form/form-field-context';
+import { useSemantic } from '../common/use-semantic';
 
 const Switch = (props0: SwitchProps) => {
   const props = useWithFormConfig(props0);
-  const { jssStyle, content, size, loading, className, style, ...rest } = props;
+  const { jssStyle, content, size, loading, className, style, classNames: classNamesProp, styles: stylesProp, ...rest } = props;
   const mouseEvents = util.extractProps(rest, 'mouse');
   const config = useConfig();
   const { fieldId } = useContext(FormFieldContext);
   const switchClasses = jssStyle?.switch?.();
   const disabled = props.disabled || props.loading;
+
+  const [semClass, semStyle] = useSemantic<SwitchSemanticKey>(
+    classNamesProp,
+    stylesProp,
+    config.switch,
+  );
 
   const { value, onChange } = useInputAble({
     value: props.value,
@@ -49,21 +56,22 @@ const Switch = (props0: SwitchProps) => {
     disabled && switchClasses?.wrapperDisabled,
     size === 'small' && switchClasses?.wrapperSmall,
     size === 'large' && switchClasses?.wrapperLarge,
+    semClass('root'),
   );
 
   const rootProps = {
     ...mouseEvents,
-    ...getRootProps({ className: rootClassName, style }),
+    ...getRootProps({ className: rootClassName, style: style ? { ...style, ...semStyle('root') } : semStyle('root') }),
   };
   const inputProps = getInputProps();
 
   return (
     <button type={'button'} role={'switch'} id={fieldId} {...rootProps}>
       <input {...inputProps} type={'checkbox'} />
-      <div className={switchClasses?.indicator} dir={config.direction}>
+      <div className={classNames(switchClasses?.indicator, semClass('indicator'))} style={semStyle('indicator')} dir={config.direction}>
         {loading ? <div className={switchClasses?.loading}>{Icons.switch.Loading}</div> : null}
       </div>
-      <div className={switchClasses?.content}>
+      <div className={classNames(switchClasses?.content, semClass('content'))} style={semStyle('content')}>
         <div className={switchClasses?.textPadding}>
           {checked ? checkedContent : unCheckedContent}
         </div>
