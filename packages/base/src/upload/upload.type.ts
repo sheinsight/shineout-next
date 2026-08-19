@@ -5,9 +5,11 @@ import { SpinClasses } from '../spin/spin.type';
 import { PopoverConfirmProps } from '../popover';
 import { PopoverJssStyle } from '../popover/popover.type';
 import { ImageJssStyleType } from '../image/image.type';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
 
 export type { UploadOptions } from '@sheinx/hooks';
 
+export type UploadSemanticKey = 'root' | 'handler' | 'item';
 export interface UploadClasses {
   rootClass: string;
   wrapper: string;
@@ -105,6 +107,18 @@ export interface UploadProps<T>
    * @cn 组件样式类
    */
   jssStyle?: UploadJssStyleType;
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<UploadSemanticKey>;
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<UploadSemanticKey>;
   /**
    * @en show upload list
    * @cn 是否展示上传列表

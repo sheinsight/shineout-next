@@ -42,6 +42,7 @@ import type { SwitchSemanticKey } from '../switch/switch.type';
 import type { TextareaSemanticKey } from '../textarea/textarea.type';
 import type { TransferSemanticKey } from '../transfer/transfer.type';
 import type { TreeSelectSemanticKey } from '../tree-select/tree-select.type';
+import type { UploadSemanticKey } from '../upload/upload.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -694,6 +695,21 @@ type TreeSelectConfig = {
   styles?: SemanticStyles<TreeSelectSemanticKey>;
 }
 
+type UploadConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Upload (root / handler / item).
+   * @cn Upload 全局 Semantic DOM 类名（root / handler / item）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<UploadSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Upload (root / handler / item).
+   * @cn Upload 全局 Semantic DOM 样式（root / handler / item）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<UploadSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -924,6 +940,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   treeSelect?: TreeSelectConfig;
+  /**
+   * @en Global configuration for Upload component
+   * @cn Upload组件的全局配置
+   * @version 3.10.0
+   */
+  upload?: UploadConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -975,6 +997,7 @@ export const defaultConfig: ConfigOption = {
   textarea: {},
   transfer: {},
   treeSelect: {},
+  upload: {},
   direction: 'ltr',
   popupContainer: null,
 };

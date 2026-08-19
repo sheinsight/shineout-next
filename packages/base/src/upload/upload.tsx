@@ -1,6 +1,6 @@
 import { getDataset, useInputAble, usePersistFn, useUpload, util } from '@sheinx/hooks';
 import React, { useContext, useEffect } from 'react';
-import { UploadProps } from './upload.type';
+import { UploadProps, UploadSemanticKey } from './upload.type';
 import Drop from './drop';
 import classNames from 'classnames';
 import Result from './result';
@@ -10,6 +10,7 @@ import icons from '../icons';
 import { produce } from 'immer';
 import useWithFormConfig from '../common/use-with-form-config';
 import { FormFieldContext } from '../form/form-field-context';
+import { useSemantic } from '../common/use-semantic';
 
 const Upload = <T,>(props0: UploadProps<T>) => {
   const props = useWithFormConfig(props0);
@@ -24,8 +25,15 @@ const Upload = <T,>(props0: UploadProps<T>) => {
     hideHandler = false,
   } = props;
 
-  const { locale } = useConfig();
+  const config = useConfig();
+  const { locale } = config;
   const uploadClasses = props.jssStyle?.upload?.();
+
+  const [semClass, semStyle] = useSemantic<UploadSemanticKey>(
+    props.classNames,
+    props.styles,
+    config.upload,
+  );
   const imageStyle = {
     ...props.imageStyle,
     width: props.imageStyle?.width || 80,
@@ -112,8 +120,9 @@ const Upload = <T,>(props0: UploadProps<T>) => {
         <span
           className={classNames(
             listType === 'image' ? uploadClasses?.imageHandler : uploadClasses?.handler,
+            semClass('handler'),
           )}
-          style={listType === 'image' ? imageStyle : undefined}
+          style={listType === 'image' ? { ...imageStyle, ...semStyle('handler') } : semStyle('handler')}
           {...wrapperProps}
           role='button'
         >
@@ -142,6 +151,8 @@ const Upload = <T,>(props0: UploadProps<T>) => {
     jssStyle: props.jssStyle,
     imageStyle,
     onPreview: props.onPreview,
+    semClass,
+    semStyle,
   };
 
   const renderFile = () => {
@@ -238,7 +249,7 @@ const Upload = <T,>(props0: UploadProps<T>) => {
   return (
     <div
       id={fieldId}
-      style={props.style}
+      style={{ ...props.style, ...semStyle('root') }}
       className={classNames(
         uploadClasses?.rootClass,
         uploadClasses?.wrapper,
@@ -246,6 +257,7 @@ const Upload = <T,>(props0: UploadProps<T>) => {
         drop && uploadClasses?.wrapperDrop,
         props.disabled && uploadClasses?.wrapperDisabled,
         props.className,
+        semClass('root'),
       )}
       {...getDataset(props)}
     >
