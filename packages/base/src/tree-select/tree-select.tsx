@@ -12,7 +12,7 @@ import {
   getDataset,
 } from '@sheinx/hooks';
 import classNames from 'classnames';
-import { TreeSelectProps, ResultItem } from './tree-select.type';
+import { TreeSelectProps, ResultItem, TreeSelectSemanticKey } from './tree-select.type';
 import { TreeSelectClasses } from './tree-select.type';
 import { AbsoluteList } from '../absolute-list';
 import useInnerTitle from '../common/use-inner-title';
@@ -25,6 +25,7 @@ import useWithFormConfig from '../common/use-with-form-config';
 import useTip from '../common/use-tip';
 import { getLocale, useConfig } from '../config';
 import { FormFieldContext } from '../form/form-field-context';
+import { useSemantic } from '../common/use-semantic';
 
 export type TreeSelectValueType = KeygenResult | KeygenResult[];
 
@@ -36,7 +37,8 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   props0: TreeSelectProps<DataItem, Value>,
 ) => {
   const props = useWithFormConfig(props0);
-  const { locale, direction } = useConfig();
+  const config = useConfig();
+  const { locale, direction } = config;
 
   const {
     jssStyle,
@@ -97,9 +99,17 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     checkOnFiltered,
     renderOptionList,
     sortBySelect,
+    classNames: classNamesProp,
+    styles: stylesProp,
   } = props;
   const styles = jssStyle?.treeSelect?.() as TreeSelectClasses;
   const rootStyle: React.CSSProperties = Object.assign({ width }, style);
+
+  const [semClass, semStyle] = useSemantic<TreeSelectSemanticKey>(
+    classNamesProp,
+    stylesProp,
+    config.treeSelect,
+  );
   const showInput = util.isFunc(props.onAdvancedFilter || onFilterProp);
 
   const disabled = util.isOptionalDisabled<DataItem>(disabledProp)
@@ -269,6 +279,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     {
       [styles?.multiple]: multiple,
     },
+    semClass('root'),
   );
 
   const getRenderItem = (
@@ -448,11 +459,11 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     }
 
     if (isDisabled) {
-      return classNames(styles.optionDisabled, contentClass);
+      return classNames(styles.optionDisabled, contentClass, semClass('option'));
     }
 
-    const activeClassName = classNames(styles.optionActive, contentClass);
-    const inactiveClassName = classNames(contentClass);
+    const activeClassName = classNames(styles.optionActive, contentClass, semClass('option'));
+    const inactiveClassName = classNames(contentClass, semClass('option'));
 
     if (multiple) {
       return isCheck ? activeClassName : inactiveClassName;
@@ -618,7 +629,9 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
             styles?.wrapperPaddingBox,
             styles?.wrapperInnerTitleTop,
             styles?.wrapperInnerTitleBottom,
+            semClass('header'),
           )}
+          style={semStyle('header')}
           onClick={handleResultClick}
         >
           {renderInnerTitle(result)}
@@ -684,7 +697,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     }
 
     const tree = (
-      <div className={classNames(styles.tree, styles.treeWrapper)} style={style}>
+      <div className={classNames(styles.tree, styles.treeWrapper, semClass('list'))} style={{ ...style, ...semStyle('list') }}>
         <Tree
           rootStyle={rootStyle}
           jssStyle={jssStyle}
@@ -746,7 +759,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
         {...util.getDataAttribute({ ['input-border']: 'true' })}
         {...getDataset(props)}
         className={rootClass}
-        style={rootStyle}
+        style={{ ...rootStyle, ...semStyle('root') }}
         onBlur={handleBlur}
         onFocus={handleFocus}
         onKeyDown={handleKeyDown}
@@ -769,10 +782,11 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
             <AnimationList
               onRef={popupRef}
               show={open}
-              className={classNames(styles?.pickerWrapper, props.popupclassName)}
+              className={classNames(styles?.pickerWrapper, props.popupclassName, semClass('popup'))}
               display={'block'}
               type='scale-y'
               duration={'fast'}
+              style={semStyle('popup')}
             >
               {renderList()}
             </AnimationList>

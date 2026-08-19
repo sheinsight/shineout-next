@@ -41,6 +41,7 @@ import type { SliderSemanticKey } from '../slider/slider.type';
 import type { SwitchSemanticKey } from '../switch/switch.type';
 import type { TextareaSemanticKey } from '../textarea/textarea.type';
 import type { TransferSemanticKey } from '../transfer/transfer.type';
+import type { TreeSelectSemanticKey } from '../tree-select/tree-select.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -678,6 +679,21 @@ type TransferConfig = {
   styles?: SemanticStyles<TransferSemanticKey>;
 }
 
+type TreeSelectConfig = {
+  /**
+   * @en Global Semantic DOM classNames for TreeSelect (root / header / popup / list / option).
+   * @cn TreeSelect 全局 Semantic DOM 类名（root / header / popup / list / option）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<TreeSelectSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for TreeSelect (root / header / popup / list / option).
+   * @cn TreeSelect 全局 Semantic DOM 样式（root / header / popup / list / option）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<TreeSelectSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -902,6 +918,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   transfer?: TransferConfig;
+  /**
+   * @en Global configuration for TreeSelect component
+   * @cn TreeSelect组件的全局配置
+   * @version 3.10.0
+   */
+  treeSelect?: TreeSelectConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -952,6 +974,7 @@ export const defaultConfig: ConfigOption = {
   switch: {},
   textarea: {},
   transfer: {},
+  treeSelect: {},
   direction: 'ltr',
   popupContainer: null,
 };

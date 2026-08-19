@@ -86,8 +86,8 @@ const Semantic: React.FC<SemanticTabProps> = ({ schema, name }) => {
     return map;
   }, [schema.keys]);
 
-  // 组件名 → setConfig 字段
-  const configKey = name.toLowerCase();
+  // 组件名 → setConfig 字段（PascalCase → camelCase）
+  const configKey = name.charAt(0).toLowerCase() + name.slice(1);
 
   // 注入 mark class（离开恢复）
   useEffect(() => {
