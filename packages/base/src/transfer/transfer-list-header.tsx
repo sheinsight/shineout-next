@@ -8,11 +8,11 @@ import Icons from '../icons';
 const TransferListHeader = <DataItem, Value extends KeygenResult[]>(
   props: TransferListHeaderProps<DataItem, Value>,
 ) => {
-  const { jssStyle, size, value, data, listType, simple, loading, reset, datum, listDatum, title } =
+  const { jssStyle, size, value, data, listType, simple, loading, reset, datum, listDatum, title, semClass, semStyle } =
     props;
 
   const styles = jssStyle?.transfer?.() || ({} as TransferClasses);
-  const rootClass = classNames(styles.header);
+  const rootClass = classNames(styles.header, semClass?.('header'));
 
   const getChecked = () => {
     if (value.length === 0) {
@@ -118,7 +118,7 @@ const TransferListHeader = <DataItem, Value extends KeygenResult[]>(
   };
 
   return (
-    <div className={rootClass}>
+    <div className={rootClass} style={semStyle?.('header')}>
       {renderCheckbox()}
       {renderTitle()}
     </div>

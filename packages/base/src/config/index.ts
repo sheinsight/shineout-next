@@ -40,6 +40,7 @@ import type { RateSemanticKey } from '../rate/rate.type';
 import type { SliderSemanticKey } from '../slider/slider.type';
 import type { SwitchSemanticKey } from '../switch/switch.type';
 import type { TextareaSemanticKey } from '../textarea/textarea.type';
+import type { TransferSemanticKey } from '../transfer/transfer.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -662,6 +663,21 @@ type TextareaConfig = {
   styles?: SemanticStyles<TextareaSemanticKey>;
 }
 
+type TransferConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Transfer (root / header / list / item / operations).
+   * @cn Transfer 全局 Semantic DOM 类名（root / header / list / item / operations）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<TransferSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Transfer (root / header / list / item / operations).
+   * @cn Transfer 全局 Semantic DOM 样式（root / header / list / item / operations）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<TransferSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -880,6 +896,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   textarea?: TextareaConfig;
+  /**
+   * @en Global configuration for Transfer component
+   * @cn Transfer组件的全局配置
+   * @version 3.10.0
+   */
+  transfer?: TransferConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -929,6 +951,7 @@ export const defaultConfig: ConfigOption = {
   slider: {},
   switch: {},
   textarea: {},
+  transfer: {},
   direction: 'ltr',
   popupContainer: null,
 };
