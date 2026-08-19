@@ -1,10 +1,11 @@
 import { getDataset, useKeyEvent, usePersistFn, useTextarea, util } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React, { KeyboardEvent, useContext, useEffect } from 'react';
-import { SimpleTextareaProps } from './textarea.type';
+import { SimpleTextareaProps, TextareaSemanticKey } from './textarea.type';
 import { FormFieldContext } from '../form/form-field-context';
 import Icons from '../icons';
 import { useConfig } from '../config';
+import { useSemantic } from '../common/use-semantic';
 
 const Textarea = (props: SimpleTextareaProps) => {
   const {
@@ -25,10 +26,18 @@ const Textarea = (props: SimpleTextareaProps) => {
     limit,
     clearable,
     showClear,
+    classNames: classNamesProp,
+    styles: stylesProp,
     ...rest
   } = props;
   const config = useConfig();
   const textareaClasses = jssStyle?.textarea?.();
+
+  const [semClass, semStyle] = useSemantic<TextareaSemanticKey>(
+    classNamesProp,
+    stylesProp,
+    config.textarea,
+  );
   const { getRootProps, getTextAreaProps, focused, disabled } = useTextarea({
     ...rest,
   });
@@ -48,6 +57,7 @@ const Textarea = (props: SimpleTextareaProps) => {
     !!underline && textareaClasses?.wrapperUnderline,
     !border && textareaClasses?.wrapperNoBorder,
     showClearFromProp && textareaClasses?.wrapperShowClear,
+    semClass('root'),
   );
 
   const keyHandler = useKeyEvent({
@@ -67,8 +77,10 @@ const Textarea = (props: SimpleTextareaProps) => {
       textareaClasses?.wrapperInnerTitleBottom,
       textareaClasses?.textarea,
       (!!resize || autosize) && textareaClasses?.resize,
+      semClass('textarea'),
     ),
     onKeyUp,
+    style: semStyle('textarea'),
   });
 
   useEffect(() => {
@@ -114,7 +126,7 @@ const Textarea = (props: SimpleTextareaProps) => {
       {...getDataset(props)}
       {...getRootProps({
         className: rootClass,
-        style,
+        style: style ? { ...style, ...semStyle('root') } : semStyle('root'),
       })}
       dir={config.direction}
     >

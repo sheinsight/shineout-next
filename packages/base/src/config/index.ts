@@ -39,6 +39,7 @@ import type { RadioSemanticKey } from '../radio/radio.type';
 import type { RateSemanticKey } from '../rate/rate.type';
 import type { SliderSemanticKey } from '../slider/slider.type';
 import type { SwitchSemanticKey } from '../switch/switch.type';
+import type { TextareaSemanticKey } from '../textarea/textarea.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -646,6 +647,21 @@ type SwitchConfig = {
   styles?: SemanticStyles<SwitchSemanticKey>;
 }
 
+type TextareaConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Textarea (root / textarea).
+   * @cn Textarea 全局 Semantic DOM 类名（root / textarea）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<TextareaSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Textarea (root / textarea).
+   * @cn Textarea 全局 Semantic DOM 样式（root / textarea）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<TextareaSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -858,6 +874,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   switch?: SwitchConfig;
+  /**
+   * @en Global configuration for Textarea component
+   * @cn Textarea组件的全局配置
+   * @version 3.10.0
+   */
+  textarea?: TextareaConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -906,6 +928,7 @@ export const defaultConfig: ConfigOption = {
   rate: {},
   slider: {},
   switch: {},
+  textarea: {},
   direction: 'ltr',
   popupContainer: null,
 };
