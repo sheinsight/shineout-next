@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { SelectClasses } from '../select/select.type';
 import { ListColumnsOptionProps } from './list-columns-option.type';
 import Checkbox from '../checkbox/simple-checkbox';
@@ -13,6 +14,8 @@ const ListColumnsOption = <DataItem, Value>(props: ListColumnsOptionProps<DataIt
     columns,
     columnWidth = 160,
     renderItem: renderItemProp,
+    semClass,
+    semStyle,
   } = props;
   const styles = jssStyle?.select?.() as SelectClasses;
   const style = { width: columns && columns <= 1 ? '100%' : columnWidth };
@@ -68,7 +71,7 @@ const ListColumnsOption = <DataItem, Value>(props: ListColumnsOptionProps<DataIt
   };
 
   return (
-    <div style={style} className={styles?.columnsOption}>
+    <div style={{ ...style, ...semStyle?.('option') }} className={classNames(styles?.columnsOption, semClass?.('option'))}>
       {renderItem()}
     </div>
   );

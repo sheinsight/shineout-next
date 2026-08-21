@@ -30,6 +30,8 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     closePop,
     onControlTypeChange,
     onOptionClick,
+    semClass,
+    semStyle,
   } = props;
 
   const dynamicVirtual = lineHeightProp === 'auto';
@@ -39,7 +41,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     [styles.controlKeyboard]: controlType === 'keyboard',
     [styles.dynamicList]: dynamicVirtual,
     [styles.multipleList]: multiple,
-  });
+  }, semClass?.('list'));
   const [hoverIndex, setHoverIndex] = useState(hideCreateOption ? -1 : 0);
   const virtualRef = useRef<VirtualListType>({
     scrollByStep: undefined,
@@ -170,6 +172,8 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
           renderItem={renderItemProp}
           onHover={handleHover}
           onOptionClick={onOptionClick}
+          semClass={semClass}
+          semStyle={semStyle}
         ></ListOption>
       </React.Fragment>
     );
@@ -217,7 +221,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     }
   }, []);
 
-  return <div className={rootClass} style={{ '--group-title-height': `${lineHeight - 2}px` } as React.CSSProperties}>{renderList()}</div>;
+  return <div className={rootClass} style={{ '--group-title-height': `${lineHeight - 2}px`, ...semStyle?.('list') } as React.CSSProperties}>{renderList()}</div>;
 };
 
 export default List;

@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import { util } from '@sheinx/hooks';
 import { VirtualScrollList } from '../virtual-scroll';
 import { SelectClasses } from './select.type';
@@ -26,6 +27,8 @@ const ColumnsList = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => 
     groupKey: groupKeyProp,
     renderItem: renderItemProp,
     closePop,
+    semClass,
+    semStyle,
   } = props;
 
   const groupKey = groupKeyProp as keyof DataItem;
@@ -134,6 +137,8 @@ const ColumnsList = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => 
               columnWidth={columnWidth}
               renderItem={renderItemProp}
               closePop={closePop}
+              semClass={semClass}
+              semStyle={semStyle}
             ></ListColumnsOption>
           );
         })}
@@ -202,7 +207,7 @@ const ColumnsList = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => 
   };
 
   return (
-    <div className={styles.list}>
+    <div className={classNames(styles.list, semClass?.('list'))} style={semStyle?.('list')}>
       {header && renderHeader()}
       {multiple && renderSelectAll()}
       {renderList()}

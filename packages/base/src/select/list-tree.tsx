@@ -18,12 +18,15 @@ const TreeList = <DataItem, Value>(props: ListTreeProps<DataItem, Value>) => {
     defaultExpanded,
     defaultExpandAll,
     onExpand,
+    semClass,
+    semStyle,
   } = props;
   const styles = jssStyle?.select?.() as SelectClasses;
-  const rootClass = classNames(styles.tree);
+  const rootClass = classNames(styles.tree, semClass?.('list'));
 
   const style = {
     maxHeight: height,
+    ...semStyle?.('list'),
   };
 
   const getContentClass = (data: DataItem) => {

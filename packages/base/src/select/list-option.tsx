@@ -21,6 +21,8 @@ const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) =>
     isAnimationFinish,
     onHover,
     onOptionClick,
+    semClass,
+    semStyle,
   } = props;
   const optionRef = useRef<HTMLLIElement>(null);
   const config = useConfig();
@@ -30,12 +32,12 @@ const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) =>
   const isDisabled = datum.disabledCheck(data);
   const rootClass = classNames(styles?.option, `option-${index}`, {
     [styles?.optionHover]: isHover,
-  });
+  }, semClass?.('option'));
 
   const innerClass = classNames(styles?.optionInner, {
     [styles?.optionActive]: isChecked,
     [styles?.optionDisabled]: isDisabled,
-  });
+  }, semClass?.('optionInner'));
 
   const handleEnter = () => {
     onHover(index);
@@ -97,11 +99,11 @@ const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) =>
       tabIndex={-1}
       className={rootClass}
       title={title}
-      style={{ [dynamicVirtual ? 'minHeight' : 'height']: lineHeight }}
+      style={{ [dynamicVirtual ? 'minHeight' : 'height']: lineHeight, ...semStyle?.('option') }}
       onClick={handleClick}
       onMouseEnter={handleEnter}
     >
-      <div className={innerClass}>
+      <div className={innerClass} style={semStyle?.('optionInner')}>
         {result}
         {multiple && isChecked && renderCheckedIcon()}
       </div>

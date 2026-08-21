@@ -1,4 +1,4 @@
-import { JssStyleType, SelectProps, DatumType } from './select.type';
+import { JssStyleType, SelectProps, DatumType, SelectSemanticKey } from './select.type';
 
 export interface ListOptionProps<DataItem, Value>
   extends Pick<SelectProps<DataItem, Value>, 'multiple'> {
@@ -15,4 +15,6 @@ export interface ListOptionProps<DataItem, Value>
   onOptionClick: (data: DataItem, index: number) => void;
   setRowHeight?: (index: number, height: number) => void;
   isAnimationFinish: boolean;
+  semClass?: (key: SelectSemanticKey) => string | undefined;
+  semStyle?: (key: SelectSemanticKey) => React.CSSProperties | undefined;
 }
