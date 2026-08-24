@@ -44,6 +44,7 @@ import type { TransferSemanticKey } from '../transfer/transfer.type';
 import type { TreeSelectSemanticKey } from '../tree-select/tree-select.type';
 import type { UploadSemanticKey } from '../upload/upload.type';
 import type { SelectSemanticKey } from '../select/select.type';
+import type { DatePickerSemanticKey } from '../date-picker/date-picker.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -726,6 +727,21 @@ type UploadConfig = {
   styles?: SemanticStyles<UploadSemanticKey>;
 }
 
+type DatePickerConfig = {
+  /**
+   * @en Global Semantic DOM classNames for DatePicker (root / header / popup / popupHeader / cell / popupFooter).
+   * @cn DatePicker 全局 Semantic DOM 类名（root / header / popup / popupHeader / cell / popupFooter）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<DatePickerSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for DatePicker (root / header / popup / popupHeader / cell / popupFooter).
+   * @cn DatePicker 全局 Semantic DOM 样式（root / header / popup / popupHeader / cell / popupFooter）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<DatePickerSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -968,6 +984,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   upload?: UploadConfig;
+  /**
+   * @en Global configuration for DatePicker component
+   * @cn DatePicker组件的全局配置
+   * @version 3.10.0
+   */
+  datePicker?: DatePickerConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -1021,6 +1043,7 @@ export const defaultConfig: ConfigOption = {
   treeSelect: {},
   select: {},
   upload: {},
+  datePicker: {},
   direction: 'ltr',
   popupContainer: null,
 };

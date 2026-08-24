@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import { PickerProps } from './picker.type';
 import Day from './day';
 import Month from './month';
@@ -10,7 +11,7 @@ import { useDatePickerRange, usePersistFn } from '@sheinx/hooks';
 import Confirm from './confirm';
 
 const Picker = (props: PickerProps) => {
-  const { range, currentArr, dateArr, options, jssStyle, isDisabledDate, type } = props;
+  const { range, currentArr, dateArr, options, jssStyle, isDisabledDate, type, semClass, semStyle } = props;
   const styles = jssStyle?.datePicker?.();
   const {
     func,
@@ -87,6 +88,8 @@ const Picker = (props: PickerProps) => {
       clickTimes: props.clickTimes,
       needConfirm: props.needConfirm,
       closeByConfirm,
+      semClass,
+      semStyle,
     };
     if (range) {
       commonProps['onMouseEnter'] = position === 'end' ? handleEnterEnd : handleEnterStart;
@@ -168,7 +171,7 @@ const Picker = (props: PickerProps) => {
             {['start', 'end'].map((item) => renderPicker(item as 'start' | 'end'))}
           </div>
           {props.needConfirm && (
-            <div className={styles?.pickerRangeFooter}>
+            <div className={classNames(styles?.pickerRangeFooter, semClass?.('popupFooter'))} style={semStyle?.('popupFooter')}>
               <Confirm closeByConfirm={closeByConfirm} jssStyle={jssStyle} />
             </div>
           )}

@@ -2,7 +2,7 @@ import { getDataset, useDatePickerFormat, useInputAble, usePersistFn, usePopup, 
 import classNames from 'classnames';
 import { AbsoluteList } from '../absolute-list';
 import React, { useEffect, useRef } from 'react';
-import { DatePickerProps, DatePickerValueType } from './date-picker.type';
+import { DatePickerProps, DatePickerSemanticKey, DatePickerValueType } from './date-picker.type';
 import AnimationList from '../animation-list';
 import Picker from './picker';
 import { getLocale } from '../config';
@@ -12,6 +12,7 @@ import useInnerTitle from '../common/use-inner-title';
 import useWithFormConfig from '../common/use-with-form-config';
 import useTip from '../common/use-tip';
 import { useConfig } from '../config';
+import { useSemantic } from '../common/use-semantic';
 
 const { devUseWarning } = util;
 
@@ -26,7 +27,8 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
     devUseWarning.deprecated('defaultRangeMonth', 'defaultPickerValue', 'DatePicker');
   }
   const props = useWithFormConfig(props0);
-  const { locale, direction } = useConfig();
+  const config = useConfig();
+  const { locale, direction } = config;
   const {
     jssStyle,
     range,
@@ -38,6 +40,8 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
     adjust = true,
     startOfWeek,
     weekShort,
+    classNames: classNamesProp,
+    styles: stylesProp,
   } = props;
   const [activeIndex, setActiveIndex] = React.useState(-1);
   const [clickTimes, setClickTimes] = React.useState(0);
@@ -53,6 +57,11 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
 
   const styles = jssStyle?.datePicker?.();
 
+  const [semClass, semStyle] = useSemantic<DatePickerSemanticKey>(
+    classNamesProp,
+    stylesProp,
+    config.datePicker,
+  );
   const dfp = 'bottom-left';
   const [focused, setFocused] = React.useState(false);
   let listPosition: string = props.position || dfp;
@@ -249,7 +258,9 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
           styles?.wrapperPaddingBox,
           styles?.wrapperInnerTitleTop,
           styles?.wrapperInnerTitleBottom,
+          semClass('header'),
         )}
+        style={semStyle('header')}
         tabIndex={canFocus ? 1 : undefined}
         onClick={handleResultClick}
         onFocus={canFocus ? handleFocus : undefined}
@@ -316,9 +327,10 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
         range && styles?.wrapperRange,
         !border && styles?.wrapperNoBorder,
         !!props.underline && styles?.wrapperUnderline,
+        semClass('root'),
       )}
       ref={targetRef}
-      style={{ width: props.width, ...props.style }}
+      style={{ width: props.width, ...props.style, ...semStyle('root') }}
     >
       {tipNode}
       {renderResult()}
@@ -335,7 +347,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
       >
         <AnimationList
           onRef={popupRef}
-          className={classNames(styles?.pickerWrapper)}
+          className={classNames(styles?.pickerWrapper, semClass('popup'))}
           display={'block'}
           type={'scale-y'}
           duration={'fast'}
@@ -376,6 +388,8 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
             isDisabledDate={func.isDisabledDate}
             needConfirm={props.needConfirm}
             renderDate={props.renderDate}
+            semClass={semClass}
+            semStyle={semStyle}
           >
             {props.children}
           </Picker>

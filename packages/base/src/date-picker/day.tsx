@@ -79,6 +79,7 @@ const Day = (props: DayProps) => {
           (isInRange === 'end' || isInRange === 'start-end') &&
             props.position === 'end' &&
             styles?.pickerCellInRangeEnd,
+          props.semClass?.('cell'),
         )}
         key={index}
         onClick={() => {
@@ -168,11 +169,12 @@ const Day = (props: DayProps) => {
     if (props.type !== 'datetime' && props.type !== 'date' && !showNeedConfirm) return null;
     return (
       <div
-        className={styles?.pickerFooter}
+        className={classNames(styles?.pickerFooter, props.semClass?.('popupFooter'))}
         dir={direction}
         style={{
           borderTop: props.needConfirm && props.range ? 'none' : undefined,
           marginTop: props.needConfirm && props.range ? -16 : undefined,
+          ...props.semStyle?.('popupFooter'),
         }}
       >
         {props.type === 'datetime' && (
@@ -235,7 +237,7 @@ const Day = (props: DayProps) => {
       onMouseLeave={props.onMouseLeave}
     >
       <PickerTitle position={props.position} jssStyle={jssStyle} />
-      <div className={styles?.pickerHeader} dir={direction}>
+      <div className={classNames(styles?.pickerHeader, props.semClass?.('popupHeader'))} dir={direction} style={props.semStyle?.('popupHeader')}>
         <div className={styles?.pickerHeaderLeft}>
           <span className={styles?.pickerHeaderIcon} onClick={func.handlePrevYear} dir={direction}>
             {Icons.datepicker.ArrowDoubleLeft}

@@ -56,6 +56,7 @@ const Year = (props: YearProps) => {
           (isInRange === 'end' || isInRange === 'start-end') &&
             props.position === 'end' &&
             styles?.pickerCellInRangeEnd,
+          props.semClass?.('cell'),
         )}
         key={index}
         onClick={() => {
@@ -90,7 +91,7 @@ const Year = (props: YearProps) => {
       className={classNames(styles?.yearPicker, styles?.picker)}
     >
       <PickerTitle position={props.position} jssStyle={jssStyle} />
-      <div className={styles?.pickerHeader} dir={config.direction}>
+      <div className={classNames(styles?.pickerHeader, props.semClass?.('popupHeader'))} dir={config.direction} style={props.semStyle?.('popupHeader')}>
         <div className={styles?.pickerHeaderLeft}>
           <span
             className={styles?.pickerHeaderIcon}
@@ -132,8 +133,10 @@ const Year = (props: YearProps) => {
       </div>
 
       {props.needConfirm && !props.range && (
+        <div className={props.semClass?.('popupFooter')} style={props.semStyle?.('popupFooter')}>
           <Confirm closeByConfirm={props.closeByConfirm} jssStyle={props.jssStyle} />
-        )}
+        </div>
+      )}
     </div>
   );
 };

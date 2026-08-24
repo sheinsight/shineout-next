@@ -1,5 +1,6 @@
 import React, { Dispatch, SetStateAction } from 'react';
-import { DatePickerModeType, DatePickerProps, DateTimeType } from './date-picker.type';
+import { DatePickerModeType, DatePickerProps, DatePickerSemanticKey, DateTimeType } from './date-picker.type';
+import type { SemanticClassFn, SemanticStyleFn } from '../common/use-semantic';
 
 export interface PickerProps
   extends Pick<
@@ -55,6 +56,8 @@ export interface PickerProps
   clickTimes: number;
   setClickTimes: Dispatch<SetStateAction<number>>;
   needConfirm?: boolean;
+  semClass?: SemanticClassFn<DatePickerSemanticKey>;
+  semStyle?: SemanticStyleFn<DatePickerSemanticKey>;
 }
 
 export interface CommonPickerProps
@@ -72,6 +75,8 @@ export interface CommonPickerProps
     | 'registerModeDisabled'
     | 'children'
     | 'allowSingle'
+    | 'semClass'
+    | 'semStyle'
   > {
   rangeDate: Array<Date | undefined>;
   current: Date;

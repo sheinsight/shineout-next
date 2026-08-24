@@ -6,10 +6,12 @@ import { InnerTitleClasses } from '../common/use-inner-title';
 import { BaseTipProps } from '../common/use-tip';
 import { PopoverClasses } from '../popover/popover.type';
 import { LinkClasses } from '../link/link.type';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
 
 import type { DatePickerValueType, DateTimeType } from '@sheinx/hooks';
 
 export type { DateTimeType, DatePickerValueType, DatePickerModeType } from '@sheinx/hooks';
+export type DatePickerSemanticKey = 'root' | 'header' | 'popup' | 'popupHeader' | 'cell' | 'popupFooter';
 export type AreaType = 'year' | 'month' | 'week' | 'day' | 'time' | 'quick' | 'quarter';
 export type DateRenderParams = {
   date: Date;
@@ -404,6 +406,19 @@ export interface DatePickerProps<Value extends DatePickerValueType>
    * @version 3.9.8
    */
   weekShort?: null | string;
+
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<DatePickerSemanticKey>;
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<DatePickerSemanticKey>;
 }
 export interface QuickSelectType {
   /**

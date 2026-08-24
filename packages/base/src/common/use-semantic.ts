@@ -62,6 +62,11 @@ export interface SemanticSchema<K extends string = string> {
    * 文档站 Semantic tab 左侧渲染它，右侧按 keys 列表交互。
    */
   demo: FC;
+  /**
+   * demo 外层容器的自定义样式。
+   * 文档站渲染 demo 时会将此样式应用到包裹 demo 的容器 div 上。
+   */
+  demoStyle?: CSSProperties;
 }
 
 /**

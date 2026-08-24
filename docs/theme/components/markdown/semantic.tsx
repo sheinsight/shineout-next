@@ -178,7 +178,7 @@ const Semantic: React.FC<SemanticTabProps> = ({ schema, name }) => {
     <div style={{ padding: 40, marginTop: 208 }}>
       <div style={containerStyle}>
         {/* 左：渲染舞台 */}
-        <div ref={stageRef} style={stageStyle}>
+        <div ref={stageRef} style={{ ...stageStyle, ...schema.demoStyle }}>
           <Demo />
           {overlays.map((ov, idx) => (
             <div
