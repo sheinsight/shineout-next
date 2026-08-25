@@ -16,6 +16,7 @@ const DatePickerSemanticDemo: React.FC = () => (
     type='date'
     style={{ width: 240 }}
     showSelNow
+    open
   />
 );
 
