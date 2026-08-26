@@ -1,20 +1,40 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import { useFormItem, util } from '@sheinx/hooks';
 import { useTooltipStyle } from '@sheinx/shineout-style';
 import classNames from 'classnames';
 import ErrorTrans from './error-trans';
 import Tooltip, { TooltipProps } from '../tooltip';
 import Icons from '../icons';
+import { useSemantic } from '../common/use-semantic';
+import { useConfig } from '../config';
+import { FormSemanticContext } from './form-semantic-context';
 
-import type { FormItemClasses, FormItemProps } from './form-item.type';
+import type { FormItemClasses, FormItemProps, FormItemSemanticKey } from './form-item.type';
 
 const FormItem = (props: FormItemProps) => {
-  const { children, jssStyle, className, style, label, tip, required, ...rest } = props;
+  const { children, jssStyle, className, style, label, tip, required, classNames: classNamesProp, styles: stylesProp, ...rest } = props;
   const formItemClasses = jssStyle?.formItem?.() as FormItemClasses;
+  const config = useConfig();
+  const { semClass: formSemClass, semStyle: formSemStyle } = useContext(FormSemanticContext);
   const { Provider: FormItemContextProvider, ProviderValue, labelConfig, errors, showError, attributes } = useFormItem();
   const { labelWidth, labelAlign, labelVerticalAlign, inline, keepErrorHeight, keepErrorBelow, keepErrorAbove, colon } = {
     ...labelConfig,
     ...rest,
+  };
+
+  const [selfSemClass, selfSemStyle] = useSemantic<FormItemSemanticKey>(
+    classNamesProp,
+    stylesProp,
+    config.formItem,
+  );
+
+  // 合并 Form Context 传递的 semantic 和自身的 semantic（自身优先）
+  const semClass = (key: FormItemSemanticKey) => classNames(formSemClass?.(key), selfSemClass(key));
+  const semStyle = (key: FormItemSemanticKey) => {
+    const fromForm = formSemStyle?.(key);
+    const fromSelf = selfSemStyle(key);
+    if (!fromForm && !fromSelf) return undefined;
+    return { ...fromForm, ...fromSelf };
   };
 
 
@@ -82,7 +102,7 @@ const FormItem = (props: FormItemProps) => {
       )
     }
     return (
-      <div className={formItemClasses?.error}>
+      <div className={classNames(formItemClasses?.error, semClass('error'))} style={semStyle('error')}>
         {uniqueErrors.map((error, index) => (
           <div key={index}>{error && <ErrorTrans error={error} />}</div>
         ))}
@@ -104,10 +124,11 @@ const FormItem = (props: FormItemProps) => {
           [formItemClasses?.wrapperRequired]: required,
           [formItemClasses?.wrapperHideRequired]: required === false,
           [formItemClasses?.wrapperTip]: showError || tip,
-        }
+        },
+        semClass('item'),
       )}
       {...attributes}
-      style={style}
+      style={semStyle('item') ? { ...style, ...semStyle('item') } : style}
     >
       {label !== undefined ? (
         <div
@@ -118,22 +139,24 @@ const FormItem = (props: FormItemProps) => {
               [formItemClasses?.labelLeft]: labelAlign === 'left',
               [formItemClasses?.labelWithColon]: colon,
               [formItemClasses?.labelWithTooltip]: label && typeof label === 'object' && 'tooltip' in label
-            }
+            },
+            semClass('label'),
           )}
-          style={labelAlign !== 'top' || inline ? { width: labelWidth } : undefined}
+          style={labelAlign !== 'top' || inline ? { width: labelWidth, ...semStyle('label') } : semStyle('label')}
         >
           {renderLabel()}
         </div>
       ) : null}
       <div
-        className={formItemClasses?.control}
+        className={classNames(formItemClasses?.control, semClass('control'))}
+        style={semStyle('control')}
         {...util.getDataAttribute({ role: 'form-control' })}
       >
         <FormItemContextProvider value={{ ...ProviderValue, label: labelText }}>{children}</FormItemContextProvider>
 
         {keepErrorAbove && renderError()}
 
-        {!!tip && (!showError || keepErrorBelow || keepErrorAbove) && <div ref={labelTipRef} className={formItemClasses?.tip}>{tip}</div>}
+        {!!tip && (!showError || keepErrorBelow || keepErrorAbove) && <div ref={labelTipRef} className={classNames(formItemClasses?.tip, semClass('tip'))} style={semStyle('tip')}>{tip}</div>}
 
         {!keepErrorAbove && renderError()}
       </div>

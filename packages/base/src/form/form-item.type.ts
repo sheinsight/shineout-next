@@ -3,6 +3,9 @@ import React from 'react';
 import { FormLabelConfig } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
 import { TooltipProps } from '../tooltip/tooltip.type';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
+
+export type FormItemSemanticKey = 'item' | 'label' | 'control' | 'error' | 'tip';
 
 export interface FormItemClasses {
   rootClass: string;
@@ -59,4 +62,17 @@ export interface FormItemProps extends FormLabelConfig, Pick<CommonType, 'classN
   jssStyle?: {
     formItem?: () => FormItemClasses;
   };
+
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<FormItemSemanticKey>;
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<FormItemSemanticKey>;
 }

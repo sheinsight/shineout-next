@@ -45,6 +45,8 @@ import type { TreeSelectSemanticKey } from '../tree-select/tree-select.type';
 import type { UploadSemanticKey } from '../upload/upload.type';
 import type { SelectSemanticKey } from '../select/select.type';
 import type { DatePickerSemanticKey } from '../date-picker/date-picker.type';
+import type { FormSemanticKey } from '../form/form.type';
+import type { FormItemSemanticKey } from '../form/form-item.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -742,6 +744,36 @@ type DatePickerConfig = {
   styles?: SemanticStyles<DatePickerSemanticKey>;
 }
 
+type FormConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Form (root / item / label / control / error / tip).
+   * @cn Form 全局 Semantic DOM 类名（root / item / label / control / error / tip）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<FormSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Form (root / item / label / control / error / tip).
+   * @cn Form 全局 Semantic DOM 样式（root / item / label / control / error / tip）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<FormSemanticKey>;
+}
+
+type FormItemConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Form.Item (item / label / control / error / tip).
+   * @cn Form.Item 全局 Semantic DOM 类名（item / label / control / error / tip）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<FormItemSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Form.Item (item / label / control / error / tip).
+   * @cn Form.Item 全局 Semantic DOM 样式（item / label / control / error / tip）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<FormItemSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -990,6 +1022,18 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   datePicker?: DatePickerConfig;
+  /**
+   * @en Global configuration for Form component
+   * @cn Form组件的全局配置
+   * @version 3.10.0
+   */
+  form?: FormConfig;
+  /**
+   * @en Global configuration for Form.Item component
+   * @cn Form.Item组件的全局配置
+   * @version 3.10.0
+   */
+  formItem?: FormItemConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -1044,6 +1088,8 @@ export const defaultConfig: ConfigOption = {
   select: {},
   upload: {},
   datePicker: {},
+  form: {},
+  formItem: {},
   direction: 'ltr',
   popupContainer: null,
 };

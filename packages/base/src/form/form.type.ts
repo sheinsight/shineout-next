@@ -2,6 +2,9 @@ import React from 'react';
 
 import { BaseFormProps, ObjectType } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
+
+export type FormSemanticKey = 'root' | 'item' | 'label' | 'control' | 'error' | 'tip';
 
 export type KeyType = string | number | symbol;
 export interface FormClasses {
@@ -120,5 +123,18 @@ export interface FormProps<V extends ObjectType>
    * @deprecated 废弃属性
    */
   pending?: boolean;
+
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<FormSemanticKey>;
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<FormSemanticKey>;
 }
 export default {};
