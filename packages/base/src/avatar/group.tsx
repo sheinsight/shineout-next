@@ -1,9 +1,13 @@
 import React, { Children, cloneElement } from 'react';
+import classNames from 'classnames';
 import { AvatarContext } from './context';
-import { AvatarGroupProps, AvatarClasses } from './avatar.type';
+import { AvatarGroupProps, AvatarClasses, AvatarGroupSemanticKey, AvatarSemanticKey } from './avatar.type';
 import { AvatarContextProps } from './context';
 import Avatar from './avatar';
 import { Popover } from '../popover';
+import { useSemantic } from '../common/use-semantic';
+import { useConfig } from '../config';
+import type { SemanticClassFn, SemanticStyleFn } from '../common/use-semantic';
 
 interface AvatarProviderContext {
   children?: React.ReactNode;
@@ -14,14 +18,52 @@ const AvatarProvider: React.FC<AvatarContextProps & AvatarProviderContext> = (pr
 };
 
 const AvatarGroup = (props: AvatarGroupProps) => {
-  const { jssStyle, children: childrenProp, size, shape, max, popover, renderMax } = props;
+  const {
+    jssStyle,
+    children: childrenProp,
+    size,
+    shape,
+    max,
+    popover,
+    renderMax,
+    classNames: classNamesProp,
+    styles: stylesProp,
+  } = props;
+
+  const config = useConfig();
+  const [semClass, semStyle] = useSemantic<AvatarGroupSemanticKey>(
+    classNamesProp,
+    stylesProp,
+    config.avatarGroup,
+  );
+
   const avatarGroupClasses = jssStyle?.avatar?.() || ({} as AvatarClasses);
+
+  // Pass 'root' key semantic to child Avatars via Context
+  const childSemClass: SemanticClassFn<AvatarSemanticKey> = (key) => {
+    if (key === 'root') return semClass('root');
+    return undefined;
+  };
+  const childSemStyle: SemanticStyleFn<AvatarSemanticKey> = (key) => {
+    if (key === 'root') return semStyle('root');
+    return undefined;
+  };
 
   const children = Children.toArray(childrenProp).map((child, index) =>
     cloneElement(child as React.ReactElement, { key: `avatar-key-${index}` }),
   );
 
   const childrenNumber = children.length;
+
+  const groupClass = classNames(avatarGroupClasses.group, semClass('group'));
+  const groupSemStyle = semStyle('group');
+
+  const providerValue: AvatarContextProps = {
+    shape,
+    size,
+    semClass: childSemClass,
+    semStyle: childSemStyle,
+  };
 
   if (max && max < childrenNumber) {
     const childrenShow = children.slice(0, max);
@@ -47,15 +89,19 @@ const AvatarGroup = (props: AvatarGroupProps) => {
     }
 
     return (
-      <AvatarProvider shape={shape} size={size}>
-        <div className={avatarGroupClasses.group}>{childrenShow}</div>
+      <AvatarProvider {...providerValue}>
+        <div className={groupClass} style={groupSemStyle}>
+          {childrenShow}
+        </div>
       </AvatarProvider>
     );
   }
 
   return (
-    <AvatarProvider shape={shape} size={size}>
-      <div className={avatarGroupClasses.group}>{children}</div>
+    <AvatarProvider {...providerValue}>
+      <div className={groupClass} style={groupSemStyle}>
+        {children}
+      </div>
     </AvatarProvider>
   );
 };
