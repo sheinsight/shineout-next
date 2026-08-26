@@ -88,7 +88,7 @@ export interface SemanticGlobalConfig<K extends string> {
  * <div className={classNames(popoverStyle?.arrow, semClass('arrow'))} />
  * ```
  */
-export type SemanticClassFn<K extends string> = (key: K) => string;
+export type SemanticClassFn<K extends string> = (key: K) => string | undefined;
 
 /**
  * 按 semantic key 取 style：浅合并全局兜底 style + 用户传入 style。
