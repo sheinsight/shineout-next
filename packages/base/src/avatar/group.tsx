@@ -34,7 +34,7 @@ const AvatarGroup = (props: AvatarGroupProps) => {
   const [semClass, semStyle] = useSemantic<AvatarGroupSemanticKey>(
     classNamesProp,
     stylesProp,
-    config.avatarGroup,
+    config.avatar,
   );
 
   const avatarGroupClasses = jssStyle?.avatar?.() || ({} as AvatarClasses);

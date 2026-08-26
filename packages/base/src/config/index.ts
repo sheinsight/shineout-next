@@ -48,8 +48,7 @@ import type { DatePickerSemanticKey } from '../date-picker/date-picker.type';
 import type { FormSemanticKey } from '../form/form.type';
 import type { FormItemSemanticKey } from '../form/form-item.type';
 import type { InputSemanticKey } from '../input/input.type';
-import type { AvatarSemanticKey } from '../avatar/avatar.type';
-import type { AvatarGroupSemanticKey } from '../avatar/avatar.type';
+import type { AvatarSemanticKey, AvatarGroupSemanticKey } from '../avatar/avatar.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -794,29 +793,14 @@ type InputConfig = {
 
 type AvatarConfig = {
   /**
-   * @en Global Semantic DOM classNames for Avatar (root).
-   * @cn Avatar 全局 Semantic DOM 类名（root）。
-   * @version 3.10.0
-   */
-  classNames?: SemanticClassNames<AvatarSemanticKey>;
-  /**
-   * @en Global Semantic DOM styles for Avatar (root).
-   * @cn Avatar 全局 Semantic DOM 样式（root）。
-   * @version 3.10.0
-   */
-  styles?: SemanticStyles<AvatarSemanticKey>;
-}
-
-type AvatarGroupConfig = {
-  /**
-   * @en Global Semantic DOM classNames for Avatar.Group (group / root).
-   * @cn Avatar.Group 全局 Semantic DOM 类名（group / root）。
+   * @en Global Semantic DOM classNames for Avatar (root / group).
+   * @cn Avatar 全局 Semantic DOM 类名（root / group）。
    * @version 3.10.0
    */
   classNames?: SemanticClassNames<AvatarGroupSemanticKey>;
   /**
-   * @en Global Semantic DOM styles for Avatar.Group (group / root).
-   * @cn Avatar.Group 全局 Semantic DOM 样式（group / root）。
+   * @en Global Semantic DOM styles for Avatar (root / group).
+   * @cn Avatar 全局 Semantic DOM 样式（root / group）。
    * @version 3.10.0
    */
   styles?: SemanticStyles<AvatarGroupSemanticKey>;
@@ -1094,12 +1078,6 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   avatar?: AvatarConfig;
-  /**
-   * @en Global configuration for Avatar.Group component
-   * @cn Avatar.Group组件的全局配置
-   * @version 3.10.0
-   */
-  avatarGroup?: AvatarGroupConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -1158,7 +1136,6 @@ export const defaultConfig: ConfigOption = {
   formItem: {},
   input: {},
   avatar: {},
-  avatarGroup: {},
   direction: 'ltr',
   popupContainer: null,
 };
