@@ -4,8 +4,9 @@ import useClear from '../common/use-clear';
 import useInnerTitle from '../common/use-inner-title';
 import useTip from '../common/use-tip';
 import classNames from 'classnames';
+import { useSemantic } from '../common/use-semantic';
 
-import { InputCommonProps } from './input.type';
+import { InputCommonProps, InputSemanticKey } from './input.type';
 import useWithFormConfig from '../common/use-with-form-config';
 import { useConfig } from '../config';
 
@@ -44,12 +45,20 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props0: Pr
     status,
     disabled,
     size,
+    classNames: classNamesProp,
+    styles: stylesProp,
     ...rest
   } = props;
 
   const delay = delayProps ?? config.delay ?? 0;
 
   const inputClasses = props.jssStyle?.input?.();
+
+  const [semClass, semStyle] = useSemantic<InputSemanticKey>(
+    classNamesProp,
+    stylesProp,
+    config.input,
+  );
 
   const rootRef = React.useRef<HTMLElement>(null);
 
@@ -151,8 +160,9 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props0: Pr
   });
 
   const mergeStyle = useMemo(() => {
-    return { width: width, ...(style || {}) };
-  }, [width, style]) as React.CSSProperties;
+    const rootSemStyle = semStyle('root');
+    return { width: width, ...(style || {}), ...rootSemStyle };
+  }, [width, style, semStyle]) as React.CSSProperties;
 
   const handleBlur = usePersistFn((e: React.FocusEvent<HTMLInputElement>) => {
     onBlur?.(e);
@@ -161,7 +171,7 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props0: Pr
   return {
     ...rest,
     value: inputAbleProps.value,
-    className: classNames(props.className, innerTitle && inputClasses?.wrapperInnerTitle),
+    className: classNames(props.className, innerTitle && inputClasses?.wrapperInnerTitle, semClass('root')),
     onChange: inputAbleProps.onChange,
     onBlur: handleBlur,
     ...clearProps,
@@ -175,6 +185,8 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props0: Pr
     inputRef: forwardRef || forwardedRef,
     renderInput: renderInput,
     onFocusedChange: onFocusedChange,
+    semClass,
+    semStyle,
   };
 };
 

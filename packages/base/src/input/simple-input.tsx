@@ -22,6 +22,8 @@ const Input = (props: SimpleInputProps) => {
     renderInput,
     addEnd,
     hasSuffix,
+    semClass,
+    semStyle,
     ...rest
   } = props;
 
@@ -46,7 +48,8 @@ const Input = (props: SimpleInputProps) => {
   });
 
   const inputProps = getInputProps({
-    className: classNames(inputStyle?.input),
+    className: classNames(inputStyle?.input, semClass?.('input')),
+    style: semStyle?.('input'),
     onKeyUp,
   });
 

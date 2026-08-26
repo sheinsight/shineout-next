@@ -47,6 +47,7 @@ import type { SelectSemanticKey } from '../select/select.type';
 import type { DatePickerSemanticKey } from '../date-picker/date-picker.type';
 import type { FormSemanticKey } from '../form/form.type';
 import type { FormItemSemanticKey } from '../form/form-item.type';
+import type { InputSemanticKey } from '../input/input.type';
 
 export type SpinConfig =
   | SpinNameType
@@ -774,6 +775,21 @@ type FormItemConfig = {
   styles?: SemanticStyles<FormItemSemanticKey>;
 }
 
+type InputConfig = {
+  /**
+   * @en Global Semantic DOM classNames for Input (root / input).
+   * @cn Input 全局 Semantic DOM 类名（root / input）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<InputSemanticKey>;
+  /**
+   * @en Global Semantic DOM styles for Input (root / input).
+   * @cn Input 全局 Semantic DOM 样式（root / input）。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<InputSemanticKey>;
+}
+
 export interface ConfigOption {
   prefix: string;
   locale: LanType;
@@ -1034,6 +1050,12 @@ export interface ConfigOption {
    * @version 3.10.0
    */
   formItem?: FormItemConfig;
+  /**
+   * @en Global configuration for Input component
+   * @cn Input组件的全局配置
+   * @version 3.10.0
+   */
+  input?: InputConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -1090,6 +1112,7 @@ export const defaultConfig: ConfigOption = {
   datePicker: {},
   form: {},
   formItem: {},
+  input: {},
   direction: 'ltr',
   popupContainer: null,
 };
