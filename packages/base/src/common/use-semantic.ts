@@ -154,7 +154,7 @@ export function useSemantic<K extends string, Info = void>(
       typeof rawUser === 'function'
         ? (rawUser as (info: Info) => SemanticClassValue)(info as Info)
         : (rawUser as string | undefined);
-    return classnames(globalClass, resolvedUser);
+    return classnames(globalClass, resolvedUser) || undefined;
   };
 
   const semStyle: SemanticStyleFn<K> = (key) => {

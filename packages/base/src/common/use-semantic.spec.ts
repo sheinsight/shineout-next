@@ -13,9 +13,9 @@ describe('useSemantic', () => {
   });
 
   describe('semClass', () => {
-    it('should return empty string when no classNames provided', () => {
+    it('should return undefined when no classNames provided', () => {
       const [semClass] = useSemantic<TestKey>();
-      expect(semClass('root')).toBe('');
+      expect(semClass('root')).toBeUndefined();
     });
 
     it('should return user className', () => {
@@ -41,10 +41,10 @@ describe('useSemantic', () => {
       expect(semClass('root')).toBe('global-root user-root');
     });
 
-    it('should return empty string for keys not provided in classNames', () => {
+    it('should return undefined for keys not provided in classNames', () => {
       const userClassNames: SemanticClassNames<TestKey> = { root: 'my-root' };
       const [semClass] = useSemantic<TestKey>(userClassNames);
-      expect(semClass('arrow')).toBe('');
+      expect(semClass('arrow')).toBeUndefined();
     });
   });
 
@@ -103,7 +103,7 @@ describe('useSemantic', () => {
         undefined,
         { open: true },
       );
-      expect(semClass('root')).toBe('');
+      expect(semClass('root')).toBeUndefined();
     });
   });
 
