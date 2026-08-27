@@ -231,4 +231,34 @@ export interface UploadProps<T>
    * @version 3.7.0
    */
   beforeDrop?: (e: React.DragEvent) => Promise<FileList>;
+  /**
+   * @en Enable paste to upload. Once enabled, pasting files anywhere on the page will trigger upload
+   * @cn 是否开启粘贴上传。开启后在页面任意位置粘贴文件即可触发上传
+   * @default false
+   * @version 3.10.0
+   */
+  paste?: boolean;
+  /**
+   * @en Callback before pasting. Allow users to handle clipboard events and read file lists by themselves, and require the return value to be of type Promise<FileList>
+   * @cn 粘贴前的回调。允许用户自行处理剪贴板事件以及读取文件列表，要求返回值必须为 Promise<FileList> 类型
+   * @version 3.10.0
+   */
+  beforePaste?: (e: React.ClipboardEvent) => Promise<FileList>;
+  /**
+   * @en Get component instance methods. Currently supports addFiles
+   * @cn 获取组件的一些方法，目前支持 addFiles
+   * @version 3.10.0
+   */
+  getComponentRef?: ((ref: UploadRef) => void) | { current?: UploadRef };
+}
+
+/**
+ * @title UploadRef
+ */
+export interface UploadRef {
+  /**
+   * @en Programmatically add files to be uploaded
+   * @cn 编程式添加文件进行上传
+   */
+  addFiles: (files: File[]) => void;
 }

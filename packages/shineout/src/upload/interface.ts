@@ -1,4 +1,4 @@
-export type { UploadProps as Props, Validator } from './upload.type';
+export type { UploadProps as Props, Validator, UploadRef as Ref } from './upload.type';
 export type { UploadImageProps as ImageProps } from './image.type';
 export type { UploadDraggerProps as DraggerProps } from './dragger.type';
 
