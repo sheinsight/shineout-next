@@ -1,3 +1,10 @@
+## 3.10.0-beta.21
+2026-08-28
+
+### 🆕 Feature
+
+- `Upload` 新增 `paste` 属性支持粘贴上传（配套 `beforePaste` 可拦截处理剪贴板），新增 `getComponentRef` 属性可获取组件实例方法 `addFiles` 实现编程式添加文件 ([#1776](https://github.com/sheinsight/shineout-next/pull/1776))
+
 ## 3.10.0-beta.18
 2026-08-14
 

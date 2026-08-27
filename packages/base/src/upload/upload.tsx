@@ -1,6 +1,6 @@
 import { getDataset, useInputAble, usePersistFn, useUpload, util } from '@sheinx/hooks';
 import React, { useContext, useEffect } from 'react';
-import { UploadProps, UploadSemanticKey } from './upload.type';
+import { UploadProps, UploadRef, UploadSemanticKey } from './upload.type';
 import Drop from './drop';
 import classNames from 'classnames';
 import Result from './result';
@@ -18,6 +18,7 @@ const Upload = <T,>(props0: UploadProps<T>) => {
     canDelete = true,
     showUploadList = true,
     drop = false,
+    paste = false,
     limit = 100,
     renderResult = (a: any) => a as React.ReactNode,
     listType = 'text',
@@ -81,6 +82,41 @@ const Upload = <T,>(props0: UploadProps<T>) => {
       validateHook(uploadValidate);
     }
   }, []);
+
+  // 暴露 getComponentRef
+  useEffect(() => {
+    const { getComponentRef } = props;
+    if (!getComponentRef) return;
+    const ref: UploadRef = { addFiles: (files) => func.addFiles(files) };
+    if (util.isFunc(getComponentRef)) {
+      (getComponentRef as (ref: UploadRef) => void)(ref);
+    } else {
+      (getComponentRef as { current?: UploadRef }).current = ref;
+    }
+  }, []);
+
+  // paste 处理：document 级别监听，因为 Upload 没有可聚焦的空白区域
+  useEffect(() => {
+    if (!paste) return;
+    const handlePaste = async (e: ClipboardEvent) => {
+      if (props.disabled) return;
+      let files: FileList | undefined;
+      if (props.beforePaste && util.isFunc(props.beforePaste)) {
+        files = await props.beforePaste(e as unknown as React.ClipboardEvent);
+      } else {
+        files = e.clipboardData?.files;
+      }
+      if (!files || files.length === 0) return;
+      const filtered = accept
+        ? (Array.from(files).filter((f) => util.attrAccept(f, accept)) as File[])
+        : Array.from(files);
+      if (filtered.length === 0) return;
+      const toAdd = props.multiple || limit > 1 ? filtered : [filtered[0]];
+      func.addFiles(toAdd);
+    };
+    document.addEventListener('paste', handlePaste);
+    return () => document.removeEventListener('paste', handlePaste);
+  }, [paste, props.disabled]);
 
   const handleReplace = (files: File[], index: number) => {
     onChange(
