@@ -25,7 +25,7 @@ const getRectDiff = (node: HTMLElement, pNode: HTMLElement) => {
 };
 
 const TabsHeader = (props: TabsHeaderProps) => {
-  const { tabs, jssStyle, hideSplit, collapsible, extra, splitColor, tabBarStyle, getPosition } =
+  const { tabs, jssStyle, hideSplit, collapsible, extra, splitColor, tabBarStyle, getPosition, semClass, semStyle } =
     props;
   const headerRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -55,7 +55,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
 
   const headerStyle = jssStyle?.tabs?.() || ({} as TabsClasses);
 
-  const headerWrapperClass = classNames(headerStyle.headerWrapper, {});
+  const headerWrapperClass = classNames(headerStyle.headerWrapper, {}, semClass('header'));
 
   const buttonStyle = jssStyle?.button || ({} as ButtonClasses);
   const buttonGroupStyle = jssStyle?.buttonGroup;
@@ -215,11 +215,15 @@ const TabsHeader = (props: TabsHeaderProps) => {
           transform: 'translateX(-50%)',
         };
 
-    return <div className={headerStyle.headerScrollBar} style={scrollBarStyle}></div>;
+    return <div className={classNames(headerStyle.headerScrollBar, semClass('ink'))} style={{ ...scrollBarStyle, ...semStyle('ink') }}></div>;
   };
 
   const renderTab = () => {
     const headerClass = classNames(headerStyle.header);
+    const tabSemClass = semClass('tab');
+    const tabSemStyle = semStyle('tab');
+    const innerSemClass = semClass('inner');
+    const innerSemStyle = semStyle('inner');
     return (
       <div ref={headerRef} className={headerClass}>
         <div
@@ -235,6 +239,10 @@ const TabsHeader = (props: TabsHeaderProps) => {
                   <Tab
                     key={index}
                     {...tab}
+                    tabSemClass={tabSemClass}
+                    tabSemStyle={tabSemStyle}
+                    innerSemClass={innerSemClass}
+                    innerSemStyle={innerSemStyle}
                     ref={(node: any) => {
                       tabRef.current[tab.id] = node;
                     }}
@@ -250,6 +258,10 @@ const TabsHeader = (props: TabsHeaderProps) => {
                 <Tab
                   key={index}
                   {...tab}
+                  tabSemClass={tabSemClass}
+                  tabSemStyle={tabSemStyle}
+                  innerSemClass={innerSemClass}
+                  innerSemStyle={innerSemStyle}
                   ref={(node: any) => {
                     tabRef.current[tab.id] = node;
                   }}
@@ -264,16 +276,17 @@ const TabsHeader = (props: TabsHeaderProps) => {
   };
 
   const renderExtra = () => {
-    return <div className={headerStyle.extra}>{extra}</div>;
+    return <div className={classNames(headerStyle.extra, semClass('extra'))} style={semStyle('extra')}>{extra}</div>;
   };
 
   const renderPrevButton = () => {
     return (
       <div
-        className={classNames(headerStyle.prev)}
+        className={classNames(headerStyle.prev, semClass('prev'))}
         {...getDataProps({ state: atStart ? 'disabled' : '' })}
         onClick={handlePrev}
         dir={config.direction}
+        style={semStyle('prev')}
       >
         {shape === 'card' ? (
           Icon.tabs.Pre
@@ -287,10 +300,11 @@ const TabsHeader = (props: TabsHeaderProps) => {
   const renderNextButton = () => {
     return (
       <div
-        className={headerStyle.next}
+        className={classNames(headerStyle.next, semClass('next'))}
         {...getDataProps({ state: atEnd ? 'disabled' : '' })}
         onClick={handleNext}
         dir={config.direction}
+        style={semStyle('next')}
       >
         {shape === 'card' ? (
           Icon.tabs.Next
@@ -303,7 +317,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
 
   const renderCollapsibleButton = () => {
     return (
-      <div className={headerStyle.collapsible} onClick={onCollapsible}>
+      <div className={classNames(headerStyle.collapsible, semClass('collapsible'))} style={semStyle('collapsible')} onClick={onCollapsible}>
         {Icon.tabs.CollapseArrow}
       </div>
     );
@@ -321,7 +335,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
   return (
     <div
       className={headerWrapperClass}
-      style={tabBarStyle}
+      style={{ ...tabBarStyle, ...semStyle('header') }}
       {...getDataProps({ position: props.getPosition, shape })}
       dir={config.direction}
     >

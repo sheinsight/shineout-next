@@ -8,12 +8,14 @@ import {
 import classNames from 'classnames';
 import { useMemo, useLayoutEffect, useRef } from 'react';
 import React from 'react';
-import { ListProps } from './list.type';
+import { ListProps, ListSemanticKey } from './list.type';
 import { VirtualScrollList } from '../virtual-scroll';
 import Pagination from '../pagination';
 import Checkbox from '../checkbox';
 import Spin from '../spin';
 import Empty from '../empty';
+import { useConfig } from '../config';
+import { useSemantic } from '../common';
 
 const emptyArray: any[] = [];
 
@@ -24,9 +26,19 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
     lineHeight = 32,
     rowsInView = 10,
     pagination = {},
+    classNames: classNamesProp,
+    styles: stylesProp,
   } = props;
   const listClasses = props.jssStyle?.list?.();
   const isEmpty = !util.isArray(data) || data.length <= 0;
+
+  // Semantic DOM
+  const config = useConfig();
+  const [semClass, semStyle] = useSemantic<ListSemanticKey>(
+    classNamesProp,
+    stylesProp,
+    config.list,
+  );
 
   const inputAble = useInputAble({
     value: props.value,
@@ -79,7 +91,7 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
     };
 
     return (
-      <div key={key} className={classNames(listClasses?.item, rowClass)} style={listStyle}>
+      <div key={key} className={classNames(listClasses?.item, rowClass, semClass('item'))} style={{ ...listStyle, ...semStyle('item') }}>
         {shouldRenderCheckbox ? (
           <>
             <Checkbox
@@ -187,7 +199,7 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
   const renderFooter = () => {
     if (!props.footer) return null;
     return (
-      <div className={listClasses?.footer}>
+      <div className={classNames(listClasses?.footer, semClass('footer'))} style={semStyle('footer')}>
         {typeof props.footer === 'function' ? props.footer() : props.footer}
       </div>
     );
@@ -255,8 +267,9 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
     props.size === 'small' && listClasses?.wrapperSmall,
     props.size === 'large' && listClasses?.wrapperLarge,
     props.striped && listClasses?.wrapperStriped,
+    semClass('root'),
   );
-  const wrapperStyle = { ...props.style, height: props.height };
+  const wrapperStyle = { ...props.style, height: props.height, ...semStyle('root') };
 
   return (
     <>

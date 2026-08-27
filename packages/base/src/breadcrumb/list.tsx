@@ -5,16 +5,20 @@ import AbsoluteList from '../absolute-list';
 import { usePopup } from '@sheinx/hooks';
 import Icons from '../icons';
 
-import type { BreadcrumbJssStyle } from './breadcrumb.type';
+import type { BreadcrumbJssStyle, BreadcrumbSemanticKey } from './breadcrumb.type';
+import type { SemanticClassFn, SemanticStyleFn } from '../common/use-semantic';
 
 interface ListProps {
   data: any[];
   maxHeight?: string | number;
   jssStyle?: BreadcrumbJssStyle;
   renderItem: (dataItem: any) => React.ReactNode;
+  semClass: SemanticClassFn<BreadcrumbSemanticKey>;
+  semStyle: SemanticStyleFn<BreadcrumbSemanticKey>;
 }
 const List = (props: ListProps) => {
   const classes = props.jssStyle?.breadcrumb?.();
+  const { semClass, semStyle } = props;
   const { open, position, targetRef, popupRef, getTargetProps, closePop } = usePopup({
     disabled: false,
     trigger: 'hover',
@@ -28,7 +32,7 @@ const List = (props: ListProps) => {
     return arr.map((item, index) => {
       return (
         <div key={index} className={classes?.itemWrapper}>
-          <div className={classNames(classes?.dropdownItem)} onClick={closePop}>
+          <div className={classNames(classes?.dropdownItem, semClass('dropdownItem'))} style={semStyle('dropdownItem')} onClick={closePop}>
             {props.renderItem(item)}
           </div>
         </div>
@@ -51,13 +55,13 @@ const List = (props: ListProps) => {
         adjust={true}
       >
         <AnimationList
-          className={classNames(classes?.dropdown)}
+          className={classNames(classes?.dropdown, semClass('dropdown'))}
           type={'fade'}
           duration={'fast'}
           show={open}
           onRef={popupRef as any}
           animation={false}
-          style={{ maxHeight: props.maxHeight, overflow: 'auto' }}
+          style={{ maxHeight: props.maxHeight, overflow: 'auto', ...semStyle('dropdown') }}
         >
           {renderList(rest)}
         </AnimationList>

@@ -237,3 +237,90 @@ describe('Alert[Title]', () => {
     expect(close).toBeInTheDocument();
   });
 });
+
+describe('Alert[Semantic styles]', () => {
+  test('styles prop applies to root', () => {
+    const { container } = render(
+      <Alert styles={{ root: { borderRadius: '8px' } }}>hello</Alert>,
+    );
+    const root = container.querySelector(alertClassName)! as HTMLElement;
+    expect(root.style.borderRadius).toBe('8px');
+  });
+
+  test('styles prop applies to icon', () => {
+    const { container } = render(
+      <Alert type='info' icon styles={{ icon: { width: '20px' } }}>hello</Alert>,
+    );
+    const icon = container.querySelector(iconClassName)! as HTMLElement;
+    expect(icon.style.width).toBe('20px');
+  });
+
+  test('styles prop applies to title', () => {
+    const { container } = render(
+      <Alert title='Heading' styles={{ title: { fontSize: '18px' } }}>hello</Alert>,
+    );
+    const title = container.querySelector(titleClassName)! as HTMLElement;
+    expect(title.style.fontSize).toBe('18px');
+  });
+
+  test('styles prop applies to content', () => {
+    const { container } = render(
+      <Alert styles={{ content: { color: 'red' } }}>hello</Alert>,
+    );
+    const text = container.querySelector(textClassName)! as HTMLElement;
+    expect(text.style.color).toBe('red');
+  });
+
+  test('styles prop applies to close', () => {
+    const { container } = render(
+      <Alert closable styles={{ close: { opacity: '0.5' } }}>hello</Alert>,
+    );
+    const close = container.querySelector(closeClassName)! as HTMLElement;
+    expect(close.style.opacity).toBe('0.5');
+  });
+});
+
+describe('Alert[Semantic classNames]', () => {
+  test('static classNames applies to all keys', () => {
+    const { container } = render(
+      <Alert
+        type='info'
+        icon
+        title='Heading'
+        closable
+        classNames={{
+          root: 'my-root',
+          icon: 'my-icon',
+          title: 'my-title',
+          content: 'my-content',
+          close: 'my-close',
+        }}
+      >
+        hello
+      </Alert>,
+    );
+    expect(container.querySelector('.my-root')).toBeInTheDocument();
+    expect(container.querySelector('.my-icon')).toBeInTheDocument();
+    expect(container.querySelector('.my-title')).toBeInTheDocument();
+    expect(container.querySelector('.my-content')).toBeInTheDocument();
+    expect(container.querySelector('.my-close')).toBeInTheDocument();
+  });
+
+  test('functional classNames receives correct type', () => {
+    const rootFn = jest.fn(({ type }: { type: string }) => `fn-alert--${type}`);
+    const { container } = render(
+      <Alert type='danger' classNames={{ root: rootFn }}>hello</Alert>,
+    );
+    expect(container.querySelector('.fn-alert--danger')).toBeInTheDocument();
+    const lastCall = rootFn.mock.calls[rootFn.mock.calls.length - 1][0];
+    expect(lastCall.type).toBe('danger');
+  });
+
+  test('functional classNames works with type=info', () => {
+    const rootFn = jest.fn(({ type }: { type: string }) => `fn-${type}`);
+    const { container } = render(
+      <Alert type='info' classNames={{ root: rootFn }}>hello</Alert>,
+    );
+    expect(container.querySelector('.fn-info')).toBeInTheDocument();
+  });
+});

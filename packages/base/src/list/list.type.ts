@@ -8,6 +8,17 @@ import { SelectClasses } from '../select/select.type';
 import { EmptyClasses } from '../empty/empty.type';
 import { ImageJssStyleType } from '../image/image.type';
 import { BaseItemClasses } from './base-item.type';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
+
+/**
+ * List Semantic DOM key 列表
+ * - root:   最外层容器
+ * - item:   每个列表项
+ * - footer: 底部内容
+ *
+ * @see /docs/rfc/0001-semantic-dom.md
+ */
+export type ListSemanticKey = 'root' | 'item' | 'footer';
 
 export interface ListClasses extends BaseItemClasses {
   rootClass: string;
@@ -40,6 +51,20 @@ export interface ListProps<DataItem, Value>
   extends Pick<CommonType, 'className' | 'style'>,
     ListSelectProps<DataItem, Value> {
   jssStyle?: listJssStyle;
+
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<ListSemanticKey>;
+
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<ListSemanticKey>;
   /**
    * @en Whether to display zebra shading.
    * @cn 是否显示交错斑马底纹

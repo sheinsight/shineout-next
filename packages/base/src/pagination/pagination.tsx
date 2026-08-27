@@ -4,7 +4,9 @@ import Jumper from './pagination-jumper';
 import Buttons from './pagination-buttons';
 import Simple from './pagination-simple';
 import { getDataset, usePagination, util } from '@sheinx/hooks';
-import { PaginationProps } from './pagination.type';
+import { PaginationProps, PaginationSemanticKey } from './pagination.type';
+import { useConfig } from '../config';
+import { useSemantic } from '../common';
 
 const { devUseWarning } = util;
 
@@ -29,6 +31,8 @@ const Pagination = (props: PaginationProps) => {
     style,
     select,
     sizeListProps,
+    classNames: classNamesProp,
+    styles: stylesProp,
   } = props;
 
   // 兼容v1 & v2版本
@@ -47,6 +51,14 @@ const Pagination = (props: PaginationProps) => {
 
   const paginationStyle = jssStyle?.pagination?.();
 
+  // Semantic DOM
+  const config = useConfig();
+  const [semClass, semStyle] = useSemantic<PaginationSemanticKey>(
+    classNamesProp,
+    stylesProp,
+    config.pagination,
+  );
+
   if (total < 0) return null;
 
   const rootClasses = classNames(
@@ -58,11 +70,12 @@ const Pagination = (props: PaginationProps) => {
     align === 'right' && paginationStyle?.right,
     size === 'small' && paginationStyle?.small,
     size === 'large' && paginationStyle?.large,
+    semClass('root'),
   );
 
   const getRootProps = () => {
     return {
-      style,
+      style: { ...style, ...semStyle('root') },
     };
   };
 
@@ -79,6 +92,8 @@ const Pagination = (props: PaginationProps) => {
           pageSize={pageSize}
           disabled={disabled}
           onChange={onChange}
+          semClass={semClass}
+          semStyle={semStyle}
         />
       </div>
     );
@@ -102,6 +117,8 @@ const Pagination = (props: PaginationProps) => {
                 disabled={disabled}
                 pageSize={pageSize}
                 onChange={onChange}
+                semClass={semClass}
+                semStyle={semStyle}
               />
             );
           case 'jumper':
@@ -114,6 +131,8 @@ const Pagination = (props: PaginationProps) => {
                 current={current}
                 pageSize={pageSize}
                 onChange={onChange}
+                semClass={semClass}
+                semStyle={semStyle}
               />
             );
           case 'list':
@@ -130,6 +149,8 @@ const Pagination = (props: PaginationProps) => {
                 pageSizeList={pageSizeList}
                 onChange={onChange}
                 sizeListProps={sizeListProps}
+                semClass={semClass}
+                semStyle={semStyle}
               />
             );
           case 'simple':
@@ -144,6 +165,8 @@ const Pagination = (props: PaginationProps) => {
                 current={current || 0}
                 pageSize={pageSize}
                 onChange={onChange}
+                semClass={semClass}
+                semStyle={semStyle}
               />
             );
           default:

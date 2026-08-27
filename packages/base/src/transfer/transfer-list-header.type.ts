@@ -1,8 +1,9 @@
 import { CommonType } from '../common/type';
 import { KeygenResult, TransferListType, KeygenType } from '@sheinx/hooks';
-import { TransferClasses, ListDatum } from './transfer.type';
+import { TransferClasses, ListDatum, TransferSemanticKey } from './transfer.type';
 import { ButtonClasses } from '../button/button.type';
 import { CheckboxClasses } from '../checkbox/checkbox.type';
+import type { SemanticClassFn, SemanticStyleFn } from '../common/use-semantic';
 
 export interface TransferListHeaderProps<DataItem, Value extends KeygenResult[]>
   extends Pick<CommonType, 'size'> {
@@ -21,4 +22,6 @@ export interface TransferListHeaderProps<DataItem, Value extends KeygenResult[]>
   simple?: boolean;
   loading?: boolean;
   listType: TransferListType;
+  semClass?: SemanticClassFn<TransferSemanticKey>;
+  semStyle?: SemanticStyleFn<TransferSemanticKey>;
 }

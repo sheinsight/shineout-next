@@ -56,7 +56,7 @@ export default (props: TfootProps) => {
         dir={config.direction}
         key={index}
         colSpan={colSpan}
-        style={getFixedStyle(fixed.fixed, index, colSpan)}
+        style={{ ...getFixedStyle(fixed.fixed, index, colSpan), ...props.footerCellSemStyle }}
         className={classNames(
           fixed['fixed'] === 'left' && tableClasses?.cellFixedLeft,
           fixed['fixed'] === 'right' && tableClasses?.cellFixedRight,
@@ -64,6 +64,7 @@ export default (props: TfootProps) => {
           fixed.lastFixed && tableClasses?.cellFixedRight,
           (fixed.lastFixed || fixed.firstFixed) && tableClasses?.cellFixedLast,
           isLast && tableClasses?.cellIgnoreBorder,
+          props.footerCellSemClass,
         )}
       >
         {content}

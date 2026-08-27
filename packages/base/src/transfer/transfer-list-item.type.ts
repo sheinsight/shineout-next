@@ -1,8 +1,9 @@
 import { CommonClasses, CommonType } from '../common/type';
 import { ObjectKey, KeygenType, TransferListType } from '@sheinx/hooks';
-import { TransferClasses } from './transfer.type';
+import { TransferClasses, TransferSemanticKey } from './transfer.type';
 import { ButtonClasses } from '../button/button.type';
 import { CheckboxClasses } from '../checkbox/checkbox.type';
+import type { SemanticClassFn, SemanticStyleFn } from '../common/use-semantic';
 
 export interface TransferListItemProps<DataItem> extends Pick<CommonType, 'size'> {
   jssStyle: {
@@ -21,4 +22,6 @@ export interface TransferListItemProps<DataItem> extends Pick<CommonType, 'size'
   itemClass?: string;
   keygen?: KeygenType<DataItem>;
   renderItem: ObjectKey<DataItem> | ((data: DataItem) => React.ReactNode);
+  semClass?: SemanticClassFn<TransferSemanticKey>;
+  semStyle?: SemanticStyleFn<TransferSemanticKey>;
 }

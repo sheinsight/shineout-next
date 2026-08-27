@@ -1,6 +1,9 @@
 import React from 'react';
 import { BaseCheckProps } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
+
+export type SwitchSemanticKey = 'root' | 'indicator' | 'content';
 
 export interface SwitchClasses {
   rootClass: string;
@@ -24,6 +27,18 @@ export interface SwitchProps
   jssStyle?: {
     switch?: () => SwitchClasses;
   };
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<SwitchSemanticKey>;
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<SwitchSemanticKey>;
   /**
    * @en Content with checked and unchecked
    * @cn 选中和未选中时的内容

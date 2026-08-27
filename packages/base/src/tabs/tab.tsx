@@ -16,7 +16,7 @@ const placeholderRefStyle: React.CSSProperties = {
 };
 
 const Tab = (props: TabProps, ref: any) => {
-  const { jssStyle, tab: propTab, background, disabled, id, color } = props;
+  const { jssStyle, tab: propTab, background, disabled, id, color, tabSemClass, tabSemStyle, innerSemClass, innerSemStyle } = props;
   const {
     active,
     shape = 'card',
@@ -29,7 +29,7 @@ const Tab = (props: TabProps, ref: any) => {
   const tabsStyle = jssStyle?.tabs?.() || ({} as TabsClasses);
   const buttonStyle = jssStyle?.button || ({} as ButtonClasses);
 
-  const tabClass = classNames(tabsStyle.tab, {});
+  const tabClass = classNames(tabsStyle.tab, {}, tabSemClass);
 
   const isActive = active === id;
 
@@ -56,15 +56,15 @@ const Tab = (props: TabProps, ref: any) => {
   };
 
   const renderLineTab = () => {
-    return <div className={tabsStyle.lineInner}>{tab}</div>;
+    return <div className={classNames(tabsStyle.lineInner, innerSemClass)} style={innerSemStyle}>{tab}</div>;
   };
 
   const renderDashTab = () => {
-    return <div className={tabsStyle.lineInner}>{tab}</div>;
+    return <div className={classNames(tabsStyle.lineInner, innerSemClass)} style={innerSemStyle}>{tab}</div>;
   };
 
   const renderFillTab = () => {
-    return <div className={tabsStyle.fillInner}>{tab}</div>;
+    return <div className={classNames(tabsStyle.fillInner, innerSemClass)} style={innerSemStyle}>{tab}</div>;
   };
 
   const style: { background?: string; color?: string } = {
@@ -87,7 +87,7 @@ const Tab = (props: TabProps, ref: any) => {
     className: tabClass,
     ...getStateProps(),
     ...util.extractProps(props, "data-attr"),
-    style: style,
+    style: { ...style, ...tabSemStyle },
     onClick: handleClick,
     ref: ref,
     dir: config.direction,

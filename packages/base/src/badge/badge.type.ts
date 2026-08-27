@@ -1,6 +1,16 @@
 import React from 'react';
 // import { BaseBadgeProps } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
+
+/**
+ * Badge Semantic DOM key 列表
+ * - root:  最外层容器
+ * - badge: 右上角徽标元素（数字/圆点/自定义内容）
+ *
+ * @see /docs/rfc/0001-semantic-dom.md
+ */
+export type BadgeSemanticKey = 'root' | 'badge';
 
 export interface BadgeClasses {
   rootClass: string;
@@ -29,6 +39,20 @@ export interface BadgeProps extends Pick<CommonType, 'className' | 'style'> {
   jssStyle?: {
     badge: () => BadgeClasses;
   };
+
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<BadgeSemanticKey>;
+
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<BadgeSemanticKey>;
   /**
    * @en Content
    * @cn 内容

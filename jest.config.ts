@@ -131,6 +131,9 @@ export default {
   // Run tests from one or more projects
   projects: [
     {
+      ...createTesterConfig('base'),
+    },
+    {
       ...createTesterConfig('hooks'),
     },
     {

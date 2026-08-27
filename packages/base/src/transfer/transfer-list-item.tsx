@@ -18,6 +18,8 @@ const TransferListItem = <DataItem,>(props: TransferListItemProps<DataItem>) => 
     simple,
     itemClass,
     listType,
+    semClass,
+    semStyle,
   } = props;
   const listItem = useRef<HTMLDivElement>(null);
   // const listItemHeight = useRef(lineHeight);
@@ -27,7 +29,7 @@ const TransferListItem = <DataItem,>(props: TransferListItemProps<DataItem>) => 
   const isChecked = listDatum.check(data);
 
   const disabled = listDatum.disabledCheck(data);
-  const rootClass = classNames(styles.item, itemClass, disabled && styles.disabled);
+  const rootClass = classNames(styles.item, itemClass, disabled && styles.disabled, semClass?.('item'));
 
   const renderItem = () => {
     if (util.isString(renderItemProp)) {
@@ -101,7 +103,7 @@ const TransferListItem = <DataItem,>(props: TransferListItemProps<DataItem>) => 
   // }, []);
 
   return (
-    <div ref={listItem} className={rootClass} style={{ height: lineHeight }}>
+    <div ref={listItem} className={rootClass} style={{ height: lineHeight, ...semStyle?.('item') }}>
       <div className={styles.itemWrapper}>{renderCheckbox()}</div>
     </div>
   );

@@ -9,4 +9,5 @@ export type {
   SummaryItem as TableSummaryItem,
   TableRef as TableTableRef,
   TableClasses,
+  TableSemanticKey,
 } from './table.type';

@@ -4,4 +4,5 @@ export type {
   CascaderClasses,
   CascaderRef,
   RenderCompressedOption,
+  CascaderSemanticKey,
 } from './cascader.type';

@@ -1,3 +1,9 @@
+## 3.10.0-beta.20
+2026-08-27
+### 🆕 Feature
+- 全量组件支持 **Semantic DOM API**：通过 `classNames` 和 `styles` props 精准定制组件内部任意 DOM 节点样式，同时支持 `setConfig` 全局统一配置 ([#1765](https://github.com/sheinsight/shineout-next/pull/1765))
+
+
 ## 3.10.0-beta.8
 2026-07-29
 ### 🆕 Feature

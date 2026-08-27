@@ -17,9 +17,11 @@ const PaginationSizeList = (props: PaginationSizeListProps) => {
     sizeListProps,
     pageSize,
     onChange,
+    semClass,
+    semStyle,
   } = props;
   const paginationStyle = jssStyle?.pagination?.();
-  const rootClasses = classNames(paginationStyle?.section, paginationStyle?.sizeList);
+  const rootClasses = classNames(paginationStyle?.section, paginationStyle?.sizeList, semClass('sizeList'));
 
   const handleChange = (pageSize: number) => {
     const start = (current - 1) * props.pageSize + 1;
@@ -28,7 +30,7 @@ const PaginationSizeList = (props: PaginationSizeListProps) => {
   };
 
   return (
-    <div className={rootClasses}>
+    <div className={rootClasses} style={semStyle('sizeList')}>
       <FormConfigContext.Provider value={emptyFormConfig}>
         <Select
           jssStyle={jssStyle}

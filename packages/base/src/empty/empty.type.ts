@@ -1,6 +1,17 @@
 import React from 'react';
 import { CommonType } from '../common/type';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
 // import { BaseEmptyProps } from '@sheinx/hooks';
+
+/**
+ * Empty Semantic DOM key 列表
+ * - root:        最外层容器
+ * - icon:        图标/图片容器
+ * - description: 描述文字
+ *
+ * @see /docs/rfc/0001-semantic-dom.md
+ */
+export type EmptySemanticKey = 'root' | 'icon' | 'description';
 
 export interface EmptyClasses {
   rootClass: string;
@@ -16,6 +27,20 @@ export interface EmptyProps
   jssStyle?: {
     empty?: () => EmptyClasses;
   };
+
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<EmptySemanticKey>;
+
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<EmptySemanticKey>;
   /**
    * @en Empty state image address, priority is higher than icon
    * @cn 空状态图片地址,优先级高于icon

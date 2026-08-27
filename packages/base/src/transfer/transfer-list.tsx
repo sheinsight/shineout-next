@@ -45,6 +45,8 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
     customRender,
     onFilter,
     onSelectChange,
+    semClass,
+    semStyle,
   } = props;
   const { locale } = useConfig();
 
@@ -53,7 +55,7 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
     [styles.source]: listType === 'source',
     [styles.target]: listType === 'target',
   });
-  const listClass = classNames(styles.list, listClassName);
+  const listClass = classNames(styles.list, listClassName, semClass?.('list'));
 
   const [addonHeight, setAddonHeight] = useState(0);
   const listContainerRef = useRef<HTMLDivElement>(null);
@@ -116,6 +118,8 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
         listDatum={listDatum}
         listType={listType}
         simple={simple}
+        semClass={semClass}
+        semStyle={semStyle}
       ></TransferListHeader>
     );
   };
@@ -176,6 +180,8 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
         lineHeight={lineHeight}
         renderItem={renderItemProp}
         disabled={datum.disabledCheck(item)}
+        semClass={semClass}
+        semStyle={semStyle}
       />
     );
   };

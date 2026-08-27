@@ -1,3 +1,7 @@
+// Semantic DOM 类型在 @sheinx/base 单一来源，docs 这里 re-export 保持向后引用便利
+import type { SemanticSchema } from '@sheinx/base';
+export type { SemanticKeyMeta, SemanticSchema } from '@sheinx/base';
+
 export interface Local {
   cn: string;
   en: string;
@@ -11,6 +15,8 @@ export interface Header {
   title: Local;
   describe: Local;
   guides: Guides;
+  /** 透传给子组件 Tabs，用于决定是否显示 Semantic tab */
+  hasSemantic?: boolean;
 }
 
 export interface Example {
@@ -96,4 +102,6 @@ export interface MarkdownProps {
     name: string
     examples: Example;
   }
+  /** Semantic DOM 元数据；不存在时 Semantic tab 不显示 */
+  semantic?: SemanticSchema;
 }

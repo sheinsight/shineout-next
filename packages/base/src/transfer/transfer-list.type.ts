@@ -1,6 +1,7 @@
 import { CommonType } from '../common/type';
 import { KeygenResult, ObjectKey, KeygenType, TransferListType } from '@sheinx/hooks';
-import { JssStyleType, ListDatum, FilterProps, CustomRenderProps } from './transfer.type';
+import { JssStyleType, ListDatum, FilterProps, CustomRenderProps, TransferSemanticKey } from './transfer.type';
+import type { SemanticClassFn, SemanticStyleFn } from '../common/use-semantic';
 
 export interface ListInfo<DataItem> {
   data: DataItem[];
@@ -41,4 +42,6 @@ export interface TransferListProps<DataItem, Value extends KeygenResult[]>
   customRender?: (props: CustomRenderProps<Value>) => React.ReactNode;
   onFilter?: (text: string, listType: TransferListType) => void;
   onSelectChange: ((selectKeys: KeygenResult[]) => void);
+  semClass?: SemanticClassFn<TransferSemanticKey>;
+  semStyle?: SemanticStyleFn<TransferSemanticKey>;
 }

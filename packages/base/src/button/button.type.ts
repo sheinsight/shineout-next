@@ -2,6 +2,34 @@ import { CommonType } from '../common/type';
 import { BaseButtonProps, ButtonMode, ButtonType } from '@sheinx/hooks';
 import { SpinClasses } from '../spin/spin.type';
 import React from 'react';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
+
+/**
+ * Button Semantic DOM key 列表
+ * - root:    按钮元素（button 或 a）
+ * - loading: 加载指示器容器
+ *
+ * @see /docs/rfc/0001-semantic-dom.md
+ */
+export type ButtonSemanticKey = 'root' | 'loading';
+
+/**
+ * 传入函数式 `classNames` 时的状态快照。
+ *
+ * @version 3.10.0
+ */
+export interface ButtonClassNamesInfo {
+  /**
+   * @cn 是否禁用
+   * @en Whether disabled
+   */
+  disabled: boolean;
+  /**
+   * @cn 是否加载中
+   * @en Whether loading
+   */
+  loading: boolean;
+}
 
 export interface ButtonClasses {
   rootClass: string;
@@ -105,6 +133,22 @@ export interface ButtonBaseProps
    * @cn 自定义loading
    */
   renderLoading?: (buttonEl: React.ReactNode) => React.ReactElement;
+
+  /**
+   * @en Semantic DOM classNames for internal nodes (root / loading).
+   *     Accepts static strings or functions that receive a state snapshot.
+   * @cn Semantic DOM 类名，可按 key 定制内部各节点（root / loading）。
+   *     支持静态字符串或函数（接收状态快照）。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<ButtonSemanticKey, ButtonClassNamesInfo>;
+
+  /**
+   * @en Semantic DOM inline styles for internal nodes (root / loading).
+   * @cn Semantic DOM 内联样式，按 key 定制内部各节点。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<ButtonSemanticKey>;
 }
 
 export interface ButtonGroupProps extends Pick<CommonType, 'style' | 'className' | 'size'> {

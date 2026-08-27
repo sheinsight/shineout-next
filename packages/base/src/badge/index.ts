@@ -1,2 +1,2 @@
 export { default, default as Badge } from './badge';
-export type { BadgeProps } from './badge.type';
+export type { BadgeProps, BadgeSemanticKey } from './badge.type';

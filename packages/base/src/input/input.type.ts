@@ -5,6 +5,9 @@ import { BaseTipProps } from '../common/use-tip';
 import { BaseInputProps, InputFormatProps } from '@sheinx/hooks';
 import { PopoverClasses } from '../popover/popover.type';
 import { TextareaInfoOption } from '../textarea/textarea.type';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
+
+export type InputSemanticKey = 'root' | 'input';
 
 export interface InputClasses {
   rootClass: string;
@@ -108,6 +111,8 @@ export interface SimpleInputProps
   renderInput?: (inputEl: React.ReactElement) => React.ReactElement;
   hasSuffix?: boolean;
   name?: string;
+  semClass?: (key: InputSemanticKey) => string;
+  semStyle?: (key: InputSemanticKey) => React.CSSProperties | undefined;
 }
 
 type InputInfoOption = TextareaInfoOption
@@ -209,6 +214,19 @@ export interface InputCommonProps<V> extends BaseTipProps, Pick<CommonType, 'cla
    */
   onBlur?: React.FocusEventHandler<HTMLInputElement>;
   status?: CommonType['status'];
+
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<InputSemanticKey>;
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<InputSemanticKey>;
 }
 
 export type GetCommonProps<Props, V> = Omit<

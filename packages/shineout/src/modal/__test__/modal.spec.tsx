@@ -689,6 +689,94 @@ describe('Modal[Function(Type)]', () => {
     fireEvent.click(document.querySelector(mask)!);
   });
 });
+
+describe('Modal[Semantic styles]', () => {
+  test('styles prop applies to body and footer', () => {
+    render(
+      <Modal
+        visible
+        title='Title'
+        footer={<div>Footer</div>}
+        styles={{
+          body: { padding: '32px' },
+          footer: { fontSize: '12px' },
+        }}
+      >
+        Content
+      </Modal>,
+    );
+    const modalWrapper = document.querySelectorAll(wrapper);
+    const lastModal = modalWrapper[modalWrapper.length - 1];
+    const bodyEl = lastModal.querySelector(body)! as HTMLElement;
+    expect(bodyEl.style.padding).toBe('32px');
+    const footerEl = lastModal.querySelector(footer)! as HTMLElement;
+    expect(footerEl.style.fontSize).toBe('12px');
+  });
+
+  test('styles prop applies to header and close', () => {
+    render(
+      <Modal
+        visible
+        title='Title'
+        styles={{
+          header: { fontSize: '18px' },
+          close: { opacity: '0.5' },
+        }}
+      >
+        Content
+      </Modal>,
+    );
+    const modalWrapper = document.querySelectorAll(wrapper);
+    const lastModal = modalWrapper[modalWrapper.length - 1];
+    const headerEl = lastModal.querySelector(header)! as HTMLElement;
+    expect(headerEl.style.fontSize).toBe('18px');
+    const closeEl = lastModal.querySelector(headerClose)! as HTMLElement;
+    expect(closeEl.style.opacity).toBe('0.5');
+  });
+});
+
+describe('Modal[Semantic classNames]', () => {
+  test('static classNames applies to all keys', () => {
+    render(
+      <Modal
+        visible
+        title='Title'
+        footer={<div>Footer</div>}
+        classNames={{
+          root: 'my-root',
+          mask: 'my-mask',
+          header: 'my-header',
+          body: 'my-body',
+          footer: 'my-footer',
+          close: 'my-close',
+        }}
+      >
+        Content
+      </Modal>,
+    );
+    const lastModal = document.querySelector('.my-root')!;
+    expect(lastModal).toBeInTheDocument();
+    expect(lastModal.querySelector('.my-mask')).toBeInTheDocument();
+    expect(lastModal.querySelector('.my-header')).toBeInTheDocument();
+    expect(lastModal.querySelector('.my-body')).toBeInTheDocument();
+    expect(lastModal.querySelector('.my-footer')).toBeInTheDocument();
+    expect(lastModal.querySelector('.my-close')).toBeInTheDocument();
+  });
+
+  test('functional classNames receives visible=true', () => {
+    const rootFn = jest.fn(({ visible }: { visible: boolean }) =>
+      visible ? 'fn-visible' : 'fn-hidden',
+    );
+    render(
+      <Modal visible title='Title' classNames={{ root: rootFn }}>
+        Content
+      </Modal>,
+    );
+    expect(document.querySelector('.fn-visible')).toBeInTheDocument();
+    const lastCall = rootFn.mock.calls[rootFn.mock.calls.length - 1][0];
+    expect(lastCall.visible).toBe(true);
+  });
+});
 // usePortal
 // maskOpacity
 // noPadding

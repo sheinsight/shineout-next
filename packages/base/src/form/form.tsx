@@ -2,15 +2,25 @@ import { FormContext, useForm, useInputAble, useLatestObj, usePersistFn, util } 
 import classNames from 'classnames';
 import { useFormFooter } from './form-footer-context';
 import React, { useEffect, useRef } from 'react';
+import { useSemantic } from '../common/use-semantic';
+import { useConfig } from '../config';
+import { FormSemanticContext } from './form-semantic-context';
 
-import type { FormProps } from './form.type';
+import type { FormProps, FormSemanticKey } from './form.type';
 import type { ObjectType } from '@sheinx/hooks';
 
 
 const Form = <V extends ObjectType>(props: FormProps<V>) => {
-  const { jssStyle, className, style, children, formRef, ...rest } = props;
+  const { jssStyle, className, style, children, formRef, classNames: classNamesProp, styles: stylesProp, ...rest } = props;
   const formClasses = jssStyle?.form?.();
   const modalFormContext = useFormFooter();
+  const config = useConfig();
+
+  const [semClass, semStyle] = useSemantic<FormSemanticKey>(
+    classNamesProp,
+    stylesProp,
+    config.form,
+  );
 
   const isControl = 'value' in props
 
@@ -102,11 +112,17 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
     formClasses?.wrapper,
     className,
     props.inline && formClasses?.wrapperInline,
+    semClass('root'),
   ]);
+
+  const rootSemStyle = semStyle('root');
+  const rootStyle: React.CSSProperties | undefined = rootSemStyle
+    ? { ...style, ...rootSemStyle }
+    : style;
 
   const formProps = getFormProps({
     className: rootClass,
-    style,
+    style: rootStyle,
   })
 
   useEffect(() => {
@@ -129,7 +145,9 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
       ref={formElRef}
     >
       <Provider {...ProviderProps}>
-        <FormContext.Provider value={formRefObj}>{children}</FormContext.Provider>
+        <FormSemanticContext.Provider value={{ semClass, semStyle }}>
+          <FormContext.Provider value={formRefObj}>{children}</FormContext.Provider>
+        </FormSemanticContext.Provider>
       </Provider>
     </form>
   );

@@ -4,6 +4,9 @@ import { BaseTextareaProps } from '@sheinx/hooks';
 import { BaseTipProps } from '../common/use-tip';
 import { PopoverClasses } from '../popover/popover.type';
 import { InnerTitleClasses } from '../common/use-inner-title';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
+
+export type TextareaSemanticKey = 'root' | 'textarea';
 
 export interface TextareaClasses {
   rootClass: string;
@@ -50,6 +53,18 @@ export interface SimpleTextareaProps
     textarea?: () => TextareaClasses;
   };
   /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<TextareaSemanticKey>;
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<TextareaSemanticKey>;
+  /**
    * @en The prefix of the textarea
    * @cn 前缀
    * @private not export
@@ -61,6 +76,11 @@ export interface SimpleTextareaProps
    * @private not export
    */
   suffix?: React.ReactNode;
+  /**
+   * @en The callback function for status change
+   * @cn 状态改变的回调函数
+   * @private not export
+   */
   onStatusChange?: (status: { focused?: boolean }) => void;
   /**
    * @en Whether to display only the bottom border

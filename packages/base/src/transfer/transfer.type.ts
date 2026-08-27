@@ -6,6 +6,9 @@ import { InputClasses } from '../input/input.type';
 import { SpinClasses } from '../spin/spin.type';
 import { EmptyClasses } from '../empty/empty.type';
 import React from 'react';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
+
+export type TransferSemanticKey = 'root' | 'header' | 'list' | 'item' | 'operations';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export type ListDatum<DataItem, Value extends KeygenResult[]> = ReturnType<
@@ -77,6 +80,18 @@ export interface TransferProps<DataItem, Value extends KeygenResult[]>
   extends Omit<BaseTransferProps<DataItem, Value>, 'valueControl' | 'selectControl'>,
     Pick<CommonType, 'size' | 'style' | 'className'> {
   jssStyle: JssStyleType;
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<TransferSemanticKey>;
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<TransferSemanticKey>;
   /**
    * @en The checked list, the checked values ​​use the results of keygen
    * @cn 被勾选的列表, 勾选的值均使用的是 keygen 的结果

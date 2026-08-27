@@ -62,6 +62,10 @@ interface TrProps
   disabled?: boolean;
   scrolling?: boolean;
   rowSelectMergeStartData?: any;
+  bodyRowSemClass?: string;
+  bodyRowSemStyle?: React.CSSProperties;
+  bodyCellSemClass?: string;
+  bodyCellSemStyle?: React.CSSProperties;
 }
 
 const Tr = (props: TrProps) => {
@@ -367,8 +371,9 @@ const Tr = (props: TrProps) => {
               (col.lastFixed || col.firstFixed || last.lastFixed) && tableClasses?.cellFixedLast,
               lastRowIndex === i && tableClasses?.cellIgnoreBorder,
               showCellHover && tableClasses?.cellHover,
+              props.bodyCellSemClass,
             )}
-            style={getTdStyle(col, data[i].colSpan)}
+            style={{ ...getTdStyle(col, data[i].colSpan), ...props.bodyCellSemStyle }}
             direction={config.direction}
             data-role={col.type === 'checkbox' ? 'checkbox' : undefined}
             onClick={props.onCellClick ? () => handleCellClick(data[i].data, i) : undefined}
@@ -499,8 +504,9 @@ const Tr = (props: TrProps) => {
           props.striped && props.rowIndex % 2 === 1 && tableClasses?.rowStriped,
           props.isSelect && tableClasses?.rowChecked,
           props.hover && tableClasses?.rowHover,
+          props.bodyRowSemClass,
         )}
-        style={{ height: props.strictRowHeight ? props.strictRowHeight : undefined }}
+        style={{ height: props.strictRowHeight ? props.strictRowHeight : undefined, ...props.bodyRowSemStyle }}
         {...enhancedRowEvents}
         onClick={handleRowClick}
       >

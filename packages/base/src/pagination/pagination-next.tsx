@@ -5,9 +5,9 @@ import Icons from '../icons';
 import { useConfig } from '../config';
 
 const PaginationButtonNext = (props: PaginationActionButtonProps) => {
-  const { jssStyle, disabled, total, pageSize, current, text, size, style, mode, onChange } = props;
+  const { jssStyle, disabled, total, pageSize, current, text, size, style, mode, onChange, semClass, semStyle } = props;
   const paginationStyle = jssStyle?.pagination?.();
-  const rootClasses = classNames(paginationStyle?.section);
+  const rootClasses = classNames(paginationStyle?.section, semClass('next'));
   const max = Math.ceil(total / pageSize);
   const next = current + 1;
   const hasText = text && text.next;
@@ -20,7 +20,7 @@ const PaginationButtonNext = (props: PaginationActionButtonProps) => {
       mode={mode}
       page={next}
       size={size}
-      style={style}
+      style={{ ...style, ...semStyle('next') }}
       shape={hasText ? undefined : 'square'}
       disabled={disabled || next > max}
       onClick={onChange}

@@ -1,9 +1,10 @@
 import { usePersistFn, usePopup, util } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React, { cloneElement, isValidElement, useEffect, useMemo } from 'react';
-import { TooltipProps } from './tooltip.type';
+import { TooltipClassNamesInfo, TooltipProps, TooltipSemanticKey } from './tooltip.type';
 import AbsoluteList from '../absolute-list';
 import { useConfig } from '../config';
+import { useSemantic } from '../common';
 import { arrowHCenterOffset, arrowVCenterOffset } from '../common/arrow';
 
 const { devUseWarning } = util;
@@ -51,6 +52,21 @@ const TooltipInner = (props: ValidTooltipProps) => {
     mouseLeaveDelay: mouseLeaveDelay,
     targetEvents: disabledChild ? {} : childrenProps,
   });
+
+  // Semantic DOM 访问器：合并用户 classNames / styles、setConfig 全局兜底与内部 JSS class
+  // 优先级（高→低）：props > setConfig({ tooltip: { ... } }) > 内部默认
+  // 见 /docs/rfc/0001-semantic-dom.md §4.4
+  const semInfo: TooltipClassNamesInfo = {
+    open,
+    position,
+    type,
+  };
+  const [semClass, semStyle] = useSemantic<TooltipSemanticKey, TooltipClassNamesInfo>(
+    props.classNames,
+    props.styles,
+    config.tooltip,
+    semInfo,
+  );
 
   const events = getTargetProps();
 
@@ -165,8 +181,9 @@ const TooltipInner = (props: ValidTooltipProps) => {
               tooltipClasses?.rootClass,
               tooltipClasses?.wrapper,
               open && tooltipClasses?.wrapperOpen,
+              semClass('root'),
             )}
-            style={{ pointerEvents: persistent ? 'initial' : undefined, display: open ? 'block' : 'none' }}
+            style={{ pointerEvents: persistent ? 'initial' : undefined, display: open ? 'block' : 'none', ...semStyle('root') }}
             {...util.getDataAttribute({ type, position })}
             ref={popupRef}
             onMouseLeave={events.onMouseLeave}
@@ -174,11 +191,12 @@ const TooltipInner = (props: ValidTooltipProps) => {
           >
             {showArrow && (
               <span
-                className={tooltipClasses?.arrow}
+                className={classNames(tooltipClasses?.arrow, semClass('arrow'))}
+                style={semStyle('arrow')}
                 {...util.getDataAttribute({ role: 'arrow' })}
               />
             )}
-            <div style={style} className={classNames(tooltipClasses?.content)}>
+            <div style={{ ...style, ...semStyle('content') }} className={classNames(tooltipClasses?.content, semClass('content'))}>
               {tip}
             </div>
           </div>

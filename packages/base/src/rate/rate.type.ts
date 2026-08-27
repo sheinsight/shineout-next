@@ -1,5 +1,8 @@
 import React from 'react';
 import { CommonChangeType, CommonType } from '../common/type';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
+
+export type RateSemanticKey = 'root' | 'star' | 'text';
 
 export interface RateClasses {
   rootClass: string;
@@ -22,6 +25,18 @@ export interface RateProps
   jssStyle?: {
     rate: () => RateClasses;
   };
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<RateSemanticKey>;
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<RateSemanticKey>;
 
   /**
    * @en Whether to allow semi selection

@@ -11,6 +11,9 @@ import { RadioClasses } from '../radio/radio.type';
 import { SpinClasses } from '../spin/spin.type';
 import { InputClasses } from '../input/input.type';
 import { BaseTipProps } from '../common/use-tip';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
+
+export type CascaderSemanticKey = 'root' | 'header' | 'popup' | 'list' | 'option';
 
 export interface CascaderClasses {
   rootClass: string;
@@ -129,6 +132,18 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
     Pick<AbsoluteListProps, 'absolute' | 'zIndex'>,
     BaseTipProps {
   jssStyle?: JssStyleType;
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<CascaderSemanticKey>;
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<CascaderSemanticKey>;
   /**
    * @en Open multiple selection
    * @cn 开启多选

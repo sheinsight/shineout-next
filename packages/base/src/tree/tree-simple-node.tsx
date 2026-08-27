@@ -71,7 +71,7 @@ const Node = <DataItem, Value extends KeygenResult[]>(
   const content = useRef<HTMLDivElement>(null);
   const dragImage = useRef<null | HTMLElement>(null);
 
-  const { getPath } = useTreeContext();
+  const { getPath, semClass: treeSemClass, semStyle: treeSemStyle } = useTreeContext();
   const { active, isLeaf, fetching, setFetching, expanded, setExpanded, onTriggered } = useTreeNode(
     {
       id,
@@ -100,6 +100,7 @@ const Node = <DataItem, Value extends KeygenResult[]>(
     {
       [contentStyle.leaf]: !hasChildren,
     },
+    treeSemClass?.('node'),
   );
 
   if (placeElement) {
@@ -284,7 +285,7 @@ const Node = <DataItem, Value extends KeygenResult[]>(
     return dropEvents;
   };
   return (
-    <div {...getDropProps()} ref={element} className={rootClass} dir={config.direction}>
+    <div {...getDropProps()} ref={element} className={rootClass} style={treeSemStyle?.('node')} dir={config.direction}>
       <TreeContent
         virtual={false}
         jssStyle={jssStyle}

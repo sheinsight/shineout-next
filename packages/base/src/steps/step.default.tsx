@@ -16,6 +16,8 @@ const DefaultStep = (props: StepStyleProps) => {
     labelPlacement,
     renderIcon: renderIconProp,
     onChange,
+    semClass,
+    semStyle,
   } = props;
   const styles = jssStyle?.steps?.() || ({} as StepsClasses);
   const rootClass = styles.default;
@@ -25,13 +27,13 @@ const DefaultStep = (props: StepStyleProps) => {
     [styles.error]: status === 'error',
     [styles.process]: status === 'process',
     [styles.wait]: status === 'wait',
-  });
+  }, semClass('icon'));
 
   const showTail = labelPlacement === 'vertical' || direction === 'vertical';
 
   const renderTail = () => {
     return (
-      <div className={styles.tail} dir={config.direction}>
+      <div className={classNames(styles.tail, semClass('tail'))} style={semStyle('tail')} dir={config.direction}>
         {' '}
       </div>
     );
@@ -39,20 +41,20 @@ const DefaultStep = (props: StepStyleProps) => {
 
   const renderTitle = () => {
     return (
-      <div className={styles.title} dir={config.direction}>
+      <div className={classNames(styles.title, semClass('title'))} style={semStyle('title')} dir={config.direction}>
         {util.isFunc(title) ? title(index, status!) : title}
       </div>
     );
   };
 
   const renderDescription = () => {
-    return <div className={styles.description}>{description}</div>;
+    return <div className={classNames(styles.description, semClass('description'))} style={semStyle('description')}>{description}</div>;
   };
 
   const renderIcon = () => {
     if (renderIconProp)
       return (
-        <div className={iconClass} dir={config.direction}>
+        <div className={iconClass} style={semStyle('icon')} dir={config.direction}>
           <span className={styles.iconWrapper}>{renderIconProp(index, status)}</span>
         </div>
       );
@@ -66,7 +68,7 @@ const DefaultStep = (props: StepStyleProps) => {
       iconComponent = index + 1;
     }
     return (
-      <div className={iconClass}>
+      <div className={iconClass} style={semStyle('icon')}>
         <span className={styles.iconWrapper}>{iconComponent}</span>
       </div>
     );
@@ -74,7 +76,7 @@ const DefaultStep = (props: StepStyleProps) => {
 
   const renderContent = () => {
     return (
-      <div className={styles.content}>
+      <div className={classNames(styles.content, semClass('content'))} style={semStyle('content')}>
         {renderTitle()}
         {description && renderDescription()}
       </div>

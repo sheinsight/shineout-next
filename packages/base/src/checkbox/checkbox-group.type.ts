@@ -1,11 +1,24 @@
 import { ReactNode } from 'react';
 import { KeygenType, ObjectKey } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
-import { CheckboxStyle } from './checkbox.type';
+import { CheckboxStyle, CheckboxSemanticKey } from './checkbox.type';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
 
 export interface CheckboxGroupProps<DataItem, Value extends any[] | string>
   extends Pick<CommonType, 'className' | 'size' | 'style'> {
   jssStyle: CheckboxStyle;
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<CheckboxSemanticKey>;
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<CheckboxSemanticKey>;
   /**
    * @en You can pass in a set of Checkbox
    * @cn 可以传入一组Checkbox

@@ -1,6 +1,7 @@
 import { useImage, useLatestObj, usePersistFn } from '@sheinx/hooks';
-import { ImageClasses } from './image.type';
-import { getDefaultContainer } from '../config';
+import { ImageClasses, ImageSemanticKey } from './image.type';
+import { getDefaultContainer, useConfig } from '../config';
+import { useSemantic } from '../common';
 import classNames from 'classnames';
 import React, { useEffect } from 'react';
 import showGallery from './image-event';
@@ -37,6 +38,8 @@ const Image = (props: ImageProps) => {
     componentRef,
     renderHoverMask,
     inViewOnly,
+    classNames: classNamesProp,
+    styles: stylesProp,
     ...rest
   } = props;
 
@@ -53,6 +56,14 @@ const Image = (props: ImageProps) => {
     ...rest,
   });
 
+  // Semantic DOM
+  const config = useConfig();
+  const [semClass, semStyle] = useSemantic<ImageSemanticKey>(
+    classNamesProp,
+    stylesProp,
+    config.image,
+  );
+
   const imageStyle = jssStyle?.image?.() || ({} as ImageClasses);
   const shouldPreview = href && target === '_modal' && status !== ERROR && status !== PLACEHOLDER;
   const shouldDownload = target === '_download';
@@ -61,7 +72,7 @@ const Image = (props: ImageProps) => {
     download: shouldDownload,
     target: shouldDownload ? '_self' : target,
     href: !href || target !== '_modal' ? href : undefined,
-    style: Object.assign({}, style, { width, paddingBottom: height }),
+    style: Object.assign({}, style, { width, paddingBottom: height }, semStyle('root')),
     onClick,
     ...rest,
   });
@@ -77,14 +88,14 @@ const Image = (props: ImageProps) => {
     [imageStyle.thumbnail]: shape === 'thumbnail',
     [imageStyle.preview]: shouldPreview,
     [imageStyle.download]: shouldDownload,
-  });
+  }, semClass('root'));
 
-  const imgClass = classNames(imageStyle.img);
+  const imgClass = classNames(imageStyle.img, semClass('img'));
   const imgInnerClass = classNames(imageStyle.inner);
-  const placeholderClass = classNames(imageStyle.placeholder);
-  const defaultPlaceholderClass = classNames(imageStyle.defaultPlaceholder);
-  const errorClass = classNames(imageStyle.error);
-  const defaultErrorClass = classNames(imageStyle.defaultError);
+  const placeholderClass = classNames(imageStyle.placeholder, semClass('placeholder'));
+  const defaultPlaceholderClass = classNames(imageStyle.defaultPlaceholder, semClass('placeholder'));
+  const errorClass = classNames(imageStyle.error, semClass('error'));
+  const defaultErrorClass = classNames(imageStyle.defaultError, semClass('error'));
   const maskClass = classNames(imageStyle.previewMask);
 
   const handleOpenGallery = (e: React.MouseEvent<HTMLDivElement | HTMLAnchorElement>) => {
@@ -113,14 +124,14 @@ const Image = (props: ImageProps) => {
 
     return (
       <div className={imgInnerClass}>
-        <img className={imgClass} {...imageProps} />
+        <img className={imgClass} style={semStyle('img')} {...imageProps} />
       </div>
     );
   };
 
   const renderDivInnerEl = (src?: string) => {
     const imageDivProps = getImageDivProps({ style: { backgroundImage: `url("${src}")` } });
-    return <div className={imgInnerClass} {...imageDivProps}></div>;
+    return <div className={classNames(imgInnerClass, semClass('img'))} {...imageDivProps} style={{ ...imageDivProps.style, ...semStyle('img') }}></div>;
   };
 
   // 渲染 img / div 类型的内部标签
@@ -131,7 +142,7 @@ const Image = (props: ImageProps) => {
   // 默认占位图
   const renderDefaultPlaceholder = () => {
     return (
-      <div className={defaultPlaceholderClass}>
+      <div className={defaultPlaceholderClass} style={semStyle('placeholder')}>
         <Spin jssStyle={jssStyle} size={16} name='ring' ignoreConfig></Spin>
       </div>
     );
@@ -140,20 +151,20 @@ const Image = (props: ImageProps) => {
   // 占位图
   const renderPlaceholder = () => {
     if (placeholder) {
-      return <div className={placeholderClass}>{placeholder}</div>;
+      return <div className={placeholderClass} style={semStyle('placeholder')}>{placeholder}</div>;
     }
     return renderDefaultPlaceholder();
   };
 
   // 默认错误图
   const renderDefaultError = () => {
-    return <div className={defaultErrorClass}>{title || Icons.image.LoadFail}</div>;
+    return <div className={defaultErrorClass} style={semStyle('error')}>{title || Icons.image.LoadFail}</div>;
   };
 
   // 错误图
   const renderError = () => {
     if (error) {
-      return <div className={errorClass}>{error}</div>;
+      return <div className={errorClass} style={semStyle('error')}>{error}</div>;
     }
     return renderDefaultError();
   };

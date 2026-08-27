@@ -1,5 +1,5 @@
 import { KeygenType, ObjectKey } from '@sheinx/hooks';
-import { JssStyleType, SelectProps, DatumType } from './select.type';
+import { JssStyleType, SelectProps, DatumType, SelectSemanticKey } from './select.type';
 
 export interface ListTreeProps<DataItem, Value>
   extends Pick<
@@ -15,4 +15,6 @@ export interface ListTreeProps<DataItem, Value>
   closePop: () => void;
   renderItem: (data: DataItem, index?: number) => React.ReactNode;
   expandIcons?: (React.ReactNode | ((d: DataItem) => React.ReactNode))[];
+  semClass?: (key: SelectSemanticKey) => string | undefined;
+  semStyle?: (key: SelectSemanticKey) => React.CSSProperties | undefined;
 }

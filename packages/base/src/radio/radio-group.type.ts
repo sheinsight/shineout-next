@@ -1,8 +1,9 @@
 import { ReactNode } from 'react';
 import { KeygenType, ObjectKey } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
-import { RadioClasses } from './radio.type';
+import { RadioClasses, RadioSemanticKey } from './radio.type';
 import { ButtonClasses, ButtonGroupClasses } from '../button/button.type';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
 
 export interface RadioGroupProps<DataItem, Value>
   extends Pick<CommonType, 'className' | 'size' | 'style'> {
@@ -11,6 +12,18 @@ export interface RadioGroupProps<DataItem, Value>
     button?: () => ButtonClasses;
     buttonGroup?: () => ButtonGroupClasses;
   };
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<RadioSemanticKey>;
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<RadioSemanticKey>;
   /**
    * @en You can pass in a set of Radio
    * @cn 可以传入一组Radio

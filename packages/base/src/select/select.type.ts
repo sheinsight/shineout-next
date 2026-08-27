@@ -11,6 +11,9 @@ import { RadioClasses } from '../radio/radio.type';
 import { SpinClasses } from '../spin/spin.type';
 import { InputClasses } from '../input/input.type';
 import { BaseTipProps } from '../common/use-tip';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
+
+export type SelectSemanticKey = 'root' | 'header' | 'popup' | 'list' | 'option' | 'optionInner';
 
 export type SelectClasses = {
   rootClass: string;
@@ -160,6 +163,8 @@ export interface BaseListProps<DataItem, Value>
   isAnimationFinish: boolean;
   onControlTypeChange: React.Dispatch<React.SetStateAction<'mouse' | 'keyboard'>>;
   onOptionClick: (data: DataItem, index: number) => void;
+  semClass?: (key: SelectSemanticKey) => string | undefined;
+  semStyle?: (key: SelectSemanticKey) => React.CSSProperties | undefined;
 }
 
 export interface SelectPropsBase<DataItem, Value>
@@ -693,6 +698,19 @@ export interface SelectPropsBase<DataItem, Value>
    * @version 3.9.1
    */
   popupClassName?: string;
+
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<SelectSemanticKey>;
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<SelectSemanticKey>;
 }
 
 export interface SelectPropsA<DataItem, Value>

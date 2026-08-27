@@ -1,4 +1,6 @@
-import { TagProps as UnStyledTagProps, TagInputProps as UnStyledTagInputProps } from '@sheinx/base';
+import { TagProps as UnStyledTagProps, TagInputProps as UnStyledTagInputProps, TagSemanticKey as _TagSemanticKey } from '@sheinx/base';
+
+export type TagSemanticKey = _TagSemanticKey;
 
 /**
  * @title Tag

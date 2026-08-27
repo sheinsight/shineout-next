@@ -25,7 +25,7 @@ import {
   addResizeObserver,
   TableContext,
 } from '@sheinx/hooks';
-import { TableClasses, TableProps } from './table.type';
+import { TableClasses, TableProps, TableSemanticKey } from './table.type';
 import useTableSelect from './use-table-select';
 
 import Colgroup from './colgroup';
@@ -33,6 +33,7 @@ import Thead from './thead';
 import Tbody from './tbody';
 import Tfoot from './tfoot';
 import TbodyEmpty from './tbody-empty';
+import { useSemantic } from '../common';
 
 const { devUseWarning } = util;
 
@@ -44,6 +45,13 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
   const { verticalAlign = 'top', size = 'default', pagination = {} as PaginationProps } = props;
   const config = useConfig();
   const nestedContext = useContext(TableContext);
+
+  // Semantic DOM
+  const [semClass, semStyle] = useSemantic<TableSemanticKey>(
+    props.classNames,
+    props.styles,
+    config.table,
+  );
 
   // 判断是否启用了虚拟列
   const isVirtualColumnEnabled = !!props.virtualColumn;
@@ -433,6 +441,10 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       onCellClick: props.onCellClick,
       strictRowHeight: props.strictRowHeight,
       scrollRef: scrollRef,
+      bodyRowSemClass: semClass('bodyRow'),
+      bodyRowSemStyle: semStyle('bodyRow'),
+      bodyCellSemClass: semClass('bodyCell'),
+      bodyCellSemStyle: semStyle('bodyCell'),
     };
 
     const headCommonProps = {
@@ -458,6 +470,10 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       treeColumnsName,
       treeCheckAll: props.treeCheckAll,
       virtualColumn: props.virtualColumn,
+      headerRowSemClass: semClass('headerRow'),
+      headerRowSemStyle: semStyle('headerRow'),
+      headerCellSemClass: semClass('headerCell'),
+      headerCellSemStyle: semStyle('headerCell'),
     };
 
     const showFoot = props.summary?.length;
@@ -468,6 +484,8 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       jssStyle: props.jssStyle,
       colgroup: colgroup,
       data: props.data,
+      footerCellSemClass: semClass('footerCell'),
+      footerCellSemStyle: semStyle('footerCell'),
     };
 
     const StickyWrapper = props.sticky ? Sticky : React.Fragment;
@@ -493,9 +511,10 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       props.sticky && isScrollY && tableClasses.scrollY,
       props.sticky && isScrollY && browserScrollbarWidth === 0 && tableClasses.overlayScrollbar,
       props.sticky && !isScrollY && !virtualInfo.isExternalScroll && tableClasses.scrollX,
+      semClass('header'),
     );
 
-    const footWrapperClass = classNames(tableClasses?.footWrapper);
+    const footWrapperClass = classNames(tableClasses?.footWrapper, semClass('footer'));
 
     const renderHeadMirrorScroller = () => {
       if (!props.showTopScrollbar) return null;
@@ -577,7 +596,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     };
 
     const $headTable = (
-      <div className={headWrapperClass} {...util.getDataAttribute({ role: theadIdRef.current })}>
+      <div className={headWrapperClass} style={semStyle('header')} {...util.getDataAttribute({ role: theadIdRef.current })}>
         <table style={tableStyle} ref={theadRef}>
           {Group}
           <Thead {...headCommonProps} />
@@ -677,7 +696,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
 
             {/* tfoot of virtual */}
             {showFoot ? (
-              <div className={footWrapperClass}>
+              <div className={footWrapperClass} style={semStyle('footer')}>
                 <table style={tableStyle} ref={tfootRef}>
                   {Group}
                   <Tfoot {...footCommonProps} />
@@ -731,7 +750,8 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     if (!props.pagination) return null;
     return (
       <Pagination
-        className={tableClasses?.pagination}
+        className={classNames(tableClasses?.pagination, semClass('pagination'))}
+        style={semStyle('pagination')}
         jssStyle={props.jssStyle}
         align='right'
         {...pagination}
@@ -805,6 +825,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
   }, [scrollRef]);
 
   const tableWrapperStyle = useMemo(() => {
+    const rootSemStyle = semStyle('root');
     if (nestedContext.parentTableWidth && props.width) {
       return {
         width: nestedContext.parentTableWidth,
@@ -812,13 +833,15 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
         left: 0,
         height: defaultHeight,
         ...props.style,
+        ...rootSemStyle,
       };
     }
     return {
       height: defaultHeight,
       ...props.style,
+      ...rootSemStyle,
     };
-  }, [nestedContext.parentTableWidth, defaultHeight, props.style, props.width]);
+  }, [nestedContext.parentTableWidth, defaultHeight, props.style, props.width, semStyle]);
 
   const tableWrapperClass = classNames(
     props.className,
@@ -830,6 +853,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     size === 'small' && tableClasses?.small,
     size === 'large' && tableClasses?.large,
     size === 'default' && tableClasses?.default,
+    semClass('root'),
   );
 
   if (!props.columns || columns.length === 0)

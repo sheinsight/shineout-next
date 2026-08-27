@@ -150,9 +150,9 @@ const Time = (props: TimeProps) => {
     if (!showRight) return null;
     return (
       <div
-        className={styles?.pickerFooter}
+        className={classNames(styles?.pickerFooter, props.semClass?.('popupFooter'))}
         dir={direction}
-        style={{ borderTop: props.needConfirm && props.range ? 'none' : '' }}
+        style={{ borderTop: props.needConfirm && props.range ? 'none' : '', ...props.semStyle?.('popupFooter') }}
       >
         {showRight && (
           <div className={styles?.pickerFooterNow}>

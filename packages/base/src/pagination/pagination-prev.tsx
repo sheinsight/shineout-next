@@ -5,9 +5,9 @@ import Icons from '../icons';
 import { useConfig } from '../config';
 
 const PaginationButtonPrev = (props: PaginationActionButtonProps) => {
-  const { jssStyle, disabled, current, mode, text, size, onChange } = props;
+  const { jssStyle, disabled, current, mode, text, size, onChange, semClass, semStyle } = props;
   const paginationStyle = jssStyle?.pagination?.();
-  const rootClasses = classNames(paginationStyle?.section);
+  const rootClasses = classNames(paginationStyle?.section, semClass('prev'));
   const prev = current - 1;
   const hasText = text && text.prev;
 
@@ -23,6 +23,7 @@ const PaginationButtonPrev = (props: PaginationActionButtonProps) => {
       size={size}
       shape={hasText ? undefined : 'square'}
       onClick={onChange}
+      style={semStyle('prev')}
     >
       {hasText ? (
         text.prev

@@ -44,14 +44,14 @@ const expandIcon = (
 const leafIcon = (
   <svg viewBox='0 0 44 44' width='24px' height='24px'>
     <path
-      fill-rule='evenodd'
-      clip-rule='evenodd'
+      fillRule='evenodd'
+      clipRule='evenodd'
       d='M3.63281 7.26578C3.63281 5.25935 5.25935 3.63281 7.26577 3.63281L18.3403 3.63281C18.9922 3.63281 19.5941 3.9821 19.9175 4.54807L22.5044 9.07524C22.8278 9.64121 23.4297 9.9905 24.0816 9.9905H34.513C36.5194 9.9905 38.146 11.617 38.146 13.6235V36.1383C38.146 38.2503 36.4338 39.9624 34.3218 39.9624H7.45698C5.34495 39.9624 3.63281 38.2503 3.63281 36.1383V7.26578Z'
       fill='url(#paint0_linear_767_26603278315253)'
     ></path>
     <path
-      fill-rule='evenodd'
-      clip-rule='evenodd'
+      fillRule='evenodd'
+      clipRule='evenodd'
       d='M4.86895 18.0921C5.00735 16.087 6.67422 14.5313 8.68405 14.5313H36.3297C38.4346 14.5313 40.099 16.3145 39.9541 18.4144L38.7125 36.4012C38.5741 38.4062 36.9072 39.962 34.8974 39.962H7.45661C5.24091 39.962 3.48894 38.0849 3.64152 35.8745L4.86895 18.0921Z'
       fill='url(#paint1_linear_767_2660311446405)'
     ></path>
@@ -68,8 +68,8 @@ const leafIcon = (
         y2='40.76'
         gradientUnits='userSpaceOnUse'
       >
-        <stop stop-color='#FFDF81'></stop>
-        <stop offset='1' stop-color='#FFBB4A'></stop>
+        <stop stopColor='#FFDF81'></stop>
+        <stop offset='1' stopColor='#FFBB4A'></stop>
       </linearGradient>
       <linearGradient
         id='paint1_linear_767_2660311446405'
@@ -79,8 +79,8 @@ const leafIcon = (
         y2='39.962'
         gradientUnits='userSpaceOnUse'
       >
-        <stop stop-color='#FFDF81'></stop>
-        <stop offset='1' stop-color='#FFBB4A'></stop>
+        <stop stopColor='#FFDF81'></stop>
+        <stop offset='1' stopColor='#FFBB4A'></stop>
       </linearGradient>
       <linearGradient
         id='paint2_linear_767_26603943154657'
@@ -90,8 +90,8 @@ const leafIcon = (
         y2='21.5717'
         gradientUnits='userSpaceOnUse'
       >
-        <stop stop-color='#A96A00'></stop>
-        <stop offset='1' stop-color='#D28400' stop-opacity='0.7'></stop>
+        <stop stopColor='#A96A00'></stop>
+        <stop offset='1' stopColor='#D28400' stopOpacity='0.7'></stop>
       </linearGradient>
     </defs>
   </svg>

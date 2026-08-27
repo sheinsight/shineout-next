@@ -17,6 +17,8 @@ const CollapseItem = (props: CollapseItemProps) => {
     border,
     animation: animationProp,
     simple: groupSimple,
+    semClass,
+    semStyle,
   } = useContext(groupContext);
   const {
     children,
@@ -57,20 +59,18 @@ const CollapseItem = (props: CollapseItemProps) => {
       jssStyle?.collapseItem.icon,
       jssStyle?.collapseItem.activeTransform,
       direction === 'right' && jssStyle?.collapseItem.iconRight,
-      // expandIconPosition === 'right'
-      //   ? jssStyle?.collapseItem.activeTransformRight
-      //   : jssStyle?.collapseItem.activeTransform,
+      semClass?.('icon'),
     );
     return (
       resolvedExpandIcon && (
-        <div dir={config.direction} {...getHeaderIconProps({ className: collapseItemIconClassName })} role="button">{resolvedExpandIcon}</div>
+        <div dir={config.direction} {...getHeaderIconProps({ className: collapseItemIconClassName })} style={semStyle?.('icon')} role="button">{resolvedExpandIcon}</div>
       )
     );
   };
 
   const extraItem = () => {
     return (
-      extra && <div {...getExtraProps({ className: jssStyle?.collapseItem.extra })}>{extra}</div>
+      extra && <div {...getExtraProps({ className: classNames(jssStyle?.collapseItem.extra, semClass?.('extra')) })} style={semStyle?.('extra')}>{extra}</div>
     );
   };
 
@@ -88,6 +88,7 @@ const CollapseItem = (props: CollapseItemProps) => {
     jssStyle?.collapseItem.header,
     !showExpandIcon && jssStyle?.collapseItem.noIcon,
     triggerRegion !== 'icon' && jssStyle?.collapseItem.region,
+    semClass?.('header'),
   );
 
   const collapseItemContentClassName = classNames(
@@ -104,7 +105,7 @@ const CollapseItem = (props: CollapseItemProps) => {
         duration='fast'
         className={collapseItemContentClassName}
       >
-        <div className={jssStyle?.collapseItem.contentMain} style={contentStyle}>
+        <div className={classNames(jssStyle?.collapseItem.contentMain, semClass?.('content'))} style={{ ...contentStyle, ...semStyle?.('content') }}>
           {children}
         </div>
       </AnimationList>
@@ -119,7 +120,7 @@ const CollapseItem = (props: CollapseItemProps) => {
 
   return (
     <div className={collapseItemClassName} style={style}>
-      <div {...getItemContentProps({ className: collapseItemHeaderClassName })}>
+      <div {...getItemContentProps({ className: collapseItemHeaderClassName })} style={semStyle?.('header')}>
         {expandIconPosition === 'left' && headerIconItem('left')}
         {extraPosition === 'left' && extraItem()}
         <div
@@ -127,8 +128,10 @@ const CollapseItem = (props: CollapseItemProps) => {
             className: classNames(
               jssStyle?.collapseItem.title,
               triggerRegion === 'header' && jssStyle?.collapseItem.region,
+              semClass?.('title'),
             ),
           })}
+          style={semStyle?.('title')}
         >
           {title}
         </div>

@@ -9,10 +9,22 @@ import {
 } from '@sheinx/hooks';
 import { SpinClasses } from '../spin/spin.type';
 import { CheckboxClasses } from '../checkbox/checkbox.type';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
 
 export type TreeRenderItemType<DataItem> =
   | ((item: DataItem, expanded: boolean, active: boolean, id: KeygenResult) => React.ReactNode)
   | ObjectKey<DataItem>;
+
+/**
+ * Tree Semantic DOM key 列表
+ * - root:    最外层容器
+ * - node:    每个树节点容器
+ * - content: 节点内容区域
+ * - icon:    展开/折叠图标区域
+ *
+ * @see /docs/rfc/0001-semantic-dom.md
+ */
+export type TreeSemanticKey = 'root' | 'node' | 'content' | 'icon';
 
 export type TreeClasses = {
   rootClass: string;
@@ -58,6 +70,20 @@ export interface TreeProps<DataItem, Value extends any[]>
   extends Omit<BaseTreeProps<DataItem>, 'isControlled'>,
     Pick<CommonType, 'className' | 'style'> {
   jssStyle?: JsstyleType;
+
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<TreeSemanticKey>;
+
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<TreeSemanticKey>;
   /**
    * @en The keys of selected
    * @cn 选中的 key （受控）

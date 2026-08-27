@@ -1,11 +1,12 @@
 import React, { useRef, useState } from 'react';
 import classNames from 'classnames';
 import Spin from '../spin';
-import { UploadProps } from './upload.type';
+import { UploadProps, UploadSemanticKey } from './upload.type';
 import Image from '../image';
 import { PopoverConfirm, PopoverConfirmProps } from '../popover';
 import icons from '../icons';
 import { useConfig } from '../config';
+import type { SemanticClassFn, SemanticStyleFn } from '../common/use-semantic';
 
 interface ResultProps {
   onRemove: () => void;
@@ -24,6 +25,8 @@ interface ResultProps {
   onPreview?: UploadProps<any>['onPreview'];
   values: any[];
   index: number;
+  semClass?: SemanticClassFn<UploadSemanticKey>;
+  semStyle?: SemanticStyleFn<UploadSemanticKey>;
 }
 const Result = (props: ResultProps) => {
   const uploadClasses = props.jssStyle?.upload?.();
@@ -197,8 +200,9 @@ const Result = (props: ResultProps) => {
         status === 2 && uploadClasses?.resultSuccess,
         status === 1 && uploadClasses?.resultUploading,
         status === -1 && uploadClasses?.resultDeleted,
+        props.semClass?.('item'),
       )}
-      style={listType === 'image' ? props.imageStyle : undefined}
+      style={listType === 'image' ? { ...props.imageStyle, ...props.semStyle?.('item') } : props.semStyle?.('item')}
     >
       {listType === 'image' ? renderImage() : renderText()}
     </div>

@@ -269,3 +269,71 @@ describe('Descriptions[Item]', () => {
     });
   });
 });
+describe('Descriptions[Semantic]', () => {
+  test('should apply classNames to internal nodes', () => {
+    const { container } = render(
+      <DescriptionsTest
+        title='Title'
+        extra='Extra'
+        classNames={{
+          root: 'custom-root',
+          header: 'custom-header',
+          title: 'custom-title',
+          extra: 'custom-extra',
+          table: 'custom-table',
+          label: 'custom-label',
+          value: 'custom-value',
+        }}
+      />,
+    );
+    expect(container.querySelector(wrapper)).toHaveClass('custom-root');
+    expect(container.querySelector(header)).toHaveClass('custom-header');
+    expect(container.querySelector(title)).toHaveClass('custom-title');
+    expect(container.querySelector(extra)).toHaveClass('custom-extra');
+    expect(container.querySelector('table')).toHaveClass('custom-table');
+    container.querySelectorAll(labelInline).forEach((item) => {
+      expect(item).toHaveClass('custom-label');
+    });
+    container.querySelectorAll(valueInline).forEach((item) => {
+      expect(item).toHaveClass('custom-value');
+    });
+  });
+  test('should apply styles to internal nodes', () => {
+    const { container } = render(
+      <DescriptionsTest
+        title='Title'
+        extra='Extra'
+        styles={{
+          root: { borderRadius: '8px' },
+          header: { marginBottom: '12px' },
+          table: { width: '100%' },
+          label: { fontWeight: '600' },
+          value: { color: 'red' },
+        }}
+      />,
+    );
+    expect(container.querySelector(wrapper)).toHaveStyle({ borderRadius: '8px' });
+    expect(container.querySelector(header)).toHaveStyle({ marginBottom: '12px' });
+    expect(container.querySelector('table')).toHaveStyle({ width: '100%' });
+    container.querySelectorAll(labelInline).forEach((item) => {
+      expect(item).toHaveStyle({ fontWeight: '600' });
+    });
+    container.querySelectorAll(valueInline).forEach((item) => {
+      expect(item).toHaveStyle({ color: 'red' });
+    });
+  });
+  test('should apply semantic label/value in horizontal layout', () => {
+    const { container } = render(
+      <DescriptionsTest
+        layout='horizontal'
+        classNames={{ label: 'custom-label', value: 'custom-value' }}
+      />,
+    );
+    const tds = container.querySelectorAll('td');
+    // horizontal layout: label and value are separate <td> elements
+    const labels = Array.from(tds).filter((td) => td.classList.contains('custom-label'));
+    const values = Array.from(tds).filter((td) => td.classList.contains('custom-value'));
+    expect(labels.length).toBeGreaterThan(0);
+    expect(values.length).toBeGreaterThan(0);
+  });
+});

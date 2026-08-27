@@ -1,16 +1,26 @@
 import { getDataset, useCheck, util } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React, { useContext } from 'react';
-import { SimpleCheckboxProps } from './checkbox.type';
+import { SimpleCheckboxProps, CheckboxSemanticKey } from './checkbox.type';
 import { FormFieldContext } from '../form/form-field-context';
+import { useSemantic } from '../common/use-semantic';
+import { useConfig } from '../config';
 
 const { getDataAttribute } = util;
 
 const Checkbox = (props: SimpleCheckboxProps) => {
-  const { jssStyle, className, style, children, renderFooter, size, theme, verticalAlign, ...rest } = props;
+  const { jssStyle, className, style, children, renderFooter, size, theme, verticalAlign, classNames: classNamesProp, styles: stylesProp, ...rest } = props;
   const mouseEvents = util.extractProps(rest, 'mouse');
   const { fieldId } = useContext(FormFieldContext);
+  const config = useConfig();
   const checkboxStyle = jssStyle?.checkbox?.();
+
+  const [semClass, semStyle] = useSemantic<CheckboxSemanticKey>(
+    classNamesProp,
+    stylesProp,
+    config.checkbox,
+  );
+
   const { getRootProps, getIndicatorProps, getInputProps, disabled, checked } = useCheck({
     ...rest,
     checked: props.checked === 'indeterminate' ? true : props.checked,
@@ -27,11 +37,13 @@ const Checkbox = (props: SimpleCheckboxProps) => {
     !!checked && checkboxStyle?.wrapperChecked,
     props.checked === 'indeterminate' && checkboxStyle?.wrapperIndeterminate,
     verticalAlign === 'top' && checkboxStyle?.wrapperTop,
+    semClass('root'),
   );
 
   const indicatorClass = classNames(
     checkboxStyle?.indicatorWrapper,
     theme === 'dark' && checkboxStyle?.darkIndicatorWrapper,
+    semClass('indicator'),
   );
 
   const inputProps = getInputProps();
@@ -42,13 +54,13 @@ const Checkbox = (props: SimpleCheckboxProps) => {
       {...mouseEvents}
       {...getRootProps({
         className: rootClass,
-        style,
+        style: style ? { ...style, ...semStyle('root') } : semStyle('root'),
         needStopPropagation: props.needStopPropagation,
       })}
       {...getDataset(props)}
     >
       <input {...inputProps} type='checkbox' />
-      <span className={indicatorClass}>
+      <span className={indicatorClass} style={semStyle('indicator')}>
         <i
           {...getIndicatorProps()}
           {...getDataAttribute({ role: 'checkbox-indicator' })}
@@ -67,7 +79,7 @@ const Checkbox = (props: SimpleCheckboxProps) => {
         </i>
       </span>
       {children !== undefined && children !== null && (
-        <span data-soui-role='desc' className={checkboxStyle?.desc}>{children}</span>
+        <span data-soui-role='desc' className={classNames(checkboxStyle?.desc, semClass('label'))} style={semStyle('label')}>{children}</span>
       )}
       {typeof renderFooter === 'function' ? renderFooter(checked) : null}
     </div>

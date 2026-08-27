@@ -55,6 +55,7 @@ const Month = (props: MonthProps) => {
           (isInRange === 'end' || isInRange === 'start-end') &&
             props.position === 'end' &&
             styles?.pickerCellInRangeEnd,
+          props.semClass?.('cell'),
         )}
         key={index}
         onMouseEnter={
@@ -89,7 +90,7 @@ const Month = (props: MonthProps) => {
       className={classNames(styles?.monthPicker, styles?.picker)}
     >
       <PickerTitle position={props.position} jssStyle={jssStyle} />
-      <div className={styles?.pickerHeader} dir={direction}>
+      <div className={classNames(styles?.pickerHeader, props.semClass?.('popupHeader'))} dir={direction} style={props.semStyle?.('popupHeader')}>
         <div className={styles?.pickerHeaderLeft}>
           <span className={styles?.pickerHeaderIcon} onClick={func.handlePrev} dir={direction}>
             {Icons.datepicker.ArrowDoubleLeft}
@@ -127,7 +128,9 @@ const Month = (props: MonthProps) => {
         </table>
       </div>
       {props.needConfirm && !props.range && (
-        <Confirm closeByConfirm={props.closeByConfirm} jssStyle={props.jssStyle} />
+        <div className={props.semClass?.('popupFooter')} style={props.semStyle?.('popupFooter')}>
+          <Confirm closeByConfirm={props.closeByConfirm} jssStyle={props.jssStyle} />
+        </div>
       )}
     </div>
   );

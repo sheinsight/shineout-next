@@ -14,7 +14,7 @@ import {
   getDataset,
 } from '@sheinx/hooks';
 import { SelectClasses } from './select.type';
-import { SelectPropsBase, OptionListRefType } from './select.type';
+import { SelectPropsBase, OptionListRefType, SelectSemanticKey } from './select.type';
 import { AbsoluteList } from '../absolute-list';
 import useInnerTitle from '../common/use-inner-title';
 import AnimationList from '../animation-list';
@@ -28,10 +28,12 @@ import useWithFormConfig from '../common/use-with-form-config';
 import useTip from '../common/use-tip';
 import { getLocale, useConfig } from '../config';
 import { FormFieldContext } from '../form/form-field-context';
+import { useSemantic } from '../common/use-semantic';
 
 function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   const props = useWithFormConfig(props0);
-  const { locale, direction } = useConfig();
+  const config = useConfig();
+  const { locale, direction } = config;
   const {
     jssStyle,
     className,
@@ -109,6 +111,8 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     trigger = 'click',
     preventEnterSelect = false,
     createOnBlur = true,
+    classNames: classNamesProp,
+    styles: stylesProp,
   } = props;
 
   const hasFilter = util.isFunc(props.onAdvancedFilter || onFilterProp);
@@ -117,7 +121,14 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   const positionProp = props.position || 'bottom-left';
 
   const styles = jssStyle?.select?.() as SelectClasses;
-  const rootStyle: React.CSSProperties = Object.assign({ width }, style);
+
+  const [semClass, semStyle] = useSemantic<SelectSemanticKey>(
+    classNamesProp,
+    stylesProp,
+    config.select,
+  );
+
+  const rootStyle: React.CSSProperties = Object.assign({ width }, style, semStyle('root'));
 
   const [controlType, setControlType] = useState<'mouse' | 'keyboard'>('keyboard');
   const [focused, setFocused] = useState(false);
@@ -326,6 +337,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     {
       [styles?.multiple]: multiple,
     },
+    semClass('root'),
   );
 
   const getRenderItem = (data: DataItem, index?: number): ReactNode => {
@@ -629,7 +641,9 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
             styles?.wrapperPaddingBox,
             styles?.wrapperInnerTitleTop,
             styles?.wrapperInnerTitleBottom,
+            semClass('header'),
           )}
+          style={semStyle('header')}
           onClick={handleResultClick}
         >
           {renderInnerTitle(result)}
@@ -674,6 +688,8 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       closePop,
       optionListRef,
       onOptionClick: handleOptionClick,
+      semClass,
+      semStyle,
     };
 
     // 自定义列
@@ -708,6 +724,8 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
         renderItem={renderItem}
         expandIcons={tiledExpandIcons}
         virtual={props.virtual}
+        semClass={semClass}
+        semStyle={semStyle}
       ></TreeList>
     );
   };
@@ -815,12 +833,13 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
               size === 'small' && styles?.pickerSmall,
               size === 'large' && styles?.pickerLarge,
               props.popupClassName,
+              semClass('popup'),
             )}
             onAnimationAfterEnter={onAnimationAfterEnter}
             display={'block'}
             type='scale-y'
             duration={'fast'}
-            style={getListStyle()}
+            style={{ ...getListStyle(), ...semStyle('popup') }}
           >
             {renderHeader()}
             {renderOptions()}

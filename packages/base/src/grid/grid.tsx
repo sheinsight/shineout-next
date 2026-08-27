@@ -1,10 +1,14 @@
 import React, { Children, cloneElement } from 'react';
 import classNames from 'classnames';
 import { getGrid } from './util';
-import { GridProps } from './grid.type';
+import { GridProps, GridSemanticKey } from './grid.type';
+import { useSemantic } from '../common';
+import { useConfig } from '../config';
 
 const Grid = (props: GridProps) => {
-  const { width = 1, offset, responsive, stretch, children, gutter, jssStyle, ...other } = props;
+  const { width = 1, offset, responsive, stretch, children, gutter, jssStyle, classNames: classNamesProp, styles: stylesProp, ...other } = props;
+  const config = useConfig();
+
   let autoCount = 0;
   let settleWidth = 0;
   Children.toArray(children).forEach((c) => {
@@ -18,14 +22,26 @@ const Grid = (props: GridProps) => {
 
   const gridClasses = jssStyle?.grid?.();
 
+  // Semantic DOM
+  const globalSemanticConfig = config.grid
+    ? { classNames: config.grid.classNames, styles: config.grid.styles }
+    : undefined;
+
+  const [semClass, semStyle] = useSemantic<GridSemanticKey>(
+    classNamesProp,
+    stylesProp,
+    globalSemanticConfig,
+  );
+
   const className = classNames(
     props.className,
     gridClasses?.rootClass,
     gridClasses?.wrapper,
     gridClasses?.full,
     getGrid({ width, offset, responsive }),
+    semClass('root'),
   );
-  const style = Object.assign({}, props.style);
+  const style = Object.assign({}, props.style, semStyle('root'));
   if (gutter && gutter > 0) {
     style.width = 'auto';
     style.display = 'block';

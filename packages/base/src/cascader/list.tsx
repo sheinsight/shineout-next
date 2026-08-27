@@ -30,6 +30,8 @@ const CascaderList = <DataItem, Value extends KeygenResult[]>(
     mode,
     size,
     virtual,
+    semClass,
+    semStyle,
   } = props;
 
   const styles = jssStyle?.cascader?.() as CascaderClasses;
@@ -93,6 +95,8 @@ const CascaderList = <DataItem, Value extends KeygenResult[]>(
         parentId={parentId}
         path={path}
         size={size}
+        semClass={semClass}
+        semStyle={semStyle}
       />
     );
   };
@@ -119,7 +123,7 @@ const CascaderList = <DataItem, Value extends KeygenResult[]>(
   if (!data || data.length === 0) return renderEmpety();
 
   return (
-    <div className={classNames(styles.list, !virtual && styles.listSimple )}>
+    <div className={classNames(styles.list, !virtual && styles.listSimple, semClass?.('list'))} style={semStyle?.('list')}>
       {virtual ? renderVritualList() : renderSimpleList()}
     </div>
   );

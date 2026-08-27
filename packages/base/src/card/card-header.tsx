@@ -10,7 +10,7 @@ const CardHeader = (props: CardHeaderProps) => {
   const { align } = props;
   const cardClasses = props.jssStyle?.card?.();
   const config = useConfig();
-  const { collapsible, onCollapse, handleDragMouseDown } = useContext(CardContext);
+  const { collapsible, onCollapse, handleDragMouseDown, semClass, semStyle } = useContext(CardContext);
 
   const renderIndicator = () => {
     if (!collapsible) return null;
@@ -30,23 +30,25 @@ const CardHeader = (props: CardHeaderProps) => {
 
   const headerContentClassName = classNames(
     cardClasses?.headerContent,
-    alignClass
+    alignClass,
+    semClass?.('headerContent'),
   );
 
   const commonHeaderProps = {
     onMouseDown: handleDragMouseDown,
     onClick: onCollapse,
-    style: props.style
+    style: { ...props.style, ...semStyle?.('header') },
   }
 
   if (!props.extra && !collapsible) {
     const simpleHeaderClassName = classNames(
       cardClasses?.header,
-      cardClasses?.simpleHeader, 
-      alignClass, 
-      props.className
+      cardClasses?.simpleHeader,
+      alignClass,
+      props.className,
+      semClass?.('header'),
     );
-    
+
     return (
       <div
         className={simpleHeaderClassName}
@@ -59,12 +61,12 @@ const CardHeader = (props: CardHeaderProps) => {
 
   return (
     <div
-      className={classNames(props.className, cardClasses?.header)}
+      className={classNames(props.className, cardClasses?.header, semClass?.('header'))}
       {...commonHeaderProps}
     >
       {renderIndicator()}
-      <div className={headerContentClassName}>{props.children}</div>
-      {props.extra && <div className={cardClasses?.headerExtra}>{props.extra}</div>}
+      <div className={headerContentClassName} style={semStyle?.('headerContent')}>{props.children}</div>
+      {props.extra && <div className={classNames(cardClasses?.headerExtra, semClass?.('headerExtra'))} style={semStyle?.('headerExtra')}>{props.extra}</div>}
     </div>
   );
 };

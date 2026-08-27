@@ -1,4 +1,7 @@
 import { CommonType, CommonChangeType } from '../common/type';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
+
+export type SliderSemanticKey = 'root' | 'track' | 'indicator' | 'scale';
 
 export interface SliderClasses {
   rootClass: string;
@@ -37,6 +40,18 @@ export interface SliderProps<Value>
    */
   valueTipType?: 'always' | 'hover';
   jssStyle?: SliderJssStyle;
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<SliderSemanticKey>;
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<SliderSemanticKey>;
   /**
    * @en Automatically hides the current value and scale
    * @cn 是否自动隐藏当前值和刻度

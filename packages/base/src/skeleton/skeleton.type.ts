@@ -1,6 +1,18 @@
 // import React from 'react';
 // import { BaseSkeletonProps } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
+
+/**
+ * Skeleton Semantic DOM key 列表
+ * - root:   最外层容器
+ * - image:  图片/头像占位区
+ * - text:   文本行区域
+ * - button: 按钮占位区
+ *
+ * @see /docs/rfc/0001-semantic-dom.md
+ */
+export type SkeletonSemanticKey = 'root' | 'image' | 'text' | 'button';
 
 export interface SkeletonClasses {
   rootClass: string;
@@ -100,6 +112,20 @@ export interface SkeletonProps extends Pick<CommonType, 'className' | 'style'> {
   jssStyle?: {
     skeleton: () => SkeletonClasses;
   };
+
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<SkeletonSemanticKey>;
+
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<SkeletonSemanticKey>;
 
   /**
    * @en Whether to enable animation effects

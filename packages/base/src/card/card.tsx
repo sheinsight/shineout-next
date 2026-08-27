@@ -1,21 +1,31 @@
-import { useState, useMemo, useRef, useContext, useEffect } from 'react';
+import { useState, useRef, useContext, useEffect } from 'react';
 import { usePersistFn, useDragMove, useDragResize, useRender } from '@sheinx/hooks';
 import classNames from 'classnames';
 import { CardContext } from './card.context';
 import { CardAccordionContext, defualtCardAccordionContextValue } from './card-accordion-context';
 import { FormFooterProvider } from '../form/form-footer-context';
+import { useConfig } from '../config';
+import { useSemantic } from '../common';
 
-import type { CardProps } from './card.type';
+import type { CardProps, CardSemanticKey } from './card.type';
 import type { CardContextValue } from './card.context';
 
 const Card = (props: CardProps) => {
-  const { style = {}, defaultCollapsed = true } = props;
+  const { style = {}, defaultCollapsed = true, classNames: classNamesProp, styles: stylesProp } = props;
   const cardClasses = props.jssStyle?.card?.();
   const panelRef = useRef<HTMLDivElement>(null);
   const forceUpdate = useRender();
   const { current: context } = useRef({
     id: undefined as number | undefined,
   });
+
+  // Semantic DOM
+  const config = useConfig();
+  const [semClass, semStyle] = useSemantic<CardSemanticKey>(
+    classNamesProp,
+    stylesProp,
+    config.card,
+  );
 
   const [collapsed, setCollapsed] = useState(defaultCollapsed);
   const moveInfo = useDragMove();
@@ -56,14 +66,14 @@ const Card = (props: CardProps) => {
   });
 
   const realCollapsed = getCollapsed();
-  const contextValue: CardContextValue = useMemo(() => {
-    return {
-      collapsed: realCollapsed,
-      collapsible: collapsible,
-      onCollapse: handleCollapsed,
-      handleDragMouseDown: props.moveable ? moveInfo.handleMouseDown : undefined,
-    };
-  }, [realCollapsed, collapsible]);
+  const contextValue: CardContextValue = {
+    collapsed: realCollapsed,
+    collapsible: collapsible,
+    onCollapse: handleCollapsed,
+    handleDragMouseDown: props.moveable ? moveInfo.handleMouseDown : undefined,
+    semClass,
+    semStyle,
+  };
 
   const alwaysShowShadow = props.shadow && props.shadow !== 'hover';
 
@@ -105,9 +115,10 @@ const Card = (props: CardProps) => {
         props.moveable && cardClasses?.wrapperMoveable,
         props.split && cardClasses?.wrapperSplit,
         inAccordion && cardClasses?.wrapperInAccordion,
+        semClass('root'),
       )}
       ref={panelRef}
-      style={wrapStyle}
+      style={{ ...wrapStyle, ...semStyle('root') }}
     >
       <CardContext.Provider value={contextValue}>
         <FormFooterProvider>

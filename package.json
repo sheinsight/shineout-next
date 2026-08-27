@@ -1,7 +1,7 @@
 {
   "name": "sheinx",
   "private": true,
-  "version": "3.10.0-beta.19",
+  "version": "3.10.0-beta.20",
   "description": "A react library developed with sheinx",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -33,7 +33,8 @@
     "test:coverage": "jest --coverage -u",
     "test:merge": "cross-env NODE_ENV=test node ./scripts/merge-coverage.js",
     "cypress:open": "cross-env NODE_ENV=test cypress open",
-    "cypress:run": "cross-env NODE_ENV=test cypress run --browser chrome"
+    "cypress:run": "cross-env NODE_ENV=test cypress run --browser chrome",
+    "build:llms": "node ./scripts/build-llms.js"
   },
   "authors": "",
   "license": "MIT",

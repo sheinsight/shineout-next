@@ -1,9 +1,11 @@
 import classNames from 'classnames';
 import Icons from '../icons';
-import { TagClasses, TagProps } from './tag.type';
+import { TagClasses, TagProps, TagSemanticKey } from './tag.type';
 import useTag from './use-tag';
 import { getDataset, util } from '@sheinx/hooks';
 import TagInput from './tag-input';
+import { useConfig } from '../config';
+import { useSemantic } from '../common';
 
 const { devUseWarning } = util;
 const Done = 2;
@@ -30,6 +32,8 @@ const Tag = (props: TagProps) => {
     onEnterPress,
     closable,
     onMouseDown,
+    classNames: classNamesProp,
+    styles: stylesProp,
     ...rest
   } = props;
 
@@ -54,6 +58,14 @@ const Tag = (props: TagProps) => {
   const colorSet = type || color || 'default';
   const tagStyle = jssStyle?.tag?.() || ({} as TagClasses);
 
+  // Semantic DOM
+  const config = useConfig();
+  const [semClass, semStyle] = useSemantic<TagSemanticKey>(
+    classNamesProp,
+    stylesProp,
+    config.tag,
+  );
+
   const tagClass = classNames(className, tagStyle.rootClass, tagStyle.tag, {
     [tagStyle.small]: size === 'small',
     [tagStyle.large]: size === 'large',
@@ -61,12 +73,12 @@ const Tag = (props: TagProps) => {
     [tagStyle[colorSet]]: true,
     [tagStyle[modeSet]]: true,
     [tagStyle.disabled]: !!disabled,
-  });
+  }, semClass('root'));
 
   const getTagRootProps = () => {
     const propsSet: Omit<TagProps, 'jssStyle'> = rest;
-    if (style || backgroundColor) {
-      const styleSet = Object.assign({}, style || {}, backgroundColor ? { backgroundColor } : {});
+    if (style || backgroundColor || semStyle('root')) {
+      const styleSet = Object.assign({}, style || {}, backgroundColor ? { backgroundColor } : {}, semStyle('root'));
       propsSet.style = styleSet;
     }
 
@@ -80,14 +92,14 @@ const Tag = (props: TagProps) => {
   const renderChildren = () => {
     if (onClose) {
       return (
-        <div className={classNames(tagStyle.wrapper, inlineStyle && tagStyle.inline)}>
+        <div className={classNames(tagStyle.wrapper, inlineStyle && tagStyle.inline, semClass('wrapper'))} style={semStyle('wrapper')}>
           {util.wrapSpan(children)}
         </div>
       );
     }
 
     return (
-      <div className={classNames(tagStyle.wrapper, inlineStyle && tagStyle.inline)}>
+      <div className={classNames(tagStyle.wrapper, inlineStyle && tagStyle.inline, semClass('wrapper'))} style={semStyle('wrapper')}>
         {util.wrapSpan(children)}
       </div>
     );
@@ -114,10 +126,10 @@ const Tag = (props: TagProps) => {
     }
     return (
       <div
-        className={classNames(tagStyle.closeIcon, dismiss === Pending && tagStyle.closeIconPending)}
+        className={classNames(tagStyle.closeIcon, dismiss === Pending && tagStyle.closeIconPending, semClass('closeIcon'))}
         onClick={handleClose}
         onMouseDown={onMouseDown}
-        style={dismiss === Pending ? { opacity: 0.6, pointerEvents: 'none' } : undefined}
+        style={dismiss === Pending ? { opacity: 0.6, pointerEvents: 'none', ...semStyle('closeIcon') } : semStyle('closeIcon')}
       >
         <span className={tagStyle.closeIconWrapper}>{dismiss === Pending ? Icons.tag.Loading : Icons.tag.Close}</span>
       </div>

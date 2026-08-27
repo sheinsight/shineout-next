@@ -2301,7 +2301,6 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
       </div>
       <div
         class="soui-tree soui-tree-tree soui-tree-noline soui-tree-virtual"
-        filtereddata="[object Object],[object Object],[object Object],[object Object],[object Object]"
         style="height: 200px; margin-top: 12px;"
       >
         <div>

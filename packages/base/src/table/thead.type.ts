@@ -29,4 +29,8 @@ export interface TheadProps
   colgroup: (number | string | undefined)[];
   datum: ListDatum;
   treeColumnsName: string | undefined;
+  headerRowSemClass?: string;
+  headerRowSemStyle?: React.CSSProperties;
+  headerCellSemClass?: string;
+  headerCellSemStyle?: React.CSSProperties;
 }

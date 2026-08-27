@@ -2,7 +2,8 @@ import { useButton } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React, { isValidElement } from 'react';
 import { useConfig } from '../config';
-import { ButtonClasses, ButtonProps } from './button.type';
+import { ButtonClasses, ButtonProps, ButtonClassNamesInfo, ButtonSemanticKey } from './button.type';
+import { useSemantic } from '../common';
 import ButtonGroup from './button-group';
 import Spin from '../spin';
 import { util } from '@sheinx/hooks';
@@ -46,6 +47,23 @@ const Button = (props: ButtonProps) => {
   });
   const buttonStyle = jssStyle?.button?.() || ({} as ButtonClasses);
 
+  // Semantic DOM
+  const globalSemanticConfig = config.button
+    ? { classNames: config.button.classNames, styles: config.button.styles }
+    : undefined;
+
+  const semInfo: ButtonClassNamesInfo = {
+    disabled: !!disabled,
+    loading: !!loading,
+  };
+
+  const [semClass, semStyle] = useSemantic<ButtonSemanticKey, ButtonClassNamesInfo>(
+    props.classNames,
+    props.styles,
+    globalSemanticConfig,
+    semInfo,
+  );
+
   const getType = () => {
     if (typeProp === 'default') return 'secondary';
     return typeProp;
@@ -76,7 +94,9 @@ const Button = (props: ButtonProps) => {
     shape === 'square' && buttonStyle.square,
     size === 'small' && buttonStyle.small,
     size === 'large' && buttonStyle.large,
+    semClass('root'),
   );
+  const rootStyle = semStyle('root') ? { ...style, ...semStyle('root') } : style;
   const rootProps = getButtonProps();
 
   const { htmlType, onRef, ...buttonProps } = rootProps;
@@ -94,7 +114,7 @@ const Button = (props: ButtonProps) => {
   // }
 
   let loadingEl: React.ReactNode = (
-    <div className={buttonStyle.spin}>
+    <div className={classNames(buttonStyle.spin, semClass('loading'))} style={semStyle('loading')}>
       <Spin size={'1em'} jssStyle={jssStyle} name='ring' ignoreConfig></Spin>
     </div>
   );
@@ -106,7 +126,7 @@ const Button = (props: ButtonProps) => {
   if (href && !disabled) {
     return (
       <a
-        {...getAnchorProps({ className: rootClass, style })}
+        {...getAnchorProps({ className: rootClass, style: rootStyle })}
         href={href}
         target={target}
         ref={onRef as React.Ref<HTMLAnchorElement>}
@@ -119,7 +139,7 @@ const Button = (props: ButtonProps) => {
 
   return (
     // eslint-disable-next-line react/button-has-type
-    <button dir={config.direction} {...buttonProps} type={htmlType} ref={onRef as any} className={rootClass} style={style}>
+    <button dir={config.direction} {...buttonProps} type={htmlType} ref={onRef as any} className={rootClass} style={rootStyle}>
       {loading && loadingEl}
       {buttonInnerEl}
     </button>

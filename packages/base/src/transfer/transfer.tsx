@@ -1,6 +1,6 @@
 import { useContext, useMemo } from 'react';
 import classNames from 'classnames';
-import { TransferProps } from './transfer.type';
+import { TransferProps, TransferSemanticKey } from './transfer.type';
 import { TransferClasses } from './transfer.type';
 import { TransferContext, useTransfer, TransferListType, KeygenResult, util, getDataset } from '@sheinx/hooks';
 import TransferList from './transfer-list';
@@ -8,6 +8,7 @@ import TransferOperate from './transfer-operate';
 import Icon from '../icons';
 import { useConfig } from '../config';
 import { FormFieldContext } from '../form/form-field-context';
+import { useSemantic } from '../common/use-semantic';
 
 const Transfer = <DataItem, Value extends KeygenResult[]>(
   props: TransferProps<DataItem, Value>,
@@ -49,10 +50,18 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
     onFilter: onFilterProp,
     onChange: onChangeProp,
     onSelectChange: onSelectChangeProp,
+    classNames: classNamesProp,
+    styles: stylesProp,
   } = props;
 
   const config = useConfig();
   const isRtl = config.direction === 'rtl';
+
+  const [semClass, semStyle] = useSemantic<TransferSemanticKey>(
+    classNamesProp,
+    stylesProp,
+    config.transfer,
+  );
 
   const {
     source,
@@ -92,14 +101,14 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
     [styles.small]: size === 'small',
     [styles.large]: size === 'large',
     [styles.equalPanelWidth]: equalPanelWidth,
-  });
+  }, semClass('root'));
 
   const renderOperations = () => {
     const sourceOperation = operations?.[0];
     const targetOperation = operations?.[1];
 
     return (
-      <div className={styles.operations}>
+      <div className={classNames(styles.operations, semClass('operations'))} style={semStyle('operations')}>
         <TransferOperate
           size={size}
           listType='source'
@@ -174,6 +183,8 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
         searchPlaceholder={placeholder}
         renderFilter={renderFilter}
         onFilter={onFilterProp ? onFilter : undefined}
+        semClass={semClass}
+        semStyle={semStyle}
         onSelectChange={(keys) => {
           if (isSource) {
             const newAllKeys = Array.from(new Set([...keys, ...(targetSelectedKeys || [])]));
@@ -189,17 +200,19 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
 
   const renderSourceList = useMemo(() => {
     return renderList('source');
-  }, [source, loading, size, filterSourceText, sourceSelectedKeys, renderFilter, children]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [source, loading, size, filterSourceText, sourceSelectedKeys, renderFilter, children, classNamesProp, stylesProp, config.transfer]);
 
   const renderTargetList = useMemo(() => {
     return renderList('target');
-  }, [target, loading, size, filterTargetText, targetSelectedKeys, renderFilter, children]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [target, loading, size, filterTargetText, targetSelectedKeys, renderFilter, children, classNamesProp, stylesProp, config.transfer]);
 
   const { fieldId } = useContext(FormFieldContext);
 
   return (
     <TransferContext.Provider value={{ filterSourceText, filterTargetText, highlight: props.highlight }}>
-      <div className={rootClass} style={style} id={fieldId} {...getDataset(props)}>
+      <div className={rootClass} style={style ? { ...style, ...semStyle('root') } : semStyle('root')} id={fieldId} {...getDataset(props)}>
         {renderSourceList}
         {!simple && renderOperations()}
         {renderTargetList}

@@ -1,6 +1,7 @@
 import { KeygenResult, UnMatchedData, ObjectKey } from '@sheinx/hooks';
 import { DatumType } from '../tree/tree.type';
-import { JssStyleType, CascaderProps } from './cascader.type';
+import { JssStyleType, CascaderProps, CascaderSemanticKey } from './cascader.type';
+import type { SemanticClassFn, SemanticStyleFn } from '../common/use-semantic';
 
 export interface CascaderNodeProps<DataItem, Value extends KeygenResult[]>
   extends Pick<
@@ -23,4 +24,6 @@ export interface CascaderNodeProps<DataItem, Value extends KeygenResult[]>
     fromClick?: boolean,
   ) => void;
   onChange: (value: Value, data?: DataItem | UnMatchedData | null) => void;
+  semClass?: SemanticClassFn<CascaderSemanticKey>;
+  semStyle?: SemanticStyleFn<CascaderSemanticKey>;
 }

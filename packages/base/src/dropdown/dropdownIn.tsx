@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '../button';
-import { DropdownNode, MenuPosition, SimpleDropdownProps } from './dropdown.type';
+import { DropdownNode, MenuPosition, SimpleDropdownProps, DropdownSemanticKey, DropdownClassNamesInfo } from './dropdown.type';
 import { getDataset, usePopup, util } from '@sheinx/hooks';
 import AnimationList from '../animation-list';
 import AbsoluteList from '../absolute-list';
@@ -8,6 +8,7 @@ import Icons from '../icons';
 import classNames from 'classnames';
 import Item from './Item';
 import { useConfig } from '../config';
+import { useSemantic } from '../common';
 
 const Dropdown = (props: SimpleDropdownProps) => {
   const {
@@ -30,6 +31,8 @@ const Dropdown = (props: SimpleDropdownProps) => {
     hideArrow,
     zIndex,
     popupClassName,
+    classNames: classNamesProp,
+    styles: stylesProp,
   } = props;
   const dropdownClasses = jssStyle?.dropdown?.();
   const config = useConfig();
@@ -62,6 +65,17 @@ const Dropdown = (props: SimpleDropdownProps) => {
     priorityDirection: 'vertical',
     mouseLeaveDelay: 200,
   });
+
+  // Semantic DOM
+  // 根级 Dropdown 应用全部 semantic；子级 isSub 也需要接收 semantic 以便对 button(item) 应用 item key
+  const semInfo: DropdownClassNamesInfo = { open: !!open, disabled: !!disabled };
+  const [semClass, semStyle] = useSemantic<DropdownSemanticKey, DropdownClassNamesInfo>(
+    classNamesProp,
+    stylesProp,
+    config.dropdown,
+    semInfo,
+  );
+
   // buttonProps
   let { type, text, outline, mode, shape } = props;
 
@@ -76,7 +90,8 @@ const Dropdown = (props: SimpleDropdownProps) => {
       <span
         data-role='caret'
         key={'caret'}
-        className={dropdownClasses?.caret}
+        className={classNames(dropdownClasses?.caret, !isSub && semClass('caret'))}
+        style={!isSub ? semStyle('caret') : undefined}
         dir={config.direction}
       >
         {Icons.dropdown.DropdownArrow}
@@ -111,7 +126,9 @@ const Dropdown = (props: SimpleDropdownProps) => {
             dropdownClasses?.item,
             !!disabled && dropdownClasses?.itemDisabled,
             !!open && dropdownClasses?.itemActive,
+            semClass('item'),
           )}
+          style={semStyle('item')}
           data-role='item'
         >
           {child}
@@ -126,7 +143,9 @@ const Dropdown = (props: SimpleDropdownProps) => {
         className={classNames(
           dropdownClasses?.button,
           !placeholder && dropdownClasses?.splitButton,
+          semClass('button'),
         )}
+        style={semStyle('button')}
         mode={mode}
         type={type}
         shape={shape}
@@ -147,7 +166,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
       const renderPlaceholder = util.render(renderItem || 'content', d);
       const { children } = d;
       const group = d.group ? (
-        <div key={'group'} className={dropdownClasses?.optionGroup}>
+        <div key={'group'} className={classNames(dropdownClasses?.optionGroup, semClass('group'))} style={semStyle('group')}>
           {d.group}
         </div>
       ) : null;
@@ -167,13 +186,16 @@ const Dropdown = (props: SimpleDropdownProps) => {
           trigger={trigger}
           isSub
           closePop={closePop}
+          classNames={classNamesProp}
+          styles={stylesProp}
         />
       ) : (
         <Item
           data={d}
           key={index}
           onClick={d.onClick || onClick}
-          itemClassName={classNames(dropdownClasses?.item)}
+          itemClassName={classNames(dropdownClasses?.item, semClass('item'))}
+          itemStyle={semStyle('item')}
           renderItem={renderItem}
           direction={config.direction}
           columns={columns}
@@ -201,8 +223,9 @@ const Dropdown = (props: SimpleDropdownProps) => {
         dropdownClasses?.rootClass,
         dropdownClasses?.wrapper,
         !isSub && open && dropdownClasses?.open,
+        !isSub && semClass('root'),
       )}
-      style={style}
+      style={!isSub ? { ...style, ...semStyle('root') } : style}
       data-position={position}
       data-role='dropdown'
       ref={targetRef}
@@ -231,11 +254,13 @@ const Dropdown = (props: SimpleDropdownProps) => {
             columns !== undefined && columns > 1 && dropdownClasses?.boxList,
             size === 'small' && dropdownClasses?.listSmall,
             size === 'large' && dropdownClasses?.listLarge,
+            !isSub && semClass('list'),
           )}
           style={{
             width: width,
             minWidth: 90,
             gridTemplateColumns: columns ? `repeat(${columns}, 1fr)` : undefined,
+            ...(!isSub ? semStyle('list') : undefined),
           }}
           type={'fade'}
           duration={'fast'}

@@ -1,6 +1,10 @@
 import React from 'react';
 import { CommonType } from '../common/type';
 import { PopoverClasses, PopoverProps } from '../popover/popover.type';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
+
+export type AvatarSemanticKey = 'root';
+export type AvatarGroupSemanticKey = 'group' | 'root';
 
 export interface AvatarClasses {
   wrapper: string;
@@ -79,6 +83,19 @@ export interface AvatarProps extends Pick<CommonType, 'className' | 'style' | 's
    * @cn 头像点击事件
    */
   onClick?: () => void;
+
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<AvatarSemanticKey>;
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<AvatarSemanticKey>;
 }
 export interface AvatarGroupProps
   extends Pick<CommonType, 'className' | 'style' | 'size'>,
@@ -107,4 +124,17 @@ export interface AvatarGroupProps
    * @cn 用于展示隐藏头像的 Popover 相关配置，配置属性为 Popover 部分属性: position、zIndex、getPopupContainer、adjust
    */
   popover?: Pick<PopoverProps, 'position' | 'zIndex' | 'getPopupContainer' | 'adjust'>;
+
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<AvatarGroupSemanticKey>;
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<AvatarGroupSemanticKey>;
 }

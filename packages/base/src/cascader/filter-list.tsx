@@ -31,6 +31,8 @@ const FilterList = <DataItem, Value extends KeygenResult[]>(
     setFilterText,
     onChange,
     onPathChange,
+    semClass,
+    semStyle,
   } = props;
   const styles = jssStyle?.cascader?.() as CascaderClasses;
 
@@ -68,6 +70,8 @@ const FilterList = <DataItem, Value extends KeygenResult[]>(
         setFilterText={setFilterText}
         onChange={onChange}
         onPathChange={onPathChange}
+        semClass={semClass}
+        semStyle={semStyle}
       />
     );
   };
@@ -113,6 +117,8 @@ const FilterList = <DataItem, Value extends KeygenResult[]>(
           setFilterText={setFilterText}
           onChange={onChange}
           onPathChange={onPathChange}
+          semClass={semClass}
+          semStyle={semStyle}
         />
       );
     });
@@ -122,7 +128,7 @@ const FilterList = <DataItem, Value extends KeygenResult[]>(
     if (loading) return renderLoading();
 
     return (
-      <div className={classNames(styles.list)}>
+      <div className={classNames(styles.list, semClass?.('list'))} style={semStyle?.('list')}>
         {virtual ? renderVirtualList() : renderSimpleList()}
       </div>
     );

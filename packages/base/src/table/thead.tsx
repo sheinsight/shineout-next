@@ -178,12 +178,14 @@ export default (props: TheadProps) => {
   ): React.CSSProperties | undefined => {
     // 累加level 至 0 的所有高度
     const top = context.trHeights.slice(0, level).reduce((a, b) => toNum(a) + toNum(b), 0);
+    const sem = props.headerCellSemStyle;
     if (fixed === 'left') {
       const left = colgroup.slice(0, index).reduce((a, b) => toNum(a) + toNum(b), 0);
       return {
         [isRtl ? 'right' : 'left']: left,
         top: top,
         position: 'sticky',
+        ...sem,
       };
     }
     if (fixed === 'right') {
@@ -192,12 +194,14 @@ export default (props: TheadProps) => {
         [isRtl ? 'left' : 'right']: right,
         top: top,
         position: 'sticky',
+        ...sem,
       };
     }
 
     return {
       top: top,
       position: 'sticky',
+      ...sem,
     };
   };
 
@@ -224,6 +228,7 @@ export default (props: TheadProps) => {
       (col.lastFixed || col.firstFixed) && tableClasses?.cellFixedLast,
       isLast && tableClasses?.cellIgnoreBorder,
       colTemp.sorter && props.cellSortable && tableClasses?.cellSortable,
+      props.headerCellSemClass,
     );
     const isExpand = colTemp.type === 'expand' || colTemp.type === 'row-expand';
 
@@ -346,7 +351,7 @@ export default (props: TheadProps) => {
       createTh(trs, col, 0, isLast, index);
     });
     return trs.map((tr, i) => (
-      <tr key={`${i}-${tr.map(item => item.props.colSpan).toString()}`} ref={(el) => (trRefs.current[i] = el)}>
+      <tr key={`${i}-${tr.map(item => item.props.colSpan).toString()}`} ref={(el) => (trRefs.current[i] = el)} className={props.headerRowSemClass} style={props.headerRowSemStyle}>
         {tr}
       </tr>
     ));

@@ -1,7 +1,9 @@
 import React, { Fragment, useMemo } from 'react';
 import classNames from 'classnames';
-import type { DescriptionsProps, DescriptionsClasses } from './descriptions.type';
+import type { DescriptionsProps, DescriptionsClasses, DescriptionsSemanticKey } from './descriptions.type';
 import { useDescriptions, usePersistFn, type DescriptionsItemProps } from '@sheinx/hooks';
+import { useConfig } from '../config';
+import { useSemantic } from '../common';
 
 const Descriptions = (props: DescriptionsProps) => {
   const {
@@ -19,6 +21,8 @@ const Descriptions = (props: DescriptionsProps) => {
     valueStyle,
     labelStyle,
     size = 'default',
+    classNames: classNamesProp,
+    styles: stylesProp,
   } = props;
   const { renderItem } = useDescriptions({
     items,
@@ -34,12 +38,20 @@ const Descriptions = (props: DescriptionsProps) => {
 
   const jssStyle = jssStyleProps?.descriptions?.() || ({} as DescriptionsClasses);
 
+  // Semantic DOM
+  const config = useConfig();
+  const [semClass, semStyle] = useSemantic<DescriptionsSemanticKey>(
+    classNamesProp,
+    stylesProp,
+    config.descriptions,
+  );
+
   const Header = () => {
     if (!title && !extra) return null;
     return (
-      <div className={jssStyle?.header}>
-        {title && <div className={jssStyle?.title}>{title}</div>}
-        {extra && <div className={jssStyle?.extra}>{extra}</div>}
+      <div className={classNames(jssStyle?.header, semClass('header'))} style={semStyle('header')}>
+        {title && <div className={classNames(jssStyle?.title, semClass('title'))} style={semStyle('title')}>{title}</div>}
+        {extra && <div className={classNames(jssStyle?.extra, semClass('extra'))} style={semStyle('extra')}>{extra}</div>}
       </div>
     );
   };
@@ -55,12 +67,18 @@ const Descriptions = (props: DescriptionsProps) => {
     isHorizontal: boolean,
     isColSpan?: boolean,
   ) => {
-    const style = type === 'label' ? d.itemLabelStyle : d.itemValueStyle;
+    const tdStyle = type === 'label' ? d.itemLabelStyle : d.itemValueStyle;
     const content = type === 'label' ? d.label : d.value;
-    const className = type === 'label' ? jssStyle?.label : jssStyle?.value;
+    const tdClassName = type === 'label' ? jssStyle?.label : jssStyle?.value;
     const colSpanProps = !isColSpan ? getColSpan(d, isHorizontal) : {};
+    const semKey = type === 'label' ? 'label' : 'value';
     return (
-      <td key={`${d.key || i}_${type}`} className={className} style={style} {...colSpanProps}>
+      <td
+        key={`${d.key || i}_${type}`}
+        className={classNames(tdClassName, semClass(semKey))}
+        style={{ ...tdStyle, ...semStyle(semKey) }}
+        {...colSpanProps}
+      >
         {content}
         {type === 'label' && colon}
       </td>
@@ -91,11 +109,11 @@ const Descriptions = (props: DescriptionsProps) => {
         return (
           <td key={_d.key || _i} {...getColSpan(_d)} className={jssStyle?.cell}>
             <div className={jssStyle?.item}>
-              <div className={jssStyle?.labelInline} style={_d.itemLabelStyle}>
+              <div className={classNames(jssStyle?.labelInline, semClass('label'))} style={{ ..._d.itemLabelStyle, ...semStyle('label') }}>
                 {_d?.label}
                 {colon}
               </div>
-              <div className={jssStyle?.valueInline} style={_d.itemValueStyle}>
+              <div className={classNames(jssStyle?.valueInline, semClass('value'))} style={{ ..._d.itemValueStyle, ...semStyle('value') }}>
                 {_d?.value}
               </div>
             </div>
@@ -116,6 +134,7 @@ const Descriptions = (props: DescriptionsProps) => {
     jssStyle?.wrapper,
     size === 'small' && jssStyle?.small,
     size === 'large' && jssStyle?.large,
+    semClass('root'),
   );
   const bodyClassName = classNames(
     jssStyle?.body,
@@ -127,10 +146,10 @@ const Descriptions = (props: DescriptionsProps) => {
   );
 
   return (
-    <div className={rootClassName} style={style}>
+    <div className={rootClassName} style={{ ...style, ...semStyle('root') }}>
       <Header />
       <div className={bodyClassName}>
-        <table className={jssStyle?.table} cellPadding={0} cellSpacing={0}>
+        <table className={classNames(jssStyle?.table, semClass('table'))} style={semStyle('table')} cellPadding={0} cellSpacing={0}>
           {layout === 'inlineHorizontal' && typeof column === 'number' && column > 1 && (
             <colgroup>
               {longestItem?.map((_, index, arr) => (

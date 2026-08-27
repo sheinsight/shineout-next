@@ -7,4 +7,6 @@ export interface TfootProps
   columns: TableFormatColumn<any>[];
   colgroup: (number | string | undefined)[];
   data?: any[];
+  footerCellSemClass?: string;
+  footerCellSemStyle?: React.CSSProperties;
 }

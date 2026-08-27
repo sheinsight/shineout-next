@@ -1,12 +1,14 @@
 import React, { Children, cloneElement, useLayoutEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import { useTabs, util } from '@sheinx/hooks';
-import { TabsClasses, TabsProps } from './tabs.type';
+import { TabsClasses, TabsProps, TabsSemanticKey } from './tabs.type';
 import { TabData } from './tab.type';
 import { TabsPanelProps } from './tabs-panel.type';
 import TabsPanel from './tabs-panel';
 import TabsHeader from './tabs-header';
 import Sticky, { type StickyProps } from '../sticky';
+import { useConfig } from '../config';
+import { useSemantic } from '../common';
 
 const { isEmpty, isObject, isNumber, isNamedComponent, devUseWarning } = util;
 
@@ -51,6 +53,9 @@ const Tabs = (props: TabsProps) => {
     allowNonPanel,
     renderTabsHeader,
     className: tabsClassName,
+    classNames: classNamesProp,
+    styles: stylesProp,
+    style: tabsStyle_,
     ...rest
   } = props;
 
@@ -78,10 +83,19 @@ const Tabs = (props: TabsProps) => {
   const panelRef = useRef<HTMLDivElement>(null);
   const panelHeight = useRef<number>(0);
   const tabsStyle = jssStyle?.tabs?.() || ({} as TabsClasses);
+
+  // Semantic DOM
+  const config = useConfig();
+  const [semClass, semStyle] = useSemantic<TabsSemanticKey>(
+    classNamesProp,
+    stylesProp,
+    config.tabs,
+  );
+
   const rootClass = classNames(tabsStyle.rootClass, tabsStyle.tabs, tabsClassName, {
     [tabsStyle.autoFill]: isVertical || autoFill,
     [tabsStyle.collapsed]: collapse,
-  });
+  }, semClass('root'));
 
   const getRootProps = () => {
     return rest;
@@ -158,7 +172,7 @@ const Tabs = (props: TabsProps) => {
 
   const renderContent = () => {
     return (
-      <div ref={panelRef} className={tabsStyle.panelWrapper} style={panelStyle}>
+      <div ref={panelRef} className={classNames(tabsStyle.panelWrapper, semClass('panel'))} style={{ ...panelStyle, ...semStyle('panel') }}>
         {Children.toArray(children).map((child, index) => {
           const Child = child as React.ReactElement<TabsPanelProps>;
 
@@ -206,6 +220,8 @@ const Tabs = (props: TabsProps) => {
         tabBarStyle={tabBarStyle}
         getPosition={getPosition()}
         sticky={!!sticky}
+        semClass={semClass}
+        semStyle={semStyle}
       ></TabsHeader>
     );
     if (!isEmpty(sticky) && !isVertical) {
@@ -285,7 +301,7 @@ const Tabs = (props: TabsProps) => {
         activeBackground: getActiveBackground(),
       }}
     >
-      <div {...getRootProps()} className={rootClass} {...getDataProps()}>
+      <div {...getRootProps()} className={rootClass} style={{ ...tabsStyle_, ...semStyle('root') }} {...getDataProps()}>
         {renderTabs()}
       </div>
     </Provider>

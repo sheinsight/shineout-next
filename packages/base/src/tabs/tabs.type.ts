@@ -3,6 +3,24 @@ import { CommonType } from '../common/type';
 import { ButtonClasses, ButtonGroupClasses } from '../button/button.type';
 import { BaseTabsProps, TabsShapeType } from '@sheinx/hooks';
 import type { StickyProps } from '../sticky';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
+
+/**
+ * Tabs Semantic DOM key 列表
+ * - root:        最外层容器
+ * - header:      标签栏区域
+ * - tab:         每个标签项
+ * - panel:       内容面板
+ * - extra:       额外内容区
+ * - ink:         指示条（line/dash 形态）
+ * - prev:        前滚动按钮
+ * - next:        后滚动按钮
+ * - collapsible: 折叠按钮
+ * - inner:        tab 内部包装容器（line/dash/fill 形态）
+ *
+ * @see /docs/rfc/0001-semantic-dom.md
+ */
+export type TabsSemanticKey = 'root' | 'header' | 'tab' | 'panel' | 'extra' | 'ink' | 'prev' | 'next' | 'collapsible' | 'inner';
 
 export interface TabsClasses {
   rootClass: string;
@@ -54,6 +72,20 @@ export interface TabsProps extends BaseTabsProps, Pick<CommonType, 'className' |
     button: () => ButtonClasses;
     buttonGroup?: () => ButtonGroupClasses;
   };
+
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<TabsSemanticKey>;
+
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<TabsSemanticKey>;
   /**
    * @en Whether to enable lazy loading
    * @cn 是否开启懒加载

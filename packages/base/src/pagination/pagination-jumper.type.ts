@@ -1,7 +1,8 @@
 import { CommonType } from '../common/type';
 import { InputClasses } from '../input/input.type';
 import { ButtonClasses } from '../button/button.type';
-import { PaginationClasses, TextParams } from '../pagination/pagination.type';
+import { PaginationClasses, PaginationSemanticKey, TextParams } from '../pagination/pagination.type';
+import type { SemanticClassFn, SemanticStyleFn } from '../common/use-semantic';
 
 export interface PaginationJumperProps extends Pick<CommonType, 'size'> {
   jssStyle?: {
@@ -16,4 +17,6 @@ export interface PaginationJumperProps extends Pick<CommonType, 'size'> {
   text: TextParams;
   disabled?: boolean;
   onChange: (current: number, pageSize?: number) => void;
+  semClass: SemanticClassFn<PaginationSemanticKey>;
+  semStyle: SemanticStyleFn<PaginationSemanticKey>;
 }

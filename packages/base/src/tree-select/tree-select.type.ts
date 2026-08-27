@@ -9,6 +9,9 @@ import { InnerTitleClasses } from '../common/use-inner-title';
 import { BaseTipProps } from '../common/use-tip';
 import { PopoverClasses } from '../popover/popover.type';
 import { SpinClasses } from '../spin/spin.type';
+import type { SemanticClassNames, SemanticStyles } from '../common/use-semantic';
+
+export type TreeSelectSemanticKey = 'root' | 'header' | 'popup' | 'list' | 'option';
 
 export type TreeSelectClasses = {
   rootClass: string;
@@ -143,6 +146,18 @@ export interface TreeSelectProps<DataItem, Value>
     Pick<AbsoluteListProps, 'absolute' | 'zIndex'>,
     Pick<TreeProps<DataItem, any>, 'actionOnClick'>,
     BaseTipProps {
+  /**
+   * @en Semantic DOM classNames for internal nodes.
+   * @cn 语义化 DOM 类名，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  classNames?: SemanticClassNames<TreeSelectSemanticKey>;
+  /**
+   * @en Semantic DOM styles for internal nodes.
+   * @cn 语义化 DOM 行内样式，用于定制内部节点样式。
+   * @version 3.10.0
+   */
+  styles?: SemanticStyles<TreeSelectSemanticKey>;
   /**
    * @en Data cache, if data change asynchronously, better set true
    * @cn 是否开启数据缓存，如果数据存在动态更新的情况建议开启

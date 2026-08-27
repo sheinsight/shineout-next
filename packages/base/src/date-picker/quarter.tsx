@@ -52,6 +52,7 @@ const Quarter = (props: QuarterProps) => {
           (isInRange === 'end' || isInRange === 'start-end') &&
             props.position === 'end' &&
             styles?.pickerCellInRangeEnd,
+          props.semClass?.('cell'),
         )}
         key={index}
         onClick={() => {
@@ -86,7 +87,7 @@ const Quarter = (props: QuarterProps) => {
       className={classNames(styles?.quarterPicker, styles?.picker)}
     >
       <PickerTitle position={props.position} jssStyle={jssStyle} />
-      <div className={styles?.pickerHeader} dir={config.direction}>
+      <div className={classNames(styles?.pickerHeader, props.semClass?.('popupHeader'))} dir={config.direction} style={props.semStyle?.('popupHeader')}>
         <div className={styles?.pickerHeaderLeft}>
           <span
             className={styles?.pickerHeaderIcon}
@@ -133,7 +134,9 @@ const Quarter = (props: QuarterProps) => {
       </div>
 
       {props.needConfirm && !props.range && (
-        <Confirm closeByConfirm={props.closeByConfirm} jssStyle={props.jssStyle} />
+        <div className={props.semClass?.('popupFooter')} style={props.semStyle?.('popupFooter')}>
+          <Confirm closeByConfirm={props.closeByConfirm} jssStyle={props.jssStyle} />
+        </div>
       )}
     </div>
   );
