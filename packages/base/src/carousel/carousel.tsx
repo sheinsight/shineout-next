@@ -14,7 +14,7 @@ const Carousel = (props: CarouselProps) => {
   const config = useConfig();
 
   // Semantic DOM
-  const [semClass, semStyle] = useSemantic<CarouselSemanticKey>(
+  const [semClass, semStyle] = useSemantic<CarouselSemanticKey, CarouselClassNamesInfo>(
     classNamesProp,
     stylesProp,
     config.carousel,
