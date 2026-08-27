@@ -124,7 +124,7 @@ const Image = (props: ImageProps) => {
 
     return (
       <div className={imgInnerClass}>
-        <img className={imgClass} style={semStyle('img')} {...imageProps} />
+        <img className={imgClass} {...imageProps} style={{ ...imageProps.style, ...semStyle('img') }} />
       </div>
     );
   };
