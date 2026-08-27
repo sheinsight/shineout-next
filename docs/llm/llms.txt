@@ -1,0 +1,77 @@
+# Shineout Next
+
+> A high-performance React component library with Semantic DOM API support.
+
+## Components
+
+### General
+
+- Button: Button Describe
+- Link: A link is a text with navigation properties that jumps to a page when clicked.
+### Layout
+
+- Divider: Divider is a lightweight component that is linear and used to separate, organize, and refine elements and page structures with logic.
+- Gap: Set the spacing between components
+- Grid: Dynamic grid system, used in places where flex is not suitable
+- Sticky: Sticky keeps the element in the visible area of the screen when the screen scrolls
+### Navigation
+
+- Breadcrumb: Display the hierarchical structure and current location of the page in the system, and can quickly return to any previous page
+- Dropdown: It is usually used to display the options that users can choose. When there are many operation options, these options can be stored
+- Menu: Menu is used to carry the architecture of the website and provide a list of menus for jumping
+- Pagination: Pagination Describe
+- Steps: Displaying user progress and current step, used as a navigation bar to guide users through a task step by step.
+### Data
+
+- Avatar: Avatar
+- Badge: Badge Describe
+- Card: The most basic card container, which can create clear visual units and make information more logical
+- Carousel: Carousel container
+- Collapse: Collapse Group and categorize content, hiding secondary information
+- Descriptions: It is generally used to display information on the details page
+- Empty: Empty Describe
+- Image: Image Describe
+- List: The most basic list display, which can carry text, lists, pictures, paragraphs
+- Popover: Usually used for mouse hover display of the operation, as well as general secondary confirmation dialog box bearing
+- Skeleton: Skeleton is a placeholder for the page when the real content is not loaded, providing a rough structure of the page.
+- Spin: The suitable loading animation for pages and sections can effectively reduce user anxiety when waiting for asynchronous data or rendering process.
+- Table: Display row and column data for data collection display, analysis and processing
+- Tabs: This component is used to separate sets of data related to each other but belonging to different categories, and it serves as a global navigation.
+- Tag: Tag is a flexible and commonly used classification method for tagging, categorizing, or selecting keywords.
+- Tooltip: Tooltip is a small pop-up box that appears when a user pauses the pointer over an element, or clicks on it.
+- Tree: Tree Describe
+### Form
+
+- Cascader: For related datasets, a cascading selection method can be used for multi-level classification.
+- Checkbox: In a set of data, users can select one or more data through checkboxes
+- DatePicker: Select a date. Support year, month, quarter, week, day type, support range selection, etc.
+- Form: It is used to collect, verify and submit data, and is generally composed of input boxes, radio boxes, check boxes, selectors and other controls
+- Input: Usually used to carry the text box of user information entry, often used in the form. Dialog box, table and other scenarios, in the input box based on the basic style can be extended according to the needs of a variety of information entry form.
+- Radio: Radio represents only one option from a group of mutually exclusive options
+- Rate: Rate component
+- Rule: Shineout Form defines a set of data verification mechanisms internally, and configures them through the rules property on the components in Form.
+- Select: Select Describe
+- Slider: Slider is a component that lets users select a value or range of values within a range of values.
+- Switch: Used for switching between two opposing states.
+- Textarea: Users can input or edit text in the text box.
+- Transfer: Users can input or edit text in the text box.
+- TreeSelect: Displays hierarchical information in a clear structure, making it easy for users to find the corresponding nodes and data according to the relationship between the data.
+- Upload: Users can transfer files or submit the corresponding content (The example server on this page is limited to 10 KB, and files larger than this limit will fail to upload)
+### Feedback
+
+- Alert: Alert Describe
+- BorderBeam: Provides a continuously moving decorative highlight for container borders.
+- Drawer: Drawer is a panel that slides out from the edge of the screen. It is usually located in the sidebar or top menu of the page to store and display relevant information and menu options for interaction.
+- Message: After the user performs the operation, the system makes feedback on the content of the operation behavior.
+- Modal: Modal is a temporary window, usually used to display secondary content or operation without jumping to a new page.
+- Progress: Progress is used to show the progress of current operation, and inform the user the current status.
+- Watermark: Add watermarks to page content to reduce the risk of unauthorized use of sensitive information.
+### Other
+
+- CardGroup: CardGroup Describe
+
+## Resources
+
+- [Full Documentation](llms-full.txt): Complete API reference with examples
+- [Semantic DOM (EN)](llms-semantic.md): Semantic DOM customization guide
+- [Semantic DOM (中文)](llms-semantic-cn.md): 语义化 DOM 定制指南
