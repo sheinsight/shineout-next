@@ -1,4 +1,4 @@
-# Shineout Next
+# Shineout
 
 > A high-performance React component library with Semantic DOM API support.
 

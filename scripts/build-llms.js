@@ -147,7 +147,7 @@ function parseExampleMeta(content) {
  */
 function generateIndex(components) {
   const lines = [
-    '# Shineout Next',
+    '# Shineout',
     '',
     '> A high-performance React component library with Semantic DOM API support.',
     '',
@@ -182,7 +182,7 @@ function generateIndex(components) {
  */
 function generateFull(components) {
   const sections = [
-    '# Shineout Next - Complete API Reference',
+    '# Shineout - Complete API Reference',
     '',
     '> A high-performance React component library with Semantic DOM API support.',
     '',

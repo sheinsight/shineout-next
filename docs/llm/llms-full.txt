@@ -1,4 +1,4 @@
-# Shineout Next - Complete API Reference
+# Shineout - Complete API Reference
 
 > A high-performance React component library with Semantic DOM API support.
 
@@ -4730,9 +4730,9 @@ export default () => {
 
 ```tsx
 /**
- * cn - 
+ * cn -
  *    -- 设置 `shape = "button"` 标签页显示为按钮
- * en - 
+ * en -
  *    -- Set `shape = "button"` to show tabs as buttons
  */
 import { Tabs } from 'shineout';
