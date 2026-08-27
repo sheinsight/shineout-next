@@ -1,7 +1,9 @@
-import { UploadProps as UnStyledUploadProps } from '@sheinx/base';
+import { UploadProps as UnStyledUploadProps, UploadRef } from '@sheinx/base';
 import { GetWithFieldProps } from '../hooks/use-field-common';
 
 import type { UploadOptions as _UploadOptions } from '@sheinx/hooks';
+
+export type { UploadRef };
 
 export type BaseUploadProps<T> = Omit<UnStyledUploadProps<T>, 'jssStyle'>;
 
