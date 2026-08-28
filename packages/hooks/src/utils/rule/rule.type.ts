@@ -145,6 +145,11 @@ export type FormItemObjectRule = Type &
     args?: any;
   };
 // 表单项校验传的rule 数组
+// ⚠️ 自定义函数规则必须调用 callback(true) 或 callback(new Error('msg')) 来完成校验。
+// 如果函数直接 return 字符串/undefined 而不调 callback，validate() 的 Promise 将永远 pending，
+// 既不会 resolve 也不会 reject，导致表单提交逻辑完全卡住。
+// 正确写法：(value, formData, callback) => { if (invalid) callback(new Error('msg')); else callback(true); }
+// 错误写法：(value) => invalid ? '错误信息' : undefined  ← 永远不会结束校验
 export type FormItemRule<Value, FormData = any, Props = any> = Array<
   | RuleResultValue
   | FormItemObjectRule
