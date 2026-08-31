@@ -87,7 +87,11 @@ const Upload = <T,>(props0: UploadProps<T>) => {
   useEffect(() => {
     const { getComponentRef } = props;
     if (!getComponentRef) return;
-    const ref: UploadRef = { addFiles: (files) => func.addFiles(files) };
+    const ref: UploadRef = {
+      addFiles: (files) => {
+        func.addFiles(files);
+      },
+    };
     if (util.isFunc(getComponentRef)) {
       (getComponentRef as (ref: UploadRef) => void)(ref);
     } else {
