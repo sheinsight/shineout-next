@@ -96,10 +96,23 @@ const Upload = <T,>(props0: UploadProps<T>) => {
   }, []);
 
   // paste 处理：document 级别监听，因为 Upload 没有可聚焦的空白区域
+  // 仅当粘贴事件来自非可编辑区域时才触发，避免干扰 input/textarea 等正常粘贴行为
   useEffect(() => {
     if (!paste) return;
     const handlePaste = async (e: ClipboardEvent) => {
       if (props.disabled) return;
+      // 过滤掉来自可编辑元素的粘贴事件，避免与 input/textarea/contentEditable 冲突
+      const target = e.target as HTMLElement | null;
+      if (target) {
+        const tagName = target.tagName;
+        if (
+          tagName === 'INPUT' ||
+          tagName === 'TEXTAREA' ||
+          target.isContentEditable
+        ) {
+          return;
+        }
+      }
       let files: FileList | undefined;
       if (props.beforePaste && util.isFunc(props.beforePaste)) {
         files = await props.beforePaste(e as unknown as React.ClipboardEvent);
