@@ -380,7 +380,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
       path = path || [];
       handlePathChange(lastValue, null, path as Value);
     } catch (e) {
-      console.error(e);
+      util.devUseWarning.error(`${e}`);
     }
   };
 

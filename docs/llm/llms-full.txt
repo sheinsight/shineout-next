@@ -1849,6 +1849,8 @@ Avatar
 | crossOrigin | \"anonymous\" \| \"use-credentials\" | - | CORS attribute setting |
 | onError | (() => boolean) | - | The event that the image fails to load, returning false will close the component\"s default fallback behavior |
 | onClick | (() => void) | - | The event that the avatar is clicked |
+| classNames | Partial<Record<\"root\", string>> | - | Semantic DOM classNames for internal nodes. |
+| styles | Partial<Record<\"root\", CSSProperties>> | - | Semantic DOM styles for internal nodes. |
 
 ### Avatar.Group Props
 
@@ -1862,6 +1864,8 @@ Avatar
 | renderMax | ((hideAvatarNodes: ReactNode[], max: number) => ReactNode) | - | Custom rendering of hidden avatar nodes, hideAvatarNodes is an array of hidden node dom, max is the number of hidden nodes |
 | **children** | ReactNode | - | Avatar node |
 | popover | Pick<PopoverProps, \"position\" \| \"zIndex\" \| \"getPopupContainer\" \| \"adjust\"> | - | The event that the image fails to load, returning false will close the component\"s default fallback behavior |
+| classNames | Partial<Record<\"group\" \| \"root\", string>> | - | Semantic DOM classNames for internal nodes. |
+| styles | Partial<Record<\"group\" \| \"root\", CSSProperties>> | - | Semantic DOM styles for internal nodes. |
 
 ### Semantic DOM
 
@@ -4730,9 +4734,9 @@ export default () => {
 
 ```tsx
 /**
- * cn -
+ * cn - 
  *    -- 设置 `shape = "button"` 标签页显示为按钮
- * en -
+ * en - 
  *    -- Set `shape = "button"` to show tabs as buttons
  */
 import { Tabs } from 'shineout';
@@ -5108,9 +5112,9 @@ Tree Describe
 | sortBySelect | boolean | false | When enabled in multi-select mode, the value array is sorted by selection order instead of tree structure order |
 | virtual | boolean | - | Virtual list |
 | className | string | - | Custom class name |
+| style | CSSProperties | - | Custom style |
 | classNames | Partial<Record<\"root\" \| \"node\" \| \"content\" \| \"icon\", string>> | - | Semantic DOM classNames for internal nodes. |
 | styles | Partial<Record<\"root\" \| \"node\" \| \"content\" \| \"icon\", CSSProperties>> | - | Semantic DOM styles for internal nodes. |
-| style | CSSProperties | - | Custom style |
 | line | boolean | true | Whether show line |
 | iconClass | string | - | Class name of icon |
 | nodeClass | string \| ((data: DataItem) => string) | - | Class name of node |
@@ -5917,6 +5921,8 @@ Select a date. Support year, month, quarter, week, day type, support range selec
 | renderDate | ((params: {  date: Date;  isDisabled: boolean;  isInRange: false \| \"start-end\" \| \"start\" \| \"end\" \| \"in\";  isToday: boolean;  isActive: boolean;  isCurrentMonth: boolean;  position?: \"start\" \| \"end\";  className?: string;}) => ReactNode) | - | Custom render date cell |
 | startOfWeek | 0 \| 1 \| 2 \| 3 \| 4 \| 5 \| 6 | - | The first day of the week, 0 represents Sunday, 1 represents Monday, and so on |
 | weekShort | string \| null | - | Custom week display, effective when type is week, null means not to render the current default week characters |
+| classNames | Partial<Record<\"root\" \| \"header\" \| \"popup\" \| \"popupHeader\" \| \"cell\" \| \"popupFooter\", string>> | - | Semantic DOM classNames for internal nodes. |
+| styles | Partial<Record<\"root\" \| \"header\" \| \"popup\" \| \"popupHeader\" \| \"cell\" \| \"popupFooter\", CSSProperties>> | - | Semantic DOM styles for internal nodes. |
 | popover | PopoverProps[\"position\"] | - | The position where the validation info pop up |
 | popoverProps | PopoverProps | - | Vilidate popup properties |
 | name | Name | - | The key access data in the Form |
@@ -6487,6 +6493,8 @@ Usually used to carry the text box of user information entry, often used in the 
 | underline | boolean | false | Show border bottom |
 | border | boolean | true | Whether to display border |
 | onEnterPress | ((value: string, e: KeyboardEvent<HTMLInputElement> & { target: HTMLInputElement; }) => void) | - | The callback function for enter key |
+| semClass | ((key: \"root\" \| \"input\") => string) | - |  |
+| semStyle | ((key: \"root\" \| \"input\") => CSSProperties) | - |  |
 | trim | boolean | - | Whether to remove leading and trailing spaces |
 | numType | \"non-negative\" \| \"positive\" | - | Number type supports \"positive\" and \"non-negative\", only works when type = number |
 | coin | boolean | false | Show as thousands separator, valid only when type is \"number\" |
@@ -6501,6 +6509,8 @@ Usually used to carry the text box of user information entry, often used in the 
 | clearToUndefined | boolean | false | If set to true, the form will not automatically delete the data after the component is uninstalled |
 | info | number \| ((value: string \| undefined) => string) | - | Infomation |
 | delay | number | - | User input triggers the onChange and to check interval, unit: ms |
+| classNames | Partial<Record<\"root\" \| \"input\", string>> | - | Semantic DOM classNames for internal nodes. |
+| styles | Partial<Record<\"root\" \| \"input\", CSSProperties>> | - | Semantic DOM styles for internal nodes. |
 | popover | PopoverProps[\"position\"] | - | The position where the validation info pop up |
 | popoverProps | PopoverProps | - | Vilidate popup properties |
 | beforeChange | ((value: T) => void \| T) | - | The callback before the value is changed, when the return value is not empty, it will be used as the new value of the component |
@@ -6556,6 +6566,8 @@ Usually used to carry the text box of user information entry, often used in the 
 | underline | boolean | false | Show border bottom |
 | border | boolean | true | Whether to display border |
 | onEnterPress | ((value: string, e: KeyboardEvent<HTMLInputElement> & { target: HTMLInputElement; }) => void) | - | The callback function for enter key |
+| semClass | ((key: \"root\" \| \"input\") => string) | - |  |
+| semStyle | ((key: \"root\" \| \"input\") => CSSProperties) | - |  |
 | numType | \"non-negative\" \| \"positive\" | - | Number type supports \"positive\" and \"non-negative\", only works when type = number |
 | coin | boolean | false | Show as thousands separator, valid only when type is \"number\" |
 | integerLimit | number | - | Integer limit, only works when type = number |
@@ -6571,6 +6583,8 @@ Usually used to carry the text box of user information entry, often used in the 
 | htmlName | string | - | The original property of html |
 | info | number \| ((value: string \| undefined) => string) | - | Infomation |
 | delay | number | - | User input triggers the onChange and to check interval, unit: ms |
+| classNames | Partial<Record<\"root\" \| \"input\", string>> | - | Semantic DOM classNames for internal nodes. |
+| styles | Partial<Record<\"root\" \| \"input\", CSSProperties>> | - | Semantic DOM styles for internal nodes. |
 | popover | PopoverProps[\"position\"] | - | The position where the validation info pop up |
 | popoverProps | PopoverProps | - | Vilidate popup properties |
 | beforeChange | ((value: T) => void \| T) | - | The callback before the value is changed, when the return value is not empty, it will be used as the new value of the component |
@@ -8308,6 +8322,9 @@ Users can transfer files or submit the corresponding content (The example server
 | listType | \"text\" \| \"image\" | \"text\" | The type of display |
 | hideHandler | boolean | false | Whether to hide the trigger. Note that turning on this property will not affect the handler returned in customResult, only the default trigger will be hidden |
 | beforeDrop | ((e: DragEvent<Element>) => Promise<FileList>) | - | Callback before dropping. Allow users to handle drag events and read file lists by themselves, and require the return value to be of type Promise<FileList> |
+| paste | boolean | false | Enable paste to upload. Once enabled, pasting files anywhere on the page will trigger upload |
+| beforePaste | ((e: ClipboardEvent<Element>) => Promise<FileList>) | - | Callback before pasting. Allow users to handle clipboard events and read file lists by themselves, and require the return value to be of type Promise<FileList> |
+| getComponentRef | ((ref: UploadRef) => void) \| { current?: UploadRef; } | - | Get component instance methods. Currently supports addFiles |
 | leftHandler | boolean | false | Add image view is displayed on the left |
 | imageStyle | CSSProperties | {width: 80, height: 80} | The style of the image |
 | renderContent | ((res: any, item: T, index: number, values: T[]) => ReactNode) | - | Custom rendering of uploaded images |
