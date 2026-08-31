@@ -129,7 +129,7 @@ const Upload = <T,>(props0: UploadProps<T>) => {
         try {
           files = await props.beforePaste(e as unknown as React.ClipboardEvent);
         } catch (err) {
-          console.error('Upload: beforePaste error', err);
+          util.devUseWarning.error(`beforePaste callback error: ${err}`);
           return;
         }
       } else {
