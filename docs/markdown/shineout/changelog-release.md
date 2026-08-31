@@ -2,12 +2,48 @@
 
 > 这里会有详细的发版记录,版本号严格遵循 Semver 规范
 
+## 3.10.0
+<span class="time">2026-08-28</span>
+### 🆕 Feature
+- 全量组件支持 **Semantic DOM API**：通过 `classNames` 和 `styles` props 精准定制组件内部任意 DOM 节点样式，同时支持 `setConfig` 全局统一配置 ([#1765](https://github.com/sheinsight/shineout-next/pull/1765))
+- 新增 `BorderBeam` 边框流光组件 ([#1762](https://github.com/sheinsight/shineout-next/pull/1762))
+- 新增 `Watermark` 水印组件，支持文本/图片水印、多行文本、自定义样式，并自动覆盖 `Modal`/`Drawer` 等弹出层 ([#1749](https://github.com/sheinsight/shineout-next/pull/1749))
+- `Upload` 新增 `paste` 属性支持粘贴上传（配套 `beforePaste` 可拦截处理剪贴板），新增 `getComponentRef` 属性可获取组件实例方法 `addFiles` 实现编程式添加文件 ([#1776](https://github.com/sheinsight/shineout-next/pull/1776))
+### 🐞 BugFix
+- 修复 `Badge` 同时使用 `dot` 和 `text` 属性时 `color` 不生效的问题 ([#1774](https://github.com/sheinsight/shineout-next/pull/1774))
+- 修复 `DatePicker` 同时开启 `needConfirm` 和 `inputable` 时，手动输入日期后按回车键值被清空而非提交的问题 ([#1761](https://github.com/sheinsight/shineout-next/pull/1761))
+- 修复 `Popover` 设置 `border` 属性后，箭头边框颜色未跟随变化的问题 ([#1756](https://github.com/sheinsight/shineout-next/pull/1756))
+- 修复 `Select` 设置 `showArrow={false}` 后，`clearable` 清除按钮也无法显示的问题 ([#1771](https://github.com/sheinsight/shineout-next/pull/1771))
+- 修复 `Select` 开启 `renderOptionList` 后，当数据为空时 `emptyText` 内容被传入 `renderOptionList` 导致自定义内容双重渲染的问题 ([#1755](https://github.com/sheinsight/shineout-next/pull/1755))
+- 修复 `Table` 右固定列在容器宽度变化临界点时边框和阴影异常消失的问题 ([#1768](https://github.com/sheinsight/shineout-next/pull/1768))
+- 修复 `Table` 开启虚拟滚动但无固定高度时滚动条抖动的问题 ([#1766](https://github.com/sheinsight/shineout-next/pull/1766))
+- 修复 `Table` 筛选列单选模式下，点击 Radio 选项无法选中的问题 ([#1764](https://github.com/sheinsight/shineout-next/pull/1764))
+- 修复 `Tabs` button 模式下点击标签滚动条回弹到起始位置的问题 ([#1769](https://github.com/sheinsight/shineout-next/pull/1769))
+- 修复 `Tooltip` 当 `children` 动态变为无效元素时，可能导致 React Hooks 调用顺序错误及事件监听未清理的问题 ([#1754](https://github.com/sheinsight/shineout-next/pull/1754))
+- 修复 `TreeSelect` 开启 `renderOptionList` 后，当数据为空时 `emptyText` 内容被传入 `renderOptionList` 导致自定义内容双重渲染的问题 ([#1755](https://github.com/sheinsight/shineout-next/pull/1755))
+- 修复 `Upload` 当 `beforeUpload` 返回 Promise 时，同一个文件会重复触发两次回调的问题 ([#1753](https://github.com/sheinsight/shineout-next/pull/1753))
+### 💅 Style
+- 修复 `Steps` 箭头类型在多步骤场景下箭头分隔符错位的问题 ([#1760](https://github.com/sheinsight/shineout-next/pull/1760))
+- 优化 `Upload` 删除图标样式，从镂空改为实心，提升视觉辨识度 ([#1772](https://github.com/sheinsight/shineout-next/pull/1772))
+
+## 3.9.18
+<span class="time">2026-07-14</span>
+### 🐞 BugFix
+- 修复 `DatePicker` 设置 `disabled` 后，仍然会触发 `onBlur` 和 `onFocus` 事件的问题 ([#1746](https://github.com/sheinsight/shineout-next/pull/1746))
+- 修复 `Table` 动态切换列的分组属性后，表头分组行渲染异常出现空白单元格的问题 ([#1745](https://github.com/sheinsight/shineout-next/pull/1745))
+### 💅 Style
+- 框类选择组件（`Select`、`TreeSelect`、`Cascader` 等）结果项处于禁用状态时，不再显示删除图标 ([#1744](https://github.com/sheinsight/shineout-next/pull/1744))
+
 ## 3.9.17
-<span class="time">2026-06-17</span>
+<span class="time">2026-07-06</span>
 ### 🆕 Feature
 - 新增 `Tokens` 导出，支持将完整的默认浅色主题 token 传入 `setToken`，一行代码即可将局部区域恢复为浅色主题，无需手动逐条填写 token ([#1735](https://github.com/sheinsight/shineout-next/pull/1735))
+- `Popover` 新增 `pointAtCenter` 属性，开启后箭头将始终指向触发元素的中心位置 ([#1738](https://github.com/sheinsight/shineout-next/pull/1738))
+- `Tooltip` 新增 `pointAtCenter` 属性，开启后箭头将始终指向触发元素的中心位置 ([#1738](https://github.com/sheinsight/shineout-next/pull/1738))
 ### 🐞 BugFix
 - 降级内部依赖 `immer` 至 `v9`，修复在兼容 Chrome 80 以下浏览器的项目中可能导致白屏的问题 ([#1736](https://github.com/sheinsight/shineout-next/pull/1736))
+- 修复 `Table` 通过条件渲染切换视图后重新挂载时，横向滚动失效的问题（Mac 非常驻滚动条环境下） ([#1742](https://github.com/sheinsight/shineout-next/pull/1742))
+- 修复 `Upload` / `Upload.Image` 的 `name` 属性现在会作为上传请求 FormData 的字段名（取值规则: `htmlName` ?? `name` ?? `"file"`）；如果你之前依赖默认字段名 `"file"` 且同时传了 `name`，请显式设置 `htmlName="file"` 以保持原有行为 ([#1741](https://github.com/sheinsight/shineout-next/pull/1741))
 
 ## 3.9.16
 <span class="time">2026-06-10</span>
@@ -86,7 +122,6 @@
 - 修复 `Select`/`TreeSelect`/`Cascader` 鼠标移入移出时清除图标与箭头图标宽度不一致导致内容区域闪跳的问题 ([#1673](https://github.com/sheinsight/shineout-next/pull/1673))
 - 修正多个色系的 Design Token 颜色值，对齐 Ai 组件库设计规范 ([#1662](https://github.com/sheinsight/shineout-next/pull/1662))
 - 修复 `Select` 多列模式（columns）在不同尺寸（small/large）下列表头部、选项内边距和对齐样式异常的问题 ([#1671](https://github.com/sheinsight/shineout-next/pull/1671))
-- 优化 `Upload` 删除图标样式，从镂空改为实心，提升视觉辨识度 ([#1661](https://github.com/sheinsight/shineout-next/pull/1661))
 
 ## 3.9.11
 <span class="time">2026-03-20</span>
