@@ -116,7 +116,7 @@ const Upload = <T,>(props0: UploadProps<T>) => {
     };
     document.addEventListener('paste', handlePaste);
     return () => document.removeEventListener('paste', handlePaste);
-  }, [paste, props.disabled]);
+  }, [paste, props.disabled, accept, props.multiple, limit, props.beforePaste]);
 
   const handleReplace = (files: File[], index: number) => {
     onChange(
