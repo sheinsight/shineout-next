@@ -5,7 +5,7 @@ import { StepsClasses } from './steps.type';
 import { StepStyleProps } from './steps.type';
 
 const Arrow = (
-  <svg viewBox='0 0 40 100' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'>
+  <svg viewBox='0 0 40 100' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' aria-hidden='true'>
     <path d='M 0 0 L 40 50 L 0 100' fill='currentColor' />
   </svg>
 );
