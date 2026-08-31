@@ -115,7 +115,12 @@ const Upload = <T,>(props0: UploadProps<T>) => {
       }
       let files: FileList | undefined;
       if (props.beforePaste && util.isFunc(props.beforePaste)) {
-        files = await props.beforePaste(e as unknown as React.ClipboardEvent);
+        try {
+          files = await props.beforePaste(e as unknown as React.ClipboardEvent);
+        } catch (err) {
+          console.error('Upload: beforePaste error', err);
+          return;
+        }
       } else {
         files = e.clipboardData?.files;
       }
