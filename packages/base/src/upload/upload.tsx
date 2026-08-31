@@ -93,11 +93,18 @@ const Upload = <T,>(props0: UploadProps<T>) => {
       },
     };
     if (util.isFunc(getComponentRef)) {
-      (getComponentRef as (ref: UploadRef) => void)(ref);
+      (getComponentRef as (ref: UploadRef | null) => void)(ref);
     } else {
-      (getComponentRef as { current?: UploadRef }).current = ref;
+      (getComponentRef as { current?: UploadRef | null }).current = ref;
     }
-  }, []);
+    return () => {
+      if (util.isFunc(getComponentRef)) {
+        (getComponentRef as (ref: UploadRef | null) => void)(null);
+      } else {
+        (getComponentRef as { current?: UploadRef | null }).current = null;
+      }
+    };
+  }, [props.getComponentRef]);
 
   // paste 处理：document 级别监听，因为 Upload 没有可聚焦的空白区域
   // 仅当粘贴事件来自非可编辑区域时才触发，避免干扰 input/textarea 等正常粘贴行为
