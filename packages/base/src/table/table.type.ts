@@ -414,8 +414,8 @@ export interface TableProps<DataItem, Value>
   showBottomScrollbar?: boolean | BottomScrollbarOption;
 
   /**
-   * @en Get table instance reference. Provides methods: scrollToIndex, getRenderIndexByData, scrollColumnIntoView, scrollColumnByLeft, sortByColumn. Use with caution, only supported in virtual mode
-   * @cn 获取表格实例引用。提供方法：scrollToIndex 滚动到指定行，getRenderIndexByData 获取数据的渲染索引，scrollColumnIntoView 滚动到指定列，scrollColumnByLeft 按像素横向滚动，sortByColumn 程序化排序。请谨慎使用，仅在虚拟模式下支持
+   * @en Get table instance reference. Provides methods: scrollToIndex, getRenderIndexByData, scrollColumnIntoView, scrollColumnByLeft, sortByColumn, getScrollContainer. Use with caution, only supported in virtual mode
+   * @cn 获取表格实例引用。提供方法：scrollToIndex 滚动到指定行，getRenderIndexByData 获取数据的渲染索引，scrollColumnIntoView 滚动到指定列，scrollColumnByLeft 按像素横向滚动，sortByColumn 程序化排序，getScrollContainer 获取表格的滚动容器 DOM 元素。请谨慎使用，仅在虚拟模式下支持
    */
   tableRef?: (table: TableRef) => void;
   /**
