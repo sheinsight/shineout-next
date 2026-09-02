@@ -29,11 +29,13 @@ const radioStyle: JsStyles<keyof RadioClasses> = {
       marginTop: 1,
     },
     'button&':{
+      fontSize: token.radioSmallButtonFontSize,
       padding: `${token.radioSmallButtonPaddingY} ${token.radioSmallButtonPaddingX}`,
     }
   },
   wrapperLarge: {
     'button&':{
+      fontSize: token.radioLargeButtonFontSize,
       padding: `${token.radioLargeButtonPaddingY} ${token.radioLargeButtonPaddingX}`,
     }
   },
