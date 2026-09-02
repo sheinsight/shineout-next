@@ -142,6 +142,12 @@ export interface RadioTokens {
   radioButtonBorderColor: string;
   /**
    * @type {string}
+   * @token Font-14
+   * @description 单选框按钮模式字体字号
+   */
+  radioButtonFontSize: string;
+  /**
+   * @type {string}
    * @token Font-12
    * @description 单选框小尺寸图标宽度
    */

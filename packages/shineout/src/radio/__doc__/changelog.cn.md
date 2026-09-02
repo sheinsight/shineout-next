@@ -1,3 +1,9 @@
+## 3.10.1-beta.1
+2026-09-02
+### 💅 Style
+- `Radio` 按钮模式新增独立的字体大小控制，不再依赖 `Button` 组件的字体大小 ([#1782](https://github.com/sheinsight/shineout-next/pull/1782))
+
+
 ## 3.9.9-beta.15
 2026-02-11
 ### 🆕 Feature
