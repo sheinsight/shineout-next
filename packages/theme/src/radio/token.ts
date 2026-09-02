@@ -64,6 +64,7 @@ const radioTokenExtraValue = {
     padding: { y: 'Spacing-1' },
     button: {
       padding: { y: 'Spacing-1', x: 'Spacing-8' },
+      font: { size: 'Font-12' },
     },
   },
   large: {
@@ -72,6 +73,7 @@ const radioTokenExtraValue = {
     padding: { y: 'Spacing-7' },
     button: {
       padding: { y: 'Spacing-7', x: 'Spacing-16' },
+      font: { size: 'Font-16' },
     },
   },
   label: {

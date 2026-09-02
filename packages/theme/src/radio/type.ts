@@ -190,6 +190,12 @@ export interface RadioTokens {
   radioSmallButtonPaddingX: string;
   /**
    * @type {string}
+   * @token Font-12
+   * @description 单选框小尺寸按钮模式字体字号
+   */
+  radioSmallButtonFontSize: string;
+  /**
+   * @type {string}
    * @token Font-16
    * @description 单选框大尺寸图标宽度
    */
@@ -224,6 +230,12 @@ export interface RadioTokens {
    * @description 单选框大尺寸按钮模式内边距（水平方向）
    */
   radioLargeButtonPaddingX: string;
+  /**
+   * @type {string}
+   * @token Font-16
+   * @description 单选框大尺寸按钮模式字体字号
+   */
+  radioLargeButtonFontSize: string;
   /**
    * @type {string}
    * @token Neutral-text-5
