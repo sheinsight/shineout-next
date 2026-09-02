@@ -17,6 +17,7 @@ const radioStyle: JsStyles<keyof RadioClasses> = {
       marginRight: 0,
     },
     'button&':{
+      fontSize: token.radioButtonFontSize,
       padding: `${token.radioButtonPaddingY} ${token.radioButtonPaddingX}`,
     },
     'button[data-soui-outline]&:not($wrapperChecked):not($wrapperDisabled):not(:hover)':{
