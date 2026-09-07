@@ -1,3 +1,10 @@
+## 3.10.1-beta.4
+2026-09-07
+
+### 🐞 BugFix
+
+- 修复 `Table` 开启 `bordered` 后，在特定浏览器窗口宽度下出现不必要的横向滚动条的问题 ([#1785](https://github.com/sheinsight/shineout-next/pull/1785))
+
 ## 3.10.0-beta.14
 2026-08-06
 
