@@ -1,6 +1,6 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { getPositionStyle } from './get-position-style';
-import { getBoundaryStyle } from './get-boundary-style'
+import { getBoundaryStyle, adjustPositionByBoundary } from './get-boundary-style'
 import { useCheckElementPosition, type Position } from './check-position'
 import { useCheckElementBorderWidth } from './check-border';
 import { useCheckElementSize } from './check-element-size'
@@ -110,7 +110,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     prevParentPosition: null as (Position | null),
   });
 
-  const parentElNewPosition = useCheckElementPosition(parentElRef, {scrollContainer: scrollElRef?.current, enable: show && (adjust || checkPosition)});
+  const parentElNewPosition = useCheckElementPosition(parentElRef, {scrollContainer: scrollElRef?.current, enable: show && (adjust || checkPosition || !!boundary)});
 
   const parentElBorderWidth = useCheckElementBorderWidth(parentElRef, {direction: 'horizontal', enable: show});
 
@@ -390,7 +390,15 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     context.parentRect = parentElRef.current.getBoundingClientRect();
 
     let realPosition = position
-    if (adjust) {
+
+    // 运行时检测 boundary 是否返回有效元素
+    const boundaryAvailable = typeof boundary === 'function' && boundary() !== null;
+
+    if (boundaryAvailable) {
+      // boundary 模式：基于边界容器的可用空间调整方向
+      realPosition = adjustPositionByBoundary(realPosition, { boundary, parentRect: context.parentRect, popupGap }) as PositionType;
+    } else if (adjust) {
+      // 无 boundary 或 boundary 返回 null 时，fallback 到视口调整
       const popupInfo = getPopUpInfo(context.parentRect);
       context.popUpHeight = popupInfo.height;
       context.popUpWidth = popupInfo.width;
@@ -409,7 +417,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     } else if(realPosition.indexOf('bottom') === 0){
       newStyle.transformOrigin = 'center top';
     }
-    if (boundary && show && popupElRef.current) {
+    if (boundaryAvailable && show && popupElRef.current) {
       const newBoundaryStyle = getBoundaryStyle(realPosition, { boundary, parentRect: context.parentRect, popupGap });
       return { newStyle, newBoundaryStyle };
     }

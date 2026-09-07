@@ -109,10 +109,6 @@ const dropdown: JsStyles<keyof DropdownClasses> = {
       marginRight: token.dropdownCaretMarginLeft,
       textAlign: 'right',
     },
-    '$wrapper[data-position^="left"] > $button & > svg': {},
-    '$wrapper[data-position^="top"] > $button & > svg': {
-      transform: 'rotate(180deg)',
-    },
   },
 
   content: {

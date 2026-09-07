@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 export interface UseBoundaryOptions {
   /**
@@ -52,7 +52,7 @@ export const useBoundary = (options: UseBoundaryOptions = {}): UseBoundaryResult
     if (!style) {
       // 延迟清除边界样式
       context.boundaryTimer = setTimeout(() => {
-        _setBoundaryStyle({});
+        _setBoundaryStyle(undefined);
       }, clearDelay);
     } else {
       // 立即设置边界样式，取消之前的清除定时器
@@ -63,6 +63,14 @@ export const useBoundary = (options: UseBoundaryOptions = {}): UseBoundaryResult
       _setBoundaryStyle(style);
     }
   };
+
+  useEffect(() => {
+    return () => {
+      if (context.boundaryTimer) {
+        clearTimeout(context.boundaryTimer);
+      }
+    };
+  }, []);
 
   return {
     boundaryStyle,

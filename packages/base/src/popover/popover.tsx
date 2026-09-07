@@ -252,7 +252,7 @@ const Popover = (props: PopoverProps) => {
             (typeof childrened === 'string' || props.useTextStyle) && popoverStyle?.text,
             semClass('content'),
           )}
-          style={{ ...contentStyle, ...style, ...boundaryStyle, ...semStyle('content') }}
+          style={{ ...style, ...boundaryStyle, ...semStyle('content') }}
           onClick={emptyEvent}
         >
           <Provider value={providerValue}>{childrened}</Provider>

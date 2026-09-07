@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import Button from '../button';
 import { DropdownNode, MenuPosition, SimpleDropdownProps, DropdownSemanticKey, DropdownClassNamesInfo } from './dropdown.type';
-import { getDataset, usePopup, util, useBoundary } from '@sheinx/hooks';
+import { getDataset, usePopup, util, useBoundary, getClosestScrollContainer } from '@sheinx/hooks';
 import AnimationList from '../animation-list';
 import AbsoluteList from '../absolute-list';
 import Icons from '../icons';
@@ -9,8 +9,6 @@ import classNames from 'classnames';
 import Item from './Item';
 import { useConfig } from '../config';
 import { useSemantic } from '../common';
-
-const defaultBoundary = () => document.documentElement;
 
 const Dropdown = (props: SimpleDropdownProps) => {
   const {
@@ -79,7 +77,9 @@ const Dropdown = (props: SimpleDropdownProps) => {
     semInfo,
   );
   const { boundaryStyle, setBoundaryStyle } = useBoundary({ clearDelay: 300 });
-  const finalBoundary = boundary === true ? defaultBoundary : (boundary === false ? undefined : boundary);
+  const finalBoundary = boundary === true
+    ? () => getClosestScrollContainer(targetRef.current as HTMLElement)
+    : (boundary === false ? undefined : boundary);
 
   const contentStyle = useMemo(() => {
     return {
@@ -89,7 +89,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
       ...(!isSub ? semStyle('list') : undefined),
       ...boundaryStyle,
     } as React.CSSProperties;
-  }, [width, columns, boundaryStyle])
+  }, [width, columns, isSub, semStyle, boundaryStyle])
 
   // buttonProps
   let { type, text, outline, mode, shape } = props;
@@ -258,9 +258,9 @@ const Dropdown = (props: SimpleDropdownProps) => {
         fixedWidth={'min'}
         popupGap={4}
         popupElRef={popupRef}
-        adjust={!finalBoundary && adjust}
+        adjust={adjust}
         boundary={finalBoundary}
-        setBoundaryStyle={finalBoundary && setBoundaryStyle}
+        setBoundaryStyle={finalBoundary ? setBoundaryStyle : undefined}
       >
         <AnimationList
           display={columns ? 'grid' : 'block'}

@@ -36,7 +36,7 @@ const App: React.FC = () => (
       placeholder='boundary'
       data={data}
       position='auto'
-      boundary={() => document.getElementById('dropdown-boundary-demo')}
+      boundary
     />
     {Array.from({ length: 20 }).map((_, i) => (
       <div key={i} style={{ height: 20 }} />

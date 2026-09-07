@@ -275,9 +275,9 @@ export interface SimpleDropdownProps
   popupClassName?: string;
 
   /**
-   * @en Defines the boundary element for calculating the dropdown menu positioning. A scrollbar will appear when it exceeds the boundary.
-   * @cn 定义下拉菜单定位计算的边界元素，超出边界时会显示滚动条。设置为 true 时，边界为document.documentElement。
-   * @version 3.9.4
+   * @en Set the boundary element for the dropdown popup. When the popup exceeds the boundary, it will automatically adjust its direction and display a scrollbar. When set to true, the nearest scrollable ancestor is automatically detected as the boundary. A function can be passed to specify a custom boundary element.
+   * @cn 设置下拉弹出层的边界元素。弹出层超出边界时会自动调整弹出方向并显示滚动条。设置为 true 时，自动检测最近的可滚动祖先元素作为边界；也可传入函数指定自定义边界元素。
+   * @version 3.10.1
    */
   boundary?: boolean | (() => HTMLElement | null);
 }
