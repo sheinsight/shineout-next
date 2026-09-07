@@ -7,12 +7,12 @@
  *    -- There are four pop-up directions built in
  */
 import React from 'react';
-import { Tooltip, Button, Input } from 'shineout';
+import { Tooltip, Button } from 'shineout';
 
 const App: React.FC = () => (
   <div>
     <Tooltip tip='hello world' trigger='hover'>
-      <Input placeholder='123' />
+      <Button type='primary'>hover me</Button>
     </Tooltip>
   </div>
 );
