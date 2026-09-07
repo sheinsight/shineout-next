@@ -1,6 +1,6 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { getPositionStyle } from './get-position-style';
-import { getSizingStyle } from './get-sizing-style'
+import { getBoundaryStyle, adjustPositionByBoundary } from './get-boundary-style'
 import { useCheckElementPosition, type Position } from './check-position'
 import { useCheckElementBorderWidth } from './check-border';
 import { useCheckElementSize } from './check-element-size'
@@ -56,7 +56,7 @@ export interface PositionStyleConfig {
   checkPosition?: boolean;
   offset?: [number, number];
   boundary?: () => HTMLElement | null;
-  setSizingStyle?: (v?: React.CSSProperties) => void;
+  setBoundaryStyle?: (v?: React.CSSProperties) => void;
 }
 
 const hideStyle: React.CSSProperties = {
@@ -96,11 +96,10 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     adjust,
     offset,
     checkPosition,
-    setSizingStyle,
+    setBoundaryStyle,
   } = config || {};
   // 初次渲染无样式的时候， 隐藏展示
   const [style, setStyle] = useState<React.CSSProperties>(hideStyle);
-  // const [sizingStyle, setSizingStyle] = useState<React.CSSProperties>();
 
   const { current: context } = React.useRef({
     containerRect: { left: 0, width: 0 } as DOMRect,
@@ -111,7 +110,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     prevParentPosition: null as (Position | null),
   });
 
-  const parentElNewPosition = useCheckElementPosition(parentElRef, {scrollContainer: scrollElRef?.current, enable: show && (adjust || checkPosition)});
+  const parentElNewPosition = useCheckElementPosition(parentElRef, {scrollContainer: scrollElRef?.current, enable: show && (adjust || checkPosition || !!boundary)});
 
   const parentElBorderWidth = useCheckElementBorderWidth(parentElRef, {direction: 'horizontal', enable: show});
 
@@ -391,7 +390,15 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     context.parentRect = parentElRef.current.getBoundingClientRect();
 
     let realPosition = position
-    if (adjust) {
+
+    // 运行时检测 boundary 是否返回有效元素
+    const boundaryAvailable = typeof boundary === 'function' && boundary() !== null;
+
+    if (boundaryAvailable) {
+      // boundary 模式：基于边界容器的可用空间调整方向
+      realPosition = adjustPositionByBoundary(realPosition, { boundary, parentRect: context.parentRect, popupGap }) as PositionType;
+    } else if (adjust) {
+      // 无 boundary 或 boundary 返回 null 时，fallback 到视口调整
       const popupInfo = getPopUpInfo(context.parentRect);
       context.popUpHeight = popupInfo.height;
       context.popUpWidth = popupInfo.width;
@@ -410,19 +417,19 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     } else if(realPosition.indexOf('bottom') === 0){
       newStyle.transformOrigin = 'center top';
     }
-    if (boundary && show && popupElRef.current) {
-      const newSizingStyle = getSizingStyle(realPosition, { boundary, parentRect: context.parentRect});
-      return { newStyle, newSizingStyle };
+    if (boundaryAvailable && show && popupElRef.current) {
+      const newBoundaryStyle = getBoundaryStyle(realPosition, { boundary, parentRect: context.parentRect, popupGap });
+      return { newStyle, newBoundaryStyle };
     }
     return { newStyle };
   };
 
   const updateStyle = usePersistFn(() => {
-    const { newStyle, newSizingStyle } = getStyle();
+    const { newStyle, newBoundaryStyle } = getStyle();
     if (newStyle && !shallowEqual(style, newStyle)) {
       setStyle(newStyle);
     }
-    setSizingStyle?.(newSizingStyle);
+    setBoundaryStyle?.(newBoundaryStyle);
 
     // 当父元素的滚动容器滚动时，判断是否需要更新弹出层位置，包括是否隐藏弹出层（通过hideStyle隐藏，不是show状态）
     if (show) {

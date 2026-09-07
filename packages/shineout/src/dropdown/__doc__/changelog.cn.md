@@ -1,3 +1,8 @@
+## 3.10.1-beta.3
+2026-09-03
+### 🆕 Feature
+- `Dropdown` 新增 `boundary` 属性，支持弹出层边界约束，超出边界时自动调整方向并内滚 ([#1784](https://github.com/sheinsight/shineout-next/pull/1784))
+
 ## 3.9.13-beta.5
 2026-04-03
 ### 💅 Style

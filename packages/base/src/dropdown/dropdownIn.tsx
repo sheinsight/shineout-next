@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import Button from '../button';
 import { DropdownNode, MenuPosition, SimpleDropdownProps, DropdownSemanticKey, DropdownClassNamesInfo } from './dropdown.type';
-import { getDataset, usePopup, util } from '@sheinx/hooks';
+import { getDataset, usePopup, util, useBoundary, getClosestScrollContainer } from '@sheinx/hooks';
 import AnimationList from '../animation-list';
 import AbsoluteList from '../absolute-list';
 import Icons from '../icons';
@@ -33,6 +33,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
     popupClassName,
     classNames: classNamesProp,
     styles: stylesProp,
+    boundary,
   } = props;
   const dropdownClasses = jssStyle?.dropdown?.();
   const config = useConfig();
@@ -75,6 +76,20 @@ const Dropdown = (props: SimpleDropdownProps) => {
     config.dropdown,
     semInfo,
   );
+  const { boundaryStyle, setBoundaryStyle } = useBoundary({ clearDelay: 300 });
+  const finalBoundary = boundary === true
+    ? () => getClosestScrollContainer(targetRef.current as HTMLElement)
+    : (boundary === false ? undefined : boundary);
+
+  const contentStyle = useMemo(() => {
+    return {
+      width: width,
+      minWidth: 90,
+      gridTemplateColumns: columns ? `repeat(${columns}, 1fr)` : undefined,
+      ...(!isSub ? semStyle('list') : undefined),
+      ...boundaryStyle,
+    } as React.CSSProperties;
+  }, [width, columns, isSub, semStyle, boundaryStyle])
 
   // buttonProps
   let { type, text, outline, mode, shape } = props;
@@ -244,6 +259,8 @@ const Dropdown = (props: SimpleDropdownProps) => {
         popupGap={4}
         popupElRef={popupRef}
         adjust={adjust}
+        boundary={finalBoundary}
+        setBoundaryStyle={finalBoundary ? setBoundaryStyle : undefined}
       >
         <AnimationList
           display={columns ? 'grid' : 'block'}
@@ -256,12 +273,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
             size === 'large' && dropdownClasses?.listLarge,
             !isSub && semClass('list'),
           )}
-          style={{
-            width: width,
-            minWidth: 90,
-            gridTemplateColumns: columns ? `repeat(${columns}, 1fr)` : undefined,
-            ...(!isSub ? semStyle('list') : undefined),
-          }}
+          style={contentStyle}
           type={'fade'}
           duration={'fast'}
           show={open}
