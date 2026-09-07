@@ -229,6 +229,19 @@ const useTableLayout = (props: UseTableLayoutProps) => {
       newCols = [...newCols, ...tempcols];
     }
 
+    // offsetWidth 返回整数（四舍五入），多列累加可能导致总和比表格实际渲染宽度大 1~N px，
+    // 这些多出的像素会让 table-layout:fixed 的表格撑宽，产生不必要的横向滚动条。
+    // 用 <table> 自身的 offsetWidth 作为基准，将取整溢出部分从最后一列减去。
+    if (target.current && newCols.length > 0) {
+      const tableRenderedWidth = target.current.offsetWidth;
+      const measuredSum = newCols.reduce((a, b) => a + b, 0);
+      const excess = measuredSum - tableRenderedWidth;
+      // 仅修正取整误差范围内的溢出（最多每列 1px）
+      if (tableRenderedWidth > 0 && excess > 0 && excess <= items.length) {
+        newCols[newCols.length - 1] -= excess;
+      }
+    }
+
     if (fromDrag && props.columnResizable) {
       const widthArr = [...newCols];
       if (typeof props.width === 'number') {
