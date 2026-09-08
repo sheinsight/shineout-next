@@ -53,6 +53,9 @@ export interface TabsClasses {
   collapsible: string;
   collapsed: string;
   sticky: string;
+
+  small: string;
+  large: string;
 }
 
 export type TabsAlignType = 'left' | 'right' | 'bottom' | 'vertical-left' | 'vertical-right';
@@ -66,12 +69,19 @@ export type TabsPositionType =
   | 'right-top'
   | 'right-bottom';
 
-export interface TabsProps extends BaseTabsProps, Pick<CommonType, 'className' | 'style'> {
+export interface TabsProps extends BaseTabsProps, Pick<CommonType, 'className' | 'style' | 'size'> {
   jssStyle: {
     tabs: () => TabsClasses;
     button: () => ButtonClasses;
     buttonGroup?: () => ButtonGroupClasses;
   };
+
+  /**
+   * @en Size of the tabs
+   * @cn 标签页尺寸
+   * @default 'default'
+   */
+  size?: CommonType['size'];
 
   /**
    * @en Semantic DOM classNames for internal nodes.

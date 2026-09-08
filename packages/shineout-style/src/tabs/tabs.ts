@@ -721,6 +721,98 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     },
   },
   sticky: {},
+  small: {
+    '& $tab': {
+      fontSize: Token.tabsSmallTabFontSize,
+    },
+    // card
+    '& $headerWrapper[data-soui-shape="card"] $header $tab': {
+      padding: `${Token.tabsSmallCardPaddingY} ${Token.tabsSmallCardPaddingX}`,
+      fontSize: Token.tabsSmallCardFontSize,
+      '&[data-soui-state="active"]': {
+        fontSize: Token.tabsSmallCardCheckedFontSize,
+      },
+    },
+    // line
+    '& $headerWrapper[data-soui-shape="line"] $header $tab': {
+      padding: `${Token.tabsSmallLinePaddingTop} ${Token.tabsSmallLinePaddingX} ${Token.tabsSmallLinePaddingBottom}`,
+      fontSize: Token.tabsSmallLineFontSize,
+      '&[data-soui-state="active"]': {
+        fontSize: Token.tabsSmallLineCheckedFontSize,
+      },
+    },
+    '& $lineInner': {
+      padding: `${Token.tabsSmallLineInnerPaddingY} ${Token.tabsSmallLineInnerPaddingX}`,
+    },
+    // dash
+    '& $headerWrapper[data-soui-shape="dash"] $header $tab': {
+      padding: `${Token.tabsSmallLinePaddingTop} ${Token.tabsSmallLinePaddingX} ${Token.tabsSmallLinePaddingBottom}`,
+      fontSize: Token.tabsSmallDashFontSize,
+      '&[data-soui-state="active"]': {
+        fontSize: Token.tabsSmallDashActiveFontSize,
+      },
+    },
+    // fill
+    '& $headerWrapper[data-soui-shape="fill"] $header $tab': {
+      fontSize: Token.tabsSmallFillFontSize,
+      padding: `${Token.tabsSmallFillPaddingY} 0`,
+      '&:first-child': {
+        paddingLeft: Token.tabsSmallFillPaddingX,
+      },
+      '&:last-child': {
+        paddingRight: Token.tabsSmallFillPaddingX,
+      },
+    },
+    '& $fillInner': {
+      padding: `${Token.tabsSmallFillInnerPaddingY} ${Token.tabsSmallFillInnerPaddingX}`,
+    },
+  },
+  large: {
+    '& $tab': {
+      fontSize: Token.tabsLargeTabFontSize,
+    },
+    // card
+    '& $headerWrapper[data-soui-shape="card"] $header $tab': {
+      padding: `${Token.tabsLargeCardPaddingY} ${Token.tabsLargeCardPaddingX}`,
+      fontSize: Token.tabsLargeCardFontSize,
+      '&[data-soui-state="active"]': {
+        fontSize: Token.tabsLargeCardCheckedFontSize,
+      },
+    },
+    // line
+    '& $headerWrapper[data-soui-shape="line"] $header $tab': {
+      padding: `${Token.tabsLargeLinePaddingTop} ${Token.tabsLargeLinePaddingX} ${Token.tabsLargeLinePaddingBottom}`,
+      fontSize: Token.tabsLargeLineFontSize,
+      '&[data-soui-state="active"]': {
+        fontSize: Token.tabsLargeLineCheckedFontSize,
+      },
+    },
+    '& $lineInner': {
+      padding: `${Token.tabsLargeLineInnerPaddingY} ${Token.tabsLargeLineInnerPaddingX}`,
+    },
+    // dash
+    '& $headerWrapper[data-soui-shape="dash"] $header $tab': {
+      padding: `${Token.tabsLargeLinePaddingTop} ${Token.tabsLargeLinePaddingX} ${Token.tabsLargeLinePaddingBottom}`,
+      fontSize: Token.tabsLargeDashFontSize,
+      '&[data-soui-state="active"]': {
+        fontSize: Token.tabsLargeDashActiveFontSize,
+      },
+    },
+    // fill
+    '& $headerWrapper[data-soui-shape="fill"] $header $tab': {
+      fontSize: Token.tabsLargeFillFontSize,
+      padding: `${Token.tabsLargeFillPaddingY} 0`,
+      '&:first-child': {
+        paddingLeft: Token.tabsLargeFillPaddingX,
+      },
+      '&:last-child': {
+        paddingRight: Token.tabsLargeFillPaddingX,
+      },
+    },
+    '& $fillInner': {
+      padding: `${Token.tabsLargeFillInnerPaddingY} ${Token.tabsLargeFillInnerPaddingX}`,
+    },
+  },
 };
 
 export default tabsStyle;

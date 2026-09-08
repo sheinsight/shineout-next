@@ -25,7 +25,7 @@ const getRectDiff = (node: HTMLElement, pNode: HTMLElement) => {
 };
 
 const TabsHeader = (props: TabsHeaderProps) => {
-  const { tabs, jssStyle, hideSplit, collapsible, extra, splitColor, tabBarStyle, getPosition, semClass, semStyle } =
+  const { tabs, jssStyle, hideSplit, collapsible, extra, splitColor, tabBarStyle, getPosition, size, semClass, semStyle } =
     props;
   const headerRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -192,7 +192,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
         });
       }, 0);
     }
-  }, [active, tabs]);
+  }, [active, tabs, size]);
 
   const renderHeaderScrollBar = () => {
     if (shape !== 'line' && shape !== 'dash') return;

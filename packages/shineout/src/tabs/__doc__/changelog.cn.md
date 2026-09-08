@@ -1,3 +1,8 @@
+## 3.10.1-beta.5
+2026-09-08
+### 🆕 Feature
+- `Tabs` 新增 `size` 属性，支持 `small`、`default`、`large` 三种尺寸，适用于所有形态（line / card / fill / dash） ([#1786](https://github.com/sheinsight/shineout-next/pull/1786))
+
 ## 3.10.0-beta.15
 2026-08-07
 ### 🐞 BugFix
