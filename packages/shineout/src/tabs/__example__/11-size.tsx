@@ -12,7 +12,7 @@ import { Tabs, Radio } from 'shineout';
 type SizeType = 'small' | 'default' | 'large';
 
 export default () => {
-  const [size, setSize] = useState<SizeType>('default');
+  const [size, setSize] = useState<SizeType>('small');
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
@@ -25,6 +25,18 @@ export default () => {
       />
 
       <Tabs shape='line' size={size} defaultActive={1}>
+        <Tabs.Panel tab='Tab 1'>Content of tab 1</Tabs.Panel>
+        <Tabs.Panel tab='Tab 2'>Content of tab 2</Tabs.Panel>
+        <Tabs.Panel tab='Tab 3'>Content of tab 3</Tabs.Panel>
+      </Tabs>
+
+      <Tabs shape='dash' size={size} defaultActive={1}>
+        <Tabs.Panel tab='Tab 1'>Content of tab 1</Tabs.Panel>
+        <Tabs.Panel tab='Tab 2'>Content of tab 2</Tabs.Panel>
+        <Tabs.Panel tab='Tab 3'>Content of tab 3</Tabs.Panel>
+      </Tabs>
+
+      <Tabs shape='fill' size={size} defaultActive={1}>
         <Tabs.Panel tab='Tab 1'>Content of tab 1</Tabs.Panel>
         <Tabs.Panel tab='Tab 2'>Content of tab 2</Tabs.Panel>
         <Tabs.Panel tab='Tab 3'>Content of tab 3</Tabs.Panel>
