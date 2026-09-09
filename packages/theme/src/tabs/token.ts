@@ -25,6 +25,8 @@ const tabsTokenDescription = {
   top: '上',
   bottom: '下',
   after: '下划线指示器',
+  small: '小尺寸',
+  large: '大尺寸',
 };
 
 /**
@@ -128,6 +130,60 @@ const tabsTokenExtraValue = {
   extra: { fill: { hover: { background: { color: 'Neutral-fill-3' } } } },
   arrow: { font: { color: 'Neutral-text-4', size: 'Font-14' } },
   badge: { margin: 'Spacing-0' },
+  small: {
+    tab: { padding: { x: 'Spacing-10', y: 'Spacing-5' }, font: { size: 'Font-12' } },
+    line: {
+      padding: { x: 'Spacing-4', top: 'Spacing-4', bottom: 'Spacing-4' },
+      inner: { padding: { x: 'Spacing-6', y: 'Spacing-2' } },
+      font: { size: 'Font-12' },
+      checked: { font: { size: 'Font-12' } },
+      hover: { font: { size: 'Font-12' } },
+    },
+    fill: {
+      padding: { x: 'Spacing-2', y: 'Spacing-2' },
+      inner: { padding: { x: 'Spacing-12', y: 'Spacing-3' } },
+      font: { size: 'Font-12' },
+      active: { font: { size: 'Font-12' } },
+      checked: { font: { size: 'Font-12' } },
+    },
+    card: {
+      padding: { x: 'Spacing-10', y: 'Spacing-5' },
+      font: { size: 'Font-12' },
+      active: { font: { size: 'Font-12' } },
+      checked: { font: { size: 'Font-12' } },
+    },
+    dash: {
+      font: { size: 'Font-12' },
+      active: { font: { size: 'Font-12' } },
+    },
+  },
+  large: {
+    tab: { padding: { x: 'Spacing-20', y: 'Spacing-12' }, font: { size: 'Font-16' } },
+    line: {
+      padding: { x: 'Spacing-12', top: 'Spacing-8', bottom: 'Spacing-8' },
+      inner: { padding: { x: 'Spacing-12', y: 'Spacing-6' } },
+      font: { size: 'Font-16' },
+      checked: { font: { size: 'Font-16' } },
+      hover: { font: { size: 'Font-16' } },
+    },
+    fill: {
+      padding: { x: 'Spacing-6', y: 'Spacing-6' },
+      inner: { padding: { x: 'Spacing-20', y: 'Spacing-7' } },
+      font: { size: 'Font-16' },
+      active: { font: { size: 'Font-16' } },
+      checked: { font: { size: 'Font-16' } },
+    },
+    card: {
+      padding: { x: 'Spacing-20', y: 'Spacing-12' },
+      font: { size: 'Font-16' },
+      active: { font: { size: 'Font-16' } },
+      checked: { font: { size: 'Font-16' } },
+    },
+    dash: {
+      font: { size: 'Font-16' },
+      active: { font: { size: 'Font-16' } },
+    },
+  },
 };
 
 module.exports = {

@@ -33,6 +33,7 @@ const Tabs = (props: TabsProps) => {
     children,
     shape: shapeProps,
     position,
+    size,
     lazy = true,
     autoFill,
     hideSplit,
@@ -95,6 +96,8 @@ const Tabs = (props: TabsProps) => {
   const rootClass = classNames(tabsStyle.rootClass, tabsStyle.tabs, tabsClassName, {
     [tabsStyle.autoFill]: isVertical || autoFill,
     [tabsStyle.collapsed]: collapse,
+    [tabsStyle.small]: size === 'small',
+    [tabsStyle.large]: size === 'large',
   }, semClass('root'));
 
   const getRootProps = () => {
@@ -143,6 +146,7 @@ const Tabs = (props: TabsProps) => {
     return util.getDataAttribute({
       position: getPosition(),
       shape,
+      size: size || 'default',
     });
   };
 
@@ -213,6 +217,7 @@ const Tabs = (props: TabsProps) => {
         align={align}
         jssStyle={jssStyle}
         position={position}
+        size={size}
         hideSplit={hideSplit}
         extra={getExtra()}
         splitColor={border}
