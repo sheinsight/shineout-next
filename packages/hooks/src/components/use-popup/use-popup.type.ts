@@ -25,6 +25,11 @@ export interface BasePopupProps {
   onCollapse?: (open: boolean) => void;
   disabled?: boolean;
   /**
+   * @en Whether to close the popup when pressing ESC key (only effective when trigger is 'click')
+   * @cn 是否支持 ESC 键关闭弹出层（仅在 trigger 为 'click' 时生效）
+   */
+  esc?: boolean;
+  /**
    * @en The position of the pop-up layer
    * @cn 弹出层位置
    * @default 'auto'

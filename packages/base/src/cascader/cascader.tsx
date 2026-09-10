@@ -205,6 +205,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     disabled: false,
     trigger: 'click',
     position: util.getRTLPosition(positionProp as any, direction === 'rtl'),
+    esc: config.popupEsc,
   });
 
   const tipNode = useTip({

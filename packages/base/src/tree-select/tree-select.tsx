@@ -240,6 +240,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     disabled: false,
     trigger: 'click',
     position: util.getRTLPosition(positionProp, direction === 'rtl'),
+    esc: config.popupEsc,
   });
 
   const [hadOpened, setHadOpened] = useState(false);

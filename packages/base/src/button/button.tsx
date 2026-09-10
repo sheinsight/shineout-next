@@ -14,6 +14,8 @@ const Button = (props: ButtonProps) => {
   const {
     jssStyle,
     className,
+    classNames: classNamesProp,
+    styles: stylesProp,
     style,
     children,
     loading,
@@ -58,8 +60,8 @@ const Button = (props: ButtonProps) => {
   };
 
   const [semClass, semStyle] = useSemantic<ButtonSemanticKey, ButtonClassNamesInfo>(
-    props.classNames,
-    props.styles,
+    classNamesProp,
+    stylesProp,
     globalSemanticConfig,
     semInfo,
   );

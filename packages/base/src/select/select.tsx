@@ -211,6 +211,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     disabled: false,
     trigger: trigger,
     position: util.getRTLPosition(positionProp, direction === 'rtl'),
+    esc: config.popupEsc,
   });
 
   const preventDefault = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {

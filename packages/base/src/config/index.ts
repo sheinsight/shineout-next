@@ -1080,6 +1080,11 @@ export interface ConfigOption {
   avatar?: AvatarConfig;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
+  /**
+   * @en Whether popup components (Popover.Confirm, Dropdown, DatePicker, etc.) can be closed by pressing ESC key. Only effective when trigger is 'click'.
+   * @cn 弹出层组件（Popover.Confirm、Dropdown、DatePicker 等）是否支持 ESC 键关闭。仅在 trigger 为 'click' 时生效。
+   */
+  popupEsc?: boolean;
 }
 
 const processEnv: Record<string, any> = typeof process !== 'undefined' ? process?.env : {};
@@ -1138,6 +1143,7 @@ export const defaultConfig: ConfigOption = {
   avatar: {},
   direction: 'ltr',
   popupContainer: null,
+  popupEsc: true,
 };
 
 const state = create<ConfigOption>(defaultConfig);
