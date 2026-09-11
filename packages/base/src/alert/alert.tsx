@@ -22,6 +22,7 @@ const Alert = (props: AlertProps) => {
     icon,
     iconClassName,
     title,
+    titleClassName,
     titleStyle,
     iconSize,
     closable,
@@ -109,7 +110,7 @@ const Alert = (props: AlertProps) => {
   };
 
   const renderTitle = () => {
-    return <div className={classNames(alertStyle.title, props.titleClassName, semClass('title'))} style={{ ...titleStyle, ...semStyle('title') }}>{title}</div>;
+    return <div className={classNames(alertStyle.title, titleClassName, semClass('title'))} style={{ ...titleStyle, ...semStyle('title') }}>{title}</div>;
   };
 
   const renderClose = () => {
