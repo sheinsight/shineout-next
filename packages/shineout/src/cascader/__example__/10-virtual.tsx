@@ -8,11 +8,12 @@
 import React from 'react';
 import { Cascader } from 'shineout';
 
-function generateBigTreeData(level: number, count: number) {
+function generateBigTreeData(level: number, count: number, prefix = '') {
   const data = [];
   for (let i = 0; i < count; i++) {
-    const children: any[] = level > 0 ? generateBigTreeData(level - 1, count) : [];
-    data.push({ value: `${level}-${i}`, children });
+    const value = prefix ? `${prefix}-${i}` : `${i}`;
+    const children: any[] = level > 0 ? generateBigTreeData(level - 1, count, value) : [];
+    data.push({ value, children });
   }
   return data;
 }

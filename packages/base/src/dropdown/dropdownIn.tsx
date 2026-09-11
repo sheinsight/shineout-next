@@ -65,6 +65,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
     autoMode: 'menu',
     priorityDirection: 'vertical',
     mouseLeaveDelay: 200,
+    esc: config.popupEsc,
   });
 
   // Semantic DOM

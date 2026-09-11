@@ -15,6 +15,7 @@ const usePopup = (props: BasePopupProps) => {
     mouseLeaveDelay,
     targetEvents,
     defaultOpen = false,
+    esc,
   } = props;
 
   const [openState, setOpenState] = useState(defaultOpen);
@@ -187,6 +188,26 @@ const usePopup = (props: BasePopupProps) => {
     effect: (trigger === 'click' || trigger === 'hover') && open,
     event: 'mousedown',
   });
+
+  // ESC 关闭弹出层（仅 click 触发）
+  // 使用 capturing 阶段确保优先于 Modal 的 bubbling 阶段 handler
+  // hover/focus 触发的弹出层不参与 ESC 处理，避免拦截 Modal 等上层组件的 ESC 事件
+  const enableEsc = (esc ?? true) && trigger === 'click';
+  useEffect(() => {
+    if (!open || !enableEsc) return;
+
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' || e.keyCode === 27) {
+        e.stopPropagation();
+        handleBlur();
+      }
+    };
+
+    document.addEventListener('keydown', handleEsc, true);
+    return () => {
+      document.removeEventListener('keydown', handleEsc, true);
+    };
+  }, [open, enableEsc]);
 
   const providerValue = useMemo(() => ({
     addParent: handleAddParent,

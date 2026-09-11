@@ -156,6 +156,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
     disabled: disabledStatus === 'all',
     trigger: 'click',
     position: util.getRTLPosition(listPosition as DatePickerProps<Value>['position'], direction === 'rtl'),
+    esc: config.popupEsc,
   });
 
   const tipNode = useTip({

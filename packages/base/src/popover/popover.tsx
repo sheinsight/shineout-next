@@ -55,6 +55,7 @@ const Popover = (props: PopoverProps) => {
       priorityDirection,
       mouseEnterDelay: props.mouseEnterDelay,
       mouseLeaveDelay: props.mouseLeaveDelay,
+      esc: config.popupEsc,
     });
   const [positionState, setPositionState] = React.useState<PopoverPosition>(position);
   const [boundaryStyle, setBoundaryStyle] = React.useState<React.CSSProperties>();

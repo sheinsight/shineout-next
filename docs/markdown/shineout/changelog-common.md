@@ -1,3 +1,9 @@
+## 3.10.1-beta.6
+2026-09-10
+
+### 🆕 Feature
+- 新增全局配置 `popupEsc`，支持控制弹出层组件（`Cascader`、`Select`、`TreeSelect`、`Dropdown`、`DatePicker`、`Popover` 等）是否响应 ESC 键关闭，仅在 trigger 为 'click' 时生效 ([#1787](https://github.com/sheinsight/shineout-next/pull/1787))
+
 ## 3.10.0-beta.20
 2026-08-27
 ### 🆕 Feature
