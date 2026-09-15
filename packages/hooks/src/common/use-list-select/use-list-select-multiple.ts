@@ -148,9 +148,22 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
       const values = getFlatDataValue(isArray(data) ? data : [data], childrenKey);
       const before = (config.overwrite ? [] : valueArr || []) as ValueItem[];
       if (values.length) {
-        const newValue = config.unshift ? values.concat(before) : before.concat(values);
-        const valueResult = props.separator ? newValue.join(props.separator) : newValue;
-        props.onChange(valueResult as Value, data, true);
+        try {
+          const newValue = config.unshift ? values.concat(before) : before.concat(values);
+          const valueResult = props.separator ? newValue.join(props.separator) : newValue;
+          props.onChange(valueResult as Value, data, true);
+        } catch (e) {
+          // 当 value 为非法类型（如数字、对象等无 concat 方法的值）时静默跳过。
+          //
+          // 为什么用 try-catch 而不是在 valueArr 赋值处做 isArray 降级兼容：
+          // valueArr 在 add / remove / check / getValueMap / getCheckedStatus 等多个方法中被消费，
+          // 将非数组 value 降级为 [] 虽然能让所有路径都安全，但会改变"已选中项的展示"等行为
+          // （例如 result.tsx 通过 getValueArr 包装后仍会渲染一个 unmatched tag，
+          // 而 hook 内部的 check/getCheckedStatus 却认为无选中项，二者不一致），
+          // 存在引入 Breaking Change 的风险。
+          // try-catch 仅抑制报错，不改变任何现有数据流，保持与修复前完全一致的行为——
+          // 唯一区别是异常不再向外抛出。
+        }
       }
     },
   );

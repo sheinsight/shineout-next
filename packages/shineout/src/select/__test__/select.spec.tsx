@@ -1271,3 +1271,264 @@ describe('Select[Other]', () => {
 // select missing api and function
 // emptyText
 // emptyAfterSelect
+
+describe('Select[value type guard - concat fix]', () => {
+  // 场景1: value 是正常数组 → 选中项正常展示，add 正常工作
+  test('should work correctly when value is a normal array', async () => {
+    const onChange = jest.fn();
+    const { container } = render(
+      <Select
+        keygen
+        data={testData}
+        multiple
+        value={['red', 'blue']}
+        onChange={onChange}
+      />,
+    );
+    // 应有 2 个已选中的 tag
+    const tags = container.querySelectorAll(tag);
+    expect(tags.length).toBe(2);
+    // 点击选项触发 add，不应报错
+    fireEvent.click(container.querySelector(resultWrapper)!);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    const options = container.querySelectorAll(option);
+    // 点击第三个选项 (yellow)
+    fireEvent.click(options[2]);
+    expect(onChange).toHaveBeenCalled();
+    const newValue = onChange.mock.calls[0][0];
+    expect(Array.isArray(newValue)).toBe(true);
+    expect(newValue).toEqual(['red', 'blue', 'yellow']);
+  });
+
+  // 场景2: value 是字符串 + separator → split 为数组，选中项正常展示
+  test('should work correctly when value is string with separator', async () => {
+    const onChange = jest.fn();
+    const { container } = render(
+      <Select
+        keygen
+        data={testData}
+        multiple
+        separator=','
+        value={'red,blue' as any}
+        onChange={onChange}
+      />,
+    );
+    const tags = container.querySelectorAll(tag);
+    expect(tags.length).toBe(2);
+    // 点击选项触发 add
+    fireEvent.click(container.querySelector(resultWrapper)!);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    const options = container.querySelectorAll(option);
+    fireEvent.click(options[2]);
+    expect(onChange).toHaveBeenCalled();
+    // separator 模式下 onChange 返回 join 后的字符串
+    expect(onChange.mock.calls[0][0]).toBe('red,blue,yellow');
+  });
+
+  // 场景3: value 是数字 → 不应崩溃，try-catch 兜住 concat 报错，add 静默跳过
+  test('should not crash when value is a number', async () => {
+    const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+    const onChange = jest.fn();
+    const { container } = render(
+      <Select keygen data={testData} multiple value={123 as any} onChange={onChange} />,
+    );
+    // 不应崩溃；result.tsx 的 getValueArr 会把 123 包成 [123]，渲染 1 个 unmatched tag
+    const tags = container.querySelectorAll(tag);
+    expect(tags.length).toBe(1);
+    // 点击选项，(123).concat 不存在 → catch 兜住 → onChange 不触发
+    fireEvent.click(container.querySelector(resultWrapper)!);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    const options = container.querySelectorAll(option);
+    fireEvent.click(options[0]);
+    // try-catch 方案下 add 静默跳过，onChange 不被调用
+    expect(onChange).not.toHaveBeenCalled();
+    errorSpy.mockRestore();
+  });
+
+  // 场景4: value 是对象 → result.tsx 将 {id:1} 包为 [{id:1}] 尝试渲染为 tag 内容，
+  // React 不能渲染对象，会抛出错误。这个错误发生在 result 渲染层，与 hook 修复无关。
+  test('should throw render error when value is an object (React cannot render objects)', () => {
+    const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+    expect(() => {
+      render(
+        <Select keygen data={testData} multiple value={{ id: 1 } as any} onChange={() => {}} />,
+      );
+    }).toThrow();
+    errorSpy.mockRestore();
+  });
+
+  // 场景5: value 是字符串但没有 separator → 字符串有 concat 方法不会报错，但返回字符串类型
+  test('should not crash when value is string without separator', async () => {
+    const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+    const onChange = jest.fn();
+    const { container } = render(
+      <Select keygen data={testData} multiple value={'abc' as any} onChange={onChange} />,
+    );
+    // result.tsx 的 getValueArr 把 'abc' 包成 ['abc']，渲染 1 个 unmatched tag
+    const tags = container.querySelectorAll(tag);
+    expect(tags.length).toBe(1);
+    fireEvent.click(container.querySelector(resultWrapper)!);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    const options = container.querySelectorAll(option);
+    fireEvent.click(options[0]);
+    // 字符串的 concat 不报错，"abc".concat(["red"]) → "abcred"，onChange 会被调用
+    expect(onChange).toHaveBeenCalled();
+    errorSpy.mockRestore();
+  });
+});
+
+describe('Select[multiple dynamic toggle]', () => {
+  // 场景A: single→multiple，value 保持为单值（未同步改为数组）
+  test('should handle single value when switching from single to multiple', async () => {
+    const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+    const onChange = jest.fn();
+    const Demo = () => {
+      const [mul, setMul] = React.useState(false);
+      const [val, setVal] = React.useState<any>('red');
+      return (
+        <div>
+          <button data-testid='toggle' onClick={() => setMul((m) => !m)} />
+          <Select
+            keygen
+            data={testData}
+            multiple={mul}
+            value={val}
+            onChange={(v: any) => {
+              setVal(v);
+              onChange(v);
+            }}
+            clearable
+          />
+        </div>
+      );
+    };
+    const { container, getByTestId } = render(<Demo />);
+    // 初始 single 模式，应选中 red
+    let tags = container.querySelectorAll(tag);
+    // single 模式无 tag，展示为文本
+    const resultEl = container.querySelector(result)!;
+    expect(resultEl.textContent).toContain('red');
+
+    // 切换到 multiple
+    fireEvent.click(getByTestId('toggle'));
+    await waitFor(async () => {
+      await delay(200);
+    });
+    // value 仍然是 "red"（string），result.tsx 的 getValueArr 会包成 ["red"]
+    // 应展示 1 个 tag 内容为 red
+    tags = container.querySelectorAll(tag);
+    expect(tags.length).toBe(1);
+    expect(tags[0].textContent).toContain('red');
+
+    // 点击一个新选项，验证 add 不崩溃
+    fireEvent.click(container.querySelector(resultWrapper)!);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    const options = container.querySelectorAll(option);
+    // 点击 orange
+    fireEvent.click(options[1]);
+    // 字符串的 concat 不报错，"red".concat(["orange"]) → "redorange"
+    // onChange 会被调用但返回字符串（这是 value 类型误用的已知行为，不在本次修复范围）
+    expect(onChange).toHaveBeenCalled();
+    errorSpy.mockRestore();
+  });
+
+  // 场景B: single→multiple，value 同步改为数组（正常用法）
+  test('should work when value is updated to array along with multiple toggle', async () => {
+    const onChange = jest.fn();
+    const Demo = () => {
+      const [mul, setMul] = React.useState(false);
+      const [val, setVal] = React.useState<any>('red');
+      return (
+        <div>
+          <button
+            data-testid='toggle'
+            onClick={() => {
+              setMul(true);
+              setVal((v: any) => (Array.isArray(v) ? v : [v]));
+            }}
+          />
+          <Select
+            keygen
+            data={testData}
+            multiple={mul}
+            value={val}
+            onChange={(v: any) => {
+              setVal(v);
+              onChange(v);
+            }}
+            clearable
+          />
+        </div>
+      );
+    };
+    const { container, getByTestId } = render(<Demo />);
+    // 切换到 multiple，同时把 value 改为数组
+    fireEvent.click(getByTestId('toggle'));
+    await waitFor(async () => {
+      await delay(200);
+    });
+    const tags = container.querySelectorAll(tag);
+    expect(tags.length).toBe(1);
+    expect(tags[0].textContent).toContain('red');
+
+    // add 操作
+    fireEvent.click(container.querySelector(resultWrapper)!);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    const options = container.querySelectorAll(option);
+    fireEvent.click(options[1]);
+    expect(onChange).toHaveBeenCalled();
+    const newValue = onChange.mock.calls[0][0];
+    expect(Array.isArray(newValue)).toBe(true);
+    expect(newValue).toEqual(['red', 'orange']);
+  });
+
+  // 场景C: multiple→single
+  test('should handle array value when switching from multiple to single', async () => {
+    const onChange = jest.fn();
+    const Demo = () => {
+      const [mul, setMul] = React.useState(true);
+      const [val, setVal] = React.useState<any>(['red', 'blue']);
+      return (
+        <div>
+          <button data-testid='toggle' onClick={() => setMul(false)} />
+          <Select
+            keygen
+            data={testData}
+            multiple={mul}
+            value={val}
+            onChange={(v: any) => {
+              setVal(v);
+              onChange(v);
+            }}
+            clearable
+          />
+        </div>
+      );
+    };
+    const { container, getByTestId } = render(<Demo />);
+    // multiple 模式应有 2 个 tag
+    let tags = container.querySelectorAll(tag);
+    expect(tags.length).toBe(2);
+
+    // 切换到 single
+    fireEvent.click(getByTestId('toggle'));
+    await waitFor(async () => {
+      await delay(200);
+    });
+    // single 模式，value=['red','blue'] 被 useListSelect 包为 [['red','blue']]
+    // 不应崩溃
+    expect(container.querySelector(result)).toBeTruthy();
+  });
+});
