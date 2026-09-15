@@ -1,3 +1,9 @@
+## 3.10.2-beta.1
+2026-09-15
+
+### 🐞 BugFix
+- 修复多选组件 `value` 传入非预期类型时 `concat` 报错的问题 ([#1789](https://github.com/sheinsight/shineout-next/pull/1789))
+
 ## 3.10.1-beta.6
 2026-09-10
 
