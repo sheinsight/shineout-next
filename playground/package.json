@@ -10,7 +10,7 @@
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "shineout": "^3.10.1"
+    "shineout": "3.10.2-beta.2"
   },
   "devDependencies": {
     "@types/react": "^19.0.0",
