@@ -1,3 +1,9 @@
+## 3.10.2-beta.2
+2026-09-16
+
+### 🆕 Feature
+- 兼容 React 19，修复 `Message`、`Modal`、`Image` 等命令式调用组件在 React 19 环境下不可用的问题 ([#1790](https://github.com/sheinsight/shineout-next/pull/1790))
+
 ## 3.10.2-beta.1
 2026-09-15
 
