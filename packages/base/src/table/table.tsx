@@ -652,6 +652,29 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
         );
       }
 
+      // sticky-only：有 sticky 但不需要 virtual 的轻量路径
+      // 避免 Scroll 组件和虚拟滚动的额外开销
+      const isStickyOnly = !virtual && !!props.data?.length;
+      if (isStickyOnly) {
+        return (
+          <>
+            {renderHeadMirrorScroller()}
+
+            {showStickyHeader && <StickyWrapper {...stickyProps}>{$headTable}</StickyWrapper>}
+
+            <div ref={scrollRef} className={tableClasses?.bodyWrapper} onScroll={handleBodyScroll}>
+              <table style={tableStyle} ref={tbodyRef}>
+                {Group}
+                <Tbody {...bodyCommonProps} />
+                {showFoot && <Tfoot {...footCommonProps} />}
+              </table>
+            </div>
+
+            {renderBottomMirrorScroller()}
+          </>
+        );
+      }
+
       return (
         <>
           {renderHeadMirrorScroller()}
