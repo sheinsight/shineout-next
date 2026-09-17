@@ -1,3 +1,10 @@
+## 3.10.2-beta.3
+2026-09-17
+
+### 🆕 Feature
+
+- 优化 `Table` 仅开启 `sticky` 时的渲染性能，避免走虚拟滚动的重渲染路径，降低 Tabs 切换等场景下的 INP ([#1792](https://github.com/sheinsight/shineout-next/pull/1792))
+
 ## 3.10.1-beta.4
 2026-09-07
 
