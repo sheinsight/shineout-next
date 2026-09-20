@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useLayoutEffect } from 'react';
+import React, { useEffect, useMemo, useRef, useLayoutEffect } from 'react';
 import useLatestObj from '../../common/use-latest-obj';
 import usePersistFn from '../../common/use-persist-fn';
 import usePrevious from '../../common/use-previous';
@@ -54,6 +54,7 @@ export interface UseTableLayoutProps
   theadRef: React.RefObject<HTMLElement>;
   tbodyRef: React.RefObject<HTMLElement>;
   scrollRef: React.RefObject<HTMLElement>;
+  tableElRef?: React.RefObject<HTMLElement>;
   isRtl?: boolean;
   scrolling?: boolean;
 }
@@ -62,6 +63,16 @@ const useTableLayout = (props: UseTableLayoutProps) => {
   const { theadRef, tbodyRef, scrollRef } = props;
   const preColumns = usePrevious(props.columns);
   const preData = usePrevious(props.data);
+
+  // 按需启用 floatLeft/floatRight：只有存在对应方向的固定列时才跟踪状态
+  const hasFixedLeft = useMemo(
+    () => props.columns.some((col) => col.fixed === 'left'),
+    [props.columns],
+  );
+  const hasFixedRight = useMemo(
+    () => props.columns.some((col) => col.fixed === 'right'),
+    [props.columns],
+  );
   const { current: context } = useRef({
     checkNum: 0,
     cachedWidth: null as Map<KeygenResult, number> | null,
@@ -72,8 +83,11 @@ const useTableLayout = (props: UseTableLayoutProps) => {
   const [isScrollX, setIsScrollX] = React.useState<boolean | undefined>(undefined);
   const [deltaXSum, setDeltaXSum] = React.useState(0);
   const [isScrollY, setIsScrollY] = React.useState<boolean | undefined>(undefined);
-  const [floatLeft, setFloatLeft] = React.useState(false);
-  const [floatRight, setFloatRight] = React.useState(false);
+  // floatLeft/floatRight 改用 ref 跟踪，通过 DOM classList 直接切换，避免 setState 触发整棵树 re-render
+  const floatLeftRef = useRef(false);
+  const floatRightRef = useRef(false);
+  const floatClassRef = useRef<{ left: string; right: string } | null>(null);
+  const checkFloatRafRef = useRef(0);
   const [resizeFlag, setResizeFlag] = React.useState(0);
   const [scrollBarWidth, setScrollBarWidth] = React.useState(0);
   const [scrollWidth, setScrollWidth] = React.useState(0);
@@ -276,11 +290,36 @@ const useTableLayout = (props: UseTableLayoutProps) => {
       left = left * -1;
     }
 
-    const l = left > min;
-    // 缩放比例小于1时， 会出现小数， 导致判断错误
-    const r = max - left > 1;
-    if (l !== floatLeft) setFloatLeft(l);
-    if (r !== floatRight) setFloatRight(r);
+    // 直接操作 DOM classList，不触发 React re-render
+    const classes = floatClassRef.current;
+    const el = props.tableElRef?.current;
+    if (!classes || !el) return;
+
+    if (hasFixedLeft) {
+      const l = left > min;
+      if (l !== floatLeftRef.current) {
+        floatLeftRef.current = l;
+        el.classList.toggle(classes.left, l);
+      }
+    }
+    if (hasFixedRight) {
+      // 缩放比例小于1时，会出现小数，导致判断错误
+      const r = max - left > 1;
+      if (r !== floatRightRef.current) {
+        floatRightRef.current = r;
+        el.classList.toggle(classes.right, r);
+      }
+    }
+  });
+
+  // rAF 节流版：高频滚动路径使用，一帧最多执行一次 checkFloat
+  const scheduleCheckFloat = usePersistFn(() => {
+    if (!hasFixedLeft && !hasFixedRight) return;
+    if (checkFloatRafRef.current) return;
+    checkFloatRafRef.current = requestAnimationFrame(() => {
+      checkFloatRafRef.current = 0;
+      checkFloat();
+    });
   });
 
   const syncScrollWidth = usePersistFn(() => {
@@ -306,7 +345,17 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     resizeCol,
     dragCol,
     checkFloat,
+    scheduleCheckFloat,
   });
+
+  // 组件卸载时清理 rAF
+  useEffect(() => {
+    return () => {
+      if (checkFloatRafRef.current) {
+        cancelAnimationFrame(checkFloatRafRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     if (!colgroup) return;
@@ -390,11 +439,14 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     tableWidth = undefined;
   }
 
+  // 注册 float class name，由 table.tsx 初始化时调用
+  const registerFloatClass = usePersistFn((left: string, right: string) => {
+    floatClassRef.current = { left, right };
+  });
+
   return {
     isScrollX: !!isScrollX,
     isScrollY: !!isScrollY,
-    floatLeft,
-    floatRight,
     scrollBarWidth,
     colgroup: colgroup ? colgroup : [],
     func,
@@ -402,6 +454,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     shouldLastColAuto: props.columnResizable && !adjust,
     scrollWidth,
     resizeFlag,
+    registerFloatClass,
   };
 };
 

@@ -1,3 +1,10 @@
+## 3.10.2-beta.5
+2026-09-20
+
+### 🚀 Performance
+
+- 优化 `Table` 横向滚动时固定列阴影检测的性能，减少不必要的重渲染 ([#1794](https://github.com/sheinsight/shineout-next/pull/1794))
+
 ## 3.10.2-beta.4
 2026-09-20
 

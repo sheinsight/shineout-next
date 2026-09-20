@@ -140,17 +140,17 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     colgroup,
     isScrollY,
     isScrollX,
-    floatLeft,
-    floatRight,
     width,
     shouldLastColAuto,
     scrollBarWidth,
     scrollWidth,
     resizeFlag,
+    registerFloatClass,
   } = useTableLayout({
     theadRef,
     tbodyRef,
     scrollRef: scrollRef,
+    tableElRef: tableRef,
     columns: columns,
     data: props.data,
     dataChangeResize: !!props.dataChangeResize,
@@ -160,6 +160,9 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     isRtl,
     scrolling: isVirtualColumnEnabled && scrolling,
   });
+
+  // 注册 floatLeft/floatRight 的 CSS class 名，供 checkFloat 直接操作 DOM
+  registerFloatClass(tableClasses.floatLeft, tableClasses.floatRight);
 
   const { filteredData, filterInfo, onFilterChange } = useTableFilter<Item>({
     keygen: props.keygen,
@@ -308,7 +311,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
   const handleBodyScroll = usePersistFn((e: React.UIEvent<HTMLDivElement>) => {
     const target = e.currentTarget;
     if (!target) return;
-    layoutFunc.checkFloat();
+    layoutFunc.scheduleCheckFloat();
     if (isVirtualColumnEnabled) columnInfo.handleScroll({ scrollLeft: target.scrollLeft });
     if (headMirrorScrollRef.current) {
       headMirrorScrollRef.current.scrollLeft = target.scrollLeft;
@@ -343,7 +346,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     }) => {
       virtualInfo.handleScroll(info);
       if (isVirtualColumnEnabled) columnInfo.handleScroll(info);
-      layoutFunc.checkFloat();
+      layoutFunc.scheduleCheckFloat();
       if (headMirrorScrollRef.current) {
         headMirrorScrollRef.current.scrollLeft = info.scrollLeft;
       }
@@ -899,8 +902,6 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       <div
         className={classNames(tableWrapperClass, {
           [tableClasses.sticky]: props.sticky,
-          [tableClasses.floatLeft]: floatLeft,
-          [tableClasses.floatRight]: floatRight,
         })}
         style={tableWrapperStyle}
         {...selection.getTableProps()}
