@@ -784,6 +784,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
   };
 
   // handle head and  foot scroll
+  // 使用 passive: true 监听 wheel，不调用 preventDefault，避免阻塞合成器线程（优化 INP）
   const handleHeaderWheel = usePersistFn((e: any) => {
     const scrollEl = scrollRef.current!;
     if (!scrollEl) return;
@@ -793,7 +794,6 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     if (scrollLeft === scrollEl.scrollLeft) {
       return;
     }
-    e.preventDefault();
     const left = Math.min(Math.max(scrollLeft, 0), max);
     scrollEl.scrollLeft = left;
     theadRef.current.parentElement.scrollLeft = left;
@@ -806,10 +806,10 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
   }, [isScrollX, props.sticky, $empty]);
 
   useEffect(() => {
-    // 绑定 wheel 事件
+    // 绑定 wheel 事件（passive: true 不阻塞合成器线程）
     if (props.sticky && theadRef.current && theadRef.current.parentElement) {
       theadRef.current.parentElement.addEventListener('wheel', handleHeaderWheel, {
-        passive: false,
+        passive: true,
       });
     }
 

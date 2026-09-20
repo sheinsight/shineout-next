@@ -1,3 +1,10 @@
+## 3.10.2-beta.4
+2026-09-20
+
+### 🐞 BugFix
+
+- 优化 `Table` 开启 `sticky` 时表头区域的 wheel 事件监听为 passive 模式，降低横向滚动后点击单元格的 INP ([#1793](https://github.com/sheinsight/shineout-next/pull/1793))
+
 ## 3.10.2-beta.3
 2026-09-17
 
