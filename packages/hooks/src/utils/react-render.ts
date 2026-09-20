@@ -40,7 +40,9 @@ let pendingQueue: PendingItem[] | null = null;
 
 if (!createRoot && mainVersion >= 18) {
   pendingQueue = [];
-  import('react-dom/client')
+  // 用字符串拼接绕过 webpack 静态分析，避免 React 17 下因 react-dom/client 不存在而构建报错
+  const clientModule = 'react-dom' + '/client';
+  import(/* webpackIgnore: true */ clientModule)
     .then((client) => {
       createRoot = (client as { createRoot: CreateRoot }).createRoot;
     })
