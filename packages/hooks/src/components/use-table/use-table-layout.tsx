@@ -86,7 +86,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
   // floatLeft/floatRight 改用 ref 跟踪，通过 DOM classList 直接切换，避免 setState 触发整棵树 re-render
   const floatLeftRef = useRef(false);
   const floatRightRef = useRef(false);
-  const floatClassRef = useRef<{ left: string; right: string } | null>(null);
+  const floatClassRef = useRef<{ left: string[]; right: string[] } | null>(null);
   const checkFloatRafRef = useRef(0);
   const [resizeFlag, setResizeFlag] = React.useState(0);
   const [scrollBarWidth, setScrollBarWidth] = React.useState(0);
@@ -291,6 +291,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     }
 
     // 直接操作 DOM classList，不触发 React re-render
+    // JSS 生成的 className 可能包含多个空格分隔的类名，classList.toggle 只接受单个 token
     const classes = floatClassRef.current;
     const el = props.tableElRef?.current;
     if (!classes || !el) return;
@@ -299,7 +300,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
       const l = left > min;
       if (l !== floatLeftRef.current) {
         floatLeftRef.current = l;
-        el.classList.toggle(classes.left, l);
+        classes.left.forEach((cls) => el.classList.toggle(cls, l));
       }
     }
     if (hasFixedRight) {
@@ -307,7 +308,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
       const r = max - left > 1;
       if (r !== floatRightRef.current) {
         floatRightRef.current = r;
-        el.classList.toggle(classes.right, r);
+        classes.right.forEach((cls) => el.classList.toggle(cls, r));
       }
     }
   });
@@ -440,8 +441,12 @@ const useTableLayout = (props: UseTableLayoutProps) => {
   }
 
   // 注册 float class name，由 table.tsx 初始化时调用
+  // 预拆分空格分隔的类名，避免 checkFloat 高频路径重复 split
   const registerFloatClass = usePersistFn((left: string, right: string) => {
-    floatClassRef.current = { left, right };
+    floatClassRef.current = {
+      left: left.split(/\s+/).filter(Boolean),
+      right: right.split(/\s+/).filter(Boolean),
+    };
   });
 
   return {
