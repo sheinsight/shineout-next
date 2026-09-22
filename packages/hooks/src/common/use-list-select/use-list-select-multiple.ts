@@ -299,6 +299,9 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
     return 'indeterminate';
   });
 
+  // TODO: Object.values(props) 作为 deps 是反模式，value/prediction 等变化都会使 datum 引用失效。
+  // 精确依赖应为 [props.data]（方法均为 usePersistFn，引用稳定）。
+  // 待 Tbody/Tr 加 React.memo 后一起改，届时 datum 引用稳定才能真正减少 re-render。
   const func = useMemo(() => {
     return {
       add,

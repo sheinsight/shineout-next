@@ -76,6 +76,9 @@ const useTableFilter = <Item = any>(props: UseTableFilterProps<Item>) => {
 
   // 根据columns生成filterInfo
   useEffect(() => {
+    // 没有任何 filter 列时跳过，避免无谓的 setFilterInfo 触发 re-render
+    if (!props.columns?.some((col) => col.filter)) return;
+
     setFilterInfo((prev) => {
       const _filterInfo = props?.columns?.reduce((acc, column, index) => {
         if(!column.filter) return acc;
@@ -94,8 +97,7 @@ const useTableFilter = <Item = any>(props: UseTableFilterProps<Item>) => {
       return _filterInfo || new Map()
     })
 
-
-}, [props.columns])
+}, [props.columns])  // eslint-disable-line react-hooks/exhaustive-deps
 
   return {
     filterInfo,

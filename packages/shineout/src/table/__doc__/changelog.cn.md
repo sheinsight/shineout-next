@@ -1,3 +1,10 @@
+## 3.10.2-beta.8
+2026-09-22
+
+### 🚀 Performance
+
+- 修复 `Table` 的 `columns` 经过 `filter` 等操作传入时，触发多余重渲染的问题 ([#1797](https://github.com/sheinsight/shineout-next/pull/1797))
+
 ## 3.10.2-beta.5
 2026-09-20
 
