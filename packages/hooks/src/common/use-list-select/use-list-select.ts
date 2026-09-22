@@ -38,6 +38,8 @@ const useListSelect = <DataItem, Value>(props: UseListProps<DataItem, Value>) =>
     datum.add(data, { overwrite: true });
   });
 
+  // TODO: Object.values(props) 作为 deps 是反模式。精确依赖应为 [datum, multiple]。
+  // 待 Tbody/Tr 加 React.memo 后一起改。
   const result = useMemo(() => {
     if (!multiple) {
       return {
