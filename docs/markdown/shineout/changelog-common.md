@@ -1,3 +1,9 @@
+## 3.10.2-beta.9
+2026-09-24
+
+### 🐞 BugFix
+- 弹出层类组件（`Popover`、`Select`、`Cascader`、`Dropdown` 等）的 `getPopupContainer` 新增容错处理，当返回值不是合法的 DOM 元素时，自动回退到默认挂载位置，不再抛出错误 ([#1798](https://github.com/sheinsight/shineout-next/pull/1798))
+
 ## 3.10.2-beta.2
 2026-09-16
 
