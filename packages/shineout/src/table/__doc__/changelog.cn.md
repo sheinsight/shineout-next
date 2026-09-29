@@ -3,7 +3,7 @@
 
 ### 🚀 Performance
 
-- 修复 `Table` 的 `columns` 经过 `filter` 等操作传入时，触发多余重渲染的问题 ([#1797](https://github.com/sheinsight/shineout-next/pull/1797))
+- 优化 `Table` 在 `columns` 经 `filter` 等操作产生新引用时的渲染性能，避免触发多余重渲染 ([#1797](https://github.com/sheinsight/shineout-next/pull/1797))
 
 ## 3.10.2-beta.5
 2026-09-20
@@ -15,14 +15,14 @@
 ## 3.10.2-beta.4
 2026-09-20
 
-### 🐞 BugFix
+### 🚀 Performance
 
 - 优化 `Table` 开启 `sticky` 时表头区域的 wheel 事件监听为 passive 模式，降低横向滚动后点击单元格的 INP ([#1793](https://github.com/sheinsight/shineout-next/pull/1793))
 
 ## 3.10.2-beta.3
 2026-09-17
 
-### 🆕 Feature
+### 🚀 Performance
 
 - 优化 `Table` 仅开启 `sticky` 时的渲染性能，避免走虚拟滚动的重渲染路径，降低 Tabs 切换等场景下的 INP ([#1792](https://github.com/sheinsight/shineout-next/pull/1792))
 
