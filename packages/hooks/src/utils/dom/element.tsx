@@ -54,7 +54,8 @@ export const addResizeObserver = (
 
       if (options.lazy && el.getAttribute('data-observer-hidden') === 'true') {
         el.removeAttribute('data-observer-hidden');
-        return;
+        // 隐藏前已测量过有效尺寸才跳过；初始化即隐藏（如父容器 display:none）的元素首次可见时需要触发回调
+        if (lastWidth || lastHeight) return;
       }
       if (width && direction === 'x') {
         if (lastWidth !== width) {
