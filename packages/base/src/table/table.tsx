@@ -88,8 +88,6 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
 
   const { current: context } = useRef({
     emptyHeight: 0,
-    theadHeight: 0,
-    tfootHeight: 0,
     scrollingTimer: null as any,
   });
 
@@ -240,15 +238,13 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     disabled: props.disabled,
   });
 
+  const [theadHeight, setTheadHeight] = useState(0);
+  const [tfootHeight, setTfootHeight] = useState(0);
+
   const handleTheadAndTfootHeight = usePersistFn(() => {
-    const theadHeight = theadRef?.current?.clientHeight || 0;
-    const tfootHeight = tfootRef.current?.clientHeight || 0;
-    if (props.sticky) {
-      context.tfootHeight = tfootHeight;
-    } else {
-      context.theadHeight = theadHeight;
-      context.tfootHeight = tfootHeight;
-    }
+    // sticky 时表头由 Sticky 单独渲染，不计入虚拟列表高度
+    if (!props.sticky) setTheadHeight(theadRef.current?.clientHeight || 0);
+    setTfootHeight(tfootRef.current?.clientHeight || 0);
   });
 
   useEffect(() => {
@@ -290,8 +286,8 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     innerRef: tbodyRef,
     scrollLeft: props.scrollLeft,
     isRtl,
-    theadHeight: context.theadHeight,
-    tfootHeight: context.tfootHeight,
+    theadHeight,
+    tfootHeight,
     virtualScrollContainer: props.virtualScrollContainer,
     tableRef: tableRef,
     externalStickyHeader: !!props.virtualScrollContainer && !!props.sticky,

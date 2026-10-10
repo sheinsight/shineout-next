@@ -1,3 +1,10 @@
+## 3.10.3-beta.1
+2026-10-10
+
+### 🐞 BugFix
+
+- 修复 `Table` 初始化时父容器不可见（如 `display: none`），显示后虚拟列表表头高度计算错误导致滚动异常的问题 ([#1800](https://github.com/sheinsight/shineout-next/pull/1800))
+
 ## 3.10.2-beta.8
 2026-09-22
 
