@@ -71,6 +71,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     scrollParent,
     isControl,
     validateTrigger = 'change',
+    deepClone: shouldDeepClone = true,
   } = props;
   const deepSetOptions = {
     removeUndefined,
@@ -89,7 +90,8 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     removeArr: new Set<string>(),
     names: new Set<string>(),
     submitLock: false,
-    value: deepClone(props.value) || emptyObj,
+    // deepClone 为 false 时跳过全量深拷贝，与外部 value 共享引用（依赖 immer 不可变更新）
+    value: (shouldDeepClone ? deepClone(props.value) : props.value) || emptyObj,
     errors: {},
     serverErrors: {},
     lastValue: props.value || emptyObj,
@@ -694,7 +696,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
   const updateValue = () => {
     if (props.value !== context.lastValue && props.value !== context.value) {
-      context.value = (deepClone(props.value) || emptyObj) as T;
+      context.value = ((shouldDeepClone ? deepClone(props.value) : props.value) || emptyObj) as T;
     }
     context.lastValue = props.value;
   };
