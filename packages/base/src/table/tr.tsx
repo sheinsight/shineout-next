@@ -9,6 +9,7 @@ import Checkbox from '../checkbox';
 import Radio from '../radio';
 import Td from './td';
 import { TbodyProps, UseTableRowResult } from './tbody.type';
+import type { TableClasses } from './table.type';
 import { useConfig } from '../config';
 
 const { toNum } = util;
@@ -66,11 +67,13 @@ interface TrProps
   bodyRowSemStyle?: React.CSSProperties;
   bodyCellSemClass?: string;
   bodyCellSemStyle?: React.CSSProperties;
+  // 由 Tbody 统一计算后下发，避免每行重复调用样式 hook
+  tableClasses?: TableClasses;
+  preventClasses: (string | undefined)[];
 }
 
 const Tr = (props: TrProps) => {
-  const { treeFunc, jssStyle } = props;
-  const tableClasses = props.jssStyle?.table?.();
+  const { treeFunc, tableClasses, preventClasses } = props;
   const trRef = useRef<HTMLTableRowElement>(null);
   const expandRef = useRef<HTMLTableRowElement>(null);
   const config = useConfig();
@@ -132,9 +135,14 @@ const Tr = (props: TrProps) => {
     props.resizeFlag,
   ]);
 
+  // 行高只在虚拟列表下需要上报（setRowHeight 仅由虚拟列表传入），
+  // 非虚拟场景（sticky-only / 普通表格）不再为每一行创建 ResizeObserver，
+  // 避免数据切换时批量 observe/disconnect 以及 RO 首次回调带来的布局读取（计入 INP presentation delay）
+  const shouldObserveRowHeight = !!props.setRowHeight && !props.strictRowHeight;
+
   useEffect(() => {
     // 祖先元素不可见时（display: none）
-    if (props.strictRowHeight || !trRef.current || !trRef.current.offsetParent) return;
+    if (!shouldObserveRowHeight || !trRef.current || !trRef.current.offsetParent) return;
     const cancelObserver = addResizeObserver(trRef.current, setVirtualRowHeight, {
       direction: 'y',
       lazy: true,
@@ -143,7 +151,7 @@ const Tr = (props: TrProps) => {
     return () => {
       cancelObserver();
     };
-  }, []);
+  }, [shouldObserveRowHeight]);
 
   const [isExpandLoading, setIsExpandLoading] = useState(false);
 
@@ -412,17 +420,6 @@ const Tr = (props: TrProps) => {
       }
     }
   };
-
-  const preventClasses = [
-    jssStyle?.input?.().wrapper,
-    jssStyle?.select?.().wrapper,
-    jssStyle?.datePicker?.().wrapper,
-    jssStyle?.treeSelect?.().wrapper,
-    jssStyle?.switch?.().wrapper,
-    jssStyle?.checkbox?.().wrapper,
-    jssStyle?.radio?.().wrapper,
-    jssStyle?.cascader?.().wrapper,
-  ];
 
   const isNotExpandableElement = (el: HTMLElement): boolean => {
     const { tagName } = el;
