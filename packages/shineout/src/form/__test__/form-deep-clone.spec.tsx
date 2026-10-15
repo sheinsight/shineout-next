@@ -175,4 +175,83 @@ describe('Form[deepClone]', () => {
     expect(origin).toEqual(snapshot);
     expect(onChange.mock.calls.length).toBe(5);
   });
+
+  describe('Flow 渲染次数', () => {
+    const setup = (deepClone: boolean, mode: 'same' | 'spread' | 'unc') => {
+      const count = { all: 0, b: 0 };
+      // memo 隔离父组件重渲染，只统计 Form 通知引起的渲染
+      const Flows = React.memo(() => (
+        <>
+          <Form.Flow>
+            {() => {
+              count.all += 1;
+              return null;
+            }}
+          </Form.Flow>
+          <Form.Flow names={['b']}>
+            {() => {
+              count.b += 1;
+              return null;
+            }}
+          </Form.Flow>
+        </>
+      ));
+      const App = () => {
+        const [v, setV] = useState<any>({ a: '1', b: '2' });
+        const p =
+          mode === 'unc'
+            ? { defaultValue: v }
+            : { value: v, onChange: (n: any) => setV(mode === 'spread' ? { ...n } : n) };
+        return (
+          <Form deepClone={deepClone} {...p}>
+            <Input name='a' delay={0} />
+            <Input name='b' delay={0} />
+            <Flows />
+          </Form>
+        );
+      };
+      const { container } = render(<App />);
+      const inputs = getInputs(container);
+      const change = (i: number, value: string) => {
+        count.all = 0;
+        count.b = 0;
+        fireEvent.change(inputs[i], { target: { value } });
+        return { ...count };
+      };
+      return change;
+    };
+
+    (['same', 'spread', 'unc'] as const).forEach((mode) => {
+      test(`deepClone=false（${mode}）：每次变化全局 Flow 渲染 1 次，names 之外的变化不渲染`, () => {
+        const change = setup(false, mode);
+        expect(change(0, 'x')).toEqual({ all: 1, b: 0 });
+        expect(change(1, 'y')).toEqual({ all: 1, b: 1 });
+      });
+    });
+
+    test('默认 deepClone=true：行为保持不变（全局 Flow 渲染 2 次，names 之外的变化也渲染）', () => {
+      const change = setup(true, 'same');
+      const r = change(0, 'x');
+      expect(r.all).toBe(2);
+      expect(r.b).toBeGreaterThan(0);
+    });
+
+    test('deepClone=false：父子 name 的 Flow 仍然同步', () => {
+      let user = '';
+      const App = () => (
+        <Form deepClone={false} defaultValue={{ user: { name: 'n' } }}>
+          <Input name='user.name' delay={0} />
+          <Form.Flow names={['user']}>
+            {(d: any) => {
+              user = JSON.stringify(d.get('user'));
+              return null;
+            }}
+          </Form.Flow>
+        </Form>
+      );
+      const { container } = render(<App />);
+      fireEvent.change(getInputs(container)[0], { target: { value: 'N2' } });
+      expect(user).toBe('{"name":"N2"}');
+    });
+  });
 });

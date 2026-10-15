@@ -6,6 +6,7 @@ import { getDataAttributeName } from '../../utils/attribute';
 import { insertValue, spliceValue } from '../../utils/flat';
 import { usePrevious } from '../../common/use-default-value';
 import { SchemaBuilder } from './use-form-schema/form-schema-builder';
+import { createFlowGuard } from './flow-guard';
 
 const globalKey = '__global__&&@@';
 const SUBMIT_TIMEOUT = 10;
@@ -217,6 +218,9 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       });
     },
   );
+
+  // deepClone 为 false 时，Flow 仅在其关心的值变化时才更新（见 flow-guard.ts）
+  const getFlowGuard = React.useMemo(() => createFlowGuard(() => context.value, globalKey), []);
 
   const update = (name?: string | string[]) => {
     if (!name) {
@@ -627,15 +631,16 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       return newRules;
     },
     watch: (names: string[] = [globalKey], updateFn: () => void) => {
+      const fn = shouldDeepClone ? updateFn : getFlowGuard(names, updateFn);
       names.forEach((name) => {
         context.flowMap[name] = context.flowMap[name] || new Set();
-        context.flowMap[name].add(updateFn);
+        context.flowMap[name].add(fn);
       });
     },
     unWatch: (names: string[] = [globalKey], updateFn?: () => void) => {
       names.forEach((name) => {
         if (updateFn) {
-          context.flowMap[name].delete(updateFn);
+          context.flowMap[name].delete(shouldDeepClone ? updateFn : getFlowGuard(names, updateFn));
         } else {
           delete context.flowMap[name];
         }
