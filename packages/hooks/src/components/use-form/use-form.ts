@@ -6,6 +6,7 @@ import { getDataAttributeName } from '../../utils/attribute';
 import { insertValue, spliceValue } from '../../utils/flat';
 import { usePrevious } from '../../common/use-default-value';
 import { SchemaBuilder } from './use-form-schema/form-schema-builder';
+import { createFlowGuard } from './flow-guard';
 
 const globalKey = '__global__&&@@';
 const SUBMIT_TIMEOUT = 10;
@@ -71,6 +72,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     scrollParent,
     isControl,
     validateTrigger = 'change',
+    deepClone: shouldDeepClone = true,
   } = props;
   const deepSetOptions = {
     removeUndefined,
@@ -89,7 +91,8 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     removeArr: new Set<string>(),
     names: new Set<string>(),
     submitLock: false,
-    value: deepClone(props.value) || emptyObj,
+    // deepClone 为 false 时跳过全量深拷贝，与外部 value 共享引用（依赖 immer 不可变更新）
+    value: (shouldDeepClone ? deepClone(props.value) : props.value) || emptyObj,
     errors: {},
     serverErrors: {},
     lastValue: props.value || emptyObj,
@@ -215,6 +218,9 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       });
     },
   );
+
+  // deepClone 为 false 时，Flow 仅在其关心的值变化时才更新（见 flow-guard.ts）
+  const getFlowGuard = React.useMemo(() => createFlowGuard(() => context.value, globalKey), []);
 
   const update = (name?: string | string[]) => {
     if (!name) {
@@ -625,15 +631,16 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       return newRules;
     },
     watch: (names: string[] = [globalKey], updateFn: () => void) => {
+      const fn = shouldDeepClone ? updateFn : getFlowGuard(names, updateFn);
       names.forEach((name) => {
         context.flowMap[name] = context.flowMap[name] || new Set();
-        context.flowMap[name].add(updateFn);
+        context.flowMap[name].add(fn);
       });
     },
     unWatch: (names: string[] = [globalKey], updateFn?: () => void) => {
       names.forEach((name) => {
         if (updateFn) {
-          context.flowMap[name].delete(updateFn);
+          context.flowMap[name].delete(shouldDeepClone ? updateFn : getFlowGuard(names, updateFn));
         } else {
           delete context.flowMap[name];
         }
@@ -694,7 +701,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
   const updateValue = () => {
     if (props.value !== context.lastValue && props.value !== context.value) {
-      context.value = (deepClone(props.value) || emptyObj) as T;
+      context.value = ((shouldDeepClone ? deepClone(props.value) : props.value) || emptyObj) as T;
     }
     context.lastValue = props.value;
   };

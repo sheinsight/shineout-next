@@ -242,6 +242,13 @@ export interface BaseFormProps<T> extends Omit<FormCommonConfig, 'formName'> {
    * @version 3.5.3
    */
   name?: string;
+  /**
+   * @en Whether to deep clone the value passed in from outside. When set to false, the form will no longer deep clone the value on initialization and when the controlled value changes, which significantly improves performance for large form data. Note: when disabled, the form shares nested object references with the value passed in, please follow the immutable update principle (e.g. onChange={v => setValue({ ...v, user: { ...v.user, name: 'x' } })}) and do not directly mutate nested objects. Directly mutating nested fields of the outer value will affect the form data (e.g. getValue) synchronously, but will not trigger rendering, so the fields still display the old value until the top-level reference changes (e.g. setValue({ ...value }))
+   * @cn 是否对外部传入的 value 进行深拷贝。设置为 false 时，表单在初始化及受控 value 变化时不再深拷贝，表单数据量较大时可显著提升性能。注意：关闭后表单内部会与传入的 value 共享嵌套对象引用，请遵循不可变更新原则（如 onChange={v => setValue({ ...v, user: { ...v.user, name: 'x' } })}），不要直接修改嵌套对象。直接修改外部 value 的嵌套字段会同步影响表单内部数据（如 getValue），但不会触发渲染，字段仍显示旧值，直到顶层引用变化（如 setValue({ ...value })）
+   * @default true
+   * @version 3.10.3
+   */
+  deepClone?: boolean;
 }
 
 export type UseFormProps<T> = BaseFormProps<T> & {

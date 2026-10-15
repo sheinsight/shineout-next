@@ -1,3 +1,8 @@
+## 3.10.3-beta.2
+2026-10-15
+### 🆕 Feature
+- `Form` 新增 `deepClone` 属性，设置为 `false` 时不再对外部传入的 value 进行深拷贝，并且 `Form.Flow` 仅在其关心的值变化时才重新渲染，显著提升大数据量表单的性能 ([#1801](https://github.com/sheinsight/shineout-next/pull/1801))
+
 ## 3.9.16-beta.8
 2026-06-10
 ### 🐞 BugFix
