@@ -320,7 +320,8 @@ const tableStyle: JsStyles<TableClassType> = {
         boxShadow: 'inset 8px 0 10px -6px rgba(2,11,24,.1)',
         // border: 'none',
       },
-      '&[dir=ltr]::after': {
+      // tbody td 在 ltr 下不输出 dir 属性，用 :not([dir=rtl]) 匹配 ltr
+      '&:not([dir=rtl])::after': {
         right: `-${shadowWidth}px`,
       },
       '&[dir=rtl]::after': {
@@ -358,7 +359,7 @@ const tableStyle: JsStyles<TableClassType> = {
         right: `-${shadowWidth}px`,
         boxShadow: 'inset 8px 0 10px -6px rgba(2,11,24,.1)',
       },
-      '&[dir=ltr]::before': {
+      '&:not([dir=rtl])::before': {
         left: `-${shadowWidth}px`,
       },
     },
@@ -651,7 +652,7 @@ const tableStyle: JsStyles<TableClassType> = {
       textAlign: 'left',
     },
     '$bordered&': {
-      '& th:last-child[dir=ltr], & td:last-child[dir=ltr]': { borderRight: 'none' },
+      '& th:last-child:not([dir=rtl]), & td:last-child:not([dir=rtl])': { borderRight: 'none' },
       '& th:last-child[dir=rtl], & td:last-child[dir=rtl]': { borderLeft: 'none' },
     },
     '& table tr:hover td': {

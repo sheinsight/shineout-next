@@ -1,3 +1,8 @@
+## 3.10.3-beta.4
+2026-10-19
+### 🚀 Performance
+- 优化 `Table` 挂载及整页切换数据时的渲染性能，ltr 方向下表体单元格不再输出 `dir` 属性 ([#1803](https://github.com/sheinsight/shineout-next/pull/1803))
+
 ## 3.10.3-beta.3
 2026-10-19
 ### 🆕 Feature

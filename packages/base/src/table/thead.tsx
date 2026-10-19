@@ -27,6 +27,11 @@ export default (props: TheadProps) => {
   });
 
   useEffect(() => {
+    // 行高仅用于多级表头固定列的 sticky top，单行表头 top 恒为 0，跳过测量以避免强制同步布局
+    if (columnLevel === 0) {
+      context.trHeights = [];
+      return;
+    }
     const heights = trRefs.current.map((tr) => tr?.offsetHeight || 0);
     context.trHeights = heights;
   }, [groupColumns]);

@@ -85,28 +85,24 @@ exports[`Table[Base] should render correctly  1`] = `
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Ephraim Wisozk
             </td>
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Reunion
             </td>
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Marketing Designer
             </td>
             <td
               class="soui-table-cell-ignore-border"
               colspan="1"
-              dir="ltr"
             >
               Miami
             </td>
@@ -117,28 +113,24 @@ exports[`Table[Base] should render correctly  1`] = `
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Osvaldo Beer
             </td>
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Syrian Arab Republic
             </td>
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Financial Controller
             </td>
             <td
               class="soui-table-cell-ignore-border"
               colspan="1"
-              dir="ltr"
             >
               San Paulo
             </td>
@@ -149,28 +141,24 @@ exports[`Table[Base] should render correctly  1`] = `
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Dylan Ratke
             </td>
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Peru
             </td>
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Development Lead
             </td>
             <td
               class="soui-table-cell-ignore-border"
               colspan="1"
-              dir="ltr"
             >
               Boston
             </td>
@@ -181,28 +169,24 @@ exports[`Table[Base] should render correctly  1`] = `
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Shaniya Jacobs
             </td>
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Peru
             </td>
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Developer
             </td>
             <td
               class="soui-table-cell-ignore-border"
               colspan="1"
-              dir="ltr"
             >
               Chengdu
             </td>
@@ -299,28 +283,24 @@ exports[`Table[Base] should render correctly about border 1`] = `
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Ephraim Wisozk
             </td>
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Reunion
             </td>
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Marketing Designer
             </td>
             <td
               class="soui-table-cell-ignore-border"
               colspan="1"
-              dir="ltr"
             >
               Miami
             </td>
@@ -331,28 +311,24 @@ exports[`Table[Base] should render correctly about border 1`] = `
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Osvaldo Beer
             </td>
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Syrian Arab Republic
             </td>
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Financial Controller
             </td>
             <td
               class="soui-table-cell-ignore-border"
               colspan="1"
-              dir="ltr"
             >
               San Paulo
             </td>
@@ -363,28 +339,24 @@ exports[`Table[Base] should render correctly about border 1`] = `
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Dylan Ratke
             </td>
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Peru
             </td>
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Development Lead
             </td>
             <td
               class="soui-table-cell-ignore-border"
               colspan="1"
-              dir="ltr"
             >
               Boston
             </td>
@@ -395,28 +367,24 @@ exports[`Table[Base] should render correctly about border 1`] = `
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Shaniya Jacobs
             </td>
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Peru
             </td>
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Developer
             </td>
             <td
               class="soui-table-cell-ignore-border"
               colspan="1"
-              dir="ltr"
             >
               Chengdu
             </td>
@@ -582,42 +550,36 @@ exports[`Table[Base] should render correctly about group 1`] = `
           <td
             class=""
             colspan="1"
-            dir="ltr"
           >
             Ephraim
           </td>
           <td
             class=""
             colspan="1"
-            dir="ltr"
           >
             Wisozk
           </td>
           <td
             class=""
             colspan="1"
-            dir="ltr"
           >
             nickname
           </td>
           <td
             class=""
             colspan="1"
-            dir="ltr"
           >
             Reunion
           </td>
           <td
             class=""
             colspan="1"
-            dir="ltr"
           >
             Miami
           </td>
           <td
             class="soui-table-cell-ignore-border"
             colspan="1"
-            dir="ltr"
           >
             Marketing Designer
           </td>
@@ -628,42 +590,36 @@ exports[`Table[Base] should render correctly about group 1`] = `
           <td
             class=""
             colspan="1"
-            dir="ltr"
           >
             Osvaldo
           </td>
           <td
             class=""
             colspan="1"
-            dir="ltr"
           >
             Beer
           </td>
           <td
             class=""
             colspan="1"
-            dir="ltr"
           >
             nickname
           </td>
           <td
             class=""
             colspan="1"
-            dir="ltr"
           >
             Syrian Arab Republic
           </td>
           <td
             class=""
             colspan="1"
-            dir="ltr"
           >
             San Paulo
           </td>
           <td
             class="soui-table-cell-ignore-border"
             colspan="1"
-            dir="ltr"
           >
             Financial Controller
           </td>
@@ -674,42 +630,36 @@ exports[`Table[Base] should render correctly about group 1`] = `
           <td
             class=""
             colspan="1"
-            dir="ltr"
           >
             Dylan
           </td>
           <td
             class=""
             colspan="1"
-            dir="ltr"
           >
             Ratke
           </td>
           <td
             class=""
             colspan="1"
-            dir="ltr"
           >
             nickname
           </td>
           <td
             class=""
             colspan="1"
-            dir="ltr"
           >
             Peru
           </td>
           <td
             class=""
             colspan="1"
-            dir="ltr"
           >
             Boston
           </td>
           <td
             class="soui-table-cell-ignore-border"
             colspan="1"
-            dir="ltr"
           >
             Development Lead
           </td>
@@ -720,42 +670,36 @@ exports[`Table[Base] should render correctly about group 1`] = `
           <td
             class=""
             colspan="1"
-            dir="ltr"
           >
             Shaniya
           </td>
           <td
             class=""
             colspan="1"
-            dir="ltr"
           >
             Jacobs
           </td>
           <td
             class=""
             colspan="1"
-            dir="ltr"
           >
             nickname
           </td>
           <td
             class=""
             colspan="1"
-            dir="ltr"
           >
             Peru
           </td>
           <td
             class=""
             colspan="1"
-            dir="ltr"
           >
             Chengdu
           </td>
           <td
             class="soui-table-cell-ignore-border"
             colspan="1"
-            dir="ltr"
           >
             Developer
           </td>
@@ -923,28 +867,24 @@ exports[`Table[Base] should render correctly about size 1`] = `
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Ephraim Wisozk
             </td>
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Reunion
             </td>
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Marketing Designer
             </td>
             <td
               class="soui-table-cell-ignore-border"
               colspan="1"
-              dir="ltr"
             >
               Miami
             </td>
@@ -955,28 +895,24 @@ exports[`Table[Base] should render correctly about size 1`] = `
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Osvaldo Beer
             </td>
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Syrian Arab Republic
             </td>
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Financial Controller
             </td>
             <td
               class="soui-table-cell-ignore-border"
               colspan="1"
-              dir="ltr"
             >
               San Paulo
             </td>
@@ -987,28 +923,24 @@ exports[`Table[Base] should render correctly about size 1`] = `
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Dylan Ratke
             </td>
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Peru
             </td>
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Development Lead
             </td>
             <td
               class="soui-table-cell-ignore-border"
               colspan="1"
-              dir="ltr"
             >
               Boston
             </td>
@@ -1019,28 +951,24 @@ exports[`Table[Base] should render correctly about size 1`] = `
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Shaniya Jacobs
             </td>
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Peru
             </td>
             <td
               class=""
               colspan="1"
-              dir="ltr"
             >
               Developer
             </td>
             <td
               class="soui-table-cell-ignore-border"
               colspan="1"
-              dir="ltr"
             >
               Chengdu
             </td>

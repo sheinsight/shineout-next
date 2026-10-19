@@ -41,7 +41,8 @@ export default function Td(props: TdProps): JSX.Element {
       onMouseLeave={onMouseLeave}
       className={className}
       style={props.style}
-      dir={direction}
+      // ltr 为默认方向，可从 table 继承，省略以减少大数据量下逐个单元格的 setAttribute
+      dir={direction === 'rtl' ? direction : undefined}
       data-role={role}
       onClick={onClick}
     >
