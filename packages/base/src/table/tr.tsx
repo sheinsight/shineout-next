@@ -9,6 +9,7 @@ import Checkbox from '../checkbox';
 import Radio from '../radio';
 import Td from './td';
 import { TbodyProps, UseTableRowResult } from './tbody.type';
+import type { TableClasses } from './table.type';
 import { useConfig } from '../config';
 
 const { toNum } = util;
@@ -28,6 +29,7 @@ interface TrProps
     | 'setRowHeight'
     | 'striped'
     | 'strictRowHeight'
+    | 'rowMemo'
     | 'radio'
     | 'onRowClick'
     | 'rowClickAttr'
@@ -66,11 +68,13 @@ interface TrProps
   bodyRowSemStyle?: React.CSSProperties;
   bodyCellSemClass?: string;
   bodyCellSemStyle?: React.CSSProperties;
+  // 由 Tbody 统一计算后下发，避免每行重复调用样式 hook
+  tableClasses?: TableClasses;
+  preventClasses: (string | undefined)[];
 }
 
 const Tr = (props: TrProps) => {
-  const { treeFunc, jssStyle } = props;
-  const tableClasses = props.jssStyle?.table?.();
+  const { treeFunc, tableClasses, preventClasses } = props;
   const trRef = useRef<HTMLTableRowElement>(null);
   const expandRef = useRef<HTMLTableRowElement>(null);
   const config = useConfig();
@@ -132,9 +136,14 @@ const Tr = (props: TrProps) => {
     props.resizeFlag,
   ]);
 
+  // 行高只在虚拟列表下需要上报（setRowHeight 仅由虚拟列表传入），
+  // 非虚拟场景（sticky-only / 普通表格）不再为每一行创建 ResizeObserver，
+  // 避免数据切换时批量 observe/disconnect 以及 RO 首次回调带来的布局读取（计入 INP presentation delay）
+  const shouldObserveRowHeight = !!props.setRowHeight && !props.strictRowHeight;
+
   useEffect(() => {
     // 祖先元素不可见时（display: none）
-    if (props.strictRowHeight || !trRef.current || !trRef.current.offsetParent) return;
+    if (!shouldObserveRowHeight || !trRef.current || !trRef.current.offsetParent) return;
     const cancelObserver = addResizeObserver(trRef.current, setVirtualRowHeight, {
       direction: 'y',
       lazy: true,
@@ -143,7 +152,7 @@ const Tr = (props: TrProps) => {
     return () => {
       cancelObserver();
     };
-  }, []);
+  }, [shouldObserveRowHeight]);
 
   const [isExpandLoading, setIsExpandLoading] = useState(false);
 
@@ -413,17 +422,6 @@ const Tr = (props: TrProps) => {
     }
   };
 
-  const preventClasses = [
-    jssStyle?.input?.().wrapper,
-    jssStyle?.select?.().wrapper,
-    jssStyle?.datePicker?.().wrapper,
-    jssStyle?.treeSelect?.().wrapper,
-    jssStyle?.switch?.().wrapper,
-    jssStyle?.checkbox?.().wrapper,
-    jssStyle?.radio?.().wrapper,
-    jssStyle?.cascader?.().wrapper,
-  ];
-
   const isNotExpandableElement = (el: HTMLElement): boolean => {
     const { tagName } = el;
     if (tagName === 'TD' || tagName === 'TR') return false;
@@ -517,4 +515,56 @@ const Tr = (props: TrProps) => {
   );
 };
 
-export default Tr;
+// 行级 memo（rowMemo）比较时跳过的 props：
+// - datum / treeFunc / handleCellHover / handleExpandClick：内部方法均为 usePersistFn，引用变化不影响渲染结果
+//   （选中、禁用、展开状态已经以 isSelect / disabled / expanded / treeExpandLevel 的形式单独下发）
+// - row / hoverIndex / 语义化样式：引用每次都可能变化，下面按内容单独比较
+// - treeExpandLevel：随 data 每次重建，非树形表格不会读取；树形表格下单独按引用比较
+const MEMO_SKIP_KEYS = [
+  'datum',
+  'treeFunc',
+  'handleCellHover',
+  'handleExpandClick',
+  'row',
+  'hoverIndex',
+  'bodyRowSemStyle',
+  'bodyCellSemStyle',
+  'treeExpandLevel',
+];
+
+// rowData 在 data 变化时会整体重算（如懒加载追加数据），按单元格内容比较，避免未变化的行被连带重渲染
+const isSameRowCells = (prev: TrProps['row'], next: TrProps['row']) => {
+  if (prev === next) return true;
+  if (prev.length !== next.length) return false;
+  return prev.every((cell, i) => {
+    const nextCell = next[i];
+    if (!cell || !nextCell) return cell === nextCell;
+    return (
+      cell.data === nextCell.data &&
+      cell.colSpan === nextCell.colSpan &&
+      cell.rowSpan === nextCell.rowSpan
+    );
+  });
+};
+
+const isSameHover = (prev: TrProps, next: TrProps) => {
+  if (prev.hoverIndex === next.hoverIndex || !next.hover) return true;
+  // 存在跨行单元格时 hover 态取决于后续行，保守处理为需要更新
+  if (next.row.some((cell) => cell && cell.rowSpan > 1)) return false;
+  return prev.hoverIndex.has(prev.rowIndex) === next.hoverIndex.has(next.rowIndex);
+};
+
+// 未开启 rowMemo 时始终返回 false，行为与不做 memo 完全一致
+const isTrPropsEqual = (prev: TrProps, next: TrProps) => {
+  if (!prev.rowMemo || !next.rowMemo) return false;
+  return (
+    util.shallowEqual(prev, next, { skip: MEMO_SKIP_KEYS }) &&
+    (!next.treeColumnsName || prev.treeExpandLevel === next.treeExpandLevel) &&
+    isSameRowCells(prev.row, next.row) &&
+    isSameHover(prev, next) &&
+    util.shallowEqual(prev.bodyRowSemStyle, next.bodyRowSemStyle) &&
+    util.shallowEqual(prev.bodyCellSemStyle, next.bodyCellSemStyle)
+  );
+};
+
+export default React.memo(Tr, isTrPropsEqual);

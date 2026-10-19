@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>Table Bench</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 12px;
+        font: 14px/1.5 -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      }
+      .bench-toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+      .bench-toolbar button {
+        padding: 4px 10px;
+        font: inherit;
+        cursor: pointer;
+      }
+      .bench-label {
+        font-weight: 600;
+      }
+      #bench-log {
+        margin: 0 0 12px;
+        padding: 8px;
+        min-height: 40px;
+        max-height: 200px;
+        overflow: auto;
+        background: #f5f5f5;
+        font: 12px/1.5 Menlo, Consolas, monospace;
+        white-space: pre-wrap;
+      }
+      #bench-log:empty {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <pre id="bench-log"></pre>
+    <div id="app"></div>
+    <script src="vendor/meta.js"></script>
+    <script src="vendor/react.production.min.js"></script>
+    <script src="vendor/react-dom.production.min.js"></script>
+    <script>
+      // 两个版本都通过 UMD 暴露全局 Shineout，所以每个页面只加载其中一个，由 runner 用 iframe 逐个加载
+      (function () {
+        var lib = new URLSearchParams(location.search).get('lib') === 'v2' ? 'v2' : 'v3';
+        if (lib === 'v2') document.write('<link rel="stylesheet" href="vendor/shineout-v2.css" />');
+        document.write('<script src="vendor/shineout-' + lib + '.min.js"><\/script>');
+      })();
+    </script>
+    <script src="bench.js"></script>
+  </body>
+</html>

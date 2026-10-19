@@ -19,7 +19,6 @@ import {
   useTableVirtual,
   usePaginationList,
   useLatestObj,
-  useResize,
   useScrollbarWidth,
   util,
   addResizeObserver,
@@ -38,8 +37,6 @@ import { useSemantic } from '../common';
 const { devUseWarning } = util;
 
 const emptyArr: any[] = [];
-
-const emptyRef = { current: null };
 
 export default function Table<Item, Value>(props: TableProps<Item, Value>) {
   const { verticalAlign = 'top', size = 'default', pagination = {} as PaginationProps } = props;
@@ -106,10 +103,6 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     setScrollAble(isScrollAble);
   }, [virtual]);
 
-  // TODO: 没用的tbodyHeight，有空移除了
-  // 虚拟列表高度另外计算
-  const { height: tbodyHeight } = useResize({ targetRef: virtual ? emptyRef : tbodyRef });
-
   // default height
   const defaultHeight = virtual && !props.height && !props.virtualScrollContainer ? '100%' : props.height;
 
@@ -131,6 +124,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     virtualColumn: props.virtualColumn,
     scrollRef: scrollRef,
     showCheckbox: typeof props.onRowSelect === 'function',
+    reuseEqualColumns: !!props.rowMemo,
   });
 
   const {
@@ -439,6 +433,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       treeCheckAll: props.treeCheckAll,
       onCellClick: props.onCellClick,
       strictRowHeight: props.strictRowHeight,
+      rowMemo: props.rowMemo,
       scrollRef: scrollRef,
       bodyRowSemClass: semClass('bodyRow'),
       bodyRowSemStyle: semStyle('bodyRow'),
@@ -684,7 +679,9 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
             style={{ display: 'flex', minWidth: 0, minHeight: 0, flex: 1 }}
             wrapperRef={scrollRef}
             scrollWidth={width || 1}
-            scrollHeight={virtual ? virtualInfo.scrollHeight : tbodyHeight}
+            // 非虚拟时只有空数据会走到 Scroll，此时 isEmpty 会把 paddingTop 置 0，scrollHeight 不生效；
+            // 原先这里对 tbody 做 useResize 监听，tbody 尺寸变化后会额外触发整表重渲染，已移除
+            scrollHeight={virtual ? virtualInfo.scrollHeight : 0}
             onScroll={handleVirtualScroll}
             defaultHeight={context.emptyHeight}
             isScrollY={isScrollY}
