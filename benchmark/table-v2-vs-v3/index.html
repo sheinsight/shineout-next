@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>Table 2.x vs 3.x 性能对比</title>
+    <style>
+      :root {
+        --fg: #1f2329;
+        --muted: #646a73;
+        --line: #dee0e3;
+        --bg-soft: #f5f6f7;
+        --good: #1f7a3a;
+        --bad: #c0392b;
+        --warn-bg: #fff4e5;
+      }
+      body {
+        margin: 0;
+        padding: 20px 24px 40px;
+        color: var(--fg);
+        background: #fff;
+        font: 14px/1.6 -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      }
+      h1 {
+        font-size: 20px;
+        margin: 0 0 4px;
+      }
+      h2 {
+        font-size: 16px;
+        margin: 24px 0 8px;
+      }
+      p.desc {
+        color: var(--muted);
+        margin: 0 0 16px;
+        max-width: 960px;
+      }
+      .meta,
+      .warn {
+        padding: 8px 12px;
+        border-radius: 6px;
+        background: var(--bg-soft);
+        margin-bottom: 8px;
+        font-size: 13px;
+      }
+      .warn {
+        background: var(--warn-bg);
+        color: #8a4b00;
+      }
+      .form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 24px;
+        align-items: center;
+        margin: 12px 0;
+      }
+      .form fieldset {
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 4px 12px 8px;
+        margin: 0;
+      }
+      .form legend {
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .form input[type='number'] {
+        width: 56px;
+      }
+      button.primary {
+        padding: 6px 18px;
+        font: inherit;
+        cursor: pointer;
+      }
+      #progress {
+        color: var(--muted);
+      }
+      .frame-box {
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        overflow: auto;
+      }
+      .frame-box iframe {
+        display: block;
+        border: 0;
+      }
+      .table-wrap {
+        overflow-x: auto;
+      }
+      table.result {
+        border-collapse: collapse;
+        margin-bottom: 16px;
+        font-variant-numeric: tabular-nums;
+      }
+      table.result th,
+      table.result td {
+        border: 1px solid var(--line);
+        padding: 6px 10px;
+        text-align: right;
+        white-space: nowrap;
+      }
+      table.result th:first-child,
+      table.result td:first-child {
+        text-align: left;
+      }
+      table.result thead th {
+        background: var(--bg-soft);
+      }
+      .sub {
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .good {
+        color: var(--good);
+      }
+      .bad {
+        color: var(--bad);
+      }
+      textarea {
+        width: 100%;
+        min-height: 160px;
+        font: 12px/1.5 Menlo, Consolas, monospace;
+        box-sizing: border-box;
+      }
+      ul.notes {
+        color: var(--muted);
+        padding-left: 20px;
+        max-width: 960px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Table 2.x vs 3.x 性能对比</h1>
+    <p class="desc">
+      两个版本均使用生产模式 UMD 构建产物，共用同一份 React 生产包、同一份数据/列定义/Table props 与测量代码；每个配置在独立 iframe 中加载，多轮交替执行顺序以抵消先后带来的偏差。
+    </p>
+    <div id="meta"></div>
+
+    <div class="form">
+      <fieldset>
+        <legend>版本</legend>
+        <label><input type="checkbox" name="config" value="v2" checked /> 2.x</label>
+        <label><input type="checkbox" name="config" value="v3" checked /> 3.x</label>
+        <label><input type="checkbox" name="config" value="v3memo" checked /> 3.x + rowMemo</label>
+      </fieldset>
+      <fieldset>
+        <legend>行数</legend>
+        <label><input type="checkbox" name="rows" value="100" checked /> 100</label>
+        <label><input type="checkbox" name="rows" value="200" /> 200</label>
+        <label><input type="checkbox" name="rows" value="500" /> 500</label>
+      </fieldset>
+      <fieldset>
+        <legend>React 根节点</legend>
+        <label><input type="radio" name="root" value="concurrent" checked /> createRoot</label>
+        <label><input type="radio" name="root" value="legacy" /> ReactDOM.render</label>
+      </fieldset>
+      <fieldset>
+        <legend>次数</legend>
+        <label>每场景 <input type="number" id="iter" value="10" min="1" /></label>
+        <label>预热 <input type="number" id="warmup" value="2" min="0" /></label>
+        <label>轮数 <input type="number" id="rounds" value="3" min="1" /></label>
+      </fieldset>
+      <button class="primary" id="start">开始自动测试</button>
+      <span id="progress"></span>
+    </div>
+
+    <div class="frame-box" id="frame-box" hidden></div>
+
+    <h2>手动测试</h2>
+    <p class="desc">
+      新标签页打开单个版本，自己点击，页面顶部会记录浏览器 Event Timing（INP 的来源）与点击→绘制耗时。也可以配合 DevTools Performance 面板录制对比。
+    </p>
+    <div id="manual-links"></div>
+
+    <div id="results"></div>
+
+    <h2>说明</h2>
+    <ul class="notes">
+      <li>主线程：点击事件及其微任务的 JS 耗时 + 下一帧样式/布局/绘制耗时，排除了等待 vsync 的空闲时间，适合横向对比；点击→绘制：从派发点击到下一帧绘制完成的总耗时，近似 INP，受帧对齐影响会有 0~16ms 的随机波动。</li>
+      <li>render 次数：「商品信息」列 render 的调用次数，约等于本次交互重渲染的行数。</li>
+      <li>每次测量前都会校验交互确实生效（勾选数、单元格内容等），失败次数会显示在表格中，有失败的数据不可信。</li>
+      <li>Table props 两边一致：keygen、bordered、width=1700、fixed="x"（2.x 固定列 + 渲染全部行的写法，3.x 中同样是非虚拟列表）、sticky={ top: 0, css: true }、勾选。</li>
+      <li>2.x 样式是预编译 CSS，3.x 是运行时 CSS-in-JS，这是两个版本真实的交付形态，属于对比的一部分。</li>
+      <li>测试期间请保持本页在前台且不要操作，后台标签页的 rAF 会被节流导致数据失真（会被标记）。</li>
+    </ul>
+
+    <script src="vendor/meta.js"></script>
+    <script src="runner.js"></script>
+  </body>
+</html>
