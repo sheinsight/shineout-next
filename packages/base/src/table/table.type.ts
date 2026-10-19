@@ -440,6 +440,14 @@ export interface TableProps<DataItem, Value>
   strictRowHeight?: number;
 
   /**
+   * @en Enable row-level memo. A row only re-renders when its own data item, the column definitions (shallow compared per column, including the render function reference), selection/expand/hover state, etc. change. Data must be updated immutably; if a column render reads external state (e.g. this.state, ref, store.getState()) without changing its render function reference, the cell will not update — make such state part of the render function's dependencies (e.g. useCallback/useMemo deps) or leave this option off
+   * @cn 开启行级 memo。只有当本行数据、列定义（逐列浅比较，包含 render 函数引用）、选中/展开/hover 状态等发生变化时才重新渲染该行，适合大数据量表格降低交互耗时。数据需不可变更新；若列的 render 读取了外部状态（如 this.state、ref、store.getState()）而 render 函数引用不变，单元格将不会更新，此时需让 render 随依赖变化（如放入 useCallback/useMemo 依赖）或不开启此选项
+   * @default false
+   * @version 3.10.3
+   */
+  rowMemo?: boolean;
+
+  /**
    * @en External scroll container for virtual scrolling. When set, the table won't have internal scroll but will be driven by the external container's scroll event. Pass a function that returns the scroll container element (e.g., () => document.body)
    * @cn 虚拟滚动的外部滚动容器。设置后表格不再产生内部滚动，而是由外部容器的滚动事件驱动虚拟列表。传入一个函数，返回滚动容器元素（如 () => document.documentElement）
    * @version 3.9.15

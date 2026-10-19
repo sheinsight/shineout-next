@@ -124,6 +124,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     virtualColumn: props.virtualColumn,
     scrollRef: scrollRef,
     showCheckbox: typeof props.onRowSelect === 'function',
+    reuseEqualColumns: !!props.rowMemo,
   });
 
   const {
@@ -432,6 +433,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       treeCheckAll: props.treeCheckAll,
       onCellClick: props.onCellClick,
       strictRowHeight: props.strictRowHeight,
+      rowMemo: props.rowMemo,
       scrollRef: scrollRef,
       bodyRowSemClass: semClass('bodyRow'),
       bodyRowSemStyle: semStyle('bodyRow'),

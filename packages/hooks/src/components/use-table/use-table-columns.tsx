@@ -2,13 +2,22 @@ import { TableColumnItem, TableFormatColumn, VirtualColumnConfig } from './use-t
 import { produce } from '../../utils/immer';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import usePersistFn from '../../common/use-persist-fn';
+import shallowEqual from '../../utils/shallow-equal';
 export interface UseColumnsProps<Data> {
   columns?: TableColumnItem<Data>[];
   data?: Data[];
   showCheckbox?: boolean;
   virtualColumn?: boolean | VirtualColumnConfig;
   scrollRef: React.RefObject<HTMLElement>;
+  /**
+   * columns 引用变化但逐列浅比较都相等时，复用上一次的格式化结果（行级 memo 的前置条件）
+   */
+  reuseEqualColumns?: boolean;
 }
+
+// 逐列浅比较：业务常见写法 columns.map(c => ({ ...c })) 每次都会产生新对象，但内容（含 render 引用）不变
+const isColumnsShallowEqual = (a: any[], b: any[]) =>
+  a.length === b.length && a.every((c, i) => shallowEqual(c, b[i]));
 
 const getHideExpandCol = (cols: UseColumnsProps<any>['columns'] = []) => {
   const expandCol = cols.find(
@@ -45,11 +54,16 @@ const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
   const { current: context } = useRef<{
     cachedColumns: TableFormatColumn<Data>[] | null;
     oldColumns: TableColumnItem<Data>[] | null;
+    oldShowCheckbox?: boolean;
+    // 上一次参与格式化的列的浅拷贝快照，用于识别「原地修改列对象 + 新数组」的情况
+    columnsSnapshot: any[] | null;
     groupLevel: number;
     expandHideCol: RxpandHideColType;
   }>({
     cachedColumns: null,
     oldColumns: null,
+    oldShowCheckbox: undefined,
+    columnsSnapshot: null,
     groupLevel: 0,
     expandHideCol: null as RxpandHideColType,
   });
@@ -60,6 +74,17 @@ const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
     if (columnsA === context.oldColumns) {
       return context.cachedColumns;
     }
+    if (
+      props.reuseEqualColumns &&
+      context.columnsSnapshot &&
+      context.cachedColumns &&
+      context.oldShowCheckbox === props.showCheckbox &&
+      isColumnsShallowEqual(columnsA, context.columnsSnapshot)
+    ) {
+      context.oldColumns = columnsA;
+      return context.cachedColumns;
+    }
+    context.oldShowCheckbox = props.showCheckbox;
     context.expandHideCol = getHideExpandCol(columnsA) as RxpandHideColType;
     let columns = columnsA
       .filter((c) => typeof c === 'object')
@@ -95,6 +120,10 @@ const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
     );
 
     context.oldColumns = columnsA;
+    // 与快照比较而非与旧数组比较：列对象被原地修改时旧数组里也是同一个对象，比较不出差异
+    context.columnsSnapshot = props.reuseEqualColumns
+      ? columnsA.map((c) => (c && typeof c === 'object' ? { ...c } : c))
+      : null;
     return context.cachedColumns;
   });
 

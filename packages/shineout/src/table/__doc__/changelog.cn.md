@@ -1,3 +1,10 @@
+## 3.10.3-beta.3
+2026-10-19
+### 🆕 Feature
+- `Table` 新增 `rowMemo` 属性，支持行级 memo，减少大数据量下的重复渲染 ([#1802](https://github.com/sheinsight/shineout-next/pull/1802))
+### 🚀 Performance
+- 优化 `Table` 非虚拟列表的行渲染性能 ([#1802](https://github.com/sheinsight/shineout-next/pull/1802))
+
 ## 3.10.3-beta.1
 2026-10-10
 

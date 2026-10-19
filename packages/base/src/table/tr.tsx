@@ -29,6 +29,7 @@ interface TrProps
     | 'setRowHeight'
     | 'striped'
     | 'strictRowHeight'
+    | 'rowMemo'
     | 'radio'
     | 'onRowClick'
     | 'rowClickAttr'
@@ -514,4 +515,56 @@ const Tr = (props: TrProps) => {
   );
 };
 
-export default Tr;
+// 行级 memo（rowMemo）比较时跳过的 props：
+// - datum / treeFunc / handleCellHover / handleExpandClick：内部方法均为 usePersistFn，引用变化不影响渲染结果
+//   （选中、禁用、展开状态已经以 isSelect / disabled / expanded / treeExpandLevel 的形式单独下发）
+// - row / hoverIndex / 语义化样式：引用每次都可能变化，下面按内容单独比较
+// - treeExpandLevel：随 data 每次重建，非树形表格不会读取；树形表格下单独按引用比较
+const MEMO_SKIP_KEYS = [
+  'datum',
+  'treeFunc',
+  'handleCellHover',
+  'handleExpandClick',
+  'row',
+  'hoverIndex',
+  'bodyRowSemStyle',
+  'bodyCellSemStyle',
+  'treeExpandLevel',
+];
+
+// rowData 在 data 变化时会整体重算（如懒加载追加数据），按单元格内容比较，避免未变化的行被连带重渲染
+const isSameRowCells = (prev: TrProps['row'], next: TrProps['row']) => {
+  if (prev === next) return true;
+  if (prev.length !== next.length) return false;
+  return prev.every((cell, i) => {
+    const nextCell = next[i];
+    if (!cell || !nextCell) return cell === nextCell;
+    return (
+      cell.data === nextCell.data &&
+      cell.colSpan === nextCell.colSpan &&
+      cell.rowSpan === nextCell.rowSpan
+    );
+  });
+};
+
+const isSameHover = (prev: TrProps, next: TrProps) => {
+  if (prev.hoverIndex === next.hoverIndex || !next.hover) return true;
+  // 存在跨行单元格时 hover 态取决于后续行，保守处理为需要更新
+  if (next.row.some((cell) => cell && cell.rowSpan > 1)) return false;
+  return prev.hoverIndex.has(prev.rowIndex) === next.hoverIndex.has(next.rowIndex);
+};
+
+// 未开启 rowMemo 时始终返回 false，行为与不做 memo 完全一致
+const isTrPropsEqual = (prev: TrProps, next: TrProps) => {
+  if (!prev.rowMemo || !next.rowMemo) return false;
+  return (
+    util.shallowEqual(prev, next, { skip: MEMO_SKIP_KEYS }) &&
+    (!next.treeColumnsName || prev.treeExpandLevel === next.treeExpandLevel) &&
+    isSameRowCells(prev.row, next.row) &&
+    isSameHover(prev, next) &&
+    util.shallowEqual(prev.bodyRowSemStyle, next.bodyRowSemStyle) &&
+    util.shallowEqual(prev.bodyCellSemStyle, next.bodyCellSemStyle)
+  );
+};
+
+export default React.memo(Tr, isTrPropsEqual);

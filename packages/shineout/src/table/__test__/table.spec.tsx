@@ -1793,6 +1793,140 @@ describe('Table[RowEvents]', () => {
   });
 });
 
+describe('Table[rowMemo]', () => {
+  const memoData = [
+    { id: 1, name: 'a' },
+    { id: 2, name: 'b' },
+    { id: 3, name: 'c' },
+  ];
+  const getCellTexts = (container: HTMLElement, colIndex = 1) =>
+    Array.from(container.querySelectorAll('tbody tr')).map(
+      (tr) => tr.querySelectorAll('td')[colIndex].textContent,
+    );
+
+  // 模拟业务写法：columns 每次渲染都经 map 生成新对象，但 render 引用不变
+  const createDemo = (rowMemo: boolean, renderCount: Record<number, number>) => {
+    const renderName = (d: TableRowData) => {
+      renderCount[d.id] = (renderCount[d.id] || 0) + 1;
+      return d.name;
+    };
+    const baseColumns: TableColumnItem[] = [{ title: 'Name', render: renderName }];
+    return () => {
+      const [value, setValue] = React.useState<TableRowData[]>([]);
+      const [data, setData] = React.useState(memoData);
+      return (
+        <div>
+          <button
+            type='button'
+            id='update-row'
+            onClick={() => setData((prev) => prev.map((d) => (d.id === 2 ? { ...d, name: 'b2' } : d)))}
+          />
+          <Table
+            keygen='id'
+            rowMemo={rowMemo}
+            data={data}
+            columns={baseColumns.map((c) => ({ ...c }))}
+            value={value}
+            onRowSelect={setValue}
+          />
+        </div>
+      );
+    };
+  };
+
+  test('should only re-render the changed row when rowMemo is set', () => {
+    const renderCount: Record<number, number> = {};
+    const Demo = createDemo(true, renderCount);
+    const { container } = render(<Demo />);
+    const before = { ...renderCount };
+    // 勾选第一行：只有第一行重新渲染
+    fireEvent.click(container.querySelectorAll('tbody tr')[0].querySelector('input')!);
+    expect(container.querySelectorAll('tbody tr')[0].querySelector(checkbox)).toHaveClass(wrapperChecked);
+    expect(renderCount[1]).toBeGreaterThan(before[1]);
+    expect(renderCount[2]).toBe(before[2]);
+    expect(renderCount[3]).toBe(before[3]);
+    // 不可变更新第二行数据：只有第二行重新渲染且内容更新
+    const before2 = { ...renderCount };
+    fireEvent.click(container.querySelector('#update-row')!);
+    expect(getCellTexts(container)).toEqual(['a', 'b2', 'c']);
+    expect(renderCount[2]).toBeGreaterThan(before2[2]);
+    expect(renderCount[1]).toBe(before2[1]);
+    expect(renderCount[3]).toBe(before2[3]);
+  });
+
+  test('should re-render all rows when rowMemo is not set', () => {
+    const renderCount: Record<number, number> = {};
+    const Demo = createDemo(false, renderCount);
+    const { container } = render(<Demo />);
+    const before = { ...renderCount };
+    fireEvent.click(container.querySelectorAll('tbody tr')[0].querySelector('input')!);
+    expect(renderCount[2]).toBeGreaterThan(before[2]);
+    expect(renderCount[3]).toBeGreaterThan(before[3]);
+  });
+
+  test('should update cells when render function changes with external state', () => {
+    const Demo = () => {
+      const [suffix, setSuffix] = React.useState('');
+      // 外部 state 通过 render 的依赖进入列定义，render 引用变化后所有行都会更新
+      const columns = React.useMemo<TableColumnItem[]>(
+        () => [{ title: 'Name', render: (d) => `${d.name}${suffix}` }],
+        [suffix],
+      );
+      return (
+        <div>
+          <button type='button' id='suffix' onClick={() => setSuffix('!')} />
+          <Table keygen='id' rowMemo data={memoData} columns={columns} />
+        </div>
+      );
+    };
+    const { container } = render(<Demo />);
+    fireEvent.click(container.querySelector('#suffix')!);
+    expect(getCellTexts(container, 0)).toEqual(['a!', 'b!', 'c!']);
+  });
+
+  test('should update cells when column object is mutated in place and passed in a new array', () => {
+    const Demo = () => {
+      const [, forceUpdate] = React.useState(0);
+      const colRef = React.useRef<TableColumnItem>({ title: 'Name', render: (d) => d.name });
+      return (
+        <div>
+          <button
+            type='button'
+            id='mutate'
+            onClick={() => {
+              // 原地修改列对象，再以新数组传入
+              colRef.current.render = (d) => `${d.name}?`;
+              forceUpdate((n) => n + 1);
+            }}
+          />
+          <Table keygen='id' rowMemo data={memoData} columns={[colRef.current]} />
+        </div>
+      );
+    };
+    const { container } = render(<Demo />);
+    expect(getCellTexts(container, 0)).toEqual(['a', 'b', 'c']);
+    fireEvent.click(container.querySelector('#mutate')!);
+    expect(getCellTexts(container, 0)).toEqual(['a?', 'b?', 'c?']);
+  });
+
+  test('should expand and collapse tree rows when rowMemo is set', () => {
+    const { container } = render(
+      <Table keygen={'id'} rowMemo columns={treeColumns} data={expandTreeData} />,
+    );
+    const tbody = container.querySelector('tbody')!;
+    const iconHtml = () => tbody.querySelectorAll('tr')[0].querySelector(expandIcon)!.innerHTML;
+    const collapsedIcon = iconHtml();
+    expect(tbody.querySelectorAll('tr').length).toBe(1);
+    fireEvent.click(tbody.querySelectorAll('tr')[0].querySelector(expandIcon)!);
+    expect(tbody.querySelectorAll('tr').length).toBe(2);
+    // 父行数据与列都未变化，展开图标也必须随展开状态更新
+    expect(iconHtml()).not.toBe(collapsedIcon);
+    fireEvent.click(tbody.querySelectorAll('tr')[0].querySelector(expandIcon)!);
+    expect(tbody.querySelectorAll('tr').length).toBe(1);
+    expect(iconHtml()).toBe(collapsedIcon);
+  });
+});
+
 // TODO: 有sticky特性的用例跑不起来？
 describe('Table[showBottomScrollbar]', () => {});
 // sticky

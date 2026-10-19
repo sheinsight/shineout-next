@@ -114,6 +114,7 @@ export default (props: TbodyProps) => {
         virtual={props.virtual}
         scrolling={props.scrolling}
         strictRowHeight={props.strictRowHeight}
+        rowMemo={props.rowMemo}
         bodyRowSemClass={props.bodyRowSemClass}
         bodyRowSemStyle={props.bodyRowSemStyle}
         bodyCellSemClass={props.bodyCellSemClass}
