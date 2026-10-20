@@ -1925,6 +1925,50 @@ describe('Table[rowMemo]', () => {
     expect(tbody.querySelectorAll('tr').length).toBe(1);
     expect(iconHtml()).toBe(collapsedIcon);
   });
+
+  describe('loader', () => {
+    interface LoaderRow {
+      id: string;
+      title: string;
+      children?: LoaderRow[];
+    }
+    const loaderColumns: TYPE.Table.ColumnItem<LoaderRow>[] = [
+      { title: 'Title', render: 'title', treeColumnsName: 'children' },
+    ];
+    const Demo = (props: { loader: (row: LoaderRow, index: number) => any }) => {
+      const [data, setData] = React.useState<LoaderRow[]>([{ id: '1', title: 'parent' }]);
+      const loader = (row: LoaderRow, index: number) => {
+        const res = props.loader(row, index);
+        return Promise.resolve(res).then(() => {
+          setData([{ ...row, children: [{ id: '1-1', title: 'child' }] }]);
+        });
+      };
+      return <Table keygen='id' columns={loaderColumns} data={data} loader={loader} />;
+    };
+    const getIcon = (container: HTMLElement) =>
+      container.querySelector('tbody tr')!.querySelector(expandIcon)!;
+    const rowCount = (container: HTMLElement) => container.querySelectorAll('tbody tr').length;
+
+    test('should show loading, call loader and expand after resolved', async () => {
+      let resolve: () => void = () => {};
+      const loader = jest.fn(
+        () =>
+          new Promise<void>((r) => {
+            resolve = r;
+          }),
+      );
+      const { container } = render(<Demo loader={loader} />);
+      const idleIcon = getIcon(container).innerHTML;
+      fireEvent.click(getIcon(container));
+      expect(loader).toHaveBeenCalledTimes(1);
+      expect(loader).toHaveBeenCalledWith(expect.objectContaining({ id: '1' }), 0);
+      // 加载中显示 loading 图标
+      await waitFor(() => expect(getIcon(container).innerHTML).not.toBe(idleIcon));
+      resolve();
+      await waitFor(() => expect(rowCount(container)).toBe(2));
+      expect(getIcon(container).querySelector('svg')).toBeInTheDocument();
+    });
+  });
 });
 
 // TODO: 有sticky特性的用例跑不起来？

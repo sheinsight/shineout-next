@@ -156,19 +156,23 @@ const Tr = (props: TrProps) => {
 
   const [isExpandLoading, setIsExpandLoading] = useState(false);
 
-  const innerExpandClick = usePersistFn(async (showLoader?: boolean) => {
-    if (showLoader && props.loader && typeof props.loader === 'function') {
+  // 不使用 async 函数：编译产物会在每次渲染时为每一行创建 regenerator 状态机，大数据量下开销可观
+  const innerExpandClick = usePersistFn((showLoader?: boolean) => {
+    const { loader } = props;
+    if (showLoader && loader && typeof loader === 'function') {
       setIsExpandLoading(true);
-
-      try {
-        await props.loader(props.rawData, props.rowIndex);
-        treeFunc.handleTreeExpand(props.rawData, props.rowIndex);
-      } finally {
-        setIsExpandLoading(false);
-      }
-    } else {
-      treeFunc.handleTreeExpand(props.rawData, props.rowIndex);
+      // new Promise 包裹：loader 同步抛错或返回非 Promise 时，与原 await 写法行为一致
+      return new Promise((resolve) => {
+        resolve(loader(props.rawData, props.rowIndex));
+      })
+        .then(() => {
+          treeFunc.handleTreeExpand(props.rawData, props.rowIndex);
+        })
+        .finally(() => {
+          setIsExpandLoading(false);
+        });
     }
+    treeFunc.handleTreeExpand(props.rawData, props.rowIndex);
   });
 
   const renderTreeExpand = (content: React.ReactNode, treeIndent: number = 22) => {
