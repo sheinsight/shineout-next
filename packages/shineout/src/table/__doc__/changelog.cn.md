@@ -1,3 +1,8 @@
+## 3.10.3-beta.5
+2026-10-21
+### 🚀 Performance
+- 进一步优化 `Table` 开启 `rowMemo` 及树形数据场景下的渲染性能，减少整表行的重复渲染 ([#1804](https://github.com/sheinsight/shineout-next/pull/1804))
+
 ## 3.10.3-beta.4
 2026-10-19
 ### 🚀 Performance
