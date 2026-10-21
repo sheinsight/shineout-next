@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, fireEvent, render, waitFor } from '@testing-library/react';
+import { act, cleanup, fireEvent, render, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Table, Button, TYPE, Form, Input } from 'shineout';
 
@@ -1755,9 +1755,12 @@ describe('Table[Foot]', () => {
       />,
     );
     const staticStyle = 'width: 100px; border-spacing: 0; table-layout: fixed;';
+    // 表体 table 上声明固定列偏移变量，jsdom 下未出现横向滚动，不吸附
+    const leftVars = '--soui-table-fixed-left-0: auto; --soui-table-fixed-left-1: auto;';
     const tables = container.querySelectorAll('table');
     tables.forEach((item, index) => {
-      if (index === 1) styleTest(item, `${staticStyle} transform: translate3d(0, 0px, 0);`);
+      if (index === 1)
+        styleTest(item, `${staticStyle} ${leftVars} transform: translate3d(0, 0px, 0);`);
       else styleTest(item, staticStyle);
     });
     rerender(
@@ -1772,8 +1775,14 @@ describe('Table[Foot]', () => {
         width={100}
       />,
     );
+    // 更新 style 时新增的变量追加在末尾
+    const rightVars = '--soui-table-fixed-right-3: auto;';
     tables.forEach((item, index) => {
-      if (index === 1) styleTest(item, `${staticStyle} transform: translate3d(0, 0px, 0);`);
+      if (index === 1)
+        styleTest(
+          item,
+          `${staticStyle} transform: translate3d(0, 0px, 0); ${rightVars}`,
+        );
       else styleTest(item, staticStyle);
     });
   });
@@ -1968,6 +1977,89 @@ describe('Table[rowMemo]', () => {
       await waitFor(() => expect(rowCount(container)).toBe(2));
       expect(getIcon(container).querySelector('svg')).toBeInTheDocument();
     });
+  });
+});
+
+describe('Table[mount render]', () => {
+  const mountData = Array.from({ length: 5 }).map((_, i) => ({ id: i, name: `n${i}` }));
+
+  test('should render each row only once on mount with rowMemo', () => {
+    let count = 0;
+    const mountColumns: TableColumnItem[] = [
+      { title: 'id', render: 'id', fixed: 'left', width: 100 },
+      {
+        title: 'name',
+        render: (d: TableRowData) => {
+          count += 1;
+          return d.name;
+        },
+        width: 300,
+      },
+      { title: 'op', render: 'id', fixed: 'right', width: 100 },
+    ];
+    render(<Table keygen='id' columns={mountColumns} data={mountData} width={1000} rowMemo />);
+    expect(count).toBe(mountData.length);
+  });
+
+  // rowMemo 下 Tbody 做了 memo，非受控勾选时 Table 的 props 不变，依赖 datum 引用变化刷新行
+  test('should refresh uncontrolled selection with rowMemo', () => {
+    const { container } = render(
+      <Table
+        keygen='id'
+        columns={[{ title: 'name', render: 'name' }]}
+        data={mountData}
+        onRowSelect={() => {}}
+        rowMemo
+      />,
+    );
+    const getInputs = () =>
+      container.querySelectorAll('tbody input[type="checkbox"]') as NodeListOf<HTMLInputElement>;
+    fireEvent.click(getInputs()[0]);
+    expect(getInputs()[0].checked).toBe(true);
+    expect(getInputs()[1].checked).toBe(false);
+  });
+
+  test('fixed cells should reference offset variables declared on body table', () => {
+    const lrColumns: TableColumnItem[] = [
+      { title: 'id', render: 'id', fixed: 'left', width: 100 },
+      { title: 'name', render: 'name', width: 300 },
+      { title: 'op', render: 'id', fixed: 'right', width: 100 },
+    ];
+    const { container } = render(
+      <Table keygen='id' columns={lrColumns} data={mountData} width={1000} />,
+    );
+    // jsdom 不解析 left/right: var(...)，偏移值在浏览器中验证。
+    // 左右固定列都需要内联 sticky，样式中 td 的 position: relative 优先级高于 cellFixedRight 类名
+    const tds = container.querySelectorAll('tbody tr:first-child td') as NodeListOf<HTMLElement>;
+    expect(tds[0].style.position).toBe('sticky');
+    expect(tds[tds.length - 1].style.position).toBe('sticky');
+    const bodyTable = container.querySelector('tbody')!.closest('table')!;
+    expect(bodyTable.style.getPropertyValue('--soui-table-fixed-left-0')).toBe('auto');
+    expect(bodyTable.style.getPropertyValue('--soui-table-fixed-right-3')).toBe('auto');
+  });
+
+  // 未开启 rowMemo 时父组件重渲染需要刷新行：列 render 可能读取外部状态，或 data 被原地修改
+  test('should refresh rows when parent re-renders with same columns and data', () => {
+    const external = { suffix: 'A' };
+    const data = [{ id: 1, name: 'n1' }];
+    const refreshColumns: TableColumnItem[] = [
+      { title: 'name', render: (d: TableRowData) => `${d.name}-${external.suffix}` },
+    ];
+    let forceUpdate = () => {};
+    const App = () => {
+      const [, setTick] = React.useState(0);
+      forceUpdate = () => setTick((t) => t + 1);
+      return <Table keygen='id' data={data} columns={refreshColumns} />;
+    };
+    const { container } = render(<App />);
+    const getText = () => container.querySelector('tbody td')!.textContent;
+    expect(getText()).toBe('n1-A');
+    external.suffix = 'B';
+    act(() => forceUpdate());
+    expect(getText()).toBe('n1-B');
+    data[0].name = 'n2';
+    act(() => forceUpdate());
+    expect(getText()).toBe('n2-B');
   });
 });
 

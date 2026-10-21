@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>Table 改动前后对比</title>
+    <style>
+      :root {
+        --fg: #1f2329;
+        --muted: #646a73;
+        --line: #dee0e3;
+        --bg-soft: #f5f6f7;
+        --good: #1f7a3a;
+        --bad: #c0392b;
+        --warn-bg: #fff4e5;
+      }
+      body {
+        margin: 0;
+        padding: 20px 24px 40px;
+        color: var(--fg);
+        background: #fff;
+        font: 14px/1.6 -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      }
+      h1 {
+        font-size: 20px;
+        margin: 0 0 4px;
+      }
+      h2 {
+        font-size: 16px;
+        margin: 24px 0 8px;
+      }
+      p.desc {
+        color: var(--muted);
+        margin: 0 0 16px;
+        max-width: 960px;
+      }
+      .meta,
+      .warn {
+        padding: 8px 12px;
+        border-radius: 6px;
+        background: var(--bg-soft);
+        margin-bottom: 8px;
+        font-size: 13px;
+      }
+      .warn {
+        background: var(--warn-bg);
+        color: #8a4b00;
+      }
+      .form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 24px;
+        align-items: center;
+        margin: 12px 0;
+      }
+      .form fieldset {
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 4px 12px 8px;
+        margin: 0;
+      }
+      .form legend {
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .form input[type='number'] {
+        width: 56px;
+      }
+      button.primary {
+        padding: 6px 18px;
+        font: inherit;
+        cursor: pointer;
+      }
+      #progress {
+        color: var(--muted);
+      }
+      .table-box {
+        overflow-x: auto;
+      }
+      table.result {
+        border-collapse: collapse;
+        font-size: 13px;
+        min-width: 720px;
+      }
+      table.result th,
+      table.result td {
+        border: 1px solid var(--line);
+        padding: 4px 10px;
+        text-align: right;
+        white-space: nowrap;
+      }
+      table.result th:first-child,
+      table.result td:first-child,
+      table.result td.metric {
+        text-align: left;
+      }
+      table.result thead th {
+        background: var(--bg-soft);
+      }
+      .good {
+        color: var(--good);
+        font-weight: 600;
+      }
+      .bad {
+        color: var(--bad);
+        font-weight: 600;
+      }
+      textarea {
+        width: 100%;
+        min-height: 160px;
+        font: 12px/1.5 Menlo, Consolas, monospace;
+        box-sizing: border-box;
+      }
+      .frame-box {
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        overflow: auto;
+        margin-top: 16px;
+      }
+      .frame-box iframe {
+        display: block;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Table 改动前后对比</h1>
+    <p class="desc">
+      同一份测试代码分别加载「基线」和「改动后」两个生产模式 UMD 产物，每个配置在独立 iframe 中多次挂载，测量挂载耗时、render 次数，以及容器宽度变化后的重渲染。
+      多轮执行、每轮轮换先后顺序，取中位数。测试期间保持页面在前台。
+    </p>
+    <div id="meta"></div>
+
+    <div class="form">
+      <fieldset>
+        <legend>行数</legend>
+        <label><input type="checkbox" name="rows" value="100" /> 100</label>
+        <label><input type="checkbox" name="rows" value="500" checked /> 500</label>
+        <label><input type="checkbox" name="rows" value="1000" /> 1000</label>
+      </fieldset>
+      <fieldset>
+        <legend>渲染模式</legend>
+        <label><input type="checkbox" name="mode" value="normal" checked /> 普通</label>
+        <label><input type="checkbox" name="mode" value="stickyCss" /> sticky（css）</label>
+        <label><input type="checkbox" name="mode" value="stickyJs" /> sticky（js）</label>
+        <label><input type="checkbox" name="mode" value="virtual" /> 虚拟列表</label>
+      </fieldset>
+      <fieldset>
+        <legend>配置（每项单独成一组）</legend>
+        <label><input type="checkbox" name="variant" value="" checked /> 默认</label>
+        <label><input type="checkbox" name="variant" value="noScrollX" /> 无横向滚动</label>
+        <label><input type="checkbox" name="variant" value="summary" /> 合计行</label>
+        <label><input type="checkbox" name="variant" value="memo" /> rowMemo</label>
+        <label><input type="checkbox" name="variant" value="expand" /> 展开列</label>
+      </fieldset>
+      <fieldset>
+        <legend>次数</legend>
+        <label>每轮 <input id="iter" type="number" value="10" min="1" /></label>
+        <label>预热 <input id="warmup" type="number" value="2" min="0" /></label>
+        <label>轮数 <input id="rounds" type="number" value="3" min="1" /></label>
+      </fieldset>
+      <button id="start" class="primary">开始自动测试</button>
+      <span id="progress"></span>
+    </div>
+    <div>手动对比（新标签页打开，自己点击「重新挂载」「改变容器宽度」）：<span id="manual-links"></span></div>
+
+    <h2>结果</h2>
+    <div id="result-warn"></div>
+    <div class="table-box" id="result">尚未运行</div>
+    <h2>Markdown</h2>
+    <textarea id="markdown" readonly></textarea>
+
+    <div class="frame-box" id="frame-box"></div>
+
+    <script src="vendor/meta.js"></script>
+    <script src="runner.js"></script>
+  </body>
+</html>

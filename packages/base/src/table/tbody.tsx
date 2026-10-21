@@ -3,8 +3,18 @@ import { useTableRow, useTableExpand, util, useComponentMemo } from '@sheinx/hoo
 import Tr from './tr';
 import { TbodyProps } from './tbody.type';
 
-export default (props: TbodyProps) => {
+const hasExpandColumn = (props: TbodyProps) =>
+  !!props.expandHideCol ||
+  (props.columns || []).some((col) => col.type === 'expand' || col.type === 'row-expand');
+
+// bodyScrollWidth / resizeFlag 在行内只用于虚拟列表上报行高；
+// 展开行渲染时会读取容器宽度下发给嵌套表格，有展开列时也需要随之重渲染。
+// 其余场景不再下发，Table 布局状态变化时 Tbody / Tr 都可以跳过渲染
+const needLayoutProps = (props: TbodyProps) => !!props.virtual || hasExpandColumn(props);
+
+const Tbody = (props: TbodyProps) => {
   const { columns = [], currentRowIndex = 0, currentColIndex, hover = true } = props;
+  const passLayout = needLayoutProps(props);
   const { isRowExpand, handleExpandClick } = useTableExpand({
     columns: props.columns,
     expandKeys: props.expandKeys,
@@ -73,11 +83,9 @@ export default (props: TbodyProps) => {
         originKey={originKey}
         row={rowData[index]}
         columns={columns}
-        isScrollX={props.isScrollX}
         jssStyle={props.jssStyle}
         tableClasses={tableClasses}
         preventClasses={preventClasses}
-        colgroup={props.colgroup}
         rowClassName={props.rowClassName}
         rawData={item}
         rowIndex={rowIndex}
@@ -106,9 +114,9 @@ export default (props: TbodyProps) => {
         onRowClick={props.onRowClick}
         rowEvents={props.rowEvents}
         disabled={props.datum.disabledCheck(item)}
-        bodyScrollWidth={props.bodyScrollWidth}
+        bodyScrollWidth={passLayout ? props.bodyScrollWidth : undefined}
         scrollRef={props.scrollRef}
-        resizeFlag={props.resizeFlag}
+        resizeFlag={passLayout ? props.resizeFlag : undefined}
         treeCheckAll={props.treeCheckAll}
         onCellClick={props.onCellClick}
         virtual={props.virtual}
@@ -124,19 +132,37 @@ export default (props: TbodyProps) => {
   };
   const $tbody = <tbody>{(props.data || []).map((item, index) => renderRow(item, index))}</tbody>;
 
-  if (props.virtual === 'lazy') {
-    return useComponentMemo(
-      () => $tbody,
-      [currentRowIndex, currentColIndex, props.data],
-      (prev: any, next: any) => {
-        return (
-          prev.some((_: any, index: number) => {
-            return !util.shallowEqual(prev?.[index], next?.[index]);
-          }) || !props.scrolling
-        );
-      },
-    );
-  }
-
-  return $tbody;
+  // 未传 shouldUpdate 时直接返回最新结果，非 lazy 模式下行为与不做缓存一致
+  return useComponentMemo(
+    () => $tbody,
+    [currentRowIndex, currentColIndex, props.data],
+    props.virtual === 'lazy'
+      ? (prev: any, next: any) => {
+          return (
+            prev.some((_: any, index: number) => {
+              return !util.shallowEqual(prev?.[index], next?.[index]);
+            }) || !props.scrolling
+          );
+        }
+      : undefined,
+  );
 };
+
+// 语义化样式每次渲染都会生成新对象，按内容比较
+const SEM_STYLE_KEYS = ['bodyRowSemStyle', 'bodyCellSemStyle'];
+const LAYOUT_KEYS = ['bodyScrollWidth', 'resizeFlag'];
+
+// 仅在开启 rowMemo 时生效，未开启时始终返回 false，行为与不做 memo 完全一致。
+// rowMemo 下 Tbody 的 props 不变时，下发给每一行的 props 也不变，行本来就会被 Tr 的 memo 跳过；
+// 在 Tbody 这层直接跳过，省去 Table 自身布局状态（列宽测量、横向滚动、滚动阴影等）变化时逐行生成元素和比较 props 的开销
+const isTbodyPropsEqual = (prev: TbodyProps, next: TbodyProps) => {
+  if (!prev.rowMemo || !next.rowMemo) return false;
+  const skip = needLayoutProps(next) ? SEM_STYLE_KEYS : [...SEM_STYLE_KEYS, ...LAYOUT_KEYS];
+  return (
+    util.shallowEqual(prev, next, { skip }) &&
+    util.shallowEqual(prev.bodyRowSemStyle, next.bodyRowSemStyle) &&
+    util.shallowEqual(prev.bodyCellSemStyle, next.bodyCellSemStyle)
+  );
+};
+
+export default React.memo(Tbody, isTbodyPropsEqual);

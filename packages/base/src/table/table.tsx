@@ -32,6 +32,7 @@ import Thead from './thead';
 import Tbody from './tbody';
 import Tfoot from './tfoot';
 import TbodyEmpty from './tbody-empty';
+import { getFixedVarsStyle } from './fixed-style';
 import { useSemantic } from '../common';
 
 const { devUseWarning } = util;
@@ -396,6 +397,11 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
     } as React.CSSProperties),
     [width],
   );
+  // 表体所在的 table 额外声明固定列偏移的 CSS 变量，单元格只引用变量
+  const bodyTableStyle = useMemo(
+    () => ({ ...tableStyle, ...getFixedVarsStyle(columns, colgroup, isScrollX) } as React.CSSProperties),
+    [tableStyle, columns, colgroup, isScrollX],
+  );
   const renderTable = () => {
     const Group = (
       <Colgroup colgroup={colgroup} columns={columns} shouldLastColAuto={!!shouldLastColAuto} />
@@ -411,8 +417,6 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       data: treeData,
       treeExpandLevel: treeExpandLevel,
       treeFunc: treeFunc,
-      colgroup: colgroup,
-      isScrollX: isScrollX,
       expandHideCol: expandHideCol,
       keygen: props.keygen,
       rowClassName: props.rowClassName,
@@ -623,7 +627,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
 
               {!!props.data?.length && (
                 <table
-                  style={{ ...tableStyle, transform: virtualInfo.translateStyle }}
+                  style={{ ...bodyTableStyle, transform: virtualInfo.translateStyle }}
                   ref={tbodyRef}
                 >
                   {Group}
@@ -657,7 +661,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
             {showStickyHeader && <StickyWrapper {...stickyProps}>{$headTable}</StickyWrapper>}
 
             <div ref={scrollRef} className={tableClasses?.bodyWrapper} onScroll={handleBodyScroll}>
-              <table style={tableStyle} ref={tbodyRef}>
+              <table style={bodyTableStyle} ref={tbodyRef}>
                 {Group}
                 <Tbody {...bodyCommonProps} />
                 {showFoot && <Tfoot {...footCommonProps} />}
@@ -696,7 +700,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
             {/* tbody of virtual */}
             {!!props.data?.length && (
               <table
-                style={{ ...tableStyle, transform: virtualInfo.translateStyle }}
+                style={{ ...bodyTableStyle, transform: virtualInfo.translateStyle }}
                 ref={tbodyRef}
               >
                 {Group}
@@ -736,7 +740,7 @@ export default function Table<Item, Value>(props: TableProps<Item, Value>) {
       <>
         {renderHeadMirrorScroller()}
         <div ref={scrollRef} className={tableClasses?.bodyWrapper} onScroll={handleBodyScroll}>
-          <table style={{ ...tableStyle }} ref={tbodyRef}>
+          <table style={bodyTableStyle} ref={tbodyRef}>
             {Group}
             {!props.hideHeader && <Thead {...headCommonProps} />}
             {bodyCommonProps.data.length === 0 ? (
