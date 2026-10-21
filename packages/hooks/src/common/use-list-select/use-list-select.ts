@@ -39,7 +39,8 @@ const useListSelect = <DataItem, Value>(props: UseListProps<DataItem, Value>) =>
   });
 
   // TODO: Object.values(props) 作为 deps 是反模式。精确依赖应为 [datum, multiple]。
-  // 待 Tbody/Tr 加 React.memo 后一起改。
+  // 注意：Table 开启 rowMemo 时 Tbody 会做 memo，非受控勾选时行的勾选状态只能靠 result 引用变化刷新，
+  // 收窄 deps 前需要先给 Tbody 提供其他刷新依据（见 use-list-select-multiple）。
   const result = useMemo(() => {
     if (!multiple) {
       return {

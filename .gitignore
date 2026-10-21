@@ -22,3 +22,4 @@ docs/theme-migration/output/
 
 # Table 2.x vs 3.x 性能对比：prepare.js 复制进来的构建产物
 benchmark/table-v2-vs-v3/vendor/
+benchmark/table-mount-ab/vendor/

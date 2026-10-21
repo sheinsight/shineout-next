@@ -301,7 +301,8 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
 
   // TODO: Object.values(props) 作为 deps 是反模式，value/prediction 等变化都会使 datum 引用失效。
   // 精确依赖应为 [props.data]（方法均为 usePersistFn，引用稳定）。
-  // 待 Tbody/Tr 加 React.memo 后一起改，届时 datum 引用稳定才能真正减少 re-render。
+  // 注意：Table 开启 rowMemo 时 Tbody 会做 memo，非受控勾选时 Table 的 props 不变，
+  // 行的勾选状态只能靠 datum 引用变化刷新。收窄 deps 前需要先给 Tbody 提供其他刷新依据（如 value）。
   const func = useMemo(() => {
     return {
       add,

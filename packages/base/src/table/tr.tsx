@@ -11,8 +11,8 @@ import Td from './td';
 import { TbodyProps, UseTableRowResult } from './tbody.type';
 import type { TableClasses } from './table.type';
 import { useConfig } from '../config';
+import { getCellFixedStyle } from './fixed-style';
 
-const { toNum } = util;
 interface TrProps
   extends Pick<
     TbodyProps,
@@ -48,8 +48,6 @@ interface TrProps
   }[];
   rowIndex: number;
   columns: TableFormatColumn<any>[];
-  isScrollX: boolean;
-  colgroup: (number | string | undefined)[];
   rawData: any;
   expanded: boolean;
   expandCol: TbodyProps['expandHideCol'] | undefined;
@@ -80,28 +78,15 @@ const Tr = (props: TrProps) => {
   const config = useConfig();
   const isRtl = config.direction === 'rtl';
 
-  const getFixedStyle = (fixed: 'left' | 'right' | undefined, index: number, colSpan: number) => {
-    if (!props.isScrollX) return;
-    if (fixed === 'left') {
-      const left = props.colgroup.slice(0, index).reduce((a, b) => toNum(a) + toNum(b), 0);
-      return {
-        position: 'sticky',
-        [isRtl ? 'right' : 'left']: left,
-      } as React.CSSProperties;
-    }
-    if (fixed === 'right') {
-      const right = props.colgroup.slice(index + colSpan).reduce((a, b) => toNum(a) + toNum(b), 0);
-
-      return {
-        position: 'sticky',
-        [isRtl ? 'left' : 'right']: right,
-      } as React.CSSProperties;
-    }
-    return undefined;
-  };
   const getTdStyle = (column: TableFormatColumn<any>, colSpan: number) => {
-    const index = column.index;
-    const fixedStyle = getFixedStyle(column.fixed, index, colSpan);
+    // 固定列偏移引用 table 上的 CSS 变量，列宽/横向滚动状态变化时行无需重渲染
+    const fixedStyle = getCellFixedStyle(
+      column.fixed,
+      column.index,
+      colSpan,
+      props.columns.length,
+      isRtl,
+    );
     if (!fixedStyle && !column.style) return;
     return {
       ...column.style,
@@ -156,19 +141,23 @@ const Tr = (props: TrProps) => {
 
   const [isExpandLoading, setIsExpandLoading] = useState(false);
 
-  const innerExpandClick = usePersistFn(async (showLoader?: boolean) => {
-    if (showLoader && props.loader && typeof props.loader === 'function') {
+  // 不使用 async 函数：编译产物会在每次渲染时为每一行创建 regenerator 状态机，大数据量下开销可观
+  const innerExpandClick = usePersistFn((showLoader?: boolean) => {
+    const { loader } = props;
+    if (showLoader && loader && typeof loader === 'function') {
       setIsExpandLoading(true);
-
-      try {
-        await props.loader(props.rawData, props.rowIndex);
-        treeFunc.handleTreeExpand(props.rawData, props.rowIndex);
-      } finally {
-        setIsExpandLoading(false);
-      }
-    } else {
-      treeFunc.handleTreeExpand(props.rawData, props.rowIndex);
+      // new Promise 包裹：loader 同步抛错或返回非 Promise 时，与原 await 写法行为一致
+      return new Promise((resolve) => {
+        resolve(loader(props.rawData, props.rowIndex));
+      })
+        .then(() => {
+          treeFunc.handleTreeExpand(props.rawData, props.rowIndex);
+        })
+        .finally(() => {
+          setIsExpandLoading(false);
+        });
     }
+    treeFunc.handleTreeExpand(props.rawData, props.rowIndex);
   });
 
   const renderTreeExpand = (content: React.ReactNode, treeIndent: number = 22) => {
