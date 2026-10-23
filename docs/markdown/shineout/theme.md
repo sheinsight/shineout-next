@@ -254,3 +254,51 @@ setToken({
   }
 })
 ```
+
+## 暗黑主题
+
+组件库内置了一套暗黑主题 token，通过 `DarkTokens` 导出，配合 `setToken` 即可一键切换。`DarkTokens` 只包含暗色下需要覆盖的全局 token 和组件 token，未覆盖的 token 沿用默认值
+
+```js
+import { setToken, DarkTokens } from 'shineout'
+
+// 开启暗黑主题
+setToken({
+  selector: 'html',
+  token: DarkTokens,
+})
+
+// 恢复默认的浅色主题：不传 token 时会重新注入全量的默认全局 token
+setToken({
+  selector: 'html',
+})
+```
+
+`selector` 指定为 `html` 时会替换组件库初始化时注入在 `html` 上的默认 token，也可以指定为其他选择器，只让页面的局部区域使用暗黑主题
+
+```js
+setToken({
+  selector: '.dark-area',
+  token: DarkTokens,
+})
+```
+
+局部使用时，弹出层默认挂载在 body 下，不在 `.dark-area` 范围内，需要通过组件的 `getPopupContainer` 属性将弹出层挂载到该区域内部才能同样应用暗黑主题
+
+如果需要在暗黑主题的基础上继续定制，将自定义 token 合并在 `DarkTokens` 之后
+
+```js
+setToken({
+  selector: 'html',
+  token: {
+    ...DarkTokens,
+    'Brand-6': '#9419fa',
+  },
+})
+```
+
+`DarkTokens` 只作用于 Shineout 组件，业务页面自身的背景色、文字色需要自行适配。推荐直接使用组件库的 css var，例如 `var(--soui-neutral-fill-1)`、`var(--soui-neutral-text-5)`，切换主题时会自动跟随。同时可以给根节点设置 `color-scheme: dark`，让浏览器原生的滚动条和表单控件也切换为暗色
+
+```js
+document.documentElement.style.setProperty('color-scheme', 'dark')
+```

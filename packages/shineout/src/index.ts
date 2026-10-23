@@ -59,7 +59,7 @@ export { config, setLocale, setIcons, icons } from '@sheinx/base';
 export { setConfig } from './config';
 export type { ConfigOption } from '@sheinx/base';
 export { setToken, useToken } from '@sheinx/theme';
-export { default as Tokens } from '@sheinx/theme';
+export { default as Tokens, DarkTokens } from '@sheinx/theme';
 export {
   JssProvider,
   SheetsRegistry,

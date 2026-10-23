@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import classnames from 'classnames';
-import { Tooltip, setToken } from 'shineout';
+import { Tooltip, setToken, DarkTokens } from 'shineout';
 import { CommonTokenMap } from '@sheinx/theme';
-import { dark, compact } from './theme';
+import { compact } from './theme';
 import useStyles from '../style';
 
 const FloatButton = () => {
@@ -38,7 +38,7 @@ const FloatButton = () => {
 
   const buildToken = (isDark: boolean, isCompact: boolean) => ({
     ...CommonTokenMap,
-    ...(isDark ? dark : {}),
+    ...(isDark ? DarkTokens : {}),
     ...(isCompact ? compact : {}),
   });
 
