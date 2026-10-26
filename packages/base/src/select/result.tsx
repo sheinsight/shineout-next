@@ -60,11 +60,14 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
 
   const [more, setMore] = useState(-1);
   const [shouldResetMore, setShouldResetMore] = useState(false);
+  const [measureKey, setMeasureKey] = useState(0);
   const render = useRender();
   const resultRef = useRef<HTMLDivElement>(null);
   const { current: context } = useRef({
     prevMore: more,
     maxMore: 0,
+    // 估算偏小、需要渲染全部结果重新测量时的结果数量；按数量比较，值变化后的首次渲染不会沿用旧结论
+    showAllLength: 0,
   });
   const removeLock = useRef(false);
   const showInput = allowOnFilter;
@@ -298,6 +301,17 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
 
   const result = renderMultipleResult.results as React.ReactNode[];
   const moreNumber = getCompressedBound();
+  // 测量折叠数量时只渲染容器可能放得下的数量（按每个 tag 至少 20px 估算），避免大量选中值时渲染全部 tag
+  const measureLimit = context.maxMore + 1;
+  const shouldLimitMeasure =
+    compressed &&
+    !isCompressedBound() &&
+    !renderResultContentProp &&
+    more === -1 &&
+    context.maxMore > 0 &&
+    isArray(result) &&
+    result.length > Math.max(measureLimit, context.showAllLength);
+  const moreData = shouldLimitMeasure ? result.slice(0, measureLimit) : result;
   const renderMultipleResultMore = (
     <More
       keygen={keygen}
@@ -305,7 +319,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       onRemove={onRemove}
       classes={props.classes}
       jssStyle={props.jssStyle}
-      data={result}
+      data={moreData}
       datas={renderMultipleResult.datas}
       size={size}
       compressed={compressed}
@@ -354,10 +368,12 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     const exceedsCapacity = valueLength && valueLength > context.maxMore;
     if (hasExistingCompression && hasValidEstimate && exceedsCapacity && typeof requestIdleCallback !== 'undefined') {
       requestIdleCallback(() => {
+        context.showAllLength = 0;
         setMore(-1);
         setShouldResetMore(true);
       });
     } else {
+      context.showAllLength = 0;
       if(!renderCompressed) setMore(-1);
       setShouldResetMore(true);
     }
@@ -441,11 +457,19 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     ) {
       const tagClassName = `.${styles.tag.split(' ')[0]}`;
       if (shouldResetMore && isArray(value) && (value || []).length) {
+        const restCount = shouldLimitMeasure ? result.length - moreData.length : 0;
         const newMore = getResetMore(
           showInput,
           resultRef.current,
           resultRef.current.querySelectorAll(tagClassName),
+          restCount,
         );
+        // 只渲染了部分 tag 且全部放得下，说明估算偏小，渲染全部后重新测量
+        if (newMore === -1 && restCount > 0) {
+          context.showAllLength = result.length;
+          setMeasureKey((k) => k + 1);
+          return;
+        }
         context.prevMore = newMore;
         setMore(newMore);
         setShouldResetMore(false);
@@ -455,7 +479,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     } else if (shouldResetMore) {
       setShouldResetMore(false);
     }
-  }, [shouldResetMore]);
+  }, [shouldResetMore, measureKey]);
 
   useEffect(() => {
     if (!resultRef.current) return;

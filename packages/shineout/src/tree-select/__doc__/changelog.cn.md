@@ -1,3 +1,8 @@
+## 3.10.3-beta.6
+2026-10-26
+### 🚀 Performance
+- 优化 `TreeSelect` 多选开启 `compressed` 且未设置 `compressedBound` 时，一次选中大量选项（如勾选包含数千个子节点的父节点）导致页面卡顿的问题 ([#1805](https://github.com/sheinsight/shineout-next/pull/1805))
+
 ## 3.10.0-beta.2
 2026-07-21
 ### 🐞 BugFix
