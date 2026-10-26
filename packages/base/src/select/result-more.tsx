@@ -8,6 +8,8 @@ export function getResetMore(
   onFilter: boolean,
   container: HTMLElement,
   doms: NodeListOf<HTMLElement>,
+  // 未渲染出来参与测量的 tag 数量，计算 +N 时要算上
+  restCount = 0,
 ) {
   if (!container || !doms || !doms.length) return -1;
   const items = Array.from(doms);
@@ -22,6 +24,7 @@ export function getResetMore(
   const hideElStyle = getComputedStyle(hideEl);
   const hideMargin =
     parsePxToNumber(hideElStyle.marginLeft) + parsePxToNumber(hideElStyle.marginRight);
+  const total = items.length + restCount;
 
   let num = 0;
   let sumWidth = 0;
@@ -41,7 +44,7 @@ export function getResetMore(
     for (let i = 0; i < itemWidthArr.length; i++) {
       const itemLen = itemWidthArr[i];
       // number length
-      const resetNum = items.length - 1 - i;
+      const resetNum = total - 1 - i;
       let moreWidth;
       if (resetNum <= 0) {
         moreWidth = 0;
@@ -57,7 +60,7 @@ export function getResetMore(
         break;
       }
       num += 1;
-      if (i === items.length - 1) {
+      if (i === total - 1) {
         // not show more
         num = -1;
       }
