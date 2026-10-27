@@ -597,18 +597,13 @@ const stepsStyle: JsStyles<StepsClassType> = {
   arrowIcon: {
     position: 'absolute',
     top: 0,
-    right: 0.25,
+    right: 0,
     bottom: 0,
-    transform: 'translateX(100%)',
+    // 1 倍屏下向左压进内容区 0.5px，盖住小数尺寸下亚像素对齐和抗锯齿产生的缝；2 倍屏误差小，偏移 0.25px
+    transform: 'translateX(calc(100% - 0.5px))',
     zIndex: 1,
     '@media (min-resolution: 2dppx)': {
-      right: 0,
-    },
-    '$withDescription &': {
-      transform: 'translateX(calc(100% - 0.5px))',
-      '@media (min-resolution: 2dppx)': {
-        transform: 'translateX(100%)',
-      },
+      transform: 'translateX(calc(100% - 0.25px))',
     },
     '& > svg':{
       display: 'block',
@@ -638,9 +633,12 @@ const stepsStyle: JsStyles<StepsClassType> = {
       display: 'none',
     },
     '$arrow[dir=rtl] &': {
-      left: '0.25px',
+      left: 0,
       right: 'auto',
-      transform: 'translateX(-100%)',
+      transform: 'translateX(calc(-100% + 0.5px))',
+      '@media (min-resolution: 2dppx)': {
+        transform: 'translateX(calc(-100% + 0.25px))',
+      },
       '& > svg': {
         transform: "rotate(180deg)",
       }
