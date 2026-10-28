@@ -1,24 +1,40 @@
 import { createUseStyles, JssProvider, SheetsRegistry, jss } from 'react-jss';
-import { JssStyle, GenerateId, Classes } from 'jss';
+import { JssStyle, GenerateId, Classes, Plugin } from 'jss';
 import handleStyle from './handleStyle';
 import version from '../version';
 
 export { JssProvider, SheetsRegistry, jss };
 export const prefix = 'soui';
 
-const config: {
+interface JssConfig {
   generateId?: GenerateId;
   styleAttributes?: Record<string, string>;
-} = {};
+  // 组件样式表挂载后常驻，不随最后一个使用者卸载而移除
+  keepStyleSheet?: boolean;
+}
 
-export const setJssConfig = (newConfig: {
-  generateId?: GenerateId;
-  styleAttributes?: Record<string, string>;
-}) => {
+const config: JssConfig = {};
+
+export const setJssConfig = (newConfig: JssConfig) => {
   Object.assign(config, newConfig);
 };
 
 export const getJssConfig = () => config;
+
+// react-jss 在样式表引用计数归零时会 detach，把 style 标签移出文档，下次挂载再插回
+// 每次插入/移除样式表都会让浏览器重新处理整套样式（Message、Modal.confirm 这类每次打开都新建 root 的组件尤其明显，拖慢 INP）
+// 开启 keepStyleSheet 后跳过 detach，类名带版本哈希，常驻不会影响其它元素
+const shineoutElements = new WeakSet<HTMLStyleElement>();
+const keepStyleSheetPlugin: Plugin = {
+  onProcessSheet: (sheet) => {
+    if (!sheet) return;
+    const element = (sheet.options as { element?: HTMLStyleElement }).element;
+    if (!element || !shineoutElements.has(element)) return;
+    const detach = sheet.detach.bind(sheet);
+    sheet.detach = () => (config.keepStyleSheet ? sheet : detach());
+  },
+};
+jss.use(keepStyleSheetPlugin);
 
 const stringToHash = (str: string) => {
   let hash = 0;
@@ -62,6 +78,7 @@ export type ClassStyle<K extends Record<string, any>> = {
 
 export const styled = <C extends string>(style: JsStyles<C>, ns: string) => {
   const styleElement = typeof window !== 'undefined' ? document.createElement('style') : undefined;
+  if (styleElement) shineoutElements.add(styleElement);
   const hoc = createUseStyles(handleStyle(style), { name: ns, generateId: createClassname, element: styleElement });
   const styledCacheMap: Record<string, any> = {};
 
