@@ -1085,6 +1085,13 @@ export interface ConfigOption {
    * @cn 弹出层组件（Popover.Confirm、Dropdown、DatePicker 等）是否支持 ESC 键关闭。仅在 trigger 为 'click' 时生效。
    */
   popupEsc?: boolean;
+  /**
+   * @en Whether to keep component style sheets in the document after all instances are unmounted. By default the style sheet is removed when the last instance unmounts and inserted again on the next mount, which makes the browser reprocess all styles. Enabling it reduces the INP of components that are frequently mounted and unmounted, such as Message and Modal.confirm.
+   * @cn 组件全部卸载后是否保留其样式表。默认最后一个实例卸载时会移除样式表，下次挂载重新插入，浏览器需要重新处理全部样式。开启后可降低 Message、Modal.confirm 等频繁挂载卸载组件的 INP。
+   * @default false
+   * @version 3.10.3
+   */
+  keepStyleSheet?: boolean;
 }
 
 const processEnv: Record<string, any> = typeof process !== 'undefined' ? process?.env : {};
@@ -1144,6 +1151,7 @@ export const defaultConfig: ConfigOption = {
   direction: 'ltr',
   popupContainer: null,
   popupEsc: true,
+  keepStyleSheet: false,
 };
 
 const state = create<ConfigOption>(defaultConfig);

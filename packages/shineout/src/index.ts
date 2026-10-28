@@ -55,7 +55,8 @@ export { default as TreeSelect } from './tree-select';
 export { default as Upload } from './upload';
 export { default as Watermark } from './watermark';
 
-export { setConfig, config, setLocale, setIcons, icons } from '@sheinx/base';
+export { config, setLocale, setIcons, icons } from '@sheinx/base';
+export { setConfig } from './config';
 export type { ConfigOption } from '@sheinx/base';
 export { setToken, useToken } from '@sheinx/theme';
 export { default as Tokens } from '@sheinx/theme';
@@ -70,4 +71,4 @@ export * from './deprecated';
 
 export * as TYPE from './type';
 
-export default { version: '3.10.3-beta.7' };
+export default { version: '3.10.3-beta.8' };

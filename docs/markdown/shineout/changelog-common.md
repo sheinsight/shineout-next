@@ -1,3 +1,9 @@
+## 3.10.3-beta.8
+2026-10-28
+
+### 🆕 Feature
+- 新增全局配置 `keepStyleSheet`，开启后组件样式在全部实例卸载后仍保留在页面中，并在开启时预先加载 `Message` 的样式，避免 `Message`、`Modal.confirm` 等频繁弹出的组件反复插入和移除样式，降低点击交互的 INP 耗时 ([#1808](https://github.com/sheinsight/shineout-next/pull/1808))
+
 ## 3.10.2-beta.9
 2026-09-24
 
