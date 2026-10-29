@@ -1,7 +1,10 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
+  "eslint.enable": false,
   "oxc.enable": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "never",
     "source.fixAll.oxc": "explicit"
   }
 }
