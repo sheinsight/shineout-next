@@ -90,7 +90,6 @@ export default () => {
         layout={layout}
         tableLayout={tableLayout}
         border={border}
-        labelStyle={}
       />
     </div>
   );

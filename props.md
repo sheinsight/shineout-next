@@ -15,7 +15,7 @@
 
 # 代码规范
 
-eslint
+oxlint
 typescript
 
 # 文档和打包

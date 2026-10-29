@@ -7,7 +7,7 @@
     "build": "echo build",
     "start": "next start",
     "clean": "rimraf dist",
-    "lint": "next lint"
+    "lint": "oxlint -c ../../.oxlintrc.json ."
   },
   "dependencies": {
     "@sheinx/mock": "workspace:*",
@@ -20,8 +20,6 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.1.2",
     "typescript": "^5.7.2"
   }
 }
