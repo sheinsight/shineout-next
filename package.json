@@ -26,7 +26,7 @@
     "prepare": "husky install",
     "doctor": "father doctor",
     "lint": "pnpm run lint:es",
-    "lint:es": "eslint \"packages/**/*.{js,jsx,ts,tsx}\"",
+    "lint:es": "oxlint packages",
     "prepublishOnly": "father doctor && npm run build",
     "test": "jest",
     "test:update": "jest -u",
@@ -59,11 +59,11 @@
       "prettier --write"
     ],
     "*.{js,jsx}": [
-      "eslint --fix",
+      "oxlint --fix",
       "prettier --write"
     ],
     "*.{ts,tsx}": [
-      "eslint --fix",
+      "oxlint --fix",
       "prettier --parser=typescript --write"
     ]
   },
@@ -110,7 +110,6 @@
     "@types/react": "18.3.1",
     "@types/react-dom": "18.3.1",
     "@types/react-syntax-highlighter": "^15.5.11",
-    "@umijs/lint": "^4.0.87",
     "axios": "^1.7.2",
     "babel-jest": "^29.5.0",
     "babel-loader": "^9.1.2",
@@ -120,7 +119,6 @@
     "css-loader": "^6.7.4",
     "cypress": "^13.1.0",
     "ejs": "^3.1.9",
-    "eslint": "^8.52.0",
     "father": "^4.4.0",
     "glob": "^10.2.5",
     "html-loader": "^4.2.0",
@@ -134,6 +132,7 @@
     "mini-css-extract-plugin": "^2.7.6",
     "minimist": "1.2.8",
     "multer": "1.4.5-lts.1",
+    "oxlint": "^1.90.0",
     "prettier": "^2.7.1",
     "prettier-plugin-organize-imports": "^3.0.0",
     "prettier-plugin-packagejson": "^2.2.18",

@@ -1,0 +1,166 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "typescript", "jest", "nextjs", "import", "jsx-a11y"],
+  "categories": {
+    "correctness": "off"
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2022": true,
+    "jest": true
+  },
+  "settings": {
+    "react": {
+      "version": "18.3.1"
+    }
+  },
+  "ignorePatterns": ["dist"],
+  "rules": {
+    "array-callback-return": "error",
+    "eqeqeq": "error",
+    "for-direction": "error",
+    "guard-for-in": "error",
+    "no-async-promise-executor": "error",
+    "no-case-declarations": "error",
+    "no-debugger": "error",
+    "no-delete-var": "error",
+    "no-dupe-else-if": "error",
+    "no-duplicate-case": "error",
+    "no-eval": "error",
+    "no-ex-assign": "error",
+    "no-global-assign": "error",
+    "no-invalid-regexp": "error",
+    "no-param-reassign": "error",
+    "no-promise-executor-return": "error",
+    "no-self-assign": "error",
+    "no-self-compare": "error",
+    "no-shadow-restricted-names": "error",
+    "no-sparse-arrays": "error",
+    "no-unsafe-finally": "error",
+    "no-unused-labels": "error",
+    "no-useless-catch": "error",
+    "no-useless-escape": "error",
+    "no-var": "error",
+    "no-with": "error",
+    "require-yield": "error",
+    "use-isnan": "error",
+    "react/button-has-type": "error",
+    "react/jsx-key": "error",
+    "react/jsx-no-comment-textnodes": "error",
+    "react/jsx-no-duplicate-props": "error",
+    "react/jsx-no-target-blank": "error",
+    "react/jsx-no-undef": "error",
+    "react/no-children-prop": "error",
+    "react/no-danger-with-children": "error",
+    "react/no-direct-mutation-state": "error",
+    "react/no-find-dom-node": "error",
+    "react/no-is-mounted": "error",
+    "react/no-string-refs": "error",
+    "react/no-render-return-value": "error",
+    "react/no-unescaped-entities": "error",
+    "react/no-unknown-property": "error",
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrors": "none"
+      }
+    ],
+    "react/rules-of-hooks": "error"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.{ts,tsx}"],
+      "rules": {
+        "no-dupe-class-members": "error",
+        "no-loop-func": "error",
+        "no-redeclare": "error",
+        "no-unused-expressions": "error",
+        "no-use-before-define": "error",
+        "no-useless-constructor": "error",
+        "typescript/ban-types": "error",
+        "typescript/no-confusing-non-null-assertion": "error",
+        "typescript/no-empty-interface": "error",
+        "typescript/no-misused-new": "error",
+        "typescript/no-namespace": "error",
+        "typescript/no-non-null-asserted-optional-chain": "error",
+        "typescript/no-this-alias": "error",
+        "typescript/triple-slash-reference": "error"
+      }
+    },
+    {
+      "files": ["**/*.{test,spec,unit,e2e}.{ts,tsx,js,jsx}"],
+      "rules": {
+        "jest/no-conditional-expect": "error",
+        "jest/no-deprecated-functions": "error",
+        "jest/no-export": "error",
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/no-interpolation-in-snapshots": "error",
+        "jest/no-jasmine-globals": "error",
+        "jest/no-mocks-import": "error",
+        "jest/no-standalone-expect": "error",
+        "jest/valid-describe-callback": "error",
+        "jest/valid-expect-in-promise": "error",
+        "jest/valid-expect": "error",
+        "jest/valid-title": "error"
+      }
+    },
+    {
+      "files": ["packages/ssr-test/**"],
+      "rules": {
+        "react/display-name": "error",
+        "react/jsx-key": "error",
+        "react/jsx-no-comment-textnodes": "error",
+        "react/jsx-no-duplicate-props": "error",
+        "react/jsx-no-undef": "error",
+        "react/no-children-prop": "error",
+        "react/no-danger-with-children": "error",
+        "react/no-direct-mutation-state": "error",
+        "react/no-find-dom-node": "error",
+        "react/no-is-mounted": "error",
+        "react/no-render-return-value": "error",
+        "react/no-string-refs": "error",
+        "react/no-unescaped-entities": "error",
+        "import/no-anonymous-default-export": "warn",
+        "jsx-a11y/alt-text": [
+          "warn",
+          {
+            "elements": ["img"],
+            "img": ["Image"]
+          }
+        ],
+        "jsx-a11y/aria-props": "warn",
+        "jsx-a11y/aria-proptypes": "warn",
+        "jsx-a11y/aria-unsupported-elements": "warn",
+        "jsx-a11y/role-has-required-aria-props": "warn",
+        "jsx-a11y/role-supports-aria-props": "warn",
+        "nextjs/google-font-display": "warn",
+        "nextjs/google-font-preconnect": "warn",
+        "nextjs/next-script-for-ga": "warn",
+        "nextjs/no-async-client-component": "warn",
+        "nextjs/no-before-interactive-script-outside-document": "warn",
+        "nextjs/no-css-tags": "warn",
+        "nextjs/no-head-element": "warn",
+        "nextjs/no-html-link-for-pages": "error",
+        "nextjs/no-img-element": "warn",
+        "nextjs/no-page-custom-font": "warn",
+        "nextjs/no-styled-jsx-in-document": "warn",
+        "nextjs/no-sync-scripts": "error",
+        "nextjs/no-title-in-document-head": "warn",
+        "nextjs/no-typos": "warn",
+        "nextjs/no-unwanted-polyfillio": "warn",
+        "nextjs/inline-script-id": "error",
+        "nextjs/no-assign-module-variable": "error",
+        "nextjs/no-document-import-in-page": "error",
+        "nextjs/no-duplicate-head": "error",
+        "nextjs/no-head-import-in-document": "error",
+        "nextjs/no-script-component-in-head": "error",
+        "react/rules-of-hooks": "error",
+        "react/exhaustive-deps": "warn"
+      }
+    }
+  ]
+}
