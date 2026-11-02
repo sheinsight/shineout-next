@@ -145,6 +145,9 @@ export default {
     {
       ...createTesterConfig('shineout'),
     },
+    {
+      ...createTesterConfig('theme'),
+    },
   ],
 
   // Use this configuration option to add custom reporters to Jest

@@ -78,7 +78,8 @@ const figma = [
   },
   {
     name: 'backgroundPopup',
-    value: '#FFFFFF',
+    value: 'Neutral-fill-1',
+    // value: 'var(--soui-neutral-fill-1)',
     describe: '浮层容器背景色',
     token: 'Background-popup',
     locked: false,

@@ -1,6 +1,7 @@
 import Token from '../../token/token';
 import { replaceNonAlphanumeric } from '../../utils/css-var';
 import { getConfig } from '../../config';
+import { resolveTokenAlias } from '../../utils/token-alias';
 import { useTokenProps, ColorToken, BaseToken } from './use-token.type';
 const { figma } = require('../../token/figma.js');
 
@@ -13,7 +14,8 @@ const useToken = (props?: useTokenProps) => {
 
   const colorToken: Partial<ColorToken> = {};
   unLockedToken.forEach((i: { name: keyof ColorToken; value: string; token: string }) => {
-    const k = `var(--${prefix}-${replaceNonAlphanumeric(i.token)},${i.value})`;
+    const value = resolveTokenAlias(i.value, (name) => (Token as unknown as { [key: string]: string })[name]);
+    const k = `var(--${prefix}-${replaceNonAlphanumeric(i.token)},${value})`;
     colorToken[i.name] = k;
   });
   if (tokenProps) {

@@ -14,7 +14,7 @@ const Token: Tokens = {
   'Brand-8': '#0040AD',
   'Brand-9': '#002D87',
   'Background-layout': '#F4F5F8',
-  'Background-popup': '#FFFFFF',
+  'Background-popup': 'Neutral-fill-1',
   'Cyan-1': '#e8fffb',
   'Cyan-10': '#00424d',
   'Cyan-2': '#b7f1e9',
