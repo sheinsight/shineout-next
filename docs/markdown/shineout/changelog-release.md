@@ -96,6 +96,7 @@
 ### 💅 Style
 - 优化 `Button.Group` 按钮之间分割线的样式，适配设计 token 配置 ([#1697](https://github.com/sheinsight/shineout-next/pull/1697))
 - 新增全局弹出层背景色 token，统一 `Select`、`Cascader`、`DatePicker`、`Dropdown`、`TreeSelect`、`Breadcrumb` 等组件的弹出面板背景色配置 ([#1698](https://github.com/sheinsight/shineout-next/pull/1698))
+- ⚠️ 注意：上述弹出面板背景色不再读取 `selectPanelBackgroundColor`、`cascaderPanelBackgroundColor`、`datePickerPanelBackgroundColor`、`treeSelectPanelBackgroundColor`、`dropdownListBackgroundColor`，统一读取全局 token `Background-popup`（`--soui-background-popup`），且默认值固定为 `#FFFFFF`。通过覆盖 `Neutral-fill-*` 或上述组件 token 实现暗黑主题的项目，升级后弹层会显示白底，需要在暗黑主题中补充设置 `Background-popup`；升级到 3.10.4 及以上版本后，未设置 `Background-popup` 时会回退到 `Neutral-fill-1`，仅覆盖 `Neutral-fill-*` 的暗黑主题无需修改
 - 修复多个组件（Alert、Cascader、Checkbox、DatePicker、Input、Menu、Radio、Textarea、Tree）图标大小未跟随字号联动的问题 ([#1682](https://github.com/sheinsight/shineout-next/pull/1682))
 - 优化多个组件（Tag、Tabs、Input、Modal、Progress）的 Design Token，支持主题编辑器配置更多样式细节 ([#1676](https://github.com/sheinsight/shineout-next/pull/1676))
 - 修复 `Dropdown` 分列模式列表和分割线的内边距 token 引用错误的问题 ([#1685](https://github.com/sheinsight/shineout-next/pull/1685))

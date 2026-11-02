@@ -1,3 +1,9 @@
+## 3.10.4-beta.1
+2026-11-02
+
+### 🐞 BugFix
+- 修复 3.9.13 起 `Select`、`Cascader`、`DatePicker`、`TreeSelect`、`Dropdown`、`Breadcrumb` 的弹出面板背景色改用全局 token `Background-popup`（默认写死为 `#FFFFFF`），导致仅通过覆盖 `Neutral-fill-*` 实现暗黑主题的项目弹层仍显示白底的问题（Regression since v3.9.13）。现在 `Background-popup` 未设置时会回退到 `Neutral-fill-1`，旧的暗黑主题无需修改即可恢复；需要单独定制弹层背景时，仍可设置 `Background-popup`
+
 ## 3.10.3-beta.8
 2026-10-28
 
@@ -83,6 +89,7 @@
 2026-04-17
 ### 💅 Style
 - 新增全局弹出层背景色 token，统一 `Select`、`Cascader`、`DatePicker`、`Dropdown`、`TreeSelect`、`Breadcrumb` 等组件的弹出面板背景色配置 ([#1698](https://github.com/sheinsight/shineout-next/pull/1698))
+- ⚠️ 注意：上述弹出面板背景色不再读取 `selectPanelBackgroundColor`、`cascaderPanelBackgroundColor`、`datePickerPanelBackgroundColor`、`treeSelectPanelBackgroundColor`、`dropdownListBackgroundColor`，统一读取全局 token `Background-popup`（`--soui-background-popup`），且默认值固定为 `#FFFFFF`。通过覆盖 `Neutral-fill-*` 或上述组件 token 实现暗黑主题的项目，升级后弹层会显示白底，需要在暗黑主题中补充设置 `Background-popup`（该 token 在 3.9.13 beta 阶段曾命名为 `Color-bg-popup`，正式版已改名）；3.10.4-beta.1 起未设置时会回退到 `Neutral-fill-1`
 
 
 ## 3.9.13-beta.4

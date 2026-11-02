@@ -38,7 +38,7 @@ export interface CommonTokens {
    * @type {string}
    * @categoty string
    * @default '#FFFFFF'
-   * @description 弹出层背景色
+   * @description 弹出层背景色，未设置 `Background-popup` 时跟随 `Neutral-fill-1`
    */
   backgroundPopup: string;
   /**
