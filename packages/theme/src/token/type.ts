@@ -78,8 +78,8 @@ export interface Tokens {
   'Background-layout': string;
   /**
    * @type {string}
-   * @categoty color
-   * @default '#FFFFFF'
+   * @categoty string
+   * @default 'Neutral-fill-1'
    * @description 浮层容器背景色
    */
   'Background-popup': string;

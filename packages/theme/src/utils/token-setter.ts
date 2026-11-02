@@ -4,6 +4,7 @@ import { ThemeTokens } from '../index';
 import { camelCaseToDash } from '../utils/css-var';
 import { getConfig } from '../config';
 import hash from './hash';
+import { resolveTokenAlias } from './token-alias';
 
 export type Tokens = BaseToken & ThemeTokens;
 export interface Attributes {
@@ -91,6 +92,11 @@ const replaceCssVarValue = (innerHTML: string, cssvar: string, targetValue?: str
   return innerHTML.replace(regex, `${cssvar}: ${targetValue};`);
 };
 
+const resolveValue = (value?: string) =>
+  typeof value === 'string'
+    ? resolveTokenAlias(value, (name) => (Token as unknown as { [key: string]: string })[name])
+    : value;
+
 const isCustomToken = (key: string) => {
   if (key.startsWith('--')) return true;
   return false;
@@ -143,7 +149,7 @@ const setToken = (options?: Options) => {
 
     Object.keys(token).forEach((key: string) => {
       const cssvar = isCustomToken(key) ? key : `--${prefix}-${camelCaseToDash(key)}`;
-      const targetValue = token[key as keyof Tokens];
+      const targetValue = resolveValue(token[key as keyof Tokens]);
       tag.innerHTML = replaceCssVarValue(tag.innerHTML, cssvar, targetValue);
     });
 
@@ -155,13 +161,13 @@ const setToken = (options?: Options) => {
       .filter((item) => (customExtraToken || ['Brand-6', 'Neutral-6']).includes(item))
       .forEach((key: string) => {
         const cssvar = isCustomToken(key) ? key : `--${prefix}-${camelCaseToDash(key)}`;
-        const token = `${cssvar}:${defaultToken[key as keyof Tokens]}`;
+        const token = `${cssvar}:${resolveValue(defaultToken[key as keyof Tokens])}`;
         tokens.push(token);
       });
   } else {
     Object.keys(defaultToken).forEach((key: string) => {
       const cssvar = isCustomToken(key) ? key : `--${prefix}-${camelCaseToDash(key)}`;
-      const token = `${cssvar}:${defaultToken[key as keyof Tokens]}`;
+      const token = `${cssvar}:${resolveValue(defaultToken[key as keyof Tokens])}`;
       tokens.push(token);
     });
   }

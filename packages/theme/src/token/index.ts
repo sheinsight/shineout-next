@@ -1,4 +1,5 @@
 import { cssvar } from '../utils/css-var';
+import { resolveTokenAlias } from '../utils/token-alias';
 
 const { figma, compile } = require('./figma.js');
 
@@ -33,7 +34,11 @@ export const tokenToVars = <T extends object>(
   Object.keys(componentToken).forEach((key) => {
     const Key = key as keyof T & string;
     const tokenKey = componentToken[Key] as keyof typeof TOKEN & string;
-    token[Key] = cssvar(tokenKey, TOKEN[tokenKey]?.value || tokenKey, key, SIZE);
+    const value = resolveTokenAlias(
+      TOKEN[tokenKey]?.value || tokenKey,
+      (name) => TOKEN[name]?.value,
+    );
+    token[Key] = cssvar(tokenKey, value, key, SIZE);
   });
 
   return token as T;
