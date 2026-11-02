@@ -1,3 +1,10 @@
+## 3.10.4-beta.2
+2026-11-02
+
+### 🐞 BugFix
+- 修复 `scopeNormalizeStyle` 对部分按钮类全局样式未正确添加作用域前缀的问题，以及重复调用时前缀被叠加的问题；同一页面存在多份相同版本的 shineout（如嵌入插件与业务项目）时，调用不再影响其他实例的全局样式 ([#1812](https://github.com/sheinsight/shineout-next/pull/1812))
+- 修复全局基础样式中行高对应的 CSS 变量名拼写错误，现在读取 `--common-line-height`（与 1.x、2.x 保持一致），原先错误的 `--common-line-heigh` 不再生效。如果项目中设置过 `--common-line-height`，升级后行高会随之变化 ([#1812](https://github.com/sheinsight/shineout-next/pull/1812))
+
 ## 3.10.4-beta.1
 2026-11-02
 
