@@ -1,7 +1,4 @@
-import { getConfig } from '../config';
-import Token from './token';
 import { Tokens } from './type';
-import { replaceNonAlphanumeric } from '../utils/css-var';
 import type { ThemeTokens } from '../index';
 
 // 暗色主题下覆盖的全局 token
@@ -409,16 +406,8 @@ const DarkComponentToken: Partial<Record<keyof ThemeTokens, keyof Tokens>> = {
   menuSearchDarkFocusShadow: 'Brand-2',
 };
 
-// 组件 token 直接引用全局 token 的 css var，不能像默认组件 token 那样带上自身变量，否则会形成循环引用导致失效
-const DarkToken: Partial<ThemeTokens & Tokens> = { ...DarkCommonToken };
-
-Object.keys(DarkComponentToken).forEach((key) => {
-  const { prefix } = getConfig();
-  const tokenKey = DarkComponentToken[key as keyof ThemeTokens] as keyof Tokens;
-  // @ts-ignore
-  DarkToken[key] = `var(--${prefix}-${replaceNonAlphanumeric(tokenKey)}, ${
-    DarkCommonToken[tokenKey] || Token[tokenKey]
-  })`;
-});
+// 组件 token 的值保持为全局 token 名称，由 setToken 在调用时解析为当前 prefix 下的 css var 引用，
+// 这样 setConfig 修改 prefix、或在此基础上覆盖全局 token 时，组件 token 都能跟随
+const DarkToken: Partial<ThemeTokens & Tokens> = { ...DarkCommonToken, ...DarkComponentToken };
 
 export default DarkToken;
