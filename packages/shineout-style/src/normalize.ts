@@ -1,20 +1,17 @@
-// 1. Change from `box-sizing: content-box` so that `width` is not affected by `padding` or `border`.
-// 2. Change the default font family in all browsers.
-// 3. Correct the line height in all browsers.
-// 4. Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.
-// 5. Setting @viewport causes scrollbars to overlap content in IE11 and Edge, so
-//    we force a non-overlapping, non-auto-hiding scrollbar to counteract.
-// 6. Change the default tap highlight to be completely transparent in iOS.
+// 全局基础样式（normalize）与 jss 插入点。
+// 引入本模块会产生副作用：在浏览器环境下向 document.head 最前面依次插入 normalize 样式和 jss 插入点，
+// 并通过 setToken 向 html 注入主题 token。
 import { CommonToken, setToken } from '@sheinx/theme';
 import { jss } from './jss-style';
-import  version from './version';
+import version from './version';
 
 const token = {
   fontFamily:
     'var(--common-body-font-family, PingFang SC, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Helvetica, Hiragino KaKu Gothic Pro, Microsoft YaHei, Arial, sans-serif )',
   color: 'var(--common-body-color, #141737)',
   fontSize: 'var(--font-size-base, 14px)',
-  lineHeight: 'var(--common-line-heigh, 1.42857143)',
+  // 变量名与 shineout 1.x / 2.x 保持一致
+  lineHeight: 'var(--common-line-height, 1.42857143)',
   linkColor: CommonToken['Brand-6'],
   linkHoverDecoration: 'none',
   linkDisabledColor: CommonToken['Brand-3'],
@@ -25,8 +22,8 @@ const token = {
   headingsSmallColor: '#adb5bd',
 };
 
-const lineHeightComputed = '20px';
-const lineHeightComputed2 = '10px';
+const marginLarge = '20px';
+const marginSmall = '10px';
 export const normalizeStyle = `*,
 *::before,
 *::after {
@@ -63,25 +60,9 @@ body {
   line-height: ${token.lineHeight};
 }
 
-
-article,
-aside,
-footer,
-header,
-nav,
-section {
-  display: block;
-}
-
 h1 {
   margin: 0.67em 0;
   font-size: 2em;
-}
-
-figcaption,
-figure,
-main {
-  display: block;
 }
 
 figure {
@@ -125,11 +106,6 @@ abbr[title] {
   border-bottom: none;
   text-decoration: underline;
   text-decoration: underline dotted;
-}
-
-b,
-strong {
-  font-weight: inherit;
 }
 
 b,
@@ -213,9 +189,9 @@ select {
 }
 
 button,
-html [type="button"],
-[type="reset"],
-[type="submit"] {
+html [type='button'],
+[type='reset'],
+[type='submit'] {
   -webkit-appearance: button;
 }
 
@@ -262,7 +238,6 @@ textarea {
   padding: 0;
 }
 
-
 [type='number']::-webkit-inner-spin-button,
 [type='number']::-webkit-outer-spin-button {
   height: auto;
@@ -278,33 +253,27 @@ textarea {
   -webkit-appearance: none;
 }
 
-
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
   font: inherit;
 }
-
 
 details,
 menu {
   display: block;
 }
 
-
 summary {
   display: list-item;
 }
-
 
 canvas {
   display: inline-block;
 }
 
-
 template {
   display: none;
 }
-
 
 [hidden] {
   display: none;
@@ -338,18 +307,17 @@ h6 small, h6 .small, .h6 small, .h6 .small {
   line-height: 1;
 }
 
-
 h1,
 .h1,
 h2,
 .h2,
 h3,
 .h3 {
-  margin-top: ${lineHeightComputed};
-  margin-bottom: ${lineHeightComputed2};
+  margin-top: ${marginLarge};
+  margin-bottom: ${marginSmall};
 }
 
-hi small, h1 .small, .h1 small, .h1 .small,
+h1 small, h1 .small, .h1 small, .h1 .small,
 h2 small, h2 .small, .h2 small, .h2 .small,
 h3 small, h3 .small, .h3 small, .h3 .small {
   font-size: 65%;
@@ -361,8 +329,8 @@ h5,
 .h5,
 h6,
 .h6 {
-  margin-top: ${lineHeightComputed2};
-  margin-bottom: ${lineHeightComputed2};
+  margin-top: ${marginSmall};
+  margin-bottom: ${marginSmall};
 }
 
 h4 small, h4 .small, .h4 small, .h4 .small,
@@ -372,27 +340,33 @@ h6 small, h6 .small, .h6 small, .h6 .small {
 }
 
 p {
-  margin: 0 0 ${lineHeightComputed2};
+  margin: 0 0 ${marginSmall};
 }`;
 
 export const normalizeStyleId = 'shineout-next-normalize__' + version;
 export const jssInsertionPointId = 'shineout-next-jss-insertion-point__' + version;
 
-function appendNormalizeStyle(styleString: string, id: string){
+// 创建带标识的 style 节点，并插入到 head 最前面
+function insertStyleElement(id: string, cssText?: string) {
   const style = document.createElement('style');
   style.setAttribute('name', id);
   style.setAttribute('data-alita-ignore', 'true');
-  style.innerHTML = styleString;
+  if (cssText !== undefined) style.textContent = cssText;
   document.head.insertBefore(style, document.head.firstChild);
+  return style;
 }
 
-function appendJssInsertionPoint(){
-  const insertionPoint = document.createElement('style');
-  insertionPoint.setAttribute('name', jssInsertionPointId);
-  insertionPoint.setAttribute('data-alita-ignore', 'true');
-  document.head.insertBefore(insertionPoint, document.head.firstChild);
+// 当前模块实例自己创建的 normalize 节点。
+// 同一页面里多份 bundle（如嵌入插件与业务项目）版本相同时节点同名，不能按名字查找，否则可能误改对方的节点
+let normalizeStyleElement: HTMLStyleElement | null = null;
 
-  jss.setup({insertionPoint: insertionPoint})
+function appendNormalizeStyle(styleString: string, id: string) {
+  normalizeStyleElement = insertStyleElement(id, styleString);
+}
+
+function appendJssInsertionPoint() {
+  const insertionPoint = insertStyleElement(jssInsertionPointId);
+  jss.setup({ insertionPoint });
 }
 
 if (typeof window !== 'undefined') {
@@ -400,34 +374,43 @@ if (typeof window !== 'undefined') {
   appendNormalizeStyle(normalizeStyle, normalizeStyleId);
 }
 
-export const scopeNormalizeStyle = (csScopePrefix = '#app') => {
-  const styleElement = document.querySelector(`style[name="${normalizeStyleId}"]`) as HTMLStyleElement;
-  // 移除styleElement
+// html / body 作为根选择器时替换为 prefix，其余选择器统一加前缀
+const scopeSelector = (selector: string, prefix: string) => {
+  const trimmed = selector.trim();
+  const root = /^(html|body)(?![\w-])/.exec(trimmed);
+  return root ? prefix + trimmed.slice(root[0].length) : `${prefix} ${trimmed}`;
+};
 
-  const styleSheet = styleElement?.sheet;
-  const cssRules = styleSheet?.cssRules;
-  // 遍历cssRules，给每一个selectorText添加前缀
-  if(cssRules){
-    for(let i = 0; i < cssRules.length; i++){
+export const scopeNormalizeStyle = (csScopePrefix = '#app') => {
+  if (typeof document === 'undefined') return;
+
+  const styleElement = normalizeStyleElement;
+  if (!styleElement || !styleElement.isConnected) return;
+
+  // 始终基于原始 normalizeStyle 重新生成，而不是在已加过前缀的样式上再加一次，保证重复调用结果一致
+  const sourceElement = document.createElement('style');
+  sourceElement.textContent = normalizeStyle;
+  document.head.appendChild(sourceElement);
+
+  const cssRules = sourceElement.sheet?.cssRules;
+  if (cssRules) {
+    for (let i = 0; i < cssRules.length; i++) {
       const rule = cssRules[i];
       if (rule instanceof CSSStyleRule) {
-        // 如果选择器包含了body或html，则替换，不是加前缀
-        if(rule.selectorText.includes('body')){
-          rule.selectorText = rule.selectorText.replace('body', csScopePrefix);
-        }else if(rule.selectorText.includes('html')){
-          rule.selectorText = rule.selectorText.replace('html', csScopePrefix);
-        }else{
-          const selectors = rule.selectorText.split(',');
-          const newSelectors = selectors.map(selector => `${csScopePrefix} ${selector}`);
-          rule.selectorText = newSelectors.join(',');
-        }
+        // 逐个选择器处理，同一条规则里混有 html / body 与其他选择器时也都能正确加前缀
+        rule.selectorText = rule.selectorText
+          .split(',')
+          .map((selector) => scopeSelector(selector, csScopePrefix))
+          .join(',');
       }
     }
   }
 
-  const scopedStyleString = cssRules ? Array.from(cssRules).map(rule => rule.cssText).join('') : '';
+  const scopedStyleString = cssRules ? Array.from(cssRules).map((rule) => rule.cssText).join('') : '';
 
-  document.head.removeChild(styleElement);
+  document.head.removeChild(sourceElement);
+  // 移除旧的 styleElement，用加了前缀的样式替换
+  styleElement.parentNode?.removeChild(styleElement);
 
   appendNormalizeStyle(scopedStyleString, normalizeStyleId);
 };
