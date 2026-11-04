@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import classnames from 'classnames';
-import { Tooltip, setToken } from 'shineout';
+import { Tooltip, setToken, DarkTokens } from 'shineout';
 import { CommonTokenMap } from '@sheinx/theme';
-import { dark, compact } from './theme';
+import { compact } from './theme';
 import useStyles from '../style';
 
 const FloatButton = () => {
@@ -36,20 +36,16 @@ const FloatButton = () => {
     }
   };
 
-  const buildToken = (isDark: boolean, isCompact: boolean) => ({
-    ...CommonTokenMap,
-    ...(isDark ? dark : {}),
-    ...(isCompact ? compact : {}),
-  });
-
   const applyTheme = (isDark: boolean, isCompact: boolean) => {
-    setToken({ selector: 'html', token: buildToken(isDark, isCompact) });
+    // 暗色 token 挂在 html[data-theme="dark"] 上，切换时只改属性；紧凑 token 仍写在 html 上，两者互不覆盖
+    setToken({ selector: 'html[data-theme="dark"]', token: DarkTokens });
+    setToken({ selector: 'html', token: isCompact ? { ...CommonTokenMap, ...compact } : CommonTokenMap });
     if (isDark) {
       document.documentElement.style.setProperty('color-scheme', 'dark');
-      document.documentElement.classList.add('dark');
+      document.documentElement.setAttribute('data-theme', 'dark');
     } else {
       document.documentElement.style.removeProperty('color-scheme');
-      document.documentElement.classList.remove('dark');
+      document.documentElement.removeAttribute('data-theme');
     }
   };
 

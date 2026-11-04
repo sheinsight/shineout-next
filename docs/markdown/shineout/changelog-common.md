@@ -1,3 +1,9 @@
+## 3.10.4-beta.3
+2026-11-03
+
+### 🆕 Feature
+- 新增 `DarkTokens` 导出，内置一套暗黑主题 token，传入 `setToken` 即可一键将全局或局部区域切换为暗黑主题 ([#1813](https://github.com/sheinsight/shineout-next/pull/1813))
+
 ## 3.10.4-beta.2
 2026-11-02
 
@@ -16,6 +22,7 @@
 
 ### 🆕 Feature
 - 新增全局配置 `keepStyleSheet`，开启后组件样式在全部实例卸载后仍保留在页面中，并在开启时预先加载 `Message` 的样式，避免 `Message`、`Modal.confirm` 等频繁弹出的组件反复插入和移除样式，降低点击交互的 INP 耗时 ([#1808](https://github.com/sheinsight/shineout-next/pull/1808))
+
 
 ## 3.10.2-beta.9
 2026-09-24
