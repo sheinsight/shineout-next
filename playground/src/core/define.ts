@@ -14,6 +14,11 @@ export function useBenchState<S>(state: S) {
   (window as any).__compareState = state;
 }
 
+/** 在事件回调里直接更新上报的状态（不经过 render） */
+export function setBenchState<S>(state: S) {
+  (window as any).__compareState = state;
+}
+
 export function getBenchState() {
   return (window as any).__compareState;
 }

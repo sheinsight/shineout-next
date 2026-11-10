@@ -14,7 +14,7 @@ import { createRoot } from 'react-dom/client';
 import type { FrameMessage, FrameResult, LibKey, Sample } from '../core/types';
 import { getCase, loadImpl } from '../core/registry';
 import { PROVIDERS, LIB_MAP } from '../libs';
-import { afterPaint, createContext, measureOnce, settle, waitDomStable } from '../core/measure';
+import { afterPaint, createContext, measureOnce, settle, waitDomStable, waitUntil } from '../core/measure';
 
 const params = new URLSearchParams(location.search);
 const lib = params.get('lib') as LibKey;
@@ -114,10 +114,13 @@ const runAuto = async (Impl: ComponentType, Provider: ComponentType<{ children: 
   for (const scenario of entry.scenarios || []) {
     if (scenario.libs && !scenario.libs.includes(lib)) continue;
     const samples: Sample[] = [];
-    for (let i = 0; i < warmup + iter; i++) {
+    const warm = scenario.once ? 0 : warmup;
+    const times = scenario.once ? 1 : iter;
+    for (let i = 0; i < warm + times; i++) {
       const sample = await measureOnce(scenario, ctx);
-      if (i >= warmup) samples.push(sample);
+      if (i >= warm) samples.push(sample);
       await settle();
+      if (scenario.settleUntil) await waitUntil(() => scenario.settleUntil!(ctx));
     }
     scenarios[scenario.key] = samples;
   }

@@ -52,6 +52,13 @@ export interface Scenario<S = any> {
   check?: (ctx: CheckContext<S>) => boolean;
   /** 只在部分库中运行（例如某个库没有这个能力） */
   libs?: LibKey[];
+  /** 只测一次，不预热。用来测冷启动的第一次交互（样式、懒初始化等只在第一次付出的开销） */
+  once?: boolean;
+  /**
+   * 每次测量后等到它返回 true 再进行下一次（最长等 10 秒）。
+   * 用来等 Message、Tooltip 之类会自行消失的元素离开，让每次测量都从同样的初始状态开始
+   */
+  settleUntil?: (ctx: ScenarioContext) => boolean;
 }
 
 export interface CaseMeta<S = any> {
