@@ -15,6 +15,16 @@ export const afterPaint = () =>
 /** 每次测量之间等待副作用（passive effect、ResizeObserver、延迟 setState）跑完，避免互相叠加 */
 export const settle = () => nextFrame().then(nextFrame).then(() => sleep(50));
 
+/** 轮询等待条件成立，超时后放弃（返回 false），不抛错 */
+export const waitUntil = async (cond: () => boolean, timeout = 10000) => {
+  const start = performance.now();
+  while (performance.now() - start < timeout) {
+    if (cond()) return true;
+    await sleep(50);
+  }
+  return false;
+};
+
 /** 等 DOM 连续 quiet ms 没有变化，返回最后一次变化的时间点 */
 export const waitDomStable = (target: Node, quiet = 300, max = 5000) =>
   new Promise<number>((resolve) => {
