@@ -1,8 +1,4 @@
-import { Button, setConfig } from 'shineout-v3';
-
-setConfig({
-  keepStyleSheet: true,
-})
+import { Button } from 'shineout-v3';
 
 const row = { display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 12 } as const;
 

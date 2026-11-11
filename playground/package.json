@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "bench": "vite build && vite preview",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "smoke": "node scripts/smoke.mjs"
   },
   "dependencies": {
     "antd": "6.7.0",
@@ -22,6 +23,7 @@
     "@types/react": "18.3.12",
     "@types/react-dom": "18.3.1",
     "@vitejs/plugin-react": "4.7.0",
+    "playwright": "1.61.1",
     "typescript": "5.6.3",
     "vite": "6.4.4"
   }

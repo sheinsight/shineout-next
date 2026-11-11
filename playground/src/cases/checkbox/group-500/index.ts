@@ -11,6 +11,10 @@ const domMatches = (ctx: { queryAll: <T extends Element>(s: string) => T[] }, ch
 export default defineCase<State>({
   title: '500 项受控 Checkbox.Group',
   description: '大量选项下的父组件更新、单项勾选、全选',
+  notes: [
+    '500 个选项在 Shineout 里每行 2 个、在 antd 里每行 3 个，页面高度分别约 5600px 和 3770px，是各库的默认间距，布局开销因此不完全可比',
+    'antd 外层包了一层 ConfigProvider 用来设置中文，Shineout 默认就是中文，不需要',
+  ],
   scenarios: [
     {
       key: 'parent',
