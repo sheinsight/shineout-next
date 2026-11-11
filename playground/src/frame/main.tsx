@@ -99,9 +99,22 @@ const runAuto = async (Impl: ComponentType, Provider: ComponentType<{ children: 
   const t0 = performance.now();
   mount(createElement(CommitProbe, { onCommit }, createElement(Provider, null, createElement(Impl))));
   await committed;
-  const commit = performance.now() - t0;
-  await afterPaint();
-  const firstPaint = performance.now() - t0;
+  const tCommit = performance.now();
+  const commit = tCommit - t0;
+  // 提交后的 passive effect 也走调度器的 MessageChannel，排在它们后面的消息触发时，这些 JS 已经执行完。
+  // 主线程占用 = 到这一刻（或下一帧开始，取先到的）的 JS + 下一帧的样式、布局、绘制，
+  // 和交互场景里的「主线程」同一个算法，排除了等 vsync 的空闲时间
+  let tTask = 0;
+  const channel = new MessageChannel();
+  channel.port1.onmessage = () => {
+    tTask = performance.now();
+  };
+  channel.port2.postMessage(null);
+  const tRaf = await new Promise<number>((resolve) => requestAnimationFrame(() => resolve(performance.now())));
+  await new Promise<void>((resolve) => setTimeout(resolve, 0));
+  const tEnd = performance.now();
+  const firstPaint = tEnd - t0;
+  const busy = (tTask && tTask < tRaf ? tTask : tRaf) - t0 + (tEnd - tRaf);
   if (profile) console.profileEnd('compare:mount');
   // 在 DevTools Performance 面板的 Timings 轨道中标出挂载区间，便于定位
   performance.measure('compare:mount-commit', { start: t0, duration: commit });
@@ -124,7 +137,8 @@ const runAuto = async (Impl: ComponentType, Provider: ComponentType<{ children: 
     }
     scenarios[scenario.key] = samples;
   }
-  const result: FrameResult = { lib, caseId, mount: { firstPaint, commit, stable }, scenarios, hidden };
+  const mountResult = { firstPaint, commit, busy, stable };
+  const result: FrameResult = { lib, caseId, mount: mountResult, scenarios, hidden };
   post({ type: 'compare-result', result });
 };
 

@@ -68,6 +68,8 @@ export interface CaseMeta<S = any> {
   scenarios?: Scenario<S>[];
   /** 自动测试时 frame 的尺寸，默认 1280×800 */
   viewport?: { width: number; height: number };
+  /** 各库实现之间有意保留的差异，会显示在用例标题下和报告里，避免读数据的人误以为完全等价 */
+  notes?: string[];
 }
 
 export interface CaseEntry extends CaseMeta {
@@ -94,12 +96,28 @@ export interface Sample {
 }
 
 export interface MountResult {
-  /** 挂载到首帧绘制完成 */
+  /** 调用 render 到首帧绘制完成，含调度等待和等 vsync 的空闲，小用例受帧对齐影响有 0~16ms 波动 */
   firstPaint: number;
-  /** 挂载到 React 提交完成（含 layout effect），即首帧中的 JS 部分 */
+  /** React 开始渲染到提交完成（含 layout effect） */
   commit: number;
-  /** 挂载到 DOM 连续 300ms 无变化 */
+  /** 主线程实际占用：渲染 + 提交 + 提交后的 passive effect + 下一帧的样式、布局、绘制，排除空闲，波动小 */
+  busy: number;
+  /** 调用 render 到 DOM 连续 300ms 无变化 */
   stable: number;
+}
+
+/** 跑测试的环境，写进报告，别人才知道数据是在什么条件下得到的 */
+export interface EnvInfo {
+  userAgent: string;
+  /** CPU 逻辑核数 */
+  cores?: number;
+  /** 设备内存（GB，浏览器会取整到 0.25~8 的档位） */
+  memoryGB?: number;
+  dpr: number;
+  /** 无头浏览器或由自动化工具驱动 */
+  automated: boolean;
+  /** 开发服务器 */
+  dev: boolean;
 }
 
 export interface FrameResult {

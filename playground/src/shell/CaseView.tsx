@@ -30,6 +30,13 @@ export default function CaseView({ entry, libs }: { entry: CaseEntry; libs: LibK
             {entry.id}
             {entry.description && <> · {entry.description}</>}
           </div>
+          {!!entry.notes?.length && (
+            <ul className="notes small muted">
+              {entry.notes.map((n) => (
+                <li key={n}>{n}</li>
+              ))}
+            </ul>
+          )}
         </div>
         <div className="tabs">
           <button className={tab === 'view' ? 'tab active' : 'tab'} onClick={() => setTab('view')}>

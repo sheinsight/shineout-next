@@ -61,12 +61,15 @@ export default function App() {
                 <input type="checkbox" checked={libs.includes(l.key)} onChange={() => toggleLib(l.key)} />
                 <span className="dot" style={{ background: l.color }} />
                 {l.label}
-                <span className="muted">@{META.libs[l.key].version}</span>
+                <span className="muted">
+                  @{META.libs[l.key].version}
+                  {META.libs[l.key].source !== 'npm' && ` · ${META.libs[l.key].source}`}
+                </span>
               </label>
             ))}
           </div>
           <div className="muted small">
-            React {META.react} · 3.x：{META.libs.v3.source}
+            React {META.react}
             {import.meta.env.DEV && <span className="badge-warn">开发模式</span>}
           </div>
         </header>
