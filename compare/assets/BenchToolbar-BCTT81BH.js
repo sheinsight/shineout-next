@@ -1,0 +1,1 @@
+import{j as n}from"./jsx-runtime-olTlgZ90.js";function a({actions:t,children:o}){return n.jsxs("div",{style:{display:"flex",flexWrap:"wrap",gap:8,alignItems:"center",marginBottom:12,fontSize:13},children:[t.map(e=>n.jsx("button",{type:"button","data-bench":e.name,onClick:e.onClick,children:e.label},e.name)),o]})}export{a as B};
