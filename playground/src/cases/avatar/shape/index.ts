@@ -1,0 +1,10 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '头像 尺寸和形状',
+  description: '来自 shineout 示例 avatar/03-shape，小/中/大 × 圆形/方形，只测挂载',
+  notes: [
+    '2.x 没有 Avatar 组件，没有实现',
+    '小 / 中 / 大三档的尺寸各库一致，实测为 24 / 32 / 40px；内部图标尺寸按原示例传入',
+  ],
+});

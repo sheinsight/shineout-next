@@ -1,0 +1,30 @@
+// avatar 各用例共用的图片和图标。原示例用的是 GitHub 上的远程图片，计时里会混进网络加载，
+// 离线时还会失败，这里换成内联的 data URI，四个库用同一份
+const COLORS = ['#ff7e5f', '#6a8cff', '#52c41a', '#faad14', '#eb2f96', '#13c2c2', '#722ed1', '#a0d911'];
+
+const makeImage = (color: string, index: number) => {
+  const svg =
+    `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">` +
+    `<rect width="64" height="64" fill="${color}"/>` +
+    `<circle cx="32" cy="26" r="12" fill="#fff" fill-opacity=".85"/>` +
+    `<path d="M10 64c0-12 10-20 22-20s22 8 22 20z" fill="#fff" fill-opacity=".85"/>` +
+    `<text x="4" y="12" font-size="10" fill="#fff">${index + 1}</text></svg>`;
+  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+};
+
+export const AVATAR_IMAGES = COLORS.map(makeImage);
+
+export function UserIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'>
+      <path
+        d='M7.99992 8.66667C10.2091 8.66667 11.9999 6.87581 11.9999 4.66667C11.9999 2.45753 10.2091 0.666672 7.99992 0.666672C5.79078 0.666672 3.99992 2.45753 3.99992 4.66667C3.99992 6.87581 5.79078 8.66667 7.99992 8.66667Z'
+        fill='#B3B7C1'
+      />
+      <path
+        d='M5.44625 10C3.1747 10 1.33325 11.8415 1.33325 14.113C1.33325 14.4188 1.58114 14.6667 1.88693 14.6667H14.1129C14.4187 14.6667 14.6666 14.4188 14.6666 14.113C14.6666 11.8415 12.8251 10 10.5536 10H5.44625Z'
+        fill='#B3B7C1'
+      />
+    </svg>
+  );
+}
