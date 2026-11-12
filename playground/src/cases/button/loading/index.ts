@@ -1,0 +1,12 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '按钮 加载中',
+  description: '来自 shineout 示例 button/s-007-loading，加载状态与点击模拟加载，只测挂载',
+  notes: [
+    '原示例的图标用 FontAwesome（从 CDN 加载字体样式）和 Shineout 自带 icons，前者会把网络加载混进计时、后者只有 Shineout 有，这里换成内联 svg，四个库一致',
+    '原示例用 Gap 排版，antd 没有同名组件，这里统一用 flex',
+    '点击模拟加载时 Shineout 用 Message，antd 用 message；挂载计时不会触发它',
+    'antd 5 与 2.x 没有 shape="square"，对应按钮不带 shape',
+  ],
+});

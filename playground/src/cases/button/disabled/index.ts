@@ -1,0 +1,10 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '按钮 禁用',
+  description: '来自 shineout 示例 button/s-006-disabled，禁用状态的四行，只测挂载',
+  notes: [
+    'antd 没有 secondary / warning / success 类型，用 color + variant 近似（_shared/antd-map.ts：default 和 secondary 的实心按钮对应灰底 filled，warning 对应 orange，success 对应 green），色调与 Shineout 不完全相同',
+    '2.x 没有 dashed，每行只有三个按钮；其它库每行四个',
+  ],
+});
