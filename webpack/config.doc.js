@@ -13,6 +13,8 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, `../dist`),
+    // 文件名带内容哈希，不清理的话旧产物会一直累积
+    clean: true,
     filename: '[name].[hash:8].js',
     publicPath: './',
     libraryTarget: 'umd',
