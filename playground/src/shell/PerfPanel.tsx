@@ -364,6 +364,7 @@ function Markdown({
       summary: rows.map((row) => ({
         group: row.group,
         metric: row.metric,
+        main: row.main,
         unit: row.unit || 'ms',
         cells: Object.fromEntries(libs.map((l) => [l, row.cells[l] ?? null])),
       })),
