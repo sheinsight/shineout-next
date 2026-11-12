@@ -1,5 +1,5 @@
 import { BorderBeam } from 'shineout-v3';
-import { panel } from '../_shared/panel';
+import { COLORS, panel } from '../_shared/panel';
 
 const sizes: { name: string; size?: number; description: string }[] = [
   { name: 'Short beam', size: 56, description: 'The visible beam segment is 56px long.' },
@@ -14,8 +14,8 @@ export default function Demo() {
         <BorderBeam key={name} size={size}>
           <div style={{ ...panel, width: 240, minHeight: 124, padding: 20 }}>
             <strong>{name}</strong>
-            <span style={{ float: 'right', color: 'var(--soui-neutral-text-4)' }}>{size || 100}px</span>
-            <p style={{ margin: '12px 0 0', color: 'var(--soui-neutral-text-4)' }}>{description}</p>
+            <span style={{ float: 'right', color: COLORS.subText }}>{size || 100}px</span>
+            <p style={{ margin: '12px 0 0', color: COLORS.subText }}>{description}</p>
           </div>
         </BorderBeam>
       ))}

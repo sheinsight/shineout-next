@@ -4,6 +4,8 @@ export default defineCase({
   title: '流光边框 自定义容器',
   description: '来自 shineout 示例 border-beam/03-custom-container，透传 ref 的自定义组件，只测挂载',
   notes: [
-    'BorderBeam 是 Shineout 3.x 新增的组件，2.x、antd 5、antd 6 都没有对应组件，这个用例只有 3.x，没有横向对比数据，只用于 3.x 自身的优化前后对比',
+    'BorderBeam 在 Shineout 3.x 和 antd 6 里有，2.x 和 antd 5 没有，所以只有这两个库可比',
+    '面板的边框、背景、文字颜色：原示例用 3.x 的主题变量（--soui-*），antd 里没有，这里统一换成固定值（取自 3.x 默认主题），两个库外观一致',
+    'antd 的 BorderBeam 要求子节点能拿到真实 DOM，同样用透传 ref 的自定义组件',
   ],
 });
