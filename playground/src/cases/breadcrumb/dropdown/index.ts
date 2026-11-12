@@ -1,0 +1,11 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '面包屑 带有下拉',
+  description: '来自 shineout 示例 breadcrumb/05-dropdown，数组项渲染成下拉，只测挂载',
+  notes: [
+    '数据结构沿用 Shineout 的写法，antd 用 toAntdItems 转成 items（_shared/data.ts），两边数据内容一致',
+    '点击回调：Shineout 用 Message，antd 用 message，都只是在点击时弹一条提示，挂载时不会触发',
+    '下拉：Shineout 的数组项是「第一项作为触发文字、其余在 Popover 里」；antd 对应 menu，第一项作为触发文字，其余作为 menu.items，下拉内容默认不展开，挂载时都不渲染下拉层',
+  ],
+});

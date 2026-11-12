@@ -1,0 +1,9 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '面包屑 自定义渲染',
+  description: '来自 shineout 示例 breadcrumb/04-renderItem，只测挂载',
+  notes: [
+    'Shineout 用 renderItem，参数是原始数据；antd 用 itemRender，参数是 items 里的条目，原数据先转成 { title, href } 再传入，两边渲染的内容相同',
+  ],
+});
