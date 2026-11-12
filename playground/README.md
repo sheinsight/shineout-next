@@ -186,6 +186,16 @@ frame 的 URL 参数：
 
 导出格式带 `schema` 字段，目前是 1。改导出字段时同步升版本，并在 `src/core/compare.ts` 的 `parseReport` 里兼容旧文件。
 
+## 部署
+
+横评平台随文档站一起发布，访问路径是文档站根路径下的 `/compare/`（例如 `https://<站点>/compare/`）。
+
+- `pnpm run build:doc` 在 webpack 构建文档之后，接着运行 `scripts/build-compare.js`，把平台构建到 `dist/compare/`。playground 不在 pnpm workspace 里，没装依赖时脚本会先执行 `npm ci`
+- 只构建平台：`pnpm run build:compare`
+- `vite.config.ts` 里 `base` 是 `./`，所有资源都是相对路径，所以能放在任意子目录下
+- 线上的数据来自访问者自己的浏览器。正式数据仍要按「得到可靠结论的做法」在有界面的 Chrome 里测，线上页面只是入口
+- 文档站里目前没有放指向 `/compare/` 的链接，需要的话在文档站导航里加
+
 ## 冒烟检查
 
 改完平台代码或新增用例后，确认没有弄坏：

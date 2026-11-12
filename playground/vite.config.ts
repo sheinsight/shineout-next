@@ -42,6 +42,8 @@ const ignoreV2Less = (): Plugin => ({
 });
 
 export default defineConfig({
+  // 相对路径：部署在 docs 站点的 /compare/ 子目录下，不依赖站点根路径
+  base: './',
   plugins: [ignoreV2Less(), react()],
   define: {
     __COMPARE_META__: JSON.stringify(META),
