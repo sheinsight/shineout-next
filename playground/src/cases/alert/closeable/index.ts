@@ -1,0 +1,10 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '提示框 允许关闭',
+  description: '来自 shineout 示例 alert/03-closeable，点击关闭后出现「重置」按钮',
+  notes: [
+    '2.x 没有 closable 属性，传 onClose 才显示关闭按钮',
+    '「重置」按钮：Shineout 用文字按钮，antd 用 link 按钮，都是各自最接近的文字按钮',
+  ],
+});
