@@ -4,6 +4,7 @@ import { LIB_MAP } from '../libs';
 import { frameUrl } from './frameUrl';
 import { useStored } from './storage';
 import PerfPanel from './PerfPanel';
+import DiffPanel from './DiffPanel';
 
 const META = __COMPARE_META__;
 
@@ -15,7 +16,7 @@ const WIDTHS = [
 ];
 
 export default function CaseView({ entry, libs }: { entry: CaseEntry; libs: LibKey[] }) {
-  const [tab, setTab] = useStored<'view' | 'perf'>('compare:tab', 'view');
+  const [tab, setTab] = useStored<'view' | 'perf' | 'diff'>('compare:tab', 'view');
   const [width, setWidth] = useStored<number>('compare:width', 0);
   const [layout, setLayout] = useStored<'row' | 'column'>('compare:layout', 'row');
   const [minHeight, setMinHeight] = useStored<number>('compare:minHeight', 200);
@@ -44,6 +45,9 @@ export default function CaseView({ entry, libs }: { entry: CaseEntry; libs: LibK
           </button>
           <button className={tab === 'perf' ? 'tab active' : 'tab'} onClick={() => setTab('perf')}>
             性能测试
+          </button>
+          <button className={tab === 'diff' ? 'tab active' : 'tab'} onClick={() => setTab('diff')}>
+            结果对比
           </button>
         </div>
       </div>
@@ -93,8 +97,10 @@ export default function CaseView({ entry, libs }: { entry: CaseEntry; libs: LibK
             {!libs.length && <div className="empty">在顶部勾选要对比的库</div>}
           </div>
         </>
-      ) : (
+      ) : tab === 'perf' ? (
         <PerfPanel entry={entry} libs={libs} />
+      ) : (
+        <DiffPanel />
       )}
     </section>
   );
