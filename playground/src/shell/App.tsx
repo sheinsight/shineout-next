@@ -11,7 +11,9 @@ const readHash = () => decodeURIComponent(location.hash.replace(/^#\/?/, ''));
 
 export default function App() {
   const [caseId, setCaseId] = useState(readHash);
-  const [libs, setLibs] = useStored<LibKey[]>('compare:libs', LIBS.map((l) => l.key));
+  const [storedLibs, setLibs] = useStored<LibKey[]>('compare:libs', LIBS.map((l) => l.key));
+  // localStorage 里可能残留已改名/移除的库 key，只保留当前 LIBS 中存在的
+  const libs = useMemo(() => storedLibs.filter((k) => LIBS.some((l) => l.key === k)), [storedLibs]);
   const [keyword, setKeyword] = useState('');
 
   useEffect(() => {
