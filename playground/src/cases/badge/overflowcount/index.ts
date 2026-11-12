@@ -1,0 +1,9 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '徽标 封顶数字',
+  description: '来自 shineout 示例 badge/03-overflowcount，数字超过 overflowCount 时显示「N+」，只测挂载',
+  notes: [
+    '2.x 没有 Badge 组件，没有实现',
+  ],
+});

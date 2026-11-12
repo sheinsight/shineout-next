@@ -1,0 +1,10 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '徽标 基本用法',
+  description: '来自 shineout 示例 badge/01-base，count 为 0 时默认隐藏，showZero 控制显示，只测挂载',
+  notes: [
+    '2.x 没有 Badge 组件，没有实现',
+    '示例里的 Switch 各库用自己的 Switch 组件，开关本身的开销也计入',
+  ],
+});
