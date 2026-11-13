@@ -1,0 +1,13 @@
+import { defineCase } from '../../../core/define';
+import { openScenarios } from '../_shared/scenarios';
+
+export default defineCase({
+  title: '抽屉 多层嵌套',
+  description: '来自 shineout 示例 drawer/10-multiple-cascade，抽屉里再开一个抽屉，父级自动让开。只有 3.x 和 antd 参与',
+  notes: [
+    '2.x 没有 cascade 和 forceMask，不参与',
+    '写法不同：Shineout 里两个 Drawer 是兄弟，用 cascade + forceMask；antd 里第二个 Drawer 写在第一个里面，父级自动 push',
+    '场景只测「打开第一层」，第二层需要在抽屉里再点一次，没有做成场景；原示例的左右切换没有迁移',
+  ],
+  scenarios: openScenarios,
+});
