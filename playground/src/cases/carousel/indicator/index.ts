@@ -1,0 +1,13 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '轮播 指示器',
+  description: '来自 shineout 示例 carousel/02-indicator，指示器类型与位置可选，只测挂载',
+  notes: [
+    '原示例用 GitHub 上的远程图片，这里换成内联的 data URI（渐变 SVG），避免网络加载混进计时，四个库用同一份（_shared/slides.tsx）',
+    '自动播放：Shineout 用 interval，antd 用 autoplay + autoplaySpeed；挂载计时内都不会切换',
+    'antd 的指示点只有位置可选（top / bottom / start / end），没有 line / bar / number 类型，也没有 outer 位置，所以类型一栏 antd 没有对应；2.x 没有 bar 类型和 outer 位置',
+    '选择器用的是各库自己的 Radio.Group，也计入挂载耗时',
+    'antd 5 用 dotPosition，antd 6 用 dotPlacement（前者在 6 里已弃用）',
+  ],
+});

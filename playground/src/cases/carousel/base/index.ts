@@ -1,0 +1,12 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '轮播 基本用法',
+  description: '来自 shineout 示例 carousel/01-base，4 张图，箭头悬浮显示，只测挂载',
+  notes: [
+    '原示例用 GitHub 上的远程图片，这里换成内联的 data URI（渐变 SVG），避免网络加载混进计时，四个库用同一份（_shared/slides.tsx）',
+    '自动播放：Shineout 用 interval，antd 用 autoplay + autoplaySpeed；挂载计时内都不会切换',
+    'antd 的 Carousel 基于 react-slick，会把幻灯片复制/包裹后再渲染，DOM 节点数比 Shineout 多，是它的实现方式',
+    '箭头：Shineout 的 showArrow="hover" 悬浮才显示，antd 的 arrows 始终显示，没有「悬浮才显示」的选项',
+  ],
+});
