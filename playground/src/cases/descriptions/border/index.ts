@@ -1,0 +1,11 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '描述列表 边框',
+  description: '来自 shineout 示例 descriptions/04-border，带边框的三种布局，只测挂载',
+  notes: [
+    '2.x 没有 Descriptions 组件，不参与',
+    'border ↔ antd 的 bordered',
+    'tableLayout="fixed"（列宽均分）antd 没有对应属性，antd 用自己的表格布局，列宽分配可能不同',
+  ],
+});
