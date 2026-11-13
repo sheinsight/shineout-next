@@ -1,0 +1,10 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '卡片 Semantic DOM',
+  description: '来自 shineout 示例 card/09-semantic，用 classNames / styles 定制内部节点，只测挂载',
+  notes: [
+    '2.x 和 antd 5.x 的 Card 没有 classNames / styles 的对应能力，没有实现',
+    'Shineout 的节点是 root / header / headerContent / headerExtra / body / footer，antd 6 是 root / header / title / extra / body / actions，按语义对应（headerContent→title，headerExtra→extra，footer→actions）',
+  ],
+});
