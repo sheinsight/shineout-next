@@ -34,6 +34,8 @@ try {
   page.on('pageerror', (e) => logs.push(`[pageerror] ${e.message}`));
   page.on('console', (m) => m.type() === 'error' && logs.push(`[console.error] ${m.text().slice(0, 200)}`));
 
+  // 侧边栏默认只显示每个组件的代表用例，冒烟要检查全部，先打开「显示全部用例」
+  await page.addInitScript(() => localStorage.setItem('compare:showAll', 'true'));
   await page.goto(`${base}/`);
   await page.waitForSelector('.sidebar');
 

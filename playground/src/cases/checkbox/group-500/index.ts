@@ -9,6 +9,7 @@ const domMatches = (ctx: { queryAll: <T extends Element>(s: string) => T[] }, ch
   groupInputs(ctx).filter((el) => el.checked).length === checked;
 
 export default defineCase<State>({
+  featured: true,
   title: '500 项受控 Checkbox.Group',
   description: '大量选项下的父组件更新、单项勾选、全选',
   notes: [

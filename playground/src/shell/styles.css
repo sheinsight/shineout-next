@@ -65,7 +65,10 @@ code { padding: 0 4px; background: #f0f1f3; border-radius: 3px; }
 }
 .brand { margin-bottom: 12px; font-size: 16px; font-weight: 600; }
 .search { width: 100%; margin-bottom: 12px; }
+.show-all { display: flex; align-items: center; gap: 6px; margin-bottom: 12px; font-size: 12px; color: #4e5969; cursor: pointer; }
+.show-all .muted { margin-inline-start: auto; }
 .nav-group { margin-bottom: 12px; }
+.nav-hidden { margin-inline-start: 6px; color: #b0b4bc; text-transform: none; }
 .nav-group-title { padding: 2px 8px; font-size: 12px; color: #8a8f99; text-transform: capitalize; }
 .nav-item { display: block; padding: 4px 8px; border-radius: 4px; color: inherit; }
 .nav-item:hover { background: #f2f3f5; }

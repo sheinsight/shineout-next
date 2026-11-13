@@ -68,6 +68,8 @@ export interface CaseMeta<S = any> {
   scenarios?: Scenario<S>[];
   /** 自动测试时 frame 的尺寸，默认 1280×800 */
   viewport?: { width: number; height: number };
+  /** 标记为该组件的代表用例：侧边栏默认只显示它。没有标记时取名为 base 的用例，再没有就取第一个 */
+  featured?: boolean;
   /** 各库实现之间有意保留的差异，会显示在用例标题下和报告里，避免读数据的人误以为完全等价 */
   notes?: string[];
 }

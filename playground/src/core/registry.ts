@@ -40,3 +40,19 @@ export const loadImpl = (id: string, lib: LibKey) => {
   const loader = implLoaders[id]?.[lib];
   return loader ? loader().then((m) => m.default) : Promise.resolve(null);
 };
+
+/** 每个组件的代表用例：标了 featured 的；没有就取 base；再没有取第一个 */
+export const FEATURED_IDS: Set<string> = (() => {
+  const byComponent = new Map<string, CaseEntry[]>();
+  CASES.forEach((c) => {
+    if (!byComponent.has(c.component)) byComponent.set(c.component, []);
+    byComponent.get(c.component)!.push(c);
+  });
+  const ids = new Set<string>();
+  byComponent.forEach((list) => {
+    const marked = list.filter((c) => c.featured);
+    const pick = marked.length ? marked : [list.find((c) => c.id.endsWith('/base')) || list[0]];
+    pick.forEach((c) => ids.add(c.id));
+  });
+  return ids;
+})();

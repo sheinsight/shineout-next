@@ -235,3 +235,11 @@ npm run smoke -- http://localhost:5280              # 指定地址，例如开�
 
 - `@sheinx/theme` 的 esm 产物用 `require` 引入 CommonJS 文件，生产构建需要 `build.commonjsOptions.transformMixedEsModules`，已在 `vite.config.ts` 中打开
 - shineout 2.x 的 `es/config.js` 直接读取 `process.env.CSS_MODULE` 等变量，`vite.config.ts` 用 `define` 给出了默认值
+
+## 侧边栏只显示代表用例
+
+用例多了以后，侧边栏默认每个组件只显示一个代表用例，其余折叠（组件名后的 `+N` 是隐藏的个数），顶部的「显示全部用例」开关可以展开，设置会记在浏览器里。搜索不受这个限制，会在全部用例里找。
+
+代表用例的选取规则：用例的 `defineCase` 里写了 `featured: true` 的；没有标记就取名为 `base` 的；再没有就取第一个。当前打开的用例即使不是代表也会保留在列表里。
+
+`npm run smoke` 会自动打开「显示全部用例」，不受折叠影响。
