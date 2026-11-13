@@ -1,0 +1,12 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '图片 形状',
+  description: '来自 shineout 示例 image/s-004-shape，rounded / circle / thumbnail 三种形状，只测挂载',
+  notes: [
+    '原示例的图片是 raw.githubusercontent.com 上的外链，横评里改用内联 SVG（data URI，400x300），避免网络抖动进入测量；代价是没有真实的网络加载阶段',
+    'antd 没有 shape 属性，用 style（borderRadius、padding、border）模拟，是外观模拟，不是同一个 API',
+    'antd 这里设了 preview={false}，因为 Shineout 的示例没有 href，不会弹层；antd 默认带预览的遮罩 DOM',
+    'thumbnail 的内边距在 Shineout 里是 inner 节点的 top/left 4px，antd 是 img 自己的 padding，细节上可能有像素差',
+  ],
+});

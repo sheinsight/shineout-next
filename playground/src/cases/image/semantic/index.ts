@@ -1,0 +1,12 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '图片 Semantic DOM',
+  description: '来自 shineout 示例 image/s-009-semantic，用 styles / classNames 定制内部节点，只有 3.x 和 antd 6.x 参与',
+  notes: [
+    '原示例的图片是 raw.githubusercontent.com 上的外链，横评里改用内联 SVG（data URI，400x300），避免网络抖动进入测量；代价是没有真实的网络加载阶段',
+    '2.x 没有 classNames / styles；antd 5.x 的 Image 也没有（只有已废弃的 wrapperStyle），所以只有 3.x 和 antd 6.x',
+    'key 的对应关系：root ↔ root，img ↔ image；placeholder 在 antd 6 里的 key 是 { progress }，不是占位节点本身；Shineout 的 error key 在 antd 里没有对应',
+    '第二张加载失败的图片：Shineout 会渲染 error 节点并应用 styles.error，antd 只显示破图，两边在这一项上不是等价对比',
+  ],
+});
