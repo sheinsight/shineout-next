@@ -1,0 +1,10 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '日期选择 弹出位置',
+  description: '来自 shineout 示例 date-picker/14-position，四个弹出方向，只测挂载',
+  notes: [
+    'position ↔ antd 的 placement（top-left → topLeft）；2.x 的取值顺序相反（left-top），已按语义对应',
+    '弹层没有展开，方向只影响展开后的定位，挂载阶段没有区别',
+  ],
+});
