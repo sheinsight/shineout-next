@@ -1,0 +1,1 @@
+import{_ as s}from"./extends-CF3RwP-h.js";import{R as e}from"./registry-CoINQWyI.js";import{c}from"./index-DriTq7rj.js";var t=c({}),m=t.Consumer,u=t.Provider,p=function(o){return function(n){return e.createElement(m,null,function(r){return r===void 0&&(r={}),e.createElement(o,s({},n,{scrollElement:r.element,scrollLeft:r.left,scrollTop:r.top}))})}};export{u as P,p as s};

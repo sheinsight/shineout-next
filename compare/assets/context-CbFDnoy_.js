@@ -1,0 +1,1 @@
+import{R as n}from"./registry-CoINQWyI.js";import{c as o}from"./index-DriTq7rj.js";var r=o(null),l=r.Provider,s=function(t){return function(e){return n.createElement(r.Consumer,null,function(a){var c=Object.assign({},e,a!=null&&e.absolute&&e.zIndex===void 0&&{zIndex:1051});return n.createElement(t,c)})}};export{l as P,s as c};

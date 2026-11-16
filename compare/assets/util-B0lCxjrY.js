@@ -1,0 +1,1 @@
+const e=()=>({"@media (prefers-reduced-motion: reduce)":{"&, &::before, &::after":{transition:"none",animation:"none"}}}),n=()=>({"@media (prefers-reduced-motion: reduce)":{transition:"none",animation:"none"}});export{n as a,e as g};

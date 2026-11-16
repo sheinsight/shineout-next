@@ -1,0 +1,1 @@
+import{r as n}from"./registry-CoINQWyI.js";function s(t){var r=n.useRef(t);r.current=t;var e=n.useRef();return e.current||(e.current=function(){return r.current.apply(r,arguments)}),e.current}export{s as u};

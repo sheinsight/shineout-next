@@ -1,0 +1,1 @@
+import{r as n}from"./registry-CoINQWyI.js";const i=e=>e==="horizontal"||e==="vertical",c=(e,r,o)=>n.useMemo(()=>{const a=i(e);let t;return a?t=e:typeof r=="boolean"?t=r?"vertical":"horizontal":t=i(o)?o:"horizontal",[t,t==="vertical"]},[o,e,r]);export{c as u};

@@ -1,0 +1,1 @@
+import{c as r}from"./clsx-B-dksMZM.js";const e=(a,s,t)=>r({[`${a}-status-success`]:s==="success",[`${a}-status-warning`]:s==="warning",[`${a}-status-error`]:s==="error",[`${a}-status-validating`]:s==="validating",[`${a}-has-feedback`]:t}),n=(a,s)=>s||a;export{n as a,e as g};

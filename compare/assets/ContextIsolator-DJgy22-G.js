@@ -1,0 +1,1 @@
+import{R as r}from"./registry-CoINQWyI.js";import{d as l}from"./is-FB797O96.js";import"./index-emrU1FF-.js";import{N as s}from"./context-B6aA9C3o.js";import{N as i}from"./Compact-DDWW687d.js";const d=o=>{const{space:a,form:m,children:e}=o;if(!l(e))return null;let t=e;return m&&(t=r.createElement(s,{override:!0,status:!0},t)),a&&(t=r.createElement(i,null,t)),t};export{d as C};

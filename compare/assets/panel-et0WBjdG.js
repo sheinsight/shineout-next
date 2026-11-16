@@ -1,0 +1,1 @@
+const o={border:"#e8ebf0",fill:"#ffffff",text:"#1d2129",subText:"#6c7180"},e={position:"relative",padding:24,border:`1px solid ${o.border}`,borderRadius:8,background:o.fill,color:o.text},r={margin:"8px 0 0",color:o.subText};export{o as C,e as p,r as s};

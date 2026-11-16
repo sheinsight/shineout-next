@@ -1,0 +1,1 @@
+const t={default:"default",primary:"primary",secondary:"default",danger:"danger",warning:"orange",success:"green"},e=(a,n="solid")=>{const r=t[a];return n==="outline"?{color:r,variant:"outlined"}:n==="dashed"?{color:r,variant:"dashed"}:n==="text"?{color:r,variant:"text"}:a==="secondary"||a==="default"?{color:r,variant:"filled"}:{color:r,variant:"solid"}};export{e as a};
