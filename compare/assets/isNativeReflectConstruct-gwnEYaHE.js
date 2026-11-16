@@ -1,1 +1,0 @@
-function o(e){return o=Object.setPrototypeOf?Object.getPrototypeOf.bind():function(t){return t.__proto__||Object.getPrototypeOf(t)},o(e)}function n(){try{var e=!Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],function(){}))}catch{}return(n=function(){return!!e})()}export{n as _,o as a};
