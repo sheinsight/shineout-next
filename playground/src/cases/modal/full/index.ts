@@ -1,0 +1,14 @@
+import { defineCase } from '../../../core/define';
+import { openScenarios } from '../_shared/scenarios';
+
+export default defineCase({
+  title: '弹窗 全屏',
+  description: '来自 shineout 示例 modal/05-full 的外壳：fullScreen 弹窗，内容简化为一行文字',
+  scenarios: openScenarios,
+  notes: [
+    '「点击打开」场景：自动测试时弹窗打开 600ms 后自己关闭（_shared/bench.ts），并等关闭动画结束再测下一次，每次测的都是「从关闭到打开」；「第一次打开」只测一次。手动查看时弹窗不会自动关闭',
+    '原示例的弹窗内容是一个完整的表单（Form + Input + Radio + Checkbox + DatePicker + Upload.Image + Textarea），依赖的组件大部分还没迁移，且 antd 没有 Upload.Image，这里内容简化成一行文字，只比较「全屏弹窗」本身的开销；表单内容的开销要等这些组件迁移后再补',
+    'antd 没有全屏属性：用 width=100vw + 清掉 top / 圆角 + 高度 100vh 模拟，不是同一个 API。弹窗外壳的 styles key：antd6 是 container，antd5 是 content，两个版本写法不同',
+    '截图确认（antd6）：模拟出来的全屏四周有细边框、顶部没有贴满；Shineout 3.x 的 fullScreen 铺满视口，顶部露出一条遮罩。外观有细小差异，不影响对比「打开」的开销',
+  ],
+});

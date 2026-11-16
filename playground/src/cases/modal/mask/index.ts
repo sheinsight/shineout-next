@@ -1,0 +1,14 @@
+import { defineCase } from '../../../core/define';
+import { openScenarios } from '../_shared/scenarios';
+
+export default defineCase({
+  title: '弹窗 遮罩',
+  description: '来自 shineout 示例 modal/15-mask，mask={{ blur: true }} 模糊遮罩，只有 3.x 和 antd 6.x 参与',
+  scenarios: openScenarios,
+  notes: [
+    '「点击打开」场景：自动测试时弹窗打开 600ms 后自己关闭（_shared/bench.ts），并等关闭动画结束再测下一次，每次测的都是「从关闭到打开」；「第一次打开」只测一次。手动查看时弹窗不会自动关闭',
+    '2.x 的 Modal 没有 mask 属性（只有 hideMask / maskBackground），antd 5.29 的 mask 只接受布尔值（没有 blur），所以只有 3.x 和 antd 6.x',
+    '原示例有 4 个按钮（blur 遮罩、无遮罩、以及两个静态方法 info 带 mask），这里只迁 blur 遮罩一个，另外三个没有迁移',
+    '模糊遮罩的 backdrop-filter 需要 GPU 合成，开销可能和普通遮罩不同，测的就是这个',
+  ],
+});

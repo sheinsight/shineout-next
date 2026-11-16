@@ -1,0 +1,12 @@
+import { defineCase } from '../../../core/define';
+import { openScenarios } from '../_shared/scenarios';
+
+export default defineCase({
+  title: '弹窗 缩放动画',
+  description: '来自 shineout 示例 modal/12-zoom，zoom 属性开启缩放入场动画',
+  scenarios: openScenarios,
+  notes: [
+    '「点击打开」场景：自动测试时弹窗打开 600ms 后自己关闭（_shared/bench.ts），并等关闭动画结束再测下一次，每次测的都是「从关闭到打开」；「第一次打开」只测一次。手动查看时弹窗不会自动关闭',
+    'antd 的 Modal 默认就是缩放入场动画（zoom），没有对应的开关；Shineout 的 zoom 默认关闭（默认是淡入），所以这个用例里 Shineout 开了 zoom，antd 是默认行为，动画类似',
+  ],
+});
