@@ -1,0 +1,13 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '进度条 内嵌',
+  description: '来自 shineout 示例 progress/05-line-inner，shape=line-inner，文字显示在进度条里面，只有 3.x 与 antd 参与',
+  notes: [
+    '2.x 的 shape 只有 line / circle，没有 line-inner，不参与',
+    'shape=line-inner ↔ antd 的 percentPosition={{ type: "inner" }}（5.18 起支持，5.x 和 6.x 都有）；条高两边都没有固定，antd 设了 size 高 20 让文字放得下，Shineout 用自己默认的内嵌高度',
+    '原示例第三个条 value=40 但文字是 10%，这里照搬（antd 用 format 写成 10%）；value 小于 10 时 Shineout 把文字放到条的右侧（lineInnerRight），antd 的行为没有逐项核对',
+    'type 颜色：antd 没有 warning 状态，用 strokeColor 写死颜色（#faad14 / #52c41a / #ff4d4f），和 Shineout 的主题色不完全相同',
+    '截图确认的外观差异：value 很小（0% / 5%）时，3.x 把文字放在条的右侧、条只剩一个小圆点；antd 的文字仍在条里面，条被撑成一个能放下文字的小圆；antd 内嵌文字在 warning / success / danger 的条上是深色（默认文字色），3.x 是白色。这些差异会影响布局和绘制开销，但不是性能结论的一部分',
+  ],
+});
