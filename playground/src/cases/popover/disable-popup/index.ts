@@ -1,0 +1,14 @@
+import { defineCase } from '../../../core/define';
+import { openScenarios } from '../_shared/scenarios';
+
+export default defineCase({
+  title: '气泡 禁用弹出',
+  description: '来自 shineout 示例 popover/14-disabled，disabled 属性，只有 3.x 与 antd 参与；一个禁用的、一个启用的',
+  scenarios: openScenarios,
+  notes: [
+    '2.x 的 Props.d.ts 里没有 disabled（也没有 Link），不参与',
+    '「打开」场景：用例自己的 <button data-bench=\'open\'> 同步 setOpen(true)，气泡走受控的 visible（Shineout）/ open（antd），自动测试时打开 600ms 后自己关闭（_shared/bench.ts），并等关闭动画结束再测下一次，每次测的都是「从关闭到打开」；「第一次打开」只测一次。手动查看时不会自动关闭',
+    'Popover.Confirm 的 disabled ↔ antd 的 Popconfirm disabled；Link ↔ Typography.Link。原示例用 Switch 切换 disabled，Switch 没迁移，这里固定成两个：一个禁用、一个启用。3.x 的禁用项即使 visible 受控为 true 也不弹出（截图确认）；antd 的 disabled 在受控 open 下仍然会弹出（截图确认，两个气泡都出来了），所以 antd 的禁用项不传 open（永远不弹），只有启用的那个由 open 控制。两边的行为表现一致，但写法不同',
+    '原示例的 Link 本身是 disabled 的，这里去掉了 Link 的 disabled，否则 antd 的 Typography.Link 不响应事件，而且两个库的禁用样式不同',
+  ],
+});
