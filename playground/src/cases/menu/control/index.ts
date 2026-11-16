@@ -1,0 +1,11 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '菜单 默认展开',
+  description: '来自 shineout 示例 menu/06-control，defaultOpenKeys=["3"]，展开 Navigation Two，只测挂载',
+  notes: [
+    '原示例文件名叫 control，实际用的是 defaultOpenKeys（非受控）；defaultOpenKeys 两边同名',
+    '展开后 Navigation Two 的两个子项会进 DOM，比 base 多渲染这 2 项',
+    '原示例用的数据不含最后一项超长标题，这里同样去掉了',
+  ],
+});

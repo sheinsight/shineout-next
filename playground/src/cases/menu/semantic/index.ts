@@ -1,0 +1,11 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '菜单 Semantic DOM',
+  description: '来自 shineout 示例 menu/14-semantic，用 classNames / styles 定制 root / item / title，只有 3.x 和 antd 6.x 参与',
+  notes: [
+    '2.x 没有 classNames / styles；antd 5.29 的 Menu 也没有，所以只有 3.x 和 antd 6.x',
+    'key 的对应关系：root ↔ root，item ↔ item，title ↔ itemTitle；Shineout 的 header / expand / list / itemContent / icon 在 antd 里没有同名节点',
+    '原示例第二个菜单里的函数式 classNames（根据 active / open 动态设类名）和 header 在 antd 里没有迁移，antd 的第二个菜单只设了静态 classNames，用来保证两边都是两个菜单',
+  ],
+});
