@@ -1,0 +1,12 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '输入框 组合',
+  description: '来自 shineout 示例 input/04-01-group，前后缀文字、多输入框、Select / DatePicker / Button 组合，以及 small / large，只测挂载',
+  notes: [
+    '前后缀文字（http:// .com）：Shineout 用 Input.Group 包 <b>，antd 用 Space.Compact 加 Space.Addon（antd 6 已废弃 addonBefore / addonAfter，5.29 也有 Space.Addon，两个版本写法一致）',
+    'Select + Input / DatePicker / Button：antd 用 Space.Compact 拼接，属于另一种机制，Shineout 的 Input.Group 是通过 cloneElement 往子元素里注入 props',
+    '「-」分隔那一项：antd 用一个 disabled 的小 Input 模拟，不是同样的 DOM',
+    '这个用例里有 Select、DatePicker、Button，各库用的是自己的实现，挂载开销里包含这些组件',
+  ],
+});
