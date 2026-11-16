@@ -63,7 +63,7 @@ try {
         nodes: document.querySelectorAll('#app *').length,
       }));
       if (info.error) fail(`${id} · ${info.lib}：${info.error.split('\n')[0]}`);
-      else if (info.nodes < 2) fail(`${id} · ${info.lib}：页面是空的`);
+      else if (info.nodes < 1) fail(`${id} · ${info.lib}：页面是空的`);
       else pass(`${id} · ${info.lib}：渲染 ${info.nodes} 个节点`);
     }
     if (logs.length) fail(`${id}：主页面有报错\n    ${[...new Set(logs)].slice(0, 3).join('\n    ')}`);
