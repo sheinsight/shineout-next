@@ -1,3 +1,8 @@
+## 3.10.4-beta.4
+2026-11-16
+### 💅 Style
+- `Input` 的 `small` 和 `large` 尺寸支持单独配置圆角，未单独配置时沿用输入框默认圆角 ([#1816](https://github.com/sheinsight/shineout-next/pull/1816))
+
 ## 3.9.14-beta.10
 2026-05-09
 ### 🐞 BugFix

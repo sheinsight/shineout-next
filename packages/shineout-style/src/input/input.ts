@@ -1,4 +1,4 @@
-import border from './input-border';
+import border, { getSizeBorderRadius } from './input-border';
 
 import { JsStyles } from '../jss-style';
 import token from '@sheinx/theme';
@@ -60,7 +60,10 @@ const { wrapper, ...resetWrapper } = inputBorder;
 
 const { group, groupSmall, groupLarge, ...resetGroup } = groupBorder;
 
-const groupSpace = (gap: string) => ({
+// 兼容老用户：small / large 的圆角在用户没有单独配置时回退到 inputBorderRadius，详见 getSizeBorderRadius
+const sizeRadius = getSizeBorderRadius(token.inputBorderRadius);
+
+const groupSpace = (gap: string, radius: string = token.inputBorderRadius) => ({
   '& > i:first-child, & > span:first-child': {
     paddingLeft: gap,
   },
@@ -96,22 +99,22 @@ const groupSpace = (gap: string) => ({
   },
   '&[dir=ltr] > b': {
     '&:first-child': {
-      borderTopLeftRadius: token.inputBorderRadius,
-      borderBottomLeftRadius: token.inputBorderRadius,
+      borderTopLeftRadius: radius,
+      borderBottomLeftRadius: radius,
     },
     '&:last-child': {
-      borderTopRightRadius: token.inputBorderRadius,
-      borderBottomRightRadius: token.inputBorderRadius,
+      borderTopRightRadius: radius,
+      borderBottomRightRadius: radius,
     },
   },
   '&[dir=rtl] > b': {
     '&:first-child': {
-      borderTopRightRadius: token.inputBorderRadius,
-      borderBottomRightRadius: token.inputBorderRadius,
+      borderTopRightRadius: radius,
+      borderBottomRightRadius: radius,
     },
     '&:last-child': {
-      borderTopLeftRadius: token.inputBorderRadius,
-      borderBottomLeftRadius: token.inputBorderRadius,
+      borderTopLeftRadius: radius,
+      borderBottomLeftRadius: radius,
     },
   },
 });
@@ -252,11 +255,11 @@ const input: JsStyles<keyof InputClasses> = {
   },
   groupSmall: {
     ...groupSmall,
-    ...groupSpace(token.inputSmallPaddingX),
+    ...groupSpace(token.inputSmallPaddingX, sizeRadius.small),
   },
   groupLarge: {
     ...groupLarge,
-    ...groupSpace(token.inputLargePaddingX),
+    ...groupSpace(token.inputLargePaddingX, sizeRadius.large),
   },
   ...resetGroup,
   numberStep: {
