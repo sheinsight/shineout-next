@@ -1,5 +1,5 @@
 import { JsStyles } from '../jss-style';
-import Token from '@sheinx/theme';
+import Token, { getTokenName } from '@sheinx/theme';
 import { ButtonClasses } from '@sheinx/base';
 
 type ButtonTypeWithoutLink = 'Primary' | 'Secondary' | 'Danger' | 'Warning' | 'Success';
@@ -120,6 +120,8 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
     fontWeight: Token.buttonSmallFontWeight,
     fontSize: Token.buttonSmallFontSize,
     padding: `${Token.buttonSmallPaddingY} ${Token.buttonSmallPaddingX}`,
+    // 未单独设置 small 圆角时回退到 buttonBorderRadius，兼容只改过 buttonBorderRadius 的老用户
+    borderRadius: `var(${getTokenName('buttonSmallBorderRadius')}, ${Token.buttonBorderRadius})`,
 
     '&$circle,&$square': {
       width: Token.buttonSmallCircleSize,
@@ -132,6 +134,7 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
     fontWeight: Token.buttonLargeFontWeight,
     fontSize: Token.buttonLargeFontSize,
     padding: `${Token.buttonLargePaddingY} ${Token.buttonLargePaddingX}`,
+    borderRadius: `var(${getTokenName('buttonLargeBorderRadius')}, ${Token.buttonBorderRadius})`,
 
     '&$circle,&$square': {
       width: Token.buttonLargeCircleSize,

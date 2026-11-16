@@ -1,3 +1,8 @@
+## 3.10.4-beta.4
+2026-11-16
+### 💅 Style
+- `Button` 的 `small` 和 `large` 尺寸支持单独配置圆角，未单独配置时沿用按钮默认圆角 ([#1816](https://github.com/sheinsight/shineout-next/pull/1816))
+
 ## 3.9.13-beta.15
 2026-04-16
 ### 💅 Style
