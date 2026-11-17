@@ -1,3 +1,9 @@
+## 3.10.4-beta.4
+2026-11-17
+
+### 💅 Style
+- `Button`、`Input`、`Select`、`Cascader`、`TreeSelect`、`DatePicker`、`Textarea` 的 `small`、`large` 尺寸支持单独配置圆角，未单独配置时沿用默认圆角 ([#1816](https://github.com/sheinsight/shineout-next/pull/1816))
+
 ## 3.10.4-beta.3
 2026-11-03
 
