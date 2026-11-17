@@ -70,6 +70,12 @@ export interface InputTokens {
   inputSmallFontSize: string;
   /**
    * @type {string}
+   * @token Radius-default
+   * @description 输入框小尺寸边框圆角
+   */
+  inputSmallBorderRadius: string;
+  /**
+   * @type {string}
    * @token Spacing-8
    * @description 输入框小尺寸内边距（水平方向）
    */
@@ -92,6 +98,12 @@ export interface InputTokens {
    * @description 输入框大尺寸字体字号
    */
   inputLargeFontSize: string;
+  /**
+   * @type {string}
+   * @token Radius-default
+   * @description 输入框大尺寸边框圆角
+   */
+  inputLargeBorderRadius: string;
   /**
    * @type {string}
    * @token Spacing-12

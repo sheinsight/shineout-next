@@ -1,6 +1,14 @@
-import Token from '@sheinx/theme';
+import Token, { getTokenName } from '@sheinx/theme';
 import { TabsClasses } from '@sheinx/base';
 import { JsStyles } from '../jss-style';
+
+// 兼容老用户：tabsTabInnerBorderRadius 是后加的 token，老用户的主题里只配置过 tabsTabBorderRadius，
+// 而 lineInner / fillInner 原来使用的就是 tabsTabBorderRadius。
+// 所以未单独配置内部圆角时必须回退到 tabsTabBorderRadius，外观才和以前一致。
+// 不能直接用 Token.tabsTabInnerBorderRadius：它自带默认值，会跳过用户配置的 tabsTabBorderRadius。
+// setToken 默认只输出公共 token，不包含组件 token，所以用户没配置时下面的变量未定义，回退才会生效。
+// 如果用户把整套组件 token 显式传给 setToken，变量会带上默认值，回退不再生效（与按钮、输入框的处理一致）。
+const tabInnerBorderRadius = `var(${getTokenName('tabsTabInnerBorderRadius')}, ${Token.tabsTabBorderRadius})`;
 
 interface AfterOptions {
   top?: number | string;
@@ -635,13 +643,11 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
   button: {},
   line: {},
   lineInner: {
-    // transition: 'all .2s',
-    borderRadius: Token.tabsTabBorderRadius,
+    borderRadius: tabInnerBorderRadius,
     padding: `${Token.tabsLineInnerPaddingY} ${Token.tabsLineInnerPaddingX}`,
   },
   fillInner: {
-    // transition: 'all .2s',
-    borderRadius: Token.tabsTabBorderRadius,
+    borderRadius: tabInnerBorderRadius,
     padding: `${Token.tabsFillInnerPaddingY} ${Token.tabsFillInnerPaddingX}`,
   },
   iconInner: {

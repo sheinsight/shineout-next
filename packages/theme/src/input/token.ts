@@ -33,13 +33,13 @@ const inputTokenExtraValue = {
   icon: { size: 'Font-14', color: 'Neutral-text-4' },
   small: {
     font: { size: 'Font-12' },
-    border: { radius: '' },
+    border: { radius: 'Radius-default' },
     padding: { x: 'Spacing-8', y: 'Spacing-1' },
     icon: { size: 'Font-12' },
   },
   large: {
     font: { size: 'Font-16' },
-    border: { radius: '' },
+    border: { radius: 'Radius-default' },
     padding: { x: 'Spacing-12', y: 'Spacing-7' },
     icon: { size: 'Font-16' },
   },

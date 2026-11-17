@@ -58,6 +58,7 @@ const tabsTokenExtraValue = {
     padding: { x: 'Spacing-15', y: 'Spacing-9' },
     font: { size: 'Font-14' },
     border: { radius: 'Radius-default' },
+    inner: { border: { radius: 'Radius-default' } },
   },
   nearly: { margin: 'Spacing-4' },
   line: {

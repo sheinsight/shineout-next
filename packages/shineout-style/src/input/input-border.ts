@@ -7,6 +7,25 @@ const supportsHas = () => {
   }
   return CSS.supports('selector(:has(*))');
 };
+
+/**
+ * small / large 尺寸的圆角取值。
+ *
+ * 兼容老用户：inputSmallBorderRadius / inputLargeBorderRadius 是后加的 token，
+ * 老用户的主题里只配置过 inputBorderRadius。这里必须回退到 inputBorderRadius，
+ * 让 small、large 在用户没有单独配置时仍然跟随它，外观和以前保持一致。
+ *
+ * 不能直接用 token.inputSmallBorderRadius：它自带的默认值是 radius-default，
+ * 会直接跳过用户配置的 inputBorderRadius。
+ * setToken 默认只输出公共 token，不包含组件 token，所以用户没配置时下面的变量是未定义的，回退才会生效。
+ * 注意：如果用户（或主题编辑器）显式把整套组件 token 传给 setToken，这两个变量会被定义为 token 的默认值，
+ * 回退就不再生效。要覆盖这种情况，需要 theme 包里这两个 token 的默认值本身跟随 inputBorderRadius（尚未实现）。
+ */
+export const getSizeBorderRadius = (borderRadius: string) => ({
+  small: `var(${getTokenName('inputSmallBorderRadius')}, ${borderRadius})`,
+  large: `var(${getTokenName('inputLargeBorderRadius')}, ${borderRadius})`,
+});
+
 interface Token {
   lineHeight: string;
   borderRadius: string;
@@ -56,6 +75,31 @@ interface Token {
   largeInnerTitlePaddingX: string;
 }
 export default <T extends string>(name: T, token: Token = {} as any) => {
+  const radius = getSizeBorderRadius(token.borderRadius);
+
+  // 输入组（separate）里首尾元素的圆角。
+  // 选择器的 & 数量刻意多于基础规则（基础是 &&&，rtl 还多一个属性选择器），保证不依赖样式表顺序也能覆盖基础圆角。
+  const sizeGroupRadius = (r: string) => ({
+    '[data-soui-role="input-group-separate"] &&&&&, [data-soui-role="input-group-separate"] &&&&&:hover': {
+      '&:first-child': {
+        borderTopLeftRadius: r,
+        borderBottomLeftRadius: r,
+      },
+      '&:last-child': {
+        borderTopRightRadius: r,
+        borderBottomRightRadius: r,
+      },
+    },
+    '[dir=rtl][data-soui-role="input-group-separate"] &&&&&, [dir=rtl][data-soui-role="input-group-separate"] &&&&&:hover': {
+      '&:first-child': {
+        borderRadius: `0 ${r} ${r} 0`,
+      },
+      '&:last-child': {
+        borderRadius: `${r} 0 0 ${r}`,
+      },
+    },
+  });
+
   return {
     [name]: {
       boxSizing: 'border-box',
@@ -125,6 +169,12 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
     },
     [`${name}PaddingBox`]: {
       borderRadius: token.borderRadius,
+      [`$${name}Small &`]: {
+        borderRadius: radius.small,
+      },
+      [`$${name}Large &`]: {
+        borderRadius: radius.large,
+      },
       [`$${name}:not($${name}InnerTitle) &`]: {
         padding: `${token.paddingY} ${token.paddingX}`,
       },
@@ -173,9 +223,19 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
 
     [`${name}Small`]: {
       fontSize: token.smallFontSize,
+      // && 让它的优先级高于基础圆角，不依赖样式表顺序。
+      // 同优先级的 Underline 定义在后面，仍会把圆角置 0；输入组里的 borderRadius: 0 选择器更具体，同样会覆盖它。
+      '&&': {
+        borderRadius: radius.small,
+      },
+      ...sizeGroupRadius(radius.small),
     },
     [`${name}Large`]: {
       fontSize: token.largeFontSize,
+      '&&': {
+        borderRadius: radius.large,
+      },
+      ...sizeGroupRadius(radius.large),
     },
     [`${name}Focus`]: {
       borderColor: token.focusBorderColor,

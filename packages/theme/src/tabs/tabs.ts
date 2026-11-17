@@ -17,6 +17,7 @@ const tabsTokens: TabsTokens = {
   tabsTabPaddingY: 'Spacing-9',
   tabsTabFontSize: 'Font-14',
   tabsTabBorderRadius: 'Radius-default',
+  tabsTabInnerBorderRadius: 'Radius-default',
   tabsNearlyMargin: 'Spacing-4',
   tabsLinePaddingX: 'Spacing-8',
   tabsLinePaddingTop: 'Spacing-6',
