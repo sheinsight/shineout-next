@@ -1,3 +1,8 @@
+## 3.10.4-beta.4
+2026-11-17
+### 💅 Style
+- `Cascader` 的 `size` 为 `small`、`large` 时支持单独配置圆角，未单独配置时沿用默认圆角 ([#1816](https://github.com/sheinsight/shineout-next/pull/1816))
+
 ## 3.10.3-beta.6
 2026-10-26
 ### 🚀 Performance
