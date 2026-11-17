@@ -1,3 +1,8 @@
+## 3.10.4-beta.4
+2026-11-17
+### 💅 Style
+- `Tabs` 的 `line`、`fill` 形态支持单独配置页签内部的圆角，未单独配置时沿用页签圆角 ([#1816](https://github.com/sheinsight/shineout-next/pull/1816))
+
 ## 3.10.1-beta.5
 2026-09-08
 ### 🆕 Feature
