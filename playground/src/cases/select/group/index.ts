@@ -1,0 +1,15 @@
+import { defineCase } from '../../../core/define';
+import { openScenarios } from '../_shared/scenarios';
+
+export default defineCase({
+  title: '选择器 分组',
+  description: '来自 shineout 示例 select/06-group-1，groupBy 分成 City / Country / Other 三组，多选',
+  scenarios: openScenarios('Mars'),
+  notes: [
+    '「打开」场景：关闭状态下下拉层没有选项（2.x 用 renderPending 延迟渲染；3.x、antd 也是点开才渲染选项），所以挂载测不到下拉本身。场景里 2.x 和 antd 是对 Select 自带的触发器做完整的 pointerdown → click，同步打开；3.x 的 Select 在 setTimeout 里才更新状态，下拉比点击晚一个任务出现，场景的计时会在下拉渲染出来之前结束，所以 3.x 用用例自己的 <button data-bench=open> 设置受控的 open，测的是「下拉渲染出来」的开销，不含 3.x 自带触发器的路径。每次测量后往页面空白处点一下关闭，等选项不可见再测下一次。实测（10 万项的 bigdata 用例）四个库关闭后弹层都还留在 DOM 里（10 个可视项，只是不可见），所以「再次打开」只是切换显示，比「第一次打开」小很多（base 里约 3ms vs 12~27ms）；两种场景要分开看',
+    'groupBy ↔ antd 的分组 options（{ label, options }）：Shineout 是运行时按 groupBy 归类，antd 需要先自己把数据归成组结构，归类这一步在 antd 版本里是模块加载时做的，不计入测量',
+    '截图确认三个库的分组顺序都是 Other / Country / City，组名是小号灰字，组内选项缩进：3.x 的组名在选项上方、选项不缩进，antd 的选项有缩进',
+    '分组的顺序：Shineout 按数据里分组首次出现的顺序（原数据 Mars(3) / China(2) / Beijing(1) / Shanghai(1)），antd 这里按同一顺序归类，所以组顺序一致',
+    '原示例的 format="value" + prediction 是用 value 字段做取值；antd 直接用 value',
+  ],
+});
