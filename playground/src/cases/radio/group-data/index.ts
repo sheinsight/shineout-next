@@ -1,0 +1,11 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '单选框 数据渲染',
+  description: '来自 shineout 示例 radio/002-group-0，Radio.Group 用 data 渲染七个颜色，defaultValue=blue，只测挂载',
+  notes: [
+    'Shineout 的 Radio.Group 用 data + keygen（+ renderItem）渲染，antd 用 options；Shineout 的 Radio 用 htmlValue，antd 用 value',
+    '原示例用 react-jss 给每个 Radio 加了 marginBottom: 12，这里去掉了（组件库之外的样式，且 antd 不依赖 JSS），所以各项之间的纵向间距是各库默认值',
+    '只测挂载',
+  ],
+});
