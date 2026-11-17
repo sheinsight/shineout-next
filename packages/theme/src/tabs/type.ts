@@ -82,6 +82,12 @@ export interface TabsTokens {
   tabsTabBorderRadius: string;
   /**
    * @type {string}
+   * @token Radius-default
+   * @description 标签页页签内部容器的边框圆角
+   */
+  tabsTabInnerBorderRadius: string;
+  /**
+   * @type {string}
    * @token Spacing-4
    * @description 标签页相邻之间的外边距
    */
