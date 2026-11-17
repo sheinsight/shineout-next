@@ -1,1 +1,0 @@
-var a=new Set,s=function(e){return a.has(e)?!1:(a.add(e),!0)},t=function(e,n,o,f){},c=function(e){},i=function(e){},g=function(e,n,o){},d=function(e){var n=new Error("[shineout] ".concat(e));s(n.message)&&console.error(n)},p={error:d,deprecated:t,warn:i,breaking:c,conflict:g};export{p as d};

@@ -1,1 +1,0 @@
-import{_ as e,a as s}from"./isNativeReflectConstruct-vbWqIhsW.js";import{a as c}from"./slicedToArray-Br1Nt6Eo.js";function p(r,t,o){return t=e(t),c(r,s()?Reflect.construct(t,o||[],e(r).constructor):t.apply(r,o))}export{p as _};

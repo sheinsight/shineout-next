@@ -1,1 +1,0 @@
-import{R as o}from"./is-FB797O96.js";import{R as s}from"./registry-CoINQWyI.js";function a(n,t={}){let e=[];return s.Children.forEach(n,r=>{r==null&&!t.keepEmpty||(Array.isArray(r)?e=e.concat(a(r)):o(r)&&r.props?e=e.concat(a(r.props.children,t)):e.push(r))}),e}export{a as t};
