@@ -1,0 +1,12 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '步骤条 语义化 DOM',
+  description: '来自 shineout 示例 steps/10-semantic，在整体和单个步骤上定制样式，只测挂载',
+  notes: [
+    '只有 3.x 和 antd 6 参与：2.x 没有 Steps；antd 5 的 Steps 没有 classNames / styles',
+    '节点对应关系（读类型得到）：Shineout 的 root / step / tail / icon / title / description / content 对应 antd 6 整体上的 root / item / itemRail / itemIcon / itemTitle / itemContent（另有 itemWrapper / itemSection / itemHeader / itemSubtitle）；单个步骤（items 里每一项）上的 key 不带 item 前缀：root / icon / title / content / rail 等，示例里单步骤的样式对应写在每个 item 的 classNames / styles 里',
+    '原示例有两块：第一块（整体 padding 16，第 1 步 icon 加描边，第 2 步 title 加粗变蓝）两边都迁了；第二块用的是 Step 上的函数式 classNames（根据 status 动态返回类名），antd 6 的 items 上有同名的 classNames / styles（key 是 root / icon / title 等，读类型确认），但没有核对是否支持函数，这里按 current=2 的状态结果直接写成静态值（第 1、2 步 finish 加 step-done，第 3 步 process 加 step-active 且标题变绿），渲染结果等价，但没有测到「函数式」这一机制本身',
+    'Shineout 的 Steps 用 <Steps.Step> 子元素，antd 用 items 数组；antd 6 的 description 改名 content（antd 5 还是 description）',
+  ],
+});
