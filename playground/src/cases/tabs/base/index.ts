@@ -1,0 +1,28 @@
+import { defineCase } from '../../../core/define';
+import { getBenchState } from '../../../core/define';
+
+export default defineCase({
+  title: '标签页 基本用法',
+  description: '来自 shineout 示例 tabs/01-base，line 形状三个标签，受控并带点击切换场景',
+  scenarios: [
+    {
+      key: 'click-tab',
+      name: '点击标签（第 1 个 ↔ 第 3 个）',
+      target: (ctx) => {
+        const list = ctx.queryAll(ctx.lib === 'v2' ? '.so-tabs-tab' : ctx.lib === 'v3' ? '.soui-tabs-tab' : '.ant-tabs-tab');
+        const s = getBenchState() as { active: number } | undefined;
+        return s?.active === 2 ? list[0] : list[2];
+      },
+      check: (ctx) => ctx.before?.active !== ctx.after?.active,
+    },
+  ],
+  notes: [
+    'Shineout 用 <Tabs.Panel tab=...> 子元素，antd 用 items 数组（key / label / children）；Shineout 的 shape 对应 antd 的 type，只有 line 和 card 对应，其余形状（button / fill / dash）antd 没有',
+    '原示例是不受控的 defaultActive={0}，为了能校验点击切换，这里改成受控（active + onChange）并上报当前激活项；初始激活第 1 个',
+    '「点击切换标签」场景：当前是第 3 个就点第 1 个，否则点第 3 个，每次点击都会改变激活项；校验上报的值确实变了，测的是点击到下一帧绘制完成的主线程占用（激活样式切换、指示条移动、面板内容切换）',
+    '点击的目标元素：2.x 是 .so-tabs-tab，3.x 是 .soui-tabs-tab，antd 是 .ant-tabs-tab（读 DOM 得到）',
+    'antd 默认在 tab 下方有 16px 外边距的内容区，且 tab 的字号、内边距、指示条动画都是各库自己的，实测整个组件高度 2.x 61 / 3.x 62 / antd 84（含 20-22px 的内容）',
+    'antd 的指示条切换时有位置动画（ink-bar-animated），Shineout 3.x 的 header-scroll-bar 也有；动画只影响到下一帧，不在场景计时之外',
+    '2.x 的 Td 组件在开发模式下会在控制台报 defaultProps 的 React 警告，会让 smoke 标红但不影响渲染和数据',
+  ],
+});
