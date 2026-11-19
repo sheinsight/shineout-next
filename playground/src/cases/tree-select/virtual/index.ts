@@ -1,0 +1,17 @@
+import { defineCase } from '../../../core/define';
+import { openScenarios } from '../_shared/scenarios';
+
+export default defineCase({
+  title: '树选择 虚拟列表',
+  description: '来自 shineout 示例 tree-select/10-virtual，开虚拟列表 + 多选 + 过滤，数据 1110 个节点（10 × 10 × 10）',
+  scenarios: openScenarios('node 0'),
+  notes: [
+    '「打开」场景：关闭状态下弹层里没有节点（3.x、antd 点开才渲染；2.x 的弹层 DOM 在、display:none），所以挂载测不到下拉本身。机制同 select/base：2.x 和 antd 对 TreeSelect 自带的触发器做完整的 pointerdown → click；3.x 用用例自己的 <button data-bench=open> 设置受控的 open（原因是 3.x 在 setTimeout 里才更新状态，下拉比点击晚一个任务出现，计时会在渲染出来之前结束；测的是「下拉渲染出来」的开销，不含自带触发器的路径）。每次测量后点页面空白处关闭，等节点不可见再测下一次。实测（Playwright 手动点开再点空白）三个库关闭后弹层都还留在 DOM 里，所以「再次打开」只是切换显示，比「第一次打开」小；两个场景要分开看',
+    '数据量：原示例文案写「100000 条」，但数据是 createNestedArray([10, 10, 10]) 即 10 + 100 + 1000 = 1110 个节点，这里沿用 1110，不是 10 万；节点 id 与原示例相同（0、0-0、0-0-0 …），用确定性的 makeTree 生成',
+    '默认全部折叠，打开下拉时只有 10 个根节点可见，所以「打开」测的是根节点渲染 + 虚拟列表容器初始化，不是 1110 个节点全部渲染',
+    '虚拟列表：3.x 设 virtual；antd 默认就是虚拟列表（rc-tree-select 的 virtual 默认 true，读类型的话只在 Omit 里没被去掉，这里没有额外设置）；2.x 的 TreeSelect 类型里没有 virtual 属性（读类型确认），所以按默认配置渲染，不传 virtual',
+    '原示例的 onFilter（按 id 精确匹配）没迁：输入过滤要往搜索框里输入，Shineout 的输入有默认防抖，antd 没有，测到的不是渲染开销；antd 没开 showSearch，保持默认',
+    'mode={2}（只返回选中的叶子节点）↔ antd 的 showCheckedStrategy=SHOW_CHILD（默认值），本用例只测打开，没有选中，所以不影响数据',
+    'Shineout 的 data + keygen=\'id\' + renderItem（node xxx）↔ antd 的 treeData（{ value, title, children }，title 里已经拼好 node 前缀）；clearable ↔ allowClear；width={300} ↔ style.width',
+  ],
+});

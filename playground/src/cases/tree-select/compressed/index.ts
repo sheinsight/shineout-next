@@ -1,0 +1,12 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '树选择 合并选项',
+  description: '来自 shineout 示例 tree-select/03-01-01-compressed，多选 + 合并选中结果，初始全选',
+  notes: [
+    '只测挂载，没有交互场景（打开下拉的场景只放在 base、multiple、virtual 里）',
+    '初始全选（10 个 id，同原示例）；Shineout 的 compressed 对应 antd 的 maxTagCount={1}，两者是近似功能，不是同一个东西。截图实测：3.x 显示 2 个标签（node 1-1-1、node 1-1-2）+「+8」，共 10 项；antd 显示 1 个标签（node 1-1-1）+「+ 5 ...」，共 6 项（只数叶子节点）。所以两边展示的标签数和总数都不一样，数据反映的是各自默认口径下的挂载开销',
+    '选中口径：Shineout 的 mode 默认值决定初值里的父节点也算选中（实测 3.x 总数 10）；antd 默认 SHOW_CHILD，只统计叶子节点（实测 6）。2.x 没有截图确认，没有核对',
+    'Shineout 的 data + keygen=\'id\' + renderItem（node xxx）↔ antd 的 treeData（{ value, title, children }，title 里已经拼好 node 前缀）；clearable ↔ allowClear；width={300} ↔ style.width',
+  ],
+});
