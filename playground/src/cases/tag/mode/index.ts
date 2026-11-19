@@ -1,0 +1,12 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '标签 展示模式',
+  description: '来自 shineout 示例 tag/s-003-mode，4 种 mode × 5 种颜色，只测挂载',
+  notes: [
+    '2.x 没有 mode 属性，没有实现；3.x 渲染 4 行（bright / fill / outline / brightOutline）× 5 色',
+    'Shineout 的 mode 有 4 种（bright 浅底色、fill 实心、outline 描边、brightOutline 浅底色加描边），antd 6 的 variant 有 3 种（filled 浅底色、solid 实心、outlined 描边），对应 bright→filled、fill→solid、outline→outlined（截图确认外观相近）；brightOutline 没有对应，没迁；antd 5 没有 variant，只有 bordered（有边框 / 无边框的浅底色），不对应实心，所以 antd 5 只渲染 bright（bordered=false）和 outline（bordered）两行，没有 fill',
+    '颜色对应是近似的：Shineout 的 default / info / danger / warning / success 对应 antd 的 default / processing / error / warning / success（antd 的 info 状态色叫 processing）；色值不同（实测 3.x info 是蓝 #197AFA，antd processing 是 #1677ff 系），所以只是语义相同，颜色不等价',
+    '节点数不同是因为渲染的行数不同：3.x 4 行 20 个 Tag，antd 6 3 行 15 个，antd 5 2 行 10 个',
+  ],
+});

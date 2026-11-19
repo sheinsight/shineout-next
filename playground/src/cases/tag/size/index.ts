@@ -1,0 +1,11 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '标签 尺寸',
+  description: '来自 shineout 示例 tag/s-002-size，small / default / large，带 / 不带关闭按钮，只测挂载',
+  notes: [
+    '2.x 的 Tag 没有 size 属性（读类型确认），没有实现；antd 的 Tag 也没有 size 属性（antd 6 的 Tag 类型里没有 size）',
+    'antd 的 Tag 没有 small / large 尺寸，只能通过 style 自定义字号和内边距来模拟，不是等价的，没迁；这个用例只有 3.x 参与，只保留作为 3.x 的挂载基线，对比意义有限',
+    '带关闭按钮：3.x 的 onClose 为 true 即显示关闭按钮；antd 用 closable',
+  ],
+});
