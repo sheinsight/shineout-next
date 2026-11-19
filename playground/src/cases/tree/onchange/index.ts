@@ -1,0 +1,16 @@
+import { defineCase } from '../../../core/define';
+import { checkScenarios } from '../_shared/scenarios';
+
+export default defineCase({
+  title: '树 勾选',
+  description: '来自 shineout 示例 tree/06-onchange（模式 0），受控勾选，带「勾选第一个根节点」场景，数据放大到 260 个节点',
+  scenarios: checkScenarios,
+  notes: [
+    '数据量：原示例是 createNestedArray([5, 1, 2])（20 个节点），这里放大到 [10, 5, 4]（10 + 50 + 200 = 260 个节点），全部展开。这是有意偏离原示例',
+    '原示例的重点是切换 5 种选中值模式（mode 0~4）和过滤，这里只迁 mode={0}（返回完全选中的节点，含父节点）的勾选；模式切换和过滤（用 Radio、Input 和 useMemo 过滤数据）没迁：antd 的 showCheckedStrategy 不在 Tree 上（只在 TreeSelect 上），没有对应的模式切换',
+    '「勾选第一个根节点」场景：点第一个根节点的勾选框，连带勾选它下面的 5 个子节点和 20 个孙节点；校验勾选数 0 → 大于 0；自动测试里 400ms 后自动清空。2.x 点 .so-tree-checkbox，3.x 点 .soui-tree-checkbox，antd 点 .ant-tree-checkbox（读 DOM 得到，是否生效由 check 校验）',
+    '勾选：Shineout 里给 Tree 传 value 就出现勾选框；antd 要显式 checkable。勾选数是各库 onChange / onCheck 给出的数组长度，两边口径可能不同（Shineout mode 0 含父节点，antd 默认父子联动、checked 里含父节点），本场景只校验「有勾选」，没有比较数量',
+    '全部展开：Shineout 的 defaultExpandAll ↔ antd 的 defaultExpandAll',
+    'Shineout 的 data + keygen=\'id\' + renderItem（node xxx）↔ antd 的 treeData（{ key, title, children }，title 里已拼好 node 前缀）',
+  ],
+});

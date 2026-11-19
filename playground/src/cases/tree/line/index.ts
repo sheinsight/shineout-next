@@ -1,0 +1,12 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '树 连线',
+  description: '来自 shineout 示例 tree/03-line，展开两层，不显示连线，只测挂载',
+  notes: [
+    '只测挂载，没有交互场景',
+    '原示例是 line={false}（不显示连线）。这里 Shineout 保持 line={false}；antd 默认就没有连线，所以 antd 不传 showLine，两边都是「无连线」，是等价的',
+    '默认展开：Shineout 的 defaultExpanded=[\'0\', \'0-0\']，antd 的 defaultExpandedKeys 同样两项',
+    'Shineout 的 data + keygen=\'id\' + renderItem（node xxx）↔ antd 的 treeData（{ key, title, children }，title 里已拼好 node 前缀）',
+  ],
+});
