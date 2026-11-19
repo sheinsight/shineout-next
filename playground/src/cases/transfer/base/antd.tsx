@@ -12,7 +12,7 @@ export default function Demo() {
       <Transfer
         dataSource={data}
         render={(item) => item.title}
-        listStyle={{ height: 274, width: 200 }}
+        styles={{ section: { height: 274, width: 200 } }}
         targetKeys={value}
         onChange={(keys) => setValue(keys as string[])}
         selectedKeys={selected}
