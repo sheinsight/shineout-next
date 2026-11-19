@@ -1,0 +1,12 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '加载中 基本用法',
+  description: '来自 shineout 示例 spin/01-base-1，独立的小号加载指示器',
+  notes: [
+    '原示例有 01-base-1（单个 ring）和 01-base-2（12 种动画并排展示），后者只有 Shineout 有 name 属性，antd 没有对应，没迁',
+    'Shineout 的 Spin 有 12 种动画（name 属性），antd 只有一种，所以这里统一用 name=ring（环形）对 antd 的默认指示器；两边的动画不是同一个东西',
+    '加载动画是持续运行的 CSS 动画，场景里只测挂载；动画本身持续占用的主线程不在这个用例的数据里',
+    'Shineout 的 size=16 是像素，antd 的 size 只有 small / default / large 三档，这里用 antd 的 small 对齐',
+  ],
+});

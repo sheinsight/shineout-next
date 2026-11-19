@@ -1,0 +1,12 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '加载中 提示文字',
+  description: '来自 shineout 示例 spin/04-tip，独立模式带提示文字',
+  notes: [
+    'Shineout 的 Spin 有 12 种动画（name 属性），antd 只有一种，所以这里统一用 name=ring（环形）对 antd 的默认指示器；两边的动画不是同一个东西',
+    '加载动画是持续运行的 CSS 动画，场景里只测挂载；动画本身持续占用的主线程不在这个用例的数据里',
+    'Shineout 独立模式（不包内容）也能带 tip。antd 5 的 tip 只在包着内容时才生效，独立使用控制台警告「tip only work in nest or fullscreen pattern」且不显示文字（实测），所以 antd 5 这边把 Spin 包在一个 60px 高的空 div 里让文字出现，DOM 结构和 Shineout 不同，且多了一层容器；antd 6 的 description 独立模式下能直接显示（实测），不需要包裹',
+    'Shineout 的 size=24 是像素，antd 用 default（20）',
+  ],
+});
