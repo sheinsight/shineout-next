@@ -1,0 +1,14 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '表格 固定列',
+  description: '来自 shineout 示例 table/06-fixed-column，宽 1500、高 300 的表格，左右各固定一列 + 表头分组，只测挂载',
+  notes: [
+    '数据来自 _shared/data.ts 的确定性数据，原示例用的是 @sheinx/mock 的随机数据；四个库用同一份',
+    '原示例表头 Name 分组下的两列里只有 Last Name 设了 fixed: left；Shineout 的 fixed 作用于单列，antd 也是（fixed 写在子列上），写法对应',
+    'Shineout 的 width=1500 + style.height=300 对应 antd 的 scroll={{ x: 1500, y: 300 }}；antd 没写宽度的列（Country 等）这里设了 200，因为 antd 开了横向滚动后需要每列有明确宽度，Shineout 这几列没设宽度，由表格自己分配，所以列宽不完全相同',
+    '实测滚动区域（挂载后）：2.x 内容区高 236，3.x 300，antd 300（antd 的表头在内容区之外，Shineout 2.x 的表头算在 300 内）；内容区总高 2.x 740 / 3.x 858 / antd 1100，是行高不同造成',
+    'antd 的 Table 默认每页 10 行并带分页器，这里全部关掉分页（pagination={false}），和 Shineout 一样一次渲染全部数据',
+    '2.x 的 Td 组件在开发模式下会在控制台报 defaultProps 的 React 警告，会让 smoke 标红但不影响渲染和数据',
+  ],
+});

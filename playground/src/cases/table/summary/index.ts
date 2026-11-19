@@ -1,0 +1,15 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '表格 汇总行',
+  description: '来自 shineout 示例 table/23-01-summary，两行汇总（第二行的单元格合并 2 列），只测挂载',
+  notes: [
+    '数据来自 _shared/data.ts 的确定性数据，原示例用的是 @sheinx/mock 的随机数据；四个库用同一份',
+    'Shineout 用 keygen=\'id\' + data + columns[].render，antd 用 rowKey=\'id\' + dataSource + columns[].dataIndex / render，写法对应',
+    'antd 的 Table 默认每页 10 行并带分页器，这里全部关掉分页（pagination={false}），和 Shineout 一样一次渲染全部数据',
+    'Shineout 的 summary 是二维数组，antd 的 summary 是回调，返回 Table.Summary.Row / Cell；antd 汇总行的单元格没有 render 的概念，直接写内容，这里内容与 Shineout 的相同（Total / Balance 和对应数字）',
+    '原示例的 cellSelectable（单元格可框选复制）antd 没有对应，没迁',
+    'antd 的 summary 默认显示在表格底部，不吸底；Shineout 也是表尾，位置相同',
+    '2.x 的 Td 组件在开发模式下会在控制台报 defaultProps 的 React 警告，会让 smoke 标红但不影响渲染和数据',
+  ],
+});
