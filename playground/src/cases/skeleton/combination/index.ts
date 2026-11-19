@@ -1,0 +1,12 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '骨架屏 组合用法',
+  description: '来自 shineout 示例 skeleton/04-combination，头像+文本、图片+文本+按钮的组合，只测挂载',
+  notes: [
+    '2.x 没有 Skeleton 组件，没有实现',
+    '尺寸（实测）：Shineout 头像/图片 large 是 64×64（默认 48），按钮默认 80×32；antd 头像用数字 size 对齐（这里用 64 / 48），按钮没有对齐，用各库默认：antd 默认 64×32（large 是 80×40），比 Shineout 窄 16px',
+    'antd 的 Skeleton 没有「按钮」配置，按钮是单独的 Skeleton.Button，这里放在同一个 Skeleton 后面，不在它的根节点里，DOM 结构不同（Shineout 的按钮在文字列里、左边缘和文字对齐，antd 的按钮在骨架下方、从最左边开始，截图确认是这样）；antd 里头像和文本的布局是 header + section，Shineout 是 image + content',
+    'Shineout 里 button 排在文本下面，antd 这边用 Space 把 Skeleton.Button 放在骨架下方，按钮之间的间距是 Space 的默认间距，不是 Shineout 的 skeletonMargin',
+  ],
+});

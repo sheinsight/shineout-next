@@ -1,0 +1,11 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '骨架屏 语义化 DOM',
+  description: '来自 shineout 示例 skeleton/05-semantic，用 classNames / styles 定制内部节点，只测挂载',
+  notes: [
+    '只有 3.x 和 antd 6 参与：2.x 没有 Skeleton；antd 5 的 Skeleton 没有 classNames / styles',
+    '节点对应关系（读类型得到）：Shineout 的 root / image / text / button 对应 antd 6 的 root / avatar / paragraph / 无；antd 6 的 Skeleton 没有按钮节点（按钮是单独的 Skeleton.Button），所以 button 的 marginTop:16 在 antd 这边直接写在 Skeleton.Button 的 style 上，不走语义化',
+    'Shineout 示例里的 image 是默认圆形 48，antd 里 avatar 用 size=48 对齐；text 默认 3 行，antd 用 title=false + paragraph 3 行（width=100% 对齐最后一行）；样式值相同（root padding 16、图片圆角 8、文字 marginTop 8、按钮 marginTop 16）',
+  ],
+});
