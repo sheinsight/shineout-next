@@ -1,9 +1,11 @@
-import type { CaseEntry, CaseMeta, LibKey } from './types';
+import type { CaseEntry, CaseMeta, CaseSummary, LibKey } from './types';
 import { LIBS } from '../libs';
+import caseList from 'virtual:case-list';
 import type { ComponentType } from 'react';
 
-// 用例描述：同步加载（只包含标题、场景等，不 import 任何组件库）
-const metas = import.meta.glob<CaseMeta>('../cases/*/*/index.ts', { eager: true, import: 'default' });
+// 侧边栏用的列表（id、标题、featured）由 vite 插件在服务端扫描生成，浏览器不用 import 几百个 index.ts。
+// 完整的用例描述（场景、notes 等）在打开某个用例时才按需加载
+const metaLoaders = import.meta.glob<CaseMeta>('../cases/*/*/index.ts', { import: 'default' });
 // 各库实现：按需加载，每个 frame 只加载自己那一份
 const impls = import.meta.glob<{ default: ComponentType }>('../cases/*/*/*.tsx');
 
@@ -21,20 +23,27 @@ Object.keys(impls).forEach((file) => {
   (implLoaders[id] ||= {})[p.file as LibKey] = impls[file];
 });
 
-export const CASES: CaseEntry[] = Object.keys(metas)
-  .map((file) => {
-    const p = parse(file)!;
-    const id = `${p.component}/${p.name}`;
-    return {
-      ...metas[file],
-      id,
-      component: p.component,
-      impls: LIB_KEYS.filter((k) => implLoaders[id]?.[k as LibKey]) as LibKey[],
-    };
-  })
+export const CASES: CaseSummary[] = caseList
+  .map((c) => ({
+    id: c.id,
+    component: c.component,
+    // 标题不是字符串字面量的用例取不到标题，先显示 id
+    title: c.title ?? c.id,
+    featured: c.featured,
+    impls: LIB_KEYS.filter((k) => implLoaders[c.id]?.[k as LibKey]) as LibKey[],
+  }))
   .sort((a, b) => a.id.localeCompare(b.id));
 
-export const getCase = (id: string) => CASES.find((c) => c.id === id);
+export const getCaseSummary = (id: string) => CASES.find((c) => c.id === id);
+
+/** 加载一个用例的完整描述（含场景），用例不存在时返回 null */
+export const loadCase = async (id: string): Promise<CaseEntry | null> => {
+  const summary = getCaseSummary(id);
+  const loader = metaLoaders[`../cases/${id}/index.ts`];
+  if (!summary || !loader) return null;
+  const meta = await loader();
+  return { ...meta, ...summary, title: meta.title };
+};
 
 export const loadImpl = (id: string, lib: LibKey) => {
   const loader = implLoaders[id]?.[lib];
@@ -43,7 +52,7 @@ export const loadImpl = (id: string, lib: LibKey) => {
 
 /** 每个组件的代表用例：标了 featured 的；没有就取 base；再没有取第一个 */
 export const FEATURED_IDS: Set<string> = (() => {
-  const byComponent = new Map<string, CaseEntry[]>();
+  const byComponent = new Map<string, CaseSummary[]>();
   CASES.forEach((c) => {
     if (!byComponent.has(c.component)) byComponent.set(c.component, []);
     byComponent.get(c.component)!.push(c);

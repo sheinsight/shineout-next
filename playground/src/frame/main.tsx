@@ -11,8 +11,8 @@
 import { createElement, useLayoutEffect, type ComponentType, type ReactNode } from 'react';
 import ReactDOM from 'react-dom';
 import { createRoot } from 'react-dom/client';
-import type { FrameMessage, FrameResult, LibKey, Sample } from '../core/types';
-import { getCase, loadImpl } from '../core/registry';
+import type { CaseEntry, FrameMessage, FrameResult, LibKey, Sample } from '../core/types';
+import { loadCase, loadImpl } from '../core/registry';
 import { PROVIDERS, LIB_MAP } from '../libs';
 import { afterPaint, createContext, measureOnce, settle, waitDomStable, waitUntil } from '../core/measure';
 
@@ -84,8 +84,11 @@ const CommitProbe = ({ onCommit, children }: { onCommit: () => void; children?: 
   return children as React.ReactElement;
 };
 
-const runAuto = async (Impl: ComponentType, Provider: ComponentType<{ children: React.ReactNode }>) => {
-  const entry = getCase(caseId)!;
+const runAuto = async (
+  entry: CaseEntry,
+  Impl: ComponentType,
+  Provider: ComponentType<{ children: React.ReactNode }>,
+) => {
   // 等一帧，排除脚本加载对挂载计时的影响
   await settle();
   // profile=1 时录制挂载区间的 CPU profile（DevTools / CDP 的 consoleProfileFinished 可以拿到）
@@ -143,7 +146,7 @@ const runAuto = async (Impl: ComponentType, Provider: ComponentType<{ children: 
 };
 
 const start = async () => {
-  const entry = getCase(caseId);
+  const entry = await loadCase(caseId);
   if (!entry) return fail(`找不到用例 ${caseId}`);
   if (!LIB_MAP[lib]) return fail(`未知的库 ${lib}`);
   document.title = `${LIB_MAP[lib].label} · ${entry.title}`;
@@ -151,7 +154,7 @@ const start = async () => {
   if (!Impl) return fail(`用例 ${caseId} 没有 ${lib} 的实现`);
   const Provider = providerModule.default;
   if (mode === 'auto') {
-    await runAuto(Impl, Provider);
+    await runAuto(entry, Impl, Provider);
   } else {
     mount(createElement(Provider, null, createElement(Impl)));
     syncHeight();

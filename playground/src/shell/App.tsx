@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
-import { CASES, FEATURED_IDS, getCase } from '../core/registry';
+import { CASES, FEATURED_IDS, getCaseSummary, loadCase } from '../core/registry';
 import { LIBS } from '../libs';
-import type { LibKey } from '../core/types';
+import type { CaseEntry, CaseSummary, LibKey } from '../core/types';
 import CaseView from './CaseView';
 import { useStored } from './storage';
 
@@ -25,7 +25,7 @@ export default function App() {
 
   const groups = useMemo(() => {
     const kw = keyword.trim().toLowerCase();
-    const map = new Map<string, { list: typeof CASES; hidden: number }>();
+    const map = new Map<string, { list: CaseSummary[]; hidden: number }>();
     CASES.forEach((c) => {
       if (!map.has(c.component)) map.set(c.component, { list: [], hidden: 0 });
       const group = map.get(c.component)!;
@@ -42,7 +42,21 @@ export default function App() {
     return Array.from(map.entries()).filter(([, g]) => g.list.length);
   }, [keyword, showAll, caseId]);
 
-  const current = getCase(caseId);
+  // 完整的用例描述（场景、notes）按需加载；切换用例时先显示空白，加载完成再渲染
+  const [loaded, setLoaded] = useState<CaseEntry | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    setLoaded(null);
+    if (getCaseSummary(caseId)) {
+      loadCase(caseId).then((entry) => {
+        if (!cancelled) setLoaded(entry);
+      });
+    }
+    return () => {
+      cancelled = true;
+    };
+  }, [caseId]);
+  const current = loaded?.id === caseId ? loaded : null;
   const toggleLib = (key: LibKey) =>
     setLibs(libs.includes(key) ? libs.filter((k) => k !== key) : LIBS.map((l) => l.key).filter((k) => k === key || libs.includes(k)));
 
@@ -97,7 +111,7 @@ export default function App() {
           <CaseView key={current.id} entry={current} libs={libs} />
         ) : (
           <div className="empty">
-            {caseId ? `找不到用例 ${caseId}` : '从左侧选择一个用例'}
+            {!caseId ? '从左侧选择一个用例' : getCaseSummary(caseId) ? '加载中…' : `找不到用例 ${caseId}`}
           </div>
         )}
       </main>

@@ -74,13 +74,19 @@ export interface CaseMeta<S = any> {
   notes?: string[];
 }
 
-export interface CaseEntry extends CaseMeta {
+/** 侧边栏用的用例摘要，不含场景等需要 import 用例文件才能拿到的内容 */
+export interface CaseSummary {
   /** <组件>/<用例> */
   id: string;
   component: string;
+  title: string;
+  featured?: boolean;
   /** 已实现的库 */
   impls: LibKey[];
 }
+
+/** 完整的用例：摘要 + index.ts 里 defineCase 的内容，打开用例时按需加载 */
+export interface CaseEntry extends CaseMeta, CaseSummary {}
 
 // ---------------- 测量结果 ----------------
 
