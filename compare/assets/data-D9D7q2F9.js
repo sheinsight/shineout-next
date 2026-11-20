@@ -1,0 +1,1 @@
+const o=["red","orange","yellow","green","cyan","blue","violet"],e=[{id:1,color:"red"},{id:2,color:"orange"},{id:3,color:"yellow"},{id:4,color:"green"},{id:5,color:"cyan"},{id:6,color:"blue"},{id:7,color:"violet"}],d=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];export{o as c,e as i,d as w};

@@ -1,0 +1,1 @@
+const r=(s=0)=>t=>{const{onLoad:e}=t,u=()=>e==null?void 0:e({status:200,statusText:"OK",responseText:"{}",response:{}});s===0?u():setTimeout(u,s)},n=(s=0)=>t=>(setTimeout(()=>{var e;return(e=t.onSuccess)==null?void 0:e.call(t,{},new XMLHttpRequest)},s),{abort(){}});export{n as a,r as s};

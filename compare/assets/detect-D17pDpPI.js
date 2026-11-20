@@ -1,0 +1,1 @@
+var r="transform";function a(){return r}var e=!1;try{var s=Object.defineProperty({},"passive",{get:function(){e=!0}});window.addEventListener("test",null,s)}catch{}var n=e?{passive:!0}:!1;export{n as e,a as g};

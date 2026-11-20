@@ -1,0 +1,1 @@
+function i(){for(var e=arguments.length,r=new Array(e),t=0;t<e;t++)r[t]=arguments[t];if(r.length===0)return function(n){return n};var a=r[r.length-1],o=r.slice(0,-1);return function(){return o.reduceRight(function(n,u){return u(n)},a.apply(void 0,arguments))}}export{i as c};

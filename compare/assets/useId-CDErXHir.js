@@ -1,0 +1,1 @@
+import{d,c as f}from"./slicedToArray-Br1Nt6Eo.js";import{r as a,i as I}from"./registry-BT99pFa4.js";function p(){var r=f({},I);return r.useId}var n=0,s=p();const m=s?(function(e){var t=s();return e||t}):(function(e){var t=a.useState("ssr-id"),u=d(t,2),c=u[0],o=u[1];return a.useEffect(function(){var i=n;n+=1,o("rc_unique_".concat(i))},[]),e||c});export{m as u};

@@ -1,0 +1,1 @@
+import{c as n}from"./index-CAK2nDKI.js";function r(a,s,t){return n({[`${a}-status-success`]:s==="success",[`${a}-status-warning`]:s==="warning",[`${a}-status-error`]:s==="error",[`${a}-status-validating`]:s==="validating",[`${a}-has-feedback`]:t})}const c=(a,s)=>s||a;export{r as a,c as g};

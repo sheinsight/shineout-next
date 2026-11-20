@@ -1,0 +1,1 @@
+const r=["red","orange","yellow","green","cyan","blue","violet"],n=[{id:1,color:"red"},{id:2,color:"cyan"},{id:3,color:"blue"},{id:4,color:"green"},{id:5,color:"yellow"},{id:6,color:"orange"},{id:7,color:"violet"}],t=["Option1","Option2","Option3"],i=(o,e)=>o.length===e?!0:o.length===0?!1:"indeterminate";export{r as c,t as f,i as g,n as i};

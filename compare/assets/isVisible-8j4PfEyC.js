@@ -1,0 +1,1 @@
+const a=(function(i){if(!i)return!1;if(i instanceof Element){if(i.offsetParent)return!0;if(i.getBBox){var t=i.getBBox(),f=t.width,u=t.height;if(f||u)return!0}if(i.getBoundingClientRect){var r=i.getBoundingClientRect(),n=r.width,s=r.height;if(n||s)return!0}}return!1});export{a as i};

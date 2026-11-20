@@ -1,0 +1,7 @@
+import{j as e}from"./jsx-runtime-Db-hhG8F.js";import{p as t,C as i}from"./panel-et0WBjdG.js";import{B as o}from"./BorderBeam-B-upljns.js";import"./registry-BT99pFa4.js";import"./is-DK37hhtB.js";import"./toPropertyKey-DmnHUh_E.js";import"./hash.browser.esm-DJu0S2aF.js";import"./createClass-D022HrCp.js";import"./defineProperty-Bb2VVi7Q.js";import"./index-BYXZuS5w.js";import"./clsx-B-dksMZM.js";import"./genStyleUtils-CjFSllp8.js";import"./slicedToArray-Br1Nt6Eo.js";import"./setPrototypeOf-DgZC2w_0.js";import"./isNativeReflectConstruct-vbWqIhsW.js";import"./assertThisInitialized-B9jnkVVz.js";import"./toConsumableArray-Di4bH4Ci.js";import"./index-OAaToEWN.js";import"./Serializer-CzwL5o0_.js";import"./findDOMNode-WwcyuTA6.js";import"./reactNode-DWblGnd8.js";import"./util-B0lCxjrY.js";const r=`
+.bench-beam-host { position: relative; width: 360px; }
+.bench-beam { opacity: 0; transition: opacity 0.2s ease-in-out; }
+.bench-beam::before { animation-play-state: paused; }
+.bench-beam-host:hover > .bench-beam { opacity: 1; }
+.bench-beam-host:hover > .bench-beam::before { animation-play-state: running; }
+`;function O(){return e.jsxs(e.Fragment,{children:[e.jsx("style",{children:r}),e.jsx(o,{className:"bench-beam",children:e.jsxs("div",{className:"bench-beam-host",style:{...t,width:360},children:[e.jsx("strong",{children:"Hover preview"}),e.jsx("p",{style:{margin:"8px 0 0",color:i.subText},children:"The beam is visible while this container is hovered."})]})})]})}export{O as default};

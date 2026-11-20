@@ -1,0 +1,1 @@
+import{r,j as u}from"./registry-BT99pFa4.js";const o=new URLSearchParams(location.search).get("mode")==="auto";function f(e,t){const c=r.useRef(0),s=r.useRef(e);s.current&&!e&&(c.current=performance.now()),s.current=e,u({open:e,closedAt:c.current}),r.useEffect(()=>{if(!o||!e)return;const a=setTimeout(()=>t(!1),600);return()=>clearTimeout(a)},[e,t])}export{f as u};

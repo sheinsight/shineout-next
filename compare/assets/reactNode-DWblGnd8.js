@@ -1,0 +1,1 @@
+import{R as t}from"./registry-BT99pFa4.js";import{h as a}from"./is-DK37hhtB.js";function m(n){return n&&t.isValidElement(n)&&n.type===t.Fragment}const i=(n,r,e)=>t.isValidElement(n)?t.cloneElement(n,a(e)?e(n.props||{}):e):r;function c(n,r){return i(n,n,r)}export{c,m as i,i as r};

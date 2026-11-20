@@ -1,0 +1,1 @@
+function r(e){var u=arguments.length>1&&arguments[1]!==void 0?arguments[1]:[];if(e===void 0)return{};var t={};return Object.keys(e).filter(function(n){return n.match(/^on[A-Z]/)&&typeof e[n]=="function"&&!u.includes(n)}).forEach(function(n){t[n]=e[n]}),t}export{r as e};
