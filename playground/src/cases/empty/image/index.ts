@@ -1,0 +1,12 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '空状态 自定义图片',
+  description: '来自 shineout 示例 empty/003-imge，用图片地址作图标，描述里放一个按钮，只测挂载',
+  notes: [
+    '2.x 没有 Empty 组件，不参与',
+    'imgSrc ↔ antd 的 image（antd 的 image 可以直接传字符串地址）',
+    '原示例的图片是远程地址，这里换成内联 data URI，避免网络差异',
+    '描述里的按钮用各库自己的 Button，是挂载开销的一部分',
+  ],
+});

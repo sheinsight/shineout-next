@@ -1,0 +1,12 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '水印 多行',
+  description: '来自 shineout 示例 watermark/02-multiline，两行文字、第二行用不同字体，只测挂载',
+  notes: [
+    '只有 3.x、antd 5、antd 6 参与：2.x 没有 Watermark 组件（在 shineout-v2 的 lib/index 里搜不到 Watermark）',
+    '只测挂载，没有交互场景：水印是 canvas 绘制出的 base64 背景图，挂载时绘制一次，之后没有交互',
+    '原示例的背景色 / 文字色用的是 Shineout 的 CSS 变量（--soui-neutral-fill-2 等），antd 页面里没有这些变量，这里统一换成 #f2f3f5 / #666，避免两边容器颜色不同。容器高度 240 + padding 24：antd 的页面没有全局 box-sizing: border-box，不加会比 Shineout 多出 48px（实测 288 对 240），所以这里显式写了 boxSizing: border-box，两边都是 240',
+    '多行：Shineout 和 antd 6 的 content 数组每项可以是 { text, font }，每行单独设字体；antd 5 的 content 数组只接受字符串（类型报错确认），不能每行单独设字体，所以 antd 5 两行用同一个全局字体（color 同第一行），不等价：原示例第二行是红色、12px、600 粗；canvas 里的文字大小、颜色不同，但两行文字的数量和内容一致',
+  ],
+});

@@ -1,0 +1,11 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '表单 提示文字',
+  description: '来自 shineout 示例 form/005-tip-01，输入框下方的提示文字 + 必填校验，只测挂载',
+  notes: [
+    'tip ↔ antd 的 extra',
+    'Shineout 的 Rule().required 对应 antd 的 { required: true, message }',
+    '原示例的 keepErrorBelow（错误信息与提示同时显示）没有 antd 对应，没有迁移；挂载阶段没有触发校验',
+  ],
+});

@@ -1,0 +1,12 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '上传 语义化 DOM',
+  description: '来自 shineout 示例 upload/12-semantic，用 styles 定制图片上传的 root / handler / item，只测挂载',
+  notes: [
+    '只测挂载，没有交互场景（选文件的交互场景只放在 base 里）',
+    '只有 3.x 和 antd 6 参与：2.x 没有 classNames / styles（读类型确认）；antd 5 的 Upload 类型里没有 classNames / styles',
+    '节点对应关系是按名字推断的，没有逐个核对是否落在同一个 DOM 节点：root→root，handler（添加按钮）→trigger，item（已上传的图片项）→item；antd 6 另有 list 一项，Shineout 没有',
+    '原示例的 action=\'/api/upload\'、图片 https://via.placeholder.com/80 换成内联 SVG 和本地 mock，避免网络噪声；Shineout 用 Upload.Image，antd 用 listType=\'picture-card\'',
+  ],
+});

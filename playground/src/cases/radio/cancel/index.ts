@@ -1,0 +1,21 @@
+import { defineCase } from '../../../core/define';
+
+interface State { value: string }
+
+export default defineCase<State>({
+  title: '单选框 取消选中',
+  description: '来自 shineout 示例 radio/003-cancel，点击已选中的项取消选中（onClick + 受控 value）',
+  scenarios: [
+    {
+      key: 'cancel',
+      name: '点击第 1 项（选中 ↔ 取消）',
+      target: (ctx) => ctx.queryAll<HTMLInputElement>('input[type="radio"]')[0],
+      check: (ctx) => ctx.before.value !== ctx.after.value,
+    },
+  ],
+  notes: [
+    '「点击第 1 项」场景：点击红色那一项的 input，选中 ↔ 取消选中交替（每次点击都改变 value），校验上报的 value 确实变了，测的是点击到下一帧绘制完成的主线程占用',
+    'Shineout 的 Radio.Group 用 data + keygen（+ renderItem）渲染，antd 用 options；原示例的 onClick 逻辑（再点同一项就清空）两边相同',
+    'antd 的 onClick 在 label 上、Shineout 的在 input 上，场景点的都是 input，会冒泡到 label，所以两边都会触发；antd 点已选中的 radio 不会触发 onChange，Shineout 同理，取消完全靠 onClick',
+  ],
+});

@@ -1,0 +1,10 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '描述列表 对齐方式',
+  description: '来自 shineout 示例 descriptions/03-alignment，水平左对齐、水平右对齐、垂直三种，只测挂载',
+  notes: [
+    '2.x 没有 Descriptions 组件，不参与',
+    'colon：Shineout 传了带缩进的节点，antd 用默认冒号，样式略有差异',
+  ],
+});

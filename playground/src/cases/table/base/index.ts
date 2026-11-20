@@ -1,0 +1,13 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '表格 基本用法',
+  description: '来自 shineout 示例 table/01-base，4 列 4 行，只测挂载',
+  notes: [
+    '数据来自 _shared/data.ts 的确定性数据，原示例用的是 @sheinx/mock 的随机数据；四个库用同一份',
+    'Shineout 用 keygen=\'id\' + data + columns[].render，antd 用 rowKey=\'id\' + dataSource + columns[].dataIndex / render，写法对应',
+    'antd 的 Table 默认每页 10 行并带分页器，这里全部关掉分页（pagination={false}），和 Shineout 一样一次渲染全部数据',
+    '2.x 的 Td 组件在开发模式下会在控制台报 defaultProps 的 React 警告，会让 smoke 标红但不影响渲染和数据',
+    '默认外观各库不同（实测，同一份 4 行数据）：行高 2.x 37 / 3.x 39 / antd 55，表头高 2.x 36 / 3.x 39 / antd 55，整个表格高 2.x 约 202 / 3.x 211 / antd 291；表头底色也不同（截图）。antd 默认内边距（16px）比 Shineout 大，所以相同内容下 antd 的 DOM 和布局范围更大，这是各库的默认样式，不是用例造成的',
+  ],
+});

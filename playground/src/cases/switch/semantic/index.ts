@@ -1,0 +1,11 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '开关 语义化 DOM',
+  description: '来自 shineout 示例 switch/06-semantic，用 styles 定制根节点、滑块、文字，只测挂载',
+  notes: [
+    '只有 3.x 和 antd 6 参与：2.x 没有 styles；antd 5 的 Switch 没有语义化属性（读类型确认）',
+    '节点对应关系：Shineout 的 root / indicator / content 对应 antd 6 的 root / indicator / content，名字一致',
+    '示例里 root 圆角 4、indicator 圆角 4、文字字号 12 加粗 500，两边写法相同；antd 的 defaultChecked 对应 defaultValue',
+  ],
+});

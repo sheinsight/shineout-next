@@ -1,0 +1,10 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '输入框 基本用法',
+  description: '来自 shineout 示例 input/01-base，带清除按钮的 300px 输入框，只测挂载',
+  notes: [
+    'clearable ↔ antd 的 allowClear；width={300} ↔ style.width',
+    'antd 的 Input 带清除按钮时会多包一层 affix-wrapper，Shineout 的 wrapper 也是一层，节点数相近但内部结构不同',
+  ],
+});

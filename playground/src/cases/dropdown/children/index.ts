@@ -1,0 +1,13 @@
+import { defineCase } from '../../../core/define';
+import { openScenarios } from '../_shared/scenarios';
+
+export default defineCase({
+  title: '下拉菜单 多级菜单',
+  description: '来自 shineout 示例 dropdown/005-children，5 项每项 5 个子项，带「点击打开」场景',
+  notes: [
+    '子菜单只在悬停时才展开，场景只测打开第一层',
+    '「点击打开」场景的触发用的是用例自己的 <button>，只测菜单渲染出来的开销，原因同 base 用例',
+    'antd 的菜单是 Menu 组件，结构比 Shineout 重，这是库本身的差异',
+  ],
+  scenarios: openScenarios,
+});

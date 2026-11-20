@@ -1,0 +1,12 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '水印 图片',
+  description: '来自 shineout 示例 watermark/03-image，图片水印，只测挂载',
+  notes: [
+    '只有 3.x、antd 5、antd 6 参与：2.x 没有 Watermark 组件（在 shineout-v2 的 lib/index 里搜不到 Watermark）',
+    '只测挂载，没有交互场景：水印是 canvas 绘制出的 base64 背景图，挂载时绘制一次，之后没有交互',
+    '原示例的背景色 / 文字色用的是 Shineout 的 CSS 变量（--soui-neutral-fill-2 等），antd 页面里没有这些变量，这里统一换成 #f2f3f5 / #666，避免两边容器颜色不同。容器高度 240 + padding 24：antd 的页面没有全局 box-sizing: border-box，不加会比 Shineout 多出 48px（实测 288 对 240），所以这里显式写了 boxSizing: border-box，两边都是 240',
+    '图片：原示例用 GitHub 上的图片地址，这里换成内联 SVG（data URI），避免网络噪声和跨域导致 canvas 取图失败；两边传同一张图，尺寸 72×48',
+  ],
+});

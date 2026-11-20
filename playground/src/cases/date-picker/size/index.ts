@@ -1,0 +1,12 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '日期选择 尺寸',
+  description: '来自 shineout 示例 date-picker/03-size，四种选择器 + 单选切换尺寸，默认 default，只测挂载',
+  notes: [
+    'size 命名：Shineout 的 default ↔ antd 的 middle',
+    '单选组用各库自己的 Radio，是挂载开销的一部分',
+    'antd 的 RangePicker 是单独的组件，对应 Shineout 的 range 属性；antd 没有 range 的「此刻」按钮',
+    '2.x 没有 showSelNow，不传',
+  ],
+});

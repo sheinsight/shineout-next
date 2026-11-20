@@ -1,0 +1,10 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '分页 总数',
+  description: '来自 shineout 示例 pagination/002-total，layout 里放一个自定义渲染函数显示总数',
+  notes: [
+    'layout 里的函数 ↔ antd 的 showTotal；Shineout 的 layout 数组决定各区块的顺序，antd 的 showTotal 固定在最左边',
+    'span={3} ↔ antd 没有 span，antd 的页码省略规则是固定的（当前页前后各 2 页），所以页码按钮个数可能与 Shineout 不同',
+  ],
+});

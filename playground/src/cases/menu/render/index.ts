@@ -1,0 +1,10 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '菜单 自定义图标',
+  description: '来自 shineout 示例 menu/07-render，用 renderIcon 给一级菜单加图标，只测挂载',
+  notes: [
+    '2.x 的 Menu 没有 renderIcon（Props 里没有），所以只有 3.x 和 antd 参与',
+    'renderIcon ↔ items 里每项的 icon；原示例的图标是几段长 SVG，这里换成同尺寸的简化图形（_shared/data.tsx），图形不是原图，只保证每个一级项都有一个 svg 节点',
+  ],
+});

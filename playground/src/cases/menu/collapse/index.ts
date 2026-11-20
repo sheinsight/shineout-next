@@ -1,0 +1,13 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '菜单 收起',
+  description: '来自 shineout 示例 menu/12-collpase，light / dark 两个菜单，各带一个收起按钮，只测挂载（初始是展开态）',
+  notes: [
+    '2.x 的 Menu 没有 collapse（Props 里没有），所以只有 3.x 和 antd 参与',
+    'collapse ↔ antd 的 inlineCollapsed；antd 收起时宽度由内容决定（style.width 设为 undefined），Shineout 收起宽度由组件控制',
+    '按钮里的折叠图标原示例是 SVG，这里换成文字（展开 / 收起）；图标用 _shared/data.tsx 里的简化图形',
+    '初始激活项是 id=10（Navigation Three > Option 4 > Option 2）：Shineout 会自动展开激活项的所有祖先（实测挂载后 Option 1~4 可见），antd 不会，所以 antd 手动加了 defaultOpenKeys=[6, 8]，让两边初始展开状态一致',
+    '原示例的重点是点击收起后的动画，目前只测初始挂载，没有写点击场景',
+  ],
+});

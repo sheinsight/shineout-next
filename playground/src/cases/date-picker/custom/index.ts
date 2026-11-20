@@ -1,0 +1,11 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '日期选择 自定义日期单元格',
+  description: '来自 shineout 示例 date-picker/21-custom，自定义周末和周一的日期渲染，只有 3.x 与 antd 参与',
+  notes: [
+    '2.x 没有 renderDate，不参与',
+    'renderDate ↔ antd 的 cellRender；原示例的 --soui-* 主题变量换成固定颜色，保证两个库颜色相同',
+    '面板没有展开，自定义渲染在挂载阶段不会执行，要测需要另加 scenarios 展开面板',
+  ],
+});

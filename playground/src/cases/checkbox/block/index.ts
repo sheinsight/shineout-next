@@ -1,0 +1,9 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '复选框 竖向布局',
+  description: '来自 shineout 示例 checkbox/006-block，水平与垂直两组，只测挂载',
+  notes: [
+    'antd 的 Group 没有 block 属性，这里用 inline-flex + column 纵向排列，间距由各库自己的样式决定，不完全等价',
+  ],
+});

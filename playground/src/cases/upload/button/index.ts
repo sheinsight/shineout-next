@@ -1,0 +1,12 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '上传 按钮',
+  description: '来自 shineout 示例 upload/01-base-2-button，Upload.Button（带上传状态的按钮），只测挂载',
+  notes: [
+    '只测挂载，没有交互场景（选文件的交互场景只放在 base 里）',
+    'antd 没有 Upload.Button 这个组件；这里用 antd 的 Upload 包一个 Button 对照（antd 的标准写法），两者结构不同：Shineout 的 Upload.Button 自带「上传中」状态、占位文字（placeholder）和 loading 文案，antd 的 Button 只是个触发器，上传状态要自己管理（这里没管）。所以这是「按钮型上传」的功能近似对照，不是等价',
+    '所有网络请求都换成本地 mock（不访问 jsonplaceholder），选文件后立即成功；原示例的 action=\'//jsonplaceholder.typicode.com/posts\' 是真实网络请求，会引入网络噪声',
+    'Shineout 设 placeholder=\'Click to upload\'、loading=\'Uploading...\'、type=\'primary\'；antd 的 Button 用 type=\'primary\' 和同样的文字',
+  ],
+});

@@ -1,0 +1,14 @@
+import { defineCase } from '../../../core/define';
+import { staticScenarios } from '../_shared/static';
+
+export default defineCase({
+  title: '弹窗 自动聚焦按钮',
+  description: '来自 shineout 示例 modal/04-focus，Modal.confirm 指定自动聚焦的按钮（cancel 或 ok），场景点 ok 那个按钮',
+  scenarios: staticScenarios,
+  notes: [
+    '静态方法（Modal.info 等）没有受控的 open 状态：场景点按钮弹出，测完后自己点弹窗里的确认按钮（Ok / 知道了 / Yes）关掉，再等 DOM 里的弹窗消失才进行下一次，这次点击不在测量窗口内',
+    'autoFocusButton ↔ antd5 的 autoFocusButton；antd6 把它移到了 focusable.autoFocusButton（旧写法已废弃）',
+    '原示例点确认或取消后用 Message 提示选择结果，这里去掉了',
+    '场景只点「ok」按钮（autoFocusButton=ok），「cancel」那个没有测',
+  ],
+});

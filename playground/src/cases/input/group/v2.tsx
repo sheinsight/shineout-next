@@ -1,0 +1,53 @@
+import { Button, DatePicker, Input, Select } from 'shineout-v2';
+
+const style = { width: 300, marginBottom: 24 };
+const OPTIONS = ['Option1', 'Option2'];
+
+export default function Demo() {
+  return (
+    <div>
+      <Input.Group style={style}>
+        <b>http://</b>
+        <Input placeholder='please enter' />
+      </Input.Group>
+      <Input.Group style={style}>
+        <Input placeholder='please enter' />
+        <b>.com</b>
+      </Input.Group>
+      <Input.Group style={style}>
+        <b>http://</b>
+        <Input placeholder='please enter' />
+        <b>.com</b>
+      </Input.Group>
+      <Input.Group style={style}>
+        <Input placeholder='please enter' />
+        <div style={{ lineHeight: '30px' }}>-</div>
+        <Input placeholder='please enter' />
+      </Input.Group>
+      <Input.Group style={style}>
+        <Select keygen data={OPTIONS} style={{ width: 100, flex: 'none' }} defaultValue='Option1' />
+        <Input placeholder='please enter' />
+      </Input.Group>
+      <Input.Group style={style}>
+        <Select keygen data={OPTIONS} style={{ width: 100, flex: 'none' }} defaultValue='Option1' />
+        <DatePicker placeholder='please select' />
+      </Input.Group>
+      <Input.Group style={style}>
+        <Select keygen data={OPTIONS} style={{ width: 100, flex: 'none' }} defaultValue='Option1' />
+        <Input placeholder='please enter' />
+        <Button type='primary'>Search</Button>
+      </Input.Group>
+      <h3 style={{ marginBottom: 12, fontSize: 16 }}>Other Size</h3>
+      <Input.Group style={style} size='small'>
+        <b>http://</b>
+        <Input placeholder='email' />
+        <b>.com</b>
+      </Input.Group>
+      <Input.Group style={{ width: 300 }} size='large'>
+        <b>http://</b>
+        <Input placeholder='email' />
+        <b>.com</b>
+      </Input.Group>
+    </div>
+  );
+}

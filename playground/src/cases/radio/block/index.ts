@@ -1,0 +1,11 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '单选框 竖向布局',
+  description: '来自 shineout 示例 radio/003-block，水平与竖直两组，每组七项，只测挂载',
+  notes: [
+    'Shineout 的 block ↔ antd 6 的 orientation="vertical"；antd 5 的 Radio.Group 没有对应属性，用 inline-flex + column 实现。antd 自己有一个 block 属性，含义是让 Group 撑满一行，不是竖排，所以没用',
+    'Shineout 的 Radio.Group 用 data + keygen（+ renderItem）渲染，antd 用 options；Shineout 的 Radio 用 htmlValue，antd 用 value；format="id" + renderItem="color" ↔ options 里 { value: id, label: color }',
+    '间距由各库自己的样式决定，不完全等价',
+  ],
+});

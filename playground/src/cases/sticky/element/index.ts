@@ -1,0 +1,30 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '吸附 滚动容器内吸附',
+  description: '来自 shineout 示例 sticky/02-element，400 高的滚动容器里，吸附元素同时设置 top=0 和 bottom=0',
+  scenarios: [
+    {
+      key: 'scroll',
+      name: '滚动容器（顶部 ↔ 中间）',
+      target: (ctx) => ctx.byBench('scroller'),
+      // 滚动位置在 0 和 500 之间交替：400 高的容器里，吸附元素在 600 处，
+      // 0 时在可视区下方（吸底），500 时落在可视区内（不吸附）
+      action: (el) => {
+        const box = el as HTMLElement;
+        box.scrollTop = box.scrollTop > 100 ? 0 : 500;
+        // scrollTop 改变后浏览器会在下一帧才派发 scroll 事件，这里同步派发一次，让计时包含各库的 scroll 处理
+        box.dispatchEvent(new Event('scroll'));
+      },
+      check: (ctx) => ctx.before?.top !== ctx.after?.top,
+    },
+  ],
+  notes: [
+    '只迁了 02-element。01-base / 03-bottom 的 scrollContainer 是文档站的 #layout，脱离文档站没有意义；04-sticky-boundary 的 stickyBoundary（到达边界后取消吸附）antd 的 Affix 没有对应，没迁',
+    '2.x 的 Sticky 没有 scrollContainer，用 target 指定滚动容器（选择器或元素）；3.x 的 target 已弃用，改用 scrollContainer；antd 的 Affix 用 target={() => 容器}，offsetTop / offsetBottom 对应 top / bottom',
+    '「滚动容器」场景：把容器的 scrollTop 在 0 和 500 之间交替，同步派发一次 scroll 事件，测的是滚动处理到下一帧绘制完成的主线程占用；校验上报的 scrollTop 确实变了。没有校验「吸附状态」本身是否变化；但另外用脚本逐个量过：滚到 0 / 300 / 500 时，四个库里吸附元素相对容器顶部的位置分别是 0 → 2.x 348 / 3.x 360 / antd 360（吸在容器底部），300 → 都是 300（正常位置），500 → 都是 100（顶部之外，正常位置），说明三个库的吸底行为一致，只有 2.x 的底部位置比另两个高 12px（没有查原因）',
+    '这个场景不是用户真实的滚动：真实滚动是浏览器连续派发 scroll 事件，这里一次滚动只触发一次处理，所以数据只反映单次滚动处理的开销，不反映持续滚动的开销',
+    '三个库的吸附实现机制不同（读代码）：2.x 在 scroll 里用 getBoundingClientRect 计算并切换 fixed/absolute/sticky；3.x 默认也是计算，传 css 才用 CSS sticky；antd Affix 用 getBoundingClientRect + ResizeObserver，吸附时给占位元素设固定高宽。所以它们在滚动时做的事不一样',
+    '吸附的内容是各库自己的 Alert 组件（antd 5 的文字属性是 message，antd 6 是 title），不是被测对象，但样式和高度各不相同，会影响吸附元素本身的大小',
+  ],
+});

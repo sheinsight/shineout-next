@@ -1,0 +1,11 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '输入框 前后缀',
+  description: '来自 shineout 示例 input/04-02-prefix-suffix，前缀日历图标、后缀搜索图标，只测挂载',
+  notes: [
+    '2.x 的 Input 没有 prefix / suffix / showClear 属性（Props 里没有，源码里也没有），所以只有 3.x 和 antd 参与',
+    '图标用各库自己的：Shineout 的 icons，antd 的 @ant-design/icons，图标 SVG 的节点数不同，会计入挂载开销',
+    'showClear（有值时才显示清除按钮）↔ antd 的 allowClear',
+  ],
+});

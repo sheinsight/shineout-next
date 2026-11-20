@@ -1,0 +1,10 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '卡片 无边框',
+  description: '来自 shineout 示例 card/04-border，去掉卡片边框，只测挂载',
+  notes: [
+    'Shineout 通过 style.border 去掉边框，antd 用 variant="borderless"',
+    '2.x 的 Card 没有 split 和 extra，标题与按钮的结构比其它库少',
+  ],
+});

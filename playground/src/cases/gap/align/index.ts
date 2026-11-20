@@ -1,0 +1,11 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '间距 对齐方式',
+  description: '来自 shineout 示例 gap/04-align，单选切换对齐方式，默认 flex-start，只测挂载',
+  notes: [
+    'Shineout 的对齐通过 style 的 alignItems；antd 用 align 属性，取值 start / center / end / baseline（对应 flex-start / center / flex-end / baseline）',
+    '原示例里 Gap 的 row=20，没有设 column；antd 的 size 需要成对，这里用 [20, 20]，水平间距是 20 而不是 Gap 的默认 8，因为 160 宽的容器里本来就是三项换行，影响很小但不严格相同',
+    '单选组用各库自己的 Radio，是挂载开销的一部分',
+  ],
+});

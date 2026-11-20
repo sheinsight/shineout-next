@@ -1,0 +1,16 @@
+import { defineCase } from '../../../core/define';
+import { submitScenarios } from '../_shared/scenarios';
+
+export default defineCase({
+  title: '规则 类型',
+  description: '来自 shineout 示例 rule/04-type，email / integer / number / url 四个 Input，提交空表单触发必填校验',
+  scenarios: submitScenarios(4, /required|Please enter/),
+  notes: [
+    '「提交」场景：提交空表单触发校验，校验是异步的，错误要几十毫秒后才出现，晚于「下一帧绘制」，所以场景计时只覆盖点击后到下一帧的主线程占用，不含异步校验完成与错误渲染的那一段；每次测量后会等错误全部出现再点「重置」清掉；错误数用文案匹配，不依赖类名；Shineout 的 Form 设了 throttle={0}（默认提交后 1 秒内再点会被忽略，会让连续测量隔次失败），antd 没有这个节流',
+    '校验写法不同：Shineout 把 rules 写在输入组件上，用 Rule() 工具；antd 把 rules 写在 Form.Item 上，用对象；规则含义对齐，内部实现不同；rule.email / integer / number / url ↔ antd 的 { type: "email" | "integer" | "number" | "url" }',
+    '提交空表单只会触发 required，类型校验在有值之后才执行；原示例第一项 label 是 name 但字段名是 email，这里 label 改成 email',
+    'Shineout 的 required 没传 message 且 Input 没传 title 时，默认文案只有「Please enter 」（实测，没有字段名，截图确认）；antd 是自己写的 xxx is required。文案不同，场景按错误数判断',
+    'age / price 在 antd 里用 InputNumber 而不是 Input：实测 antd 的 type 为 integer / number 的规则对 Input 的字符串值会报错（输入合法的 12、3.5 也提示无效），Shineout 的 rule.integer / rule.number 对 Input 的字符串值能通过；所以 antd 要配数字输入组件，这两项在 antd 里是 InputNumber，和 Shineout 的 Input 不是同一个输入组件，节点数和开销不等价',
+    'Shineout 的提交按钮是 Form.Submit，原示例没有 onSubmit；这里给 Form 加了空的 onSubmit（antd 的 onFinish），否则点提交不会触发校验流程的收尾，两边行为才一致',
+  ],
+});

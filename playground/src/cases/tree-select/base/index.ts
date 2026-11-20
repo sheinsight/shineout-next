@@ -1,0 +1,15 @@
+import { defineCase } from '../../../core/define';
+import { openScenarios } from '../_shared/scenarios';
+
+export default defineCase({
+  title: '树选择 基本用法',
+  description: '来自 shineout 示例 tree-select/01-base，单选，可清除，3 棵小树',
+  scenarios: openScenarios('node 1'),
+  notes: [
+    '「打开」场景：关闭状态下弹层里没有节点（3.x、antd 点开才渲染；2.x 的弹层 DOM 在、display:none），所以挂载测不到下拉本身。机制同 select/base：2.x 和 antd 对 TreeSelect 自带的触发器做完整的 pointerdown → click；3.x 用用例自己的 <button data-bench=open> 设置受控的 open（原因是 3.x 在 setTimeout 里才更新状态，下拉比点击晚一个任务出现，计时会在渲染出来之前结束；测的是「下拉渲染出来」的开销，不含自带触发器的路径）。每次测量后点页面空白处关闭，等节点不可见再测下一次。实测（Playwright 手动点开再点空白）三个库关闭后弹层都还留在 DOM 里，所以「再次打开」只是切换显示，比「第一次打开」小；两个场景要分开看',
+    'Shineout 的 data + keygen=\'id\' + renderItem（node xxx）↔ antd 的 treeData（{ value, title, children }，title 里已经拼好 node 前缀）；clearable ↔ allowClear；width={300} ↔ style.width',
+    '单选：Shineout 单选时 mode 不起选中值的作用（原示例注释）；antd 单选就是选一个节点，两边选中后显示的文字都是节点 title，但本用例只测打开，没有测选中',
+    '原示例的 value 类型是 string[]，这里按单选用 string（初值为空）；onChange 里直接 setValue',
+    '2.x 的 TreeSelect 选择器 class 是 .so-treeSelect-inner（驼峰），点它打开（读 DOM 得到）',
+  ],
+});

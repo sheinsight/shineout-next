@@ -1,0 +1,10 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '下拉菜单 分组',
+  description: '来自 shineout 示例 dropdown/006-group，菜单项分组，只有 3.x 与 antd 参与',
+  notes: [
+    '2.x 的菜单项没有 group 属性，不参与',
+    '分组的结构不同：Shineout 在每项上标注 group 名，antd 用 { type: "group", children } 嵌套，视觉上近似但不完全相同；原示例的 absolute 在 antd 里是默认行为',
+  ],
+});

@@ -1,0 +1,11 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '文字提示 位置',
+  description: '来自 shineout 示例 tooltip/example-02-position，12 个方位各一个 Tooltip，只测挂载',
+  notes: [
+    '只测挂载，没有「悬停打开」的交互场景：Shineout 的 Tooltip 没有受控的显示属性（仓库源码 packages/base 的 tooltip.type.ts 里 visible 是被注释掉的），不能像 popover 那样用 data-bench 按钮直接打开；走真实的悬停路径时，合成 mouseover 后气泡实测约 2.x 15ms / 3.x 13ms / antd 118ms（antd 默认 mouseEnterDelay 100ms）才出现，都晚于场景的测量窗口（一帧），测到的只会是事件派发本身，不是气泡渲染，所以不做；挂载数据测的是每个触发元素上 Tooltip 的初始化开销（气泡本身要悬停才渲染）',
+    '3.x 和 antd 渲染原示例的 12 个方位（top-left / top / top-right、bottom-left / bottom / bottom-right、left-top / left / left-bottom、right-top / right / right-bottom），antd 的写法是驼峰（topLeft 等）；2.x 的 Tooltip 只有 top / right / bottom / left 4 个方位（读类型确认），所以 2.x 只渲染 4 个，Tooltip 数量不同，节点数和挂载数据不能直接比',
+    '按钮：3.x 用 mode="outline"，2.x 和 antd 用默认按钮（2.x 的 outline 单独使用时文字和边框都是白色，实测不可见，所以没用）；尺寸统一设了宽 110、外边距 4，按钮本身的边框样式 2.x 和 3.x 是否一致没有逐像素核对',
+  ],
+});

@@ -1,0 +1,14 @@
+import { defineCase } from '../../../core/define';
+import { notifyScenarios } from '../_shared/scenarios';
+
+export default defineCase({
+  title: '消息 位置',
+  description: '来自 shineout 示例 message/03-position，position=top-right 并带 title，场景点按钮弹出',
+  scenarios: notifyScenarios(),
+  notes: [
+    'Message 是命令式 API，挂载时页面上什么都没有。这个用例带了场景：点击按钮弹出一条 Message，测的是点击到下一帧的主线程开销，等消息消失后再点下一次；第一次（冷启动）单独测一次，不预热',
+    '显示时间统一为 1 秒（原示例是默认的 3 秒），只是让测试快一点',
+    'antd 的 message 没有 position 和 title，对应的是 notification（placement + title）。notification 是另一个组件，DOM 更重（有标题、描述、关闭按钮、进度条等），不是同一类对比，只能作粗略参考',
+    '原示例用 Radio.Group 选位置，Radio 还没迁移，固定为 top-right，其余 5 个位置没测',
+  ],
+});

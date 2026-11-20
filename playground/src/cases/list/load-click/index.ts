@@ -1,0 +1,11 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '列表 点击加载更多',
+  description: '来自 shineout 示例 list/06-load-click，初始 5 条，底部有"load more"按钮，只测挂载',
+  notes: [
+    'footer ↔ antd 的 loadMore；按钮 type=primary mode=text ↔ antd 的 type=link（2.x 是 text 属性）',
+    '原示例的头像是内联 SVG，操作区是 Shineout 的 Link，2.x 没有 Link：这里统一换成圆形 div 和普通 <a>，减少与 List 无关的差异',
+    '原示例用 mock 接口加载，这里是本地切片，点击后直接多渲染 5 条，没有 loading 状态',
+  ],
+});

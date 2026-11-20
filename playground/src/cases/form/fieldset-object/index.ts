@@ -1,0 +1,11 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '表单 嵌套对象',
+  description: '来自 shineout 示例 form/010-fieldset-object，字段值是嵌套对象（account.name.firstName），带默认值，只测挂载',
+  notes: [
+    'Shineout 用 Form.FieldSet 声明嵌套层级，字段只写自己的名字；antd 不需要 FieldSet，直接用数组路径 name={["account","name","firstName"]}，所以写法差异很大',
+    'Age：Shineout 是 type="number" 的 Input，antd 这里用普通 Input，不是 InputNumber，避免引入另一个输入组件',
+    '受控 value + onChange：Shineout 是受控，antd 用 initialValues（非受控），受控与否对挂载没有影响',
+  ],
+});

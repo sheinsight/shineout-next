@@ -1,0 +1,11 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '分页 基础用法',
+  description: '来自 shineout 示例 pagination/001-base，总数 10000、第 1 页，只测挂载',
+  notes: [
+    'span={3} ↔ antd 没有 span，antd 的页码省略规则是固定的（当前页前后各 2 页），所以页码按钮个数可能与 Shineout 不同',
+    'antd 的 Pagination 默认带每页条数下拉（总数 > 50 时显示），这里设了 showSizeChanger={false} 去掉，避免把一个 Select 带进来；Shineout 的默认 layout 里没有每页条数',
+    '截图确认：2.x / 3.x / antd 的上一页、下一页默认都是箭头图标；四个库的页码都是 1 2 3 4 5 … 1000，外观相近，节点数不同（2.x / 3.x 20 个，antd5 30 个，antd6 33 个）',
+  ],
+});

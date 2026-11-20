@@ -1,0 +1,11 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '链接 禁用',
+  description: '来自 shineout 示例 link/03-disabled，五种类型的禁用链接，只测挂载',
+  notes: [
+    '2.x 没有 Link 组件（shineout-v2 的导出里没有），所以只有 3.x 和 antd 参与',
+    '原示例最后一项带 onClick 用来验证禁用后不触发，这里没保留',
+    '视觉上不同（截图确认）：antd 的禁用链接不分类型，一律是灰色；Shineout 3.x 保留各类型的浅色（primary 浅蓝、danger 浅红等）',
+  ],
+});

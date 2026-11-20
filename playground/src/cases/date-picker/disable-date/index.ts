@@ -1,0 +1,10 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '日期选择 禁用部分日期',
+  description: '来自 shineout 示例 date-picker/11-disable-date-1，按函数禁用周末日期、禁用 15 点以后的时间，只测挂载',
+  notes: [
+    'Shineout 用同一个 disabled 函数，antd 日期用 disabledDate，时间用 disabledTime 返回要禁用的小时',
+    '原示例 11-disable-date-2、11-disable-date-3 是 disabledTime 字符串/函数的另外几种用法，挂载阶段与本用例没有区别，没有迁移',
+  ],
+});

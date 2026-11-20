@@ -1,0 +1,25 @@
+import { defineCase } from '../../../core/define';
+import { domChangeScenario, rowText, visibleRowCount, virtualBox, scrollToggle } from '../_shared/scenarios';
+
+export default defineCase({
+  title: '表格 勾选',
+  description: '来自 shineout 示例 table/13-01-select，复选框列，初始选中第 3 行，点击第 1 行的复选框改变选中项',
+  scenarios: [
+    domChangeScenario({
+      key: 'check-row',
+      name: '点击第 1 行复选框',
+      target: (ctx) => ctx.queryAll('tbody tr').filter((r) => !r.classList.contains('ant-table-measure-row'))[ctx.lib.startsWith('antd') ? 1 : 0]?.querySelector('input[type=checkbox]'),
+      probe: (ctx) => String(ctx.queryAll('tbody input[type=checkbox]:checked').length),
+    }),
+  ],
+  notes: [
+    '数据来自 _shared/data.ts 的确定性数据，原示例用的是 @sheinx/mock 的随机数据；四个库用同一份',
+    'Shineout 用 keygen=\'id\' + data + columns[].render，antd 用 rowKey=\'id\' + dataSource + columns[].dataIndex / render，写法对应',
+    '「点击复选框」场景：点第 1 行（antd 点 tbody 第 2 行，因为 antd 的虚拟占位 measure 行在最前面不在这里，实际 tbody 里第一个数据行是第 2 个 tr；2.x 和 3.x 点第 1 行）的复选框，在选中和未选中之间切换，同时页面下方的「selected rows」文字也跟着变；校验页面上选中的复选框个数变了',
+    'Shineout 的 columns 里写 type: checkbox，选中值用 value + onRowSelect + prediction（判断两行是否是同一个）；antd 用 rowSelection（selectedRowKeys + onChange），写法对应；antd 的 rowSelection 默认在表头加「全选」复选框，Shineout 的 checkbox 列表头也有全选，两边都有',
+    '原示例 width={3000}（强制出横向滚动条），这里没有保留（会让 antd 也必须开 scroll.x，且和勾选无关）；style.height=300 保留，对应 antd 的 scroll.y=300',
+    '复选框的 DOM 不同：2.x 是 label + input，3.x 是 div + input + i，antd 是 label + span + input，点击的是 input 本身（校验页面选中数变化）',
+    'antd 的 Table 默认每页 10 行并带分页器，这里全部关掉分页（pagination={false}），和 Shineout 一样一次渲染全部数据',
+    '2.x 的 Td 组件在开发模式下会在控制台报 defaultProps 的 React 警告，会让 smoke 标红但不影响渲染和数据',
+  ],
+});

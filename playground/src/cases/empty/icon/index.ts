@@ -1,0 +1,11 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '空状态 自定义图标',
+  description: '来自 shineout 示例 empty/002-icon，自定义图标和文案，只测挂载',
+  notes: [
+    '2.x 没有 Empty 组件，不参与',
+    'icon ↔ antd 的 image',
+    '原示例的图标是 3000 多行的 svg，这里换成简单的内联 svg，三个库用同一份（_shared/assets.tsx）；复杂图标的渲染开销没有被测到',
+  ],
+});

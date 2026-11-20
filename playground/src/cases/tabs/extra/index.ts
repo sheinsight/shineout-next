@@ -1,0 +1,11 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '标签页 额外内容',
+  description: '来自 shineout 示例 tabs/06-extra，标签栏右侧的额外操作按钮，只测挂载',
+  notes: [
+    'Shineout 用 <Tabs.Panel tab=...> 子元素，antd 用 items 数组（key / label / children）；Shineout 的 shape 对应 antd 的 type，只有 line 和 card 对应，其余形状（button / fill / dash）antd 没有',
+    'Shineout 的 extra（2.x 叫 tabBarExtraContent）对应 antd 的 tabBarExtraContent；按钮用各库自己的 Button（2.x 文字按钮是 text，3.x 是 mode=text，antd 是 type=link，按钮样式各库不同）',
+    '2.x 的 Td 组件在开发模式下会在控制台报 defaultProps 的 React 警告，会让 smoke 标红但不影响渲染和数据',
+  ],
+});

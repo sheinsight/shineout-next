@@ -1,0 +1,13 @@
+import { defineCase } from '../../../core/define';
+import { openScenarios } from '../_shared/scenarios';
+
+export default defineCase({
+  title: '弹窗 点击遮罩关闭',
+  description: '来自 shineout 示例 modal/10-close，maskCloseAble=false：点遮罩不能关闭',
+  scenarios: openScenarios,
+  notes: [
+    '「点击打开」场景：自动测试时弹窗打开 600ms 后自己关闭（_shared/bench.ts），并等关闭动画结束再测下一次，每次测的都是「从关闭到打开」；「第一次打开」只测一次。手动查看时弹窗不会自动关闭',
+    'maskCloseAble ↔ antd5 的 maskClosable；antd6 改成 mask.closable（maskClosable 已废弃）',
+    '原示例用 Radio.Group 在 false / true / null 之间切换（Radio 还没迁移），这里固定为 false；null（跟随全局配置）antd 没有对应',
+  ],
+});

@@ -1,0 +1,30 @@
+import { defineCase } from '../../../core/define';
+import { domChangeScenario, rowText, visibleRowCount, virtualBox, scrollToggle } from '../_shared/scenarios';
+
+export default defineCase({
+  title: '表格 树形数据',
+  description: '来自 shineout 示例 table/18-01-tree，三层树形数据（6 个根节点，每个根下 2 个子节点，第一个子节点下有 1 个孙节点），点击展开',
+  scenarios: [
+    domChangeScenario({
+      key: 'expand-tree',
+      name: '展开 / 收起第 1 个根节点',
+      target: (ctx) =>
+        ctx.query(
+          ctx.lib === 'v2'
+            ? '.so-table-icon-tree-expand'
+            : ctx.lib === 'v3'
+              ? '[data-role="tree-expand-icon"]'
+              : '.ant-table-row-expand-icon',
+        ),
+      probe: (ctx) => String(visibleRowCount(ctx)),
+    }),
+  ],
+  notes: [
+    '数据是 _shared/data.ts 里的 makeTree：6 个根节点，每个根下 2 个子节点，第一个子节点下再挂 1 个孙节点；原示例的数据是固定的另一批，结构类似但节点数不同',
+    'Shineout 用列上的 treeColumnsName=children 指定子节点字段，antd 默认就按 children 字段识别树形；treeIndent=22 对应 antd 的 expandable.indentSize=22',
+    '「点击展开」场景：点第一个根节点的展开图标，展开 / 收起交替；校验可见行数变了。实测展开第一个根节点后可见行数 6 → 8（多出 2 个子节点），四个库一致；收起时是否从 DOM 删除节点没有逐个核对（expand 用例里测到 antd 收起展开行是隐藏不删除，树形的子行这里没测）',
+    'antd 的展开图标是小方块 + 号，Shineout 3.x 是 + 号圆形图标，2.x 是 + 号（截图）；antd 的 bordered 和 Shineout 的 bordered 都是整表格带竖线',
+    'antd 的 Table 默认每页 10 行并带分页器，这里全部关掉分页（pagination={false}），和 Shineout 一样一次渲染全部数据',
+    '2.x 的 Td 组件在开发模式下会在控制台报 defaultProps 的 React 警告，会让 smoke 标红但不影响渲染和数据',
+  ],
+});

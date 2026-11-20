@@ -1,0 +1,10 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '单选框 描边按钮',
+  description: '来自 shineout 示例 radio/005-button-outline，button="outline" 的 Radio.Group，启用与禁用各一组，只测挂载',
+  notes: [
+    'button="outline" ↔ antd 的 optionType="button" + buttonStyle="outline"（antd 的默认）。截图确认（只看了 3.x 与 antd）：outline 下选中项都是蓝色描边 + 蓝字，没有填充；3.x 是一个描边的圆角外框、项之间是细竖线，antd 是每个按钮各有完整边框、竖线更粗；2.x 的 outline 没看截图',
+    'Shineout 的 Radio.Group 用 data + keygen（+ renderItem）渲染，antd 用 options；Shineout 的 Radio 用 htmlValue，antd 用 value',
+  ],
+});

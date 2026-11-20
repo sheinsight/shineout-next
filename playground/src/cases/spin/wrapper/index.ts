@@ -1,0 +1,14 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '加载中 包裹内容',
+  description: '来自 shineout 示例 spin/03-wrapper，包裹一块内容，加载时显示遮罩 + 指示器',
+  notes: [
+    '原示例是挂载后 useEffect 里把 loading 置为 true（先渲染一次未加载，再变为加载）；这里初始就是 loading=true，并加一个 <button data-bench=toggle> 用来切换，校验上报的 loading 确实变了。所以挂载数据测的是「直接加载中」',
+    '「切换加载状态」场景：点击后 loading 在开/关之间切换，测的是点击到下一帧绘制完成的主线程占用（遮罩和指示器的挂载/卸载）',
+    'Shineout 的 Spin 有 12 种动画（name 属性），antd 只有一种，所以这里统一用 name=ring（环形）对 antd 的默认指示器；两边的动画不是同一个东西',
+    '加载动画是持续运行的 CSS 动画，场景里只测挂载；动画本身持续占用的主线程不在这个用例的数据里',
+    '2.x 的 Spin 没有 mode 属性（读类型确认），不传，默认就是垂直排布；3.x 传 mode=vertical（也是默认值）。antd 的 tip（antd 6 的 description）显示在指示器下方，同为垂直排布。size=20 像素对应 antd 的 default（20）',
+    '被包裹内容两边完全相同（3 条灰色占位条，边框 1px，内边距 16）；加载时的效果不同（截图）：antd 把被包裹的内容整体变淡，Shineout 的内容保持原样，只在中间叠加指示器和文字；antd 的整体高度也比 Shineout 大一些（截图里约 148 对 130，没有查原因）。指示器 Shineout（2.x/3.x）是各自的 ring 动画，antd 是圆点旋转',
+  ],
+});

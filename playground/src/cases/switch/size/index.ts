@@ -1,0 +1,10 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '开关 尺寸',
+  description: '来自 shineout 示例 switch/03-size，small / default / large，只测挂载',
+  notes: [
+    'antd 没有 large（antd 5 只有 small / default，antd 6 只有 small / medium），所以 antd 这边只渲染 small 和 default 两个，Shineout 渲染三个',
+    '实测尺寸（宽×高，px）：2.x small/default/large 为 28×10 / 44×16 / 60×22，3.x 为 28×16 / 42×22 / 54×28，antd small/default 为 28×16 / 44×22（5 和 6 相同）；各库默认尺寸不同是各自的设计，不是用例造成的',
+  ],
+});

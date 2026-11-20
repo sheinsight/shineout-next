@@ -1,0 +1,12 @@
+import { defineCase } from '../../../core/define';
+
+export default defineCase({
+  title: '穿梭框 筛选',
+  description: '来自 shineout 示例 transfer/04-filter，自定义筛选方法，只测挂载',
+  notes: [
+    '只测挂载，没有交互场景：筛选要往搜索框里输入，而 Shineout 的 Input 默认有输入防抖（delay 400ms），antd 没有，输入场景测到的主要是这个差异，不是渲染开销，所以没做',
+    '3.x 的 highlight（搜索关键字高亮）和 searchPlaceholder 在 2.x 类型里没有；antd 没有高亮；所以这个用例只迁了「自定义筛选方法 + 搜索框」本身：Shineout 是 onFilter，antd 是 showSearch + filterOption',
+    '搜索框占位文字：3.x 设了 searchPlaceholder，antd 用 showSearch={{ placeholder }}，2.x 没有对应属性，用默认占位文字',
+    '原示例 listHeight=188，antd 的外框高度设成 230、宽 200，使主体约 188（主体 = 外框减 42 的表头），antd6 用 styles.section',
+  ],
+});
