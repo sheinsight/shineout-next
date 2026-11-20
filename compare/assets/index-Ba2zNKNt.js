@@ -1,0 +1,1 @@
+import{d as e}from"./define-BkAD2JVX.js";const n=e({title:"复选框 状态",description:"来自 shineout 示例 checkbox/002-checked-1，未选中 / 选中 / 半选中，各带一组禁用，只测挂载",notes:['半选中：Shineout 是 checked="indeterminate"，antd 是 indeterminate 属性，antd 没有第三种取值，这里用 checked + indeterminate 组合']});export{n as default};

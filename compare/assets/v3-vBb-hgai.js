@@ -1,0 +1,8 @@
+import{j as r}from"./jsx-runtime-CvmwB7h9.js";import{S as t}from"./index-BI098VQA.js";import"./registry-BHBdFNZN.js";import"./normalize-MzHTCtAa.js";import"./extends-CF3RwP-h.js";import"./objectWithoutPropertiesLoose-Dsqj8S3w.js";import"./createClass-D022HrCp.js";import"./toPropertyKey-DmnHUh_E.js";import"./inheritsLoose-B6jfs0L0.js";import"./setPrototypeOf-DgZC2w_0.js";import"./assertThisInitialized-B9jnkVVz.js";import"./toConsumableArray-Di4bH4Ci.js";import"./use-field-common-mjozs6OV.js";import"./index-B9Lw7AZD.js";import"./index-hQbFKYkA.js";import"./form-field-context-DakQ36RJ.js";import"./use-with-form-config-Dr5AMDlc.js";import"./index-CfL39oLX.js";import"./index-DBkNP72b.js";import"./shallow-equal-BpSGvfsz.js";import"./index-QrkN1eZN.js";import"./warning-CyNFB_Lk.js";import"./string-Bk6uduaS.js";import"./object-B_ieam3j.js";import"./immer-dc_2gaue.js";import"./element-dWQ_vigQ.js";import"./number-z2zF_4im.js";import"./use-drag-mock-C9-uwdH_.js";function F(){return r.jsxs(r.Fragment,{children:[r.jsx("style",{children:`
+        .square-handle::after {
+          border-radius: 0 !important;
+          border-width: 4px !important;
+          width: 16px !important;
+          height: 16px !important;
+        }
+      `}),r.jsx(t,{defaultValue:40,scale:[0,25,50,75,100],classNames:{indicator:"square-handle"},styles:{root:{padding:"20px 10px"},track:{height:6,borderRadius:3},scale:{marginTop:8,fontSize:12}}})]})}export{F as default};

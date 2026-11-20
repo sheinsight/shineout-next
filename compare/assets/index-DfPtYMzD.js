@@ -1,0 +1,1 @@
+import{d as e}from"./define-BkAD2JVX.js";const s=e({title:"日期选择 基础用法",description:"来自 shineout 示例 date-picker/01-base，最基础的日期选择，带「此刻」按钮，只测挂载",notes:["showSelNow ↔ antd 的 showNow；2.x 没有这个属性，不传","只测挂载，不含展开面板，面板内容的渲染开销需要另加 scenarios 才能测到"]});export{s as default};

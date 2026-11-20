@@ -1,0 +1,1 @@
+import{d as t}from"./define-BkAD2JVX.js";const e=t({title:"分页 按钮风格",description:"来自 shineout 示例 pagination/004-mode，mode=text 和 mode=outline 两种按钮风格",notes:['2.x 没有 mode；antd 也没有，两个 Pagination 渲染的是同一个样子（antd 的页码本来就是文字风格），所以这个用例的 antd 数据只能当作"两个分页"的参考，不是 mode 的对比',"span={3} ↔ antd 没有 span，antd 的页码省略规则是固定的（当前页前后各 2 页），所以页码按钮个数可能与 Shineout 不同"]});export{e as default};

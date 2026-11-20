@@ -1,0 +1,1 @@
+import{_ as t}from"./extends-CF3RwP-h.js";import{r}from"./registry-BHBdFNZN.js";import{E as n}from"./EyeOutlined-Bmd706kk.js";import{I as a}from"./AntdIcon-Cj3r-_-u.js";var i=function(e,o){return r.createElement(a,t({},e,{ref:o,icon:n}))},E=r.forwardRef(i);export{E as R};

@@ -1,0 +1,1 @@
+import{d as t}from"./define-BkAD2JVX.js";const o=t({title:"下拉菜单 带图标",description:"来自 shineout 示例 dropdown/009-icon，菜单项带图标，只测挂载",notes:["原示例的图标来自 CDN 的 FontAwesome，这里换成内联 svg，四个库相同（_shared/data.tsx）","Shineout 把图标写进 content，antd 用菜单项的 icon 字段，间距由各库决定"]});export{o as default};

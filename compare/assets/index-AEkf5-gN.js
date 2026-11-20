@@ -1,0 +1,1 @@
+import{d as e}from"./define-BkAD2JVX.js";const t=e({title:"徽标 尺寸",description:"来自 shineout 示例 badge/03-small-size，small 与默认尺寸，只测挂载",notes:["2.x 没有 Badge 组件，没有实现"]});export{t as default};

@@ -1,0 +1,1 @@
+import{d as e}from"./define-BkAD2JVX.js";const d=e({title:"提示框 无边框",description:"来自 shineout 示例 alert/05-bordered，隐藏边框，只测挂载",notes:["2.x 的 Alert 没有 bordered 属性，没有实现","antd 5.x 没有隐藏边框的属性，没有实现",'antd 6 用 variant="filled" 对应（边框透明，背景填充），是最接近的写法，视觉上不完全相同']});export{d as default};

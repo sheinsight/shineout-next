@@ -1,0 +1,1 @@
+import{c as n}from"./registry-BHBdFNZN.js";const t="__rc_react_root__";function u(r,o){const e=o[t]||n.createRoot(o);e.render(r),o[t]=e}async function c(r){return Promise.resolve().then(()=>{var o;(o=r[t])==null||o.unmount(),delete r[t]})}export{u as r,c as u};

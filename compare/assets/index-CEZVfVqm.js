@@ -1,0 +1,1 @@
+import{d as e}from"./define-BkAD2JVX.js";const i=e({title:"级联选择 搜索过滤",description:"来自 shineout 示例 cascader/filter，单选和多选各一组，只测挂载",notes:["Shineout 通过 onFilter 提供过滤函数，antd 用 showSearch（内置按 label 匹配），两边都没有输入文字，挂载阶段只渲染输入框","只测挂载，不包含输入搜索后的过滤耗时，搜索交互需要另外加 scenarios","highlight（搜索结果高亮）3.x 才有，2.x 的类型里没有，这里两边都不传，保证配置一致"]});export{i as default};

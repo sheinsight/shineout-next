@@ -1,0 +1,1 @@
+import{d as e}from"./define-BkAD2JVX.js";const l=e({title:"日期选择 可清除",description:"来自 shineout 示例 date-picker/16-clearable-01，带默认值的可清除选择器，只测挂载",notes:["clearable ↔ allowClear；原示例 16-clearable-02 是受控 + clearWithUndefined 演示，没有 antd 对应，没有迁移"]});export{l as default};

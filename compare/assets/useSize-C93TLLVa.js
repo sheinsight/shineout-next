@@ -1,0 +1,1 @@
+import{R as t}from"./registry-BHBdFNZN.js";import{N as n,h as i}from"./is-CsAtwV3I.js";import{S as o}from"./SizeContext-Dkaap4xR.js";const m=r=>{const e=t.useContext(o);return t.useMemo(()=>r?n(r)?r:i(r)?r(e):e:e,[r,e])};export{m as u};

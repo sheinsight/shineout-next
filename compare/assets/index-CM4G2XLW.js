@@ -1,0 +1,1 @@
+import{d as e}from"./define-BkAD2JVX.js";const t=e({title:"折叠面板 简洁面板",description:"来自 shineout 示例 collapse/04-simplePanel，simple + 无边框，只测挂载",notes:["2.x 没有 Collapse 组件，不参与","simple 没有 antd 的精确对应：Shineout 的 simple 是去掉内容区上下内边距与背景色，这里用 antd 的 ghost（透明背景、无边框）近似，视觉有差异","单个面板的 simple={false} 在 antd 里没有对应，antd 三个面板的样式相同，所以结构不完全等价"]});export{t as default};

@@ -1,0 +1,1 @@
+import{r as a}from"./registry-BHBdFNZN.js";var n=function(){},o={add:n,remove:n},u=a.createContext(o);function s(e){var r=a.useContext(u);a.useEffect(function(){var t=e();if(t)return r.add(t),function(){return r.remove(t)}},[r,e])}export{o as D,u as W,s as u};

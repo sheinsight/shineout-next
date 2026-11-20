@@ -1,0 +1,1 @@
+import{d as t}from"./define-BkAD2JVX.js";const s=t({title:"下拉菜单 语义化样式",description:"来自 shineout 示例 dropdown/013-semantic，只有 3.x 与 antd 6 参与",notes:["2.x、antd5 没有 styles / classNames，不参与","节点对应：list ↔ menu，item ↔ item；Shineout 的 button 节点在 antd 里是使用方自己写的 Button，直接传 style","原示例的函数式 classNames（根据 open 状态切换）和 caret 没有迁移"]});export{s as default};

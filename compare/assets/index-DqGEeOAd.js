@@ -1,0 +1,1 @@
+import{d as e}from"./define-BkAD2JVX.js";const t=e({title:"级联选择 基础用法",description:"来自 shineout 示例 cascader/01-base，单选，可清除，只测挂载",notes:["数据映射：Shineout 用 data + keygen，antd 用 options + fieldNames（label/value 都取 value 字段），四个库用同一份城市数据（_shared/data.ts）","清除按钮：Shineout 的 clearable 对应 antd 的 allowClear"]});export{t as default};

@@ -1,0 +1,1 @@
+import{d as i}from"./define-BkAD2JVX.js";const t=i({title:"列表 分页",description:"来自 shineout 示例 list/03-pagination，每页 10 条、共 100 条，只测挂载",notes:["2.x 的 List 没有 pagination，所以只有 3.x 和 antd 参与","原示例用 mock 接口加 loading 状态模拟异步翻页，这里改成本地切片、去掉了 loading，只剩同步渲染","pagination 的 align=right ↔ antd 的 align=end；翻页后的行为没有测"]});export{t as default};

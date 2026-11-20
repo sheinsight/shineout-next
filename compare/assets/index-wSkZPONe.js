@@ -1,1 +1,0 @@
-import{u as l}from"./index-CgO13_rd.js";var v=function(e){var a=l(function(s){var n,r,o,c=s.keyCode;switch(c){case 13:(n=e.onEnterPress)===null||n===void 0||n.call(e,s);break;case 27:(r=e.onEscPress)===null||r===void 0||r.call(e,s);break;case 32:(o=e.onSpacePress)===null||o===void 0||o.call(e,s);break}});return a};export{v as u};

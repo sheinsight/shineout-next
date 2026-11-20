@@ -1,0 +1,1 @@
+import{d as o}from"./define-BkAD2JVX.js";const t=o({title:"间距 自定义间距",description:"来自 shineout 示例 gap/02-custom，固定 row=20、column=30 的间距，只测挂载",notes:["原示例用两个 Slider 调节间距，Slider 还没迁移，这里固定成 row=20、column=30，只比较 Gap 本身","column / row ↔ antd 的 size=[水平, 垂直]（antd 的顺序是 [横, 纵]）"]});export{t as default};

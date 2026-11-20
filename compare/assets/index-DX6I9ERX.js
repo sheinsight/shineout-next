@@ -1,0 +1,1 @@
+import{d as e}from"./define-BkAD2JVX.js";const i=e({title:"日期选择 时间",description:"来自 shineout 示例 date-picker/07-time-0，type=time，三种格式，只测挂载",notes:["antd 的时间选择是单独的 TimePicker 组件，不是 DatePicker 的一种",'format="hh:mm A" 要同时开启 use12Hours，antd 才会显示 AM/PM 列',"2.x 没有 showSelNow，不传"]});export{i as default};

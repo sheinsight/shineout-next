@@ -1,1 +1,0 @@
-import{r as u}from"./registry-BT99pFa4.js";import{f as s}from"./is-DK37hhtB.js";const f=s()?u.useLayoutEffect:u.useEffect,o=(e,r)=>{const t=u.useRef(!0);f(()=>e(t.current),r),f(()=>(t.current=!1,()=>{t.current=!0}),[])},n=(e,r)=>{o(t=>{if(!t)return e()},r)};export{n as a,o as u};

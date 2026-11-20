@@ -1,0 +1,1 @@
+import{d as t}from"./define-BkAD2JVX.js";const e=t({title:"卡片 表单",description:"来自 shineout 示例 card/06-form，Card.Submit 触发卡片内表单提交，只测挂载",notes:['antd 的 Card 没有提交按钮，用 htmlType="submit" + form 属性关联卡片里的 Form，放在 actions 里，结构不同','Form 的布局：Shineout 用 labelAlign="top"，antd 用 layout="vertical"']});export{e as default};

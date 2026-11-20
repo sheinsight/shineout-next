@@ -1,1 +1,0 @@
-import{_ as a}from"./extends-CF3RwP-h.js";import{R as o}from"./registry-BT99pFa4.js";import{M as t}from"./index-B1pGtgYm.js";var r=function(e){return o.createElement(t,a({},e,{drawer:!0}))};r.defaultProps={position:"right",width:"auto"};r.displayName="ShineoutDrawer";r.Submit=t.Submit;export{r as D};

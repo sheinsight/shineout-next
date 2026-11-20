@@ -1,0 +1,1 @@
+import{d as e}from"./define-BkAD2JVX.js";const s=e({title:"按钮 形状",description:"来自 shineout 示例 button/s-003-shape，矩形 / 全圆角 / 方形 / 圆形，只测挂载",notes:['antd 5 与 2.x 没有 shape="square"，只渲染其余三个',"antd 6 的 square 形状与 Shineout 的 square 含义相同"]});export{s as default};

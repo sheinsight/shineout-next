@@ -1,0 +1,1 @@
+import{d as e}from"./define-BkAD2JVX.js";const n=e({title:"单选框 基本用法",description:"来自 shineout 示例 radio/001-base-0，受控的单个 Radio，只测挂载",notes:["checked + htmlValue + onChange(value) ↔ antd 的 checked + value + onChange(e)（取 e.target.value）；antd 的 onChange 是事件对象，Shineout 直接给取值","只测挂载，没有点击场景"]});export{n as default};

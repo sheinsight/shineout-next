@@ -1,0 +1,1 @@
+import{r as p}from"./registry-BHBdFNZN.js";const f=d=>{const[t,o]=p.useState(null);return[p.useCallback((l,h,s)=>{const a=t??l,i=Math.min(a||0,l),c=Math.max(a||0,l),u=h.slice(i,c+1).map(d),r=u.some(e=>!s.has(e)),n=[];return u.forEach(e=>{r?(s.has(e)||n.push(e),s.add(e)):(s.delete(e),n.push(e))}),o(r?c:null),n},[t]),o]};export{f as u};

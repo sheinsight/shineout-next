@@ -1,1 +1,0 @@
-import"./registry-BT99pFa4.js";import{C as m}from"./color-DvjFWbn6.js";import"./is-DK37hhtB.js";import"./index-BYXZuS5w.js";const e=(o,r)=>{const{r:t,g:i,b:n,a:s}=o.toRgb(),g=new m(o.toRgbString()).onBackground(r).toHsv();return s<=.5?g.v>.5:t*.299+i*.587+n*.114>192};export{e as i};

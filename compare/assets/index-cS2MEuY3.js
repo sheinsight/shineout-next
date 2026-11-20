@@ -1,0 +1,1 @@
+import{d as e}from"./define-BkAD2JVX.js";const s=e({title:"列表 尺寸",description:"来自 shineout 示例 list/01-02-size，small / default / large 三种尺寸，只测挂载",notes:["原示例用 Radio.Group 切换 size，Radio 还没迁移，这里把三种尺寸同时渲染（3 个列表，原示例一次只渲染 1 个），挂载开销是原示例的 3 倍","size 三个取值两边同名"]});export{s as default};

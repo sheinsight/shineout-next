@@ -1,0 +1,1 @@
+import{d as e}from"./define-BkAD2JVX.js";const d=e({title:"日期选择 禁用",description:"来自 shineout 示例 date-picker/10-disable，整体禁用与范围的单端禁用，只测挂载",notes:["2.x 的 disabled 类型只有 boolean 和函数，没有 [start, end] 的单端禁用，所以 2.x 只渲染前两项（整体禁用），3.x 与 antd 渲染四项，节点数更少","3.x、antd5、antd6 都支持 disabled={[start, end]}"]});export{d as default};

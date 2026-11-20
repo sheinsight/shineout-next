@@ -1,0 +1,1 @@
+import{d as n}from"./define-BkAD2JVX.js";const e=n({title:"链接 图标",description:"来自 shineout 示例 link/05-icon 的第一项（icon 为 true，使用内置图标），只测挂载",notes:["2.x 没有 Link 组件（shineout-v2 的导出里没有），所以只有 3.x 和 antd 参与","antd 的 Link 没有 icon 属性，用 @ant-design/icons 的 EditOutlined 当子元素模拟，图标是各库自己的 SVG，不是同一个图形","原示例第二项自定义 icon 依赖 react-jss 的 createUseStyles 和一个很长的 SVG path，没有迁移"]});export{e as default};

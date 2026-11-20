@@ -1,0 +1,1 @@
+import{d as a}from"./define-BkAD2JVX.js";const t=a({title:"间距 基础用法",description:"来自 shineout 示例 gap/01-base，10 个按钮在 400px 宽的容器里自动换行，只测挂载",notes:["Shineout 的 Gap 对应 antd 的 Space；Gap 默认就换行、间距 8，antd 的 Space 要加 wrap，并把 size 设成 8（antd 默认 small = 8，写明更清楚）","子元素包裹：Gap 给每个子元素包一层 div，Space 也给每个子元素包一层 div，结构相近","按钮用各库自己的 Button，是挂载开销的一部分"]});export{t as default};

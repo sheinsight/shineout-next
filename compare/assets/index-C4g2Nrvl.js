@@ -1,0 +1,1 @@
+import{d as t}from"./define-BkAD2JVX.js";const i=t({title:"间距 纵向排列",description:"来自 shineout 示例 gap/03-vertical，纵向排列，间距 10，只测挂载",notes:['Shineout 靠 style 的 flexDirection: column 实现纵向；antd 用 direction="vertical"（antd6 改叫 orientation，direction 已弃用）',"四个库的按钮都是各自宽度，没有被拉伸（实测：Shineout 按钮 69px，antd 75px，差别只来自按钮自身的内边距）"]});export{i as default};

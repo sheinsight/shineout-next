@@ -1,0 +1,1 @@
+import{r}from"./registry-BHBdFNZN.js";import{u as n}from"./define-BkAD2JVX.js";const a=new URLSearchParams(location.search).get("mode")==="auto";function i(s){const[t,e]=r.useState([]);return n({[s]:t.length}),r.useEffect(()=>{if(!a||t.length===0)return;const o=setTimeout(()=>e([]),400);return()=>clearTimeout(o)},[t]),[t,e]}export{i as u};

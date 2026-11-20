@@ -1,1 +1,0 @@
-import{R as s}from"./index-BYXZuS5w.js";function u(e,n,d,i){var o=s.unstable_batchedUpdates?function(a){s.unstable_batchedUpdates(d,a)}:d;return e!=null&&e.addEventListener&&e.addEventListener(n,o,i),{remove:function(){e!=null&&e.removeEventListener&&e.removeEventListener(n,o,i)}}}export{u as a};

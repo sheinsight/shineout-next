@@ -1,0 +1,1 @@
+import{d as t}from"./define-BkAD2JVX.js";const i=t({title:"提示框 标题模式",description:"来自 shineout 示例 alert/04-title，带标题和关闭按钮，只测挂载",notes:["2.x 的 Alert 没有 title 属性，没有实现","antd 的对应写法是 title + description（5.x 是 message + description），标题与正文是两个节点，结构不完全等价"]});export{i as default};

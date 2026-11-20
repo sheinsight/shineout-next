@@ -1,0 +1,1 @@
+import{r as n}from"./registry-BHBdFNZN.js";import{u}from"./useEvent-DOLoUJqK.js";import"./is-CsAtwV3I.js";import"./index-CP6dDngG.js";function s(){}const c=n.createContext({add:s,remove:s});function d(r){const o=n.useContext(c),a=n.useRef(null);return u(e=>{if(e){const t=r?e.querySelector(r):e;t&&(o.add(t),a.current=t)}else o.remove(a.current)})}export{c as W,d as u};

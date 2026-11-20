@@ -1,1 +1,0 @@
-import{i as c}from"./inputable-Cy8PoTaQ.js";import{c as i}from"./CheckItem-Bt4Zi231.js";import{c as m}from"./context-BspB4gzH.js";import{c as r}from"./compose-DVCSYyDt.js";const o=i("switch");var t=r(c,m)(o);t.displayName="ShineoutSwitch";t.Switch=o;export{t as e};

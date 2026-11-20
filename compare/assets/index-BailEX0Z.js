@@ -1,0 +1,1 @@
+import{d as e}from"./define-BkAD2JVX.js";const i=e({title:"流光边框 流光尺寸",description:"来自 shineout 示例 border-beam/05-size，56 / 默认 / 160px，只测挂载",notes:["BorderBeam 在 Shineout 3.x 和 antd 6 里有，2.x 和 antd 5 没有，所以只有这两个库可比","面板的边框、背景、文字颜色：原示例用 3.x 的主题变量（--soui-*），antd 里没有，这里统一换成固定值（取自 3.x 默认主题），两个库外观一致","不传 size 时两个库的默认值都是 100px"]});export{i as default};

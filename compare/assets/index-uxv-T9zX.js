@@ -1,1 +1,0 @@
-import{r as e}from"./registry-BT99pFa4.js";function i(n,t){typeof n=="function"?n(t):n&&(n.current=t)}function f(){for(var n=arguments.length,t=new Array(n),r=0;r<n;r++)t[r]=arguments[r];return e.useMemo(function(){return t.every(function(u){return u==null})?null:function(u){t.forEach(function(o){i(o,u)})}},t)}export{f as u};

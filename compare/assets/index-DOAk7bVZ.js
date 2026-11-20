@@ -1,0 +1,1 @@
+import{d as e}from"./define-BkAD2JVX.js";const t=e({title:"日期选择 内嵌标题",description:"来自 shineout 示例 date-picker/14-innerTitle，三种尺寸的内嵌标题，只测挂载",notes:["innerTitle ↔ antd 的 prefix（输入框左侧的前缀），视觉位置接近但不是同一个设计","2.x 没有 showSelNow，不传"]});export{t as default};

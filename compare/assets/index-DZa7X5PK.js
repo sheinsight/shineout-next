@@ -1,0 +1,1 @@
+import{d as t}from"./define-BkAD2JVX.js";const e=t({title:"按钮 组合",description:"来自 shineout 示例 button/s-008-group，按钮组，只测挂载",notes:["antd 的 Button.Group 已弃用（官方提示改用 Space.Compact），这里用 Space.Compact",'2.x 的 Button.Group 没有 mode="text"，该组省略；其它写法接近',"组合内的 type / mode 在 Shineout 里由 Group 统一设置，antd 里只能逐个按钮设置，写法不同、渲染结果近似"]});export{e as default};

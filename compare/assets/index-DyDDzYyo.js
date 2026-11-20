@@ -1,0 +1,1 @@
+import{d as e}from"./define-BkAD2JVX.js";import{o as r}from"./scenarios-CNGc8MKW.js";const s=e({title:"抽屉 可拖拽调整大小",description:"来自 shineout 示例 drawer/09-resizable，拖动边缘调整抽屉大小，点击打开",notes:["antd5 的 Drawer 没有 resizable（5.29.3 的类型里没有），不参与；antd6 有","原示例里是 Form，这里换成文字","只测打开，拖拽本身没有场景"],scenarios:r});export{s as default};
