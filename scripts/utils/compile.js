@@ -79,7 +79,9 @@ function compile(dirPath = shineoutDir) {
   const files = fs
     .readdirSync(`${chunkDir}/${chunkModuleName}`)
     .map((i) => i.split('.')[0])
-    .filter((i) => i !== 'index');
+    .filter((i) => i !== 'index')
+    // 按组件名排序而不是带扩展名的文件名，避免 input-number 排在 input 前面（'-' < '.'）
+    .sort();
 
   writeTemplate({
     fileName: 'index.ts',
