@@ -26,6 +26,7 @@ export { default as Grid } from './grid';
 export { default as Icon } from './icon';
 export { default as Image } from './image';
 export { default as Input } from './input';
+export { default as InputNumber } from './input-number';
 export { default as Link } from './link';
 export { default as List } from './list';
 export { default as Menu } from './menu';

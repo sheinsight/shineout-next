@@ -1,3 +1,9 @@
+## 3.10.4-beta.5
+2026-11-23
+
+### 🆕 Feature
+- 新增 `InputNumber` 组件，API 与 `Input.Number` 一致，区别是 `allowNull` 默认为 `true`：清空内容后值为 `null`，失焦时不会回填 `0` 或 `min`，与 antd `InputNumber` 的清空行为保持一致；设置 `allowNull={false}` 可恢复 `Input.Number` 的行为
+
 ## 3.10.4-beta.4
 2026-11-17
 
