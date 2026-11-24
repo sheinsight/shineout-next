@@ -53,6 +53,7 @@ const Popover = (props: PopoverProps) => {
       trigger: trigger,
       autoMode: 'popover',
       priorityDirection,
+      container: props.getPopupContainer,
       mouseEnterDelay: props.mouseEnterDelay,
       mouseLeaveDelay: props.mouseLeaveDelay,
       esc: config.popupEsc,
@@ -196,6 +197,15 @@ const Popover = (props: PopoverProps) => {
     '--popover-border-color': props.border,
     '--popover-background-color': props.background,
   };
+
+  // 渲染到自定义容器时，绝对定位元素的 shrink-to-fit 宽度会被「容器宽度 - left」压缩，
+  // 导致内容被迫逐词换行。这里按内容宽度展示，并以容器宽度为上限。
+  if (typeof props.getPopupContainer === 'function') {
+    Object.assign(containerStyle, {
+      width: 'max-content',
+      maxWidth: '100%',
+    });
+  }
 
   if (popupGap) {
     Object.assign(containerStyle, {
