@@ -75,6 +75,7 @@ const usePopup = (props: BasePopupProps) => {
       props.priorityDirection,
       autoMode,
       popupRef.current || undefined,
+      typeof props.container === 'function' ? props.container() : props.container,
     );
     if (newPosition !== position) setPositionState(newPosition);
   });

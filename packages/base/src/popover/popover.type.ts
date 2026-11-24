@@ -93,7 +93,7 @@ export interface PopoverProps extends Pick<CommonType, 'className' | 'style'> {
   position?: PopoverPosition;
   /**
    * @en Popup location priority, default is top and bottom priority, only valid when position is not set, Options: ['vertical', 'horizontal', 'auto']
-   * @cn 弹出位置优先级, 默认为左右优先, 只在未设置 position 时生效
+   * @cn 弹出位置优先级, 默认为上下优先, 只在未设置 position 时生效
    * @default 'vertical'
    */
   priorityDirection?: BasePopupProps['priorityDirection'];

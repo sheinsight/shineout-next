@@ -1,3 +1,8 @@
+## 3.10.4-beta.6
+2026-11-24
+### 🐞 BugFix
+- 修复 `Popover` 使用 `getPopupContainer` 渲染到自定义容器时，`position="auto"` 弹出方向不准确、内容被压缩换行的问题 ([#1818](https://github.com/sheinsight/shineout-next/pull/1818))
+
 ## 3.10.0-beta.3
 2026-07-22
 ### 🐞 BugFix
