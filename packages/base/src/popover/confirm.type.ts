@@ -16,12 +16,12 @@ export interface PopoverConfirmProps extends Omit<PopoverProps, 'type'> {
   };
   /**
    * @en ok button click callback, will close tooltip while returned promise resolve
-   * @cn 点击确定按钮时触发事件，返回 Promise 时，会在 Promise resolve 后关闭 Tooltip
+   * @cn 点击确定按钮时触发事件，返回 Promise 时，会在 Promise resolve 后关闭 Popover
    */
   onOk?: () => void | Promise<any>;
   /**
    * @en cancel button click callback, will close tooltip while returned promise resolve
-   * @cn 点击取消按钮时触发事件，返回 Promise 时，会在 Promise resolve 后关闭 Tooltip
+   * @cn 点击取消按钮时触发事件，返回 Promise 时，会在 Promise resolve 后关闭 Popover
    */
   onCancel?: () => void | Promise<any>;
   /**

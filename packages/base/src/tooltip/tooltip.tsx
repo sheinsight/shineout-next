@@ -43,11 +43,16 @@ const TooltipInner = (props: ValidTooltipProps) => {
 
   const delay = props.delay || props.mouseEnterDelay || defaultDelay;
   const mouseLeaveDelay = props.mouseLeaveDelay || defaultDelay;
+  // 全局配置兜底；RTL 下左右方向需要镜像
+  const positionPriority = (props.positionPriority ?? config.tooltip?.positionPriority)?.map(
+    (d) => util.getRTLPosition(d, config.direction === 'rtl') as 'top' | 'right' | 'bottom' | 'left',
+  );
   const { open, position, getTargetProps, targetRef, popupRef, closePop } = usePopup({
     position: util.getRTLPosition(popsitionProps, config.direction === 'rtl'),
     trigger: trigger,
     autoMode: 'popover',
     priorityDirection,
+    positionPriority,
     mouseEnterDelay: delay,
     mouseLeaveDelay: mouseLeaveDelay,
     targetEvents: disabledChild ? {} : childrenProps,

@@ -687,3 +687,72 @@ describe('Tooltip[Semantic classNames - functional]', () => {
     });
   });
 });
+
+describe('Tooltip[positionPriority]', () => {
+  const mockRect = (el: HTMLElement) => {
+    // 触发元素位于视口中央，四个方向空间都充足
+    el.getBoundingClientRect = () =>
+      ({ left: 460, top: 380, width: 80, height: 30, right: 540, bottom: 410, x: 460, y: 380 } as DOMRect);
+  };
+
+  // jsdom 没有布局，视口尺寸默认为 0，需要手动指定
+  beforeEach(() => {
+    Object.defineProperty(document.documentElement, 'clientWidth', { configurable: true, value: 1000 });
+    Object.defineProperty(document.documentElement, 'clientHeight', { configurable: true, value: 800 });
+  });
+
+  afterEach(() => {
+    setConfig({ tooltip: {} });
+    delete (document.documentElement as any).clientWidth;
+    delete (document.documentElement as any).clientHeight;
+  });
+
+  const getPosition = () => document.querySelector(tooltipClassName)?.getAttribute('data-soui-position');
+
+  test('should use the first direction of positionPriority', async () => {
+    const { container } = render(
+      <Tooltip tip='tip' positionPriority={['right', 'bottom', 'left', 'top']}>
+        <Button>Hover</Button>
+      </Tooltip>,
+    );
+    const button = container.querySelector('button')!;
+    mockRect(button);
+    fireEvent.mouseEnter(button);
+    await waitFor(async () => {
+      await delay(200);
+      expect(getPosition()).toMatch(/^right/);
+    });
+  });
+
+  test('should apply positionPriority from setConfig', async () => {
+    setConfig({ tooltip: { positionPriority: ['left', 'top', 'right', 'bottom'] } });
+    const { container } = render(
+      <Tooltip tip='tip'>
+        <Button>Hover</Button>
+      </Tooltip>,
+    );
+    const button = container.querySelector('button')!;
+    mockRect(button);
+    fireEvent.mouseEnter(button);
+    await waitFor(async () => {
+      await delay(200);
+      expect(getPosition()).toMatch(/^left/);
+    });
+  });
+
+  test('prop should take precedence over setConfig', async () => {
+    setConfig({ tooltip: { positionPriority: ['left'] } });
+    const { container } = render(
+      <Tooltip tip='tip' positionPriority={['top']}>
+        <Button>Hover</Button>
+      </Tooltip>,
+    );
+    const button = container.querySelector('button')!;
+    mockRect(button);
+    fireEvent.mouseEnter(button);
+    await waitFor(async () => {
+      await delay(200);
+      expect(getPosition()).toMatch(/^top/);
+    });
+  });
+});

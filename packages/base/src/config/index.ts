@@ -90,6 +90,14 @@ type TooltipConfig = {
    * @version 3.10.0
    */
   styles?: SemanticStyles<TooltipSemanticKey>;
+  /**
+   * @en Global default direction priority for Tooltip when position is auto.
+   *     Lower priority than component-level `positionPriority` prop.
+   * @cn Tooltip 在 position 为 auto 时的全局默认方向优先级。
+   *     优先级低于组件 prop 上的 `positionPriority`。
+   * @version 3.10.4
+   */
+  positionPriority?: ('top' | 'right' | 'bottom' | 'left')[];
 }
 
 /**
@@ -144,6 +152,14 @@ export type PopoverConfig = {
    * @version 3.10.0
    */
   styles?: SemanticStyles<PopoverSemanticKey>;
+  /**
+   * @en Global default direction priority for Popover when position is auto.
+   *     Lower priority than component-level `positionPriority` prop.
+   * @cn Popover 在 position 为 auto 时的全局默认方向优先级。
+   *     优先级低于组件 prop 上的 `positionPriority`。
+   * @version 3.10.4
+   */
+  positionPriority?: ('top' | 'right' | 'bottom' | 'left')[];
 }
 
 /**

@@ -1,3 +1,8 @@
+## 3.10.4-beta.7
+2026-11-25
+### 🆕 Feature
+- `Tooltip` 新增 `positionPriority` 属性，`position` 为 `auto` 时可指定弹出方向的优先级，支持通过 `setConfig` 全局配置 ([#1819](https://github.com/sheinsight/shineout-next/pull/1819))
+
 ## 3.10.0-beta.5
 2026-07-22
 ### 🐞 BugFix

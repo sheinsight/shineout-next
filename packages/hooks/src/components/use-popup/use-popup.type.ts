@@ -45,6 +45,11 @@ export interface BasePopupProps {
    */
   priorityDirection?: 'vertical' | 'horizontal' | 'auto';
   /**
+   * @en Direction priority used when position is auto. The first direction with enough space wins; if none fits, the one with the most space is used. Takes precedence over `priorityDirection`
+   * @cn position 为 auto 时的方向优先级。按顺序选择第一个空间足够的方向，都放不下则选择空间最大的方向。优先于 `priorityDirection`
+   */
+  positionPriority?: ('top' | 'right' | 'bottom' | 'left')[];
+  /**
    * @en The container where the popup is rendered. When set, the auto position is calculated within the container's visible area instead of the viewport
    * @cn 弹出层渲染的容器。设置后，自动位置按容器可见区域计算，而不是按视口计算
    */
