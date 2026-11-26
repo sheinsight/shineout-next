@@ -820,3 +820,82 @@ describe('Popover[Semantic classNames - functional]', () => {
     });
   });
 });
+
+describe('Popover[positionPriority]', () => {
+  const mockRect = (el: HTMLElement) => {
+    // 触发元素位于视口中央，四个方向空间都充足
+    el.getBoundingClientRect = () =>
+      ({ left: 460, top: 380, width: 80, height: 30, right: 540, bottom: 410, x: 460, y: 380 } as DOMRect);
+  };
+
+  // jsdom 没有布局，视口尺寸默认为 0，需要手动指定
+  beforeEach(() => {
+    Object.defineProperty(document.documentElement, 'clientWidth', { configurable: true, value: 1000 });
+    Object.defineProperty(document.documentElement, 'clientHeight', { configurable: true, value: 800 });
+  });
+
+  afterEach(() => {
+    const { setConfig } = require('shineout');
+    setConfig({ popover: {} });
+    delete (document.documentElement as any).clientWidth;
+    delete (document.documentElement as any).clientHeight;
+  });
+
+  const getPosition = () => getPopoverRoot().getAttribute('data-soui-position');
+
+  test('should use the first direction of positionPriority when position is auto', async () => {
+    const { container } = render(
+      <Button>
+        Hover
+        <Popover position='auto' positionPriority={['right', 'bottom', 'left', 'top']}>
+          content
+        </Popover>
+      </Button>,
+    );
+    const button = container.querySelector('button')!;
+    mockRect(button);
+    fireEvent.mouseEnter(button);
+    await waitFor(async () => {
+      await delay(200);
+      expect(getPosition()).toMatch(/^right/);
+    });
+  });
+
+  test('should apply positionPriority from setConfig', async () => {
+    const { setConfig } = require('shineout');
+    setConfig({ popover: { positionPriority: ['left', 'top', 'right', 'bottom'] } });
+    const { container } = render(
+      <Button>
+        Hover
+        <Popover position='auto'>content</Popover>
+      </Button>,
+    );
+    const button = container.querySelector('button')!;
+    mockRect(button);
+    fireEvent.mouseEnter(button);
+    await waitFor(async () => {
+      await delay(200);
+      expect(getPosition()).toMatch(/^left/);
+    });
+  });
+
+  test('prop should take precedence over setConfig', async () => {
+    const { setConfig } = require('shineout');
+    setConfig({ popover: { positionPriority: ['left'] } });
+    const { container } = render(
+      <Button>
+        Hover
+        <Popover position='auto' positionPriority={['top']}>
+          content
+        </Popover>
+      </Button>,
+    );
+    const button = container.querySelector('button')!;
+    mockRect(button);
+    fireEvent.mouseEnter(button);
+    await waitFor(async () => {
+      await delay(200);
+      expect(getPosition()).toMatch(/^top/);
+    });
+  });
+});

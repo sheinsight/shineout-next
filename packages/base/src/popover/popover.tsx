@@ -44,6 +44,10 @@ const Popover = (props: PopoverProps) => {
       props.onClose?.();
     }
   });
+  // 全局配置兜底；RTL 下左右方向需要镜像
+  const positionPriority = (props.positionPriority ?? config.popover?.positionPriority)?.map(
+    (d) => util.getRTLPosition(d, config.direction === 'rtl') as 'top' | 'right' | 'bottom' | 'left',
+  );
   const { open, position, getTargetProps, targetRef, popupRef, closePop, Provider, providerValue } =
     usePopup({
       open: props.visible,
@@ -53,6 +57,7 @@ const Popover = (props: PopoverProps) => {
       trigger: trigger,
       autoMode: 'popover',
       priorityDirection,
+      positionPriority,
       container: props.getPopupContainer,
       mouseEnterDelay: props.mouseEnterDelay,
       mouseLeaveDelay: props.mouseLeaveDelay,

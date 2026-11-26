@@ -81,6 +81,12 @@ export interface TooltipProps
   extends Pick<BasePopupProps, 'trigger' | 'position' | 'priorityDirection'>,
     Pick<CommonType, 'className' | 'style'> {
   /**
+   * @en Direction priority when position is auto, e.g. ['top', 'right', 'bottom', 'left']. The first direction with enough space is used; if none fits, the one with the most space is used. Takes precedence over `priorityDirection`, can also be set globally via setConfig
+   * @cn position 为 auto 时的方向优先级，如 ['top', 'right', 'bottom', 'left']。按顺序选择第一个空间足够的方向，都放不下则选择空间最大的方向。优先于 `priorityDirection`，也可通过 setConfig 全局配置
+   * @version 3.10.4
+   */
+  positionPriority?: BasePopupProps['positionPriority'];
+  /**
    * @en Pop-up type
    * @cn 弹出方式
    * @default "hover"
